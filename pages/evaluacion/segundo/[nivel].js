@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useEffect} from 'react'
 import { useRouter } from 'next/router'
 import firebase from '../../../services/dBase' 
 import Head from 'next/head'
@@ -7,6 +7,10 @@ import Footer from '../../../componentes/layout/footer2'
 
 const Nivel = ({data}) => {
     const router = useRouter()
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     
     const handleAlumno = usuario => {
         router.push('/[evaluacion]/[person]', `/segundo-${router.query.nivel}/${usuario}`) 

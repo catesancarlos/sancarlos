@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../componentes/layout/header'
 import Head from 'next/head'
 import Link from 'next/link'
 
 const Home = () => {
     const [ev, setEv] = useState(false)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className='page-home'>

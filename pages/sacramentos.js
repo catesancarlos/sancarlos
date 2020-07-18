@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {IoLogoWhatsapp} from 'react-icons/io'
 import Head from 'next/head'
 import Header from '../componentes/layout/header'
@@ -7,10 +7,14 @@ import Footer from '../componentes/layout/footer2'
 const Sacramentos = () => {
     const [padrino, setPadrino] = useState(false)
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className='page-sacramentos'>
             <Head>
-                <title>Cate San Carlos - Sacramentos</title>
+                <title>Cate San Carlos - Información</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>

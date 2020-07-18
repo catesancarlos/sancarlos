@@ -1,21 +1,14 @@
-import {useState, useEffect} from 'react'
-import { useRouter } from 'next/router'
+import {useEffect} from 'react'
 import firebase from '../../services/dBase' 
 import Head from 'next/head'
 import Header from '../../componentes/layout/header'
-import Footer from '../../componentes/layout/footer'
-import Atras from '../../componentes/layout/atras'
+import Footer from '../../componentes/layout/footer2'
 
-const NivelNotas = ({data}) => {
-    const router = useRouter()
-    const [grupo, setGrupo] = useState('')    
+const NivelNotas = ({data}) => {  
 
     useEffect(() => {
-        const nivel = router.query.nivelNotas
-        const pos = nivel.indexOf('-') + 1
-        const grupo = nivel.substr(pos, nivel.length).toUpperCase()
-        setGrupo(grupo)
-    }, [])
+        window.scrollTo(0, 0);
+      }, []);
     
     return (
         <div className='page-eval'>
@@ -26,22 +19,34 @@ const NivelNotas = ({data}) => {
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
             </Head>
 
-            <Header pagina={`2DO CONFIRMACIÓN ${grupo}`} />
+            <Header pagina='' />
 
             <div className='container'>
                 {
-                    data.alumnos.map(item => 
-                        <div className='alumno' key={item.name}>
-                            <p className='numero'>{item.num}</p>
-                            <p className='nombre'>{item.name}</p>
-                            <p className='nota'>{item.nota}</p>
+                    data.map(item => 
+                        <div className='alumno' key={item.id}>
+                            <strong className='numero'>{item.id}</strong>
+                            <div className='nombre'>
+                                <strong>{`${item.apellido} ${item.nombre}`}</strong>
+                                <div className='notas'>
+                                    <p style={{paddingRight: '10px'}}><strong>Evaluación: </strong>{`${item.prueba}/10 `}</p>
+                                    {
+                                        ( item.recuperacion != undefined && (item.prueba < item.recuperacion || item.prueba < 7) ) 
+                                        && <p><strong>Evaluación de Recuperación: </strong>{`${item.recuperacion}/10`}</p>
+                                    }
+                                </div>
+                            </div>
+                            <strong className='nota'>
+                                {
+                                    (item.prueba > item.recuperacion || item.recuperacion == undefined) 
+                                    ? item.prueba :item.recuperacion
+                                }
+                            </strong>
                         </div>
                     ) 
                 }
-                <p className='nota larga'>{`Promedio del grupo: ${Math.round(data.promedio)}/10`}</p>
+                {/* <p className='nota larga'>{`Promedio del grupo: ${Math.round(data.promedio)}/10`}</p> */}
             </div>
-
-            <Atras />
 
             <Footer />
 
@@ -54,7 +59,7 @@ const NivelNotas = ({data}) => {
                 }
 
                 .container{
-                    margin: 0 auto 50px auto;
+                    margin: 0 auto 70px auto;
                 }
 
                 .alumno{
@@ -77,12 +82,28 @@ const NivelNotas = ({data}) => {
                     padding: 15px 0 15px 15px;
                 }
 
+                .notas{
+                    margin-top: 2px;
+                    display: flex;
+                    font-size: 14px;
+                }
+
                 .nota{
                     width: 60px;
                     padding: 15px 0;
                     background: rgba(165, 42, 42, 0.75);
                     color: white;
                     text-align: center;
+                    border-radius: 0 10px 10px 0;
+                }
+
+                .recu{
+                    font-size: 15px;
+                    padding: 0 10px;
+                    width: 70px;
+                    line-height: 50px;
+                    background: white;
+                    color: black;
                     border-radius: 0 10px 10px 0;
                 }
 
@@ -106,19 +127,25 @@ const NivelNotas = ({data}) => {
                     }
     
                     .numero{
-                        width: 15%;
+                        width: 10%;
                         padding: 12px 0;
                         text-align: center;
                         border-right: 2px solid #ccdae8;
                     }
     
                     .nombre{
-                        width: 65%;
+                        width: 75%;
                         padding: 12px 0 12px 12px;
+                    }
+
+                    .notas{
+                        margin-top: 2px;
+                        display: block;
+                        font-size: 12.5px;
                     }
     
                     .nota{
-                        width: 18%;
+                        width: 15%;
                         padding: 12px 0;
                         border-radius: 0 10px 10px 0;
                     }
@@ -153,22 +180,21 @@ const NivelNotas = ({data}) => {
 }
 
 NivelNotas.getInitialProps = async ({query}) => {
-    const data = await firebase.firestore().collection('notas')
-    .where('paralelo', '==', query.nivelNotas).orderBy('name', 'asc').get()
+    const data = await firebase.firestore().collection(`${query.nivelNotas}`).get()
     .then(snapshota => {
-        const size = snapshota.size
         const alumnos = [];
-        var num = 0;
-        var promedio = 0;
-        snapshota.forEach(doc => {
-            num = num + 1;
-            alumnos.push({...doc.data(), num: num}); 
-            promedio = promedio + doc.data().nota;
+        snapshota.forEach(alumno => {
+            alumnos.push({
+                id: alumno.data().id,
+                apellido: alumno.data().apellido,
+                nombre: alumno.data().nombre,
+                prueba: alumno.data().prueba,
+                recuperacion: alumno.data().recuperacion
+            }); 
         })
-        promedio = promedio/snapshota.size
-        return ({alumnos, promedio})
+        return (alumnos)
     })
     return {data}
-}  
+} 
 
 export default NivelNotas;

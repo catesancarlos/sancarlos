@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {IoIosCheckmarkCircle} from 'react-icons/io'
 import { useRouter } from 'next/router'
 import firebase from '../../../services/dBase' 
@@ -8,10 +8,15 @@ import Footer from '../../../componentes/layout/footer2'
 
 const NivelDatos = ({data}) => {
     const router = useRouter()
+    const [dos, setDos] = useState(false)
     const [login, setLogin] = useState(false)
     const [mal, setMal] = useState(false)
     const [name, setName] = useState(null)
     const [namePad, setNamePad] = useState(null)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -53,20 +58,34 @@ const NivelDatos = ({data}) => {
 
     const handleIngresarPadrino = e => {
         e.preventDefault();
-        const { apellidosPad, nombresPad } = event.target.elements;
         let refPadrino = firebase.firestore().collection('segundo-a').doc(`${data.user}`)
-        if(apellidosPad.value == '' && nombresPad.value == ''){
-        }
-        else{
+
+        if(dos == false) {
+            const { apellidosPad, nombresPad } = event.target.elements;
             setNamePad(`${nombresPad.value} ${apellidosPad.value}`)
             refPadrino.update({padrino: `${nombresPad.value} ${apellidosPad.value}`}) 
+            if(data.madrina != undefined)  refPadrino.update({madrina: null}) 
+            apellidosPad.value = ''
+            nombresPad.value = ''
+        } else {
+            const { apellidosPad, nombresPad, apellidosPad2, nombresPad2 } = event.target.elements;
+            setNamePad(`${nombresPad.value} ${apellidosPad.value} & ${nombresPad2.value} ${apellidosPad2.value}`)
+            refPadrino.update({padrino: `${nombresPad.value} ${apellidosPad.value}`}) 
+            refPadrino.set(
+                {madrina: `${nombresPad2.value} ${apellidosPad2.value}`},
+                {merge: true}
+            )
+            apellidosPad.value = ''
+            nombresPad.value = ''
+            apellidosPad2.value = ''
+            nombresPad2.value = ''
         }
     }
 
     return (
         <div className='page-eval'>
             <Head>
-                <title>Cate San Carlos - Evaluación</title>
+                <title>Cate San Carlos - Confirmación</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
@@ -91,12 +110,12 @@ const NivelDatos = ({data}) => {
                         </div>    
                     </div>
                     <div className='cont-padrino'>
-                        Padrino(a):
+                        Padrino/Madrina:
                         <p className='nombre-padrino'>
                             {
                                 namePad == null ? (
                                     data.padrino == '' ? 'Ingresa el nombre de tu padrino'
-                                    : data.padrino
+                                    : (data.madrina == undefined) ? data.padrino : `${data.padrino} & ${data.madrina}`
                                 ) : namePad
                             }
                             
@@ -138,15 +157,46 @@ const NivelDatos = ({data}) => {
                                 data.aprobado ? 
                                 <>
                                     <p className='solo'>Solo ingresar y guardar el nombre de su padrino, si este no aparece en la parte blanca de arriba</p>
-                                    <div className='cont-input'>
-                                        <strong>Apellidos:</strong>
-                                        <input required className='input-edit' name='apellidosPad' placeholder='Ingrese 2 apellidos' />
+                                    <div style={{display: 'flex'}}>
+                                        <p className='dos-padrinos' onClick={() => setDos(false)}>Una persona</p>
+                                        <p className='dos-padrinos' onClick={() => setDos(true)}>Dos personas</p>
                                     </div>
-                                    <div className='cont-input'>
-                                        <strong>Nombres:</strong>
-                                        <input required className='input-edit' name='nombresPad' placeholder='Ingrese 2 nombres' />
-                                    </div>
-                                    <button className='boton-edit'>Guardar</button>
+                                    {
+                                        !dos ? 
+                                        <>
+                                            <div className='cont-input'>
+                                                <strong>Apellidos:</strong>
+                                                <input required className='input-edit' name='apellidosPad' placeholder='Ingrese 2 apellidos' />
+                                            </div>
+                                            <div className='cont-input'>
+                                                <strong>Nombres:</strong>
+                                                <input required className='input-edit' name='nombresPad' placeholder='Ingrese 2 nombres' />
+                                            </div>
+                                            <button className='boton-edit'>Guardar</button>
+                                        </>
+                                        :
+                                        <>
+                                            <strong>Padrino</strong>
+                                            <div className='cont-input'>
+                                                <strong>Apellidos:</strong>
+                                                <input required className='input-edit' name='apellidosPad' placeholder='Ingrese 2 apellidos' />
+                                            </div>
+                                            <div className='cont-input'>
+                                                <strong>Nombres:</strong>
+                                                <input required className='input-edit' name='nombresPad' placeholder='Ingrese 2 nombres' />
+                                            </div>
+                                            <strong>Madrina</strong>
+                                            <div className='cont-input'>
+                                                <strong>Apellidos:</strong>
+                                                <input required className='input-edit' name='apellidosPad2' placeholder='Ingrese 2 apellidos' />
+                                            </div>
+                                            <div className='cont-input'>
+                                                <strong>Nombres:</strong>
+                                                <input required className='input-edit' name='nombresPad2' placeholder='Ingrese 2 nombres' />
+                                            </div>
+                                            <button className='boton-edit'>Guardar</button>
+                                        </>
+                                    }
                                 </>
                                 :
                                 <div className='cont-input nopuede'>
@@ -181,12 +231,8 @@ const NivelDatos = ({data}) => {
                 .perfil{
                     background: white;
                     width: 75%;
-                    margin: 0 auto;
+                    margin: 0 auto 60px auto;
                     border-radius: 30px;
-                }
-
-                .container{
-                    
                 }
 
                 .cont-nombre{
@@ -212,7 +258,7 @@ const NivelDatos = ({data}) => {
                 }
 
                 .cont-padrino{
-                    padding: 5px 0 25px 30px;
+                    padding: 5px 70px 25px 30px;
                     display: flex;
                     font-size: 17px;
                     border-bottom: 3px solid #ccdae8; 
@@ -225,7 +271,7 @@ const NivelDatos = ({data}) => {
                 .edicion{
                     background: rgba(0, 0, 0, 0.1);
                     display: flex;
-                    padding: 50px 0;
+                    padding: 30px 0;
                     border-radius: 0 0 30px 30px;
                 }
 
@@ -248,6 +294,17 @@ const NivelDatos = ({data}) => {
                     font-weight: 400;
                     width: 65%;
                     margin-bottom: 10px;
+                }
+
+                .dos-padrinos{
+                    background: gray;
+                    margin: 0 5px 10px 5px;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding: 2px 7px;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
 
                 .cont-input{
@@ -353,14 +410,14 @@ const NivelDatos = ({data}) => {
     
                     .salir{
                         right: 3%;
-                        width: 45px;
+                        width: 40px;
                         height: 22px;
                         line-height: 22px;
                         font-size: 16px;
                     }
     
                     .cont-padrino{
-                        padding: 5px 25px 25px 25px;
+                        padding: 5px 50px 25px 25px;
                         font-size: 13px;
                     }
     

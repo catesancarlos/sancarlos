@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 import firebase from '../../services/dBase' 
 import Link from 'next/link'
@@ -37,6 +37,10 @@ const Person = ({data}) => {
     const [nota13, setNota13] = useState(null)
     const [nota14, setNota14] = useState(null)
     const [nota15, setNota15] = useState(null)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
 
     const handleLogin = e => {

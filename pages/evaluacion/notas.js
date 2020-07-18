@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Header from '../../componentes/layout/header'
@@ -43,6 +43,10 @@ const Evaluacion = () => {
             nombre: 'María Auxuliadora'
         }
     ]
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -92,12 +96,6 @@ const Evaluacion = () => {
                                 </p>
                             ) 
                         }
-                        <p
-                            className='nivel dar'
-                            onClick={handlePruebaKts} 
-                        >
-                            Quiero intentar la Evaluación
-                        </p>
                     </>
                     :
                     <form onSubmit={handleLogin} className='form'>

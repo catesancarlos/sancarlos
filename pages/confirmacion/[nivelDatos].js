@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect} from 'react'
 import {IoIosCheckmarkCircle} from 'react-icons/io'
 import { useRouter } from 'next/router'
 import firebase from '../../services/dBase' 
@@ -9,6 +9,10 @@ import Footer from '../../componentes/layout/footer2'
 const NivelDatos = ({data}) => {
     const router = useRouter()
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleAlumno = usuario => {
         router.push('/datos/[evaluacion]/[person]', `/datos/${router.query.nivelDatos}/${usuario}`) 
     }
@@ -16,7 +20,7 @@ const NivelDatos = ({data}) => {
     return (
         <div className='page-eval'>
             <Head>
-                <title>Cate San Carlos - Evaluación</title>
+                <title>Cate San Carlos - Confirmación</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>

@@ -1,4 +1,4 @@
-import {useState } from 'react'
+import {useEffect} from 'react'
 import firebase from '../../services/dBase' 
 import Head from 'next/head'
 import Header from '../../componentes/layout/header'
@@ -8,6 +8,10 @@ import NoDisponible from '../../componentes/evaluacion/noDisponible'
 import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
 
 const Evaluacion = ({data}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className='page-eval'>

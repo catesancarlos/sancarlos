@@ -1,9 +1,9 @@
+import {useEffect} from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import {IoIosCheckmarkCircle} from 'react-icons/io'
 import Header from '../componentes/layout/header'
 import Footer from '../componentes/layout/footer2'
-import Atras from '../componentes/layout/atras'
 
 const MiConfirmacion = () => {
     const router = useRouter()
@@ -42,6 +42,10 @@ const MiConfirmacion = () => {
         }
     ]
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handleLink = grupo => {
         router.push('/confirmacion/[nivelDatos]', `/confirmacion/${grupo}`)
     }
@@ -49,7 +53,7 @@ const MiConfirmacion = () => {
     return (
         <div className='page-eval'>
             <Head>
-                <title>Cate San Carlos - Evaluación</title>
+                <title>Cate San Carlos - Confirmación</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
@@ -195,8 +199,7 @@ const MiConfirmacion = () => {
                     font-size: 20px;
                     line-height: 50px;
                     border-radius: 10px;
-                    cursor: pointer
-                    margin-bottom: 50px
+                    cursor: pointer;
                 }
 
                 @media screen and (max-width: 480px){
