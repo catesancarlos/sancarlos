@@ -29,7 +29,7 @@ const UnaOpcion = ({alumno, no, datos, onNota}) => {
 
     const handleCalificar = seleccion => {
         if(seleccion == correcto) {
-            if(no == 2) {onNota([no, 6])}
+            if(no == 14) {onNota([no, 6])}
             else{onNota([no, 1])}
         } else {
             onNota([no, 0])

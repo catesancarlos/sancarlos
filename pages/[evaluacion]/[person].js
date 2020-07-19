@@ -141,6 +141,10 @@ const Person = ({data}) => {
                         } 
                         <UnaOpcion alumno={data.id} no={15} datos={preguntas[12]} onNota={handleCalificar} />
                     </div>
+                    <p style={{position: 'fixed'}}>
+                   { Math.round((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + 
+                    nota8 + nota9 + nota10 + nota11 + nota12 + nota13 + nota14 + nota15))}
+                    </p>
 
                     <div 
                         className='enviar-boton'

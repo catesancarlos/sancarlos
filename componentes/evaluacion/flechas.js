@@ -44,7 +44,7 @@ const DosOpciones = ({alumno, no, datos, onNota}) => {
             </div>
             <div className='cont-opciones'>
                 <div className='depositos'>
-                    { (alumno%2 == 0) ? 'Frutos' : 'Dones' }
+                    { (alumno%2 != 0) ? 'Frutos' : 'Dones' }
                     { 
                         respuestas.map(item => 
                             <div className='opciones' key={item.id}>
@@ -101,7 +101,7 @@ const DosOpciones = ({alumno, no, datos, onNota}) => {
                 }
                 </div>
                 <div className='depositos'>
-                    { (alumno%2 == 0) ? 'Dones' : 'Frutos' }
+                    { (alumno%2 != 0) ? 'Dones' : 'Frutos' }
                     { 
                         respuestas.map(item => 
                             <div className='opciones' key={item.id}>
