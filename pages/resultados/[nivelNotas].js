@@ -31,8 +31,8 @@ const NivelNotas = ({data}) => {
                                 <div className='notas'>
                                     <p style={{paddingRight: '10px'}}><strong>Evaluación: </strong>{`${item.prueba}/10 `}</p>
                                     {
-                                        ( item.recuperacion != undefined && (item.prueba < item.recuperacion || item.prueba < 7) ) 
-                                        && <p><strong>Evaluación de Recuperación: </strong>{`${item.recuperacion}/10`}</p>
+                                        item.recuperacion != undefined &&  
+                                        <p><strong>Evaluación de Recuperación: </strong>{`${item.recuperacion}/10`}</p>
                                     }
                                 </div>
                             </div>
