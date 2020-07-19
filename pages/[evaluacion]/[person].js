@@ -112,7 +112,7 @@ const Person = ({data}) => {
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
             </Head>
 
-            <Header name={`${data.nombre} ${data.apellido}`} />
+            <Header name={`${data.nombre} ${data.apellido.substr(0, data.apellido.indexOf(' '))}`} />
 
             {cont && <Tiempo timeOut={handleTimeOut} fin={final} conteo={cont} />}
 
@@ -141,10 +141,6 @@ const Person = ({data}) => {
                         } 
                         <UnaOpcion alumno={data.id} no={15} datos={preguntas[12]} onNota={handleCalificar} />
                     </div>
-                    <p style={{position: 'fixed'}}>
-                   { Math.round((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + 
-                    nota8 + nota9 + nota10 + nota11 + nota12 + nota13 + nota14 + nota15))}
-                    </p>
 
                     <div 
                         className='enviar-boton'
