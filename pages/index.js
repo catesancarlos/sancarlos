@@ -35,8 +35,7 @@ const Home = () => {
                     </div>
                     {
                         ev ? 
-                        <div className='option'>
-                            <p className='nuevo recu'>Recuperación</p>
+                        <div className='option'>                        
                             <Link href='/evaluacion'>
                                 <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
                             </Link> 
