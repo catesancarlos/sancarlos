@@ -59,10 +59,14 @@ const NoDisponible = () => {
                         margin: 0; 
                         padding: 1.25em 0;
                     }
+
+                    .obso-titulo{
+                        font-size: 1.8em;
+                    }
     
                     .fechas-desc{
                         font-size: 1.2em;
-                        margin: 50px 0 15px 0;
+                        margin: 35px 0 15px 0;
                     }
     
                     .fecha-item{

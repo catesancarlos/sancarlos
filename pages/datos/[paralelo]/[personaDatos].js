@@ -104,7 +104,7 @@ const NivelDatos = ({data}) => {
                                     : `${name} `
                                 }
                                 {
-                                    data.aprobado && <IoIosCheckmarkCircle style={{color: 'green'}} />
+                                    (data.aprobado && !data.fe && !data.cedula) && <IoIosCheckmarkCircle style={{color: 'green'}} />
                                 }
                             </p>
                         </div>    
@@ -114,7 +114,7 @@ const NivelDatos = ({data}) => {
                         <p className='nombre-padrino'>
                             {
                                 namePad == null ? (
-                                    data.padrino == '' ? 'Ingresa el nombre de tu padrino'
+                                    data.padrino == '' ? 'Ingresa el nombre de tu padrino/madrina'
                                     : (data.madrina == undefined) ? data.padrino : `${data.padrino} & ${data.madrina}`
                                 ) : namePad
                             }
@@ -128,13 +128,37 @@ const NivelDatos = ({data}) => {
                             }}
                         >Salir</p>
                     </div>
+                   
+                    {
+                        (data.aprobado && !data.fe && !data.cedula) ? '' : (data.aprobado) ? 
+                            <div className='info-falta'>
+                                <p>Aprobado, pero</p>
+                                {
+                                    data.fe && <p>Falta entregar copia de la Fe de Bautismo</p>
+                                }
+                                {
+                                    data.cedula && <p>Falta entregar copia de la cédula</p>
+                                } 
+                            </div>
+                        :   
+                            <div className='info-falta'>
+                                <p>Todavía no ha aprobado{ (!data.fe && !data.cedula) ? '' : ', también'}</p>
+                                {
+                                    data.fe && <p>Falta entregar copia de la Fe de Bautismo</p>
+                                }
+                                {
+                                    data.cedula && <p>Falta entregar copia de la cédula</p>
+                                } 
+                            </div>
+                    }
+                        
                     <div className='edicion'>
                         <form onSubmit={handleActualizarNombre} className='item-edicion'>
-                            <p className='info-edit'>Edita tu nombre si esta mal escrito</p>
+                            <p className='info-edit'>Edita tu nombre si está mal escrito</p>
                             {
-                                data.aprobado ? 
+                                (data.aprobado && !data.fe && !data.cedula) ? 
                                 <>
-                                    <p className='solo'>Solo modificar estos campos y guardar si su nombre esta mal escrito</p>
+                                    <p className='solo'>Solo modificar estos campos y guardar, si su nombre esta mal escrito</p>
                                     <div className='cont-input'>
                                         <strong>Apellidos:</strong>
                                         <input className='input-edit' name='apellidos' placeholder={data.apellido} />
@@ -147,14 +171,14 @@ const NivelDatos = ({data}) => {
                                 </>
                                 :
                                 <div className='cont-input nopuede'>
-                                    Usted no puede editar su nombre, porque todavia no ha aprobado el año de Catequesis
+                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la fe de bautismo o copia de la cédula.
                                 </div>
                             }
                         </form>
                         <form onSubmit={handleIngresarPadrino} className='item-edicion'>
                             <p className='info-edit'>Ingresa el nombre de tu padrino</p>
                             {
-                                data.aprobado ? 
+                                (data.aprobado && !data.fe && !data.cedula) ? 
                                 <>
                                     <p className='solo'>Solo ingresar y guardar el nombre de su padrino, si este no aparece en la parte blanca de arriba</p>
                                     <div style={{display: 'flex'}}>
@@ -200,7 +224,7 @@ const NivelDatos = ({data}) => {
                                 </>
                                 :
                                 <div className='cont-input nopuede'>
-                                    Usted no puede ingresar el nombre de su padrino, porque todavia no ha aprobado el año de Catequesis
+                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la fe de bautismo o copia de la cédula.
                                 </div>
                             }
                         </form>
@@ -231,7 +255,7 @@ const NivelDatos = ({data}) => {
                 .perfil{
                     background: white;
                     width: 75%;
-                    margin: 0 auto 60px auto;
+                    margin: 0 auto 80px auto;
                     border-radius: 30px;
                 }
 
@@ -266,6 +290,12 @@ const NivelDatos = ({data}) => {
 
                 .nombre-padrino{
                     padding-left: 5px;
+                }
+
+                .info-falta{
+                    width: 84%;
+                    margin: 10px auto;
+                    font-size: 15px;
                 }
 
                 .edicion{
@@ -400,7 +430,7 @@ const NivelDatos = ({data}) => {
                 @media screen and (max-width: 480px){
                     .perfil{
                         width: 100%;
-                        margin-bottom: 40px;
+                        margin-bottom: 50px;
                     }
     
                     .cont-nombre{
@@ -424,16 +454,22 @@ const NivelDatos = ({data}) => {
                     .nombre-padrino{
                         padding-left: 5px;
                     }
+
+                    .info-falta{
+                        width: 80%;
+                        margin: 10px auto;
+                        font-size: 15px;
+                    }
     
                     .edicion{
                         display: block;
-                        padding: 50px 0 20px 0;
+                        padding: 30px 0 20px 0;
                         border-radius: 0 0 30px 30px;
                     }
     
                     .item-edicion{
                         width: 100%;
-                        margin-bottom: 40px;
+                        margin-bottom: 30px;
                     }
     
                     .info-edit{

@@ -62,6 +62,7 @@ const MiConfirmacion = () => {
             <Header pagina='sacramento' />
 
             <div className='container'>
+                <p className='confi-info'>Revisa si haz cumplido con todos los requisitos para aprobar el año de Catequesis e ingresa el nombre de tu padrino.</p>
                 <div className='menu-proceso'>
                     <div className='proceso'>
                         <p className='titulo'>Aprobar el año de Catequesis</p>
@@ -70,7 +71,7 @@ const MiConfirmacion = () => {
                     <div className='linea'></div>
                     <div className='proceso'>
                         <p className='titulo'>Cumplir con todos los requisitos</p>
-                        <p className='descripcion'>Haber ya entregado la Fe de Bautismo y la copia de la cédula del alumno.</p>
+                        <p className='descripcion'>Entregado la Fe de Bautismo y la copia de la cédula del alumno al inscribirse.</p>
                     </div>
                     <div className='linea'></div>
                     <div className='proceso'>
@@ -86,8 +87,8 @@ const MiConfirmacion = () => {
                 <div className='menu-niveles'>
                     <div className='subcontainer'>
                         <strong>Pulsa en tu paralelo para:</strong>
-                        <p style={{paddingTop: '15px'}}>- Verificar que hayas entregado la copia de cedula o fe de bautizmo.</p>
-                        <p style={{paddingTop: '5px'}}>- Verificar que tu nombre este bien escrito y si no es asi corregirlo.</p>
+                        <p style={{paddingTop: '15px'}}>- Verificar que hayas entregado la copia de cedula o fe de bautismo.</p>
+                        <p style={{paddingTop: '5px'}}>- Verificar que tu nombre este bien escrito y si no es así corregirlo.</p>
                         <p style={{paddingTop: '5px'}}>- Ingresar el nombre de tu padrino.</p>
                     </div>
                     <div className='subcontainer niveles'>
@@ -119,6 +120,14 @@ const MiConfirmacion = () => {
                 .container{
                     width: 90%;
                     margin: 0 auto;
+                }
+
+                .confi-info{
+                    width: 85%;
+                    margin: 10px auto 50px auto;
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: bold;
                 }
 
                 .menu-proceso{
@@ -200,11 +209,18 @@ const MiConfirmacion = () => {
                     line-height: 50px;
                     border-radius: 10px;
                     cursor: pointer;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 }
 
                 @media screen and (max-width: 480px){
                     .container{
                         width: 100vw;
+                    }
+
+                    .confi-info{
+                        width: 90%;
+                        margin: 10px auto 30px auto;
+                        font-size: 19px;
                     }
     
                     .menu-proceso{

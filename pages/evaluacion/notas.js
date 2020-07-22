@@ -130,6 +130,7 @@ const Evaluacion = () => {
                     border-radius: 10px;
                     text-align: center;
                     cursor: pointer;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 }
 
                 .dar{

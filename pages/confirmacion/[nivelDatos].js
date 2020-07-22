@@ -38,12 +38,17 @@ const NivelDatos = ({data}) => {
                     </p>
                     <p className='indica-weight'>Pulse en su nombre, para ingresar el nombre de su padrino.</p>
                     <p className='indica'>
-                        - Solo las personas que cuenten con el visto <IoIosCheckmarkCircle style={{fontSize: '20px', color: 'green'}} /> podran, 
-                        ingresar el nombre de su padrino y también corregir el nombre del alumno si fuese necesario.
+                        - Solo las personas que cuenten con el visto <IoIosCheckmarkCircle style={{fontSize: '20px', color: 'green'}} /> 
+                        podrán, ingresar el nombre de su padrino y también corregir el nombre del alumno si fuese necesario.
                     </p>
                     <p className='indica'>
                         - El visto verde indica a los alumnos que ya han cumplido con todas las actividades y han aprobado 
                         el año de catequesis.
+                    </p>
+                    <p className='indica'>
+                        - Verifica pulsando tu nombre que hayas entregado la fe de bautismo o copia de tu cédula, si no la has 
+                        entregado, tendrás que acercarte con las mismas a coordinación los días miércoles y jueves desde las 16h00 
+                        a 18h00 a partir del 22 de julio.
                     </p>
                     <p className='indica'>
                         - Si usted no cuenta con el visto de aprobado, comunicarse con su catequista.
@@ -61,8 +66,9 @@ const NivelDatos = ({data}) => {
                                 {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                             </p>
                             {
-                                item.aprobado && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
+                                (item.aprobado && !item.fe && !item.cedula) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
                             }
+                            
                         </div>
                     ) 
                 }
@@ -143,12 +149,12 @@ const NivelDatos = ({data}) => {
                     }
 
                     .indica-weight{
-                        font-size: 0.8em;
+                        font-size: 0.85em;
                     }
 
                     .indica{
                         margin-top: 10px;
-                        font-size: 0.65em;
+                        font-size: 0.75em;
                     }
 
                     .lista{
@@ -195,6 +201,8 @@ NivelDatos.getInitialProps = async ({query}) => {
                 apellido: alumno.data().apellido,
                 nombre: alumno.data().nombre,
                 aprobado: alumno.data().aprobado,
+                fe: alumno.data().fe,
+                cedula: alumno.data().cedula,
                 user: alumno.data().user
             }); 
         })

@@ -25,7 +25,7 @@ const Evaluacion = ({data}) => {
             <Header pagina='eval' />
 
             {
-                data.disponible ? 
+                false ? 
                 <MenuParalelos /> : <NoDisponible />
             }
 

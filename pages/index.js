@@ -58,7 +58,7 @@ const Home = () => {
                             <a className='name-option'>Mi Sacramento</a>
                         </Link>
                         <p className='descripcion'>
-                            Quiero ingresar el nombre de mi padrino.
+                            ¿Aprobé? Quiero ingresar el nombre de mi padrino.
                         </p>
                     </div>
                 </div>
@@ -77,46 +77,6 @@ const Home = () => {
                     display: flex;
                     flex-direction: column;
                     min-height: 100vh;
-                }
-
-                .header{
-                    padding: 40px 60px 0 60px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                .name-1{
-                    font-size: 2.25vw;
-                    font-weight: bold;
-                }
-
-                .name-2{
-                    color: brown;
-                    font-size: 4vw;
-                    line-height: 100%;
-                    font-weight: bold;
-                    text-shadow: 3px 3px white;
-                }
-
-                .name-3-cont{
-                    margin-top: 5px;
-                    display: flex;
-                    justify-content: flex-end;
-                }
-
-                .name-3{
-                    background: white;
-                    padding: 2px 10px;
-                    font-size: 1.9vw;
-                    font-weight: bold;
-                    color: #ccdae8;
-                    border-radius: 10px;
-                }
-
-                .indicaciones{
-                    font-size: 1.1vw;
-                    line-height: 125%;
                 }
 
                 .menu-cont{
@@ -230,30 +190,7 @@ const Home = () => {
                     pointer-events: none;
                 }
 
-                @media screen and (max-width: 480px){
-                    .header{
-                        padding: 15px;
-                    }
-    
-                    .name-1{
-                        font-size: 20px;
-                    }
-    
-                    .name-2{
-                        font-size: 35px;
-                        text-shadow: 2px 2px white;
-                    }
-    
-                    .name-3-cont{
-                        margin-top: 3px;
-                    }
-    
-                    .name-3{
-                        padding: 1px 7px;
-                        font-size: 17px;
-                        border-radius: 7px;
-                    }
- 
+                @media screen and (max-width: 480px){ 
                     .menu-cont{
                         width: 100%;
                         margin: 0 auto;
