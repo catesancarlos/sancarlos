@@ -200,6 +200,7 @@ const NivelDatos = ({data}) => {
                                         </>
                                         :
                                         <>
+                                            <p className='solo-se'>Solo se permiten 2 personas, si estas son esposo y esposa.</p>
                                             <strong>Padrino</strong>
                                             <div className='cont-input'>
                                                 <strong>Apellidos:</strong>
@@ -335,6 +336,12 @@ const NivelDatos = ({data}) => {
                     padding: 2px 7px;
                     border-radius: 5px;
                     cursor: pointer;
+                }
+
+                .solo-se{
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin: 10px 0 5px 0;
                 }
 
                 .cont-input{
@@ -481,6 +488,12 @@ const NivelDatos = ({data}) => {
                         font-size: 12px;
                         width: 80%;
                         margin-bottom: 15px;
+                    }
+
+                    .solo-se{
+                        font-size: 13px;
+                        font-weight: bold;
+                        margin: 10px 0 5px 0;
                     }
     
                     .cont-input{

@@ -36,7 +36,6 @@ const Home = () => {
                     {
                         ev ? 
                         <div className='option'>
-                            <p className='nuevo recu'>Recuperación</p>
                             <Link href='/evaluacion'>
                                 <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
                             </Link> 
@@ -128,7 +127,7 @@ const Home = () => {
 
                 .nuevo{
                     position: absolute;
-                    margin: -0.75% 0 0 -7.75%;
+                    margin: -0.75% 0 0 -14%;
                     background: brown;
                     color: white;
                     font-weight: bold;
@@ -227,7 +226,7 @@ const Home = () => {
                     }
 
                     .nuevo{
-                        margin: -3% 0 0 -27%;
+                        margin: -3% 0 0 -52%;
                         font-size: 15px;
                     }
 
