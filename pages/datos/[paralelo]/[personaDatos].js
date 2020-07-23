@@ -486,9 +486,8 @@ const NivelDatos = ({data}) => {
                     }
 
                     .solo-se{
-                        font-size: 13px;
-                        font-weight: bold;
-                        margin: 10px 0 5px 0;
+                        width: 80%;
+                        padding: 0 0 10px 0;
                     }
     
                     .cont-input{
