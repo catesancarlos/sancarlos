@@ -40,25 +40,18 @@ const NivelDatos = ({data}) => {
         setName(`
             ${nombres.value == '' ? data.nombre : nombres.value} 
             ${apellidos.value == '' ? data.apellido : apellidos.value}`)
-        let refNombre = firebase.firestore().collection('segundo-a').doc(`${data.user}`)
-        if(apellidos.value == ''){
-            refNombre.update({nombre: nombres.value})
-        }
-        else if(nombres.value == '') {
-            refNombre.update({apellido: apellidos.value})
-        }
-        else{
+        let refNombre = firebase.firestore().collection(router.query.paralelo).doc(data.user)
+        if( (nombres.value != '' && nombres.value != ' ') || (apellidos.value != '' &&  apellidos.value != ' ')) {
             refNombre.update({
-                nombre: nombres.value,
-                apellido: apellidos.value
+                nombre: nombres.value == '' ? data.nombre : nombres.value,
+                apellido: apellidos.value == '' ? data.apellido : apellidos.value
             })
         }
-
     }
 
     const handleIngresarPadrino = e => {
         e.preventDefault();
-        let refPadrino = firebase.firestore().collection('segundo-a').doc(`${data.user}`)
+        let refPadrino = firebase.firestore().collection(router.query.paralelo).doc(data.user)
 
         if(dos == false) {
             const { apellidosPad, nombresPad } = event.target.elements;
