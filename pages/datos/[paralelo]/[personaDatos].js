@@ -104,7 +104,7 @@ const NivelDatos = ({data}) => {
                                     : `${name} `
                                 }
                                 {
-                                    (data.aprobado && !data.fe && !data.cedula) && <IoIosCheckmarkCircle style={{color: 'green'}} />
+                                    (data.aprobado && !data.fe) && <IoIosCheckmarkCircle style={{color: 'green'}} />
                                 }
                             </p>
                         </div>    
@@ -130,25 +130,15 @@ const NivelDatos = ({data}) => {
                     </div>
                    
                     {
-                        (data.aprobado && !data.fe && !data.cedula) ? '' : (data.aprobado) ? 
+                        (data.aprobado && !data.fe) ? '' : (data.aprobado) ? 
                             <div className='info-falta'>
                                 <p>Aprobado, pero</p>
-                                {
-                                    data.fe && <p>Falta entregar copia de la Fe de Bautismo</p>
-                                }
-                                {
-                                    data.cedula && <p>Falta entregar copia de la cédula</p>
-                                } 
+                                <p>Falta entregar copia de la Fe de Bautismo</p>
                             </div>
                         :   
                             <div className='info-falta'>
-                                <p>Todavía no ha aprobado{ (!data.fe && !data.cedula) ? '' : ', también'}</p>
-                                {
-                                    data.fe && <p>Falta entregar copia de la Fe de Bautismo</p>
-                                }
-                                {
-                                    data.cedula && <p>Falta entregar copia de la cédula</p>
-                                } 
+                                <p>Todavía no ha aprobado</p>
+                                { data.fe && <p>También falta entregar copia de la Fe de Bautismo</p> }
                             </div>
                     }
                         
@@ -156,7 +146,7 @@ const NivelDatos = ({data}) => {
                         <form onSubmit={handleActualizarNombre} className='item-edicion'>
                             <p className='info-edit'>Edita tu nombre si está mal escrito</p>
                             {
-                                (data.aprobado && !data.fe && !data.cedula) ? 
+                                (data.aprobado && !data.fe) ? 
                                 <>
                                     <p className='solo'>Solo modificar estos campos y guardar, si su nombre esta mal escrito</p>
                                     <div className='cont-input'>
@@ -171,14 +161,14 @@ const NivelDatos = ({data}) => {
                                 </>
                                 :
                                 <div className='cont-input nopuede'>
-                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la fe de bautismo o copia de la cédula.
+                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la copia de la fe de bautismo.
                                 </div>
                             }
                         </form>
                         <form onSubmit={handleIngresarPadrino} className='item-edicion'>
                             <p className='info-edit'>Ingresa el nombre de tu padrino</p>
                             {
-                                (data.aprobado && !data.fe && !data.cedula) ? 
+                                (data.aprobado && !data.fe) ? 
                                 <>
                                     <p className='solo'>Solo ingresar y guardar el nombre de su padrino, si este no aparece en la parte blanca de arriba</p>
                                     <div style={{display: 'flex'}}>
@@ -200,7 +190,11 @@ const NivelDatos = ({data}) => {
                                         </>
                                         :
                                         <>
-                                            <p className='solo-se'>Solo se permiten 2 personas, si estas son esposo y esposa.</p>
+                                            <p className='solo-se'>
+                                                <strong>Indicación:</strong> Se puede entregar el nombre de 2 personas, siempre y cuando estos sean esposos, 
+                                                los cuales se consideraran los padrinos, pero en el certificado de Confirmación solo se indicara una persona, 
+                                                debido a que en este va un solo nombre.
+                                            </p>
                                             <strong>Padrino</strong>
                                             <div className='cont-input'>
                                                 <strong>Apellidos:</strong>
@@ -225,7 +219,7 @@ const NivelDatos = ({data}) => {
                                 </>
                                 :
                                 <div className='cont-input nopuede'>
-                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la fe de bautismo o copia de la cédula.
+                                    Usted no puede editar su nombre, porque todavía no ha aprobado el año de Catequesis o no ha entregado la copia de fe de bautismo.
                                 </div>
                             }
                         </form>
@@ -339,9 +333,10 @@ const NivelDatos = ({data}) => {
                 }
 
                 .solo-se{
-                    font-size: 15px;
-                    font-weight: bold;
-                    margin: 10px 0 5px 0;
+                    font-size: 12.5px;
+                    font-weight: 400;
+                    padding: 0 85px 10px 85px;
+                    text-align: justify;
                 }
 
                 .cont-input{

@@ -66,7 +66,7 @@ const NivelDatos = ({data}) => {
                                 {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                             </p>
                             {
-                                (item.aprobado && !item.fe && !item.cedula) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
+                                (item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
                             }
                             
                         </div>
@@ -202,7 +202,6 @@ NivelDatos.getInitialProps = async ({query}) => {
                 nombre: alumno.data().nombre,
                 aprobado: alumno.data().aprobado,
                 fe: alumno.data().fe,
-                cedula: alumno.data().cedula,
                 user: alumno.data().user
             }); 
         })

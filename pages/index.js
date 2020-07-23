@@ -127,7 +127,7 @@ const Home = () => {
 
                 .nuevo{
                     position: absolute;
-                    margin: -0.75% 0 0 -14%;
+                    margin: -0.75% 0 0 0;
                     background: brown;
                     color: white;
                     font-weight: bold;
@@ -226,7 +226,7 @@ const Home = () => {
                     }
 
                     .nuevo{
-                        margin: -3% 0 0 -52%;
+                        margin: -3% 0 0 0;
                         font-size: 15px;
                     }
 
