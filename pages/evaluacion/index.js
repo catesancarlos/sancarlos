@@ -25,7 +25,7 @@ const Evaluacion = ({data}) => {
             <Header pagina='eval' />
 
             {
-                false ? 
+                data.disponible ? 
                 <MenuParalelos /> : <NoDisponible />
             }
 
@@ -66,6 +66,7 @@ Evaluacion.getInitialProps = async () => {
     .then(listo => {
         return (listo.data())
     })
+    console.log(data)
     return {data}
 }
 
