@@ -28,7 +28,7 @@ const Header = ({pagina, name}) => {
                         <p 
                             className='linkin' 
                             id={(pagina == 'info') ? 'activo' : 'desactivo'}
-                            onClick={() => Router.push('/sacramentos')}
+                            onClick={() => Router.push('/informacion')}
                         >Información</p>
                         <p 
                             className='linkin'

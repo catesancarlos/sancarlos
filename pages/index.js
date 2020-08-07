@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import Header from '../componentes/layout/header'
-import Head from 'next/head'
+import AppLayout from '../componentes/layout'
 import Link from 'next/link'
 
 const Home = () => {
@@ -11,73 +10,57 @@ const Home = () => {
     }, []);
 
     return (
-        <div className='page-home'>
-            <Head>
-                <title>Cate San Carlos</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"></link>
-            </Head>
-
-            <Header pagina='index' />
-
-           <div className='menu-cont'>
-                <p className='titulo-menu'>CONFIRMACIÓN</p>
-                <div className='menu'>
-                    
-                    <div className='option'>
-                        <Link href='/sacramentos'>
-                            <a className='name-option'>Información</a>
-                        </Link>
-                        <p className='descripcion'>
-                            Información necesaria, referente a la Confirmación para este año (2020).
-                        </p>
-                    </div>
-                    {
-                        ev ? 
+        <>
+            <AppLayout pagina='index' titulo='Cate San Carlos'>
+                <div className='menu-cont'>
+                    <p className='titulo-menu'>CONFIRMACIÓN</p>
+                    <div className='menu'>
+                        
                         <div className='option'>
-                            <Link href='/evaluacion'>
-                                <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
-                            </Link> 
-                            <Link href='/evaluacion/notas'>
-                                <a className='name-option sub-option'>Calificaciones</a>
-                            </Link> 
-                        </div>
-                        :
-                        <div className='option' onClick={() => setEv(true)}>
-                            <p className='name-option'>Evaluaciones</p>
+                            <Link href='/informacion'>
+                                <a className='name-option'>Información</a>
+                            </Link>
                             <p className='descripcion'>
-                                Evaluaciones para los niveles de Segundo Confirmación.
+                                Información necesaria, referente a la Confirmación para este año (2020).
                             </p>
                         </div>
-                    }
-                    <div className='option'>
-                        <p className='nuevo'>Nuevo</p>
-                        <Link href='/miConfirmacion'>
-                            <a className='name-option'>Mi Sacramento</a>
-                        </Link>
-                        <p className='descripcion'>
-                            ¿Aprobé? Quiero ingresar el nombre de mi padrino.
-                        </p>
+                        {
+                            ev ? 
+                            <div className='option'>
+                                <Link href='/evaluacion'>
+                                    <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
+                                </Link> 
+                                <Link href='/evaluacion/notas'>
+                                    <a className='name-option sub-option'>Calificaciones</a>
+                                </Link> 
+                            </div>
+                            :
+                            <div className='option' onClick={() => setEv(true)}>
+                                <p className='name-option'>Evaluaciones</p>
+                                <p className='descripcion'>
+                                    Evaluaciones para los niveles de Segundo Confirmación.
+                                </p>
+                            </div>
+                        }
+                        <div className='option'>
+                            <p className='nuevo'>Nuevo</p>
+                            <Link href='/miConfirmacion'>
+                                <a className='name-option'>Mi Sacramento</a>
+                            </Link>
+                            <p className='descripcion'>
+                                ¿Aprobé? Quiero ingresar el nombre de mi padrino.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                
-            </div>  
-
-            <div className='cont-foto'>
-                <div className='footer'>en-Ricaurte</div>
-                <img src='/san-carlos.gif' alt='San Carlos' className='foto-san-carlos'/> 
-            </div>
+                    
+                    <div className='cont-foto'>
+                        <div className='footer'>en-Ricaurte</div>
+                        <img src='/san-carlos.gif' alt='San Carlos' className='foto-san-carlos'/> 
+                    </div>
+                </div>  
+            </AppLayout>
 
             <style jsx>{`
-                .page-home{
-                    background-color: #ccdae8;
-                    font-family: 'Lato', sans-serif;
-                    display: flex;
-                    flex-direction: column;
-                    min-height: 100vh;
-                }
-
                 .menu-cont{
                     width: 75%;
                     margin: 10px auto 50px auto;
@@ -258,25 +241,7 @@ const Home = () => {
                     }
                 }
             `}</style>
-
-            <style jsx global>{`
-                body {
-                    margin: 0;
-                    padding: 0;
-                    font-family: 'Lato', sans-serif;
-                }
-
-                a{
-                    color: black;
-                    text-decoration: none;
-                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                }
-
-                p{
-                    margin: 0;
-                }
-            `}</style>
-        </div> 
+        </> 
     )
 }
 
