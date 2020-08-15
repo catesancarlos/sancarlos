@@ -16,6 +16,7 @@ import preguntas from '../../datos/preguntas'
 
 const Person = ({data}) => {
     const router = useRouter()
+    const [user, setUser] = useState(null)
     const [login, setLogin] = useState(false)
     const [mal, setMal] = useState(false)
     const [cont, setCont] = useState(false)
@@ -39,6 +40,10 @@ const Person = ({data}) => {
     const [nota15, setNota15] = useState(null)
 
     useEffect(() => {
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            console.log(firebaseUser)
+            setUser(firebaseUser)
+        })
         window.scrollTo(0, 0);
     }, []);
 
@@ -55,6 +60,7 @@ const Person = ({data}) => {
                 setVeri(true)
             } else {
                 segundo.value = "Cargando...";
+                firebase.auth().signInAnonymously();
                 setMal(false)
                 setLogin(true)
                 setCont(true) 

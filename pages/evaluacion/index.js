@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-/* import firebase from '../../services/dBase'  */
+import firebase from '../../services/dBase' 
 import AppLayout from '../../componentes/layout'
 import Footer from '../../componentes/layout/footer2'
 
@@ -15,7 +15,7 @@ const Evaluacion = ({data}) => {
     return (
         <AppLayout pagina='eval' titulo='Cate San Carlos | Evaluación'>
             {
-                false ? 
+                data ? 
                 <MenuParalelos /> : <NoDisponible />
             }
             <Footer />
@@ -23,12 +23,12 @@ const Evaluacion = ({data}) => {
     )
 }
 
-/* Evaluacion.getInitialProps = async () => {
+Evaluacion.getInitialProps = async () => {
     const data = await firebase.firestore().collection('controles').doc('prueba').get()
     .then(listo => {
         return (listo.data())
     })
     return {data}
-} */
+} 
 
 export default Evaluacion;
