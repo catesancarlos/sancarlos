@@ -24,7 +24,15 @@ const Home = () => {
                                 Información necesaria, referente a la Confirmación para este año (2020).
                             </p>
                         </div>
-                        {
+                        <div className='option'>
+                            <Link href='/padrinos'>
+                                <a className='name-option'>Catequistas</a>
+                            </Link>
+                            <p className='descripcion'>
+                                Información solo para catequistas.
+                            </p>
+                        </div>
+                        {/* {
                             ev ? 
                             <div className='option'>
                                 <Link href='/evaluacion'>
@@ -41,7 +49,7 @@ const Home = () => {
                                     Evaluaciones para los niveles de Segundo Confirmación.
                                 </p>
                             </div>
-                        }
+                        } */}
                         <div className='option'>
                             <p className='nuevo'>Nuevo</p>
                             <Link href='/miConfirmacion'>

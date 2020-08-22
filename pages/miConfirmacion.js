@@ -1,11 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import firebase from '../services/dBase' 
 import {IoIosCheckmarkCircle} from 'react-icons/io'
 import AppLayout from '../componentes/layout'
 import Footer from '../componentes/layout/footer2'
 
 const MiConfirmacion = () => {
     const router = useRouter()
+    const [user, setUser] = useState(null)
     const paralelos = [
         {
             id: 'segundo-a',
@@ -43,9 +45,13 @@ const MiConfirmacion = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            setUser(firebaseUser)
+        })
+    }, [user]);
 
     const handleLink = grupo => {
+        if(!user) firebase.auth().signInAnonymously()
         router.push('/confirmacion/[nivelDatos]', `/confirmacion/${grupo}`)
     }
 

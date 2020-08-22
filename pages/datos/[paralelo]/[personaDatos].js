@@ -8,7 +8,6 @@ import Footer from '../../../componentes/layout/footer2'
 const NivelDatos = ({data}) => {
     const router = useRouter()
 
-    const [user, setUser] = useState(null)
     const [dos, setDos] = useState(false)
     const [login, setLogin] = useState(false)
     const [mal, setMal] = useState(false)
@@ -16,12 +15,8 @@ const NivelDatos = ({data}) => {
     const [namePad, setNamePad] = useState(null)
 
     useEffect(() => {
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            console.log(firebaseUser)
-            setUser(firebaseUser)
-        })
         window.scrollTo(0, 0);
-    }, [user]);
+    }, []);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -33,7 +28,6 @@ const NivelDatos = ({data}) => {
             segundo.value = "Cargando...";
             setMal(false)
             setLogin(true) 
-            firebase.auth().signInAnonymously();
         } else {
             segundo.value = "";
             setMal(true)
