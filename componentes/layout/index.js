@@ -9,7 +9,7 @@ Router.onRouteChangeStart = (url) => {
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
-export default function AppLayout ({ children, pagina, titulo }) {
+export default function AppLayout ({ children, pagina, titulo, name }) {
     return (
         <>
             <Head>
@@ -22,7 +22,7 @@ export default function AppLayout ({ children, pagina, titulo }) {
             </Head>
 
             <main className='page-home'>
-                <Header pagina={pagina} />
+                <Header pagina={pagina} name={name} />
                 {children}
             </main>
 

@@ -45,35 +45,40 @@ const Header = ({pagina, name}) => {
 
             <style jsx>{`
                 .header{
-                    padding: 40px 60px 40px 60px;
+                    /* padding: 40px 60px 40px 60px; */
+                    padding: 25px 60px 25px 50px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                 }
 
                 .name-1{
-                    font-size: 2.25vw;
+                    /* font-size: 2.25vw; */
+                    font-size: 2vw;
                     font-weight: bold;
                 }
 
                 .name-2{
                     color: brown;
-                    font-size: 4vw;
+                    /* font-size: 4vw; */
+                    font-size: 3.5vw;
                     line-height: 100%;
                     font-weight: bold;
                     text-shadow: 3px 3px white;
                 }
 
                 .name-3-cont{
-                    margin-top: 5px;
+                    margin-top: 7px;
                     display: flex;
-                    margin-left: 17vw;
+                    /* margin-left: 17vw; */
+                    margin-left: 14vw;
                 }
 
                 .name-3{
                     background: white;
-                    padding: 2px 10px;
-                    font-size: 1.9vw;
+                    padding: 1px 10px 2px 10px;
+                    /* font-size: 1.9vw; */
+                    font-size: 1.5vw;
                     font-weight: bold;
                     color: #ccdae8;
                     border-radius: 10px;

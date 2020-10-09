@@ -4,6 +4,33 @@ import Link from 'next/link'
 
 const Home = () => {
     const [ev, setEv] = useState(false)
+    const [libro, setLibro] = useState(false)
+    const arrayLibros = [
+        {
+            id: 'iniciacion',
+            nombre: 'Iniciación'
+        },
+        {
+            id: '1ro-comunion',
+            nombre: '1ro Comunión'
+        },
+        {
+            id: '2do-comunion',
+            nombre: '2do Comunión'
+        },
+        {
+            id: 'biblico',
+            nombre: 'Año Biblico'
+        },
+        {
+            id: '1ro-confirmacion',
+            nombre: '1ro Confirmación'
+        },
+        {
+            id: '2do-confirmacion',
+            nombre: '2do Confirmación'
+        }
+    ]
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -13,52 +40,79 @@ const Home = () => {
         <>
             <AppLayout pagina='index' titulo='Cate San Carlos'>
                 <div className='menu-cont'>
-                    <p className='titulo-menu'>CONFIRMACIÓN</p>
+                    {/* <p className='titulo-menu'>CONFIRMACIÓN</p> */}
                     <div className='menu'>
                         
                         <div className='option'>
-                            <Link href='/informacion'>
-                                <a className='name-option'>Información</a>
-                            </Link>
+                            {/* <Link href='/informacion'>
+                                <a className='name-option'>Libros Catequesis</a>
+                            </Link> */}
+                            <p className='name-option' onClick={() => setLibro(true)}>Libros Catequesis</p>
                             <p className='descripcion'>
-                                Información necesaria, referente a la Confirmación para este año (2020).
+                                Visualiza o descarga los libros para la Catequesis.
                             </p>
                         </div>
-                        <div className='option'>
-                            <Link href='/padrinos'>
-                                <a className='name-option'>Catequistas</a>
-                            </Link>
-                            <p className='descripcion'>
-                                Información solo para catequistas.
-                            </p>
-                        </div>
-                        {/* {
-                            ev ? 
-                            <div className='option'>
-                                <Link href='/evaluacion'>
-                                    <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
-                                </Link> 
-                                <Link href='/evaluacion/notas'>
-                                    <a className='name-option sub-option'>Calificaciones</a>
-                                </Link> 
-                            </div>
+                        {
+                            libro ? 
+                                <div className='libro-biblia'>
+                                    <p onClick={() => setLibro(false)} className='cerrar-libros'>X</p>
+                                    <div className='libros'>
+                                        {
+                                            arrayLibros.map(item => 
+                                                <Link href={`/libros/${item.id}.pdf`} key={item.id}>
+                                                    <a target='_blank' className='name-libro'>{item.nombre}</a>
+                                                </Link>
+                                            )
+                                        }
+                                    </div>
+                                    <a 
+                                        href='https://www.sanpablo.es/biblia-latinoamericana'
+                                        className='name-libro biblia-boton'
+                                        target='_blank'
+                                    >
+                                        Biblia<br/>Latinoamericana
+                                    </a>
+                                </div>
                             :
-                            <div className='option' onClick={() => setEv(true)}>
-                                <p className='name-option'>Evaluaciones</p>
-                                <p className='descripcion'>
-                                    Evaluaciones para los niveles de Segundo Confirmación.
-                                </p>
-                            </div>
-                        } */}
-                        <div className='option'>
-                            <p className='nuevo'>Nuevo</p>
-                            <Link href='/miConfirmacion'>
-                                <a className='name-option'>Mi Sacramento</a>
-                            </Link>
-                            <p className='descripcion'>
-                                ¿Aprobé? Quiero ingresar el nombre de mi padrino.
-                            </p>
-                        </div>
+                                <>
+                                    <div className='option'>
+                                        <Link href='/padrinos'>
+                                            <a className='name-option'>Catequistas</a>
+                                        </Link>
+                                        <p className='descripcion'>
+                                            Información solo para catequistas.
+                                        </p>
+                                    </div>
+                                    {/* {
+                                        ev ? 
+                                        <div className='option'>
+                                            <Link href='/evaluacion'>
+                                                <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
+                                            </Link> 
+                                            <Link href='/evaluacion/notas'>
+                                                <a className='name-option sub-option'>Calificaciones</a>
+                                            </Link> 
+                                        </div>
+                                        :
+                                        <div className='option' onClick={() => setEv(true)}>
+                                            <p className='name-option'>Evaluaciones</p>
+                                            <p className='descripcion'>
+                                                Evaluaciones para los niveles de Segundo Confirmación.
+                                            </p>
+                                        </div>
+                                    } */}
+                                    <div className='option'>
+                                        {/* <p className='nuevo'>Nuevo</p> */}
+                                        <Link href='/miConfirmacion'>
+                                            <a className='name-option'>Mi Sacramento</a>
+                                        </Link>
+                                        <p className='descripcion'>
+                                            ¿Aprobé? Quiero ingresar el nombre de mi padrino.
+                                        </p>
+                                    </div>
+                                </>
+
+                        }
                     </div>
                     
                     <div className='cont-foto'>
@@ -87,6 +141,7 @@ const Home = () => {
                 }
 
                 .menu{
+                    margin-top: 25px;
                     display: flex;
                 }
 
@@ -107,6 +162,7 @@ const Home = () => {
                     line-height: 90px;
                     border-radius: 40px;
                     transition: .2s ease;
+                    cursor: pointer;
                 }
 
                 .descripcion{
@@ -116,7 +172,47 @@ const Home = () => {
                     line-height: 22px;
                 }
 
-                .nuevo{
+                .libro-biblia{
+                    width: 65%;
+                    display: flex;
+                }
+
+                .libros{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .name-libro{
+                    background-color: white;
+                    min-width: 275px;
+                    text-align: center;
+                    padding: 5px 10px;
+                    font-size: 2vw;
+                    border-radius: 15px;
+                    margin: 0 10px 10px 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .biblia-boton{
+                    height: 80px;
+                }
+
+                .cerrar-libros{
+                    position: absolute;
+                    margin: -25px 0 0 600px;
+                    background: brown;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    padding: 6px 12px 7px 12px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                }
+
+                /* .nuevo{
                     position: absolute;
                     margin: -0.75% 0 0 0;
                     background: brown;
@@ -128,19 +224,19 @@ const Home = () => {
                     animation-duration: 2s;
                     animation-iteration-count: infinite;
                     mix-blend-mode: multiply;
-                }
+                } */
 
                 .recu{
                     margin-left: -5.75%;
                     mix-blend-mode: normal;
                 }
 
-                @keyframes new{
+                /* @keyframes new{
                    50% {
                        background-color: transparent;
                        color: transparent;
                     } 
-                }
+                } */
 
                 .sub-option{
                     background-color: #ccdae8;
@@ -214,6 +310,30 @@ const Home = () => {
                         padding-top: 15px;
                         font-size: 15px;
                         line-height: 20px;
+                    }
+
+                    .libro-biblia{
+                        width: 100%;
+                        display: inline;
+                    }
+    
+                    .name-libro{
+                        min-width: 200px;
+                        padding: 10px 15px;
+                        font-size: 20px;
+                        border-radius: 20px;
+                        margin: 0 0 10px 0;
+                    }
+    
+                    .biblia-boton{
+                        height: auto;
+                        width: 200px;
+                        margin: 0 auto;
+                    }
+    
+                    .cerrar-libros{
+                        margin: 0;
+                        right: 5%;
                     }
 
                     .nuevo{
