@@ -1,19 +1,25 @@
 import { useEffect, useState } from 'react'
 import firebase from '../../services/dBase' 
 import AppLayout from '../../componentes/layout/index'
+import { useRouter } from 'next/router'
 
 export default function Respuestas(){
+    const router = useRouter()
     const [preguntas, setPreguntas] = useState([])
 
     const getPreguntas = async () => {
-        firebase.firestore().collection('2confa').where('activa', '==', true).onSnapshot((querySnapshot) => {
-          const docs = [];
-          querySnapshot.forEach((doc) => {
-            docs.push({ ...doc.data(), id: doc.id });
-          });
-          setPreguntas(docs);
-        });
-      };
+        try{
+            firebase.firestore().collection('2confa').where('activa', '==', true).onSnapshot((querySnapshot) => {
+            const docs = [];
+            querySnapshot.forEach((doc) => {
+                docs.push({ ...doc.data(), id: doc.id });
+            });
+            setPreguntas(docs);
+            })
+        } catch(error){
+            router.push('/')
+        }
+    }
 
     useEffect(() => {
         getPreguntas();

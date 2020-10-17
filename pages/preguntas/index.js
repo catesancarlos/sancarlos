@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
 import firebase from '../../services/dBase' 
 import AppLayout from '../../componentes/layout/index'
 
@@ -160,18 +161,23 @@ export default function Preguntas({ data }){
     )
 }
 
-Preguntas.getInitialProps = async () => {
-    const data = await firebase.firestore().collection('2confa').where('activa', '==', true).get()
-    .then(snapshota => {
-        const preguntas = []
-        snapshota.forEach(pregunta => {
-            preguntas.push({
-                id: pregunta.id,
-                pregunta: pregunta.data().pregunta,
-                respuestas: pregunta.data().respuestas,
+Preguntas.getInitialProps = async (ctx) => {
+    try{
+        const data = await firebase.firestore().collection('2confa').where('activa', '==', true).get()
+        .then(snapshota => {
+                const preguntas = []
+            snapshota.forEach(pregunta => {
+                preguntas.push({
+                    id: pregunta.id,
+                    pregunta: pregunta.data().pregunta,
+                    respuestas: pregunta.data().respuestas,
+                })
             })
+            return preguntas
         })
-        return preguntas
-    })
-    return {data}
+        return {data}
+    } catch(error){
+        ctx.res.writeHead(302, { Location: '/' });
+        ctx.res.end()
+    }
 }  
