@@ -1,6 +1,32 @@
 import Link from 'next/link'
 
 const MenuParalelos = () => {
+    const paralelos = [
+        {
+            id: 'segundo-a',
+            nombre: 'Paralelo A'
+        },
+        {
+            id: 'segundo-b',
+            nombre: 'Paralelo B'
+        },
+        {
+            id: 'segundo-a',
+            nombre: 'Paralelo A'
+        },
+        {
+            id: 'segundo-a',
+            nombre: 'Paralelo A'
+        },
+        {
+            id: 'segundo-a',
+            nombre: 'Paralelo A'
+        },
+        {
+            id: 'segundo-a',
+            nombre: 'Paralelo A'
+        }
+    ]
 
     return (
         <div className='container'>
