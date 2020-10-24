@@ -9,7 +9,7 @@ Router.onRouteChangeStart = (url) => {
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
-export default function AppLayout ({ children, pagina, titulo, name }) {
+export default function AppLayout ({ titulo, name, children, auth }) {
     return (
         <>
             <Head>
@@ -22,7 +22,7 @@ export default function AppLayout ({ children, pagina, titulo, name }) {
             </Head>
 
             <main className='page-home'>
-                <Header pagina={pagina} name={name} />
+                <Header name={name} auth={auth} />
                 {children}
             </main>
 
@@ -62,11 +62,11 @@ export default function AppLayout ({ children, pagina, titulo, name }) {
                 /* ESTILOS SPINER */
                 /* Make clicks pass-through */
                 #nprogress {
-                pointer-events: none;
+                    pointer-events: none;
                 }
 
                 #nprogress .bar {
-                background: brown;
+                background: white;
 
                 position: fixed;
                 z-index: 1031;
@@ -79,59 +79,59 @@ export default function AppLayout ({ children, pagina, titulo, name }) {
 
                 /* Fancy blur effect */
                 #nprogress .peg {
-                display: block;
-                position: absolute;
-                right: 0px;
-                width: 100px;
-                height: 100%;
-                box-shadow: 0 0 10px brown, 0 0 5px brown;
-                opacity: 1.0;
+                    display: block;
+                    position: absolute;
+                    right: 0px;
+                    width: 100px;
+                    height: 100%;
+                    box-shadow: 0 0 10px white, 0 0 5px white;
+                    opacity: 1.0;
 
-                -webkit-transform: rotate(3deg) translate(0px, -4px);
-                    -ms-transform: rotate(3deg) translate(0px, -4px);
-                        transform: rotate(3deg) translate(0px, -4px);
+                    -webkit-transform: rotate(3deg) translate(0px, -4px);
+                        -ms-transform: rotate(3deg) translate(0px, -4px);
+                            transform: rotate(3deg) translate(0px, -4px);
                 }
 
                 /* Remove these to get rid of the spinner */
                 #nprogress .spinner {
-                display: block;
-                position: fixed;
-                z-index: 1031;
-                top: 15px;
-                right: 15px;
+                    display: block;
+                    position: fixed;
+                    z-index: 1031;
+                    bottom: 15px;
+                    right: 15px;
                 }
 
                 #nprogress .spinner-icon {
-                width: 20px;
-                height: 20px;
-                box-sizing: border-box;
+                    width: 20px;
+                    height: 20px;
+                    box-sizing: border-box;
 
-                border: solid 3px transparent;
-                border-top-color: brown;
-                border-left-color: brown;
-                border-radius: 50%;
+                    border: solid 3px transparent;
+                    border-top-color: brown;
+                    border-left-color: brown;
+                    border-radius: 50%;
 
-                -webkit-animation: nprogress-spinner 400ms linear infinite;
-                        animation: nprogress-spinner 400ms linear infinite;
+                    -webkit-animation: nprogress-spinner 400ms linear infinite;
+                            animation: nprogress-spinner 400ms linear infinite;
                 }
 
                 .nprogress-custom-parent {
-                overflow: hidden;
-                position: relative;
+                    overflow: hidden;
+                    position: relative;
                 }
 
                 .nprogress-custom-parent #nprogress .spinner,
                 .nprogress-custom-parent #nprogress .bar {
-                position: absolute;
+                    position: absolute;
                 }
 
                 @-webkit-keyframes nprogress-spinner {
-                0%   { -webkit-transform: rotate(0deg); }
-                100% { -webkit-transform: rotate(360deg); }
+                    0%   { -webkit-transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); }
                 }
                 @keyframes nprogress-spinner {
-                0%   { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
+                    0%   { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
                 }
             `}</style>
         </>

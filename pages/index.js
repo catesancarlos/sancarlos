@@ -38,7 +38,7 @@ const Home = () => {
 
     return (
         <>
-            <AppLayout pagina='index' titulo='Cate San Carlos'>
+            <AppLayout name='inicio'  titulo='Cate San Carlos'>
                 <div className='menu-cont'>
                     {/* <p className='titulo-menu'>CONFIRMACIÓN</p> */}
                     <div className='menu'>
