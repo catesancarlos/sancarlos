@@ -74,16 +74,18 @@ const Home = () => {
                                     </a>
                                 </div>
                             :
-                                <>
+                                
                                     <div className='option'>
                                         <Link href='/padrinos'>
                                             <a className='name-option'>Catequistas</a>
                                         </Link>
                                         <p className='descripcion'>
-                                            Información solo para catequistas.
+                                            Información solo para catequistas.<br/>2019 - 2020
                                         </p>
                                     </div>
-                                    {/* {
+
+                                 
+                                    /* {
                                         ev ? 
                                         <div className='option'>
                                             <Link href='/evaluacion'>
@@ -100,18 +102,16 @@ const Home = () => {
                                                 Evaluaciones para los niveles de Segundo Confirmación.
                                             </p>
                                         </div>
-                                    } */}
+                                    }
                                     <div className='option'>
-                                        {/* <p className='nuevo'>Nuevo</p> */}
+                                        <p className='nuevo'>Nuevo</p>
                                         <Link href='/miConfirmacion'>
                                             <a className='name-option'>Mi Sacramento</a>
                                         </Link>
                                         <p className='descripcion'>
                                             ¿Aprobé? Quiero ingresar el nombre de mi padrino.
                                         </p>
-                                    </div>
-                                </>
-
+                                    </div>  */
                         }
                     </div>
                     
@@ -143,12 +143,13 @@ const Home = () => {
                 .menu{
                     margin-top: 25px;
                     display: flex;
+                    justify-content: center;
                 }
 
                 .option{
                     display: flex;
                     padding: 50px 0;
-                    width: 33.33%;
+                    width: 40%;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
@@ -156,7 +157,7 @@ const Home = () => {
 
                 .name-option{
                     background-color: white;
-                    width: 80%;
+                    width: 70%;
                     font-size: 2vw;
                     font-weight: bold;
                     line-height: 90px;

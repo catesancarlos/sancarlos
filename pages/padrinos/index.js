@@ -54,7 +54,7 @@ const Padrinos = () => {
 
     const handleLogin = e => {
         e.preventDefault();
-        const { segundo } = event.target.elements
+        const { segundo } = e.target.elements
         const pass = segundo.value.toLowerCase()
         if(pass === '1920sc'){
             segundo.value = '';

@@ -47,9 +47,17 @@ const Header = ({ name, auth }) => {
                 </a>
             </Link>
             <div className='opciones-sesion'>
-                <div>
+                <div className='navegacion'>
+                    {name !== 'inicio' &&
+                        <p 
+                            className='linkin izquierda' 
+                            onClick={() => Router.back()}
+                        >Atras</p>
+                    }
+                </div> 
+                {/* <div>
                     {    
-                        /* name == 'inicio' ?
+                        name == 'inicio' ?
                             <p className='user-name-header'>{user ? user.displayName : listo && 'Inicia Sesión >'}</p>
                         :
                             <div className='navegacion'>
@@ -58,9 +66,9 @@ const Header = ({ name, auth }) => {
                                     onClick={() => Router.back()}
                                 >Atras</p>
                                 <p className='pagina-actual'>{name.toUpperCase()}</p>
-                            </div>  */
+                            </div>
                     }
-                </div>
+                </div> */}
                 <div>
                     {/* <div className='user-sesion' onClick={() => {if(!auth || logged) setMenuOpen(!menuOpen)}}>
                         {
