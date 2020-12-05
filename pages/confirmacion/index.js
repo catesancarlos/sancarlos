@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import firebase from '../../services/dBase'
 import AppLayout from '../../componentes/layout'
-import MenuParalelos from '../../componentes/evaluacion/MenuParalelos'
+import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
 
 export default function Confirmacion({ data }){
     const [mal, setMal] = useState(false)

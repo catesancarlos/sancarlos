@@ -58,7 +58,6 @@ export default function Persona({data}){
                 setVeri(true)
             } else {
                 segundo.value = "Cargando...";
-                firebase.auth().signInAnonymously();
                 setMal(false)
                 setLogin(true)
                 setCont(true) 

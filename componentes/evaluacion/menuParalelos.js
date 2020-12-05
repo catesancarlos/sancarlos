@@ -196,4 +196,4 @@ const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) 
     )
 }
 
-export default MenuParalelos;
+export default MenuParalelos
