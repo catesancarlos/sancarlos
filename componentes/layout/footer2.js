@@ -4,15 +4,15 @@ const Footer = () => (
 
         <style jsx>{`
             .footer{
-                background-color: #ccdae8;
+                background: #ccdae8;
                 position: fixed;
                 bottom: 0;
                 left: 0;
-                padding-left: 15px;
+                padding-left: 25px;
                 width: 100%;
-                height: 40px;
-                line-height: 40px;
-                font-size: 18px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 17px;
                 color: rgba(0, 0, 0, 0.4);
                 font-family: 'Kaushan Script', cursive;
                 border-top: 1px solid white;

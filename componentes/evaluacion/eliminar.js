@@ -1,38 +1,38 @@
 import {useState, useEffect} from 'react'
+import ItemOpcion from './ItemOpcion'
 
-const DosOpciones = ({alumno, no, datos, onNota}) => {
+const DosOpciones = ({ no, datos, onNota }) => {
     const [pregunta, setPregunta] = useState(null)
     const [respuestas, setRespuestas] = useState(null)
     const [correcto, setCorrecto] = useState(null)
-    const [listo, setListo] = useState(false)
 
-    const [eli, setEli] = useState([false, false, false, false])
-    const [cont, setCont] = useState(0)
-
+    const [op1, setOp1] = useState(true)
+    const [op2, setOp2] = useState(true)
+    const [op3, setOp3] = useState(true)
+    const [op4, setOp4] = useState(true)
     
     useEffect(() => {
-        if(alumno%2 != 0) {
-            setPregunta(datos.preguntaa)
-            setRespuestas(datos.respuestasa)
-            setCorrecto(datos.correctoa)
-        } else {
-            setPregunta(datos.preguntab)
-            setRespuestas(datos.respuestasb)
-            setCorrecto(datos.correctob)
-        }
-        if(pregunta && respuestas && correcto){
-            setListo(true)
-        }
-        if(cont > 1){
-            if(`${eli[0]}${eli[1]}${eli[2]}${eli[3]}` == correcto){
-                onNota([no, 1])
-            } else {
-                onNota([no, 0])
-            }
-        }
-    })
+        setPregunta(datos.pregunta)
+        setRespuestas(datos.respuestas)
+        setCorrecto(datos.correcto)
+    }, [pregunta])
 
-    if(!listo) { 
+    useEffect(() => {
+        if(correcto && correcto[0] == op1 && correcto[1] == op2 && correcto[2] == op3 && correcto[3] == op4) {
+            onNota([no, 2])
+        }
+        else onNota([no, 0])
+
+    }, [op1, op2, op3, op4])
+
+    const handleEliminar = nu => {
+        if(nu == 0) setOp1(false)
+        if(nu == 1) setOp2(false)
+        if(nu == 2) setOp3(false)
+        if(nu == 3) setOp4(false)
+    }
+
+    if(!(pregunta && respuestas && correcto)) { 
         return <div>loading...</div>
     }
 
@@ -42,40 +42,16 @@ const DosOpciones = ({alumno, no, datos, onNota}) => {
                 <p className='num'>{`${no}.`}</p>
                 <p>{pregunta}</p>
             </div>
-            <div className='cont-opciones'>
-                <div>
-                { 
-                    respuestas.map(item => 
-                        <div className='opciones' key={item.id}>
-                            {
-                                !eli[item.id] &&
-                                <>
-                                    <p 
-                                        className='nombre-opcion'
-                                    >
-                                        {item.name}
-                                    </p>
-
-                                    <p 
-                                        className='eliminar'
-                                        onClick={() => {
-                                            if(item.id == 0) {setEli([true, eli[1], eli[2], eli[3]]) }
-                                            if(item.id == 1) {setEli([eli[0], true, eli[2], eli[3]]) }
-                                            if(item.id == 2) {setEli([eli[0], eli[1], true, eli[3]]) }
-                                            if(item.id == 3) {setEli([eli[0], eli[1], eli[2], true]) }
-                                            setCont(cont + 1)
-                                        }}
-                                    >X</p>
-                                </>
-                            }
-                            
-                        </div> 
-                    ) 
-                }
+            <div className='dos-columnas'>
+                <div className='cont-opciones'>
+                    <ItemOpcion opcion={respuestas[0]} visible={op1} onEliminar={handleEliminar} />
+                    <ItemOpcion opcion={respuestas[1]} visible={op2} onEliminar={handleEliminar} />
+                    <ItemOpcion opcion={respuestas[2]} visible={op3} onEliminar={handleEliminar} />
+                    <ItemOpcion opcion={respuestas[3]} visible={op4} onEliminar={handleEliminar} />
                 </div>
                 <p 
                     className='eliminar restablecer'
-                    onClick={() => setEli([false, false, false, false])}
+                    onClick={() => {setOp1(true), setOp2(true), setOp3(true), setOp4(true)}}
                 >Restablecer opciones</p>
             </div>
                
@@ -101,40 +77,36 @@ const DosOpciones = ({alumno, no, datos, onNota}) => {
                     padding-right: 8px;
                 }
 
+                .dos-columnas{
+                    display: flex;
+                }
+
                 .cont-opciones{
+                    margin-left: 25px;
                     display: flex;
-                }
-
-                .opciones{
-                    display: flex;
-                    align-items: center;
-                    margin: 0 10px 0 25px;
-                }
-
-                .nombre-opcion{
-                    margin-top: 10px;
-                    background: white;
-                    padding: 5px 10px;
-                    border-radius: 10px;
+                    flex-direction: column;
                 }
 
                 .eliminar{
-                    margin: 10px 0 0 5px;
+                    margin: 10px 0 0 15px;
                     background: red;
-                    padding: 3px 6px 1px 6px;
+                    width: 170px;
+                    height: 26px;
+                    line-height: 26px;
                     color: white;
-                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 13px;
                     cursor: pointer;
                 }
 
-                .restablecer{
-                    margin: 10px 0 0 5px;
-                    height: 20px;
-                    line-height: 20px;
-                    text-align: center;
-                }
 
                 @media screen and (max-width: 480px){
+                    .dos-columnas{
+                        display: inline;
+                    }
+
                     .cont-pregunta{
                         width: 100%;
                         padding: 0;
@@ -160,9 +132,8 @@ const DosOpciones = ({alumno, no, datos, onNota}) => {
                         font-size: 15px;
                     }
 
-                    .restablecer{
-                        width: 100px;
-                        height: 40px;
+                    .eliminar{
+                        margin: 10px 0 0 35px;
                     }
                 }
             `}</style>

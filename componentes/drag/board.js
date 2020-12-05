@@ -4,13 +4,16 @@ const Board = ({id, className, children, notaU}) => {
         e.preventDefault();
         const data = e.dataTransfer.getData('transfer');
         e.target.appendChild(document.getElementById(data))
-        const posi = id.indexOf('-')
-        const conte = id.substr(0, posi)
+        const opcion = data.substr(0, data.indexOf('-'))
+        const conte = id.substr(0, id.indexOf('-'))
+        console.log(opcion)
         if(id !== 'dr-0'){
-            if(data == conte){
+            if(opcion == conte){
                 notaU('correcto')
+                console.log('correcto')
             } else {
                 notaU('incorrecto')
+                console.log('incorrecto')
             }
         }
     }
@@ -31,7 +34,7 @@ const Board = ({id, className, children, notaU}) => {
                 .cont-respuestas{
                     background: rgba(255, 255, 255, 0.5);
                     margin: 10px 0 20px 25px;
-                    min-height: 30px;
+                    min-height: 38px;
                     display: flex;
                     flex-wrap: wrap;
                     padding: 5px 0 0 5px;
@@ -40,8 +43,11 @@ const Board = ({id, className, children, notaU}) => {
 
                 .board{
                     background: white;
-                    width: 110px;
-                    height: 30px;
+                    margin-right: 5px;
+                    width: 126px;
+                    height: 34px;
+                    display: flex;
+                    padding: 2px 0;
                     border: 1px dashed black;
                     border-radius: 10px;
                 } 

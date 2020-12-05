@@ -76,11 +76,11 @@ const Home = () => {
                             :
                                 
                                     <div className='option'>
-                                        <Link href='/padrinos'>
-                                            <a className='name-option'>Catequistas</a>
+                                        <Link href='/confirmacion'>
+                                            <a className='name-option'>Confirmación</a>
                                         </Link>
                                         <p className='descripcion'>
-                                            Información solo para catequistas.<br/>2019 - 2020
+                                            Espacio dedicado para el nivel se Segundo de Confirmación
                                         </p>
                                     </div>
 
@@ -117,7 +117,6 @@ const Home = () => {
                     
                     <div className='cont-foto'>
                         <div className='footer'>en-Ricaurte</div>
-                        <img src='/san-carlos.gif' alt='San Carlos' className='foto-san-carlos'/> 
                     </div>
                 </div>  
             </AppLayout>
@@ -266,7 +265,6 @@ const Home = () => {
                     font-size: 18px;
                     color: rgba(0, 0, 0, 0.4);
                     font-family: 'Kaushan Script', Geneva, Verdana, sans-serif;
-                    border-top: 1px solid white;
                 }
 
                 .foto-san-carlos{
@@ -355,7 +353,6 @@ const Home = () => {
                         height: 30px;
                         line-height: 30px;
                         font-size: 13px;
-                        border-top: 0.5px solid white;
                     }
 
                     .cont-foto{

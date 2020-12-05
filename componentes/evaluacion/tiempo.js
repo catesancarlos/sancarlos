@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
 
 const Tiempo = ({timeOut, fin}) => {
-    const [time, setTime] = useState(1800);
-    const [t, setT] = useState('');
+    const [time, setTime] = useState(1200);
+    const [t, setT] = useState('20:00');
     const [f, setF] = useState(false);
-    const [seg, setSeg] = useState('');
-    const [min, setMin] = useState(30);
+    const [seg, setSeg] = useState('00');
+    const [min, setMin] = useState(20);
     const [cont, setCont] = useState(true)
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const Tiempo = ({timeOut, fin}) => {
 
 
     return (
-        <div className='tiempo-prueba' id={`tiempo-prueba-${f}`}>                                 
+        <div className='tiempo-prueba'>                                 
             <p>Tiempo restante:</p>
             {
                 f ? 
@@ -46,23 +46,19 @@ const Tiempo = ({timeOut, fin}) => {
             <style jsx>{`
                 .tiempo-prueba {
                     position: fixed;
-                    top: 150px;
-                    right: 2.5%;
-                    padding: 10px 15px;
-                    background-color: white;
+                    background: ${f ? 'red' : 'white'};
+                    top: 120px;
+                    right: 60px;
+                    padding: 10px 12px;
+                    color: ${f ? 'white' : 'black'};
+                    font-size: 17px;
                     text-align: center;
                     border: 1px solid brown;
                     border-radius: 20px;
-                    font-size: 1.5vw;
-                }
-
-                #tiempo-prueba-true{
-                    background-color: red;
-                    color: white;
                 }
 
                 .cuenta-regresiva{
-                    font-size: 1.5em;
+                    font-size: 1.7em;
                     font-weight: bold;
                 }
 
@@ -72,15 +68,13 @@ const Tiempo = ({timeOut, fin}) => {
 
 
                 @media screen and (max-width: 480px){
-                    .tiempo-prueba {
-                        top: 25px;
+                    .tiempo-prueba{
+                        top: 20px;
+                        right: 4%;
                         padding: 5px;
                         border-radius: 10px;
-                        font-size: 12px;
-                    }
-
-                    #tiempo-prueba-true{
-                        font-weight: bold;
+                        font-size: 13.5px;
+                        font-weight: ${f ? 'bold' : '300'};
                     }
                 }
             `}</style>

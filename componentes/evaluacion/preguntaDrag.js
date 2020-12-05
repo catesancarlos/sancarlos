@@ -7,6 +7,7 @@ const Drop = ({no, onNota}) => {
 
     const handleNota = edrag => {
         if(edrag == 'correcto') setNote(note + 1)
+        else setNote(note - 1)
         onNota([no, note])
     }
 
@@ -14,74 +15,63 @@ const Drop = ({no, onNota}) => {
         <div className='cont-pregunta'>
             <div className='pregunta'>
                 <p className='num'>{`${no}.`}</p>
-                <p>Arrastre las virtudes, junto al pecado capital que corresponda</p>
+                <p>Arrastre los elementos a la área correcta, dependiendo si son signos o realidad del bautismo</p>
             </div>
             <div>
                 <Board id='dr-0' className='cont-respuestas'>
-                    <Card id='humildad'>
-                        Humildad
+                    <Card id='realidad-sumergidos'>
+                        Sumergidos
                     </Card>
-                    <Card id='generosidad'>
-                        Generosidad
+                    <Card id='signo-agua'>
+                        Agua
                     </Card>
-                    <Card id='caridad'>
-                        Caridad
+                    <Card id='nada-padrinos'>
+                        Padrinos
                     </Card>
-                    <Card id='pureza'>
-                        Pureza
+                    <Card id='signo-crisma'>
+                        Crisma
                     </Card>
-                    <Card id='paciencia'>
-                        Paciencia
+                    <Card id='signo-cirio'>
+                        Cirio
                     </Card>
-                    <Card id='diligencia'>
-                        Diligencia
+                    <Card id='nada-cruz'>
+                        Cruz
                     </Card>
-                    <Card id='templanza'>
-                        Templanza
+                    <Card id='realidad-injertados'>
+                        Injertados
+                    </Card>
+                    <Card id='signo-ropa'>
+                        Ropa blanca
                     </Card>
                 </Board>
                 <div className='cont-opciones'>
-                    <p className='opcion'>Ira</p>
-                    <Board id='paciencia-dr' className='board' notaU={handleNota}>
+                    <p className='opcion'>Signo</p>
+                    <div className='cont-cont'>
+                        <Board id='signo-dr' className='board' notaU={handleNota}>
 
-                    </Board>
+                        </Board>
+                        <Board id='signo-dr' className='board' notaU={handleNota}>
+
+                        </Board>
+                        <Board id='signo-dr' className='board' notaU={handleNota}>
+
+                        </Board>
+                        <Board id='signo-dr' className='board' notaU={handleNota}>
+
+                        </Board>
+                    </div>
                     <div className='drop-opcion'></div>
                 </div>
                 <div className='cont-opciones'>
-                    <p className='opcion'>Gula</p>
-                    <Board id='templanza-dr' className='board' notaU={handleNota}>
+                    <p className='opcion'>Realidad</p>
+                    <div className='cont-cont'>
+                        <Board id='realidad-dr' className='board' notaU={handleNota}>
 
-                    </Board>
-                </div>
-                <div className='cont-opciones'>
-                    <p className='opcion'>Envidia</p>
-                    <Board id='caridad-dr' className='board' notaU={handleNota}>
+                        </Board>
+                        <Board id='realidad-dr' className='board' notaU={handleNota}>
 
-                    </Board>
-                </div>
-                <div className='cont-opciones'>
-                    <p className='opcion'>Pereza</p>
-                    <Board id='diligencia-dr' className='board' notaU={handleNota}>
-
-                    </Board>
-                </div>
-                <div className='cont-opciones'>
-                    <p className='opcion'>Sobervia</p>
-                    <Board id='humildad-5' className='board' notaU={handleNota}>
-
-                    </Board>
-                </div>
-                <div className='cont-opciones'>
-                    <p className='opcion'>Avaricia</p>
-                    <Board id='generosidad-6' className='board' notaU={handleNota}>
-
-                    </Board>
-                </div>
-                <div className='cont-opciones'>
-                    <p className='opcion'>Lujuria</p>
-                    <Board id='pureza-7' className='board' notaU={handleNota}>
-
-                    </Board>
+                        </Board>
+                    </div>
                 </div>
             </div>
             
@@ -108,6 +98,10 @@ const Drop = ({no, onNota}) => {
                     display: flex;
                 }
 
+                .cont-cont{
+                    display: flex;
+                }
+
                 .cont-opciones{
                     display: flex;
                     align-items: center;
@@ -115,7 +109,7 @@ const Drop = ({no, onNota}) => {
                 }
 
                 .opcion{
-                    width: 100px;
+                    width: 75px;
                     margin-right: 10px;
                 }
 

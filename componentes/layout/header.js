@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Router from 'next/router'
 import Login from '../Sesion/Login'
 
-const Header = ({ name, auth }) => {
+const Header = ({ name, flecha, auth }) => {
     const { logged, user, listo } = useContext(AuthContext)
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -48,13 +48,17 @@ const Header = ({ name, auth }) => {
             </Link>
             <div className='opciones-sesion'>
                 <div className='navegacion'>
-                    {name !== 'inicio' &&
+                    {   
+                        (flecha && name !== 'inicio') &&
                         <p 
                             className='linkin izquierda' 
                             onClick={() => Router.back()}
                         >Atras</p>
                     }
                 </div> 
+                {
+                    (name && name !== 'inicio') && <p className='pagina-actual'>{name.toUpperCase()}</p>
+                }
                 {/* <div>
                     {    
                         name == 'inicio' ?
@@ -203,7 +207,7 @@ const Header = ({ name, auth }) => {
                     padding: 0 15px;
                     background: white;
                     line-height: 38px;
-                    border-radius: 0 5px 5px 0;
+                    border-radius: ${flecha ? '0 5px 5px 0' : '5px'};
                 }
 
                 .navegacion{
@@ -265,22 +269,37 @@ const Header = ({ name, auth }) => {
                         border-radius: 7px;
                     }
 
+                    .opciones-sesion{
+                        margin: 10px 0;
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
                     .nombre-alumno{
                         margin-top: 20px;
                         text-align: right;
                         font-size: 20px;
                     }
-
-                    .navegacion{
-                        margin: 15px 0 10px 0;
-                    }
     
                     .linkin{
                         background: white;
-                        width: 20%;
-                        margin-right: 2.5px;
-                        font-size: 7.5px;
-                        line-height: 35px;
+                        width: 45px;
+                        margin-right: 3px;
+                        font-size: 13px;
+                        line-height: 34px;
+                    }
+
+                    .izquierda{
+                        border-radius: 10px 0 0 10px;
+                    }
+
+                    .pagina-actual{
+                        background: white;
+                        padding: 0 10px;
+                        font-size: 15px;
+                        font-weight: bold;
+                        line-height: 34px;
+                        border-radius: ${flecha ? '0 5px 5px 0' : '5px'};
                     }
                 }
             `}</style>

@@ -1,69 +1,59 @@
-import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-const MenuParalelos = () => {
-    const paralelos = [
-        {
-            id: 'segundo-a',
-            nombre: 'Paralelo A'
-        },
-        {
-            id: 'segundo-b',
-            nombre: 'Paralelo B'
-        },
-        {
-            id: 'segundo-a',
-            nombre: 'Paralelo A'
-        },
-        {
-            id: 'segundo-a',
-            nombre: 'Paralelo A'
-        },
-        {
-            id: 'segundo-a',
-            nombre: 'Paralelo A'
-        },
-        {
-            id: 'segundo-a',
-            nombre: 'Paralelo A'
-        }
-    ]
+const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) => {
+    const router = useRouter()
+    const [modal, setModal] = useState(false)
+
+    const handleRedireccion = paralelo => {
+        if(paralelo.substring(0, paralelo.indexOf('-')) == 'paralelo' && centro){
+            router.push('/confirmacion/[paralelo]', `/confirmacion/${paralelo}`) 
+        } 
+        else if(paralelo == 'angeles' && angeles) router.push('/confirmacion/angeles')
+        else if(paralelo == 'auxiliadora' && auxiliadora) router.push('/confirmacion/auxiliadora')
+        else if(paralelo == 'dolorosa' && dolorosa) router.push('/confirmacion/dolorosa')
+        else if(paralelo == 'molinopamba' && molinopamba) router.push('/confirmacion/molinopamba')
+        else setModal(true)
+    }
 
     return (
         <div className='container'>
-            <h3 className='eva-info1'>Evaluación de recuperación Segundos de Confirmación</h3>
+            <p className='eva-info1'>Lección Segundos de Confirmación</p>
             <p className='eva-info2'>Escoja el paralelo o comunidad a la que pertenece.</p>
             <div className='grupos-centro'>
                 <p className='centro-nombre'>Centro Parroquial</p>
                 <div className='grupos'>
-                    <Link href='/evaluacion/segundo/a'>
-                        <a><p className='paralelo-centro'>A</p></a>
-                    </Link>
-                    <Link href='/evaluacion/segundo/b'>
-                        <a><p className='paralelo-centro'>B</p></a>
-                    </Link>
-                    <Link href='/evaluacion/segundo/c'>
-                        <a><p className='paralelo-centro'>C</p></a>
-                    </Link>
-                    <Link href='/evaluacion/segundo/d'>
-                        <a><p className='paralelo-centro'>D</p></a>
-                    </Link>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-a')}>A</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-b')}>B</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-c')}>C</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-d')}>D</p>
                 </div>
             </div>
 
             <div className='grupos'>
-                <Link href='/evaluacion/segundo/molinopamba'>
-                    <a><p className='paralelo'>Molinopamba</p></a>
-                </Link>
-                <Link href='/evaluacion/segundo/angeles'>
-                    <a><p className='paralelo'>Los Ángeles</p></a>
-                </Link>
-                <Link href='/evaluacion/segundo/dolorosa'>
-                    <a><p className='paralelo'>La Dolorosa</p></a>
-                </Link>
-                <Link href='/evaluacion/segundo/auxiliadora'>
-                    <a><p className='paralelo'>Maria Auxiliadora</p></a>
-                </Link>
+                <p className='paralelo' onClick={() => handleRedireccion('molinopamba')}>Molinopamba</p>
+                <p className='paralelo' onClick={() => handleRedireccion('angeles')}>Los Ángeles</p>
+                <p className='paralelo' onClick={() => handleRedireccion('dolorosa')}>La Dolorosa</p>
+                <p className='paralelo' onClick={() => handleRedireccion('auxiliadora')}>Maria Auxiliadora</p>
             </div>
+            {
+                modal && 
+                <div className='modal-final'> 
+                    <div className='claves'>
+                        <p className='indicacion-final'>Lección Segundos de Confirmación</p>
+                        <p className='label-final'>Usted esta tratando de ingresar a la evaluación fuera de horario.</p>
+                        <p className='label-final'>Por favor vuelva a intentarlo en el horario indicado.</p>
+                        <p className='label-final horario'>
+                            Molinopamba: 11H00 AM<br/>
+                            Los Ángeles: 02H00 PM<br/>
+                            La Dolorosa: 03H00 PM<br/>
+                            María Auxiliadora: 16H30<br/>
+                            Centro: 16H40
+                        </p>
+                        <p className='finalizar' onClick={() => setModal(false)}>Aceptar</p>
+                    </div>
+                </div>
+            }
 
             <style jsx>{`
                 .container{
@@ -76,7 +66,8 @@ const MenuParalelos = () => {
                 }
 
                 .eva-info1{
-                    margin: 10px 0;
+                    font-weight: bold;
+                    margin-bottom: 10px;
                 }
 
                 .grupos-centro{
@@ -98,6 +89,7 @@ const MenuParalelos = () => {
                     background: white;
                     padding: 15px 60px;
                     border-radius: 20px;
+                    cursor: pointer;
                 }
 
                 .paralelo{
@@ -106,7 +98,59 @@ const MenuParalelos = () => {
                     padding: 15px 30px;
                     border-radius: 20px;
                     font-weight: bold;
+                    cursor: pointer;
                 }
+
+                .modal-final{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.75);
+                    width: 100%;
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 5;
+                }
+
+                .claves{
+                    padding: 30px;
+                    background: white;
+                    border-radius: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 20px;
+                }
+
+                .indicacion-final{
+                    margin-bottom: 10px;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                }
+                
+                .label-final{
+                    margin-top: 10px;
+                }
+
+                .horario{
+                    margin-top: 30px;
+                    font-size: 18px;
+                }
+
+                .finalizar{
+                    margin-top: 30px;
+                    letter-spacing: 2px;
+                    padding: 4px 30px 6px 30px;
+                    background: brown;
+                    color: white;
+                    font-size: 1.2em;
+                    border-radius: 30px;
+                    cursor: pointer;
+                }
+
 
                 @media screen and (max-width: 480px){
                     .container{

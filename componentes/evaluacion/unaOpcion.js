@@ -1,36 +1,26 @@
 import {useState, useEffect} from 'react'
 
-const UnaOpcion = ({alumno, no, datos, onNota}) => {
+const UnaOpcion = ({ no, datos, onNota }) => {
     const [pregunta, setPregunta] = useState(null)
     const [respuestas, setRespuestas] = useState(null)
     const [correcto, setCorrecto] = useState(null)
-    const [listo, setListo] = useState(false)
 
     const [enfasis, setEnfasis] = useState([0, 0, 0, 0])
 
     useEffect(() => {
-        if(alumno%2 != 0) {
-            setPregunta(datos.preguntaa)
-            setRespuestas(datos.respuestasa)
-            setCorrecto(datos.correctoa)
-        } else {
-            setPregunta(datos.preguntab)
-            setRespuestas(datos.respuestasb)
-            setCorrecto(datos.correctob)
-        }
-        if(pregunta && respuestas && correcto){
-            setListo(true)
-        }
+        setPregunta(datos.pregunta)
+        setRespuestas(datos.respuestas)
+        setCorrecto(datos.correcto)
     }, [pregunta])
 
-    if(!listo) { 
+    if(!(pregunta && respuestas && correcto)) { 
         return <div>loading...</div>
     }
 
     const handleCalificar = seleccion => {
         if(seleccion == correcto) {
-            if(no == 14) {onNota([no, 6])}
-            else{onNota([no, 1])}
+            if(no == 5) {onNota([no, 1])}
+            else{onNota([no, 2])}
         } else {
             onNota([no, 0])
         }

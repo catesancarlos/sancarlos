@@ -21,10 +21,13 @@ const Card = (props) => {
             <style jsx>{`
                 .card{
                     background-color: rgba(142, 56, 56, 0.1);
-                    width: 110px;
-                    margin: 0 5px 5px 0;
-                    padding: 5px 0;
-                    text-align: center;
+                    margin: 0 2.5px 5px 2.5px;
+                    width: 120px;
+                    height: 28px;
+                    line-height: 28px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     border: 1px solid brown;
                     border-radius: 10px;
                     cursor: pointer;

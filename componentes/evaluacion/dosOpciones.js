@@ -1,38 +1,33 @@
 import {useState, useEffect} from 'react'
 
-const DosOpciones = ({alumno, no, datos, onNota}) => {
+const DosOpciones = ({ no, datos, onNota }) => {
     const [pregunta, setPregunta] = useState(null)
     const [respuestas, setRespuestas] = useState(null)
     const [correcto, setCorrecto] = useState(null)
-    const [listo, setListo] = useState(false)
 
     const [enf, setEnf] = useState([false, false, false, false])
     const [cont, setCont] = useState(0)
 
     
     useEffect(() => {
-        if(alumno%2 != 0) {
-            setPregunta(datos.preguntaa)
-            setRespuestas(datos.respuestasa)
-            setCorrecto(datos.correctoa)
-        } else {
-            setPregunta(datos.preguntab)
-            setRespuestas(datos.respuestasb)
-            setCorrecto(datos.correctob)
-        }
-        if(pregunta && respuestas && correcto){
-            setListo(true)
-        }
+        setPregunta(datos.pregunta)
+        setRespuestas(datos.respuestas)
+        setCorrecto(datos.correcto)
+    }, [pregunta])
+
+    useEffect(() => {
         if(cont > 1){
             if(`${enf[0]}${enf[1]}${enf[2]}${enf[3]}` == correcto){
-                onNota([no, 1])
+                console.log('correcto')
+                onNota([no, 2])
             } else {
                 onNota([no, 0])
             }
         }
-    })
+    }, [enf])
 
-    if(!listo) { 
+
+    if(!(pregunta && respuestas && correcto)) { 
         return <div>loading...</div>
     }
 

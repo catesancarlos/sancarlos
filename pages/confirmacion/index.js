@@ -1,23 +1,52 @@
+import { useState } from 'react'
+import firebase from '../../services/dBase'
 import AppLayout from '../../componentes/layout'
-import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
+import MenuParalelos from '../../componentes/evaluacion/MenuParalelos'
 
-export default function Confirmacion(){
+export default function Confirmacion({ data }){
+    const [mal, setMal] = useState(false)
+    const [logged, setLogged] = useState(false)
+
+    const handleLogin = e => {
+        e.preventDefault()
+        const { clave } = e.target.elements
+        const password = clave.value.toLowerCase()
+        if(password === '4994'){
+            clave.value = 'Cargando...';
+            setMal(false)
+            setLogged(true)
+        }
+        else {
+            clave.value = '';
+            setMal(true)
+        } 
+    }
+
     return(
-        <AppLayout pagina='' titulo='2 Confirmación - Cate San Carlos'>
+        <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
             <div className='container'>
-                <section className='bienvenida'>
-                    <p className='titulo'>BIENVENIDO</p>
-                    <p className='linea'>Esta es la plataforma online, para los niveles de Segundo de Confirmación.</p>
-                    <p className='linea'>Elije una de las opciones de la parte derecha para iniciar sesión.</p>
-                    <p className='nota'>* Si tienes algun problema para Iniciar Sesión e Ingresar, comunicate con tu catequista.</p>
-                </section>
-                <section className='sesion'>
-                    <div className='menu-sesion'>
-                        <p>Primera vez</p>
-                        <p>Normal</p>
-                    </div>
-
-                </section>
+                {
+                    !logged ?
+                    <>
+                        <div className='bienvenida'>
+                            <p className='titulo'>BIENVENIDO</p>
+                            <p className='linea'>
+                                Mediante este espacio podras acceder a las evaluaciones para los niveles de Segundo de 
+                                Confirmación.
+                            </p>
+                            <p className='linea'>Uliliza la clave que te entrego tu catequista para poder ingresar.</p>
+                            <p className='nota'>* Si tienes algun problema para ingresar, comunicate con tu catequista.</p>
+                        </div>
+                        <form onSubmit={handleLogin} className='sesion'>
+                            <p className='form-p2'>Para acceder por favor ingrese la contaseña:</p>
+                            <input className='input' name='clave' type='text' required autoComplete='off' />
+                            { mal && <p className='incorrecto'>Contraseña Incorrecta</p> }
+                            <button className='boton'>Ingresar</button>
+                        </form>
+                    </>
+                    :
+                    <MenuParalelos {...data} />
+                }
             </div>
 
             <style jsx>{`
@@ -28,7 +57,7 @@ export default function Confirmacion(){
                 }
 
                 .bienvenida{
-                    width: 47.5%;
+                    width: 49%;
                     font-size: 20px;
                     
                 }
@@ -45,7 +74,6 @@ export default function Confirmacion(){
                 }
 
                 .nota{
-                    padding-left: 25px;
                     margin-top: 100px;
                     font-size: 15px;
                     text-align: right;
@@ -53,28 +81,121 @@ export default function Confirmacion(){
 
                 .sesion{
                     background: white;
-                    width: 47.5%;
-                    font-size: 20px;
-                    border-radius: 25px;
-                }
-
-                .menu-sesion{
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .menu-sesion p{
-                    background: brown;
-                    width: 150px;
-                    margin: 15px 5px;
-                    padding: 4px 10px;
-                    color: white;
+                    width: 46%;
+                    padding: 30px;
+                    font-size: 23px;
                     text-align: center;
-                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 25px;
+                    
+                }
+
+                .form-p2{
+                    margin-bottom: 40px;
+                }
+
+                .input{
+                    height: 35px;
+                    width: 70%;
+                    font-size: 23px;
+                    text-align: center;
+                    border: none;
+                    outline:none;
+                    border-bottom: 2px solid black;
+                    margin-bottom: 30px;
+                }
+
+                .incorrecto{
+                    margin: -20px 0 20px 0;
+                    color: red;
+                    font-size: 20px;
+                }
+
+                .boton{
+                    font-size: 25px;
+                    color: white;
+                    padding: 10px 80px;
+                    background: brown;
+                    border-radius: 30px;
+                    border: none;
+                    outline:none;
                     cursor: pointer;
+                }
+
+
+                @media screen and (max-width: 480px){
+                    .container{
+                        margin: 20px 15px;
+                        display: inline;
+                        justify-content: space-between;
+                    }
+    
+                    .bienvenida{
+                        width: 100%;
+                        font-size: 16px;
+                    }
+    
+                    .titulo{
+                        margin-bottom: 20px;
+                    }
+    
+                    .linea{
+                        margin-bottom: 10px;
+                    }
+    
+                    .nota{
+                        margin-top: 25px;
+                        font-size: 14px;
+                    }
+    
+                    .sesion{
+                        margin: 50px auto 30px auto;
+                        background: white;
+                        width: 95%;
+                        padding: 25px;
+                        font-size: 18px;
+                        border-radius: 20px;
+                        
+                    }
+    
+                    .form-p2{
+                        margin-bottom: 20px;
+                    }
+    
+                    .input{
+                        height: 35px;
+                        width: 70%;
+                        font-size: 22px;
+                        border-bottom: 2px solid black;
+                        margin-bottom: 25px;
+                    }
+    
+                    .incorrecto{
+                        margin: -15px 0 15px 0;
+                        color: red;
+                        font-size: 16px;
+                    }
+    
+                    .boton{
+                        font-size: 20px;
+                        padding: 8px 50px;
+                        border-radius: 30px;
+                    }
                 }
             `}</style>
         </AppLayout>
         
     )
 }
+
+Confirmacion.getInitialProps = async () => {
+    const data = await firebase.firestore().collection('controles').doc('prueba').get()
+    .then(info => {
+        return (info.data())
+    })
+    
+    return {data}
+} 

@@ -1,11 +1,11 @@
 import {useEffect} from 'react'
-import {IoIosCheckmarkCircle} from 'react-icons/io'
+/* import {IoIosCheckmarkCircle} from 'react-icons/io' */
 import { useRouter } from 'next/router'
-import firebase from '../../services/dBase' 
-import AppLayout from '../../componentes/layout'
-import Footer from '../../componentes/layout/footer2'
+import firebase from '../../../services/dBase' 
+import AppLayout from '../../../componentes/layout'
+import Footer from '../../../componentes/layout/footer'
 
-const NivelDatos = ({data}) => {
+const Paralelo = ({data}) => {
     const router = useRouter()
 
     useEffect(() => {
@@ -13,56 +13,55 @@ const NivelDatos = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        router.push('/datos/[paralelo]/[personaDatos]', `/datos/${router.query.nivelDatos}/${usuario}`) 
+        router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
     }
 
     return (
         <>
-            <AppLayout pagina='' titulo='San Carlos - Confirmación'>
+            <AppLayout 
+                titulo='San Carlos - Confirmación'
+                name={`2DO CONFIRMACIÓN ${router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, router.query.paralelo.length).toUpperCase()}`} 
+            >
                 <div className='container'>
                     <div className='pulse'>
-                        <p className='paralelo'>
+                        {/* <p className='paralelo'>
                             {`2DO CONFIRMACIÓN ${
-                                router.query.nivelDatos.substring(router.query.nivelDatos.indexOf('-')+1, 
-                                router.query.nivelDatos.length).toUpperCase()
+                                router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, 
+                                router.query.paralelo.length).toUpperCase()
                             }`}
-                        </p>
-                        <p className='indica-weight'>Pulse en su nombre, para ingresar el nombre de su padrino.</p>
+                        </p> */}
+                        <p className='indica-weight'>Pulse en su nombre para iniciar con la evaluación.</p>
                         <p className='indica'>
-                            - Solo las personas que cuenten con el visto <IoIosCheckmarkCircle style={{fontSize: '20px', color: 'green'}} /> 
-                            podrán, ingresar el nombre de su padrino y también corregir el nombre del alumno si fuese necesario.
-                        </p>
-                        <p className='indica'>
-                            - El visto verde indica a los alumnos que ya han cumplido con todas las actividades y han aprobado 
-                            el año de catequesis.
+                            - Se recomienda realizar la evaluación en una computadora, para evitar imprevistos.
                         </p>
                         <p className='indica'>
-                            - Verifica pulsando tu nombre que hayas entregado la fe de bautismo o copia de tu cédula, si no la has 
-                            entregado, tendrás que acercarte con las mismas a coordinación los días miércoles y jueves desde las 16h00 
-                            a 18h00 a partir del 22 de julio.
-                        </p>
-                        <p className='indica'>
-                            - Si usted no cuenta con el visto de aprobado, comunicarse con su catequista.
+                            - Si tienes problemas, para dar la Lección, informalo a tu catequista.
                         </p>
                     </div>
                     <div className='lista'>
-                    {
-                        data.map(item => 
-                            <div 
-                                className='alumno'
-                                onClick={() => {handleAlumno(item.user)}}
-                                key={item.id}
-                            >
-                                <p className='nombre'>
-                                    {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
-                                </p>
-                                {
-                                    (item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
-                                }
-                                
-                            </div>
-                        ) 
-                    }
+                        <div 
+                            className='alumno'
+                            onClick={() => {handleAlumno('catequista')}}
+                        >
+                            <p className='nombre'>Catequista [Para pruebas]</p>
+                        </div>
+                        {
+                            data.map(item => 
+                                <div 
+                                    className='alumno'
+                                    onClick={() => {handleAlumno(item.user)}}
+                                    key={item.id}
+                                >
+                                    <p className='nombre'>
+                                        {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
+                                    </p>
+                                    {/* {
+                                        (item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
+                                    } */}
+                                    
+                                </div>
+                            ) 
+                        }
                     </div>
                 </div>
 
@@ -71,7 +70,7 @@ const NivelDatos = ({data}) => {
 
             <style jsx>{`
                 .container{
-                    margin: 0 100px 30px 100px;
+                    margin: 0 100px 20px 100px;
                     display: flex;
                     justify-content: space-between;
                 }
@@ -79,6 +78,7 @@ const NivelDatos = ({data}) => {
                 .pulse{
                     font-size: 26px;
                     width: 40%;
+                    margin-top: 30px;
                 }
 
                 .paralelo{
@@ -118,15 +118,15 @@ const NivelDatos = ({data}) => {
 
                 @media screen and (max-width: 480px){
                     .container{
-                        margin: 0 0 40px 0;
+                        margin: 10px 0;
                         flex-direction: column;
                         align-items: center;
                     }
 
                     .pulse{
+                        margin: 0;
                         font-size: 18px;
                         width: 90%;
-                        margin-bottom: 10px;
                     }
 
                     .paralelo{
@@ -134,16 +134,16 @@ const NivelDatos = ({data}) => {
                     }
 
                     .indica-weight{
-                        font-size: 0.85em;
+                        font-size: 0.95em;
                     }
 
                     .indica{
-                        margin-top: 10px;
-                        font-size: 0.75em;
+                        margin-top: 12px;
+                        font-size: 0.85em;
                     }
 
                     .lista{
-                        margin-top: 15px;
+                        margin-top: 20px;
                         padding-right: 0;
                         width: 90%;
                     }
@@ -158,8 +158,8 @@ const NivelDatos = ({data}) => {
     )
 }
 
-NivelDatos.getInitialProps = async ({query}) => {
-    const data = await firebase.firestore().collection(`${query.nivelDatos}`).get()
+Paralelo.getInitialProps = async ({query}) => {
+    const data = await firebase.firestore().collection(`${query.paralelo}`).get()
     .then(snapshota => {
         const alumnos = [];
         snapshota.forEach(alumno => {
@@ -167,8 +167,6 @@ NivelDatos.getInitialProps = async ({query}) => {
                 id: alumno.data().id,
                 apellido: alumno.data().apellido,
                 nombre: alumno.data().nombre,
-                aprobado: alumno.data().aprobado,
-                fe: alumno.data().fe,
                 user: alumno.data().user
             }); 
         })
@@ -177,4 +175,4 @@ NivelDatos.getInitialProps = async ({query}) => {
     return {data}
 }  
 
-export default NivelDatos;
+export default Paralelo;
