@@ -168,7 +168,8 @@ export default function Persona({data}){
                                 </>
                                 :
                                 <>
-                                    <p className='claves-pulse'>Escriba su segundo apellido y pulse en ingresar</p>
+                                    {/* <p className='claves-pulse'>Escriba su segundo apellido y pulse en ingresar</p> */}
+                                    <p className='claves-pulse'>{data.user == 'catequista' ? 'Escriba 4000 y pulse en ingresar' : 'Escriba su segundo apellido y pulse en ingresar'}</p>
                                     <input className='input' name='segundo' />
                                     {mal && <p className='incorrecto'>Incorrecto</p>}
                                     <button className='boton'>Ingresar</button>

@@ -38,7 +38,7 @@ export default function Confirmacion({ data }){
                             <p className='nota'>* Si tienes algun problema para ingresar, comunicate con tu catequista.</p>
                         </div>
                         <form onSubmit={handleLogin} className='sesion'>
-                            <p className='form-p2'>Para acceder por favor ingrese la contaseña:</p>
+                            <p className='form-p2'>Para acceder por favor ingrese la contraseña:</p>
                             <input className='input' name='clave' type='text' required autoComplete='off' />
                             { mal && <p className='incorrecto'>Contraseña Incorrecta</p> }
                             <button className='boton'>Ingresar</button>

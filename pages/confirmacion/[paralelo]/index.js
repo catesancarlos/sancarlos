@@ -13,7 +13,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
+        if(usuario == 'catequista') router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
     }
 
     return (
@@ -55,6 +55,9 @@ const Paralelo = ({data}) => {
                                     <p className='nombre'>
                                         {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                                     </p>
+                                    {
+                                        item.leccion && <p className='nota'>{`${item.leccion}/10`}</p>
+                                    }
                                     {/* {
                                         (item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
                                     } */}
@@ -104,8 +107,10 @@ const Paralelo = ({data}) => {
                 .alumno{
                     background: white;
                     margin: 10px 0;
+                    padding: 0 30px 0 25px;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
                     border-radius: 10px;
                     cursor: pointer;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -113,7 +118,13 @@ const Paralelo = ({data}) => {
 
                 .nombre{
                     font-size: 20px;
-                    padding: 15px 10px 15px 20px;
+                    padding: 15px 10px 15px 0;
+                }
+
+                .nota{
+                    color: brown;
+                    font-size: 20px;
+                    font-weight: bold;
                 }
 
                 @media screen and (max-width: 480px){
@@ -150,7 +161,7 @@ const Paralelo = ({data}) => {
     
                     .nombre{
                         font-size: 18px;
-                        padding: 12px 10px 12px 20px;
+                        padding: 12px 10px 12px 0;
                     }
                 }
             `}</style>
@@ -167,7 +178,8 @@ Paralelo.getInitialProps = async ({query}) => {
                 id: alumno.data().id,
                 apellido: alumno.data().apellido,
                 nombre: alumno.data().nombre,
-                user: alumno.data().user
+                user: alumno.data().user,
+                leccion: alumno.data().leccion
             }); 
         })
         return (alumnos)
