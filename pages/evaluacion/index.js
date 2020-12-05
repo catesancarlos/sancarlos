@@ -4,7 +4,7 @@ import AppLayout from '../../componentes/layout'
 import Footer from '../../componentes/layout/footer2'
 
 import NoDisponible from '../../componentes/evaluacion/noDisponible'
-import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
+import MenuParalelos from '../../componentes/evaluacion/MenuParalelos'
 
 const Evaluacion = ({data}) => {
 
