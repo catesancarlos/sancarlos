@@ -13,7 +13,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        if(usuario == 'catequista' || router.query.paralelo == 'paralelo-d') router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
+        if(usuario == 'catequista' /* || router.query.paralelo == 'paralelo-d' */) router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
     }
 
     return (
@@ -39,12 +39,12 @@ const Paralelo = ({data}) => {
                         </p>
                     </div>
                     <div className='lista'>
-                        <div 
+                       {/*  <div 
                             className='alumno'
                             onClick={() => {handleAlumno('catequista')}}
                         >
                             <p className='nombre'>Catequista [Para pruebas]</p>
-                        </div>
+                        </div> */}
                         {
                             data.map(item => 
                                 <div 
