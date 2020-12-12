@@ -151,7 +151,7 @@ export default function Persona({data}){
                             </div>
                         }
                     </>
-                    :   !veri ?
+                    :   /* !veri ? */
                         <form onSubmit={handleLogin} className='form-clave'>
                             <p className='claves-nombre'>
                                 {`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
@@ -177,7 +177,7 @@ export default function Persona({data}){
                             }
                             
                         </form>
-                        :
+                        /* :
                         <div className='form-clave'>
                             <p className='claves-pulse'>{`Su nota de ${data.leccion}/10 es superior a la requerida, no es necesario que de la evaluación de recuperacion.`}</p>
                             <div style={{display: 'flex'}}>
@@ -193,7 +193,7 @@ export default function Persona({data}){
                                     }}
                                 >Quiero mejorar mi nota</p>
                             </div>
-                        </div>
+                        </div> */
                     }
                 </div> 
 

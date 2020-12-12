@@ -13,7 +13,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        if(usuario == 'catequista' /* || router.query.paralelo == 'paralelo-d' */) router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
+        router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
     }
 
     return (
