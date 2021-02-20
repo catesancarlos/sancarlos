@@ -10,8 +10,6 @@ import Evaluacion1 from '../../../componentes/evaluacion/Evaluacion1'
 
 export default function Persona({data}){
     const router = useRouter()
-    /* const [user, setUser] = useState(null)
-    const [ind, setInd] = useState(0) */
     const [login, setLogin] = useState(false)
     const [mal, setMal] = useState(false)
     const [cont, setCont] = useState(false)
@@ -19,24 +17,6 @@ export default function Persona({data}){
     const [inicio, setInicio] = useState(null)
     const [envio, setEnvio] = useState(null)
     const [nota, setNota] = useState(0)
-    
-    /* const [nota1, setNota1] = useState(null)
-    const [nota2, setNota2] = useState(null)
-    const [nota3, setNota3] = useState(null)
-    const [nota4, setNota4] = useState(null)
-    const [nota5, setNota5] = useState(null)
-    const [nota6, setNota6] = useState(null)
-    const [nota7, setNota7] = useState(null) 
-
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            setUser(firebaseUser)
-        }) 
-        if(data.id % 3 == 1) setInd(0)
-        if(data.id % 3 == 2) setInd(7)
-        if(data.id % 3 == 0) setInd(14)
-    }, [ind]);
-    */
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -64,23 +44,6 @@ export default function Persona({data}){
         } 
     }
 
-    /* const handleCalificar = e => {
-        if(e[0] == 1){setNota1(e[1])}
-        if(e[0] == 2){setNota2(e[1])}
-        if(e[0] == 3){setNota3(e[1])}
-        if(e[0] == 4){setNota4(e[1])}
-        if(e[0] == 5){setNota5(e[1])}
-        if(e[0] == 6){setNota6(e[1])}
-        if(e[0] == 7){setNota7(e[1])}
-    } */
-
-    /* const handleTimeOut = e => {
-        if(e == true) {
-            setFinal(true)
-            handleTerminar()
-        }
-    } */
-
     const handleTerminar = e => {
         var hoy = new Date()
         var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
@@ -98,14 +61,6 @@ export default function Persona({data}){
                 {merge: true}
             )
         }
-        /* if(router.query.persona !== 'catequista'){
-            firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).update(
-                {
-                    dio: true,
-                    leccion: Math.round((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7)/2)
-                }
-            )
-        } */
     }
 
     return (
@@ -115,34 +70,10 @@ export default function Persona({data}){
             flecha={!login}
         >
             <div className='container'>
-                {/* {cont && <Tiempo timeOut={handleTimeOut} fin={final} conteo={cont} />} */}
-
                 {
                     login ?
                     <>
                         <Evaluacion1 prueba={data.id % 3} fin={final} conteo={cont} onTerminar={handleTerminar} />
-                        
-                        {/* <div className='cont-prueba'>
-                            <Flechas no={1} datos={preguntas[ind+0]} onNota={handleCalificar} />
-                            <Eliminar no={2} datos={preguntas[ind+1]} onNota={handleCalificar} />
-                            <UnaOpcion no={3} datos={preguntas[ind+2]} onNota={handleCalificar} />
-                            <DosOpciones no={4} datos={preguntas[ind+3]} onNota={handleCalificar} />
-                            <UnaOpcion no={5} datos={preguntas[ind+4]} onNota={handleCalificar} />
-                            <UnaOpcion no={6} datos={preguntas[ind+5]} onNota={handleCalificar} />
-                            <Flechas no={7} datos={preguntas[ind+6]} onNota={handleCalificar} />
-                            {/* <PreguntaDrag no={7} onNota={handleCalificar} /> }
-                        </div>
-
-                        <div 
-                            className='enviar-boton'
-                            onClick={() => {
-                                setFinal(true)
-                                handleTerminar()
-                            }}
-                        >
-                            Terminar y Enviar
-                        </div>
-                        */}
 
                         {final &&
                             <div className='modal-final'> 

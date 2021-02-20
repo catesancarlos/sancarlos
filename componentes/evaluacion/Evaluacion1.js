@@ -9,7 +9,7 @@ import Verdadero from './Verdadero'
 import VariosVerdadero from './VariosVerdadero'
 import OpcionesMalla from './OpcionesMalla'
 import Arrastrar from './Arrastrar'
-import Eliminar from './eliminar'
+import Eliminar from './Eliminar'
 
 export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo }) {
     const [preguntas, setPreguntas] = useState(null)
@@ -69,9 +69,6 @@ export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo }) {
 
     return(
         <>
-            {/* <div style={{ position: 'fixed'}}>
-                {nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8 + nota9 + nota10 + nota11 + nota12 + nota13 + nota14 + nota15}
-            </div> */}
             {conteo && <Tiempo timeOut={handleTimeOut} fin={fin} conteo={conteo} />}
             <OpcionesMalla {...preguntas[0]} onNota={handleCalificar} />
             <UnaRespuesta {...preguntas[1]} onNota={handleCalificar} />
