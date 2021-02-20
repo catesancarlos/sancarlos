@@ -3,15 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import firebase from '../../../services/dBase'
 import AppLayout from '../../../componentes/layout'
-/* import Tiempo from '../../../componentes/evaluacion/tiempo'
-import Flechas from '../../../componentes/evaluacion/flechas'
-import UnaOpcion from '../../../componentes/evaluacion/unaOpcion'
-import DosOpciones from '../../../componentes/evaluacion/dosOpciones'
-import Eliminar from '../../../componentes/evaluacion/oldEliminar'
-import PreguntaDrag from '../../../componentes/evaluacion/preguntaDrag' */
 import Footer from '../../../componentes/layout/footer'
-
-/* import preguntas from '../../../datos/leccion' */
 import Card from '../../../componentes/layout/Card'
 import Evaluacion1 from '../../../componentes/pruebas/Evaluacion1'
 

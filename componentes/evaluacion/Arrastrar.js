@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Pregunta from '../generales/Pregunta'
-import Board from '../drag/Board'
-import Card from '../drag/Card'
+import Board from '../drag/board'
+import Card from '../drag/card'
 
 const Drop = ({ no, pregunta, respuestas, contenedores, onNota }) => {
     const [enunciado, setEnunciado] = useState(null)
