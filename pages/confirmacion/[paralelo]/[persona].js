@@ -5,7 +5,7 @@ import firebase from '../../../services/dBase'
 import AppLayout from '../../../componentes/layout'
 import Footer from '../../../componentes/layout/footer'
 import Card from '../../../componentes/layout/Card'
-import Evaluacion1 from '../../../componentes/pruebas/Evaluacion1'
+import Evaluacion1 from '../../../componentes/evaluacion/Evaluacion1'
 
 
 export default function Persona({data}){
