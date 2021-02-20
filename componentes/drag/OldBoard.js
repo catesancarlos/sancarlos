@@ -1,4 +1,4 @@
-const Board = ({id, className, children, notaU}) => {
+const OldBoard = ({id, className, children, notaU}) => {
 
     const drop = e => {
         e.preventDefault();
@@ -57,4 +57,4 @@ const Board = ({id, className, children, notaU}) => {
     )
 }
 
-export default Board;
+export default OldBoard

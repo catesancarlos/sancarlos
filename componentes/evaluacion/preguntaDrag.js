@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Board from '../drag/OldBoard'
+import OldBoard from '../drag/OldBoard'
 import Card from '../drag/Card'
 
 const Drop = ({no, onNota}) => {
@@ -18,7 +18,7 @@ const Drop = ({no, onNota}) => {
                 <p>Arrastre los elementos a la área correcta, dependiendo si son signos o realidad del bautismo</p>
             </div>
             <div>
-                <Board id='dr-0' className='cont-respuestas'>
+                <OldBoard id='dr-0' className='cont-respuestas'>
                     <Card id='realidad-sumergidos'>
                         Sumergidos
                     </Card>
@@ -43,34 +43,34 @@ const Drop = ({no, onNota}) => {
                     <Card id='signo-ropa'>
                         Ropa blanca
                     </Card>
-                </Board>
+                </OldBoard>
                 <div className='cont-opciones'>
                     <p className='opcion'>Signo</p>
                     <div className='cont-cont'>
-                        <Board id='signo-dr' className='board' notaU={handleNota}>
+                        <OldBoard id='signo-dr' className='board' notaU={handleNota}>
 
-                        </Board>
-                        <Board id='signo-dr' className='board' notaU={handleNota}>
+                        </OldBoard>
+                        <OldBoard id='signo-dr' className='board' notaU={handleNota}>
 
-                        </Board>
-                        <Board id='signo-dr' className='board' notaU={handleNota}>
+                        </OldBoard>
+                        <OldBoard id='signo-dr' className='board' notaU={handleNota}>
 
-                        </Board>
-                        <Board id='signo-dr' className='board' notaU={handleNota}>
+                        </OldBoard>
+                        <OldBoard id='signo-dr' className='board' notaU={handleNota}>
 
-                        </Board>
+                        </OldBoard>
                     </div>
                     <div className='drop-opcion'></div>
                 </div>
                 <div className='cont-opciones'>
                     <p className='opcion'>Realidad</p>
                     <div className='cont-cont'>
-                        <Board id='realidad-dr' className='board' notaU={handleNota}>
+                        <OldBoard id='realidad-dr' className='board' notaU={handleNota}>
 
-                        </Board>
-                        <Board id='realidad-dr' className='board' notaU={handleNota}>
+                        </OldBoard>
+                        <OldBoard id='realidad-dr' className='board' notaU={handleNota}>
 
-                        </Board>
+                        </OldBoard>
                     </div>
                 </div>
             </div>
