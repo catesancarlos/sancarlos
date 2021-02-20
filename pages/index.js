@@ -77,7 +77,7 @@ const Home = () => {
                                 
                                     <div className='option'>
                                         <Link href='/confirmacion'>
-                                            <a className='name-option'>Confirmación</a>
+                                            <a className='name-option'>2 Confirmación</a>
                                         </Link>
                                         <p className='descripcion'>
                                             Espacio dedicado para el nivel se Segundo de Confirmación
