@@ -4,7 +4,7 @@ const Modal = ({ children }) => (
 
         <style jsx>{`
             div{
-                background: #000000CC;
+                background: rgba(0, 0, 0, 0.8);
                 position: fixed;
                 top: 0;
                 bottom: 0;

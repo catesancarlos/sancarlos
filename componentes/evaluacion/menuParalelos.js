@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) => {
+const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba }) => {
     const router = useRouter()
     const [modal, setModal] = useState(false)
 
     const handleRedireccion = paralelo => {
-        if(paralelo.substring(0, paralelo.indexOf('-')) == 'paralelo' && centro){
-            router.push('/confirmacion/[paralelo]', `/confirmacion/${paralelo}`) 
-        } 
+        if(paralelo == 'a' && a) router.push(`/confirmacion/paralelo-${paralelo}`)
+        else if(paralelo == 'b' && b) router.push(`/confirmacion/paralelo-${paralelo}`)
+        else if(paralelo == 'c' && c) router.push(`/confirmacion/paralelo-${paralelo}`)
+        else if(paralelo == 'd' && d) router.push(`/confirmacion/paralelo-${paralelo}`)
         else if(paralelo == 'angeles' && angeles) router.push('/confirmacion/angeles')
         else if(paralelo == 'auxiliadora' && auxiliadora) router.push('/confirmacion/auxiliadora')
         else if(paralelo == 'dolorosa' && dolorosa) router.push('/confirmacion/dolorosa')
@@ -23,10 +24,10 @@ const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) 
             <div className='grupos-centro'>
                 <p className='centro-nombre'>Centro Parroquial</p>
                 <div className='grupos'>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-a')}>A</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-b')}>B</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-c')}>C</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('paralelo-d')}>D</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('a')}>A</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('b')}>B</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('c')}>C</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('d')}>D</p>
                 </div>
             </div>
 
@@ -40,14 +41,14 @@ const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) 
                 modal && 
                 <div className='modal-final'> 
                     <div className='claves'>
-                        <p className='indicacion-final'>Lección Segundos de Confirmación</p>
+                        <p className='indicacion-final'>Evaluación 1 Segundos de Confirmación</p>
                         <p className='label-final'>Usted esta tratando de ingresar a la evaluación fuera de horario.</p>
                         <p className='label-final'>Por favor vuelva a intentarlo en el horario indicado.</p>
                         <p className='label-final horario'>
                             Molinopamba: 11H00 AM<br/>
                             Los Ángeles: 02H00 PM<br/>
-                            La Dolorosa: 03H00 PM<br/>
-                            María Auxiliadora: 16H30<br/>
+                            María Auxiliadora: 03H00 PM<br/>
+                            La Dolorosa: 03H15 PM<br/>
                             Centro: 16H40
                         </p>
                         <p className='finalizar' onClick={() => setModal(false)}>Aceptar</p>
@@ -152,7 +153,7 @@ const MenuParalelos = ({ centro, angeles, auxiliadora, dolorosa, molinopamba }) 
                 }
 
 
-                @media screen and (max-width: 480px){
+                @media screen and (max-width: 768px){
                     .container{
                         margin-bottom: 50px;
                     }

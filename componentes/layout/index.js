@@ -18,7 +18,7 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
                 <meta name="theme-color" content="#ccdae8"></meta>
                 <link rel="shortcut icon" href="/logos.png" />
                 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
             </Head>
 
             <main className='page-home'>
@@ -41,7 +41,6 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
                     padding: 0;
                     margin: 0;
                     font-family: 'Lato', sans-serif;
-                    font-weight: 300; 
                 }
 
                 * {

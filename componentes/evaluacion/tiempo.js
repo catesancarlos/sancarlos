@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
 
 const Tiempo = ({timeOut, fin}) => {
-    const [time, setTime] = useState(1200);
-    const [t, setT] = useState('20:00');
+    const [time, setTime] = useState(1800);
+    const [t, setT] = useState('30:00');
     const [f, setF] = useState(false);
     const [seg, setSeg] = useState('00');
-    const [min, setMin] = useState(20);
+    const [min, setMin] = useState(30);
     const [cont, setCont] = useState(true)
 
     useEffect(() => {
@@ -67,7 +67,7 @@ const Tiempo = ({timeOut, fin}) => {
                 }
 
 
-                @media screen and (max-width: 480px){
+                @media screen and (max-width: 768px){
                     .tiempo-prueba{
                         top: 20px;
                         right: 4%;

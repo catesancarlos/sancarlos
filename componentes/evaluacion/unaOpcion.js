@@ -56,7 +56,7 @@ const UnaOpcion = ({ no, datos, onNota }) => {
                 .cont-pregunta{
                     width: 60%;
                     margin: 0 auto;
-                    padding: 20px 20px 15px 20px;
+                    padding: 15px 20px 20px 20px;
                     border: 1px solid white;
                     border-radius: 20px;
                     margin-bottom: 20px;
@@ -66,8 +66,8 @@ const UnaOpcion = ({ no, datos, onNota }) => {
                     color: brown;
                     font-weight: bold;
                     font-size: 20px;
-                    line-height: 30px;
                     display: flex;
+                    padding-bottom: 5px;
                 }
 
                 .num{
@@ -76,8 +76,7 @@ const UnaOpcion = ({ no, datos, onNota }) => {
 
                 .opciones{
                     display: flex;
-                    margin: 0 25px;
-                    padding-top: 10px;
+                    margin: 10px 25px 0 25px;
                 }
 
                 .nombre-opcion-0{

@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import Pregunta from '../generales/Pregunta'
 import BotonToggle from '../generales/BotonToggle'
 
-const Eliminar = ({ no, pregunta, respuestas, onNota }) => {
+const DosRespuestas = ({ no, pregunta, respuestas, onNota }) => {
     const [enunciado, setEnunciado] = useState(null)
     const [opciones, setOpciones] = useState(null)
     const [nota, setNota] = useState(null)
@@ -10,7 +10,11 @@ const Eliminar = ({ no, pregunta, respuestas, onNota }) => {
     useEffect(() => {
         setEnunciado(pregunta)
         setOpciones(respuestas)
-    }, [enunciado, opciones])
+    }, [enunciado])
+
+    if(!(enunciado && opciones)) { 
+        return <div>loading...</div>
+    }
 
     const handleCalificar = e => {
         if(e == true) {
@@ -24,17 +28,13 @@ const Eliminar = ({ no, pregunta, respuestas, onNota }) => {
         }
     }
 
-    if(!(enunciado && opciones)) { 
-        return <div>Cargando pregunta...</div>
-    }
-
     return (
         <Pregunta no={no} pregunta={enunciado}>
             { 
-                opciones.map(item => <BotonToggle eliminar largo key={item.id} {...item} onBien={handleCalificar} />) 
+                opciones.map(item => <BotonToggle largo key={item.id} {...item} onBien={handleCalificar} />) 
             }
         </Pregunta>
     )
 }
 
-export default Eliminar
+export default DosRespuestas

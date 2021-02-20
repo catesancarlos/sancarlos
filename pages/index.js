@@ -275,7 +275,7 @@ const Home = () => {
                     pointer-events: none;
                 }
 
-                @media screen and (max-width: 480px){ 
+                @media screen and (max-width: 768px){ 
                     .menu-cont{
                         width: 100%;
                         margin: 0 auto;

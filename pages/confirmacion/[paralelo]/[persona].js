@@ -3,46 +3,55 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import firebase from '../../../services/dBase'
 import AppLayout from '../../../componentes/layout'
-import Tiempo from '../../../componentes/evaluacion/tiempo'
+/* import Tiempo from '../../../componentes/evaluacion/tiempo'
 import Flechas from '../../../componentes/evaluacion/flechas'
 import UnaOpcion from '../../../componentes/evaluacion/unaOpcion'
 import DosOpciones from '../../../componentes/evaluacion/dosOpciones'
-import Eliminar from '../../../componentes/evaluacion/eliminar'
-/* import PreguntaDrag from '../../../componentes/evaluacion/preguntaDrag' */
+import Eliminar from '../../../componentes/evaluacion/oldEliminar'
+import PreguntaDrag from '../../../componentes/evaluacion/preguntaDrag' */
 import Footer from '../../../componentes/layout/footer'
 
-import preguntas from '../../../datos/leccion'
+/* import preguntas from '../../../datos/leccion' */
+import Card from '../../../componentes/layout/Card'
+import Evaluacion1 from '../../../componentes/pruebas/Evaluacion1'
 
 
 export default function Persona({data}){
     const router = useRouter()
-    const [user, setUser] = useState(null)
-    const [ind, setInd] = useState(0)
+    /* const [user, setUser] = useState(null)
+    const [ind, setInd] = useState(0) */
     const [login, setLogin] = useState(false)
     const [mal, setMal] = useState(false)
     const [cont, setCont] = useState(false)
-    const [veri, setVeri] = useState(false)
     const [final, setFinal] = useState(false)
+    const [inicio, setInicio] = useState(null)
+    const [envio, setEnvio] = useState(null)
+    const [nota, setNota] = useState(0)
     
-    const [nota1, setNota1] = useState(null)
+    /* const [nota1, setNota1] = useState(null)
     const [nota2, setNota2] = useState(null)
     const [nota3, setNota3] = useState(null)
     const [nota4, setNota4] = useState(null)
     const [nota5, setNota5] = useState(null)
     const [nota6, setNota6] = useState(null)
-    const [nota7, setNota7] = useState(null)
+    const [nota7, setNota7] = useState(null) 
 
     useEffect(() => {
-        /* firebase.auth().onAuthStateChanged(firebaseUser => {
+        firebase.auth().onAuthStateChanged(firebaseUser => {
             setUser(firebaseUser)
-        }) */
+        }) 
         if(data.id % 3 == 1) setInd(0)
         if(data.id % 3 == 2) setInd(7)
         if(data.id % 3 == 0) setInd(14)
     }, [ind]);
+    */
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        var hoy = new Date()
+        var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
+        var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
+        setInicio(`${hora}:${min}`)
     }, [login]);
 
 
@@ -53,22 +62,17 @@ export default function Persona({data}){
         const word = data.apellido.substr(data.apellido.indexOf(' ')+1, 4).toLowerCase()
         
         if(pass === word){
-            if(data.leccion >= 7){
-                setMal(false)
-                setVeri(true)
-            } else {
-                segundo.value = "Cargando...";
-                setMal(false)
-                setLogin(true)
-                setCont(true) 
-            }
+            segundo.value = "Cargando...";
+            setMal(false)
+            setLogin(true)
+            setCont(true) 
         } else {
             segundo.value = "";
             setMal(true)
         } 
     }
 
-    const handleCalificar = e => {
+    /* const handleCalificar = e => {
         if(e[0] == 1){setNota1(e[1])}
         if(e[0] == 2){setNota2(e[1])}
         if(e[0] == 3){setNota3(e[1])}
@@ -76,24 +80,40 @@ export default function Persona({data}){
         if(e[0] == 5){setNota5(e[1])}
         if(e[0] == 6){setNota6(e[1])}
         if(e[0] == 7){setNota7(e[1])}
-    }
+    } */
 
-    const handleTimeOut = e => {
+    /* const handleTimeOut = e => {
         if(e == true) {
             setFinal(true)
             handleTerminar()
         }
-    }
+    } */
 
-    const handleTerminar = () => {
-        if(router.query.persona !== 'catequista'){
+    const handleTerminar = e => {
+        var hoy = new Date()
+        var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
+        var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
+        setFinal(true)
+        setEnvio(`${hora}:${min}`)
+        setNota(Math.round(e*10/27))
+        if(router.query.persona !== 'catequista') {
+            firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
+                {
+                    ev1: Math.round(e*10/27),
+                    inicioev1: inicio,
+                    envioev1: `${hora}:${min}`,
+                },
+                {merge: true}
+            )
+        }
+        /* if(router.query.persona !== 'catequista'){
             firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).update(
                 {
                     dio: true,
                     leccion: Math.round((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7)/2)
                 }
             )
-        }
+        } */
     }
 
     return (
@@ -103,12 +123,14 @@ export default function Persona({data}){
             flecha={!login}
         >
             <div className='container'>
-                {cont && <Tiempo timeOut={handleTimeOut} fin={final} conteo={cont} />}
+                {/* {cont && <Tiempo timeOut={handleTimeOut} fin={final} conteo={cont} />} */}
 
                 {
                     login ?
                     <>
-                        <div className='cont-prueba'>
+                        <Evaluacion1 prueba={data.id % 3} fin={final} conteo={cont} onTerminar={handleTerminar} />
+                        
+                        {/* <div className='cont-prueba'>
                             <Flechas no={1} datos={preguntas[ind+0]} onNota={handleCalificar} />
                             <Eliminar no={2} datos={preguntas[ind+1]} onNota={handleCalificar} />
                             <UnaOpcion no={3} datos={preguntas[ind+2]} onNota={handleCalificar} />
@@ -116,9 +138,8 @@ export default function Persona({data}){
                             <UnaOpcion no={5} datos={preguntas[ind+4]} onNota={handleCalificar} />
                             <UnaOpcion no={6} datos={preguntas[ind+5]} onNota={handleCalificar} />
                             <Flechas no={7} datos={preguntas[ind+6]} onNota={handleCalificar} />
-                            {/* <PreguntaDrag no={7} onNota={handleCalificar} /> */}
+                            {/* <PreguntaDrag no={7} onNota={handleCalificar} /> }
                         </div>
-                        {console.log(nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7)}
 
                         <div 
                             className='enviar-boton'
@@ -129,11 +150,13 @@ export default function Persona({data}){
                         >
                             Terminar y Enviar
                         </div>
+                        */}
 
                         {final &&
                             <div className='modal-final'> 
                                 <div className='claves'>
                                     <p className='indicacion-final'>Su evaluación a finalizado</p>
+                                    <p className='indicacion-final'>{`Enviada a las: ${envio}`}</p>
                                     <div className='label-final'>
                                         <p>Nombre:</p>
                                         <p className='nombre-final'>{`${data.nombre} ${data.apellido}`}</p>
@@ -141,7 +164,7 @@ export default function Persona({data}){
                                     <div className='label-final'>
                                         <p>Calificación:</p>
                                         <p className='nota-final'>{`
-                                            ${Math.round((nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7)/2)}/10`}
+                                            ${nota}/10`}
                                         </p>
                                     </div>
                                     <Link href='/'>
@@ -151,51 +174,31 @@ export default function Persona({data}){
                             </div>
                         }
                     </>
-                    :   /* !veri ? */
-                        <form onSubmit={handleLogin} className='form-clave'>
-                            <p className='claves-nombre'>
-                                {`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
-                            </p>
+                    :
+                        <Card
+                            nombre={`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
+                            info={
+                                data.ev1 ? `Usted ya dio la Evaluación: ${data.ev1}/10` :  
+                                'Escriba su segundo apellido y pulse en ingresar'
+                            }
+                        >
                             {
-                                data.dio ? 
-                                <>
-                                    <p className='claves-pulse'>Usted ya dio la Evaluación</p>
-                                    <p className='claves-pulse' style={{ fontWeight: 'bold'}}>{`Nota: ${data.leccion}/10`}</p>
+                                data.ev1 ?
                                     <div 
                                         className='boton'
                                         onClick={() => router.push('/')}
                                     >Salir</div>
-                                </>
                                 :
-                                <>
-                                    {/* <p className='claves-pulse'>Escriba su segundo apellido y pulse en ingresar</p> */}
-                                    <p className='claves-pulse'>{data.user == 'catequista' ? 'Escriba 4000 y pulse en ingresar' : 'Escriba su segundo apellido y pulse en ingresar'}</p>
-                                    <input className='input' name='segundo' />
-                                    {mal && <p className='incorrecto'>Incorrecto</p>}
-                                    <button className='boton'>Ingresar</button>
-                                </>
+                                    <form onSubmit={handleLogin}>
+                                        <input className='input' name='segundo' />
+                                        {mal && <p className='incorrecto'>Incorrecto</p>}
+                                        <button className='boton'>Ingresar</button>
+                                    </form>   
                             }
-                            
-                        </form>
-                        /* :
-                        <div className='form-clave'>
-                            <p className='claves-pulse'>{`Su nota de ${data.leccion}/10 es superior a la requerida, no es necesario que de la evaluación de recuperacion.`}</p>
-                            <div style={{display: 'flex'}}>
-                                <p 
-                                    className='verif'
-                                    onClick={() => router.push('/')}
-                                >Salir</p>
-                                <p 
-                                    className='verif'
-                                    onClick={() => {
-                                        setLogin(true)
-                                        setCont(true) 
-                                    }}
-                                >Quiero mejorar mi nota</p>
-                            </div>
-                        </div> */
-                    }
-                </div> 
+                        </Card>
+                        
+                }
+            </div> 
 
             <Footer />
 
@@ -248,7 +251,7 @@ export default function Persona({data}){
 
                 .indicacion-final{
                     margin-bottom: 10px;
-                    font-size: 1.2em;
+                    font-size: 1em;
                 }
                 
                 .label-final{
@@ -278,27 +281,10 @@ export default function Persona({data}){
                     cursor: pointer;
                 }
 
-                .form-clave{
-                    background: white;
-                    width: 30%;
-                    margin: 30px auto;
-                    font-size: 26px;
-                    padding: 30px;
-                    border-radius: 20px;
+                form{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                }              
-
-                .claves-nombre{
-                    color: brown;
-                    font-weight: bold;
-                    padding-bottom: 20px;
-                }
-
-                .claves-pulse{
-                    font-size: 18px;
-                    padding-bottom: 20px;
                 }
 
                 .input{
@@ -321,7 +307,7 @@ export default function Persona({data}){
                     margin-top: 20px;
                     font-size: 25px;
                     color: white;
-                    padding: 10px 80px;
+                    padding: 8px 60px;
                     background: brown;
                     border-radius: 30px;
                     border: none;
@@ -347,10 +333,11 @@ export default function Persona({data}){
                 }
 
 
-                @media screen and (max-width: 480px){
+                @media screen and (max-width: 768px){
                     .container{
                         background: ${login ? 'white' : 'transparent'};
-                        border-radius: 20px;
+                        border-radius: 20px 20px 25px 25px;
+                        margin-bottom: 40px;
                     }
 
                     .claves{
@@ -365,17 +352,6 @@ export default function Persona({data}){
 
                     .enviar-boton{
                         width: 90%;
-                    }
-
-                    .form-clave{
-                        width: 90%;
-                        margin: 20px auto;
-                        font-size: 22px;
-                        padding: 25px;
-                    }              
-    
-                    .claves-pulse{
-                        font-size: 16px;
                     }
     
                     .input{
@@ -421,7 +397,6 @@ Persona.getInitialProps = async ({query}) => {
             user: 'catequista',
             nombre: 'Catequista',
             apellido: 'Confirmación 4000'
-
         }
         return {data}
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Board from '../drag/board'
-import Card from '../drag/card'
+import Board from '../drag/OldBoard'
+import Card from '../drag/Card'
 
 const Drop = ({no, onNota}) => {
     const [note, setNote] = useState(0)

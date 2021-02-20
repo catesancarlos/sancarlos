@@ -1,17 +1,26 @@
 const Board = ({id, className, children, notaU}) => {
-    
+
     const drop = e => {
         e.preventDefault();
         const data = e.dataTransfer.getData('transfer');
         e.target.appendChild(document.getElementById(data))
         const opcion = data.substr(0, data.indexOf('-'))
-        const contenedor = id.substr(0, id.indexOf('-'))
-        
-        if(opcion == contenedor && id !== 'dr-0') notaU([opcion, 1])
-        else notaU([opcion, 0])
+        const conte = id.substr(0, id.indexOf('-'))
+        console.log(opcion)
+        if(id !== 'dr-0'){
+            if(opcion == conte){
+                notaU('correcto')
+                console.log('correcto')
+            } else {
+                notaU('incorrecto')
+                console.log('incorrecto')
+            }
+        }
     }
 
-    const allowDrop = e => e.preventDefault()
+    const allowDrop = e => {
+        e.preventDefault();
+    }
 
     return (
         <div
@@ -24,19 +33,18 @@ const Board = ({id, className, children, notaU}) => {
             <style jsx>{`
                 .cont-respuestas{
                     background: rgba(255, 255, 255, 0.5);
-                    margin: 10px 0 20px 0;
-                    min-height: 44px;
+                    margin: 10px 0 20px 25px;
+                    min-height: 38px;
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
-                    padding: 8px 0 0 8px;
-                    border-radius: 15px; 
+                    padding: 5px 0 0 5px;
+                    border-radius: 15px;
                 }
 
                 .board{
                     background: white;
-                    margin: 0 0 0 -5px;
-                    width: 138px;
+                    margin-right: 5px;
+                    width: 126px;
                     height: 34px;
                     display: flex;
                     padding: 2px 0;
@@ -44,8 +52,9 @@ const Board = ({id, className, children, notaU}) => {
                     border-radius: 10px;
                 } 
             `}</style>
+
         </div> 
     )
 }
 
-export default Board
+export default Board;

@@ -243,7 +243,7 @@ const Header = ({ name, flecha, auth }) => {
                     border-radius: 20px 0 0 20px;
                 }
 
-                @media screen and (max-width: 480px){
+                @media screen and (max-width: 768px){
                     .header{
                         display: block;
                         padding: 15px;

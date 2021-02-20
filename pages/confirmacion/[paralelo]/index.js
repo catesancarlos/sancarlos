@@ -1,41 +1,41 @@
-import {useEffect} from 'react'
+import { useEffect, useState } from 'react'
 /* import {IoIosCheckmarkCircle} from 'react-icons/io' */
 import { useRouter } from 'next/router'
 import firebase from '../../../services/dBase' 
 import AppLayout from '../../../componentes/layout'
 import Footer from '../../../componentes/layout/footer'
+import Modal from '../../../componentes/layout/Modal'
+import Card from '../../../componentes/layout/Card'
 
 const Paralelo = ({data}) => {
     const router = useRouter()
+    const [paralelo, setParalelo] = useState(router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, router.query.paralelo.length))
+    const [open, setOpen] = useState(null)
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     const handleAlumno = usuario => {
-        router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario}`) 
+        if(usuario.ev1 || usuario.bloqueo) setOpen(usuario)
+        else router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario.user}`)
     }
 
     return (
         <>
             <AppLayout 
-                titulo='San Carlos - Confirmación'
-                name={`2DO CONFIRMACIÓN ${router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, router.query.paralelo.length).toUpperCase()}`} 
+                titulo={`San Carlos - 2 Confirmación ${paralelo.toUpperCase()}`}
+                name={`2DO CONFIRMACIÓN ${paralelo.toUpperCase()}`} 
             >
                 <div className='container'>
                     <div className='pulse'>
-                        {/* <p className='paralelo'>
-                            {`2DO CONFIRMACIÓN ${
-                                router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, 
-                                router.query.paralelo.length).toUpperCase()
-                            }`}
-                        </p> */}
                         <p className='indica-weight'>Pulse en su nombre para iniciar con la evaluación.</p>
                         <p className='indica'>
-                            - Se recomienda realizar la evaluación en una computadora, para evitar imprevistos.
+                            - El tiempo para la evaluación es de 30 minutos y corresponte a los 15 encuentros del libro
+                            y a los temas de Bautismo y Reconciliación.
                         </p>
                         <p className='indica'>
-                            - Si tienes problemas, para dar la Lección, informalo a tu catequista.
+                            - Si tienes problemas, al realizar tu evaluación, informalo a tu catequista.
                         </p>
                     </div>
                     <div className='lista'>
@@ -48,25 +48,34 @@ const Paralelo = ({data}) => {
                         {
                             data.map(item => 
                                 <div 
-                                    className='alumno'
-                                    onClick={() => {handleAlumno(item.user)}}
                                     key={item.id}
+                                    className='alumno'
+                                    onClick={() => {handleAlumno(item)}}
                                 >
                                     <p className='nombre'>
                                         {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                                     </p>
-                                    {
-                                        item.leccion && <p className='nota'>{`${item.leccion}/10`}</p>
-                                    }
-                                    {/* {
-                                        (item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />
-                                    } */}
-                                    
+                                    { item.ev1 && <p className='nota'>{`${item.ev1}/10`}</p> }
+                                    {/*(item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />*/}
                                 </div>
                             ) 
                         }
                     </div>
                 </div>
+                {
+                    open && 
+                    <Modal>
+                        <Card 
+                            nombre={`${open.nombre} ${open.apellido.substring(0, open.apellido.indexOf(' '))}`}
+                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : `Usted ya dio la Evaluación: ${open.ev1}/10`}
+                        >
+                            <div 
+                                className='boton'
+                                onClick={() => setOpen(null)}
+                            >Cerrar</div>
+                        </Card>
+                    </Modal>
+                }
 
                 <Footer /> 
             </AppLayout>
@@ -79,14 +88,9 @@ const Paralelo = ({data}) => {
                 }
 
                 .pulse{
-                    font-size: 26px;
-                    width: 40%;
                     margin-top: 30px;
-                }
-
-                .paralelo{
-                    font-weight: bold;
-                    margin: 10px 0 50px 0;
+                    width: 42%;
+                    font-size: 26px;
                 }
 
                 .indica-weight{
@@ -95,12 +99,13 @@ const Paralelo = ({data}) => {
 
                 .indica{
                     margin-top: 20px;
-                    font-size: 0.65em;
+                    font-size: 0.73em;
+                    font-weight: 300;
                     text-align: justify;
                 }
 
                 .lista{
-                    width: 40%;
+                    width: 42%;
                     padding: 0 20px 20px 0;
                 }
 
@@ -127,7 +132,21 @@ const Paralelo = ({data}) => {
                     font-weight: bold;
                 }
 
-                @media screen and (max-width: 480px){
+                .boton{
+                    margin-top: 20px;
+                    background: brown;
+                    padding: 8px 60px;
+                    color: white;
+                    font-size: 25px;
+                    border-radius: 30px;
+                    border: none;
+                    outline:none;
+                    cursor: pointer;
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                }
+
+
+                @media screen and (max-width: 768px){
                     .container{
                         margin: 10px 0;
                         flex-direction: column;
@@ -163,6 +182,11 @@ const Paralelo = ({data}) => {
                         font-size: 18px;
                         padding: 12px 10px 12px 0;
                     }
+
+                    .boton{
+                        padding: 8px 50px;
+                        font-size: 20px;
+                    }
                 }
             `}</style>
         </> 
@@ -179,7 +203,8 @@ Paralelo.getInitialProps = async ({query}) => {
                 apellido: alumno.data().apellido,
                 nombre: alumno.data().nombre,
                 user: alumno.data().user,
-                leccion: alumno.data().leccion
+                ev1: alumno.data().ev1,
+                bloqueo: alumno.data().bloqueo
             }); 
         })
         return (alumnos)

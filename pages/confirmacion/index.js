@@ -15,12 +15,15 @@ export default function Confirmacion({ data }){
             clave.value = 'Cargando...';
             setMal(false)
             setLogged(true)
+            window.scrollTo(0, 0);
         }
         else {
             clave.value = '';
             setMal(true)
         } 
     }
+
+    
 
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
@@ -35,14 +38,16 @@ export default function Confirmacion({ data }){
                                 Confirmación.
                             </p>
                             <p className='linea'>Uliliza la clave que te entrego tu catequista para poder ingresar.</p>
+                        </div>
+                        <div className='bienvenida'>
+                            <form onSubmit={handleLogin} className='sesion'>
+                                <p className='form-p2'>Para acceder por favor ingrese la contraseña:</p>
+                                <input className='input' name='clave' type='text' required autoComplete='off' />
+                                { mal && <p className='incorrecto'>Contraseña Incorrecta</p> }
+                                <button className='boton'>Ingresar</button>
+                            </form>
                             <p className='nota'>* Si tienes algun problema para ingresar, comunicate con tu catequista.</p>
                         </div>
-                        <form onSubmit={handleLogin} className='sesion'>
-                            <p className='form-p2'>Para acceder por favor ingrese la contraseña:</p>
-                            <input className='input' name='clave' type='text' required autoComplete='off' />
-                            { mal && <p className='incorrecto'>Contraseña Incorrecta</p> }
-                            <button className='boton'>Ingresar</button>
-                        </form>
                     </>
                     :
                     <MenuParalelos {...data} />
@@ -57,7 +62,7 @@ export default function Confirmacion({ data }){
                 }
 
                 .bienvenida{
-                    width: 49%;
+                    width: 47%;
                     font-size: 20px;
                     
                 }
@@ -70,22 +75,23 @@ export default function Confirmacion({ data }){
                 }
 
                 .linea{
+                    text-align: justify;
                     margin-bottom: 20px;
                 }
 
                 .nota{
-                    margin-top: 100px;
+                    margin-top: 50px;
                     font-size: 15px;
                     text-align: right;
                 }
 
                 .sesion{
                     background: white;
-                    width: 46%;
                     padding: 30px;
                     font-size: 23px;
                     text-align: center;
                     display: flex;
+                    flex: 1;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
@@ -126,9 +132,9 @@ export default function Confirmacion({ data }){
                 }
 
 
-                @media screen and (max-width: 480px){
+                @media screen and (max-width: 768px){
                     .container{
-                        margin: 20px 15px;
+                        margin: 20px;
                         display: inline;
                         justify-content: space-between;
                     }
@@ -139,22 +145,22 @@ export default function Confirmacion({ data }){
                     }
     
                     .titulo{
-                        margin-bottom: 20px;
+                        margin-bottom: 30px;
                     }
     
                     .linea{
+                        font-size: 16px;
                         margin-bottom: 10px;
                     }
     
                     .nota{
-                        margin-top: 25px;
+                        margin-top: 0x;
                         font-size: 14px;
                     }
     
                     .sesion{
-                        margin: 50px auto 30px auto;
+                        margin: 40px 0 35px 0;
                         background: white;
-                        width: 95%;
                         padding: 25px;
                         font-size: 18px;
                         border-radius: 20px;
