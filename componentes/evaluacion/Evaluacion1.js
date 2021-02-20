@@ -9,7 +9,7 @@ import Verdadero from './Verdadero'
 import VariosVerdadero from './VariosVerdadero'
 import OpcionesMalla from './OpcionesMalla'
 import Arrastrar from './Arrastrar'
-import Eliminar from './Eliminar'
+import EliminarRespuesta from './EliminarRespuesta'
 
 export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo }) {
     const [preguntas, setPreguntas] = useState(null)
@@ -81,7 +81,7 @@ export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo }) {
             }
             <DosRespuestas {...preguntas[6]} onNota={handleCalificar} />
             <OpcionesMalla {...preguntas[7]} onNota={handleCalificar} />
-            <Eliminar {...preguntas[8]} onNota={handleCalificar} />
+            <EliminarRespuesta {...preguntas[8]} onNota={handleCalificar} />
             <UnaRespuesta {...preguntas[9]} onNota={handleCalificar} />
             <Verdadero {...preguntas[10]} onNota={handleCalificar} />
             <DosRespuestas {...preguntas[11]} onNota={handleCalificar} />

@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import Pregunta from '../generales/Pregunta'
 import BotonToggle from '../generales/BotonToggle'
 
-const Eliminar = ({ no, pregunta, respuestas, onNota }) => {
+const EliminarRespuesta = ({ no, pregunta, respuestas, onNota }) => {
     const [enunciado, setEnunciado] = useState(null)
     const [opciones, setOpciones] = useState(null)
     const [nota, setNota] = useState(null)
@@ -37,4 +37,4 @@ const Eliminar = ({ no, pregunta, respuestas, onNota }) => {
     )
 }
 
-export default Eliminar
+export default EliminarRespuesta
