@@ -11,6 +11,7 @@ import Evaluacion1 from '../../../componentes/evaluacion/Evaluacion1'
 export default function Persona({data}){
     const router = useRouter()
     const [login, setLogin] = useState(false)
+    const [sesion, setSesion] = useState(false)
     const [mal, setMal] = useState(false)
     const [cont, setCont] = useState(false)
     const [final, setFinal] = useState(false)
@@ -24,7 +25,17 @@ export default function Persona({data}){
         var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
         var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
         setInicio(`${hora}:${min}`)
-    }, [login]);
+        if(login){
+            firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
+                {curso: true},
+                {merge: true}
+            )
+        }
+    }, [login])
+
+    useEffect(() => {
+        if(sessionStorage.getItem('sesion')) setSesion(sessionStorage.getItem('sesion'))
+    }, [])
 
 
     const handleLogin = e => {
@@ -54,9 +65,10 @@ export default function Persona({data}){
         if(router.query.persona !== 'catequista') {
             firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
                 {
-                    ev1: Math.round(e*10/27),
-                    inicioev1: inicio,
-                    envioev1: `${hora}:${min}`,
+                    curso: false,
+                    ev2: Math.round(e*10/27),
+                    inicioev2: inicio,
+                    envioev2: `${hora}:${min}`,
                 },
                 {merge: true}
             )
@@ -71,9 +83,9 @@ export default function Persona({data}){
         >
             <div className='container'>
                 {
-                    login ?
+                    (login || sesion == 'catequista') ?
                     <>
-                        <Evaluacion1 prueba={data.id % 3} fin={final} conteo={cont} onTerminar={handleTerminar} />
+                        <Evaluacion1 prueba={data.id % 3} fin={final} conteo={cont} onTerminar={handleTerminar} sesion={sesion} />
 
                         {final &&
                             <div className='modal-final'> 
@@ -101,12 +113,12 @@ export default function Persona({data}){
                         <Card
                             nombre={`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
                             info={
-                                data.ev1 ? `Usted ya dio la Evaluación: ${data.ev1}/10` :  
+                                data.ev2 ? `Usted ya dio la Evaluación: ${data.ev1}/10` :  
                                 'Escriba su segundo apellido y pulse en ingresar'
                             }
                         >
                             {
-                                data.ev1 ?
+                                data.ev2 ?
                                     <div 
                                         className='boton'
                                         onClick={() => router.push('/')}

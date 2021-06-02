@@ -1,25 +1,28 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba }) => {
+const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba, paso }) => {
     const router = useRouter()
     const [modal, setModal] = useState(false)
 
     const handleRedireccion = paralelo => {
-        if(paralelo == 'a' && a) router.push(`/confirmacion/paralelo-${paralelo}`)
-        else if(paralelo == 'b' && b) router.push(`/confirmacion/paralelo-${paralelo}`)
-        else if(paralelo == 'c' && c) router.push(`/confirmacion/paralelo-${paralelo}`)
-        else if(paralelo == 'd' && d) router.push(`/confirmacion/paralelo-${paralelo}`)
-        else if(paralelo == 'angeles' && angeles) router.push('/confirmacion/angeles')
-        else if(paralelo == 'auxiliadora' && auxiliadora) router.push('/confirmacion/auxiliadora')
-        else if(paralelo == 'dolorosa' && dolorosa) router.push('/confirmacion/dolorosa')
-        else if(paralelo == 'molinopamba' && molinopamba) router.push('/confirmacion/molinopamba')
+        if(!paso){
+            if(paralelo == 'a' && a) router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'b' && b) router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'c' && c) router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'd' && d) router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'angeles' && angeles) router.push('/confirmacion/angeles')
+            else if(paralelo == 'auxiliadora' && auxiliadora) router.push('/confirmacion/auxiliadora')
+            else if(paralelo == 'dolorosa' && dolorosa) router.push('/confirmacion/dolorosa')
+            else if(paralelo == 'molinopamba' && molinopamba) router.push('/confirmacion/molinopamba')
+            else setModal(true)
+        }
         else setModal(true)
     }
 
     return (
         <div className='container'>
-            <p className='eva-info1'>Lección Segundos de Confirmación</p>
+            <p className='eva-info1'>EVALUACIÓN FINAL</p>
             <p className='eva-info2'>Escoja el paralelo o comunidad a la que pertenece.</p>
             <div className='grupos-centro'>
                 <p className='centro-nombre'>Centro Parroquial</p>
@@ -41,16 +44,20 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
                 modal && 
                 <div className='modal-final'> 
                     <div className='claves'>
-                        <p className='indicacion-final'>Evaluación 1 Segundos de Confirmación</p>
+                        <p className='indicacion-final'>Evaluación Final</p>
                         <p className='label-final'>Usted esta tratando de ingresar a la evaluación fuera de horario.</p>
-                        <p className='label-final'>Por favor vuelva a intentarlo en el horario indicado.</p>
-                        <p className='label-final horario'>
-                            Molinopamba: 11H00 AM<br/>
-                            Los Ángeles: 02H00 PM<br/>
-                            María Auxiliadora: 03H00 PM<br/>
-                            La Dolorosa: 03H15 PM<br/>
-                            Centro: 16H40
-                        </p>
+                        <p className='label-final'>{!paso ? 'Por favor vuelva a intentarlo en el horario indicado.' : 'La evaluación se realizó el día:'}</p>
+                        <strong className='label-final'>Sábado 5 de junio del 2021</strong>
+                        {
+                            !paso &&
+                            <p className='label-final horario'>
+                                Molinopamba: 11H00 AM<br/>
+                                Los Ángeles: 02H00 PM<br/>
+                                María Auxiliadora: 03H00 PM<br/>
+                                La Dolorosa: 03H15 PM<br/>
+                                Centro: 16H40
+                            </p>
+                        }
                         <p className='finalizar' onClick={() => setModal(false)}>Aceptar</p>
                     </div>
                 </div>

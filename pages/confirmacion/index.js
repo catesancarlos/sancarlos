@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import firebase from '../../services/dBase'
 import AppLayout from '../../componentes/layout'
 import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
@@ -14,7 +14,15 @@ export default function Confirmacion({ data }){
         if(password === '4994'){
             clave.value = 'Cargando...';
             setMal(false)
-            setLogged(true)
+            setLogged('alumno')
+            sessionStorage.setItem('sesion', 'alumno')
+            window.scrollTo(0, 0);
+        }
+        else if(password === 'kt4000'){
+            clave.value = 'Cargando...';
+            setMal(false)
+            setLogged('catequista')
+            sessionStorage.setItem('sesion', 'catequista')
             window.scrollTo(0, 0);
         }
         else {
@@ -23,13 +31,15 @@ export default function Confirmacion({ data }){
         } 
     }
 
-    
+    useEffect(() => {
+        if(sessionStorage.getItem('sesion')) setLogged(sessionStorage.getItem('sesion'))
+    }, [])
 
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
             <div className='container'>
                 {
-                    !logged ?
+                    logged ? <MenuParalelos {...data} /> :
                     <>
                         <div className='bienvenida'>
                             <p className='titulo'>BIENVENIDO</p>
@@ -49,8 +59,6 @@ export default function Confirmacion({ data }){
                             <p className='nota'>* Si tienes algun problema para ingresar, comunicate con tu catequista.</p>
                         </div>
                     </>
-                    :
-                    <MenuParalelos {...data} />
                 }
             </div>
 

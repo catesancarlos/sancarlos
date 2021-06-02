@@ -17,7 +17,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        if(usuario.ev1 || usuario.bloqueo) setOpen(usuario)
+        if(usuario.ev2 || usuario.bloqueo) setOpen(usuario)
         else router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario.user}`)
     }
 
@@ -55,7 +55,10 @@ const Paralelo = ({data}) => {
                                     <p className='nombre'>
                                         {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                                     </p>
-                                    { item.ev1 && <p className='nota'>{`${item.ev1}/10`}</p> }
+                                    { 
+                                        item.ev2 ? <p className='nota'>{`${item.ev2}/10`}</p>
+                                        : item.curso && <p className='curso'>En curso</p>
+                                    }
                                     {/*(item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />*/}
                                 </div>
                             ) 
@@ -67,7 +70,7 @@ const Paralelo = ({data}) => {
                     <Modal>
                         <Card 
                             nombre={`${open.nombre} ${open.apellido.substring(0, open.apellido.indexOf(' '))}`}
-                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : `Usted ya dio la Evaluación: ${open.ev1}/10`}
+                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.ev1}/10`}
                         >
                             <div 
                                 className='boton'
@@ -112,7 +115,7 @@ const Paralelo = ({data}) => {
                 .alumno{
                     background: white;
                     margin: 10px 0;
-                    padding: 0 30px 0 25px;
+                    padding: 0 20px 0 20px;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -130,6 +133,24 @@ const Paralelo = ({data}) => {
                     color: brown;
                     font-size: 20px;
                     font-weight: bold;
+                }
+
+                .curso{
+                    background: green;
+                    padding: 3px 8px 4px 8px;
+                    color: white;
+                    font-size: 16px;
+                    line-height: 1em;
+                    border-radius: 5px;
+                    animation-name: new;
+                    animation-duration: 2.5s;
+                    animation-iteration-count: infinite;
+                }
+
+                @keyframes new{
+                   50% {
+                       background-color: transparent;
+                    } 
                 }
 
                 .boton{
@@ -183,6 +204,11 @@ const Paralelo = ({data}) => {
                         padding: 12px 10px 12px 0;
                     }
 
+                    .curso{
+                        padding: 3px 6px 2px 6px;
+                        font-size: 14px;
+                    }
+
                     .boton{
                         padding: 8px 50px;
                         font-size: 20px;
@@ -204,6 +230,8 @@ Paralelo.getInitialProps = async ({query}) => {
                 nombre: alumno.data().nombre,
                 user: alumno.data().user,
                 ev1: alumno.data().ev1,
+                ev2: alumno.data().ev2,
+                curso: alumno.data().curso,
                 bloqueo: alumno.data().bloqueo
             }); 
         })
