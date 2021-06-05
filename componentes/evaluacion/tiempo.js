@@ -1,24 +1,26 @@
 import {useState, useEffect} from 'react'
 
 const Tiempo = ({timeOut, fin}) => {
-    const [time, setTime] = useState(1800);
-    const [t, setT] = useState('30:00');
-    const [f, setF] = useState(false);
-    const [seg, setSeg] = useState('00');
-    const [min, setMin] = useState(30);
+    const [time, setTime] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')-1  : 1799)
+    const [t, setT] = useState(sessionStorage.getItem('tiempo') ? `${sessionStorage.getItem('tiempo')/60}:00` : '30:00')
+    const [f, setF] = useState(false)
+    const [seg, setSeg] = useState('00')
+    const [min, setMin] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')/60 : 30)
     const [cont, setCont] = useState(true)
 
     useEffect(() => {
         const interval = setInterval(() => {
             tick()
             setT(`${min}:${seg}`)
-        }, 1000);
+        }, 1000)
         return () => clearInterval(interval);
-    }, [seg]);
+    }, [seg])
+    
 
     const tick = e => {
         if(cont == true && fin == false){
-            setTime(time - 1);
+            if(time%30 == 0) sessionStorage.setItem('tiempo', time)
+            setTime(time - 1)
             setMin(Math.trunc(time/60));
             if(seg>10 || seg==0) {setSeg(time%60)}
             else { setSeg(`0${time%60}`)}
@@ -29,7 +31,6 @@ const Tiempo = ({timeOut, fin}) => {
             }
         }
     } 
-
 
     return (
         <div className='tiempo-prueba'>                                 
@@ -66,7 +67,6 @@ const Tiempo = ({timeOut, fin}) => {
                     color: white;
                 }
 
-
                 @media screen and (max-width: 768px){
                     .tiempo-prueba{
                         top: 20px;
@@ -82,4 +82,4 @@ const Tiempo = ({timeOut, fin}) => {
     )
 }
 
-export default Tiempo;
+export default Tiempo

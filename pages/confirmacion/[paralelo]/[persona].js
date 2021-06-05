@@ -1,21 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import firebase from '../../../services/dBase'
 import AppLayout from '../../../componentes/layout'
 import Footer from '../../../componentes/layout/footer'
 import Card from '../../../componentes/layout/Card'
-import Evaluacion1 from '../../../componentes/evaluacion/Evaluacion1'
+import Evaluacion2 from '../../../componentes/evaluacion/Evaluacion2'
 
 
 export default function Persona({data}){
     const router = useRouter()
-    const [login, setLogin] = useState(false)
     const [sesion, setSesion] = useState(false)
     const [mal, setMal] = useState(false)
-    const [cont, setCont] = useState(false)
     const [final, setFinal] = useState(false)
-    const [inicio, setInicio] = useState(null)
     const [envio, setEnvio] = useState(null)
     const [nota, setNota] = useState(0)
 
@@ -24,18 +20,14 @@ export default function Persona({data}){
         var hoy = new Date()
         var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
         var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
-        setInicio(`${hora}:${min}`)
-        if(login){
-            firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
-                {curso: true},
-                {merge: true}
-            )
-        }
-    }, [login])
+        sessionStorage.setItem(`inicio`, `${hora}:${min}`)
+    }, [])
 
     useEffect(() => {
-        if(sessionStorage.getItem('sesion')) setSesion(sessionStorage.getItem('sesion'))
-    }, [])
+        if((sessionStorage.getItem('sesion') && sessionStorage.getItem('sesion') == router.query.persona) || sessionStorage.getItem('sesion') == 'catequista'){
+            setSesion(sessionStorage.getItem('sesion'))
+        } 
+    }, [sesion])
 
 
     const handleLogin = e => {
@@ -47,8 +39,12 @@ export default function Persona({data}){
         if(pass === word){
             segundo.value = "Cargando...";
             setMal(false)
-            setLogin(true)
-            setCont(true) 
+            setSesion(router.query.persona)
+            sessionStorage.setItem('sesion', router.query.persona)
+            firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
+                {curso: true},
+                {merge: true}
+            )
         } else {
             segundo.value = "";
             setMal(true)
@@ -61,13 +57,13 @@ export default function Persona({data}){
         var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
         setFinal(true)
         setEnvio(`${hora}:${min}`)
-        setNota(Math.round(e*10/27))
+        setNota(Math.round(e*10/16))
         if(router.query.persona !== 'catequista') {
             firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
                 {
-                    curso: false,
-                    ev2: Math.round(e*10/27),
-                    inicioev2: inicio,
+                    curso: false, 
+                    ev2: Math.round(e*10/16),
+                    inicioev2: sessionStorage.getItem('inicio') && sessionStorage.getItem('inicio'),
                     envioev2: `${hora}:${min}`,
                 },
                 {merge: true}
@@ -75,17 +71,30 @@ export default function Persona({data}){
         }
     }
 
+    const handleFinalizar = e => {
+        sessionStorage.clear()
+        router.push('/')
+    }
+
     return (
         <AppLayout
             titulo={`${data.nombre} ${data.apellido.substr(0, data.apellido.indexOf(' '))}`}
             name={`${data.nombre} ${data.apellido.substr(0, data.apellido.indexOf(' '))}`}
-            flecha={!login}
+            flecha={sesion == false || sesion == 'catequista'}
         >
             <div className='container'>
                 {
-                    (login || sesion == 'catequista') ?
+                    ((sesion && !(data.ev2 || data.ev2 == 0)) || sesion == 'catequista') ?
                     <>
-                        <Evaluacion1 prueba={data.id % 3} fin={final} conteo={cont} onTerminar={handleTerminar} sesion={sesion} />
+                        <Evaluacion2
+                            data={data}
+                            prueba={data.id % 3} 
+                            fin={final}
+                            sesion={sesion}
+                            onTerminar={handleTerminar} 
+                            paralelo={router.query.paralelo}
+                            persona={router.query.persona}
+                        />
 
                         {final &&
                             <div className='modal-final'> 
@@ -102,9 +111,7 @@ export default function Persona({data}){
                                             ${nota}/10`}
                                         </p>
                                     </div>
-                                    <Link href='/'>
-                                    <a><p className='finalizar'>Finalizar</p></a>
-                                    </Link>
+                                    <p className='finalizar' onClick={handleFinalizar}>Finalizar</p>
                                 </div>
                             </div>
                         }
@@ -113,12 +120,12 @@ export default function Persona({data}){
                         <Card
                             nombre={`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
                             info={
-                                data.ev2 ? `Usted ya dio la Evaluación: ${data.ev1}/10` :  
+                                (data.ev2 || data.ev2 == 0) ? `Usted ya dio la Evaluación: ${data.ev2}/10` :  
                                 'Escriba su segundo apellido y pulse en ingresar'
                             }
                         >
                             {
-                                data.ev2 ?
+                                (data.ev2 || data.ev2 == 0) ?
                                     <div 
                                         className='boton'
                                         onClick={() => router.push('/')}
@@ -270,7 +277,7 @@ export default function Persona({data}){
 
                 @media screen and (max-width: 768px){
                     .container{
-                        background: ${login ? 'white' : 'transparent'};
+                        background: ${sesion ? 'white' : 'transparent'};
                         border-radius: 20px 20px 25px 25px;
                         margin-bottom: 40px;
                     }

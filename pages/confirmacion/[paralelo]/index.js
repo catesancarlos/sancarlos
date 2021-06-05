@@ -17,7 +17,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        if(usuario.ev2 || usuario.bloqueo) setOpen(usuario)
+        if((usuario.ev2 || usuario.bloqueo) && sessionStorage.getItem('sesion') != 'catequista') setOpen(usuario)
         else router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario.user}`)
     }
 
@@ -31,8 +31,10 @@ const Paralelo = ({data}) => {
                     <div className='pulse'>
                         <p className='indica-weight'>Pulse en su nombre para iniciar con la evaluación.</p>
                         <p className='indica'>
-                            - El tiempo para la evaluación es de 30 minutos y corresponte a los 15 encuentros del libro
-                            y a los temas de Bautismo y Reconciliación.
+                            - El tiempo para la evaluación es de 30 minutos, la misma consta de 14 preguntas.
+                        </p>
+                        <p className='indica'>
+                            - Para la evaluación se ha tomado en cuenta el cuestionario enviado a todos los alumnos de Segundo de Confirmación.
                         </p>
                         <p className='indica'>
                             - Si tienes problemas, al realizar tu evaluación, informalo a tu catequista.

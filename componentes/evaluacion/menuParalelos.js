@@ -6,15 +6,15 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
     const [modal, setModal] = useState(false)
 
     const handleRedireccion = paralelo => {
-        if(!paso){
-            if(paralelo == 'a' && a) router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'b' && b) router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'c' && c) router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'd' && d) router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'angeles' && angeles) router.push('/confirmacion/angeles')
-            else if(paralelo == 'auxiliadora' && auxiliadora) router.push('/confirmacion/auxiliadora')
-            else if(paralelo == 'dolorosa' && dolorosa) router.push('/confirmacion/dolorosa')
-            else if(paralelo == 'molinopamba' && molinopamba) router.push('/confirmacion/molinopamba')
+        if(!paso || sessionStorage.getItem('sesion') == 'catequista'){
+            if(paralelo == 'a' && a || paralelo == 'a' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'b' && b || paralelo == 'b' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'c' && c || paralelo == 'c' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'd' && d || paralelo == 'd' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
+            else if(paralelo == 'angeles' && angeles || paralelo == 'angeles' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/angeles')
+            else if(paralelo == 'auxiliadora' && auxiliadora || paralelo == 'auxiliadora' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/auxiliadora')
+            else if(paralelo == 'dolorosa' && dolorosa || paralelo == 'dolorosa' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/dolorosa')
+            else if(paralelo == 'molinopamba' && molinopamba || paralelo == 'molinopamba' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/molinopamba')
             else setModal(true)
         }
         else setModal(true)
