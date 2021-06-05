@@ -72,7 +72,7 @@ const Paralelo = ({data}) => {
                     <Modal>
                         <Card 
                             nombre={`${open.nombre} ${open.apellido.substring(0, open.apellido.indexOf(' '))}`}
-                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.ev1}/10`}
+                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.ev2}/10`}
                         >
                             <div 
                                 className='boton'
