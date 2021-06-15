@@ -11,7 +11,7 @@ import OpcionesMalla from './OpcionesMalla'
 import Arrastrar from './Arrastrar'
 import EliminarRespuesta from './EliminarRespuesta'
 
-export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo, sesion }) {
+export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo }) {
     const [preguntas, setPreguntas] = useState(null)
     const [nota1, setNota1] = useState(null)
     const [nota2, setNota2] = useState(null)
@@ -69,7 +69,7 @@ export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo, sesion }
 
     return(
         <>
-            {(conteo && sesion == 'alumno') && <Tiempo timeOut={handleTimeOut} fin={fin} conteo={conteo} />}
+            <Tiempo timeOut={handleTimeOut} fin={fin} conteo={conteo} />
             <OpcionesMalla {...preguntas[0]} onNota={handleCalificar} />
             <UnaRespuesta {...preguntas[1]} onNota={handleCalificar} />
             <UnaRespuesta {...preguntas[2]} onNota={handleCalificar} />
@@ -88,7 +88,7 @@ export default function Evaluacion1 ({ prueba, onTerminar, fin, conteo, sesion }
             <UnaRespuesta {...preguntas[12]} onNota={handleCalificar} />
             <Verdadero {...preguntas[13]} onNota={handleCalificar} />
             <UnaRespuesta {...preguntas[14]} onNota={handleCalificar} />
-            {sesion == 'alumno' && <div className='enviar-boton' onClick={handleTerminar}>Terminar y Enviar</div>}
+            <div className='enviar-boton' onClick={handleTerminar}>Terminar y Enviar</div>
             
 
             <style jsx>{`

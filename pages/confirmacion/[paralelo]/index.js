@@ -17,7 +17,7 @@ const Paralelo = ({data}) => {
     }, []);
 
     const handleAlumno = usuario => {
-        if((usuario.ev2 || usuario.bloqueo) && sessionStorage.getItem('sesion') != 'catequista') setOpen(usuario)
+        if(((usuario.ev2 && usuario.ev1) || usuario.bloqueo) && sessionStorage.getItem('sesion') != 'catequista') setOpen(usuario)
         else router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario.user}`)
     }
 
@@ -72,7 +72,7 @@ const Paralelo = ({data}) => {
                     <Modal>
                         <Card 
                             nombre={`${open.nombre} ${open.apellido.substring(0, open.apellido.indexOf(' '))}`}
-                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.ev2}/10`}
+                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.cual == 1 ? open.ev1 : open.ev2}/10`}
                         >
                             <div 
                                 className='boton'
@@ -234,7 +234,8 @@ Paralelo.getInitialProps = async ({query}) => {
                 ev1: alumno.data().ev1,
                 ev2: alumno.data().ev2,
                 curso: alumno.data().curso,
-                bloqueo: alumno.data().bloqueo
+                bloqueo: alumno.data().bloqueo,
+                cual: alumno.data().cual
             }); 
         })
         return (alumnos)

@@ -76,8 +76,11 @@ const Home = () => {
                             :
                                 
                                     <div className='option'>
-                                        <Link href='/confirmacion'>
-                                            <a className='name-option'>2 Confirmación</a>
+                                        <Link href='/recuperacion'>
+                                            <a className='name-option recupera'>
+                                                <p className='nuevo'>Recuperación</p>
+                                                2 Confirmación
+                                            </a>
                                         </Link>
                                         <p className='descripcion'>
                                             Espacio dedicado para el nivel se Segundo de Confirmación
@@ -155,6 +158,7 @@ const Home = () => {
                 }
 
                 .name-option{
+                    position: relative;
                     background-color: white;
                     width: 70%;
                     font-size: 2vw;
@@ -163,6 +167,10 @@ const Home = () => {
                     border-radius: 40px;
                     transition: .2s ease;
                     cursor: pointer;
+                }
+
+                .recupera{
+                    border-radius: 40px 8px 40px 40px;
                 }
 
                 .descripcion{
@@ -212,31 +220,33 @@ const Home = () => {
                     cursor: pointer;
                 }
 
-                /* .nuevo{
+                .nuevo{
                     position: absolute;
-                    margin: -0.75% 0 0 0;
+                    right: 0;
                     background: brown;
                     color: white;
-                    font-weight: bold;
-                    padding: 2px 7px;
+                    font-size: 15.5px;
+                    font-weight: 400;
+                    line-height: 1em;
+                    padding: 4px 7px;
                     border-radius: 7px;
                     animation-name: new;
                     animation-duration: 2s;
                     animation-iteration-count: infinite;
                     mix-blend-mode: multiply;
-                } */
+                }
 
                 .recu{
                     margin-left: -5.75%;
                     mix-blend-mode: normal;
                 }
 
-                /* @keyframes new{
+                @keyframes new{
                    50% {
                        background-color: transparent;
                        color: transparent;
                     } 
-                } */
+                }
 
                 .sub-option{
                     background-color: #ccdae8;
@@ -336,8 +346,7 @@ const Home = () => {
                     }
 
                     .nuevo{
-                        margin: -3% 0 0 0;
-                        font-size: 15px;
+                        font-size: 14px;
                     }
 
                     .recu{

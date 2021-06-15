@@ -4,6 +4,7 @@ import firebase from '../../../services/dBase'
 import AppLayout from '../../../componentes/layout'
 import Footer from '../../../componentes/layout/footer'
 import Card from '../../../componentes/layout/Card'
+import Evaluacion1 from '../../../componentes/evaluacion/Evaluacion1'
 import Evaluacion2 from '../../../componentes/evaluacion/Evaluacion2'
 
 
@@ -14,6 +15,7 @@ export default function Persona({data}){
     const [final, setFinal] = useState(false)
     const [envio, setEnvio] = useState(null)
     const [nota, setNota] = useState(0)
+    const [cont, setCont] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -52,22 +54,35 @@ export default function Persona({data}){
     }
 
     const handleTerminar = e => {
-        var hoy = new Date()
-        var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
-        var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
-        setFinal(true)
-        setEnvio(`${hora}:${min}`)
-        setNota(Math.round(e*10/16))
-        if(router.query.persona !== 'catequista') {
+        if(data.cual == 1){
+            setFinal(true)
+            setNota(Math.round(e*10/26))
             firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
                 {
                     curso: false, 
-                    ev2: Math.round(e*10/16),
-                    inicioev2: sessionStorage.getItem('inicio') && sessionStorage.getItem('inicio'),
-                    envioev2: `${hora}:${min}`,
+                    ev1: Math.round(e*10/26)
                 },
                 {merge: true}
             )
+        }
+        else{
+            var hoy = new Date()
+            var hora = hoy.getHours() < 10 ? `0${hoy.getHours()}` : hoy.getHours()
+            var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
+            setFinal(true)
+            setEnvio(`${hora}:${min}`)
+            setNota(Math.round(e*10/16))
+            if(router.query.persona !== 'catequista') {
+                firebase.firestore().collection(`${router.query.paralelo}`).doc(`${router.query.persona}`).set(
+                    {
+                        curso: false, 
+                        ev2: Math.round(e*10/16),
+                        inicioev2: sessionStorage.getItem('inicio') && sessionStorage.getItem('inicio'),
+                        envioev2: `${hora}:${min}`,
+                    },
+                    {merge: true}
+                )
+            }
         }
     }
 
@@ -84,32 +99,40 @@ export default function Persona({data}){
         >
             <div className='container'>
                 {
-                    ((sesion && !(data.ev2 || data.ev2 == 0)) || sesion == 'catequista') ?
+                    ((sesion && !(data.ev2 || data.ev2 == 0 || data.ev1 || data.ev1 == 0)) || sesion == 'catequista') ?
                     <>
-                        <Evaluacion2
-                            data={data}
-                            prueba={data.id % 3} 
-                            fin={final}
-                            sesion={sesion}
-                            onTerminar={handleTerminar} 
-                            paralelo={router.query.paralelo}
-                            persona={router.query.persona}
-                        />
+                        {
+                            data.cual == 1 ?
+                                <Evaluacion1
+                                    prueba={data.id % 3}
+                                    fin={final}
+                                    conteo={cont}
+                                    onTerminar={handleTerminar}
+                                />
+                            :
+                                <Evaluacion2
+                                    data={data}
+                                    prueba={data.id % 3} 
+                                    fin={final}
+                                    sesion={sesion}
+                                    onTerminar={handleTerminar} 
+                                    paralelo={router.query.paralelo}
+                                    persona={router.query.persona}
+                                />
+                        }
 
                         {final &&
                             <div className='modal-final'> 
                                 <div className='claves'>
                                     <p className='indicacion-final'>Su evaluación a finalizado</p>
-                                    <p className='indicacion-final'>{`Enviada a las: ${envio}`}</p>
+                                    {data.cual != 1 && <p className='indicacion-final'>{`Enviada a las: ${envio}`}</p>}
                                     <div className='label-final'>
                                         <p>Nombre:</p>
                                         <p className='nombre-final'>{`${data.nombre} ${data.apellido}`}</p>
                                     </div>
                                     <div className='label-final'>
                                         <p>Calificación:</p>
-                                        <p className='nota-final'>{`
-                                            ${nota}/10`}
-                                        </p>
+                                        <p className='nota-final'>{`${nota}/10`}</p>
                                     </div>
                                     <p className='finalizar' onClick={handleFinalizar}>Finalizar</p>
                                 </div>
@@ -120,12 +143,13 @@ export default function Persona({data}){
                         <Card
                             nombre={`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
                             info={
-                                (data.ev2 || data.ev2 == 0) ? `Usted ya dio la Evaluación: ${data.ev2}/10` :  
+                                (data.ev2 || data.ev2 == 0 && data.ev1 || data.ev1 == 0) ? 
+                                    `Usted ya dio la Evaluación: ${data.cual == 1 ? data.ev1 : data.ev2}/10` :  
                                 'Escriba su segundo apellido y pulse en ingresar'
                             }
                         >
                             {
-                                (data.ev2 || data.ev2 == 0) ?
+                                (data.ev2 || data.ev2 == 0 || data.ev1 || data.ev1 == 0) ?
                                     <div 
                                         className='boton'
                                         onClick={() => router.push('/')}
