@@ -99,7 +99,7 @@ export default function Persona({data}){
         >
             <div className='container'>
                 {
-                    ((sesion && !(data.ev2 || data.ev2 == 0 || data.ev1 || data.ev1 == 0)) || sesion == 'catequista') ?
+                    ((sesion && !(data.ev2 || data.ev2 == 0)) || sesion == 'catequista') ?
                     <>
                         {
                             data.cual == 1 ?
@@ -143,13 +143,13 @@ export default function Persona({data}){
                         <Card
                             nombre={`${data.nombre} ${data.apellido.substring(0, data.apellido.indexOf(' '))}`}
                             info={
-                                (data.ev2 || data.ev2 == 0 && data.ev1 || data.ev1 == 0) ? 
-                                    `Usted ya dio la Evaluación: ${data.cual == 1 ? data.ev1 : data.ev2}/10` :  
+                                (data.ev2 || data.ev2 == 0) ? 
+                                    `Usted ya dio la Evaluación: ${data.ev2}/10` :  
                                 'Escriba su segundo apellido y pulse en ingresar'
                             }
                         >
                             {
-                                (data.ev2 || data.ev2 == 0 || data.ev1 || data.ev1 == 0) ?
+                                (data.ev2 || data.ev2 == 0) ?
                                     <div 
                                         className='boton'
                                         onClick={() => router.push('/')}

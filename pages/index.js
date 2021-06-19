@@ -74,47 +74,32 @@ const Home = () => {
                                     </a>
                                 </div>
                             :
-                                
-                                    <div className='option'>
-                                        <Link href='/recuperacion'>
-                                            <a className='name-option recupera'>
-                                                <p className='nuevo'>Recuperación</p>
-                                                2 Confirmación
-                                            </a>
-                                        </Link>
-                                        <p className='descripcion'>
-                                            Espacio dedicado para el nivel se Segundo de Confirmación
-                                        </p>
-                                    </div>
-
-                                 
-                                    /* {
-                                        ev ? 
+                                <>
+                                    {
+                                        !ev &&
                                         <div className='option'>
-                                            <Link href='/evaluacion'>
-                                                <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
-                                            </Link> 
-                                            <Link href='/evaluacion/notas'>
-                                                <a className='name-option sub-option'>Calificaciones</a>
-                                            </Link> 
-                                        </div>
-                                        :
-                                        <div className='option' onClick={() => setEv(true)}>
-                                            <p className='name-option'>Evaluaciones</p>
+                                                <div className='name-option recupera' onClick={() => setEv(true)}>
+                                                    <p className='nuevo'>Recuperación</p>
+                                                    2 Confirmación
+                                                </div>
                                             <p className='descripcion'>
-                                                Evaluaciones para los niveles de Segundo Confirmación.
+                                                Espacio dedicado para el nivel se Segundo de Confirmación
                                             </p>
                                         </div>
                                     }
-                                    <div className='option'>
-                                        <p className='nuevo'>Nuevo</p>
-                                        <Link href='/miConfirmacion'>
-                                            <a className='name-option'>Mi Sacramento</a>
-                                        </Link>
-                                        <p className='descripcion'>
-                                            ¿Aprobé? Quiero ingresar el nombre de mi padrino.
-                                        </p>
-                                    </div>  */
+                                    {
+                                        ev &&
+                                        <div className='option'>
+                                            <p onClick={() => setEv(false)} className='cerrar-libros'>X</p>
+                                            <Link href='/confirmacion'>
+                                                <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
+                                            </Link> 
+                                            <Link href='/recuperacion'>
+                                                <a className='name-option sub-option'>Clases de recuperación</a>
+                                            </Link> 
+                                        </div>
+                                    }
+                                </>
                         }
                     </div>
                     
