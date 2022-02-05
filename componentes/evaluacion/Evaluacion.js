@@ -101,7 +101,7 @@ export default function Evaluacion ({ prueba, onTerminar, fin, sesion, paralelo,
                             <p>Hora de inicio: <strong>{alumno.inicioev1}</strong></p>
                             <p>Hora de envio: <strong>{alumno.envioev1}</strong></p>
                         </>
-                        : <strong>Esta evaluación no ha sido resuelta todavía</strong>
+                        : <strong>Esta evaluación no ha sido resuelta todavía.</strong>
                     }
                 </div>
             }
