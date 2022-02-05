@@ -120,7 +120,7 @@ export default function Evaluacion ({ prueba, onTerminar, fin, sesion, paralelo,
                 }</>
                 :
                 <>{
-                    alumno.mobile ?
+                    (alumno.mobile1 || alumno,mobile) ?
                     <DosRespuestasNew {...preguntas[12]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
                     : 
                     <Arrastrar {...preguntas[5]} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
