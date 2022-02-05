@@ -29,7 +29,7 @@ export default function Ingresar(){
 
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
-            <div className='container'>
+            {/* <div className='container'>
                 <input onChange={handleParalelo} />
                 <input onChange={handleIdd} value={idd ? idd : ''} />
                 <textarea
@@ -40,7 +40,7 @@ export default function Ingresar(){
                 <div className='editar' onClick={handleEditar} >
                     Ingresar
                 </div>
-            </div>
+            </div> */}
 
             <style jsx>{`
                
