@@ -74,7 +74,7 @@ export default function Paralelo ({ alumnos }) {
                     <Modal>
                         <Card 
                             nombre={`${open.nombre} ${open.apellido.substring(0, open.apellido.indexOf(' '))}`}
-                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.cual == 1 ? open.ev1 : open.ev2}/10`}
+                            info={open.bloqueo ? 'Usted esta inhabilitado(a) para dar la evaluación, debido a que no ha presentado el cuestionario resuelto u otras actividades.' : open.curso ? 'Evaluación en curso' : `Usted ya dio la Evaluación: ${open.cual == 1 ? open.ev1 : open.ev2}/10`}
                         >
                             <div 
                                 className='boton'
