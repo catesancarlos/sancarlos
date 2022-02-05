@@ -33,8 +33,7 @@ const Tiempo = ({ timeOut, fin }) => {
     } 
 
     return (
-        <div className='tiempo-prueba'>
-            {console.log(t)}                              
+        <div className='tiempo-prueba'>                             
             <p>Tiempo restante:</p>
             {
                 f ? 

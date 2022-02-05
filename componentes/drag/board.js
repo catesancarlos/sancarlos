@@ -1,4 +1,4 @@
-const Board = ({ no, index, id, className, children }) => {
+const Board = ({ no, index, id, className, children, datos }) => {
     
     const drop = e => {
         e.preventDefault()
@@ -20,6 +20,7 @@ const Board = ({ no, index, id, className, children }) => {
             onDragOver={allowDrop}
             className={className}
         >
+            {datos && <p>{datos[1]}</p>}
             {children}
             <style jsx>{`
                 .cont-respuestas{
@@ -42,7 +43,21 @@ const Board = ({ no, index, id, className, children }) => {
                     padding: 2px 0;
                     border: 1px dashed black;
                     border-radius: 10px;
-                } 
+                }
+
+                p{
+                    background-color: rgba(142, 56, 56, 0.1);
+                    margin: 0 5px 8px 5px;
+                    width: 135px;
+                    height: 28px;
+                    line-height: 28px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid brown;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
             `}</style>
         </div> 
     )

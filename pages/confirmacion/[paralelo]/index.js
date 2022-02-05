@@ -33,7 +33,7 @@ export default function Paralelo ({ alumnos }) {
                     <div className='pulse'>
                         <p className='indica-weight'>Pulse en su nombre para iniciar con la evaluación.</p>
                         <p className='indica'>
-                            - El tiempo para la evaluación es de 30 minutos, la misma consta de 14 preguntas.
+                            - El tiempo para la evaluación es de 25 minutos, la misma consta de 12 preguntas.
                         </p>
                         <p className='indica'>
                             - Para la evaluación se ha tomado en cuenta el cuestionario enviado a todos los alumnos de Segundo de Confirmación.

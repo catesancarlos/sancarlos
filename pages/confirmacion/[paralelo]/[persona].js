@@ -58,12 +58,12 @@ export default function Persona({ alumno, preguntas }){
         var min = hoy.getMinutes() < 10 ? `0${hoy.getMinutes()}` : hoy.getMinutes()
         setFinal(true)
         setEnvio(`${hora}:${min}`)
-        setNota(Math.round(e*10/22))
+        setNota((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ? Math.round(e*10/20) : Math.round(e*10/22))
         if(router.query.persona !== 'catequista') {
             const productoRef = doc(db, `${router.query.paralelo}`, `${router.query.persona}`)
             updateDoc(productoRef, { 
                 curso: false, 
-                ev1: Math.round(e*10/22),
+                ev1: Math.round((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ? Math.round(e*10/20) : Math.round(e*10/22)),
                 inicioev1: sessionStorage.getItem('inicio') && sessionStorage.getItem('inicio'),
                 envioev1: `${hora}:${min}`,
             })
