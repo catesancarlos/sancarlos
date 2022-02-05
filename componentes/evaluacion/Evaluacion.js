@@ -111,10 +111,20 @@ export default function Evaluacion ({ prueba, onTerminar, fin, sesion, paralelo,
             <EliminarRespuesta {...preguntas[3]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p4o0, alumno.p4o1, alumno.p4o2, alumno.p4o3] : [null, null, null, null]} />
             <UnaRespuestaNew {...preguntas[4]} prueba={prueba} datos={sesion == 'catequista' ? alumno.p5 : null} />
             {
-                (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ?
-                <DosRespuestasNew {...preguntas[12]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
-                : 
-                <Arrastrar {...preguntas[5]} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
+                (sesion != 'catequista') ?
+                <>{
+                    (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ?
+                    <DosRespuestasNew {...preguntas[12]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
+                    : 
+                    <Arrastrar {...preguntas[5]} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
+                }</>
+                :
+                <>{
+                    alumno.mobile ?
+                    <DosRespuestasNew {...preguntas[12]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
+                    : 
+                    <Arrastrar {...preguntas[5]} datos={sesion == 'catequista' ? [alumno.p6o0, alumno.p6o1, alumno.p6o2, alumno.p6o3] : [null, null, null, null]} />
+                }</>
             }
             <VerdaderoNew {...preguntas[6]} prueba={prueba} datos={sesion == 'catequista' ? alumno.p7 : null} />
             <DosRespuestasNew {...preguntas[7]} prueba={prueba} datos={sesion == 'catequista' ? [alumno.p8o0, alumno.p8o1, alumno.p8o2, alumno.p8o3] : [null, null, null, null]} />

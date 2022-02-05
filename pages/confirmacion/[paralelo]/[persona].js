@@ -66,6 +66,7 @@ export default function Persona({ alumno, preguntas }){
                 ev1: Math.round((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ? Math.round(e*10/20) : Math.round(e*10/22)),
                 inicioev1: sessionStorage.getItem('inicio') && sessionStorage.getItem('inicio'),
                 envioev1: `${hora}:${min}`,
+                mobile1: (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) ? true : false
             })
         }
     }
