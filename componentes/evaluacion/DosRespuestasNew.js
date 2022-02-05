@@ -2,36 +2,33 @@ import {useState, useEffect} from 'react'
 import Pregunta from '../generales/Pregunta'
 import BotonToggleNew from '../generales/BotonToggleNew'
 
-const DosRespuestasNew = ({ no, pregunta, respuestas, datos }) => {
+const DosRespuestasNew = ({ prueba, number, label1, label2, label3, respuestas1, respuestas2, respuestas3, datos }) => {
     const [enunciado, setEnunciado] = useState(null)
-    const [opciones, setOpciones] = useState(null)
-    const [nota, setNota] = useState(null)
+    const [respuestas, setRespuestas] = useState([])
     
     useEffect(() => {
-        setEnunciado(pregunta)
-        setOpciones(respuestas)
-    }, [enunciado])
-
-    if(!(enunciado && opciones)) { 
-        return <div>loading...</div>
-    }
-
-    const handleCalificar = e => {
-        if(e == true) {
-            setNota(nota + 1)
-            if((nota + 1) >= 0) console.log([no, nota + 1])
-            else console.log([no, 0])
-        } else {
-            setNota(nota - 1)
-            if((nota - 1) >= 0) console.log([no, nota - 1])
-            else console.log([no, 0])
+        if(prueba == 1){
+            setEnunciado(label1)
+            setRespuestas(respuestas1)
         }
+        if(prueba == 2){
+            setEnunciado(label2)
+            setRespuestas(respuestas2)
+        }
+        if(prueba == 0){
+            setEnunciado(label3)
+            setRespuestas(respuestas3)
+        }
+    }, [prueba])
+
+    if(!(enunciado && respuestas)) { 
+        return <div>Cargando pregunta...</div>
     }
 
     return (
-        <Pregunta no={no} pregunta={enunciado}>
+        <Pregunta no={number} pregunta={enunciado}>
             { 
-                opciones.map(item => <BotonToggleNew no={no} largo key={item.id} {...item} onBien={handleCalificar} datos={datos && datos[item.id]}/>) 
+                respuestas.map((item, index) => <BotonToggleNew no={number} key={index} id={index} name={item} datos={datos && datos[index]} largo />) 
             }
         </Pregunta>
     )

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
-import firebase from '../../services/dBase'
 import AppLayout from '../../componentes/layout'
 import MenuParalelos from '../../componentes/evaluacion/menuParalelos'
+
+import db  from '../../services/dBase'
+import { doc, getDoc } from 'firebase/firestore'
 
 export default function Confirmacion({ data }){
     const [mal, setMal] = useState(false)
@@ -11,7 +13,7 @@ export default function Confirmacion({ data }){
         e.preventDefault()
         const { clave } = e.target.elements
         const password = clave.value.toLowerCase()
-        if(password === '4994'){
+        if(password === '2055'){
             clave.value = 'Cargando...';
             setMal(false)
             setLogged('alumno')
@@ -205,11 +207,17 @@ export default function Confirmacion({ data }){
     )
 }
 
-Confirmacion.getInitialProps = async () => {
-    const data = await firebase.firestore().collection('controles').doc('prueba').get()
-    .then(info => {
-        return (info.data())
-    })
+export async function getServerSideProps (context) {
+    const { res } = context
+
+    const docSnap = await getDoc(doc(db, 'controles', 'prueba'))
     
-    return {data}
-} 
+    if (docSnap.exists()) {
+        let data = await docSnap.data()
+        return {
+            props : { data }
+        }
+    } else {
+        if(res) res.writeHead(404).end()
+    }
+}

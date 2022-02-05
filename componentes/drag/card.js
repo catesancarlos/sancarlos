@@ -4,13 +4,13 @@ const Card = ({ id, children }) => {
 
     return (
         <div 
+            className='card'
             id={id}
             draggable={true}
             onDragStart={drag}
             onDragOver={noAllowDrop}
-            className='card'
         >
-            {children}            
+            {children}        
 
             <style jsx>{`
                 .card{

@@ -1,37 +1,34 @@
 import {useState, useEffect} from 'react'
 import Pregunta from '../generales/Pregunta'
-import BotonToggle from '../generales/BotonToggle'
+import BotonToggleNew from '../generales/BotonToggleNew'
 
-const EliminarRespuesta = ({ no, pregunta, respuestas, onNota }) => {
+const EliminarRespuesta = ({ prueba, number, label1, label2, label3, respuestas1, respuestas2, respuestas3, datos }) => {
     const [enunciado, setEnunciado] = useState(null)
-    const [opciones, setOpciones] = useState(null)
-    const [nota, setNota] = useState(null)
+    const [respuestas, setRespuestas] = useState(null)
     
     useEffect(() => {
-        setEnunciado(pregunta)
-        setOpciones(respuestas)
-    }, [enunciado, opciones])
-
-    const handleCalificar = e => {
-        if(e == true) {
-            setNota(nota + 1)
-            if((nota + 1) >= 0) onNota([no, nota + 1])
-            else onNota([no, 0])
-        } else {
-            setNota(nota - 1)
-            if((nota - 1) >= 0) onNota([no, nota - 1])
-            else onNota([no, 0])
+        if(prueba == 1){
+            setEnunciado(label1)
+            setRespuestas(respuestas1)
         }
-    }
+        if(prueba == 2){
+            setEnunciado(label2)
+            setRespuestas(respuestas2)
+        }
+        if(prueba == 0){
+            setEnunciado(label3)
+            setRespuestas(respuestas3)
+        }
+    }, [prueba])
 
-    if(!(enunciado && opciones)) { 
+    if(!(enunciado && respuestas)) { 
         return <div>Cargando pregunta...</div>
     }
 
     return (
-        <Pregunta no={no} pregunta={enunciado}>
+        <Pregunta no={number} pregunta={enunciado}>
             { 
-                opciones.map(item => <BotonToggle eliminar largo key={item.id} {...item} onBien={handleCalificar} />) 
+                respuestas.map((item, index) => <BotonToggleNew no={number} key={item} id={index} name={item} datos={datos && datos[index]} eliminar largo />) 
             }
         </Pregunta>
     )

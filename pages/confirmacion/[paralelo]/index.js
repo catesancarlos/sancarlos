@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 /* import {IoIosCheckmarkCircle} from 'react-icons/io' */
 import { useRouter } from 'next/router'
-import firebase from '../../../services/dBase' 
 import AppLayout from '../../../componentes/layout'
 import Footer from '../../../componentes/layout/footer'
 import Modal from '../../../componentes/layout/Modal'
 import Card from '../../../componentes/layout/Card'
 
-const Paralelo = ({data}) => {
+import db  from '../../../services/dBase'
+import { collection, getDocs } from 'firebase/firestore'
+
+export default function Paralelo ({ alumnos }) {
     const router = useRouter()
     const [paralelo, setParalelo] = useState(router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, router.query.paralelo.length))
     const [open, setOpen] = useState(null)
@@ -48,7 +50,7 @@ const Paralelo = ({data}) => {
                             <p className='nombre'>Catequista [Para pruebas]</p>
                         </div> */}
                         {
-                            data.map(item => 
+                            alumnos.map(item => 
                                 <div 
                                     key={item.id}
                                     className='alumno'
@@ -58,7 +60,7 @@ const Paralelo = ({data}) => {
                                         {`${item.apellido.substring(0, item.apellido.indexOf(' '))} ${item.nombre}`}
                                     </p>
                                     { 
-                                        item.ev2 ? <p className='nota'>{`${item.ev2}/10`}</p>
+                                        item.ev1 ? <p className='nota'>{`${item.ev1}/10`}</p>
                                         : item.curso && <p className='curso'>En curso</p>
                                     }
                                     {/*(item.aprobado && !item.fe) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} />*/}
@@ -221,26 +223,18 @@ const Paralelo = ({data}) => {
     )
 }
 
-Paralelo.getInitialProps = async ({query}) => {
-    const data = await firebase.firestore().collection(`${query.paralelo}`).get()
-    .then(snapshota => {
-        const alumnos = [];
-        snapshota.forEach(alumno => {
-            alumnos.push({
-                id: alumno.data().id,
-                apellido: alumno.data().apellido,
-                nombre: alumno.data().nombre,
-                user: alumno.data().user,
-                ev1: alumno.data().ev1,
-                ev2: alumno.data().ev2,
-                curso: alumno.data().curso,
-                bloqueo: alumno.data().bloqueo,
-                cual: alumno.data().cual
-            }); 
-        })
-        return (alumnos)
-    })
-    return {data}
-}  
+export async function getServerSideProps (context) {
+    const { params, res } = context
+    const { paralelo } = params
 
-export default Paralelo;
+    const querySnapshot = await getDocs(collection(db, paralelo))
+
+    const alumnos = []
+    querySnapshot.forEach((alumno) => {
+        alumnos.push(alumno.data())
+    })
+
+    return {
+        props : { alumnos }
+    }
+}

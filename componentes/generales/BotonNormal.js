@@ -1,6 +1,6 @@
 const BotonNormal = ({ name, vf, activo, onSeleccion }) => (
     <>
-        <p onClick={onSeleccion}>{name}</p>
+        <p onClick={onSeleccion}>{name.split('&')[0]}</p>
 
         <style jsx>{`
             p{

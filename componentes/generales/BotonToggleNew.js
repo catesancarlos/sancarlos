@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react'
 
-const BotonToggleNew = ({ no, id, name, estado, largo, eliminar, datos }) => {
+const BotonToggleNew = ({ no, id, name, largo, eliminar, datos }) => {
     const [activo, setActivo] = useState(datos ? datos[1] : sessionStorage.getItem(`p${no}o${id}`) ? JSON.parse(sessionStorage.getItem(`p${no}o${id}`))[1] : false)
     const [bien, setBien] = useState(datos ? datos : sessionStorage.getItem(`p${no}o${id}`) ? JSON.parse(sessionStorage.getItem(`p${no}o${id}`)) : [0, false])
 
     useEffect(() => {
         if(!datos) sessionStorage.setItem(`p${no}o${id}`, JSON.stringify(bien))
     }, [activo, bien])
-    console.log(datos, id)
 
     const handleRevisar = e => {
-        if(!datos){
             setActivo(e)
-            if(estado == e && estado == true) setBien([1, e])
-            else if(estado != e && e == true) setBien([-1, e])
+            if(name.split('&')[1] == 'x' && e == true) setBien([1, e])
+            else if(name.split('&')[1] != 'x' && e == true) setBien([-1, e])
             else setBien([0, e])
-        }
     }
 
     return(
@@ -23,11 +20,11 @@ const BotonToggleNew = ({ no, id, name, estado, largo, eliminar, datos }) => {
             {
                 eliminar ? 
                     <div className='opcion'>
-                        { !activo && <p>{name}</p> }
+                        { !activo && <p>{name.split('&')[0]}</p> }
                         <p className='eliminar' onClick={() => handleRevisar(!activo)} >{!activo ? 'X' : '>'}</p>
                     </div>
                 :
-                    <p onClick={() => handleRevisar(!activo)}>{name}</p>
+                    <p onClick={() => handleRevisar(!activo)}>{name.split('&')[0]}</p>
             }
 
             <style jsx>{`

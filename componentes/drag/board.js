@@ -1,14 +1,14 @@
-const Board = ({id, className, children, notaU}) => {
+const Board = ({ no, index, id, className, children }) => {
     
     const drop = e => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData('transfer');
+        e.preventDefault()
+        const data = e.dataTransfer.getData('transfer')
         e.target.appendChild(document.getElementById(data))
-        const opcion = data.substr(0, data.indexOf('-'))
-        const contenedor = id.substr(0, id.indexOf('-'))
-        
-        if(opcion == contenedor && id !== 'dr-0') notaU([opcion, 1])
-        else notaU([opcion, 0])
+
+        if(id !== 'dr-0'){
+            if(data == id.split('&')[1]) sessionStorage.setItem(`p${no}o${index}`, JSON.stringify([1, data]))
+            else sessionStorage.setItem(`p${no}o${index}`, JSON.stringify([0, data]))
+        }
     }
 
     const allowDrop = e => e.preventDefault()

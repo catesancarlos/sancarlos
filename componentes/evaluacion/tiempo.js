@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
 
-const Tiempo = ({timeOut, fin}) => {
-    const [time, setTime] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')-1  : 1799)
-    const [t, setT] = useState(sessionStorage.getItem('tiempo') ? `${sessionStorage.getItem('tiempo')/60}:00` : '30:00')
+const Tiempo = ({ timeOut, fin }) => {
+    const [time, setTime] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')-1  : 1499)
+    const [t, setT] = useState(sessionStorage.getItem('tiempo') ? `${sessionStorage.getItem('tiempo')/60}:00` : '25:00')
     const [f, setF] = useState(false)
     const [seg, setSeg] = useState('00')
-    const [min, setMin] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')/60 : 30)
+    const [min, setMin] = useState(sessionStorage.getItem('tiempo') ? sessionStorage.getItem('tiempo')/60 : 25)
     const [cont, setCont] = useState(true)
 
     useEffect(() => {
@@ -33,7 +33,8 @@ const Tiempo = ({timeOut, fin}) => {
     } 
 
     return (
-        <div className='tiempo-prueba'>                                 
+        <div className='tiempo-prueba'>
+            {console.log(t)}                              
             <p>Tiempo restante:</p>
             {
                 f ? 

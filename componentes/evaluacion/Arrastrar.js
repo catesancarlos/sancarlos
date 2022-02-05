@@ -3,9 +3,9 @@ import Pregunta from '../generales/Pregunta'
 import Board from '../drag/board'
 import Card from '../drag/card'
 
-const Drop = ({ no, pregunta, respuestas, contenedores, onNota }) => {
+const Drop = ({ number, label1, respuestas1, contenedores1, onNota }) => {
     const [enunciado, setEnunciado] = useState(null)
-    const [opciones, setOpciones] = useState(null)
+    const [respuestas, setRespuestas] = useState([])
     const [cont, setCont] = useState(null)
     const [ua, setUa] = useState(0)
     const [ub, setUb] = useState(0)
@@ -13,16 +13,16 @@ const Drop = ({ no, pregunta, respuestas, contenedores, onNota }) => {
     const [ud, setUd] = useState(0)
 
     useEffect(() => {
-        setEnunciado(pregunta)
-        setOpciones(respuestas)
-        setCont(contenedores)
-    }, [enunciado, opciones, cont])
+        setEnunciado(label1)
+        setRespuestas(respuestas1)
+        setCont(contenedores1)
+    }, [enunciado, respuestas, cont])
 
-    useEffect(() => {
+    /* useEffect(() => {
         onNota([no, ua + ub + uc + ud])
-    }, [ua, ub, uc, ud])
+    }, [ua, ub, uc, ud]) */
 
-    if(!(enunciado && opciones && cont)) { 
+    if(!(enunciado && respuestas && cont)) { 
         return <div>Cargando pregunta...</div>
     }
 
@@ -34,20 +34,20 @@ const Drop = ({ no, pregunta, respuestas, contenedores, onNota }) => {
     }
 
     return (
-        <Pregunta no={no} pregunta={enunciado}>
-            <Board id='dr-0' className='cont-respuestas' notaU={handleNota}>
+        <Pregunta no={number} pregunta={enunciado}>
+                <Board id='dr-0' className='cont-respuestas' notaU={handleNota}  >
+                    {
+                        respuestas.map(item => <Card key={item} id={item} >{item}</Card> )
+                    }
+                </Board>
                 {
-                    opciones.map(item => <Card key={item.id} id={`${item.id}-movil`}>{item.name}</Card> )
+                    cont.map((item, index) => 
+                        <div key={item} className='container'>
+                            <p className='opcion'>{item.split('&')[0]}</p>
+                            <Board no={number} id={item} index={index} className='board' notaU={handleNota}  />
+                        </div>
+                    )
                 }
-            </Board>
-            {
-                cont.map(item => 
-                    <div key={item.id} className='container'>
-                        <p className='opcion'>{item.name}</p>
-                        <Board id={`${item.id}-dr`} className='board' notaU={handleNota} />
-                    </div>
-                )
-            }
                 
             <style jsx>{`
                 .container{

@@ -78,10 +78,14 @@ const Home = () => {
                                     {
                                         !ev &&
                                         <div className='option'>
-                                                <div className='name-option recupera' onClick={() => setEv(true)}>
-                                                    <p className='nuevo'>Recuperación</p>
-                                                    2 Confirmación
-                                                </div>
+                                                {/* <div className='name-option recupera' onClick={() => setEv(true)}> */}
+                                                <Link href='/confirmacion'>
+                                                    <a className='name-option recupera'>
+                                                        <p className='nuevo'>Evaluación</p>
+                                                        2 Confirmación
+                                                    </a>
+                                                </Link> 
+                                                {/* </div> */}
                                             <p className='descripcion'>
                                                 Espacio dedicado para el nivel se Segundo de Confirmación
                                             </p>

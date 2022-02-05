@@ -7,14 +7,14 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
 
     const handleRedireccion = paralelo => {
         if(!paso || sessionStorage.getItem('sesion') == 'catequista'){
-            if(paralelo == 'a' && a || paralelo == 'a' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'b' && b || paralelo == 'b' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'c' && c || paralelo == 'c' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'd' && d || paralelo == 'd' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/paralelo-${paralelo}`)
-            else if(paralelo == 'angeles' && angeles || paralelo == 'angeles' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/angeles')
-            else if(paralelo == 'auxiliadora' && auxiliadora || paralelo == 'auxiliadora' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/auxiliadora')
-            else if(paralelo == 'dolorosa' && dolorosa || paralelo == 'dolorosa' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/dolorosa')
-            else if(paralelo == 'molinopamba' && molinopamba || paralelo == 'molinopamba' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/molinopamba')
+            if(paralelo == 'a' && a || paralelo == 'a' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
+            else if(paralelo == 'b' && b || paralelo == 'b' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
+            else if(paralelo == 'c' && c || paralelo == 'c' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
+            else if(paralelo == 'd' && d || paralelo == 'd' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
+            else if(paralelo == 'angeles' && angeles || paralelo == 'angeles' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/seg-angeles')
+            else if(paralelo == 'auxiliadora' && auxiliadora || paralelo == 'auxiliadora' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/seg-auxiliadora')
+            else if(paralelo == 'dolorosa' && dolorosa || paralelo == 'dolorosa' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/seg-dolorosa')
+            else if(paralelo == 'molinopamba' && molinopamba || paralelo == 'molinopamba' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/seg-molinopamba')
             else setModal(true)
         }
         else setModal(true)
@@ -46,9 +46,9 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
                     <div className='claves'>
                         <p className='indicacion-final'>Evaluación Final</p>
                         <p className='label-final'>Usted esta tratando de ingresar a la evaluación fuera de horario.</p>
-                        <p className='label-final'>{!paso ? 'Por favor vuelva a intentarlo en el horario indicado.' : 'La evaluación se realizó el día:'}</p>
-                        <strong className='label-final'>Sábado 5 de junio del 2021</strong>
-                        {
+                        <p className='label-final'>{!paso ? 'Por favor vuelva a intentarlo en el horario indicado por su catequista.' : 'La evaluación se realizó el día:'}</p>
+                        <strong className='label-final'>Sábado 5 de febrero del 2022</strong>
+                        {/* {
                             !paso &&
                             <p className='label-final horario'>
                                 Molinopamba: 11H00 AM<br/>
@@ -57,7 +57,7 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
                                 La Dolorosa: 03H15 PM<br/>
                                 Centro: 16H40
                             </p>
-                        }
+                        } */}
                         <p className='finalizar' onClick={() => setModal(false)}>Aceptar</p>
                     </div>
                 </div>
