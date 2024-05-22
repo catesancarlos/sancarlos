@@ -44,7 +44,7 @@ const Home = () => {
                     <div className='menu'>
                         
                         <div className='option'>
-                            {/* <Link href='/informacion'>
+                            {/* <Link href='/informacion' legacyBehavior>
                                 <a className='name-option'>Libros Catequesis</a>
                             </Link> */}
                             <p className='name-option' onClick={() => setLibro(true)}>Libros Catequesis</p>
@@ -59,7 +59,7 @@ const Home = () => {
                                     <div className='libros'>
                                         {
                                             arrayLibros.map(item => 
-                                                <Link href={`/libros/${item.id}.pdf`} key={item.id}>
+                                                <Link href={`/libros/${item.id}.pdf`} key={item.id} legacyBehavior>
                                                     <a target='_blank' className='name-libro'>{item.nombre}</a>
                                                 </Link>
                                             )
@@ -79,7 +79,7 @@ const Home = () => {
                                         !ev &&
                                         <div className='option'>
                                                 {/* <div className='name-option recupera' onClick={() => setEv(true)}> */}
-                                                <Link href='/confirmacion'>
+                                                <Link href='/confirmacion' legacyBehavior>
                                                     <a className='name-option recupera'>
                                                         <p className='nuevo'>Padrinos</p>
                                                         2 Confirmación
@@ -95,10 +95,10 @@ const Home = () => {
                                         ev &&
                                         <div className='option'>
                                             <p onClick={() => setEv(false)} className='cerrar-libros'>X</p>
-                                            <Link href='/confirmacion'>
+                                            <Link href='/confirmacion' legacyBehavior>
                                                 <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
                                             </Link> 
-                                            <Link href='/recuperacion'>
+                                            <Link href='/recuperacion' legacyBehavior>
                                                 <a className='name-option sub-option'>Clases de recuperación</a>
                                             </Link> 
                                         </div>

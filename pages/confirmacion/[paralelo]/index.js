@@ -42,7 +42,7 @@ export default function Paralelo ({ alumnos }) {
                         <div className='indica'>
                             {/* - Para la evaluación se ha tomado en cuenta el cuestionario enviado a todos los alumnos de Segundo de Confirmación. */}
                             - Tomar las consideraciones necesarias que pide la Iglesia para que las personas sean padrinos o madrinas. <br/>
-                            <Link href={`/requisitospadrinos.jpg`} key='requi'>
+                            <Link href={`/requisitospadrinos.jpg`} key='requi' legacyBehavior>
                                 <a target='_blank' className='link' >Ver consideraciones.</a>
                             </Link> 
                         </div>

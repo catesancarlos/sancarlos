@@ -37,7 +37,7 @@ const Header = ({ name, flecha, auth }) => {
                     }
                 </div>
             }
-            <Link href='/'>
+            <Link href='/' legacyBehavior>
                 <a>
                     <p className='name-1'>Catequesis</p>
                     <p className='name-2'>SAN CARLOS</p>
