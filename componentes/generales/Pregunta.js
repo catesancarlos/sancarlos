@@ -1,7 +1,7 @@
 const Pregunta = ({ no, pregunta, children }) => (
     <div className='container'>
         <div className='pregunta'>
-            <p className='numero'>{`${no}.`}</p>
+            { no && <p className='numero'>{`${no}.`}</p> }
             <p>{pregunta}</p>
         </div>
         <div className='opciones'>
@@ -11,12 +11,12 @@ const Pregunta = ({ no, pregunta, children }) => (
 
         <style jsx>{`
             .container{
-                width: 60%;
+                width: 100%;
                 margin: 0 auto;
                 padding: 15px 25px 20px 20px;
                 border: 2px solid white;
                 border-radius: 20px;
-                margin-bottom: 35px;
+                margin-bottom: 0px;
             }
 
             .pregunta{

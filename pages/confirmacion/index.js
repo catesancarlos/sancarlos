@@ -46,10 +46,17 @@ export default function Confirmacion({ data }){
                         <div className='bienvenida'>
                             <p className='titulo'>BIENVENIDO</p>
                             <p className='linea'>
-                                Mediante este espacio podras acceder a las evaluaciones para los niveles de Segundo de 
-                                Confirmación.
+                                {/* Mediante este espacio podras acceder a las evaluaciones para los niveles de Segundo de 
+                                Confirmación. */}
+                                Mediante este espacio podras:
                             </p>
-                            <p className='linea'>Uliliza la clave que te entrego tu catequista para poder ingresar.</p>
+                            <p className='linea'>
+                                • Ingresar los nombres de tus padrinos, para la Confirmación.
+                            </p>
+                            <p className='linea'>
+                                • Elegir como se llevara a cabo el almuerzo de la convivencia.
+                            </p>
+                            <p className='linea baja'>Uliliza la clave que te entrego tu catequista para poder ingresar.</p>
                         </div>
                         <div className='bienvenida'>
                             <form onSubmit={handleLogin} className='sesion'>
@@ -87,6 +94,10 @@ export default function Confirmacion({ data }){
                 .linea{
                     text-align: justify;
                     margin-bottom: 20px;
+                }
+
+                .baja{
+                    font-weight: 100;
                 }
 
                 .nota{

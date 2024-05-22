@@ -1,6 +1,6 @@
 const Footer = () => (
         <div>
-            <p className='footer'>en-Ricaurte</p>
+            <p className='footer'>Luve</p>
 
             <style jsx>{`
                 .footer{

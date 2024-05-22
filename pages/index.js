@@ -81,7 +81,7 @@ const Home = () => {
                                                 {/* <div className='name-option recupera' onClick={() => setEv(true)}> */}
                                                 <Link href='/confirmacion'>
                                                     <a className='name-option recupera'>
-                                                        <p className='nuevo'>Evaluación</p>
+                                                        <p className='nuevo'>Padrinos</p>
                                                         2 Confirmación
                                                     </a>
                                                 </Link> 
@@ -159,7 +159,7 @@ const Home = () => {
                 }
 
                 .recupera{
-                    border-radius: 40px 8px 40px 40px;
+                    border-radius: 40px 40px 40px 40px;
                 }
 
                 .descripcion{

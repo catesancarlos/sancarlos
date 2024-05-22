@@ -7,8 +7,8 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
 
     const handleRedireccion = paralelo => {
         if(!paso || sessionStorage.getItem('sesion') == 'catequista'){
-            if(paralelo == 'a' && a || paralelo == 'a' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
-            else if(paralelo == 'b' && b || paralelo == 'b' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
+            if(paralelo == 'a' && a || paralelo == 'a' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/segu-c`)
+            else if(paralelo == 'b' && b || paralelo == 'b' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/convivencia/segu-c`)
             else if(paralelo == 'c' && c || paralelo == 'c' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
             else if(paralelo == 'd' && d || paralelo == 'd' && sessionStorage.getItem('sesion') == 'catequista') router.push(`/confirmacion/seg-${paralelo}`)
             else if(paralelo == 'angeles' && angeles || paralelo == 'angeles' && sessionStorage.getItem('sesion') == 'catequista') router.push('/confirmacion/seg-angeles')
@@ -22,23 +22,23 @@ const MenuParalelos = ({ a, b, c, d, angeles, auxiliadora, dolorosa, molinopamba
 
     return (
         <div className='container'>
-            <p className='eva-info1'>EVALUACIÓN FINAL</p>
-            <p className='eva-info2'>Escoja el paralelo o comunidad a la que pertenece.</p>
+            <p className='eva-info1'>{/* EVALUACIÓN FINAL */}CONFIRMACIÓN</p>
+            <p className='eva-info2'>{/* Escoja el paralelo o comunidad a la que pertenece. */}Escoge la opcion en el menu</p>
             <div className='grupos-centro'>
-                <p className='centro-nombre'>Centro Parroquial</p>
+                <p className='centro-nombre'>{/* Centro Parroquial */}</p>
                 <div className='grupos'>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('a')}>A</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('b')}>B</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('c')}>C</p>
-                    <p className='paralelo-centro' onClick={() => handleRedireccion('d')}>D</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('a')}>{/* A */}Ingresar Padrinos</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('b')}>{/* B */}Elección Almuerzo</p>
+                    {/* <p className='paralelo-centro' onClick={() => handleRedireccion('c')}>C</p>
+                    <p className='paralelo-centro' onClick={() => handleRedireccion('d')}>D</p> */}
                 </div>
             </div>
 
             <div className='grupos'>
-                <p className='paralelo' onClick={() => handleRedireccion('molinopamba')}>Molinopamba</p>
+                {/* <p className='paralelo' onClick={() => handleRedireccion('molinopamba')}>Molinopamba</p>
                 <p className='paralelo' onClick={() => handleRedireccion('angeles')}>Los Ángeles</p>
                 <p className='paralelo' onClick={() => handleRedireccion('dolorosa')}>La Dolorosa</p>
-                <p className='paralelo' onClick={() => handleRedireccion('auxiliadora')}>Maria Auxiliadora</p>
+                <p className='paralelo' onClick={() => handleRedireccion('auxiliadora')}>Maria Auxiliadora</p> */}
             </div>
             {
                 modal && 

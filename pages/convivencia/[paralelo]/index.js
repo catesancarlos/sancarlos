@@ -11,7 +11,7 @@ import Card from '../../../componentes/layout/Card'
 import db  from '../../../services/dBase'
 import { collection, getDocs } from 'firebase/firestore'
 
-export default function Paralelo ({ alumnos }) {
+export default function ConvivenciaParalelo ({ alumnos }) {
     const router = useRouter()
     const [paralelo, setParalelo] = useState(router.query.paralelo.substring(router.query.paralelo.indexOf('-')+1, router.query.paralelo.length))
     const [open, setOpen] = useState(null)
@@ -23,7 +23,7 @@ export default function Paralelo ({ alumnos }) {
     const handleAlumno = usuario => {
         /* if(((usuario.ev2 && usuario.ev1) || usuario.bloqueo) && sessionStorage.getItem('sesion') != 'catequista') setOpen(usuario)
         else  */
-        router.push('/confirmacion/[paralelo]/[persona]', `/confirmacion/${router.query.paralelo}/${usuario.user}`)
+        router.push('/convivencia/[paralelo]/[persona]', `/convivencia/${router.query.paralelo}/${usuario.user}`)
     }
 
     return (
@@ -34,20 +34,16 @@ export default function Paralelo ({ alumnos }) {
             >
                 <div className='container'>
                     <div className='pulse'>
-                        <p className='indica-weight'>{/* Pulse en su nombre para iniciar con la evaluación. */}Pulse su nombre para ingresar sus padrinos</p>
+                        <p className='indica-weight'>{/* Pulse en su nombre para iniciar con la evaluación. */}Pulse su nombre para ingresar su opción</p>
                         <p className='indica'>
                             {/* - El tiempo para la evaluación es de 25 minutos, la misma consta de 12 preguntas. */}
-                            - Ingresar los 2 nombres y 2 apellidos de tu padrino o madrina, o si son esposos de los 2. 
+                            - El día domingo 23 de junio se llevara a cabo la convivencia de Segundo de Confirmación. 
                         </p>
-                        <div className='indica'>
-                            {/* - Para la evaluación se ha tomado en cuenta el cuestionario enviado a todos los alumnos de Segundo de Confirmación. */}
-                            - Tomar las consideraciones necesarias que pide la Iglesia para que las personas sean padrinos o madrinas. <br/>
-                            <Link href={`/requisitospadrinos.jpg`} key='requi'>
-                                <a target='_blank' className='link' >Ver consideraciones.</a>
-                            </Link> 
-                        </div>
                         <p className='indica'>
-                            - Si tienes problemas para ingresar tus padrinos, informalo a tu catequista.
+                            Se ha indicado que para evitar pedir otras cuotas aparte de la del sacramento los PPFF se encargen de el almuerzo. 
+                        </p>
+                        <p className='indica'>
+                            - Al pulsar su nombre se le presentan 4 opciones de como se puede llevar acabo el aluerzo para ese dia..
                         </p>
                     </div>
                     <div className='lista'>
@@ -71,7 +67,7 @@ export default function Paralelo ({ alumnos }) {
                                         /* item.ev1 ? <p className='nota'>{`${item.ev1}/10`}</p>
                                         : item.curso && <p className='curso'>En curso</p> */
                                     }
-                                    { (item.padrino) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} /> }
+                                    { (item.comida) && <IoIosCheckmarkCircle style={{fontSize: '25px', color: 'green'}} /> }
                                 </div>
                             ) 
                         }
