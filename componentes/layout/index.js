@@ -28,7 +28,7 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
 
             <style jsx>{`
                 .page-home{
-                    background-color: #ccdae8;
+                    background-color: #ccdae855;
                     display: flex;
                     flex-direction: column;
                     min-height: 100vh;

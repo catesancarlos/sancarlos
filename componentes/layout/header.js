@@ -1,13 +1,14 @@
 import { useState, useEffect, useContext } from 'react'
 import {AuthContext} from '../../services/authContext'
+import { useRouter } from 'next/router'
 import firebase from '../../services/dBase'
 import Link from 'next/link'
-import Router from 'next/router'
 import Login from '../Sesion/Login'
 
 const Header = ({ name, flecha, auth }) => {
     const { logged, user, listo } = useContext(AuthContext)
     const [menuOpen, setMenuOpen] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         setMenuOpen(false)
@@ -48,18 +49,38 @@ const Header = ({ name, flecha, auth }) => {
             </Link>
             <div className='opciones-sesion'>
                 <div className='navegacion'>
-                    {   
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/')}
+                        style={{color: name=='Inicio' ? 'brown' : 'black', fontWeight: name=='Inicio' ? 'bold' : '200'}}
+                    >INICIO</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/libros')}
+                        style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
+                    >LIBROS</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/agenda')}
+                        style={{color: name=='Agenda' ? 'brown' : 'black', fontWeight: name=='Agenda' ? 'bold' : '200'}}
+                    >AGENDA</p>
+                    <p 
+                        className='item-menu'
+                        onClick={() => router.push('/blog')}
+                        style={{color: name=='Blog' ? 'brown' : 'black', fontWeight: name=='Blog' ? 'bold' : '200'}}
+                    >BLOG</p>
+                    {/* {   
                         (flecha && name !== 'inicio') &&
                         <p 
                             className='linkin izquierda' 
                             onClick={() => Router.back()}
                         >Atras</p>
-                    }
+                    } */}
                 </div> 
-                {
+                {/* {
                     (name && name !== 'inicio') && <p className='pagina-actual'>{name.toUpperCase()}</p>
                 }
-                {/* <div>
+                <div>
                     {    
                         name == 'inicio' ?
                             <p className='user-name-header'>{user ? user.displayName : listo && 'Inicia Sesión >'}</p>
@@ -72,7 +93,7 @@ const Header = ({ name, flecha, auth }) => {
                                 <p className='pagina-actual'>{name.toUpperCase()}</p>
                             </div>
                     }
-                </div> */}
+                </div> */} 
                 <div>
                     {/* <div className='user-sesion' onClick={() => {if(!auth || logged) setMenuOpen(!menuOpen)}}>
                         {
@@ -99,37 +120,51 @@ const Header = ({ name, flecha, auth }) => {
 
             <style jsx>{`
                 .header{
-                    padding: 25px 60px 25px 50px;
+                    padding: 15px 60px 15px 50px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                 }
 
                 .name-1{
-                    font-size: 2vw;
+                    font-size: 1.6vw;
                     font-weight: bold;
                 }
 
                 .name-2{
+                    margin-top: -5px;
                     color: brown;
-                    font-size: 3.5vw;
+                    font-size: 2.6vw;
                     line-height: 100%;
                     font-weight: bold;
-                    text-shadow: 3px 3px white;
+                    text-shadow: 3px 3px #888;
                 }
 
                 .name-3-cont{
-                    margin-top: 7px;
+                    margin-top: 2px;
                     display: flex;
-                    margin-left: 14vw;
+                    margin-left: 10.25vw;
                 }
 
                 .name-3{
-                    background: white;
-                    padding: 1px 10px 2px 10px;
-                    font-size: 1.5vw;
+                    background: black;
+                    padding: 0px 6px 2px 6px;
+                    font-size: 1.2vw;
                     font-weight: bold;
-                    color: #ccdae8;
+                    color: white;
+                    border-radius: 8px;
+                }
+
+                .item-menu{
+                    padding: 6px 25px;
+                    font-size: 18px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    cursor: pointer;
+                }
+
+                .item-menu:hover{
+                    background: #FFFFFF99;
                     border-radius: 10px;
                 }
 

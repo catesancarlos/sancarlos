@@ -3,275 +3,181 @@ import AppLayout from '../componentes/layout'
 import Link from 'next/link'
 
 const Home = () => {
-    const [ev, setEv] = useState(false)
-    const [libro, setLibro] = useState(false)
-    const arrayLibros = [
-        {
-            id: 'iniciacion',
-            nombre: 'Iniciación'
-        },
-        {
-            id: '1ro-comunion',
-            nombre: '1ro Comunión'
-        },
-        {
-            id: '2do-comunion',
-            nombre: '2do Comunión'
-        },
-        {
-            id: 'biblico',
-            nombre: 'Año Biblico'
-        },
-        {
-            id: '1ro-confirmacion',
-            nombre: '1ro Confirmación'
-        },
-        {
-            id: '2do-confirmacion',
-            nombre: '2do Confirmación'
-        }
-    ]
+    const [toggle, setToggle] = useState(true)
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    useEffect(() => {
+        const intervalID = setInterval(() =>  {
+            setToggle((toggle) => !toggle)
+        }, 3000);
+    
+        return () => clearInterval(intervalID);
+    }, []);
+
     return (
         <>
-            <AppLayout name='inicio'  titulo='Cate San Carlos'>
+            <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+                <div className='banner'>
+                    <img src='/main_banner.jpg' />
+                    <div className='hover_now'>
+                        <p className='now_now'>Próximamente:</p>
+                        <p className='now_tittle'>
+                            {toggle ? 'Catequesis Familiar 2do Confirmación' :
+                            'Catequesis Familiar Iniciación'}
+                        </p>
+                    </div>
+                </div>
                 <div className='menu-cont'>
-                    {/* <p className='titulo-menu'>CONFIRMACIÓN</p> */}
-                    <div className='menu'>
-                        
-                        <div className='option'>
-                            {/* <Link href='/informacion' legacyBehavior>
-                                <a className='name-option'>Libros Catequesis</a>
-                            </Link> */}
-                            <p className='name-option' onClick={() => setLibro(true)}>Libros Catequesis</p>
-                            <p className='descripcion'>
-                                Visualiza o descarga los libros para la Catequesis.
-                            </p>
+                    <article>
+                        <div className='event_header'>
+                            <p className='title'>Catequesis</p>
+                            <p className='subtitle'>Clases Normales (Todos)</p>
                         </div>
-                        {
-                            libro ? 
-                                <div className='libro-biblia'>
-                                    <p onClick={() => setLibro(false)} className='cerrar-libros'>X</p>
-                                    <div className='libros'>
-                                        {
-                                            arrayLibros.map(item => 
-                                                <Link href={`/libros/${item.id}.pdf`} key={item.id} legacyBehavior>
-                                                    <a target='_blank' className='name-libro'>{item.nombre}</a>
-                                                </Link>
-                                            )
-                                        }
-                                    </div>
-                                    <a 
-                                        href='https://www.sanpablo.es/biblia-latinoamericana'
-                                        className='name-libro biblia-boton'
-                                        target='_blank'
-                                    >
-                                        Biblia<br/>Latinoamericana
-                                    </a>
-                                </div>
-                            :
-                                <>
-                                    {
-                                        !ev &&
-                                        <div className='option'>
-                                                {/* <div className='name-option recupera' onClick={() => setEv(true)}> */}
-                                                <Link href='/confirmacion' legacyBehavior>
-                                                    <a className='name-option recupera'>
-                                                        <p className='nuevo'>Padrinos</p>
-                                                        2 Confirmación
-                                                    </a>
-                                                </Link> 
-                                                {/* </div> */}
-                                            <p className='descripcion'>
-                                                Espacio dedicado para el nivel se Segundo de Confirmación
-                                            </p>
-                                        </div>
-                                    }
-                                    {
-                                        ev &&
-                                        <div className='option'>
-                                            <p onClick={() => setEv(false)} className='cerrar-libros'>X</p>
-                                            <Link href='/confirmacion' legacyBehavior>
-                                                <a className='name-option sub-option sub-arriba'>Dar la Evaluación</a>
-                                            </Link> 
-                                            <Link href='/recuperacion' legacyBehavior>
-                                                <a className='name-option sub-option'>Clases de recuperación</a>
-                                            </Link> 
-                                        </div>
-                                    }
-                                </>
-                        }
-                    </div>
-                    
-                    <div className='cont-foto'>
-                        <div className='footer'>en-Ricaurte</div>
-                    </div>
+                        <div className='event_info'>
+                            <p>Sábado 23 noviembre 2024</p>
+                            <p>Segun horario</p>
+                            <p>Centros catequeticos</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className='event_header'>
+                            <p className='title'>Catequesis Familiar</p>
+                            <p className='subtitle'>Iniciación</p>
+                        </div>
+                        <div className='event_info'>
+                            <p>Viernes 22 noviembre 2024</p>
+                            <p>19H00</p>
+                            <p>Teatro Catequesis</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className='event_header'>
+                            <p className='title'>Catequesis Familiar</p>
+                            <p className='subtitle'>2do Confirmación</p>
+                        </div>
+                        <div className='event_info'>
+                            <p>Viernes 22 noviembre 2024</p>
+                            <p>19H00</p>
+                            <p>Templo Parroquial</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className='event_header'>
+                            <p className='title'g>Catequesis Familiar</p>
+                            <p className='subtitle'>1ro Comunión</p>
+                        </div>
+                        <div className='event_info'>
+                            <p>Sábado 23 noviembre 2024</p>
+                            <p>19H00</p>
+                            <p>Teatro Catequesis</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div className='event_header'>
+                            <p className='title'>Catequesis Familiar</p>
+                            <p className='subtitle'>Comunidades</p>
+                        </div>
+                        <div className='event_info'>
+                            <p>Sábado 23 noviembre 2024</p>
+                            <p>19H00</p>
+                            <p>Cada Comunidad</p>
+                        </div>
+                    </article>
                 </div>  
             </AppLayout>
 
             <style jsx>{`
-                .menu-cont{
-                    width: 75%;
-                    margin: 10px auto 50px auto;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .titulo-menu{
-                    width: 100%;
-                    padding: 10px 0;
-                    text-align: center;
-                    font-size: 30px;
-                    font-weight: bold;
-                    letter-spacing: 5px;
-                    border-radius: 25px 25px 0 0;
-                }
-
-                .menu{
-                    margin-top: 25px;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                .option{
-                    display: flex;
-                    padding: 50px 0;
-                    width: 40%;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .name-option{
+                .banner{
                     position: relative;
-                    background-color: white;
-                    width: 70%;
-                    font-size: 2vw;
-                    font-weight: bold;
-                    line-height: 90px;
-                    border-radius: 40px;
-                    transition: .2s ease;
-                    cursor: pointer;
                 }
 
-                .recupera{
-                    border-radius: 40px 40px 40px 40px;
-                }
-
-                .descripcion{
-                    width: 80%;
-                    padding-top: 20px;
-                    font-size: 16px;
-                    line-height: 22px;
-                }
-
-                .libro-biblia{
-                    width: 65%;
-                    display: flex;
-                }
-
-                .libros{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .name-libro{
-                    background-color: white;
-                    min-width: 275px;
-                    text-align: center;
-                    padding: 5px 10px;
-                    font-size: 2vw;
-                    border-radius: 15px;
-                    margin: 0 10px 10px 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .biblia-boton{
-                    height: 80px;
-                }
-
-                .cerrar-libros{
-                    position: absolute;
-                    margin: -25px 0 0 600px;
-                    background: brown;
-                    color: white;
-                    font-size: 20px;
-                    font-weight: bold;
-                    padding: 6px 12px 7px 12px;
+                img{
+                    margin-left: 4%;
+                    width: 92%;
+                    height: 350px;
                     border-radius: 20px;
+                    filter: brightness(1.5);
+                    box-shadow: 2px 2px 4px 0px #777;
+                }
+
+                .hover_now{
+                    position: absolute;
+                    bottom: 30px;
+                    right: calc(4% + 35px);
+                    background: white;
+                    min-width: 290px;
+                    padding: 6px 10px 8px 10px;
+                    text-align: right;
+                    border-radius: 10px;
                     cursor: pointer;
                 }
 
-                .nuevo{
-                    position: absolute;
-                    right: 0;
-                    background: brown;
-                    color: white;
-                    font-size: 15.5px;
-                    font-weight: 400;
-                    line-height: 1em;
-                    padding: 4px 7px;
-                    border-radius: 7px;
-                    animation-name: new;
-                    animation-duration: 2s;
+                .now_now{
+                    color: brown;
+                    font-size: 200;
+                    animation-name: newo;
+                    animation-duration: 3s;
                     animation-iteration-count: infinite;
-                    mix-blend-mode: multiply;
                 }
 
-                .recu{
-                    margin-left: -5.75%;
-                    mix-blend-mode: normal;
-                }
-
-                @keyframes new{
+                @keyframes newo{
                    50% {
-                       background-color: transparent;
-                       color: transparent;
+                       color: white;
                     } 
                 }
 
-                .sub-option{
-                    background-color: #ccdae8;
-                    font-size: 1.8vw;
-                    border: 1px dashed black;
+                .now_tittle{
+                    color: black;
+                    font-weight: bold;
                 }
 
-                .sub-arriba{
-                    margin-bottom: 20px;
+                .menu-cont{
+                    margin: 20px 4% 50px 4%;
+                    width: 92%;
+                    display: flex;
                 }
 
-                .name-option:hover{
-                    background-color: rgba(255, 255, 255, 0.75);
-                    color: brown;
+                .menu-cont article{
+                    background: white;
+                    width: 20%;
+                    font-size: 13px;
+                    font-family: 'Lato', sans-serif;
+                    border-radius: 10px;
+                    margin-right: 20px;
+                    box-shadow: 2px 2px 4px 0px #777;
+                    overflow: hidden;
                 }
 
-                .footer{
-                    background-color: #ccdae8;
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    padding-left: 15px;
-                    width: 100%;
-                    height: 40px;
-                    line-height: 40px;
-                    font-size: 18px;
-                    color: rgba(0, 0, 0, 0.4);
-                    font-family: 'Kaushan Script', Geneva, Verdana, sans-serif;
+                .menu-cont article:first-child .event_header{
+                    background: brown;
                 }
 
-                .foto-san-carlos{
-                    position: absolute;
-                    bottom: 0;
-                    right: 30px;
-                    height: 210px;
-                    pointer-events: none;
+                .menu-cont article:last-child{
+                    margin-right: 0;
+                }
+
+                .event_header{
+                    background: #000000AA;
+                    padding: 5px 10px 7px 10px;
+                    color: white;
+                    font-weight: bold;
+                }
+
+                .title{
+                    font-size: 14px;
+                    font-weight: 200;
+                }
+
+                .subtitle{
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                }
+
+                .event_info{
+                    padding: 5px 10px 7px 10px;
                 }
 
                 @media screen and (max-width: 768px){ 
