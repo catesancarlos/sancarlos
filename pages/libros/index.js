@@ -87,17 +87,6 @@ export default function Libros(){
                     text-align: center;
                     border-radius: 0 0 15px 15px;
                 }
-
-                .footer{
-                    background-color: #ccdae8;
-                    padding-left: 15px;
-                    width: 100%;
-                    height: 40px;
-                    line-height: 40px;
-                    font-size: 18px;
-                    color: rgba(0, 0, 0, 0.4);
-                    font-family: 'Kaushan Script', Geneva, Verdana, sans-serif;
-                }
                 
                 .docvi{
                     height: 500px;
@@ -106,10 +95,36 @@ export default function Libros(){
                     overflow: hidden;
                 }
 
-                @media screen and (min-width: 1024px) {
+                @media screen and (max-width: 768px){
+                    section{
+                        padding: 0 15px;
+                    }
+
+                    div{
+                        margin: 18px 16px;
+                        border-radius: 15px;
+                        box-shadow: 4px 4px 8px 0px #777;
+                    }
+
+                    img{
+                        width: 150px;
+                        height: 190px;
+                        border-radius: 15px 15px 0  0;
+                    }
+
+                    p{
+                        background: white;
+                        padding: 10px 0 10px 0;
+                        width: 100%;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-align: center;
+                        border-radius: 0 0 15px 15px;
+                    }
+
                     .docvi{
+                        width: 95vw;
                         height: 580px;
-                        width: 900px;
                     }
                 }
             `}</style>

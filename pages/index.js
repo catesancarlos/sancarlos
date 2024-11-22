@@ -23,7 +23,7 @@ const Home = () => {
                 <div className='banner'>
                     <img src='/main_banner.jpg' />
                     <div className='hover_now'>
-                        <p className='now_now'>Próximamente:</p>
+                        <p className='now_now'>Hoy:</p>
                         <p className='now_tittle'>
                             {toggle ? 'Catequesis Familiar 2do Confirmación' :
                             'Catequesis Familiar Iniciación'}
@@ -178,96 +178,62 @@ const Home = () => {
 
                 .event_info{
                     padding: 5px 10px 7px 10px;
+                    font-size: 200;
                 }
 
-                @media screen and (max-width: 768px){ 
-                    .menu-cont{
-                        width: 100%;
-                        margin: 0 auto;
-                    }
-    
-                    .titulo-menu{
-                        font-size: 20px;
-                        color: rgba(0, 0, 0, 0.6);
-                        letter-spacing: 2.5px;
-                    }
-                    
-                    .menu{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                    }
-
-                    .option{
-                        padding: 25px 0 20px 0;
-                        width: 70%;
-                    }
-    
-                    .name-option{
-                        width: 100%;
-                        font-size: 22.5px;
-                        line-height: 75px;
-                    }
-    
-                    .descripcion{
-                        width: 100%;
-                        padding-top: 15px;
-                        font-size: 15px;
-                        line-height: 20px;
-                    }
-
-                    .libro-biblia{
-                        width: 100%;
-                        display: inline;
-                    }
-    
-                    .name-libro{
-                        min-width: 200px;
-                        padding: 10px 15px;
-                        font-size: 20px;
-                        border-radius: 20px;
-                        margin: 0 0 10px 0;
-                    }
-    
-                    .biblia-boton{
-                        height: auto;
-                        width: 200px;
-                        margin: 0 auto;
-                    }
-    
-                    .cerrar-libros{
+                @media screen and (max-width: 768px){
+                    img{
                         margin: 0;
-                        right: 5%;
+                        width: 100%;
+                        height: 240px;
+                        border-radius: 0;
+                        box-shadow: none;
                     }
 
-                    .nuevo{
-                        font-size: 14px;
+                    .hover_now{
+                        bottom: 15px;
+                        right: 15px;
+                        min-width: 220px;
+                        padding: 6px 10px 8px 10px;
+                        font-size: 12px;
+                        border-radius: 10px;
                     }
 
-                    .recu{
-                        margin-left: -20%;
+                    .menu-cont{
+                        margin: 18px 3% 50px 3%;
+                        width: 94%;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
                     }
 
-                    .sub-option{
-                        font-size: 20px;
+                    .menu-cont article{
+                        width: calc(50% - 10px);
+                        font-size: 13px;
+                        margin-right: 0px;
+                        box-shadow: 2px 2px 2px 0px #777;
+                        margin-bottom: 15px;
                     }
 
-                    .footer{
-                        padding-left: 10px;
-                        height: 30px;
-                        line-height: 30px;
+                    .event_header{
+                        padding: 5px 10px 7px 10px;
+                    }
+
+                    .title{
                         font-size: 13px;
                     }
 
-                    .cont-foto{
-                        display: flex;
-                        justify-content: flex-end;
+                    .subtitle{
+                        font-size: 12px;
                     }
 
-                    .foto-san-carlos{
-                        right: 20px;
-                        position: relative;
-                        height: 125px;
+                    .event_info{
+                        padding: 5px 10px 7px 10px;
+                        font-size: 12px;
+                    }
+
+                    .event_info p{
+                        margin-top: 2px;
                     }
                 }
             `}</style>

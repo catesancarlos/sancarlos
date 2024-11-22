@@ -60,6 +60,13 @@ export default function Modal({ children, background, share, onClose }){
                     cursor: pointer;
                     z-index: 11;
                 }
+
+                @media screen and (max-width: 768px){
+                    .close{
+                        top: -15px;
+                        right: 20px;
+                    }
+                }
             `}</style>
         </div>
     )
