@@ -23,7 +23,7 @@ const Home = () => {
                 <div className='banner'>
                     <img src='/main_banner.jpg' />
                     <div className='hover_now'>
-                        <p className='now_now'>Hoy:</p>
+                        <p className='now_now'>En este momento:</p>
                         <p className='now_tittle'>
                             {toggle ? 'Catequesis Familiar 2do Confirmación' :
                             'Catequesis Familiar Iniciación'}
