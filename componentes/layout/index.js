@@ -17,8 +17,6 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#ccdae8"></meta>
                 <link rel="shortcut icon" href="/logos.png" />
-                <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></link>
             </Head>
 
             <main className='page-home'>
@@ -28,7 +26,7 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
 
             <style jsx>{`
                 .page-home{
-                    background-color: #ccdae855;
+                    background-color: #F2F8F6;
                     display: flex;
                     flex-direction: column;
                     min-height: 100vh;

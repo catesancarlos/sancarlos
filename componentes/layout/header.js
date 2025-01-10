@@ -42,6 +42,11 @@ const Header = ({ name, flecha, auth }) => {
                 >INICIO</p>
                 <p
                     className='item-menu'
+                    onClick={() => router.push('/campeonato')}
+                    style={{color: name=='Campeonato' ? '#245590' : 'black', fontWeight: name=='Campeonato' ? 'bold' : '200'}}
+                >CAMPEONATO</p>
+                <p
+                    className='item-menu'
                     onClick={() => router.push('/libros')}
                     style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
                 >LIBROS</p>
@@ -83,6 +88,7 @@ const Header = ({ name, flecha, auth }) => {
                     margin-top: 2px;
                     display: flex;
                     margin-left: 10.25vw;
+                    opacity: 0;
                 }
 
                 .name-3{
@@ -145,6 +151,7 @@ const Header = ({ name, flecha, auth }) => {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        flex-wrap: wrap;
                     }
 
                     .item-menu{
