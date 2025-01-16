@@ -97,7 +97,7 @@ export default function Libros(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        padding: 0 15px;
+                        padding: 0 50px;
                     }
 
                     div{
