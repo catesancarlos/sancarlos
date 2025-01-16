@@ -1,43 +1,47 @@
+import { useRouter } from 'next/router'
+
 const MiniAgenda = () => {
+    const router = useRouter()
 
     return (
         <section>
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
+            <article>
+                    <div className='e_header'>
+                        <p className='e_title'g>Catequesis Familiar</p>
+                        <p className='e_subtitle'>2do Confirmación</p>
+                    </div>
+                    <div className='e_info'>
+                        <p>Viernes 17 enero 2025</p>
+                        <p>Teatro Catequesis</p>
+                        <p>19H00</p>
+                    </div>
+                </article>
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis</p>
                         <p className='e_subtitle'>Clases Normales</p>
                     </div>
                     <div className='e_info'>
-                        <p>Sábado 11 enero 2025</p>
-                        <p>Segun horario</p>
+                        <p>Sábado 18 enero 2025</p>
                         <p>Centros catequeticos</p>
+                        <p>Segun horario</p>
                     </div>
                 </article>
                 <article>
                     <div className='e_header'>
-                        <p className='e_title'g>Catequesis Familiar</p>
-                        <p className='e_subtitle'>2do Comunión</p>
+                        <p className='e_title'>Primera Semana</p>
+                        <p className='e_subtitle'>Campeonato 2025</p>
                     </div>
                     <div className='e_info'>
-                        <p>Viernes 10 enero 2025</p>
-                        <p>19H00</p>
-                        <p>Teatro Catequesis</p>
+                        <p>Domingo 19 enero 2025</p>
+                        <p>Patio Catequesis</p>
+                        <p onClick={() => router.push('/campeonato')} style={{ color: '#245590', fontWeight: 'bold', cursor: 'pointer' }}>Ver horarios</p>
                     </div>
                 </article>
-                <article>
-                    <div className='e_header'>
-                        <p className='e_title'>Catequesis Familiar</p>
-                        <p className='e_subtitle'>Año Bíblico</p>
-                    </div>
-                    <div className='e_info'>
-                        <p>Viernes 10 enero 2025</p>
-                        <p>19H00</p>
-                        <p>Templo Parroquial</p>
-                    </div>
-                </article>
+                {/* 
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis Familiar</p>
@@ -59,7 +63,7 @@ const MiniAgenda = () => {
                         <p>19H00</p>
                         <p>Teatro Catequesis</p>
                     </div>
-                </article>
+                </article> */}
             </div>
 
             <style jsx>{`
@@ -75,11 +79,11 @@ const MiniAgenda = () => {
                 }
 
                 .title{
-                    margin: -15px auto 0 auto;
-                    width: 212px;
+                    margin: -17px auto 0 auto;
+                    width: 220px;
                     background: #F2F8F6;
                     color: brown;
-                    font-size: 20px;
+                    font-size: 22px;
                     font-weight: bold;
                     text-align: center;
                     margin-bottom: 18px;
@@ -87,12 +91,12 @@ const MiniAgenda = () => {
 
                 .cont{
                     display: flex;
+                    flex-wrap: wrap;
                 }
 
                 article{
                     background: white;
-                    width: 20%;
-                    font-size: 13px;
+                    width: calc(25% - 15px);
                     font-family: 'Lato', sans-serif;
                     border-radius: 10px;
                     margin-right: 20px;
@@ -100,35 +104,39 @@ const MiniAgenda = () => {
                     overflow: hidden;
                 }
 
-                article:first-child .e_header{
-                
+                article:nth-child(4){
+                    margin-right: 0;
+                }
+
+                article:nth-child(2) .e_header{
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                 }
 
-                article:last-child{
-                    margin-right: 0;
+                article:nth-child(5){
+                    margin-top: 20px;
                 }
 
                 .e_header{
                     background: #000000AA;
-                    padding: 5px 10px 7px 10px;
+                    padding: 8px 10px 10px 10px;
                     color: white;
                     font-weight: bold;
                 }
 
                 .e_title{
-                    font-size: 14px;
+                    font-size: 15px;
                     font-weight: 200;
                 }
 
                 .e_subtitle{
-                    font-size: 12px;
+                    font-size: 16px;
                     letter-spacing: 1px;
                 }
 
                 .e_info{
-                    padding: 5px 10px 7px 10px;
-                    font-size: 200;
+                    padding: 10px 12px 12px 12px;
+                    font-size: 16px;
+                    font-weight: 200;
                 }
 
                 @media screen and (max-width: 768px){
