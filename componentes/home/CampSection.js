@@ -65,11 +65,11 @@ const CampSection = () => {
 
                 .hg{
                     margin-left: 15px;
-                    background: #00000077;
+                    background: #00000044;
                     height: 74px;
                     width: 15%;
                     padding: 10px 20px;
-                    color: white;
+                    color: black;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
