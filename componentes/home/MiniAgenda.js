@@ -71,13 +71,14 @@ const MiniAgenda = () => {
                 .divo{
                     margin-top: 18px;
                     width: 100%;
-                    border: 1px solid black;
+                    border: 1px solid brown;
                 }
 
                 .title{
                     margin: -15px auto 0 auto;
                     width: 212px;
                     background: #F2F8F6;
+                    color: brown;
                     font-size: 20px;
                     font-weight: bold;
                     text-align: center;

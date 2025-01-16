@@ -31,7 +31,7 @@ const CampSection = () => {
                 }
 
                 .h1{
-                    background: black;
+                    background: #245590;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     height: 74px;
                     width: 40%;
@@ -85,12 +85,12 @@ const CampSection = () => {
                 }
 
                 .hg:nth-child(4){
-                    background: #00000088;
+                    background: #00000077;
                     color: white;
                 }
 
                 .hg:last-child{
-                    background: #FFEE8C88;
+                    background: #99999999;
                     color: black;
                     border-radius: 3px 10px 10px 3px;
                 }

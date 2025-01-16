@@ -10,9 +10,11 @@ import ConfirmacionKT25 from '../componentes/campeonato25/ConfirmacionKT25'
 import Catequistas from '../componentes/campeonato25/Catequistas'
 import Reglamento from '../componentes/campeonato25/Reglamento'
 import FutbolSala from '../componentes/campeonato25/FutbolSala'
+import Calendario from '../componentes/campeonato25/Calendario'
+import Posiciones from '../componentes/campeonato25/Posiciones'
 
 export default function Campeonato(){
-    const [section, setSection] = useState(1)
+    const [section, setSection] = useState(10)
 
     return(
         <AppLayout titulo='San Carlos - Campeonato' name='Campeonato'>
@@ -26,13 +28,15 @@ export default function Campeonato(){
                 </div>
                 <div className='main' >
                     <div className='menu'>
+                        <p className={`op-menu ${section == 10 && 'active'}`} onClick={() => setSection(10)}>Calendario</p>
+                        <p className={`op-menu ${section == 11 && 'active'}`} onClick={() => setSection(11)}>Posiciones</p>
                         <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Detalles</p>
                         <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Equipos</p>
                         <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Formato</p>
-                        <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => setSection(5)}>Año Bíblico</p>
-                        <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => setSection(6)}>Confirmación</p>
+                        {/* <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => setSection(5)}>Año Bíblico</p>
+                        <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => setSection(6)}>Confirmación</p> */}
                         <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => setSection(7)}>Catequistas</p>
-                        <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => setSection(4)}>Inauguración</p>
+                        {/* <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => setSection(4)}>Inauguración</p> */}
                         <p className={`op-menu ${section == 8 && 'active'}`} onClick={() => setSection(8)}>Reglamento</p>
                         <p className={`op-menu sal1 ${section == 9 && 'active'}`} onClick={() => setSection(9)}>Reglas Futbol Sala</p>
                         <p className={`op-menu sal2 ${section == 9 && 'active'}`} onClick={() => setSection(9)}>Futbol Sala</p>
@@ -47,7 +51,9 @@ export default function Campeonato(){
                                                 section == 6 ? <ConfirmacionKT25 /> :
                                                     section == 7 ? <Catequistas /> :
                                                         section == 8 ? <Reglamento /> : 
-                                                            section == 9 ? <FutbolSala /> : '.'
+                                                            section == 9 ? <FutbolSala /> :
+                                                                section == 10 ? <Calendario /> :
+                                                                    section == 11 ? <Posiciones /> : '.'
 
                         }
                     </div>
@@ -113,7 +119,9 @@ export default function Campeonato(){
                     cursor: pointer;
                 }
 
-               
+                .sal2{
+                    display: none;
+                }
 
                 .active{
                     background: #245590;
@@ -157,6 +165,10 @@ export default function Campeonato(){
 
                     .op-menu:nth-child(3), .op-menu:nth-child(6), .op-menu:nth-child(9), .op-menu:nth-child(10){
                         margin-right: 0;
+                    }
+
+                    .sal2{
+                        display: block;
                     }
 
                     .sal1{
