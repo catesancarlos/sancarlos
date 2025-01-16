@@ -160,7 +160,7 @@ const MiniAgenda = () => {
                     }
 
                     .e_header{
-                        padding: 5px 10px 7px 10px;
+                        padding: 6px 10px 7px 10px;
                     }
 
                     .e_title{
@@ -168,16 +168,20 @@ const MiniAgenda = () => {
                     }
 
                     .e_subtitle{
-                        font-size: 15px;
+                        font-size: 14px;
                     }
 
                     .e_info{
-                        padding: 5px 10px 7px 10px;
+                        padding: 10px 9px 12px 9px;
                         font-size: 14px;
                     }
 
                     .e_info p{
-                        margin-top: 2px;
+                        margin-top: 1px;
+                    }
+
+                    .e_info p:first-child{
+                        margin-top: 0;
                     }
                 }
             `}</style>
