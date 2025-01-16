@@ -156,10 +156,10 @@ export default function Campeonato(){
                     }
 
                     .op-menu{
-                        width: calc((100% - 10px) / 3);
-                        padding: 8px 5px;
-                        font-size: 16px;
-                        margin-right: 5px;
+                        width: calc((100% - 12px) / 3);
+                        padding: 6px 5px;
+                        font-size: 15px;
+                        margin-right: 6px;
                         margin-bottom: 10px;
                     }
 

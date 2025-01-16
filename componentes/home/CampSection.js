@@ -5,6 +5,8 @@ const CampSection = () => {
 
     return (
         <section>
+            <div className='divo'></div>
+            <p className='title'>Campeonato 2025</p>
             <div className='h1'>
                 <p className='h1-t'>Campeonato</p>
                 <p className='h2-t'>Catequesis 2025</p>
@@ -28,6 +30,14 @@ const CampSection = () => {
                     margin: 35px 4% 50px 4%;
                     width: 92%;
                     display: flex;
+                }
+
+                .divo{
+                    display: none;
+                }
+
+                .title{
+                    display: none;
                 }
 
                 .h1{
@@ -55,7 +65,7 @@ const CampSection = () => {
 
                 .hg{
                     margin-left: 15px;
-                    background: black;
+                    background: #00000077;
                     height: 74px;
                     width: 15%;
                     padding: 10px 20px;
@@ -74,68 +84,79 @@ const CampSection = () => {
                     letter-spacing: 2px;
                 }
 
-                .hg:nth-child(2){
-                    background: #00000077;
-                    color: white;
-                }
-
-                .hg:nth-child(3){
-                    background: #00000077;
-                    color: white;
-                }
-
-                .hg:nth-child(4){
-                    background: #00000077;
-                    color: white;
-                }
-
                 .hg:last-child{
-                    background: #00000077;
-                    color: white;
                     border-radius: 3px 10px 10px 3px;
                 }
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 0 15px 60px 15px;
-                        width: 100%;
+                        margin: 20px 15px 60px 15px;
+                        width: calc(100% - 30px);
                         display: flex;
                         flex-wrap: wrap;
                     }
 
+                    .divo{
+                        display: block;
+                        margin-top: 18px;
+                        width: 100%;
+                        border: 1px solid brown;
+                    }
+
+                    .title{
+                        display: block;
+                        margin: -17px auto 0 auto;
+                        width: 200px;
+                        background: #F2F8F6;
+                        color: brown;
+                        font-size: 22px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-bottom: 18px;
+                    }
+
                     .h1{
-                        background: #650004;
+                        /* background: #650004;
                         background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                         height: 70px;
                         width: calc(100% - 30px);
                         padding: 10px 20px;
-                        border-radius: 20px 20px 3px 3px;
+                        border-radius: 20px 20px 3px 3px; */
+                        display: none;
                     }
 
                     .hg{
+                        background: #00000022;
                         margin-left: 0px;
-                        margin-top: 8px;
-                        height: 60px;
-                        width: calc(50% - 19px);
+                        margin-bottom: 12px;
+                        height: 45px;
+                        width: calc(50% - 6px);
                         padding: 10px 20px;
+                        color: black;
+                        border-radius: 10px;
                     }
 
                     .hg:nth-child(2){
-                        margin-right: 4px;
+                        margin-right: 12px;
                     }
 
                     .hg:nth-child(3){
-                        margin-left: 4px;
+                        margin-left: 12px;
                     }
 
                     .hg:nth-child(4){
-                        margin-right: 4px;
-                        border-radius: 3px 3px 3px 10px;
+                        margin-right: 12px;
                     }
 
                     .hg:last-child{
-                        margin-left: 4px;
-                        border-radius: 3px 3px 10px 3px;
+                        margin-left: 12px;
+                        border-radius: 10px;
+                    }
+
+                    .hg-t{
+                        font-size: 16px;
+                        font-weight: 300;
+                        letter-spacing: 1px;
                     }
                 }
             `}</style>

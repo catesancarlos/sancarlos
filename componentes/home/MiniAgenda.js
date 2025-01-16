@@ -117,7 +117,7 @@ const MiniAgenda = () => {
                 }
 
                 .e_header{
-                    background: #000000AA;
+                    background: #00000088;
                     padding: 8px 10px 10px 10px;
                     color: white;
                     font-weight: bold;
@@ -141,8 +141,8 @@ const MiniAgenda = () => {
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 18px 3% 25px 3%;
-                        width: 94%;
+                        margin: 20px 15px 0 15px;
+                        width: calc(100% - 30px);
                     }
 
                     .cont{
