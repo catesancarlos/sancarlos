@@ -1,5 +1,4 @@
 import ItemCalendario from './ItemCalendario'
-import Equipo from './Equipo'
 
 const Calendario = () => {
 

@@ -1,6 +1,7 @@
 import Equipo from './Equipo'
 
 export default function ItemCalendario({
+    home,
     dia,
     fecha,
     hora,
@@ -53,6 +54,7 @@ export default function ItemCalendario({
 
             <style jsx>{`
                 section{
+                    width: ${home ? '100%' : 'auto'};
                     position: relative;
                     margin-top: 4px;
                     margin-left: 4px;

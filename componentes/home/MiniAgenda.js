@@ -118,6 +118,7 @@ const MiniAgenda = () => {
 
                 .e_header{
                     background: #00000088;
+                    background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     padding: 8px 10px 10px 10px;
                     color: white;
                     font-weight: bold;
@@ -136,7 +137,7 @@ const MiniAgenda = () => {
                 .e_info{
                     color: black;
                     padding: 10px 12px 12px 12px;
-                    font-size: 16px;
+                    font-size: 17px;
                     font-weight: 200;
                 }
 
