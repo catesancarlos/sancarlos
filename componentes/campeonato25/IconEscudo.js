@@ -1,7 +1,7 @@
 const IconEscudo = ({ ca, color, borde }) => (
   <svg
-    width={!ca ? 100 : 60}
-    height={!ca ? 100 : 60}
+    width={!ca ? 100 : 50}
+    height={!ca ? 100 : 50}
     fill={color}
     viewBox="0 0 24 24"
   >

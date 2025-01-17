@@ -6,7 +6,7 @@ const EquiposKT25 = () => {
         <div>
             <p className='pf1'>Equipos participantes</p>
             <p className='pf2 st'>
-                Detalle de equipos a participar en el campeonato.
+                Detalle de equipos que participan en este campeonato.
             </p>
             <strong>Año Bíblico</strong>
             <div className='cont-logos'>

@@ -1,3 +1,4 @@
+import ItemCalendario from './ItemCalendario'
 import Equipo from './Equipo'
 
 const Calendario = () => {
@@ -6,289 +7,121 @@ const Calendario = () => {
         <section>
             <p className='pf1'>Calendario Campeonato 2025</p>
             <p className='pf2'>
-                Fechas para cada partido del campeonato.
+                Fecha y hora de los partidos del campeonato.
             </p>
             <div className='cont-partidos'>
-                <p className='pf1'>Primera semana</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                19 Ene<br/>
-                                <strong>08h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Confirmación F.C.'
-                                    paralelo='2do Confir. 2 (M)'
-                                    logo='22M'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Los Pastores'
-                                    paralelo='2do Confir. 3 (M)'
-                                    logo='23M'
-                                    color='blue'
-                                    borde='blue'
-                                    letter='white'
-                                />
-                            </td>
-                            <td className='genero'>[M]</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                19 Ene<br/>
-                                <strong>09h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Las Galatas 1, 10'
-                                    paralelo='2do Confir. 1 (F)'
-                                    logo='21F'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Traicioneras como Judas'
-                                    paralelo='2do Confir. 5 (F)'
-                                    logo='25F'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td className='genero'>[F]</td>
-                        </tr>  
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                19 Ene<br/>
-                                <strong>10h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Confirmación F.C.'
-                                    paralelo='2do Confir. 2 (F)'
-                                    logo='22F'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Club GNU'
-                                    paralelo='2do Confir. 4 (F)'
-                                    logo='24F'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td className='genero'>[F]</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                19 Ene<br/>
-                                <strong>11h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Santos y Religiosos F.C.'
-                                    paralelo='2do Confir. 1 (M)'
-                                    logo='21M'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='GDL'
-                                    paralelo='2do Confir. 4 (M2)'
-                                    logo='24M'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                    mas='2'
-                                />
-                            </td>
-                            <td className='genero'>[M]</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p className='pf1 st'>Primera semana</p>
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='19 Ene'
+                    hora='08h30'
+                    genero='M'
+                    equipos={['Confirmación F.C.', 'Los Pastores']}
+                    paralelos={['2do Confir. 2 (M)', '2do Confir. 3 (M)']}
+                    logos={['22M', '23M']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['blue', 'blue', 'white']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='19 Ene'
+                    hora='09h30'
+                    genero='F'
+                    equipos={['Las Galatas 1, 10', 'Traicioneras como Judas']}
+                    paralelos={['2do Confir. 1 (F)', '2do Confir. 5 (F)']}
+                    logos={['21F', '25F']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['black', 'black', 'white']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='19 Ene'
+                    hora='10h30'
+                    genero='F'
+                    equipos={['Confirmación F.C.', 'Club GNU']}
+                    paralelos={['2do Confir. 2 (F)', '2do Confir. 4 (F)']}
+                    logos={['22F', '24F']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['black', 'black', 'white']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='19 Ene'
+                    hora='11h30'
+                    genero='M'
+                    equipos={['Santos y Religiosos F.C.', 'GDL']}
+                    paralelos={['2do Confir. 1 (M)', '2do Confir. 4 (M2)']}
+                    logos={['21M', '24M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                    mas={[, 2]}
+                />
             </div>
             <div className='cont-partidos'>
-                <p className='pf1'>Segunda semana</p>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                26 Ene<br/>
-                                <strong>08h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Fuerza Divina'
-                                    paralelo='2 Confir. Ángeles (M)'
-                                    logo='2AM'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Newcastells'
-                                    paralelo='1ro Confir. 4 (M)'
-                                    logo='14M'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td className='genero'>[M]</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                26 Ene<br/>
-                                <strong>09h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Las Águilas'
-                                    paralelo='1ro Confir. 1 (F)'
-                                    logo='11F'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Estrellitas de María'
-                                    paralelo='2 Confir. Ángeles (F)'
-                                    logo='2AF'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td className='genero'>[F]</td>
-                        </tr>  
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                26 Ene<br/>
-                                <strong>10h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Santa Fé'
-                                    paralelo='1ro Confir. 2 (F)'
-                                    logo='12F'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Newcastells'
-                                    paralelo='1ro Confir. 4 (F)'
-                                    logo='14F'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                />
-                            </td>
-                            <td className='genero'>[F]</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Domingo<br/>
-                                26 Ene<br/>
-                                <strong>11h30</strong>
-                            </td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Santa Fé'
-                                    paralelo='1ro Confir. 2 (M)'
-                                    logo='12M'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td className='equipo'>
-                                <Equipo
-                                    ca
-                                    nombre='Los Angeles Negros'
-                                    paralelo='1ro Confir. 3 (M)'
-                                    logo='13M'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                />
-                            </td>
-                            <td className='genero'>[M]</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p className='pf1 st'>Segunda semana</p>
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='26 Ene'
+                    hora='08h30'
+                    genero='M'
+                    equipos={['Fuerza Divina', 'Newcastells']}
+                    paralelos={['2 Confir. Ángeles (M)', '1ro Confir. 4 (M)']}
+                    logos={['2AM', '14M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='26 Ene'
+                    hora='09h30'
+                    genero='F'
+                    equipos={['Las Águilas', 'Estrellitas de María']}
+                    paralelos={['1ro Confir. 1 (F)', '2 Confir. Ángeles (F)']}
+                    logos={['11F', '2AF']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['black', 'black', 'white']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='26 Ene'
+                    hora='10h30'
+                    genero='F'
+                    equipos={['Santa Fé', 'Newcastells']}
+                    paralelos={['1ro Confir. 2 (F)', '1ro Confir. 4 (F)']}
+                    logos={['12F', '14F']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='26 Ene'
+                    hora='11h30'
+                    genero='M'
+                    equipos={['Santa Fé', 'Los Angeles Negros']}
+                    paralelos={['1ro Confir. 2 (M)', '1ro Confir. 3 (M)']}
+                    logos={['12M', '13M']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['black', 'black', 'white']
+                    }}
+                />
             </div>
             <div className='cont-partidos'>
-                <p className='pf1'>Proximamente...</p>
+                <p className='pf1 st'>Proximamente...</p>
             </div>
 
             <style jsx>{`
@@ -300,6 +133,10 @@ const Calendario = () => {
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
+                }
+
+                .st{
+                    margin-bottom: 12px;
                 }
 
                 .pf2{
@@ -356,6 +193,10 @@ const Calendario = () => {
                 }
 
                 @media screen and (max-width: 768px){
+                    .pf1{
+                        font-size: 19px;
+                    }
+
                     table{
                         border-collapse: collapse;
                     }

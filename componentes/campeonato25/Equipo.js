@@ -21,7 +21,7 @@ const Equipo = ({
 
         <style jsx>{`
             article{
-                width: ${!ca ? '140px' : '160px'};
+                width: ${!ca ? '140px' : 'auto'};
                 padding: 0 5px;
                 font-family: 'Lato', sans-serif;
                 display: flex;
@@ -37,20 +37,20 @@ const Equipo = ({
 
             .log{
                 position: absolute;
-                top: ${!ca ? '30px' : '16px'};
+                top: ${!ca ? '30px' : '14px'};
                 width: 100%;
                 color: ${letter};
-                font-size: ${!ca ? '22px' : '16px'};
+                font-size: ${!ca ? '22px' : '13px'};
                 font-weight: bold;
                 text-align: center;
             }
 
             .slog{
                 position: absolute;
-                top: ${!ca ? '55px' : '32px'};
+                top: ${!ca ? '55px' : '26px'};
                 width: 100%;
                 color: ${letter};
-                font-size: ${!ca ? '16px' : '13px'};
+                font-size: ${!ca ? '16px' : '11px'};
                 font-weight: bold;
                 text-align: center;
             }
@@ -70,8 +70,8 @@ const Equipo = ({
 
             @media screen and (max-width: 768px){
                 article{
-                    width: ${!ca ? '140px' : '96px'};
-                    padding: 0 2px;
+                    width: ${!ca ? '140px' : 'auto'};
+                    padding: ${!ca ? '0 2px' : '0'};
                 }
 
                 .l-n{

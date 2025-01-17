@@ -12,7 +12,7 @@ const FormatoKT25 = () => {
         <section>
             <p className='pf1'>Formato Campeonato 2025</p>
             <p className='pf2 st'>
-                Detalle de formato que se empleara para el campeonato.
+                Detalle de formato que se empleará para el campeonato. <i>(Escoja el nivel al que pertenece)</i>
             </p>
             <div>
                 <p className={`op-nivel ${nivel == 3 && 'active'}`} onClick={() => setNivel(3)}>Año Biblico (M)</p>
@@ -55,7 +55,6 @@ const FormatoKT25 = () => {
                     padding: 9px 18px 10px 18px;
                     color: black;
                     font-size: 17px;
-                    letter-spacing: 1px;
                     border-radius: 10px;
                     cursor: pointer;
                 }
@@ -77,8 +76,7 @@ const FormatoKT25 = () => {
                         background: white;
                         padding: 9px 10px 10px 10px;
                         color: black;
-                        font-size: 16px;
-                        letter-spacing: 1px;
+                        font-size: 15px;
                         border-radius: 10px;
                         cursor: pointer;
                     }

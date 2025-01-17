@@ -6,7 +6,7 @@ const FormatoConfFem = ({ sin }) => {
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Femeninos</strong> }
             <p className='pf2 sb sa' style={{ marginBottom: '10px' }}>
-                <strong>R1: Participantes:</strong> En el campeonato (de confirmación), participaran 10 
+                <strong>R1: Participantes:</strong> En el campeonato femenino de confirmación, participarán 10 
                 equipos: 4 equipos que representan a los paralelos de primero de confirmación y 6 equipos 
                 representantes de los paralelos de segundo de confirmación.
             </p>
@@ -93,14 +93,13 @@ const FormatoConfFem = ({ sin }) => {
                 />
             </div>
             <p className='pf2 sa'>
-                <strong>R2: Fases:</strong> El campeonato (de confirmación), se desarrollara en 2 fases, 
-                primera y fase final, la primera fase estara compuesta de 15 partidos y la fase final de 5, 
+                <strong>R2: Fases:</strong> El campeonato femenino de confirmación, se desarrollará en 2 fases: 
+                primera y fase final. La primera fase estará compuesta de 15 partidos y la fase final de 5, 
                 sumando 20 partidos en total.
             </p>
             <p className='pf2 sa'>
-                <strong>R3: Grupos:</strong> Para la primera fase del campeonato (de confirmación), 
-                se dividiran a los equipos en 2 grupos de 5 mediante sorteo, la madrina de su equipo sera la 
-                encargada del sortear el grupo para su equipo.
+                <strong>R3: Grupos:</strong> Para la primera fase del campeonato femenino de confirmación, 
+                se dividirán a los equipos en 2 grupos de 5 mediante sorteo.
             </p>
             <div className='ta-pos'>
                 <table>
@@ -155,8 +154,8 @@ const FormatoConfFem = ({ sin }) => {
                 </table>
             </div>
             <p className='pf2 sa'>
-                <strong>R4: PRIMERA FASE:</strong> En la primera fase los equipos tendrán 3 partidos, 2 de 
-                estos enfrentando a de equipos de su grupo (R5) y 1 partido contra el equipo que saco su 
+                <strong>R4: PRIMERA FASE:</strong> En la primera fase, los equipos tendrán 3 partidos, 2 de 
+                estos enfrentando a equipos de su grupo (R5) y 1 partido contra el equipo que sacó su 
                 misma ubicación en el sorteo, pero del otro grupo (R6).
             </p>
             <p className='pf2 sa'>
@@ -227,9 +226,9 @@ const FormatoConfFem = ({ sin }) => {
             </div>
             <p className='pf2 sa'>
                 <strong>R6: Enfrentamiento contra el equipo con su misma ubicación, pero del otro grupo:</strong> Cada 
-                equipo deberá enfrentar 1 partido contra el equipo que saco su misma ubicación en el sorteo, 
+                equipo deberá enfrentar 1 partido contra el equipo que sacó su misma ubicación en el sorteo, 
                 pero del otro grupo:<br/>
-                <i>Ejemplo si un equipo por sorteo quedaría 
+                <i>Ejemplo: si un equipo por sorteo quedaría 
                 ubicado en el grupo A, posición 1, es decir A1, debería enfrentarse al equipo sorteado en el 
                 grupo B, posición 1, es decir B1 (1 partido).</i>
             </p>
@@ -251,8 +250,8 @@ const FormatoConfFem = ({ sin }) => {
                 </tr>
             </table>
             <p className='pf2 sa'>
-                <strong>R7: Clasificación:</strong> Para la fase final, clasificaran solamente los 3 equipos 
-                que tengan el mejor puntaje en cada grupo, es decir que hayan terminado primero, segundo y 
+                <strong>R7: Clasificación:</strong> Para la fase final, clasificarán solamente los 3 equipos 
+                que tengan el mejor puntaje en cada grupo, es decir, que hayan terminado primero, segundo y 
                 tercero en la tabla de posiciones de cada uno de los grupos, como se muestra a continuación.
             </p>
             <div className='ta-pos'>
@@ -308,29 +307,29 @@ const FormatoConfFem = ({ sin }) => {
                 </table>
             </div>
             <p className='pf2 sa'>
-                <strong>R8: Criterios de desempate Primera Fase:</strong> En caso de que al finalizar la 
-                primera fase se tuviera en la tabla de posiciones empates en puntos entre varios equipos, 
+                <strong>R8: Criterios de desempate Primera Fase:</strong> En caso que al finalizar la 
+                primera fase se tuviera en la tabla de posiciones empates en puntos entre equipos, 
                 se procedería a lo siguiente para desempatar: <br/>
                 1. Para determinar el mejor ubicado, primeramente, se tomará en cuenta el gol diferencia.<br/>
                 2. Si siguiera existiendo un empate con el gol diferencia, el mejor ubicado será el equipo 
-                que gano en el enfrentamiento que se dio anteriormente entre los equipos empatados.<br/>
-                3. Si el empate en puntos se diera en la última fecha y los equipos en cuestión terminaran 
+                que ganó el enfrentamiento que se dio anteriormente entre los equipos empatados.<br/>
+                3. Si el empate en puntos se diera en la última fecha, porque los equipos en cuestión terminan 
                 empatando su partido, el mejor ubicado se determinaría por 4 lanzamientos penales por equipo.<br/>
                 4. De no poder llegar a un desempate mediante los puntos anteriores, se tomará en cuenta la 
                 mayor cantidad total de goles marcados y posteriormente la menor cantidad total de goles 
                 recibidos.<br/>
                 5. El último criterio de desempate para determinar el mejor ubicado en caso de no poder 
-                hacerlo con los puntos anteriores, es el equipo que cuente con menos sanciones por tarjetas 
+                hacerlo con los puntos anteriores es: el equipo que cuente con menos sanciones por tarjetas 
                 amarillas o rojas (amarilla 1 punto, roja por doble amarilla 2 puntos y roja directa 5 puntos).
             </p>
             <p className='pf2 sa'>
-                <strong>R9: FASE FINAL:</strong> La fase final contara con 3 etapas (cuartos, semifinales y 
-                final), con formato de eliminación directa. En esta fase participaran 6 equipos, los 3 
+                <strong>R9: FASE FINAL:</strong> La fase final se desarrollará en 3 etapas (cuartos, semifinales y 
+                final), con formato de eliminación directa. En esta fase participarán 6 equipos, los 3 
                 mejores de cada grupo A y B.
             </p>
             <p className='pf2 sa'>
-                <strong>R10: CUARTOS DE FINAL:</strong> En esta fase participaran 4 equipos, los que 
-                terminaron en las posiciones 2 y 3 cada grupo A y B, estos 4 equipos se enfrentarán de la 
+                <strong>R10: CUARTOS DE FINAL:</strong> En esta fase participarán 4 equipos, los que 
+                terminaron en las posiciones 2 y 3 de cada grupo A y B. Estos 4 equipos se enfrentarán de la 
                 siguiente forma y los ganadores avanzarán a las semifinales.
             </p>
             <table className='t3'>
@@ -348,8 +347,8 @@ const FormatoConfFem = ({ sin }) => {
                 </tr>
             </table>
             <p className='pf2 sa'>
-                <strong>R11: SEMIFINAL:</strong> En esta fase participaran 4 equipos, los que terminaron 
-                en 1er lugar de cada grupo A y B, y los 2 ganadores de los cuartos de final, estos 4 equipos 
+                <strong>R11: SEMIFINAL:</strong> En esta fase participarán 4 equipos, los que terminaron 
+                en 1er lugar de cada grupo A y B, y los 2 ganadores de los cuartos de final. Estos 4 equipos 
                 se enfrentarán de la siguiente forma y los ganadores avanzarán a la final.
             </p>
             <table className='t31'>
@@ -366,21 +365,21 @@ const FormatoConfFem = ({ sin }) => {
             </table>
             <p className='pf2 sa'>
                 <strong>R12: Criterios de desempate (en la semifinal):</strong> En caso de empate en goles 
-                al finalizar los partidos de Semifinal, se procederá a:<br/>
+                al finalizar los partidos de semifinal, se procederá a:<br/>
                 1. Realizar directamente la definición por medio de los tiros penales (4 cada equipo).<br/>
-                2. De persistir el empate después de los 5 lanzamientos por equipo, clasificara el que haya 
+                2. De persistir el empate después de los 4 lanzamientos por equipo, clasificará el que haya 
                 tenido la mejor ubicación en la “Tabla general fase regular” (R15). 
             </p>
             <p className='pf2 sa'>
-                <strong>R13: FINAL:</strong> La final es la última etapa del Campeonato, en donde se 
-                enfrentarán los 2 mejores equipos del campeonato, las ganadoras de las semifinales. Las 
-                ganadoras serán declaradas campeónas del campeonato de Confirmación 2025. 
+                <strong>R13: FINAL:</strong> La final es la última etapa del campeonato, en donde se 
+                enfrentarán los 2 mejores equipos del campeonato, ganadoras de las semifinales. Las 
+                ganadoras serán declaradas campeónas del campeonato femenino de Confirmación 2025. 
             </p>
             <p className='pf2 sa'>
                 <strong>R14: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
-                partido Final, se procederá a:<br/>
+                partido final, se procederá a:<br/>
                 1. Se jugarán dos tiempos de 4 minutos cada uno.<br/>
-                2. Si el empate continua, se procederá a realizar la definición por medio de los tiros 
+                2. Si el empate continúa, se procederá a realizar la definición por medio de los tiros 
                 penales (4 cada equipo).<br/>
                 3. Si el empate persistiese, quedara campeón el que haya tenido la mejor ubicación en la 
                 “Tabla general fase regular" (R15).

@@ -6,7 +6,7 @@ const FormatoBibliMas = ({ sin }) => {
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Masculinos</strong> }
             <p className='pf2 sb sa'>
-                <strong>R1: Participantes:</strong> En el campeonato (de año bíblico), participaran 6 equipos 
+                <strong>R1: Participantes:</strong> En el campeonato masculino de año bíblico, participarán 6 equipos 
                 que representan a los 6 paralelos de año bíblico.
             </p>
             <div className='cont-logos'>
@@ -62,24 +62,24 @@ const FormatoBibliMas = ({ sin }) => {
                 />
             </div>
             <p className='pf2 sa'>
-                <strong>R2: Fases:</strong> El campeonato (de año bíblico), se desarrollara en 2 fases, 
-                primera y fase final, la primera fase estara compuesta de 9 partidos y la fase final de 3, 
+                <strong>R2: Fases:</strong> El campeonato masculino de año bíblico, se desarrollará en 2 fases, 
+                primera y fase final. La primera fase estará compuesta de 9 partidos y la fase final de 3, 
                 sumando 12 partidos en total.
             </p>
             <p className='pf2 sa'>
-                <strong>R3: Ubicación:</strong> En la primera fase del campeonato los 6 equipos serán 
+                <strong>R3: Ubicación:</strong> En la primera fase del campeonato, los 6 equipos serán 
                 ubicados en 2 grupos de 3 equipos. Los equipos serán ubicados mediante sorteo en los grupos 
                 A y B.
             </p>
             <p className='pf2 sa'>
-                <strong>R4: Primera fase (enfrentamientos):</strong> En la primera fase los equipos tendrán 
+                <strong>R4: Primera fase (enfrentamientos):</strong> En la primera fase, los equipos tendrán 
                 3 partidos, 2 de estos enfrentando al resto de equipos de su grupo (R5) y 1 partido contra 
-                el equipo que saco su misma ubicación en el sorteo, pero del otro grupo (R6).
+                el equipo que sacó su misma ubicación en el sorteo, pero del otro grupo (R6).
             </p>
             <p className='pf2 sa'>
                 <strong>R5: Enfrentamientos mismo grupo:</strong> Cada equipo deberá enfrentarse a los 2 
                 equipos que forman parte de su grupo.<br/>
-                <i>Ejemplo si un equipo por sorteo quedaría ubicado en el grupo B, posición 1, es decir 
+                <i>Ejemplo: si un equipo por sorteo quedaría ubicado en el grupo B, posición 1, es decir 
                 B1, debería enfrentarse a los equipos B2 y B3 (2 partidos).</i>
             </p>
             <table className='t1'>
@@ -97,10 +97,10 @@ const FormatoBibliMas = ({ sin }) => {
                 </tr>
             </table>
             <p className='pf2 sa'>
-                <strong>R6: Enfrentamiento contra el equipo con su misma ubicación, pero del otro grupo:</strong> 
-                Cada equipo deberá enfrentar 1 partido contra el equipo que saco su misma ubicación en el sorteo, 
-                pero del otro grupo:<br/>
-                <i>Ejemplo si un equipo por sorteo quedaría 
+                <strong>R6: Enfrentamiento contra el equipo con su misma ubicación, pero del otro grupo:</strong> Cada 
+                equipo deberá enfrentar 1 partido contra el equipo que sacó su misma ubicación en el sorteo, 
+                pero del otro grupo.<br/>
+                <i>Ejemplo: si un equipo por sorteo quedaría 
                 ubicado en el grupo A, posición 1, es decir A1, debería enfrentarse al equipo sorteado en el 
                 grupo B, posición 1, es decir B1 (1 partido).</i>
             </p>
@@ -116,7 +116,7 @@ const FormatoBibliMas = ({ sin }) => {
                 </tr>
             </table>
             <p className='pf2 sa'>
-                <strong>R7: Clasificación:</strong> Para la fase final, clasificaran solamente los 2 equipos 
+                <strong>R7: Clasificación:</strong> Para la fase final, clasificarán solamente los 2 equipos 
                 que tengan el mejor puntaje en cada grupo, es decir que hayan terminado primero y segundo en 
                 la tabla de posiciones de cada uno de los grupos, como se muestra a continuación.
             </p>
@@ -157,24 +157,24 @@ const FormatoBibliMas = ({ sin }) => {
                 </table>
             </div>
             <p className='pf2 sa'>
-                <strong>R8: Criterios de desempate Primera Fase:</strong> En caso de que al finalizar la 
-                primera fase se tuviera en la tabla de posiciones empates en puntos entre varios equipos, 
+                <strong>R8: Criterios de desempate en Primera Fase:</strong> En caso que al finalizar la 
+                primera fase se tuviera en la tabla de posiciones empates en puntos entre equipos, 
                 se procedería a lo siguiente para desempatar: <br/>
                 1. Para determinar el mejor ubicado, primeramente, se tomará en cuenta el gol diferencia.<br/>
                 2. Si siguiera existiendo un empate con el gol diferencia, el mejor ubicado será el equipo 
-                que gano en el enfrentamiento que se dio anteriormente entre los equipos empatados.<br/>
-                3. Si el empate en puntos se diera en la última fecha y los equipos en cuestión terminaran 
+                que ganó el enfrentamiento que se dio anteriormente entre los equipos empatados.<br/>
+                3. Si el empate en puntos se diera en la última fecha, porque los equipos en cuestión terminan 
                 empatando su partido, el mejor ubicado se determinaría por 4 lanzamientos penales por equipo.<br/>
                 4. De no poder llegar a un desempate mediante los puntos anteriores, se tomará en cuenta la 
                 mayor cantidad total de goles marcados y posteriormente la menor cantidad total de goles 
                 recibidos.<br/>
                 5. El último criterio de desempate para determinar el mejor ubicado en caso de no poder 
-                hacerlo con los puntos anteriores, es el equipo que cuente con menos sanciones por tarjetas 
+                hacerlo con los puntos anteriores es: el equipo que cuente con menos sanciones por tarjetas 
                 amarillas o rojas (amarilla 1 punto, roja por doble amarilla 2 puntos y roja directa 5 puntos).
             </p>
             <p className='pf2 sa'>
-                <strong>R9: Fase final:</strong> La fase final contara con 2 etapas (semifinales y final), 
-                con formato de eliminación directa. En esta fase participaran 4 equipos, los 2 mejores de 
+                <strong>R9: Fase final:</strong> La fase final la conforman 2 etapas (semifinales y final), 
+                con formato de eliminación directa. En esta fase participarán 4 equipos, los 2 mejores de 
                 cada grupo A y B, estos 4 equipos se enfrentarán de la siguiente forma y los ganadores 
                 avanzarán a la final.
             </p>
@@ -192,21 +192,21 @@ const FormatoBibliMas = ({ sin }) => {
             </table>
             <p className='pf2 sa'>
                 <strong>R10: Criterios de desempate (en la semifinal):</strong> En caso de empate en goles 
-                al finalizar los partidos de Semifinal, se procederá a:<br/>
+                al finalizar los partidos de semifinal, se procederá a:<br/>
                 1. Realizar directamente la definición por medio de los tiros penales (4 cada equipo).<br/>
-                2. De persistir el empate después de los 5 lanzamientos por equipo, clasificara el que haya 
+                2. De persistir el empate después de los 5 lanzamientos por equipo, clasificará el que haya 
                 tenido la mejor ubicación en la “Tabla general fase regular” (R13). 
             </p>
             <p className='pf2 sa'>
-                <strong>R11: Final:</strong> La final es la última etapa del Campeonato, en donde se 
-                enfrentarán los 2 mejores equipos del campeonato, los ganadores de las semifinales. El 
-                ganador será declarado el campeón del campeonato de Año Bíblico 2025. 
+                <strong>R11: FINAL:</strong> La final es la última etapa del campeonato, en donde se 
+                enfrentarán los 2 mejores equipos del campeonato, ganadores de las semifinales. El 
+                ganador será declarado el campeón del campeonato masculino de Año Bíblico 2025. 
             </p>
             <p className='pf2 sa'>
                 <strong>R12: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
-                partido Final, se procederá a:<br/>
+                partido final, se procederá a:<br/>
                 1. Se jugarán dos tiempos de 4 minutos cada uno.<br/>
-                2. Si el empate continua, se procederá a realizar la definición por medio de los tiros 
+                2. Si el empate continúa, se procederá a realizar la definición por medio de los tiros 
                 penales (4 cada equipo).<br/>
                 3. Si el empate persistiese, quedara campeón el que haya tenido la mejor ubicación en la 
                 “Tabla general fase regular" (R13).

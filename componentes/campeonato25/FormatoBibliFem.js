@@ -6,7 +6,7 @@ const FormatoBibliFem = ({ sin }) => {
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Femeninos</strong> }
             <p className='pf2 sb sa'>
-                <strong>R1: Participantes:</strong> En el campeonato femenino (de año bíblico), participaran 
+                <strong>R1: Participantes:</strong> En el campeonato femenino de año bíblico, participarán 
                 4 equipos que representan a los paralelos de año bíblico.
             </p>
             <div className='cont-logos'>
@@ -44,14 +44,14 @@ const FormatoBibliFem = ({ sin }) => {
                 />
             </div>
             <p className='pf2 sa'>
-                <strong>R2: Fases:</strong> El campeonato (de año bíblico), se desarrollara en 2 fases, 
-                primera y final, la primera fase estara compuesta de 6 partidos y sumando la final, seria 
+                <strong>R2: Fases:</strong> El campeonato femenino de año bíblico, se desarrollará en 2 fases, 
+                primera y final. La primera fase estará compuesta de 6 partidos, que sumando la final, serían 
                 7 partidos en total.
             </p>
             <p className='pf2 sa'>
-                <strong>R3: PRIMERA FASE:</strong> En la primera fase los equipos formaran parte de 1 grupo y 
-                deberan jugar 3 partidos, enfrentando al resto de equipos de su grupo. La ubicación en el 
-                grupo sera mediante sorteo con ayuda de las madrinas de cada equipo.
+                <strong>R3: PRIMERA FASE:</strong> En la primera fase los equipos formarán parte de 1 grupo y 
+                deberán jugar 3 partidos, enfrentando al resto de equipos de su grupo. La ubicación en el 
+                grupo será mediante sorteo.
             </p>
             <table className='t1'>
                 <tr>
@@ -69,8 +69,8 @@ const FormatoBibliFem = ({ sin }) => {
             </table>
             <p className='pf2 sa'>
                 <strong>R4: FINAL:</strong> La final es la última etapa del Campeonato, en donde se 
-                enfrentarán los 2 mejores equipos de la tabla de posiciones. El ganador será declarado el 
-                campeón del campeonato de Año Bíblico 2025. 
+                enfrentarán los 2 mejores equipos de la tabla de posiciones. Las ganadoras serán declaradas  
+                como las campeonas del campeonato femenino de Año Bíblico 2025. 
             </p>
             <p className='pf2 sa'>
                 <strong>R5: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
