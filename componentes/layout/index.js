@@ -36,9 +36,26 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
             <style jsx global>{`
                 html,
                 body {
+                    background-color: #F2F8F6 !important;
                     padding: 0;
                     margin: 0;
                     font-family: 'Lato', sans-serif;
+                }
+
+                :root{
+                    color-scheme: only light;
+                }
+
+                @media (prefers-color-scheme: dark) {
+                    :root {
+                        color-scheme: light;
+                    }
+                }
+                
+                @media (forced-colors: active) {
+                    :root {
+                        color-scheme: light;
+                    }
                 }
 
                 * {
