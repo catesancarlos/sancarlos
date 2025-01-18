@@ -8,7 +8,7 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-            <article>
+                {/* <article>
                     <div className='e_header'>
                         <p className='e_title'g>Catequesis Familiar</p>
                         <p className='e_subtitle'>2do Confirmación</p>
@@ -18,7 +18,7 @@ const MiniAgenda = () => {
                         <p>Teatro Catequesis</p>
                         <p>19H00</p>
                     </div>
-                </article>
+                </article> */}
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis</p>
@@ -69,7 +69,7 @@ const MiniAgenda = () => {
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 25px 4% 0 4%;
+                    margin: 35px 4% 0 4%;
                     width: 92%;
                 }
 
@@ -87,7 +87,7 @@ const MiniAgenda = () => {
                     font-size: 22px;
                     font-weight: bold;
                     text-align: center;
-                    margin-bottom: 18px;
+                    margin-bottom: 20px;
                 }
 
                 .cont{

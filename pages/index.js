@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 
 import AppLayout from '../componentes/layout'
+import InfoSalida from '../componentes/home/InfoSalida'
 import PartidoIda from '../componentes/banners/PartidoIda'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
@@ -24,6 +24,7 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+                <InfoSalida />
                 <div className='banner'>
                     {/* <img src='/main_banner.jpg' /> */}
                     <PartidoIda />
