@@ -75,23 +75,24 @@ export default function InfoSalida() {
                         margin: 0 14px 15px 14px;
                         width: calc(100% - 30px);
                         height: 68px;
+                        border-radius: 12px;
                     }
 
                     .p1{
                         margin: 0;
-                        padding-right: 8px;
+                        padding-right: 15px;
                     }
 
                     .p1 strong{
-                        font-size: 16px;
+                        font-size: 15px;
                     }
 
                     .p1 p{
-                        font-size: 16px;
+                        font-size: 15px;
                     }
 
                     .p2{
-                        width: 78px;
+                        width: 70px;
                         margin: 0 3px;
                         padding: 4px 8px;
                         border-radius: 10px;
@@ -110,7 +111,7 @@ export default function InfoSalida() {
                     }
 
                     .p2 strong{
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                 }
             `}</style>
