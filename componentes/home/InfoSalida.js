@@ -80,20 +80,20 @@ export default function InfoSalida() {
 
                     .p1{
                         margin: 0;
-                        padding-right: 18px;
+                        padding-right: 10px;
                     }
 
                     .p1 strong{
-                        font-size: 14px;
+                        font-size: 13px;
                     }
 
                     .p1 p{
-                        font-size: 15px;
+                        font-size: 14px;
                     }
 
                     .p2{
-                        width: 70px;
-                        margin: 0 4px;
+                        width: 60px;
+                        margin: 0 3px;
                         padding: 4px 8px;
                         border-radius: 10px;
                     }
@@ -107,11 +107,12 @@ export default function InfoSalida() {
                     }
 
                     .p2 p{
-                        font-size: 13px;
+                        font-size: 12px;
+                        line-height: 100%;
                     }
 
                     .p2 strong{
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             `}</style>
