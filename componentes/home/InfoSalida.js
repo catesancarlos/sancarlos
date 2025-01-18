@@ -21,12 +21,12 @@ export default function InfoSalida() {
                     margin: 0 4% 20px 4%;
                     width: 92%;
                     background: #3C4142;
-                    height: 100px;
+                    height: 86px;
                     color: white;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border-radius: 18px;
+                    border-radius: 15px;
                 }
 
                 .p1{
@@ -74,17 +74,17 @@ export default function InfoSalida() {
                     section{
                         margin: 0 14px 15px 14px;
                         width: calc(100% - 30px);
-                        height: 68px;
-                        border-radius: 12px;
+                        height: 62px;
+                        border-radius: 10px;
                     }
 
                     .p1{
                         margin: 0;
-                        padding-right: 15px;
+                        padding-right: 18px;
                     }
 
                     .p1 strong{
-                        font-size: 15px;
+                        font-size: 14px;
                     }
 
                     .p1 p{
@@ -93,7 +93,7 @@ export default function InfoSalida() {
 
                     .p2{
                         width: 70px;
-                        margin: 0 3px;
+                        margin: 0 4px;
                         padding: 4px 8px;
                         border-radius: 10px;
                     }
