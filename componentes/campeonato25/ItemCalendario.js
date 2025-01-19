@@ -1,6 +1,9 @@
 import Equipo from './Equipo'
 
 export default function ItemCalendario({
+    now,
+    res,
+    pen,
     home,
     dia,
     fecha,
@@ -34,10 +37,14 @@ export default function ItemCalendario({
                     mas={mas && mas[0]}
                 />
             </div>
-            <div className='marcador'>
-                <strong className='meq'>0</strong>
-                <p className='vs'>Vs</p>
-                <strong className='meq'>0</strong>
+            <div className='marc-glo'>
+                {now && <p className='now'>Ahora</p> }
+                <div className='marcador'>
+                    <strong className='meq'>{res ? res?.[0] : 0}</strong>
+                    <p className='vs'>Vs</p>
+                    <strong className='meq'>{res ? res?.[1] : 0}</strong>
+                </div>
+                {pen && <p className='pen'>{`Pen (${pen})`}</p> }
             </div>
             <div className='eq2'>
                 <Equipo
@@ -92,11 +99,45 @@ export default function ItemCalendario({
                     width: 180px;
                 }
 
-                .marcador{
+                .marc-glo{
+                    position: relative;
                     width: 120px;
                     display: flex;
-                    align-items: center;
                     justify-content: center;
+                    align-items: center;
+                }
+
+                .marcador{
+                    display: flex;
+                }
+
+                .now{
+                    position: absolute;
+                    top: 5px;
+                    background: ${genero == 'M' ? '#245590' : '#CC397B'};
+                    padding: 1px 5px 2px 5px;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    animation-name: nuevo;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+
+                .pen{
+                    position: absolute;
+                    bottom: 14px;
+                    color: black;
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+
+                @keyframes nuevo{
+                   50% {
+                       background: transparent;
+                       color: transparent;
+                    } 
                 }
 
                 .meq{

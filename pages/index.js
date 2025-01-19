@@ -5,9 +5,14 @@ import InfoSalida from '../componentes/home/InfoSalida'
 import PartidoIda from '../componentes/banners/PartidoIda'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
+import PartidosSemana from '../componentes/home/PartidosSemana'
+
+import db  from '../services/dBase'
+import { doc, onSnapshot } from 'firebase/firestore'
 
 const Home = () => {
     const [toggle, setToggle] = useState(true)
+    const [fecha, setFecha] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -21,10 +26,17 @@ const Home = () => {
         return () => clearInterval(intervalID);
     }, []);
 
+    useEffect(() => {
+            onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
+                setFecha(doc.data())
+            })     
+    }, [])
+    
+
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                <InfoSalida />
+                {/* <InfoSalida /> */}
                 <div className='banner'>
                     {/* <img src='/main_banner.jpg' /> */}
                     <PartidoIda />
@@ -37,7 +49,9 @@ const Home = () => {
                     </div> */}
                 </div>
                 <MiniAgenda />
-                <CampSection />
+                <CampSection>
+                    <PartidosSemana fecha={fecha} />
+                </CampSection>
             </AppLayout>
 
             <style jsx>{`

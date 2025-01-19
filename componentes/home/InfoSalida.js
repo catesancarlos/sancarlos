@@ -74,7 +74,7 @@ export default function InfoSalida() {
                     section{
                         margin: 0 14px 15px 14px;
                         width: calc(100% - 30px);
-                        height: 62px;
+                        height: 56px;
                         border-radius: 10px;
                     }
 

@@ -12,7 +12,7 @@ export default function PartidoIda({ nohome }){
                         <p className='info-header'>Partido de Ida:</p>
                         <div className='info-desc'>
                             <p>Sábado</p>
-                            <p>11 de enero del 2025</p>
+                            <p>11 enero 2025</p>
                             <p>15h30</p>
                         </div>
                     </div>
@@ -20,7 +20,7 @@ export default function PartidoIda({ nohome }){
                         <p className='info-header'>Partido de Vuelta:</p>
                         <div className='info-desc right'>
                             <p>Sábado</p>
-                            <p>08 de febrero del 2025</p>
+                            <p>08 febrero 2025</p>
                             <p>10h30</p>
                         </div>
                     </div>
