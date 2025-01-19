@@ -361,50 +361,50 @@ const Posiciones = () => {
                                 <tr>
                                     <td className='tp'>1</td>
                                     <td className='eq'>Confirmación FC (22F)</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>+2</td>
+                                    <td className='tp'><strong>3</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>2</td>
-                                    <td className='eq'>Club GNU (24F)</td>
+                                    <td className='eq'>Las Gálatas 1, 10 (21F)</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>10</td>
+                                    <td className='tp'>9</td>
+                                    <td className='tp'>+1</td>
+                                    <td className='tp'><strong>3</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>3</td>
-                                    <td className='eq'>Las Gálatas 1, 10 (21F)</td>
+                                    <td className='eq'>Traicioneras como Júdas (25F)</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>9</td>
+                                    <td className='tp'>10</td>
+                                    <td className='tp'>-1</td>
+                                    <td className='tp'><strong>0</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>4</td>
-                                    <td className='eq'>Traicioneras como Júdas (25F)</td>
+                                    <td className='eq'>Club GNU (24F)</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>-2</td>
+                                    <td className='tp'><strong>0</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>5</td>
@@ -505,16 +505,16 @@ const Posiciones = () => {
                                 </tr>
                                 <tr>
                                     <td>Confirmación FC (22F)</td>
-                                    <td>0</td>
+                                    <td>3</td>
                                     <td>vs.</td>
-                                    <td>0</td>
+                                    <td>1</td>
                                     <td>Club GNU (24F)</td>
                                 </tr>
                                 <tr>
                                     <td>Las Gálatas 1, 10 (21F)</td>
-                                    <td>0</td>
+                                    <td>10</td>
                                     <td>vs.</td>
-                                    <td>0</td>
+                                    <td>9</td>
                                     <td>Traicioneras como Júdas (25F)</td>
                                 </tr>
                                 <tr>
@@ -632,59 +632,91 @@ const Posiciones = () => {
                             <table className='t1'>
                                 <tr>
                                     <td className='tmp'>A</td>
-                                    <td>Confirmación FC (22M) vs. Los Pastores (23M)</td>
+                                    <td>Confirmación FC (22M)</td>
+                                    <td>7</td>
+                                    <td>vs.</td>
+                                    <td>5</td>
+                                    <td>Los Pastores (23M)</td>
                                 </tr>
                                 <tr>
                                     <td className='tmp'>B</td>
-                                    <td>Santos y Religiosos FC (21M) vs. GDL (24M)</td>
+                                    <td>Santos y Religiosos FC (21M)</td>
+                                    <td>1</td>
+                                    <td>vs.</td>
+                                    <td>9</td>
+                                    <td>GDL (24M)</td>
                                 </tr>
                                 <tr>
                                     <td className='tmp'>C</td>
-                                    <td>Santa Fe (12M) vs. Los Angeles Negros (13M)</td>
+                                    <td>Santa Fe (12M)</td>
+                                    <td>0</td>
+                                    <td>vs.</td>
+                                    <td>0</td>
+                                    <td>Los Angeles Negros (13M)</td>
                                 </tr>
                                 <tr>
                                     <td className='tmp'>D</td>
-                                    <td>Fuerza Divina (2AM) vs. Newcastells (14M)</td>
+                                    <td>Fuerza Divina</td>
+                                    <td>0</td>
+                                    <td>vs.</td>
+                                    <td>0</td>
+                                    <td>Newcastells (14M)</td>
                                 </tr>
                                 <tr>
                                     <td className='tmp'>E</td>
-                                    <td>Predicadores (24M) vs. Traicioneros como Judas (25M)</td>
+                                    <td>Predicadores (24M)</td>
+                                    <td>0</td>
+                                    <td>vs.</td>
+                                    <td>0</td>
+                                    <td>Traicioneros como Judas (25M)</td>
                                 </tr>
                                 <tr>
                                     <td className='tmp'>F</td>
-                                    <td>Los Águilas (11M) vs. Ángeles (1AM)</td>
+                                    <td>Los Águilas (11M)</td>
+                                    <td>0</td>
+                                    <td>vs.</td>
+                                    <td>0</td>
+                                    <td>Ángeles (1AM)</td>
                                 </tr>
                             </table>
                         </div>
                         <div className='ta-2 hor'>
                             <table className='t21'>
                                 <tr>
-                                    <td colSpan={3} className='tmp'>Ganadores</td>
+                                    <td colSpan={4} className='tmp'><strong>Ganadores</strong></td>
                                 </tr>
                                 <tr>
-                                    <td className='tp'>GA</td>
-                                    <td className='tp'>GB</td>
-                                    <td className='tp'>GC</td>
+                                    <td className='tp'>(22M) Confirmación FC</td>
+                                    <td className='tp'>[1 - 0]</td>
+                                    <td className='tp'>(24M) GDL</td>
+                                    <td className='tp'>[1 - 0]</td>
                                 </tr>
                                 <tr>
-                                    <td className='tp'>GD</td>
-                                    <td className='tp'>GE</td>
-                                    <td className='tp'>GF</td>
+                                    <td colSpan={2} className='tp'>GC</td>
+                                    <td colSpan={2} className='tp'>GD</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2} className='tp'>GE</td>
+                                    <td colSpan={2} className='tp'>GF</td>
                                 </tr>
                             </table>
                             <table className='t21'>
                                 <tr>
-                                    <td colSpan={3} className='tmp'>Perdedores</td>
+                                    <td colSpan={4} className='tmp'><strong>Perdedores</strong></td>
                                 </tr>
                                 <tr>
-                                    <td className='tp'>PA</td>
-                                    <td className='tp'>PB</td>
-                                    <td className='tp'>PC</td>
+                                    <td className='tp'>(23M) Los Pastores</td>
+                                    <td className='tpp'>[0 - 1]</td>
+                                    <td className='tp'>(21M) Santos y Religiosos FC</td>
+                                    <td className='tpp'>[0 - 1]</td>
                                 </tr>
                                 <tr>
-                                    <td className='tp'>PD</td>
-                                    <td className='tp'>PE</td>
-                                    <td className='tp'>PF</td>
+                                    <td colSpan={2} className='tp'>PC</td>
+                                    <td colSpan={2} className='tp'>PD</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2} className='tp'>PE</td>
+                                    <td colSpan={2} className='tp'>PF</td>
                                 </tr>
                             </table>
                         </div>
@@ -746,6 +778,18 @@ const Posiciones = () => {
                     margin-top: 35px;
                 }
 
+                .t21{
+                    margin: 0 20px;
+                }
+
+                .t21 .tp{
+                    width: auto;
+                }
+
+                .t21 .tpp{
+                    width: 50px;
+                }
+
                 .eq{
                     width: 270px;
                     text-align: left;
@@ -753,7 +797,7 @@ const Posiciones = () => {
 
                 td{
                     padding: 1px 5px 2px 5px;
-                    font-size: 13px;
+                    font-size: 14px;
                     font-weight: 300;
                     text-align: center;
                     border: 1px solid black;
@@ -797,8 +841,16 @@ const Posiciones = () => {
                         color: white;
                     }
 
+                    td{
+                        font-size: 13px;
+                    }
+
                     .ta-2 table{
                         margin-top: 25px;
+                    }
+
+                    .hor{
+                        flex-direction: column;
                     }
 
                     .cont-partidos{
