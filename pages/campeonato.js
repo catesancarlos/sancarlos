@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import AppLayout from '../componentes/layout'
 import DetallesKT25 from '../componentes/campeonato25/DetallesKT25'
@@ -11,10 +11,21 @@ import Catequistas from '../componentes/campeonato25/Catequistas'
 import Reglamento from '../componentes/campeonato25/Reglamento'
 import FutbolSala from '../componentes/campeonato25/FutbolSala'
 import Calendario from '../componentes/campeonato25/Calendario'
+import PartidosSemana from '../componentes/home/PartidosSemana'
 import Posiciones from '../componentes/campeonato25/Posiciones'
+
+import db  from '../services/dBase'
+import { doc, onSnapshot } from 'firebase/firestore'
 
 export default function Campeonato(){
     const [section, setSection] = useState(10)
+    const [fecha, setFecha] = useState([])
+
+    useEffect(() => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
+            setFecha(doc.data())
+        })     
+}, [])
 
     return(
         <AppLayout titulo='San Carlos - Campeonato' name='Campeonato'>
@@ -52,7 +63,9 @@ export default function Campeonato(){
                                                     section == 7 ? <Catequistas /> :
                                                         section == 8 ? <Reglamento /> : 
                                                             section == 9 ? <FutbolSala /> :
-                                                                section == 10 ? <Calendario /> :
+                                                                section == 10 ? <Calendario>
+                                                                    <PartidosSemana fecha={fecha} />
+                                                                </Calendario> :
                                                                     section == 11 ? <Posiciones /> : '.'
 
                         }
@@ -62,7 +75,7 @@ export default function Campeonato(){
 
             <style jsx>{`
                 section{
-                    margin: 20px 4% 50px 4%;
+                    margin: 20px 4% 0 4%;
                     width: 92%;
                     display: flex;
                     flex-direction: column;
@@ -134,7 +147,7 @@ export default function Campeonato(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 0px 15px 50px 15px;
+                        margin: 0 15px 0 15px;
                         width: calc(100% - 30px);
                     }
 

@@ -1,7 +1,6 @@
-import PartidosSemana from '../home/PartidosSemana'
 import ItemCalendario from './ItemCalendario'
 
-const Calendario = () => {
+export default function Calendario({ children }){
 
     return (
         <section>
@@ -11,7 +10,7 @@ const Calendario = () => {
             </p>
             <div className='cont-partidos'>
                 <p className='pf1 st'>Primera semana</p>
-                <PartidosSemana />
+                {children}
             </div>
             <div className='cont-partidos'>
                 <p className='pf1 st'>Segunda semana</p>
@@ -93,12 +92,6 @@ const Calendario = () => {
                     font-weight: 200;
                 }
 
-                .ta-2{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
                 .cont-partidos{
                     margin-top: 20px;
                     width: 100%;
@@ -107,60 +100,9 @@ const Calendario = () => {
                     align-items: center;
                 }
 
-                .cont-partidos table{
-                    margin-top: 10px;
-                }
-
-                table{
-                    border-collapse: auto;
-                }
-
-                td{
-                    padding: 1px 5px 2px 5px;
-                    font-size: 16px;
-                    font-weight: 300;
-                    text-align: center;
-                    border: 1px solid black;
-                    
-                }
-
-                tr{
-                    border: 1px solid black;
-                }
-
-                .equipo{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .genero{
-                    background: #000000AA;
-                    color: white;
-                    font-weight: bold;
-                }
-
                 @media screen and (max-width: 768px){
                     .pf1{
                         font-size: 19px;
-                    }
-
-                    table{
-                        border-collapse: collapse;
-                    }
-
-                    tr{
-                        border: 1px solid black;
-                    }
-
-                    td{
-                        padding: 1px 4px 2px 4px;
-                        font-size: 12px;
-                        border: none;
-                    }
-
-                    .equipo{
-             
                     }
 
                     .cont-partidos .pf1{
@@ -171,5 +113,3 @@ const Calendario = () => {
         </section> 
     )
 }
-
-export default Calendario

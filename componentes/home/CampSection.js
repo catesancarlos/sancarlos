@@ -33,7 +33,8 @@ const CampSection = ({ children }) => {
 
             <style jsx>{`
                 section{
-                    margin: 45px 4% 50px 4%;
+                    margin: 45px 4% 45px 4%;
+                    margin: 0px 4% 40px 4%;
                     width: 92%;
                     display: flex;
                     flex-direction: row-reverse;
@@ -131,7 +132,8 @@ const CampSection = ({ children }) => {
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 20px 15px 60px 15px;
+                        margin: 20px 15px 50px 15px;
+                        margin: 10px 15px 30px 15px;
                         width: calc(100% - 30px);
                         display: flex;
                         flex-direction: column;
@@ -187,10 +189,12 @@ const CampSection = ({ children }) => {
                     }
 
                     .hg:nth-child(2){
+                        margin-top: 10px;
                         margin-right: 14px;
                     }
 
                     .hg:nth-child(3){
+                        margin-top: 10px;
                         margin-right: 0;
                     }
 

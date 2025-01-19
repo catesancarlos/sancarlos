@@ -1,6 +1,6 @@
 import ItemCalendario from '../campeonato25/ItemCalendario'
 
-export default function PartidosSemana({ fecha }){    
+export default function PartidosSemana({ fecha, home }){    
 
     return (
         <>
@@ -8,7 +8,7 @@ export default function PartidosSemana({ fecha }){
                 now={fecha?.partido1}
                 res={fecha?.res1}
                 pen={fecha?.pen1}
-                home
+                home={home}
                 dia='Domingo'
                 fecha='19 Ene'
                 hora='08h30'
@@ -25,7 +25,7 @@ export default function PartidosSemana({ fecha }){
                 now={fecha?.partido2}
                 res={fecha?.res2}
                 pen={fecha?.pen2}
-                home
+                home={home}
                 dia='Domingo'
                 fecha='19 Ene'
                 hora='09h30'
@@ -42,7 +42,7 @@ export default function PartidosSemana({ fecha }){
                 now={fecha?.partido3}
                 res={fecha?.res3}
                 pen={fecha?.pen3}
-                home
+                home={home}
                 dia='Domingo'
                 fecha='19 Ene'
                 hora='10h30'
@@ -59,7 +59,7 @@ export default function PartidosSemana({ fecha }){
                 now={fecha?.partido4}
                 res={fecha?.res4}
                 pen={fecha?.pen4}
-                home
+                home={home}
                 dia='Domingo'
                 fecha='19 Ene'
                 hora='11h30'

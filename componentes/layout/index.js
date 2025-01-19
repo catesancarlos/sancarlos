@@ -30,6 +30,7 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
                     display: flex;
                     flex-direction: column;
                     min-height: 100vh;
+                    padding-bottom: 60px;
                 }
             `}</style>
 

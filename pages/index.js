@@ -37,6 +37,9 @@ const Home = () => {
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 {/* <InfoSalida /> */}
+                <CampSection>
+                    <PartidosSemana fecha={fecha} home />
+                </CampSection>
                 <div className='banner'>
                     {/* <img src='/main_banner.jpg' /> */}
                     <PartidoIda />
@@ -49,9 +52,7 @@ const Home = () => {
                     </div> */}
                 </div>
                 <MiniAgenda />
-                <CampSection>
-                    <PartidosSemana fecha={fecha} />
-                </CampSection>
+                
             </AppLayout>
 
             <style jsx>{`
