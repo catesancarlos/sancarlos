@@ -122,6 +122,11 @@ export default function PartidoIda({ nohome }){
                 }
 
                 @media screen and (max-width: 768px){
+                    section{
+                        margin-left: 0;
+                        width: 100%;
+                    }
+
                     .cont-banner{
                         flex-direction: column;
                     }
@@ -131,16 +136,15 @@ export default function PartidoIda({ nohome }){
                     }
 
                     img{
-                        margin-left: -15px;
-                        width: calc(100% + 30px);
+                        width: 100%;
                         height: 260px;
                     }
 
                     .div-right{
                         background: black;
                         background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
-                        margin-left: -15px;
-                        width: calc(100% + 30px);
+                        margin-left: 0;
+                        width: 100%;
                         padding: 15px;
                         flex-direction: row;
                         border-radius: 0;
@@ -151,7 +155,7 @@ export default function PartidoIda({ nohome }){
                         margin-top: -35px;
                         width: 47%;
                         height: 100px;
-                        border: 2px solid white;
+                        border: none;
                         border-radius: 10px;
                     }
 
@@ -162,7 +166,7 @@ export default function PartidoIda({ nohome }){
 
                     .info-desc{
                         height: 65px;
-                        padding: 5px;
+                        padding: 5px 7px 7px 7px;
                         font-size: 15px;
                         font-weight: 200;
                         border-radius: 0 0 10px 10px;

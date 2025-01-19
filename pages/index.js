@@ -41,8 +41,8 @@ const Home = () => {
                     <PartidosSemana fecha={fecha} home />
                 </CampSection>
                 <div className='banner'>
-                    {/* <img src='/main_banner.jpg' /> */}
                     <PartidoIda />
+                    {/* <img src='/main_banner.jpg' /> */}
                     {/* <div className='hover_now'>
                         <p className='now_now'>En este momento:</p>
                         <p className='now_tittle'>
