@@ -47,6 +47,16 @@ const Header = ({ name, flecha, auth }) => {
                 >CAMPEONATO</p>
                 <p
                     className='item-menu'
+                    onClick={() => router.push('/jesuscribe')}
+                    style={{
+                        background: name=='Jesuscribe' ? '#FF0000' : 'transparent',
+                        color: name=='Jesuscribe' ? 'white' : 'black',
+                        fontWeight: name=='Jesuscribe' ? 'bold' : '200',
+                        borderRadius: '10px'
+                    }}
+                >JESUSCRIBE</p>
+                <p
+                    className='item-menu'
                     onClick={() => router.push('/libros')}
                     style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
                 >LIBROS</p>
