@@ -8,7 +8,6 @@ const CampSection = ({ children }) => {
             <div className='divo'></div>
             <p className='title'>Campeonato 2025</p>
             <div className='cont-partidos'>
-                <p className='pf1 st'>Partidos de la semana:</p>
                 {children}
             </div>
             <div className='camp-op'>
@@ -33,8 +32,8 @@ const CampSection = ({ children }) => {
 
             <style jsx>{`
                 section{
-                    margin: 45px 4% 45px 4%;
                     margin: 0px 4% 40px 4%;
+                    margin: 45px 4% 45px 4%;
                     width: 92%;
                     display: flex;
                     flex-direction: row-reverse;
@@ -132,8 +131,8 @@ const CampSection = ({ children }) => {
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 20px 15px 50px 15px;
                         margin: 10px 15px 30px 15px;
+                        margin: 20px 15px 50px 15px;
                         width: calc(100% - 30px);
                         display: flex;
                         flex-direction: column;

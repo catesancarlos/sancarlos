@@ -77,7 +77,7 @@ const EquiposKT25 = () => {
                     letter='white'
                 />
                 <Equipo
-                    nombre='Bíblicos 5'
+                    nombre='Camino a la Tierra Prometída'
                     paralelo='Año Bíblico 5 (M)'
                     logo='A5M'
                     color='white'
@@ -85,7 +85,7 @@ const EquiposKT25 = () => {
                     letter='black'
                 />
                 <Equipo
-                    nombre='Bíblicas 5'
+                    nombre='Camino a la Tierra Prometída'
                     paralelo='Año Bíblico 5 (F)'
                     logo='A5F'
                     color='white'

@@ -76,7 +76,7 @@ const FormatoConfFem = ({ sin }) => {
                     letter='white'
                 />
                 <Equipo
-                    nombre='Traicioneras de Judas'
+                    nombre='Traicioneras como Judas'
                     paralelo='2do Confir. 5 (F)'
                     logo='25F'
                     color='black'

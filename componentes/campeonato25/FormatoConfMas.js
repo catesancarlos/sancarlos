@@ -44,6 +44,14 @@ const FormatoConfMas = ({ sin }) => {
                     letter='black'
                 />
                 <Equipo
+                    nombre='Juntos con Cristo FC'
+                    paralelo='1 Confir. AB Ángeles (M)'
+                    logo='1AM'
+                    color='white'
+                    borde='black'
+                    letter='black'
+                />
+                <Equipo
                     nombre='Santos y Religiosos F.C.'
                     paralelo='2do Confir. 1 (M)'
                     logo='21M'
@@ -86,7 +94,7 @@ const FormatoConfMas = ({ sin }) => {
                     mas='2'
                 />
                 <Equipo
-                    nombre='Traicioneros de Judas'
+                    nombre='Traicioneros como Judas'
                     paralelo='2do Confir. 5 (M)'
                     logo='25M'
                     color='black'

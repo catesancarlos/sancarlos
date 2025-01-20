@@ -13,6 +13,7 @@ import FutbolSala from '../componentes/campeonato25/FutbolSala'
 import Calendario from '../componentes/campeonato25/Calendario'
 import PartidosSemana from '../componentes/home/PartidosSemana'
 import Posiciones from '../componentes/campeonato25/Posiciones'
+import Goleadores from '../componentes/campeonato25/Goleadores'
 
 import db  from '../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
@@ -41,6 +42,7 @@ export default function Campeonato(){
                     <div className='menu'>
                         <p className={`op-menu ${section == 10 && 'active'}`} onClick={() => setSection(10)}>Calendario</p>
                         <p className={`op-menu ${section == 11 && 'active'}`} onClick={() => setSection(11)}>Posiciones</p>
+                        <p className={`op-menu ${section == 12 && 'active'}`} onClick={() => setSection(12)}>Goleadores</p>
                         <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Detalles</p>
                         <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Equipos</p>
                         <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Formato</p>
@@ -63,10 +65,11 @@ export default function Campeonato(){
                                                     section == 7 ? <Catequistas /> :
                                                         section == 8 ? <Reglamento /> : 
                                                             section == 9 ? <FutbolSala /> :
-                                                                section == 10 ? <Calendario>
+                                                                section == 10 ? <Calendario fecha={fecha}>
                                                                     <PartidosSemana fecha={fecha} />
                                                                 </Calendario> :
-                                                                    section == 11 ? <Posiciones /> : '.'
+                                                                    section == 11 ? <Posiciones /> :
+                                                                        section == 12 ? <Goleadores /> : '.'
 
                         }
                     </div>

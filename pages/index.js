@@ -6,6 +6,7 @@ import PartidoIda from '../componentes/banners/PartidoIda'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/home/PartidosSemana'
+import PartidosPasados from '../componentes/home/PartidosPasados'
 
 import db  from '../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
@@ -37,9 +38,6 @@ const Home = () => {
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 {/* <InfoSalida /> */}
-                <CampSection>
-                    <PartidosSemana fecha={fecha} home />
-                </CampSection>
                 <div className='banner'>
                     <PartidoIda />
                     {/* <img src='/main_banner.jpg' /> */}
@@ -52,6 +50,18 @@ const Home = () => {
                     </div> */}
                 </div>
                 <MiniAgenda />
+                <CampSection>
+                    <PartidosSemana
+                        title='Partidos de la semana:'
+                        fecha={fecha}
+                        home
+                    />
+                    <PartidosPasados
+                        title='Resultados semana pasada:'
+                        fecha={fecha}
+                        home
+                    />
+                </CampSection>
                 
             </AppLayout>
 

@@ -35,7 +35,7 @@ const FormatoBibliFem = ({ sin }) => {
                     letter='white'
                 />
                 <Equipo
-                    nombre='Bíblicas 5'
+                    nombre='Camino a la Tierra Prometída'
                     paralelo='Año Bíblico 5 (F)'
                     logo='A5F'
                     color='white'

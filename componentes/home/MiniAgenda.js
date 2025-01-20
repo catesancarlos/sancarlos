@@ -18,25 +18,25 @@ const MiniAgenda = () => {
                         <p>Teatro Catequesis</p>
                         <p>19H00</p>
                     </div>
-                </article>
+                </article> */}
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis</p>
                         <p className='e_subtitle'>Clases Normales</p>
                     </div>
                     <div className='e_info'>
-                        <p>Sábado 18 enero 2025</p>
+                        <p>Sábado 25 enero 2025</p>
                         <p>Centros catequeticos</p>
                         <p>Segun horario</p>
                     </div>
-                </article> */}
+                </article>
                 <article>
                     <div className='e_header'>
-                        <p className='e_title'>Primera Semana</p>
+                        <p className='e_title'>Segunda Semana</p>
                         <p className='e_subtitle'>Campeonato 2025</p>
                     </div>
                     <div className='e_info'>
-                        <p>Domingo 19 enero 2025</p>
+                        <p>Domingo 26 enero 2025</p>
                         <p>Patio Catequesis</p>
                         <p onClick={() => router.push('/campeonato')} style={{ color: '#245590', fontWeight: 'bold', cursor: 'pointer' }}>Ver horarios</p>
                     </div>

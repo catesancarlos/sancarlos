@@ -53,7 +53,7 @@ const FormatoBibliMas = ({ sin }) => {
                     mas='2'
                 />
                 <Equipo
-                    nombre='Bíblicos 5'
+                    nombre='Camino a la Tierra Prometída'
                     paralelo='Año Bíblico 5 (M)'
                     logo='A5M'
                     color='white'

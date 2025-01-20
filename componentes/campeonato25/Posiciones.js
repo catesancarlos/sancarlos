@@ -656,7 +656,7 @@ const Posiciones = () => {
                                 </tr>
                                 <tr>
                                     <td className='tmp'>D</td>
-                                    <td>Fuerza Divina</td>
+                                    <td>Fuerza Divina (2AM)</td>
                                     <td>0</td>
                                     <td>vs.</td>
                                     <td>0</td>
@@ -676,7 +676,7 @@ const Posiciones = () => {
                                     <td>0</td>
                                     <td>vs.</td>
                                     <td>0</td>
-                                    <td>Ángeles (1AM)</td>
+                                    <td>Juntos con Cristo (1AM)</td>
                                 </tr>
                             </table>
                         </div>
@@ -744,8 +744,7 @@ const Posiciones = () => {
                 .cont-op{
                     margin-top: 20px;
                     display: flex;
-                    justify-content: center;
-                    
+                    justify-content: center;   
                 }
 
                 .op-nivel{
