@@ -81,8 +81,10 @@ export default function Campeonato(){
                     text-align: center;
                     border-radius: 8px;
                     box-shadow: -2px 2px 5px 0px #888;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
                     cursor: pointer;
                     margin-bottom: 12px;
+                    
                 }
 
                 .active{

@@ -29,6 +29,7 @@ export default function OptionsSection({ options, select, onSelect }){
                     font-size: 16px;
                     border-radius: 10px;
                     box-shadow: -1px 2px 3px 0px #888;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
                     cursor: pointer;
                 }
 
