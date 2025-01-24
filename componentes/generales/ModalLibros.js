@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 export default function Modal({ children, background, share, onClose }){
     const refCont = useRef(null)
 
-    useEffect(() => {
+    /* useEffect(() => {
         if(onClose){
             function handleClickOutside (e) {
                 if(!refCont.current.contains(e.target)) onClose(false)
@@ -15,7 +15,7 @@ export default function Modal({ children, background, share, onClose }){
                 document.removeEventListener('mousedown', handleClickOutside)
             }
         }
-    }, [])
+    }, []) */
 
     return(
         <div className='total'>
@@ -27,9 +27,8 @@ export default function Modal({ children, background, share, onClose }){
             <style jsx>{`
                 .total{
                     background: ${background ? background : 'transparent'};
-                    position: fixed;
+                    position: absolute;
                     top: 0;
-                    bottom: 0;
                     left: 0;
                     right: 0;
                     display: flex;
@@ -49,21 +48,21 @@ export default function Modal({ children, background, share, onClose }){
 
                 .close{
                     background: black;
-                    position: absolute;
+                    position: fixed;
                     top: 35px;
-                    right: 20px;
-                    padding: 2px 8px 3px 8px;
+                    right: 26px;
+                    padding: 4px 10px 5px 10px;
                     color: white;
                     font-size: 18px;
                     font-weight: bold;
-                    border-radius: 15px;
+                    border-radius: 5px;
                     cursor: pointer;
                     z-index: 11;
                 }
 
                 @media screen and (max-width: 768px){
                     .close{
-                        top: -15px;
+                        top: 61px;
                         right: 20px;
                     }
                 }

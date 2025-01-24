@@ -1,25 +1,28 @@
 import { useState } from 'react'
+
+import TitleSection from '../sections/TitleSection'
+import OptionsSection from '../sections/OptionsSection'
 import Equipo from './Equipo'
 
 const Posiciones = () => {
-    const [nivel, setNivel] = useState(1)
+    const [select, setSelect] = useState(3)
 
     return (
         <section>
-            <p className='pf1'>Posiciones Campeonato 2025</p>
-            <p className='pf2'>
-                Tablas de posiciones y clasificatorias.
-            </p>
-            <div className='cont-op'>
-                <p className={`op-nivel ${nivel == 3 && 'active'}`} onClick={() => setNivel(3)}>Año Biblico (M)</p>
-                <p className={`op-nivel ${nivel == 4 && 'active'}`} onClick={() => setNivel(4)}>Año Biblico (F)</p>
-                <p className={`op-nivel ${nivel == 1 && 'active'}`} onClick={() => setNivel(1)}>Confirmación (M)</p>
-                <p className={`op-nivel ${nivel == 2 && 'active'}`} onClick={() => setNivel(2)}>Confirmación (F)</p>
-            </div>
+            <TitleSection
+                title='Posiciones Campeonato 2025'
+                desc='Tablas de posiciones y clasificatorias.'
+            />
+            <OptionsSection
+                options={['Año Biblico (M)', 'Año Biblico (F)', 'Confirmación (M)', 'Confirmación (F)']}
+                select={select}
+                onSelect={op => setSelect(op)}
+            />
             {
-                nivel == 3 ?
+                select == 1 ?
                     <>
                         <div className='ta-2'>
+                            <p className='pf1'>Posiciones:</p>
                             <table>
                                 <tr>
                                     <td colSpan={10}><strong>Grupo A - Masculino</strong></td>
@@ -209,9 +212,10 @@ const Posiciones = () => {
                             </table>
                         </div>
                     </>
-                : nivel == 4 ?
+                : select == 2 ?
                     <>
                         <div className='ta-2'>
+                            <p className='pf1'>Posiciones:</p>
                             <table>
                                 <tr>
                                     <td colSpan={10}><strong>Grupo A - Femenino</strong></td>
@@ -339,9 +343,10 @@ const Posiciones = () => {
                             </table>
                         </div>
                     </>
-                : nivel == 2 ?
+                : select == 4 ?
                     <>
                         <div className='ta-2'>
+                            <p className='pf1'>Posiciones:</p>
                             <table>
                                 <tr>
                                     <td colSpan={10}><strong>Grupo A - Femenino</strong></td>
@@ -725,41 +730,10 @@ const Posiciones = () => {
             }
 
             <style jsx>{`
-                section{
-                    font-family: 'Lato', sans-serif;
-                }
-
                 .pf1{
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
-                }
-
-                .pf2{
-                    margin-top: 5px;
-                    font-size: 17px;
-                    font-weight: 200;
-                }
-
-                .cont-op{
-                    margin-top: 20px;
-                    display: flex;
-                    justify-content: center;   
-                }
-
-                .op-nivel{
-                    margin: 0 15px;
-                    background: white;
-                    padding: 9px 18px 10px 18px;
-                    color: black;
-                    font-size: 16px;
-                    border-radius: 10px;
-                    cursor: pointer;
-                }
-
-                .active{
-                    background: #245590;
-                    color: white;
                 }
 
                 .ta-2{
@@ -774,7 +748,7 @@ const Posiciones = () => {
                 }
 
                 .ta-2 table{
-                    margin-top: 35px;
+                    margin-top: 25px;
                 }
 
                 .t21{
@@ -807,7 +781,7 @@ const Posiciones = () => {
                 }
 
                 .cont-partidos{
-                    margin-top: 40px;
+                    margin-top: 30px;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -819,33 +793,12 @@ const Posiciones = () => {
                 }
 
                 @media screen and (max-width: 768px){
-                    .cont-op{
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                    }
-
-                    .op-nivel{
-                        margin: 4px 4px 0 4px;
-                        background: white;
-                        padding: 9px 10px 10px 10px;
-                        color: black;
-                        font-size: 15px;
-                        border-radius: 10px;
-                        cursor: pointer;
-                    }
-
-                    .active{
-                        background: #245590;
-                        color: white;
-                    }
-
                     td{
                         font-size: 13px;
                     }
 
                     .ta-2 table{
-                        margin-top: 25px;
+                        margin-top: 15px;
                     }
 
                     .hor{
@@ -853,7 +806,11 @@ const Posiciones = () => {
                     }
 
                     .cont-partidos{
-                        margin-top: 25px;
+                        margin-top: 20px;
+                    }
+
+                    .cont-partidos table{
+                        margin-top: 15px;
                     }
                 }
             `}</style>

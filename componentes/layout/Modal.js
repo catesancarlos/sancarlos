@@ -1,10 +1,10 @@
-const Modal = ({ children }) => (
+const Modal = ({ children, background='rgba(0, 0, 0, 0.8)' }) => (
     <div>
         {children}
 
         <style jsx>{`
             div{
-                background: rgba(0, 0, 0, 0.8);
+                background: ${background};
                 position: fixed;
                 top: 0;
                 bottom: 0;

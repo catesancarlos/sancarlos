@@ -5,7 +5,7 @@ const FormatoConfMas = ({ sin }) => {
     return (
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Masculinos</strong> }
-            <p className='pf2 sb sa' style={{ marginBottom: '10px' }}>
+            <p className='sa'>
                 <strong>R1: Participantes:</strong> En el campeonato masculino de confirmación, participarán 12 
                 equipos: 5 equipos que representan a los paralelos de primero de confirmación y 7 equipos 
                 representantes de los paralelos de segundo de confirmación.
@@ -110,32 +110,32 @@ const FormatoConfMas = ({ sin }) => {
                     letter='black'
                 />
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R2: Fases:</strong> El campeonato masculino de confirmación, se desarrollará en 2 fases: 
                 primera y fase final. La primera fase estará compuesta de 15 partidos y la fase final de 5, 
                 sumando 20 partidos en total.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R3: Primera fase:</strong> Para la primera fase del campeonato masculino de confirmación, se 
                 utilizará el sistema suizo, y en este participarán conjuntamente los paralelos de los 2 
                 niveles.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R4: Fase final:</strong> A la fase final del campeonato masculino de confirmación, llegaran 
                 los 6 mejores equipos de la primera fase, los cuales se enfrentaran en cuartos, semifinales y 
                 final, para definir al campeón.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R5: [Resumen]</strong> La manera más fácil de entender cuáles serán los equipos que 
                 participarán en la fase final es la siguiente: "Todo equipo que gane 2 partidos estará 
                 automáticamente en la fase final".
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R6: Partidos empatados:</strong> Con el antecedente de la regla anterior y por ese 
                 motivo, en el campeonato masculino de confirmación no podrá haber partidos empatados, por lo que de 
                 darse un empate, se procedrá a desempatarlo, según la regla 7.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R7: Forma de desempatar partidos:</strong> En caso de empate en uno de los partidos, se definirá el mismo, con el 
                 siguiente procedimiento:<br/>
                 • Primeramente se jugará 2 tiempos de 4 minutos para el desempate del partido.<br/>
@@ -145,7 +145,7 @@ const FormatoConfMas = ({ sin }) => {
                 • Si el partido sigue empatado al finalizar los 4 penales por equipo, se realizará el 
                 desempate mediante tiros penales en muerte súbita.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R8: PRIMERA FECHA:</strong> En la primera fecha se enfrentarán los 12 equipos en 6 
                 partidos, los enfrentamientos serán definidos por sorteo el día de la inauguración. Cada 
                 madrina elegirá el enfrentamiento de su equipo.
@@ -176,14 +176,14 @@ const FormatoConfMas = ({ sin }) => {
                     <td>E11 vs. E12</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R9: Conteo:</strong> En el conteo se mostrará la cantidad de partidos ganados y la 
                 cantidad de partidos perdidos de la siguiente manera.<br/>
                 [Partidos ganados (izq.) - Partidos perdidos (der.)].<br/>
                 <i>Ejemplo: 1 equipo con 1 partido ganado y 0 perdidos, su conteo se mostrará de la siguiente 
                 forma: [1 - 0].</i>
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R10: Ganadores primera fecha:</strong> Los ganadores de la primera fecha en su conteo 
                 tendrán lo siguiente: [1 - 0], y además pasarán a formar parte del grupo de ganadores (6 equipos).<br/>
                 <i>Para ejemplificar, se tomará como si los equipos de la izquierda de la tabla (R8) fueron 
@@ -204,7 +204,7 @@ const FormatoConfMas = ({ sin }) => {
                     <td className='tp'>E11</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R11: Perdedores primera fecha:</strong> Los perdedores de la primera fecha en su conteo 
                 tendrán lo siguiente: [0 - 1], y además pasarán a formar parte del grupo de perdedores (6 equipos).<br/>
                 <i>Para ejemplificar, se tomará como si los equipos de la derecha de la tabla (R8) fueron 
@@ -225,7 +225,7 @@ const FormatoConfMas = ({ sin }) => {
                     <td className='tp'>E12</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R12: SEGUNDA FECHA (ganadores):</strong> Los equipos que forman parte del grupo de 
                 ganadores (6 equipos) se enfrentarán en 3 partidos. La forma en la que se enfrentarán se 
                 muestra a continuación:
@@ -250,12 +250,12 @@ const FormatoConfMas = ({ sin }) => {
                     <td className='tlarge'>Ganador F</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 • Los equipos que resultaran ganadores, clasificarán a la fase final con un conteo de [2 - 0].<br/>
                 • Los equipos que resultaran perdedores, tendrán un conteo de [1 - 1], deberán jugar otro 
                 partido contra los ganadores de los partidos del grupo de perdedores.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R13: SEGUNDA FECHA (perdedores):</strong> Los equipos que forman parte del grupo de 
                 perdedores (6 equipos) se enfrentarán en 3 partidos. La forma en la que se enfrentarán se 
                 muestra a continuación:
@@ -280,13 +280,13 @@ const FormatoConfMas = ({ sin }) => {
                     <td className='tlarge'>Perdedor F</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 • Los equipos que resultaran ganadores, tendrán un conteo de [1 - 1], deberán jugar otro 
                 partido contra los perdedores de los partidos del grupo de ganadores.<br/>
                 • Los equipos que resultaran perdedores, lamentablemente estarán eliminados del campeonato 
                 con un conteo de [0 - 2].
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R14: TERCERA FECHA (comodín):</strong> Los 3 equipos que perdieron la segunda fecha de 
                 ganadores (R12) y  los 3 equipos que ganaron la segunda fecha de perdedores (R13), en total 6 
                 equipos, se enfrentarán en 3 partidos con la última oportunidad de clasificar. La forma en la 
@@ -309,12 +309,12 @@ const FormatoConfMas = ({ sin }) => {
                     <td className='tlarge11'>Perdedor<br/>(Partido 3 Ganadores)</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 • Los equipos que resultaran ganadores, clasificarán a la fase final con un conteo de [2 - 1].<br/>
                 • Los equipos que resultaran perdedores, lamentablemente estarán eliminados del campeonato 
                 con un conteo de [1 - 2].
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R15: Ubicación ganadores para la fase final:</strong> Los 3 equipos que 
                 ganaron sus 2 partidos sin perder ninguno, es decir: con conteo [2 - 0], se ubicarán en una 
                 tabla para escoger los 2 primeros.<br/>
@@ -327,23 +327,23 @@ const FormatoConfMas = ({ sin }) => {
                 • Menor cantidad de goles recibidos en sus partidos solo contando tiempo regular.<br/>
                 • Sorteo.<br/>
             </p>
-            <p className='pf2 sa'>
+            <p>
                 Los 2 primeros equipos en la tabla planteada, pasarán directamente a semifinales, mientras 
                 que el equipo en 3er lugar jugará los cuartos de final.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R16: CUARTOS DE FINAL:</strong> En los cuartos de final se enfrentarán los 3 
                 ganadores de la fecha comodín, es decir la tercera fecha (R14) y el equipo tercero en 
                 la tabla de ganadores con conteo [2 - 0] (R15). Los emparejamientos se realizarán mediante 
                 sorteo con las madrinas de cada equipo, al igual que en la inauguración.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R17: SEMIFINAL:</strong> En las semifinales se enfrentarán los 2 mejores equipos con 
                 conteo [2 - 0] (R15) y los ganadores de los partidos de cuartos de final. Los emparejamientos 
                 se realizarán mediante sorteo con las madrinas de cada equipo, a cada equipo con conteo [2 - 0], 
                 se le sorteara un equipo ganador de cuartos de final.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R18: FINAL:</strong> La final es la última etapa del campeonato, en donde se 
                 enfrentarán los 2 mejores equipos del campeonato, ganadores de las semifinales. El 
                 ganador será declarado el campeón del campeonato masculino de Confirmación 2025. 
@@ -355,11 +355,16 @@ const FormatoConfMas = ({ sin }) => {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .pf2{
+                p{
                     margin-top: 15px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 20px;
+                    margin-bottom: 0;
+                }
+
+                .sa{
+                    margin-top: 0;
+                    margin-bottom: 10px;
                 }
 
                 .strongo{
@@ -373,18 +378,10 @@ const FormatoConfMas = ({ sin }) => {
                 }
 
                 .cont-logos{
-                    margin-top: 10px;
+                    margin-top: 5px;
                     display: flex;
                     flex-wrap: wrap;
-                    margin-bottom: 20px;
-                }
-
-                .sb{
-                    margin-top: 25px;
-                }
-
-                .sa{
-                    margin-bottom: 0px;
+                    margin-bottom: 0;
                 }
 
                 .t1{

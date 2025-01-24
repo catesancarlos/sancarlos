@@ -1,4 +1,5 @@
 import Header from './header'
+import HeaderJs from './headerJs'
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
@@ -9,7 +10,16 @@ Router.onRouteChangeStart = (url) => {
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
-export default function AppLayout ({ titulo, name, children, auth, flecha = true }) {
+export default function AppLayout ({ 
+    titulo, 
+    name,
+    categoria,
+    children,
+    auth,
+    flecha = true,
+    back,
+    onRand
+}) {
     return (
         <>
             <Head>
@@ -20,13 +30,18 @@ export default function AppLayout ({ titulo, name, children, auth, flecha = true
             </Head>
 
             <main className='page-home'>
-                <Header name={name} auth={auth} flecha={flecha} />
+                {
+                    !(categoria) ? 
+                        <Header name={name} auth={auth} flecha={flecha} />
+                    :
+                        <HeaderJs categoria={categoria} onRand={onRand} />
+                }
                 {children}
             </main>
 
             <style jsx>{`
                 .page-home{
-                    background-color: #F2F8F6;
+                    background-color: ${!back ? '#F2F8F6' : back};
                     display: flex;
                     flex-direction: column;
                     min-height: 100vh;

@@ -5,7 +5,7 @@ const FormatoBibliMas = ({ sin }) => {
     return (
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Masculinos</strong> }
-            <p className='pf2 sb sa'>
+            <p className='sa'>
                 <strong>R1: Participantes:</strong> En el campeonato masculino de año bíblico, participarán 6 equipos 
                 que representan a los 6 paralelos de año bíblico.
             </p>
@@ -61,22 +61,22 @@ const FormatoBibliMas = ({ sin }) => {
                     letter='black'
                 />
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R2: Fases:</strong> El campeonato masculino de año bíblico, se desarrollará en 2 fases, 
                 primera y fase final. La primera fase estará compuesta de 9 partidos y la fase final de 3, 
                 sumando 12 partidos en total.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R3: Ubicación:</strong> En la primera fase del campeonato, los 6 equipos serán 
                 ubicados en 2 grupos de 3 equipos. Los equipos serán ubicados mediante sorteo en los grupos 
                 A y B.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R4: Primera fase (enfrentamientos):</strong> En la primera fase, los equipos tendrán 
                 3 partidos, 2 de estos enfrentando al resto de equipos de su grupo (R5) y 1 partido contra 
                 el equipo que sacó su misma ubicación en el sorteo, pero del otro grupo (R6).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R5: Enfrentamientos mismo grupo:</strong> Cada equipo deberá enfrentarse a los 2 
                 equipos que forman parte de su grupo.<br/>
                 <i>Ejemplo: si un equipo por sorteo quedaría ubicado en el grupo B, posición 1, es decir 
@@ -96,7 +96,7 @@ const FormatoBibliMas = ({ sin }) => {
                     <td>B2 vs. B3</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R6: Enfrentamiento contra el equipo con su misma ubicación, pero del otro grupo:</strong> Cada 
                 equipo deberá enfrentar 1 partido contra el equipo que sacó su misma ubicación en el sorteo, 
                 pero del otro grupo.<br/>
@@ -115,7 +115,7 @@ const FormatoBibliMas = ({ sin }) => {
                     <td>A3 vs. B3</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R7: Clasificación:</strong> Para la fase final, clasificarán solamente los 2 equipos 
                 que tengan el mejor puntaje en cada grupo, es decir que hayan terminado primero y segundo en 
                 la tabla de posiciones de cada uno de los grupos, como se muestra a continuación.
@@ -156,7 +156,7 @@ const FormatoBibliMas = ({ sin }) => {
                     </tr>
                 </table>
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R8: Criterios de desempate en Primera Fase:</strong> En caso que al finalizar la 
                 primera fase se tuviera en la tabla de posiciones empates en puntos entre equipos, 
                 se procedería a lo siguiente para desempatar: <br/>
@@ -172,7 +172,7 @@ const FormatoBibliMas = ({ sin }) => {
                 hacerlo con los puntos anteriores es: el equipo que cuente con menos sanciones por tarjetas 
                 amarillas o rojas (amarilla 1 punto, roja por doble amarilla 2 puntos y roja directa 5 puntos).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R9: Fase final:</strong> La fase final la conforman 2 etapas (semifinales y final), 
                 con formato de eliminación directa. En esta fase participarán 4 equipos, los 2 mejores de 
                 cada grupo A y B, estos 4 equipos se enfrentarán de la siguiente forma y los ganadores 
@@ -190,19 +190,19 @@ const FormatoBibliMas = ({ sin }) => {
                     <td className='tlarge'>2do lugar Grupo A</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R10: Criterios de desempate (en la semifinal):</strong> En caso de empate en goles 
                 al finalizar los partidos de semifinal, se procederá a:<br/>
                 1. Realizar directamente la definición por medio de los tiros penales (4 cada equipo).<br/>
                 2. De persistir el empate después de los 5 lanzamientos por equipo, clasificará el que haya 
                 tenido la mejor ubicación en la “Tabla general fase regular” (R13). 
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R11: FINAL:</strong> La final es la última etapa del campeonato, en donde se 
                 enfrentarán los 2 mejores equipos del campeonato, ganadores de las semifinales. El 
                 ganador será declarado el campeón del campeonato masculino de Año Bíblico 2025. 
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R12: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
                 partido final, se procederá a:<br/>
                 1. Se jugarán dos tiempos de 4 minutos cada uno.<br/>
@@ -211,7 +211,7 @@ const FormatoBibliMas = ({ sin }) => {
                 3. Si el empate persistiese, quedara campeón el que haya tenido la mejor ubicación en la 
                 “Tabla general fase regular" (R13).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R13: Tabla general fase regular:</strong> Una vez concluida la primera fase, con la 
                 finalidad de ser usada como criterio de desempate en los puntos ya especificados anteriormente 
                 (mas no como método de clasificación a la fase final), se ubicará a todos los equipos 
@@ -283,11 +283,15 @@ const FormatoBibliMas = ({ sin }) => {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .pf2{
+                p{
                     margin-top: 15px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 20px;
+                    margin-bottom: 0;
+                }
+
+                .sa{
+                    margin-top: 0;
                 }
 
                 .strongo{
@@ -301,18 +305,10 @@ const FormatoBibliMas = ({ sin }) => {
                 }
 
                 .cont-logos{
-                    margin-top: 10px;
+                    margin-top: 5px;
                     display: flex;
                     flex-wrap: wrap;
-                    margin-bottom: 20px;
-                }
-
-                .sb{
-                    margin-top: 25px;
-                }
-
-                .sa{
-                    margin-bottom: 0px;
+                    margin-bottom: 0;
                 }
 
                 .t1{

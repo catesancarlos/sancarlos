@@ -35,41 +35,41 @@ const Header = ({ name, flecha, auth }) => {
                 </a>
             </Link>
             <div className='navegacion'>
-                <p
-                    className='item-menu'
-                    onClick={() => router.push('/')}
-                    style={{color: name=='Inicio' ? 'brown' : 'black', fontWeight: name=='Inicio' ? 'bold' : '200'}}
-                >INICIO</p>
-                <p
-                    className='item-menu'
-                    onClick={() => router.push('/campeonato')}
-                    style={{color: name=='Campeonato' ? '#245590' : 'black', fontWeight: name=='Campeonato' ? 'bold' : '200'}}
-                >CAMPEONATO</p>
-                <p
-                    className='item-menu'
-                    onClick={() => router.push('/jesuscribe')}
-                    style={{
-                        background: name=='Jesuscribe' ? '#FF0000' : 'transparent',
-                        color: name=='Jesuscribe' ? 'white' : 'black',
-                        fontWeight: name=='Jesuscribe' ? 'bold' : '200',
-                        borderRadius: '10px'
-                    }}
-                >JESUSCRIBE</p>
-                <p
-                    className='item-menu'
-                    onClick={() => router.push('/libros')}
-                    style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
-                >LIBROS</p>
-                <p
-                    className='item-menu'
-                    onClick={() => router.push('/agenda')}
-                    style={{color: name=='Agenda' ? 'brown' : 'black', fontWeight: name=='Agenda' ? 'bold' : '200'}}
-                >AGENDA</p>
-                <p 
-                    className='item-menu'
-                    onClick={() => router.push('/blog')}
-                    style={{color: name=='Blog' ? 'brown' : 'black', fontWeight: name=='Blog' ? 'bold' : '200'}}
-                >BLOG</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/')}
+                        style={{color: name=='Inicio' ? 'brown' : 'black', fontWeight: name=='Inicio' ? 'bold' : '200'}}
+                    >INICIO</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/campeonato')}
+                        style={{color: name=='Campeonato' ? '#245590' : 'black', fontWeight: name=='Campeonato' ? 'bold' : '200'}}
+                    >CAMPEONATO</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/jesuscribe')}
+                        style={{
+                            background: name=='Jesuscribe' ? '#EE1C21' : 'transparent',
+                            color: name=='Jesuscribe' ? 'white' : 'black',
+                            fontWeight: name=='Jesuscribe' ? 'bold' : '200',
+                            borderRadius: '10px'
+                        }}
+                    >JESUSCRIBE</p>
+                    <p
+                        className='item-menu'
+                        onClick={() => router.push('/libros')}
+                        style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
+                    >LIBROS</p>
+                    {/* <p
+                        className='item-menu'
+                        onClick={() => router.push('/agenda')}
+                        style={{color: name=='Agenda' ? 'brown' : 'black', fontWeight: name=='Agenda' ? 'bold' : '200'}}
+                    >AGENDA</p> */}
+                    <p 
+                        className='item-menu'
+                        onClick={() => router.push('/blog')}
+                        style={{color: name=='Blog' ? 'brown' : 'black', fontWeight: name=='Blog' ? 'bold' : '200'}}
+                    >BLOG</p>
             </div>
 
             <style jsx>{`
@@ -126,6 +126,19 @@ const Header = ({ name, flecha, auth }) => {
                 .item-menu:hover{
                     background: #FFFFFF99;
                     border-radius: 10px;
+                }
+
+                .pre{
+                    background: #000;
+                    padding: 10px 20px 12px 20px;
+                    color: white;
+                    font-size: 19px;
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    cursor: pointer;
                 }
 
                 @media screen and (max-width: 768px){

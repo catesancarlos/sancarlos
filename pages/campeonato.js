@@ -1,126 +1,75 @@
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 import AppLayout from '../componentes/layout'
-import DetallesKT25 from '../componentes/campeonato25/DetallesKT25'
-import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
-import FormatoKT25 from '../componentes/campeonato25/FormatoKT25'
-import Inauguracion from '../componentes/campeonato25/Inauguracion'
-import BiblicoKT25 from '../componentes/campeonato25/BiblicoKT25'
-import ConfirmacionKT25 from '../componentes/campeonato25/ConfirmacionKT25'
-import Catequistas from '../componentes/campeonato25/Catequistas'
-import Reglamento from '../componentes/campeonato25/Reglamento'
-import FutbolSala from '../componentes/campeonato25/FutbolSala'
+import Container from '../componentes/sections/Container'
 import Calendario from '../componentes/campeonato25/Calendario'
 import PartidosSemana from '../componentes/home/PartidosSemana'
 import Posiciones from '../componentes/campeonato25/Posiciones'
 import Goleadores from '../componentes/campeonato25/Goleadores'
+import FormatoKT25 from '../componentes/campeonato25/FormatoKT25'
+import DetallesKT25 from '../componentes/campeonato25/DetallesKT25'
+import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
+import Catequistas from '../componentes/campeonato25/Catequistas'
 
 import db  from '../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
 
 export default function Campeonato(){
-    const [section, setSection] = useState(10)
+    const [section, setSection] = useState(1)
     const [fecha, setFecha] = useState([])
+
+    const router = useRouter()
 
     useEffect(() => {
         onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
             setFecha(doc.data())
         })     
-}, [])
+    }, [])
+
+    useEffect(() => {
+        if(router.query.s){
+            setSection(router.query.s)
+            router.replace('/campeonato')
+        }   
+    }, [router.query.s])
+
+    const handleChangeSection = e => setSection(e)
 
     return(
         <AppLayout titulo='San Carlos - Campeonato' name='Campeonato'>
-            <section>
-                <div className='first'>
-                    <img src='/campeonato-logo.jpg' />
-                    <div className='cff'>
-                        <p className='desc'>CAMPEONATO</p>
-                        <p className='desc'>2025</p>
-                    </div>
+            <Container
+                title='CAMPEONATO'
+                subtitle='2025'
+                img='/campeonato-logo.jpg'
+            >
+                <aside>
+                    <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => handleChangeSection(1)}>Calendario</p>
+                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => handleChangeSection(2)}>Posiciones</p>
+                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => handleChangeSection(3)}>Goleadores</p>
+                    <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => handleChangeSection(4)}>Formato</p>
+                    <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => handleChangeSection(5)}>Reglas</p>
+                    <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => handleChangeSection(6)}>Equipos</p>
+                    {/* <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => setSection(7)}>Catequistas</p> */}
+                </aside>
+                <div className='principal'>
+                    {
+                        section == 1 ? 
+                            <Calendario fecha={fecha}>
+                                <PartidosSemana fecha={fecha} />
+                            </Calendario> :
+                                section == 2 ? <Posiciones /> :
+                                    section == 3 ? <Goleadores /> :
+                                        section == 4 ? <FormatoKT25 /> :
+                                            section == 5 ? <DetallesKT25 /> :
+                                                section == 6 ? <EquiposKT25 /> :
+                                                    section == 7 ? <Catequistas /> : ''
+                    }
                 </div>
-                <div className='main' >
-                    <div className='menu'>
-                        <p className={`op-menu ${section == 10 && 'active'}`} onClick={() => setSection(10)}>Calendario</p>
-                        <p className={`op-menu ${section == 11 && 'active'}`} onClick={() => setSection(11)}>Posiciones</p>
-                        <p className={`op-menu ${section == 12 && 'active'}`} onClick={() => setSection(12)}>Goleadores</p>
-                        <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Detalles</p>
-                        <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Equipos</p>
-                        <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Formato</p>
-                        {/* <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => setSection(5)}>Año Bíblico</p>
-                        <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => setSection(6)}>Confirmación</p> */}
-                        <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => setSection(7)}>Catequistas</p>
-                        {/* <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => setSection(4)}>Inauguración</p> */}
-                        <p className={`op-menu ${section == 8 && 'active'}`} onClick={() => setSection(8)}>Reglamento</p>
-                        <p className={`op-menu sal1 ${section == 9 && 'active'}`} onClick={() => setSection(9)}>Reglas Futbol Sala</p>
-                        <p className={`op-menu sal2 ${section == 9 && 'active'}`} onClick={() => setSection(9)}>Futbol Sala</p>
-                    </div>
-                    <div className='principal'>
-                        {
-                            section == 1 ? <DetallesKT25 /> :
-                                section == 2 ? <EquiposKT25 /> :
-                                    section == 3 ? <FormatoKT25 /> :
-                                        section == 4 ? <Inauguracion /> :
-                                            section == 5 ? <BiblicoKT25 /> :
-                                                section == 6 ? <ConfirmacionKT25 /> :
-                                                    section == 7 ? <Catequistas /> :
-                                                        section == 8 ? <Reglamento /> : 
-                                                            section == 9 ? <FutbolSala /> :
-                                                                section == 10 ? <Calendario fecha={fecha}>
-                                                                    <PartidosSemana fecha={fecha} />
-                                                                </Calendario> :
-                                                                    section == 11 ? <Posiciones /> :
-                                                                        section == 12 ? <Goleadores /> : '.'
-
-                        }
-                    </div>
-                </div>
-            </section>
+            </Container>
 
             <style jsx>{`
-                section{
-                    margin: 20px 4% 0 4%;
-                    width: 92%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .first{
-                    width: 100%;
-                    background: white;
-                    padding: 10px 100px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 15px;
-                    margin-bottom: 20px;
-                }
-
-                img{
-                    width: 55px;
-                }
-
-                .cff{
-                    margin-left: 15px;
-                }
-
-                .desc{
-                    font-size: 16px;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                }
-
-                .desc:last-child{
-                    font-weight: 500;
-                }
-
-                .main{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                }
-
-                .menu{
+                aside{
                     width: 15%;
                 }
 
@@ -131,12 +80,9 @@ export default function Campeonato(){
                     font-family: 'Lato', sans-serif;
                     text-align: center;
                     border-radius: 8px;
-                    margin-bottom: 12px;
+                    box-shadow: -2px 2px 5px 0px #888;
                     cursor: pointer;
-                }
-
-                .sal2{
-                    display: none;
+                    margin-bottom: 12px;
                 }
 
                 .active{
@@ -145,27 +91,12 @@ export default function Campeonato(){
                 }
 
                 .principal{
-                    width: calc(85% - 22px);
+                    width: 85%;
+                    padding: 18px 0 18px 35px;
                 }
 
                 @media screen and (max-width: 768px){
-                    section{
-                        margin: 0 15px 0 15px;
-                        width: calc(100% - 30px);
-                    }
-
-                    .first{
-                        margin-bottom: 10px;
-                    }
-
-                    .main{
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                    }
-
-                    .menu{
+                    aside{
                         width: 100%;
                         display: flex;
                         flex-wrap: wrap;
@@ -183,17 +114,9 @@ export default function Campeonato(){
                         margin-right: 0;
                     }
 
-                    .sal2{
-                        display: block;
-                    }
-
-                    .sal1{
-                        display: none;
-                    }
-
                     .principal{
-                        padding-top: 20px;
                         width: 100%;
+                        padding: 15px 0 0 0;
                     }
                 }
             `}</style>

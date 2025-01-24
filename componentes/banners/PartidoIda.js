@@ -38,7 +38,7 @@ export default function PartidoIda({ nohome }){
                 }
 
                 .div-left{
-                    width: 100px;
+                    width: 120px;
                     background: #001A85;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     border-radius: 18px 0 0 18px;

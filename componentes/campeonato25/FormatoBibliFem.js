@@ -5,7 +5,7 @@ const FormatoBibliFem = ({ sin }) => {
     return (
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Femeninos</strong> }
-            <p className='pf2 sb sa'>
+            <p className='sa'>
                 <strong>R1: Participantes:</strong> En el campeonato femenino de año bíblico, participarán 
                 4 equipos que representan a los paralelos de año bíblico.
             </p>
@@ -43,12 +43,12 @@ const FormatoBibliFem = ({ sin }) => {
                     letter='black'
                 />
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R2: Fases:</strong> El campeonato femenino de año bíblico, se desarrollará en 2 fases, 
                 primera y final. La primera fase estará compuesta de 6 partidos, que sumando la final, serían 
                 7 partidos en total.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R3: PRIMERA FASE:</strong> En la primera fase los equipos formarán parte de 1 grupo y 
                 deberán jugar 3 partidos, enfrentando al resto de equipos de su grupo. La ubicación en el 
                 grupo será mediante sorteo.
@@ -67,12 +67,12 @@ const FormatoBibliFem = ({ sin }) => {
                     <td>A2 vs. A3</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R4: FINAL:</strong> La final es la última etapa del Campeonato, en donde se 
                 enfrentarán los 2 mejores equipos de la tabla de posiciones. Las ganadoras serán declaradas  
                 como las campeonas del campeonato femenino de Año Bíblico 2025. 
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R5: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
                 partido Final, se procederá a:<br/>
                 1. Se jugarán dos tiempos de 4 minutos cada uno.<br/>
@@ -88,11 +88,15 @@ const FormatoBibliFem = ({ sin }) => {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .pf2{
+                p{
                     margin-top: 15px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 20px;
+                    margin-bottom: 0;
+                }
+
+                .sa{
+                    margin-top: 0;
                 }
 
                 .strongo{
@@ -106,18 +110,14 @@ const FormatoBibliFem = ({ sin }) => {
                 }
 
                 .cont-logos{
-                    margin-top: 10px;
+                    margin-top: 5px;
                     display: flex;
                     flex-wrap: wrap;
-                    margin-bottom: 20px;
+                    margin-bottom: 0;
                 }
 
                 .sb{
                     margin-top: 25px;
-                }
-
-                .sa{
-                    margin-bottom: 0px;
                 }
 
                 .t1{

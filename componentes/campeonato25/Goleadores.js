@@ -1,21 +1,25 @@
 import { useState } from 'react'
 
+import TitleSection from '../sections/TitleSection'
+import OptionsSection from '../sections/OptionsSection'
+
 const Goleadores = () => {
-    const [fem, setFem] = useState(false)
+    const [select, setSelect] = useState(1)
 
     return (
         <section>
-            <p className='pf1'>Tabla de Goleadores</p>
-            <p className='pf2'>
-                Tablas de goleadores del Campeonato 2025
-            </p>
-            <div className='cont-op'>
-                <p className={`op-nivel ${!fem && 'active'}`} onClick={() => setFem(false)}>Masculino</p>
-                <p className={`op-nivel ${fem && 'active'}`} onClick={() => setFem(true)}>Femenino</p>
-            </div>
+            <TitleSection
+                title='Tabla de Goleadores'
+                desc='Tablas de goleadores del Campeonato 2025.'
+            />
+            <OptionsSection
+                options={['Masculino', 'Femenino']}
+                select={select}
+                onSelect={op => setSelect(op)}
+            />
             <div className='tablas'>
                 {
-                    fem ?
+                    select == 2 ?
                         <table>
                             <tr>
                                 <td colSpan={4} className='c-t-f'><strong>Femenino</strong></td>
@@ -147,48 +151,6 @@ const Goleadores = () => {
             </div>
 
             <style jsx>{`
-                section{
-                    font-family: 'Lato', sans-serif;
-                }
-
-                .pf1{
-                    width: 100%;
-                    font-size: 20px;
-                    font-weight: bold;
-                }
-
-                .pf2{
-                    margin-top: 5px;
-                    font-size: 17px;
-                    font-weight: 200;
-                }
-
-                .cont-op{
-                    margin-top: 20px;
-                    display: flex;
-                    justify-content: center;   
-                }
-
-                .op-nivel{
-                    margin: 0 15px;
-                    background: white;
-                    padding: 4px 18px 6px 18px;
-                    color: black;
-                    font-size: 16px;
-                    border-radius: 10px;
-                    cursor: pointer;
-                }
-
-                .active:nth-child(1){
-                    background: #245590;
-                    color: white;
-                }
-
-                .active:nth-child(2){
-                    background: #CC397B;
-                    color: white;
-                }
-
                 .tablas{
                     display: flex;
                     justify-content: space-around;
@@ -196,7 +158,7 @@ const Goleadores = () => {
                 }
 
                 .tablas table{
-                    margin-top: 25px;
+                    margin-top: 0;
                 }
 
                 td{
@@ -255,32 +217,14 @@ const Goleadores = () => {
                 }
 
                 @media screen and (max-width: 768px){
-                    .cont-op{
-                        flex-wrap: wrap;
-                    }
-
-                    .op-nivel{
-                        margin: 4px 4px 0 4px;
-                        background: white;
-                        padding: 4px 10px 6px 10px;
-                        color: black;
-                        font-size: 15px;
-                        border-radius: 10px;
-                        cursor: pointer;
-                    }
-
-                    td{
-                        font-size: 13px;
-                    }
-
                     .tablas{
                         flex-wrap: wrap;
                         justify-content: space-around;
                         align-items: flex-start;
                     }
-
-                    .tablas table{
-                        margin-top: 25px;
+                    
+                    td{
+                        font-size: 13px;
                     }
                 }
             `}</style>

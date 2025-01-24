@@ -16,17 +16,16 @@ const CampSection = ({ children }) => {
                     <p className='h2-t'>Catequesis 2025</p>
                 </div>
                 <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push('/campeonato')}>Año Bíblico</p>
+                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>Calendario</p>
                 </div>
                 <div className='hg'>
-                    
-                    <p className='hg-t' onClick={() => router.push('/campeonato')}>Confirmación</p>
+                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>Posiciones</p>
                 </div>
                 <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push('/campeonato')}>Catequistas</p>
+                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>Goleadores</p>
                 </div>
                 <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push('/campeonato')}>Los Ángeles</p>
+                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>Reglas</p>
                 </div>
             </div>
 

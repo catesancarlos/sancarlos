@@ -1,3 +1,4 @@
+import TitleSection from '../sections/TitleSection'
 import ItemCalendario from './ItemCalendario'
 import PartidosPasados from '../home/PartidosPasados'
 
@@ -5,16 +6,16 @@ export default function Calendario({ fecha, children }){
 
     return (
         <section>
-            <p className='pf1'>Calendario Campeonato 2025</p>
-            <p className='pf2'>
-                Fecha y hora de los partidos del campeonato.
-            </p>
-            <div className='cont-partidos'>
-                <p className='pf1 st'>Segunda semana</p>
+            <TitleSection
+                title='Calendario Campeonato 2025'
+                desc='Fecha y hora de los partidos del campeonato.'
+            />
+            <div>
+                <strong>Segunda semana</strong>
                 {children}
             </div>
-            <div className='cont-partidos'>
-                <p className='pf1 st'>Tercera semana</p>
+            <div>
+                <strong>Tercera semana</strong>
                 <ItemCalendario
                     dia='Sábado'
                     fecha='01 Feb'
@@ -84,10 +85,10 @@ export default function Calendario({ fecha, children }){
                     mas={[1, ]}
                 />
             </div>
-            <div className='cont-partidos'>
-                <p className='pf1 ct'>Proximamente...</p>
+            <div>
+                <strong className='ct'>Proximamente...</strong>
             </div>
-            <div className='cont-partidos'>
+            <div>
                 <PartidosPasados
                     title='Resultados Semana 1:'
                     fecha={fecha}
@@ -95,17 +96,9 @@ export default function Calendario({ fecha, children }){
             </div>
 
             <style jsx>{`
-                section{
-                    font-family: 'Lato', sans-serif;
-                }
-
-                .pf1{
+                strong{
                     width: 100%;
                     font-size: 20px;
-                    font-weight: bold;
-                }
-
-                .st{
                     margin-bottom: 12px;
                 }
 
@@ -113,13 +106,7 @@ export default function Calendario({ fecha, children }){
                     text-align: center;
                 }
 
-                .pf2{
-                    margin-top: 5px;
-                    font-size: 17px;
-                    font-weight: 200;
-                }
-
-                .cont-partidos{
+                div{
                     margin-top: 20px;
                     width: 100%;
                     display: flex;
@@ -128,12 +115,8 @@ export default function Calendario({ fecha, children }){
                 }
 
                 @media screen and (max-width: 768px){
-                    .pf1{
+                    strong{
                         font-size: 19px;
-                    }
-
-                    .cont-partidos .pf1{
-                        font-size: 18px;
                     }
                 }
             `}</style>

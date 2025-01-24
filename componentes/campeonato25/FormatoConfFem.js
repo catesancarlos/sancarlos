@@ -5,7 +5,7 @@ const FormatoConfFem = ({ sin }) => {
     return (
         <section>
             { !sin && <strong className='strongo'>Formato Equipos Femeninos</strong> }
-            <p className='pf2 sb sa' style={{ marginBottom: '10px' }}>
+            <p className='sa'>
                 <strong>R1: Participantes:</strong> En el campeonato femenino de confirmación, participarán 10 
                 equipos: 4 equipos que representan a los paralelos de primero de confirmación y 6 equipos 
                 representantes de los paralelos de segundo de confirmación.
@@ -92,12 +92,12 @@ const FormatoConfFem = ({ sin }) => {
                     letter='white'
                 />
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R2: Fases:</strong> El campeonato femenino de confirmación, se desarrollará en 2 fases: 
                 primera y fase final. La primera fase estará compuesta de 15 partidos y la fase final de 5, 
                 sumando 20 partidos en total.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R3: Grupos:</strong> Para la primera fase del campeonato femenino de confirmación, 
                 se dividirán a los equipos en 2 grupos de 5 mediante sorteo.
             </p>
@@ -153,12 +153,12 @@ const FormatoConfFem = ({ sin }) => {
                     </tr>
                 </table>
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R4: PRIMERA FASE:</strong> En la primera fase, los equipos tendrán 3 partidos, 2 de 
                 estos enfrentando a equipos de su grupo (R5) y 1 partido contra el equipo que sacó su 
                 misma ubicación en el sorteo, pero del otro grupo (R6).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R5: Enfrentamientos mismo grupo:</strong> Cada equipo deberá enfrentarse a 2 equipos
                 que forman parte de su grupo. Los enfrentamientos han sido sorteados de la siguiente manera:
             </p>
@@ -224,7 +224,7 @@ const FormatoConfFem = ({ sin }) => {
                     </tr>
                 </table>
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R6: Enfrentamiento contra el equipo con su misma ubicación, pero del otro grupo:</strong> Cada 
                 equipo deberá enfrentar 1 partido contra el equipo que sacó su misma ubicación en el sorteo, 
                 pero del otro grupo:<br/>
@@ -249,7 +249,7 @@ const FormatoConfFem = ({ sin }) => {
                     <td>A5 vs. B5</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R7: Clasificación:</strong> Para la fase final, clasificarán solamente los 3 equipos 
                 que tengan el mejor puntaje en cada grupo, es decir, que hayan terminado primero, segundo y 
                 tercero en la tabla de posiciones de cada uno de los grupos, como se muestra a continuación.
@@ -306,7 +306,7 @@ const FormatoConfFem = ({ sin }) => {
                     </tr>
                 </table>
             </div>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R8: Criterios de desempate Primera Fase:</strong> En caso que al finalizar la 
                 primera fase se tuviera en la tabla de posiciones empates en puntos entre equipos, 
                 se procedería a lo siguiente para desempatar: <br/>
@@ -322,12 +322,12 @@ const FormatoConfFem = ({ sin }) => {
                 hacerlo con los puntos anteriores es: el equipo que cuente con menos sanciones por tarjetas 
                 amarillas o rojas (amarilla 1 punto, roja por doble amarilla 2 puntos y roja directa 5 puntos).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R9: FASE FINAL:</strong> La fase final se desarrollará en 3 etapas (cuartos, semifinales y 
                 final), con formato de eliminación directa. En esta fase participarán 6 equipos, los 3 
                 mejores de cada grupo A y B.
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R10: CUARTOS DE FINAL:</strong> En esta fase participarán 4 equipos, los que 
                 terminaron en las posiciones 2 y 3 de cada grupo A y B. Estos 4 equipos se enfrentarán de la 
                 siguiente forma y los ganadores avanzarán a las semifinales.
@@ -346,7 +346,7 @@ const FormatoConfFem = ({ sin }) => {
                     <td className='tlarge'>3er lugar Grupo A</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R11: SEMIFINAL:</strong> En esta fase participarán 4 equipos, los que terminaron 
                 en 1er lugar de cada grupo A y B, y los 2 ganadores de los cuartos de final. Estos 4 equipos 
                 se enfrentarán de la siguiente forma y los ganadores avanzarán a la final.
@@ -363,19 +363,19 @@ const FormatoConfFem = ({ sin }) => {
                     <td className='tlarge'>Ganador A Cuartos</td>
                 </tr>
             </table>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R12: Criterios de desempate (en la semifinal):</strong> En caso de empate en goles 
                 al finalizar los partidos de semifinal, se procederá a:<br/>
                 1. Realizar directamente la definición por medio de los tiros penales (4 cada equipo).<br/>
                 2. De persistir el empate después de los 4 lanzamientos por equipo, clasificará el que haya 
                 tenido la mejor ubicación en la “Tabla general fase regular” (R15). 
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R13: FINAL:</strong> La final es la última etapa del campeonato, en donde se 
                 enfrentarán los 2 mejores equipos del campeonato, ganadoras de las semifinales. Las 
                 ganadoras serán declaradas campeónas del campeonato femenino de Confirmación 2025. 
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R14: Criterios de desempate (en la Final):</strong> En caso de empate al terminar el 
                 partido final, se procederá a:<br/>
                 1. Se jugarán dos tiempos de 4 minutos cada uno.<br/>
@@ -384,7 +384,7 @@ const FormatoConfFem = ({ sin }) => {
                 3. Si el empate persistiese, quedara campeón el que haya tenido la mejor ubicación en la 
                 “Tabla general fase regular" (R15).
             </p>
-            <p className='pf2 sa'>
+            <p>
                 <strong>R15: Tabla general fase regular:</strong> Una vez concluida la primera fase, con la 
                 finalidad de ser usada como criterio de desempate en los puntos ya especificados anteriormente 
                 (mas no como método de clasificación a la fase final), se ubicará a todos los equipos 
@@ -488,11 +488,16 @@ const FormatoConfFem = ({ sin }) => {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .pf2{
+                p{
                     margin-top: 15px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 20px;
+                    margin-bottom: 0;
+                }
+
+                .sa{
+                    margin-top: 0;
+                    margin-bottom: 10px;
                 }
 
                 .strongo{
@@ -506,18 +511,10 @@ const FormatoConfFem = ({ sin }) => {
                 }
 
                 .cont-logos{
-                    margin-top: 10px;
+                    margin-top: 5px;
                     display: flex;
                     flex-wrap: wrap;
                     margin-bottom: 0;
-                }
-
-                .sb{
-                    margin-top: 25px;
-                }
-
-                .sa{
-                    margin-bottom: 0px;
                 }
 
                 .t1{

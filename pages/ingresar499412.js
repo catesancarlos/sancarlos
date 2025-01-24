@@ -14,13 +14,55 @@ export default function Ingresar(){
     const handleParalelo = e => setParalelo(e.target.value)
 
     const handleEditar = async () => {
-        const docRef = await setDoc(doc(db, paralelo, `${dato.split('\n')[0].split(' ')[0].toLowerCase()}${dato.split('\n')[1].split(' ')[0].toLowerCase()}`), {
-                apellido: dato.split('\n')[0],
-                nombre: dato.split('\n')[1],
-                user: `${dato.split('\n')[0].split(' ')[0].toLowerCase()}${dato.split('\n')[1].split(' ')[0].toLowerCase()}`,
-                clave: dato.split('\n')[0].split(' ')[1].toLowerCase(),
+        const preg = dato.split('\n')
+        const docRef = await setDoc(doc(db, 'js-multiple', `js-ml-p${idd}`), {
+                pregunta: preg[0],
+                respuestas: [
+                    preg[1],
+                    preg[2],
+                    preg[3],
+                    preg[4],
+                    preg[5],
+                    preg[6],
+                    preg[7],
+                    preg[8],
+                    preg[9],
+                    preg[10],
+                    preg[11],
+                    preg[12],
+                    preg[13],
+                    preg[14],
+                    preg[15],
+                    preg[16],
+                    preg[17],
+                    preg[18],
+                    preg[19],
+                    preg[20],
+                    preg[21],
+                    preg[22],
+                    preg[23],
+                    preg[24],
+                    preg[25],
+                    preg[26],
+                    preg[27],
+                    preg[28],
+                    preg[29],
+                    preg[30],
+                    preg[31],
+                    preg[32],
+                    preg[33],
+                    preg[34],
+                    preg[35],
+                    preg[36],
+                    preg[37],
+                    preg[38],
+                    preg[39],
+                    preg[40],
+                    preg[41],
+                    preg[42],
+                    preg[43]
+                ],
                 no: +idd,
-                bloqueo: false
             }
         )
         setIdd(+idd + 1)
@@ -30,10 +72,10 @@ export default function Ingresar(){
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
             <div className='container'>
-                <input onChange={handleParalelo} />
                 <input onChange={handleIdd} value={idd ? idd : ''} />
                 <textarea
-                    rows='10'
+                    style={{ width: '800px'}}
+                    rows='20'
                     onChange={handleChange}
                     value={dato ? dato : ''}
                 ></textarea>

@@ -1,13 +1,14 @@
+import TitleSection from '../sections/TitleSection'
 import Equipo from './Equipo'
 
 const EquiposKT25 = () => {
 
     return (
         <div>
-            <p className='pf1'>Equipos participantes</p>
-            <p className='pf2 st'>
-                Detalle de equipos que participan en este campeonato.
-            </p>
+            <TitleSection
+                title='Equipos participantes'
+                desc='Detalle de equipos que participan en este campeonato.'
+            />
             <strong>Año Bíblico</strong>
             <div className='cont-logos'>
                 <Equipo

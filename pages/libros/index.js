@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import AppLayout from '../../componentes/layout'
@@ -15,6 +15,12 @@ export default function Libros(){
     const [pdfe, setPdfe] = useState(null)
 
     const newplugin = defaultLayoutPlugin()
+
+    useEffect(() => {
+        if(pdfe){
+            window.scrollTo(0, 0)
+        }
+    }, [pdfe])
 
     return(
         <AppLayout titulo='San Carlos - Libros' name='Libros'>
@@ -89,7 +95,7 @@ export default function Libros(){
                 }
                 
                 .docvi{
-                    height: 500px;
+                    min-height: 500px;
                     width: 90vw;
                     border-radius: 16px;
                     overflow: hidden;
@@ -124,7 +130,7 @@ export default function Libros(){
 
                     .docvi{
                         width: 95vw;
-                        height: 580px;
+                        min-height: 580px;
                     }
                 }
             `}</style>

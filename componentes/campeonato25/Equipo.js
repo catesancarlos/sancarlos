@@ -21,7 +21,7 @@ const Equipo = ({
 
         <style jsx>{`
             article{
-                width: ${!ca ? '140px' : 'auto'};
+                width: ${!ca ? '165px' : 'auto'};
                 padding: 0 5px;
                 font-family: 'Lato', sans-serif;
                 display: flex;
@@ -57,7 +57,7 @@ const Equipo = ({
 
             .l-n{
                 margin-top: 0px;
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: bold;
                 text-align: center;
             }
