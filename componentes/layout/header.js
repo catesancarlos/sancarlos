@@ -120,6 +120,7 @@ const Header = ({ name, flecha, auth }) => {
                     font-size: 18px;
                     font-family: 'Lato', sans-serif;
                     font-weight: 400;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
                     cursor: pointer;
                 }
 
