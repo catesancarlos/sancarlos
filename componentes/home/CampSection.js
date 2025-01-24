@@ -131,7 +131,7 @@ const CampSection = ({ children }) => {
                 @media screen and (max-width: 768px){
                     section{
                         margin: 10px 15px 30px 15px;
-                        margin: 20px 15px 50px 15px;
+                        margin: 20px 15px 0px 15px;
                         width: calc(100% - 30px);
                         display: flex;
                         flex-direction: column;
