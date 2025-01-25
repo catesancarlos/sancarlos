@@ -13,7 +13,8 @@ import { doc, onSnapshot } from 'firebase/firestore'
 
 const Home = () => {
     const [toggle, setToggle] = useState(true)
-    const [fecha, setFecha] = useState([])
+    const [fecha1, setFecha1] = useState([])
+    const [fecha2, setFecha2] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,8 +30,11 @@ const Home = () => {
 
     useEffect(() => {
             onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
-                setFecha(doc.data())
-            })     
+                setFecha1(doc.data())
+            })
+            onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
+                setFecha2(doc.data())
+            }) 
     }, [])
     
 
@@ -53,12 +57,12 @@ const Home = () => {
                 <CampSection>
                     <PartidosSemana
                         title='Partidos de la semana:'
-                        fecha={fecha}
+                        fecha={fecha2}
                         home
                     />
                     <PartidosPasados
                         title='Resultados semana pasada:'
-                        fecha={fecha}
+                        fecha={fecha1}
                         home
                     />
                 </CampSection>

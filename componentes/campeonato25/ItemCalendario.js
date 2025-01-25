@@ -5,6 +5,7 @@ export default function ItemCalendario({
     res,
     pen,
     home,
+    control,
     dia,
     fecha,
     hora,
@@ -13,7 +14,9 @@ export default function ItemCalendario({
     paralelos,
     logos,
     colores,
-    mas
+    mas,
+    onStatus,
+    onGoles
 }) {
     return(
         <section>
@@ -21,9 +24,13 @@ export default function ItemCalendario({
                 <strong>{genero}</strong>
             </div>
             <div className='fecha'>
-                <p>{dia}</p>
-                <p>{fecha}</p>
-                <strong>{hora}</strong>
+                {!control &&
+                    <>
+                        <p>{dia}</p>
+                        <p>{fecha}</p>
+                    </>
+                }
+                <strong>{!control ? hora : control}</strong>
             </div>
             <div className='eq1'>
                 <Equipo
@@ -37,8 +44,22 @@ export default function ItemCalendario({
                     mas={mas && mas[0]}
                 />
             </div>
+            {control &&
+                <div className='goles'>
+                    <p onClick={() => onGoles([control, 0, '+'])}>+</p>
+                    <p onClick={() => onGoles([control, 0, '-'])}>-</p>
+                </div>
+            }
             <div className='marc-glo'>
-                {now && <p className='now'>Ahora</p> }
+                {
+                    control ? 
+                        <div className='op-now'>
+                            <p onClick={() => onStatus([control, 0])}>N</p>
+                            <p onClick={() => onStatus([control, 1])}>S</p>
+                            <p onClick={() => onStatus([control, 2])}>E</p>
+                        </div>
+                    : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : ''
+                }
                 <div className='marcador'>
                     <strong className='meq'>{res ? res?.[0] : 0}</strong>
                     <p className='vs'>Vs</p>
@@ -46,6 +67,12 @@ export default function ItemCalendario({
                 </div>
                 {pen && <p className='pen'>{`Pen (${pen})`}</p> }
             </div>
+            {control &&
+                <div className='goles'>
+                    <p onClick={() => onGoles([control, 1, '+'])}>+</p>
+                    <p onClick={() => onGoles([control, 1, '-'])}>-</p>
+                </div>
+            }
             <div className='eq2'>
                 <Equipo
                     ca
@@ -65,7 +92,7 @@ export default function ItemCalendario({
                     position: relative;
                     margin-top: 4px;
                     margin-left: 4px;
-                    padding: 5px 5px 5px 0;
+                    padding: ${!control ? '5px 5px 5px 0' : '5px'};
                     font-family: 'Lato', sans-serif;
                     display: flex;
                     justify-content: space-between;
@@ -89,7 +116,7 @@ export default function ItemCalendario({
                 .fecha{
                     width: 100px;
                     font-size: 15px;
-                    display: flex;
+                    display: ${!control ? 'flex' : 'none'};
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
@@ -97,6 +124,26 @@ export default function ItemCalendario({
 
                 .eq1, .eq2{
                     width: 180px;
+                }
+
+                .goles{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .goles p{
+                    margin: 4px 0;
+                    background: #444;
+                    width: 21px;
+                    line-height: 21px;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 400;
+                    text-align: center;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
 
                 .marc-glo{
@@ -123,6 +170,49 @@ export default function ItemCalendario({
                     animation-name: nuevo;
                     animation-duration: 2s;
                     animation-iteration-count: infinite;
+                }
+
+                .fin{
+                    position: absolute;
+                    top: 8px;
+                    color: #555;
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+
+                .op-now{
+                    position: absolute;
+                    top: 5px;
+                    display: flex;
+                }
+
+                .op-now p{
+                    width: 20px;
+                    line-height: 18px;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 400;
+                    text-align: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .op-now p:nth-child(1){
+                    background: white;
+                    color: black;
+                    border: 1px solid black;
+                    margin-right: 3px;
+                }
+                
+                .op-now p:nth-child(2){
+                    background: green;
+                    margin-left: 3px;
+                    margin-right: 3px;
+                }
+
+                .op-now p:nth-child(3){
+                    background: black;
+                    margin-left: 3px;
                 }
 
                 .pen{
