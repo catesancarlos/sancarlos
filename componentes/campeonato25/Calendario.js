@@ -47,7 +47,7 @@ export default function Calendario({ fecha, children }){
                     dia='Domingo'
                     fecha='02 Feb'
                     hora='10h00'
-                    genero='F'
+                    genero='M'
                     equipos={['Los Ángeles Bíblicos', 'Los Misioneros']}
                     paralelos={['Año Bíblico 3 (M)', 'Año Bíblico 2 (M)']}
                     logos={['A3M', 'A2M']}
@@ -60,7 +60,7 @@ export default function Calendario({ fecha, children }){
                     dia='Domingo'
                     fecha='02 Feb'
                     hora='11h00'
-                    genero='F'
+                    genero='M'
                     equipos={['Equipo Glorioso', 'Los Hermanos de Jesus']}
                     paralelos={['Año Bíblico 4 (M2)', 'Año Bíblico 1 (M)']}
                     logos={['A4M', 'A1M']}
