@@ -32,7 +32,7 @@ export default function ItemCalendario({
                 }
                 <strong>{!control ? hora : control}</strong>
             </div>
-            <div className='eq1'>
+            <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
                 <Equipo
                     ca
                     nombre={equipos[0]}
@@ -44,19 +44,15 @@ export default function ItemCalendario({
                     mas={mas && mas[0]}
                 />
             </div>
-            {control &&
-                <div className='goles'>
-                    <p onClick={() => onGoles([control, 0, '+'])}>+</p>
-                    <p onClick={() => onGoles([control, 0, '-'])}>-</p>
-                </div>
-            }
             <div className='marc-glo'>
                 {
                     control ? 
                         <div className='op-now'>
+                            <p onClick={() => onGoles([control, 0, '-'])}>-</p>
                             <p onClick={() => onStatus([control, 0])}>N</p>
                             <p onClick={() => onStatus([control, 1])}>S</p>
                             <p onClick={() => onStatus([control, 2])}>E</p>
+                            <p onClick={() => onGoles([control, 1, '-'])}>-</p>
                         </div>
                     : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : ''
                 }
@@ -67,13 +63,7 @@ export default function ItemCalendario({
                 </div>
                 {pen && <p className='pen'>{`Pen (${pen})`}</p> }
             </div>
-            {control &&
-                <div className='goles'>
-                    <p onClick={() => onGoles([control, 1, '+'])}>+</p>
-                    <p onClick={() => onGoles([control, 1, '-'])}>-</p>
-                </div>
-            }
-            <div className='eq2'>
+            <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
                 <Equipo
                     ca
                     nombre={equipos[1]}
@@ -124,26 +114,6 @@ export default function ItemCalendario({
 
                 .eq1, .eq2{
                     width: 180px;
-                }
-
-                .goles{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .goles p{
-                    margin: 4px 0;
-                    background: #444;
-                    width: 21px;
-                    line-height: 21px;
-                    color: white;
-                    font-size: 13px;
-                    font-weight: 400;
-                    text-align: center;
-                    border-radius: 5px;
-                    cursor: pointer;
                 }
 
                 .marc-glo{
@@ -198,21 +168,36 @@ export default function ItemCalendario({
                 }
 
                 .op-now p:nth-child(1){
+                    background: #444;
+                    margin-right: 4px;
+                }
+
+                .op-now p:nth-child(2){
                     background: white;
                     color: black;
                     border: 1px solid black;
-                    margin-right: 3px;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    box-shadow: ${now == 0 ? '-1px 3px 5px 0px #888' : 'none'};
                 }
                 
-                .op-now p:nth-child(2){
+                .op-now p:nth-child(3){
                     background: green;
-                    margin-left: 3px;
-                    margin-right: 3px;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    box-shadow: ${now == 1 ? '-1px 3px 5px 0px #888' : 'none'};
                 }
 
-                .op-now p:nth-child(3){
+                .op-now p:nth-child(4){
                     background: black;
-                    margin-left: 3px;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    box-shadow: ${now == 2 ? '-1px 3px 5px 0px #888' : 'none'};
+                }
+
+                .op-now p:nth-child(5){
+                    background: #444;
+                    margin-left: 4px;
                 }
 
                 .pen{

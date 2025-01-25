@@ -17,14 +17,18 @@ import { doc, onSnapshot } from 'firebase/firestore'
 
 export default function Campeonato(){
     const [section, setSection] = useState(1)
-    const [fecha, setFecha] = useState([])
+    const [fecha1, setFecha1] = useState([])
+    const [fecha2, setFecha2] = useState([])
 
     const router = useRouter()
 
     useEffect(() => {
         onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
-            setFecha(doc.data())
-        })     
+            setFecha1(doc.data())
+        })
+        onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
+            setFecha2(doc.data())
+        })    
     }, [])
 
     useEffect(() => {
@@ -55,8 +59,8 @@ export default function Campeonato(){
                 <div className='principal'>
                     {
                         section == 1 ? 
-                            <Calendario fecha={fecha}>
-                                <PartidosSemana fecha={fecha} />
+                            <Calendario fecha={fecha1}>
+                                <PartidosSemana fecha={fecha2} />
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :
