@@ -4,7 +4,7 @@ import TitleSection from '../sections/TitleSection'
 import OptionsSection from '../sections/OptionsSection'
 
 const Goleadores = () => {
-    const [select, setSelect] = useState(1)
+    const [select, setSelect] = useState(2)
 
     return (
         <section>
@@ -56,19 +56,73 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>5</td>
+                                <td>Andrea Tacuri</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
                                 <td>Kelly Pindo</td>
                                 <td>Confirmación F.C. (22F)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
                                 <td>6</td>
+                                <td>Adela Pintado</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Emily Pindo</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Belen Aguilar</td>
+                                <td>Las Águilas (11F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Erika Malla</td>
+                                <td>Newcastells (14F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
                                 <td>Anahi Mendoza</td>
                                 <td>Club GNU (24F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
+                                <td>7</td>
+                                <td>Carolina Minchay</td>
+                                <td>Las Águilas (11F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Oula Bonilla</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Kendra Noblecilla</td>
+                                <td>Newcastells (14F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Carla Caguana</td>
+                                <td>Santa Fe (12F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>23</strong></td>
+                                <td className='c-t t2'><strong>38</strong></td>
                             </tr>
                         </table>
                     :
@@ -96,6 +150,12 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>3</td>
+                                <td>Luis Aucapiña</td>
+                                <td>Fuerza Divina (2AM)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
                                 <td>Carlos Japa</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>3</td>
@@ -108,43 +168,91 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>4</td>
+                                <td>Matias Orellana</td>
+                                <td>Newcastells (14M)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Michael Chisaguano</td>
+                                <td>Newcastells (14M)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Anthony Gonzales</td>
+                                <td>Fuerza Divina (2AM)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Cristopher Gonzales</td>
+                                <td>Fuerza Divina (2AM)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Diego Barros</td>
+                                <td>Newcastells (14M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Hector Naula</td>
+                                <td>Newcastells (14M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Miguel Yunga</td>
+                                <td>Fuerza Divina (2AM)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
                                 <td>Erick Aguayza</td>
                                 <td>Confirmación FC (22F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Jhoao Guachichulca</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Erik Carchipulla</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Justin Castillo</td>
                                 <td>Santos y Religiosos F.C. (21F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Antony Agila</td>
                                 <td>GDL (24M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Randy Guzman</td>
                                 <td>GDL (24M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
+                                <td>6</td>
+                                <td>Autogol</td>
+                                <td></td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>21</strong></td>
+                                <td className='c-t t2'><strong>34</strong></td>
                             </tr>
                         </table>
                 }

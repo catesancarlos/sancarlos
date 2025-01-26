@@ -443,51 +443,52 @@ const Posiciones = () => {
                                 </tr>
                                 <tr>
                                     <td className='tp'>1</td>
-                                    <td className='eq'>Santa Fe (12F)</td>
+                                    <td className='eq'>Estrellitas de Maria (2AF)</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>8</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>+5</td>
+                                    <td className='tp'><strong>3</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>2</td>
                                     <td className='eq'>Newcastells (14F)</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>+2</td>
+                                    <td className='tp'><strong>3</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>3</td>
-                                    <td className='eq'>Las Águilas (11F)</td>
+                                    <td className='eq'>Santa Fe (12F)</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>-2</td>
+                                    <td className='tp'><strong>0</strong></td>
                                 </tr>
                                 <tr>
                                     <td className='tp'>4</td>
-                                    <td className='eq'>Estrellitas de Maria (2AF)</td>
+                                    <td className='eq'>Las Águilas (11F)</td>
+                                    <td className='tp'>1</td>
                                     <td className='tp'>0</td>
                                     <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
-                                    <td className='tp'>0</td>
+                                    <td className='tp'>1</td>
+                                    <td className='tp'>3</td>
+                                    <td className='tp'>8</td>
+                                    <td className='tp'>-5</td>
+                                    <td className='tp'><strong>0</strong></td>
+                                    
                                 </tr>
                                 <tr>
                                     <td className='tp'>5</td>
@@ -525,16 +526,16 @@ const Posiciones = () => {
                                 </tr>
                                 <tr>
                                     <td>Santa Fe (12F)</td>
-                                    <td>0</td>
+                                    <td>1</td>
                                     <td>vs.</td>
-                                    <td>0</td>
+                                    <td>3</td>
                                     <td>Newcastells (14F)</td>
                                 </tr>
                                 <tr>
                                     <td>Las Águilas (11F)</td>
-                                    <td>0</td>
+                                    <td>3</td>
                                     <td>vs.</td>
-                                    <td>0</td>
+                                    <td>8</td>
                                     <td>Estrellitas de Maria (2AF)</td>
                                 </tr>
                             </table>
