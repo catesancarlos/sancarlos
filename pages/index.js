@@ -41,6 +41,18 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+            <CampSection>
+                <PartidosSemana
+                        title='Partidos de la semana:'
+                        fecha={fecha2}
+                        home
+                    />
+                    <PartidosPasados
+                        title='Resultados semana pasada:'
+                        fecha={fecha1}
+                        home
+                    />
+                </CampSection>
                 {/* <InfoSalida /> */}
                 <div className='banner'>
                     <PartidoIda />
@@ -54,19 +66,6 @@ const Home = () => {
                     </div> */}
                 </div>
                 <MiniAgenda />
-                <CampSection>
-                    <PartidosSemana
-                        title='Partidos de la semana:'
-                        fecha={fecha2}
-                        home
-                    />
-                    <PartidosPasados
-                        title='Resultados semana pasada:'
-                        fecha={fecha1}
-                        home
-                    />
-                </CampSection>
-                
             </AppLayout>
 
             <style jsx>{`
