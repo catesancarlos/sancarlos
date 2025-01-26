@@ -1,7 +1,7 @@
-const IconEscudo = ({ ca, color, borde }) => (
+const IconEscudo = ({ ca, pos, color, borde }) => (
   <svg
-    width={!ca ? 100 : 50}
-    height={!ca ? 100 : 50}
+    width={ca ? 50 : pos ? 40 : 100}
+    height={ca ? 50 : pos ? 40 : 100}
     fill={color}
     viewBox="0 0 24 24"
   >

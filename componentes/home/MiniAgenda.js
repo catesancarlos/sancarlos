@@ -18,7 +18,7 @@ const MiniAgenda = () => {
                         <p>Teatro Catequesis</p>
                         <p>19H00</p>
                     </div>
-                </article> */}
+                </article>
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis</p>
@@ -29,7 +29,7 @@ const MiniAgenda = () => {
                         <p>Centros catequeticos</p>
                         <p>Segun horario</p>
                     </div>
-                </article>
+                </article> */}
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Segunda Semana</p>

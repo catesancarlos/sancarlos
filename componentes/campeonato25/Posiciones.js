@@ -3,6 +3,7 @@ import { useState } from 'react'
 import TitleSection from '../sections/TitleSection'
 import OptionsSection from '../sections/OptionsSection'
 import Equipo from './Equipo'
+import PosConfMas from './PosConfMas'
 
 const Posiciones = () => {
     const [select, setSelect] = useState(3)
@@ -633,7 +634,9 @@ const Posiciones = () => {
                     </>
                 :
                     <>
-                        <div className='ta-2'>
+                        <p className='pf1 msc'>Fixture:</p>
+                        <PosConfMas />
+                        {/* <div className='ta-2'>
                             <table className='t1'>
                                 <tr>
                                     <td className='tmp'>A</td>
@@ -724,7 +727,7 @@ const Posiciones = () => {
                                     <td colSpan={2} className='tp'>PF</td>
                                 </tr>
                             </table>
-                        </div>
+                        </div> */}
                     </>
 
             }
@@ -734,6 +737,10 @@ const Posiciones = () => {
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
+                }
+
+                .msc{
+                    margin-bottom: 25px;
                 }
 
                 .ta-2{
@@ -793,6 +800,10 @@ const Posiciones = () => {
                 }
 
                 @media screen and (max-width: 768px){
+                    .msc{
+                        margin-bottom: 15px;
+                    }
+
                     td{
                         font-size: 13px;
                     }

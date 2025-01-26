@@ -2,6 +2,7 @@ import IconEscudo from './IconEscudo'
 
 const Equipo = ({
     ca,
+    pos,
     nombre,
     paralelo,
     logo,
@@ -12,7 +13,7 @@ const Equipo = ({
 }) => (
     <article>
         <div>
-            <IconEscudo ca={ca} color={color} borde={borde} />
+            <IconEscudo ca={ca} pos={pos} color={color} borde={borde} />
             <p className='log'>{logo}</p>
             { mas && <p className='slog'>{mas}</p> }
         </div>
@@ -21,14 +22,14 @@ const Equipo = ({
 
         <style jsx>{`
             article{
-                width: ${!ca ? '165px' : 'auto'};
+                width: ${ca ? 'auto' : pos ? '130px' : '165px'};
                 padding: 0 5px;
                 font-family: 'Lato', sans-serif;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: ${!ca ? '10px' : '3px'};
+                margin-bottom: ${ca ? '3px' : pos ? '0' : '10px'};
             }
 
             div{
@@ -37,49 +38,49 @@ const Equipo = ({
 
             .log{
                 position: absolute;
-                top: ${!ca ? '30px' : '14px'};
+                top: ${ca ? '14px' : pos ? '12px' : '30px'};
                 width: 100%;
                 color: ${letter};
-                font-size: ${!ca ? '22px' : '13px'};
+                font-size: ${ca ? '13px' : pos ? '10px' : '22px'};
                 font-weight: bold;
                 text-align: center;
             }
 
             .slog{
                 position: absolute;
-                top: ${!ca ? '55px' : '26px'};
+                top: ${ca ? '26px' : pos ? '21px' : '55px'};
                 width: 100%;
                 color: ${letter};
-                font-size: ${!ca ? '16px' : '11px'};
+                font-size: ${ca ? '11px' : pos ? '9px' : '16px'};
                 font-weight: bold;
                 text-align: center;
             }
 
             .l-n{
                 margin-top: 0px;
-                font-size: 13px;
+                font-size: ${!pos ? '13px' : '11px'};
                 font-weight: bold;
                 text-align: center;
             }
                 
             .l-p{
-                font-size: 12px;
+                font-size: ${!pos ? '12px' : '10px'};
                 font-weight: 500;
                 text-align: center;
             }
 
             @media screen and (max-width: 768px){
                 article{
-                    width: ${!ca ? '140px' : 'auto'};
-                    padding: ${!ca ? '0 2px' : '0'};
+                    width: ${ca ? 'auto' : pos ? '120px' : '140px'};
+                    padding: ${ca ? '0' : pos ? '0' : '0 2px'};
                 }
 
                 .l-n{
-                    font-size: ${!ca ? '14px' : '12px'};
+                    font-size: ${ca ? '12px' : pos ? '11px' : '14px'};
                 }
                     
                 .l-p{
-                    font-size: ${!ca ? '12px' : '10px'};
+                    font-size: ${ca ? '10px' : pos ? '10px' : '12px'};
                 }
             }
         `}</style>
