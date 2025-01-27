@@ -131,7 +131,7 @@ const MiniAgenda = () => {
                 article:nth-child(1){
                     width: calc(50% - 15px);
                     display: flex;
-                    border: 3px solid #245590;
+                    border: 2px solid #245590;
                 }
 
                 .clases-iz{
