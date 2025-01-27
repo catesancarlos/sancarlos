@@ -112,7 +112,7 @@ export default function InfoSalida({ misa }) {
                         padding: 8px 10px 10px 10px;
                         font-size: 21px;
                         border-radius: 10px 10px 0 0;
-                        margin-bottom: 6px;
+                        margin-bottom: 5px;
                     }
 
                     .salida{

@@ -229,7 +229,7 @@ const MiniAgenda = () => {
                     .clases-dr{
                         margin: 1px 0 4px 0;
                         width: 51%;
-                        padding: 0 6px 0 8px;
+                        padding: 3px 6px 4px 8px;
                         font-size: 13px;
                     }
 
