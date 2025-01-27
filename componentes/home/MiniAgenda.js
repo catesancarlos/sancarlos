@@ -22,12 +22,14 @@ const MiniAgenda = () => {
                     </div>
                     <div className='clases-dr'>
                         <strong>Centro</strong>
-                        <p>• Mañana: 08:45 - 11:30</p>
-                        <p>• Tarde: 13:45 - 16:30</p>
+                        <p className='nt'>• Mañana: 08:45 - 11:30</p>
+                        <p className='nt'>• Tarde: 13:45 - 16:30</p>
                         <strong>Los Ángeles</strong>
-                        <p>• Mañana: 09:00 - 11:30</p>
-                        <p>• Tarde: 14:00 - 16:30</p>
-                        <p><strong>Molinopamba:</strong> 08:00-11:00</p>
+                        <p className='nt'>• Mañana: 09:00 - 11:30</p>
+                        <p className='nt'>• Tarde: 14:00 - 16:30</p>
+                        <p><strong>Molinopamba:</strong> 08:00 - 11:00</p>
+                        <p><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
+                        <p><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                     </div>
                 </article>
                 <article>
@@ -150,6 +152,10 @@ const MiniAgenda = () => {
 
                 .clases-dr p{
                     font-weight: 200;
+                }
+
+                .nt{
+                    margin-top: -3px;
                 }
                 
                 article:nth-child(3){
