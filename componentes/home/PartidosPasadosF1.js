@@ -1,6 +1,6 @@
 import ItemCalendario from '../campeonato25/ItemCalendario'
 
-export default function PartidosPasados({ title, fecha, home }){    
+export default function PartidosPasadosF1({ title, fecha, home }){    
 
     return (
         <>
@@ -11,29 +11,29 @@ export default function PartidosPasados({ title, fecha, home }){
                 pen={fecha?.pen1}
                 home={home}
                 dia='Domingo'
-                fecha='26 Ene'
-                hora='09h00'
+                fecha='19 Ene'
+                hora='08h30'
                 genero='M'
-                equipos={['Fuerza Divina', 'Newcastells']}
-                paralelos={['2 Confir. Ángeles (M)', '1ro Confir. 4 (M)']}
-                logos={['2AM', '14M']}
+                equipos={['Confirmación F.C.', 'Los Pastores']}
+                paralelos={['2do Confir. 2 (M)', '2do Confir. 3 (M)']}
+                logos={['22M', '23M']}
                 colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
+                    eq1: ['black', 'black', 'white'],
+                    eq2: ['blue', 'blue', 'white']
                 }}
-            />
+            ></ItemCalendario>
             <ItemCalendario
                 now={fecha?.partido2}
                 res={fecha?.res2}
                 pen={fecha?.pen2}
                 home={home}
                 dia='Domingo'
-                fecha='26 Ene'
-                hora='10h00'
+                fecha='19 Ene'
+                hora='09h30'
                 genero='F'
-                equipos={['Las Águilas', 'Estrellitas de María']}
-                paralelos={['1ro Confir. 1 (F)', '2 Confir. Ángeles (F)']}
-                logos={['11F', '2AF']}
+                equipos={['Las Galatas 1, 10', 'Traicioneras como Judas']}
+                paralelos={['2do Confir. 1 (F)', '2do Confir. 5 (F)']}
+                logos={['21F', '25F']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
                     eq2: ['black', 'black', 'white']
@@ -45,15 +45,15 @@ export default function PartidosPasados({ title, fecha, home }){
                 pen={fecha?.pen3}
                 home={home}
                 dia='Domingo'
-                fecha='26 Ene'
-                hora='11h00'
+                fecha='19 Ene'
+                hora='10h30'
                 genero='F'
-                equipos={['Santa Fé', 'Newcastells']}
-                paralelos={['1ro Confir. 2 (F)', '1ro Confir. 4 (F)']}
-                logos={['12F', '14F']}
+                equipos={['Confirmación F.C.', 'Club GNU']}
+                paralelos={['2do Confir. 2 (F)', '2do Confir. 4 (F)']}
+                logos={['22F', '24F']}
                 colores={{
                     eq1: ['black', 'black', 'white'],
-                    eq2: ['white', 'black', 'black']
+                    eq2: ['black', 'black', 'white']
                 }}
             />
             <ItemCalendario
@@ -62,16 +62,17 @@ export default function PartidosPasados({ title, fecha, home }){
                 pen={fecha?.pen4}
                 home={home}
                 dia='Domingo'
-                fecha='26 Ene'
-                hora='12h00'
+                fecha='19 Ene'
+                hora='11h30'
                 genero='M'
-                equipos={['Santa Fé', 'Los Angeles Negros']}
-                paralelos={['1ro Confir. 2 (M)', '1ro Confir. 3 (M)']}
-                logos={['12M', '13M']}
+                equipos={['Santos y Religiosos F.C.', 'GDL']}
+                paralelos={['2do Confir. 1 (M)', '2do Confir. 4 (M2)']}
+                logos={['21M', '24M']}
                 colores={{
-                    eq1: ['black', 'black', 'white'],
-                    eq2: ['black', 'black', 'white']
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
                 }}
+                mas={[, 2]}
             />
 
             <style jsx>{`

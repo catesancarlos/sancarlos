@@ -1,6 +1,6 @@
 import ItemCalendario from '../campeonato25/ItemCalendario'
 
-export default function PartidosPasados({ title, fecha, home }){    
+export default function PartidosSemanaF2({ title, fecha, home, control, onStatus, onGoles }){    
 
     return (
         <>
@@ -10,6 +10,7 @@ export default function PartidosPasados({ title, fecha, home }){
                 res={fecha?.res1}
                 pen={fecha?.pen1}
                 home={home}
+                control={control && control[0]}
                 dia='Domingo'
                 fecha='26 Ene'
                 hora='09h00'
@@ -21,12 +22,15 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
             />
             <ItemCalendario
                 now={fecha?.partido2}
                 res={fecha?.res2}
                 pen={fecha?.pen2}
                 home={home}
+                control={control && control[1]}
                 dia='Domingo'
                 fecha='26 Ene'
                 hora='10h00'
@@ -38,12 +42,15 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['white', 'black', 'black'],
                     eq2: ['black', 'black', 'white']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
             />
             <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
                 pen={fecha?.pen3}
                 home={home}
+                control={control && control[2]}
                 dia='Domingo'
                 fecha='26 Ene'
                 hora='11h00'
@@ -55,12 +62,15 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['black', 'black', 'white'],
                     eq2: ['white', 'black', 'black']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
             />
             <ItemCalendario
                 now={fecha?.partido4}
                 res={fecha?.res4}
                 pen={fecha?.pen4}
                 home={home}
+                control={control && control[3]}
                 dia='Domingo'
                 fecha='26 Ene'
                 hora='12h00'
@@ -72,12 +82,13 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['black', 'black', 'white'],
                     eq2: ['black', 'black', 'white']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
             />
 
             <style jsx>{`
                 p{
-                    margin-top: 30px;
-                    color: #000000;
+                    color: #245590;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
@@ -86,7 +97,6 @@ export default function PartidosPasados({ title, fecha, home }){
 
                 @media screen and (max-width: 768px){
                     p{
-                        margin-top: ${home ? '25px' : '0'};
                         font-size: 18px;
                         font-size: 400;
                     }

@@ -5,7 +5,9 @@ import InfoSalida from '../componentes/home/InfoSalida'
 import PartidoIda from '../componentes/banners/PartidoIda'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
+import PartidosSemanaF2 from '../componentes/home/PartidosSemanaF2'
 import PartidosSemana from '../componentes/home/PartidosSemana'
+import PartidosPasadosF1 from '../componentes/home/PartidosPasadosF1'
 import PartidosPasados from '../componentes/home/PartidosPasados'
 
 import db  from '../services/dBase'
@@ -13,8 +15,9 @@ import { doc, onSnapshot } from 'firebase/firestore'
 
 const Home = () => {
     const [toggle, setToggle] = useState(true)
-    const [fecha1, setFecha1] = useState([])
+    /* const [fecha1, setFecha1] = useState([]) */
     const [fecha2, setFecha2] = useState([])
+    const [fecha3, setFecha3] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,9 +32,9 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-            onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
+            /* onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
                 setFecha1(doc.data())
-            })
+            }) */
             onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
                 setFecha2(doc.data())
             }) 
@@ -41,19 +44,8 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-            <CampSection>
-                <PartidosSemana
-                        title='Partidos de la semana:'
-                        fecha={fecha2}
-                        home
-                    />
-                    <PartidosPasados
-                        title='Resultados semana pasada:'
-                        fecha={fecha1}
-                        home
-                    />
-                </CampSection>
                 {/* <InfoSalida /> */}
+                <MiniAgenda />
                 <div className='banner'>
                     <PartidoIda />
                     {/* <img src='/main_banner.jpg' /> */}
@@ -65,7 +57,29 @@ const Home = () => {
                         </p>
                     </div> */}
                 </div>
-                <MiniAgenda />
+                
+                <CampSection>
+                    <PartidosSemana
+                        title='Partidos de la semana:'
+                        fecha={fecha3}
+                        home
+                    />
+                    <PartidosPasados
+                        title='Resultados semana pasada:'
+                        fecha={fecha2}
+                        home
+                    />
+                    {/* <PartidosSemanaF2
+                        title='Partidos de la semana:'
+                        fecha={fecha2}
+                        home
+                    />
+                    <PartidosPasadosF1
+                        title='Resultados semana pasada:'
+                        fecha={fecha1}
+                        home
+                    /> */}
+                </CampSection>
             </AppLayout>
 
             <style jsx>{`

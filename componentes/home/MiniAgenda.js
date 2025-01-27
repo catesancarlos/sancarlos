@@ -8,35 +8,46 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/* <article>
-                    <div className='e_header'>
-                        <p className='e_title'g>Catequesis Familiar</p>
-                        <p className='e_subtitle'>2do Confirmación</p>
-                    </div>
-                    <div className='e_info'>
-                        <p>Viernes 17 enero 2025</p>
-                        <p>Teatro Catequesis</p>
-                        <p>19H00</p>
-                    </div>
-                </article>
                 <article>
                     <div className='e_header'>
                         <p className='e_title'>Catequesis</p>
                         <p className='e_subtitle'>Clases Normales</p>
                     </div>
                     <div className='e_info'>
-                        <p>Sábado 25 enero 2025</p>
+                        <p>Sábado 01 febrero 2025</p>
                         <p>Centros catequeticos</p>
                         <p>Segun horario</p>
                     </div>
-                </article> */}
+                </article>
                 <article>
                     <div className='e_header'>
-                        <p className='e_title'>Segunda Semana</p>
+                        <p className='e_title'>Tercera Semana</p>
                         <p className='e_subtitle'>Campeonato 2025</p>
                     </div>
                     <div className='e_info'>
-                        <p>Domingo 26 enero 2025</p>
+                        <p>Sábado 01 febero 2025</p>
+                        <p>Patio Catequesis</p>
+                        <p onClick={() => router.push('/campeonato')} style={{ color: '#245590', fontWeight: 'bold', cursor: 'pointer' }}>17:00</p>
+                    </div>
+                </article>
+                <article>
+                    <div className='e_header'>
+                        <p className='e_title'>Catequesis Familiar</p>
+                        <p className='e_subtitle'>Iniciación</p>
+                    </div>
+                    <div className='e_info'>
+                        <p>Sábado 01 febrero 2025</p>
+                        <p>Teatro Catequesis</p>
+                        <p>19H00</p>
+                    </div>
+                </article>
+                <article>
+                    <div className='e_header'>
+                        <p className='e_title'>Tercera Semana</p>
+                        <p className='e_subtitle'>Campeonato 2025</p>
+                    </div>
+                    <div className='e_info'>
+                        <p>Domingo 02 febero 2025</p>
                         <p>Patio Catequesis</p>
                         <p onClick={() => router.push('/campeonato')} style={{ color: '#245590', fontWeight: 'bold', cursor: 'pointer' }}>Ver horarios</p>
                     </div>
@@ -70,6 +81,7 @@ const MiniAgenda = () => {
                 section{
                     font-family: 'Lato', sans-serif;
                     margin: 35px 4% 0 4%;
+                    margin: 0px 4% 45px 4%;
                     width: 92%;
                 }
 
@@ -145,6 +157,7 @@ const MiniAgenda = () => {
                     section{
                         font-family: 'Lato', sans-serif;
                         margin: 20px 15px 0 15px;
+                        margin: 10px 15px 20px 15px;
                         width: calc(100% - 30px);
                     }
 
