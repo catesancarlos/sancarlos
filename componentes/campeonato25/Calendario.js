@@ -53,6 +53,8 @@ export default function Calendario({ fecha1, fecha2, children }){
                     title='Resultados Semana 1:'
                     fecha={fecha1}
                 />
+            </div>
+            <div>
                 <PartidosPasados
                     title='Resultados Semana 2:'
                     fecha={fecha2}

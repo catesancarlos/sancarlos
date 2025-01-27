@@ -72,7 +72,7 @@ export default function PartidosPasados({ title, fecha, home }){
 
             <style jsx>{`
                 p{
-                    margin-top: 30px;
+                    margin-top: ${home ? '30px' : '0'};
                     color: #000000;
                     width: 100%;
                     font-size: 20px;
