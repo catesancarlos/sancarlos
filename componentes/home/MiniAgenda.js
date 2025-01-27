@@ -249,7 +249,7 @@ const MiniAgenda = () => {
                     }
 
                     .e_info{
-                        padding: 8px 8px 9px 8px;
+                        padding: 6px 7px 7px 7px;
                         font-size: 14px;
                     }
 
