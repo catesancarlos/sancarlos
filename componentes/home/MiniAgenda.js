@@ -121,7 +121,7 @@ const MiniAgenda = () => {
                 article{
                     background: white;
                     width: calc(25% - 15px);
-                    border: 3px solid #00000088;
+                    border: 2px solid #00000088;
                     border-radius: 15px;
                     margin-right: 20px;
                     box-shadow: 2px 2px 4px 0px #777;
@@ -161,8 +161,6 @@ const MiniAgenda = () => {
                 }
 
                 .e_header{
-                    /* margin: -1px -1px 0 -1px;
-                    width: 102%; */
                     background: #00000088;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     padding: 8px 10px 10px 10px;
@@ -239,7 +237,7 @@ const MiniAgenda = () => {
                     }
 
                     .e_header{
-                        padding: 6px 10px 7px 10px;
+                        padding: 6px 8px 7px 8px;
                     }
 
                     .e_title{
@@ -251,7 +249,7 @@ const MiniAgenda = () => {
                     }
 
                     .e_info{
-                        padding: 10px 9px 12px 9px;
+                        padding: 8px 8px 9px 8px;
                         font-size: 14px;
                     }
 
