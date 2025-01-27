@@ -44,7 +44,7 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                {/* <InfoSalida /> */}
+                <InfoSalida misa />
                 <MiniAgenda />
                 <div className='banner'>
                     <PartidoIda />

@@ -1,12 +1,11 @@
-import ItemCalendario from '../campeonato25/ItemCalendario'
+import PartidoSoloResultado from '../campeonato25/PartidoSoloResultado'
 
 export default function PartidosPasadosF1({ title, fecha, home }){    
 
     return (
         <>
             { title && <p>{title}</p> }
-            <ItemCalendario
-                now={fecha?.partido1}
+            <PartidoSoloResultado
                 res={fecha?.res1}
                 pen={fecha?.pen1}
                 home={home}
@@ -21,9 +20,8 @@ export default function PartidosPasadosF1({ title, fecha, home }){
                     eq1: ['black', 'black', 'white'],
                     eq2: ['blue', 'blue', 'white']
                 }}
-            ></ItemCalendario>
-            <ItemCalendario
-                now={fecha?.partido2}
+            />
+            <PartidoSoloResultado
                 res={fecha?.res2}
                 pen={fecha?.pen2}
                 home={home}
@@ -39,8 +37,7 @@ export default function PartidosPasadosF1({ title, fecha, home }){
                     eq2: ['black', 'black', 'white']
                 }}
             />
-            <ItemCalendario
-                now={fecha?.partido3}
+            <PartidoSoloResultado
                 res={fecha?.res3}
                 pen={fecha?.pen3}
                 home={home}
@@ -56,8 +53,7 @@ export default function PartidosPasadosF1({ title, fecha, home }){
                     eq2: ['black', 'black', 'white']
                 }}
             />
-            <ItemCalendario
-                now={fecha?.partido4}
+            <PartidoSoloResultado
                 res={fecha?.res4}
                 pen={fecha?.pen4}
                 home={home}
