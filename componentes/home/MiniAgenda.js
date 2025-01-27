@@ -136,10 +136,6 @@ const MiniAgenda = () => {
                     width: 50%;
                 }
 
-                article:nth-child(1) .e_header{
-                    border-radius: 10px 0 10px 0;
-                }
-
                 .clases-dr{
                     margin: 5px;
                     width: calc(50% - 10px);
@@ -167,6 +163,12 @@ const MiniAgenda = () => {
                     padding: 8px 10px 10px 10px;
                     color: white;
                     font-weight: bold;
+                }
+
+                article:nth-child(1) .e_header{
+                    background: #245590;
+                    background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
+                    border-radius: 10px 0 10px 0;
                 }
 
                 .e_title{
