@@ -27,7 +27,7 @@ const MiniAgenda = () => {
                         <strong>Los Ángeles</strong>
                         <p>• Mañana: 09:00 - 11:30</p>
                         <p>• Tarde: 14:00 - 16:30</p>
-                        <p><strong>Molinopamba:</strong> 08:00 - 11:00</p>
+                        <p><strong>Molinopamba:</strong> 08:00-11:00</p>
                     </div>
                 </article>
                 <article>
@@ -121,6 +121,7 @@ const MiniAgenda = () => {
                 article{
                     background: white;
                     width: calc(25% - 15px);
+                    border: 3px solid #00000088;
                     border-radius: 15px;
                     margin-right: 20px;
                     box-shadow: 2px 2px 4px 0px #777;
@@ -160,6 +161,8 @@ const MiniAgenda = () => {
                 }
 
                 .e_header{
+                    /* margin: -1px -1px 0 -1px;
+                    width: 102%; */
                     background: #00000088;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     padding: 8px 10px 10px 10px;
@@ -227,7 +230,7 @@ const MiniAgenda = () => {
                     .clases-dr{
                         margin: 1px 0 4px 0;
                         width: 51%;
-                        padding: 0 6px;
+                        padding: 0 6px 0 8px;
                         font-size: 13px;
                     }
 
