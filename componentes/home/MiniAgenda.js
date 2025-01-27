@@ -121,7 +121,7 @@ const MiniAgenda = () => {
                 article{
                     background: white;
                     width: calc(25% - 15px);
-                    border-radius: 10px;
+                    border-radius: 15px;
                     margin-right: 20px;
                     box-shadow: 2px 2px 4px 0px #777;
                     overflow: hidden;
@@ -130,19 +130,21 @@ const MiniAgenda = () => {
                 article:nth-child(1){
                     width: calc(50% - 15px);
                     display: flex;
+                    border: 3px solid #245590;
                 }
 
-                .clases-iz, .clases-dr{
+                .clases-iz{
                     width: 50%;
                 }
 
                 .clases-dr{
-                    margin: 5px;
-                    width: calc(50% - 10px);
-                    padding: 2px 5px;
+                    margin: 1px 0 4px 0;
+                    width: 50%;
+                    padding: 0 16px;
                     font-size: 15px;
-                    border: 3px solid #245590;
-                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
 
                 .clases-dr p{
@@ -168,7 +170,7 @@ const MiniAgenda = () => {
                 article:nth-child(1) .e_header{
                     background: #245590;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
-                    border-radius: 10px 0 10px 0;
+                    border-radius: 0 0 15px 0;
                 }
 
                 .e_title{
@@ -218,13 +220,15 @@ const MiniAgenda = () => {
                         display: flex;
                     }
 
+                    .clases-iz{
+                        width: 49%;
+                    }
+
                     .clases-dr{
-                        margin: 4px;
-                        width: calc(50% - 8px);
-                        padding: 2px 4px;
+                        margin: 1px 0 4px 0;
+                        width: 51%;
+                        padding: 0 6px;
                         font-size: 13px;
-                        border: 2px solid #245590;
-                        border-radius: 5px;
                     }
 
                     article:nth-child(4){
