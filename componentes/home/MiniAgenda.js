@@ -219,6 +219,7 @@ const MiniAgenda = () => {
                     article:nth-child(1){
                         width: 100%;
                         display: flex;
+                        border: 3px solid #245590;
                     }
 
                     .clases-iz{

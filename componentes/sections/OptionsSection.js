@@ -56,7 +56,7 @@ export default function OptionsSection({ options, select, onSelect }){
 
                     p{
                         margin: 0;
-                        padding: 9px 12px 10px 12px;
+                        padding: 7px 11px 8px 11px;
                         font-size: 15px;
                     }
 
