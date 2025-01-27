@@ -9,14 +9,25 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <article>
-                    <div className='e_header'>
-                        <p className='e_title'>Catequesis</p>
-                        <p className='e_subtitle'>Clases Normales</p>
+                    <div className='clases-iz'>
+                        <div className='e_header'>
+                            <p className='e_title'>Catequesis</p>
+                            <p className='e_subtitle'>Clases Normales</p>
+                        </div>
+                        <div className='e_info'>
+                            <p>Sábado 01 febrero 2025</p>
+                            <p>Centros catequeticos</p>
+                            <p style={{ color: '#245590', fontWeight: 'bold' }}>{`Segun horario >>`}</p>
+                        </div>
                     </div>
-                    <div className='e_info'>
-                        <p>Sábado 01 febrero 2025</p>
-                        <p>Centros catequeticos</p>
-                        <p>Segun horario</p>
+                    <div className='clases-dr'>
+                        <strong>Centro</strong>
+                        <p>• Mañana: 08:45 - 11:30</p>
+                        <p>• Tarde: 13:45 - 16:30</p>
+                        <strong>Los Ángeles</strong>
+                        <p>• Mañana: 09:00 - 11:30</p>
+                        <p>• Tarde: 14:00 - 16:30</p>
+                        <p><strong>Molinopamba:</strong> 08:00 - 11:00</p>
                     </div>
                 </article>
                 <article>
@@ -27,7 +38,7 @@ const MiniAgenda = () => {
                     <div className='e_info'>
                         <p>Sábado 01 febero 2025</p>
                         <p>Patio Catequesis</p>
-                        <p onClick={() => router.push('/campeonato')} style={{ color: '#245590', fontWeight: 'bold', cursor: 'pointer' }}>17:00</p>
+                        <p onClick={() => router.push('/campeonato')} style={{ cursor: 'pointer' }}>17:00</p>
                     </div>
                 </article>
                 <article>
@@ -116,15 +127,37 @@ const MiniAgenda = () => {
                     overflow: hidden;
                 }
 
-                article:nth-child(4){
+                article:nth-child(1){
+                    width: calc(50% - 15px);
+                    display: flex;
+                }
+
+                .clases-iz, .clases-dr{
+                    width: 50%;
+                }
+
+                article:nth-child(1) .e_header{
+                    border-radius: 10px 0 10px 0;
+                }
+
+                .clases-dr{
+                    margin: 5px;
+                    width: calc(50% - 10px);
+                    padding: 2px 5px;
+                    font-size: 15px;
+                    border: 3px solid #245590;
+                    border-radius: 5px;
+                }
+
+                .clases-dr p{
+                    font-weight: 200;
+                }
+                
+                article:nth-child(3){
                     margin-right: 0;
                 }
 
-                article:nth-child(2) .e_header{
-                    background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
-                }
-
-                article:nth-child(5){
+                article:nth-child(4){
                     margin-top: 20px;
                 }
 
@@ -137,12 +170,12 @@ const MiniAgenda = () => {
                 }
 
                 .e_title{
-                    font-size: 15px;
-                    font-weight: 200;
+                    font-size: 17px;
+                    font-weight: 400;
                 }
 
                 .e_subtitle{
-                    font-size: 16px;
+                    font-size: 17px;
                     letter-spacing: 1px;
                 }
 
@@ -171,11 +204,29 @@ const MiniAgenda = () => {
                     }
 
                     article{
-                        width: calc(50% - 10px);
+                        width: calc(50% - 8px);
                         font-size: 13px;
                         margin-right: 0px;
                         box-shadow: 2px 2px 2px 0px #777;
                         margin-bottom: 15px;
+                    }
+
+                    article:nth-child(1){
+                        width: 100%;
+                        display: flex;
+                    }
+
+                    .clases-dr{
+                        margin: 4px;
+                        width: calc(50% - 8px);
+                        padding: 2px 4px;
+                        font-size: 13px;
+                        border: 2px solid #245590;
+                        border-radius: 5px;
+                    }
+
+                    article:nth-child(4){
+                        margin-top: 0;
                     }
 
                     .e_header{
