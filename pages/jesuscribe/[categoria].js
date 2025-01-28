@@ -69,6 +69,7 @@ export default function Preguntas({ categoria, preguntas }){
                         onSelect={handleChangeCategory}
                     />
                     <TitleSection
+                        bot
                         title={`Categoria: ${categ[select-1]}`}
                         desc={`Banco de preguntas de la categoría ${categ[select-1]}, para el concurso JESUSCRIBE de la Catequesis San Carlos de Ricaurte. Esta categoría cuenta con ${preguntas.length} preguntas.`}
                     >

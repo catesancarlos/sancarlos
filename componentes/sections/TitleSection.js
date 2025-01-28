@@ -1,6 +1,6 @@
 import { Children } from "react";
 
-export default function TitleSection({ title, desc, color, children }){
+export default function TitleSection({ title, desc, color, children, top }){
     return(
         <div className='title-section'>
             <div className='title'>
@@ -11,6 +11,7 @@ export default function TitleSection({ title, desc, color, children }){
 
             <style jsx>{`
                 .title-section{
+                    margin-top: ${top ? '10px' : 0};
                     margin-bottom: 30px;
                 }
 
