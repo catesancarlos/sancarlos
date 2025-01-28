@@ -1,4 +1,4 @@
-export default function OptionsSection({ options, select, onSelect }){
+export default function OptionsSection({ options, select, onSelect, bot }){
 
     return(
         <div>
@@ -18,7 +18,7 @@ export default function OptionsSection({ options, select, onSelect }){
                 div{
                     display: flex;
                     justify-content: center;
-                    margin-bottom: 30px;
+                    margin-bottom: ${bot ? '40px' : '30px'};
                 }
 
                 p{

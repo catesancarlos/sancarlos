@@ -67,9 +67,9 @@ export default function Preguntas({ categoria, preguntas }){
                         options={categ}
                         select={select}
                         onSelect={handleChangeCategory}
+                        bot
                     />
                     <TitleSection
-                        bot
                         title={`Categoria: ${categ[select-1]}`}
                         desc={`Banco de preguntas de la categoría ${categ[select-1]}, para el concurso JESUSCRIBE de la Catequesis San Carlos de Ricaurte. Esta categoría cuenta con ${preguntas.length} preguntas.`}
                     >
@@ -136,10 +136,9 @@ export default function Preguntas({ categoria, preguntas }){
 
                 .download{
                     background: #EE1C21;
-                    padding: 3px 12px 4px 12px;
+                    padding: 1px 12px 3px 12px;
                     color: white;
                     font-size: 17px;
-                    font-weight: bold;
                     border-radius: 6px;
                     cursor: pointer;
                 }
