@@ -128,7 +128,7 @@ export default function Preguntas({ categoria, preguntas }){
 
                 .info{
                     margin-bottom: 25px;
-                    font-weight: bold;
+                    font-weight: 200;
                 }
 
                 .download{
