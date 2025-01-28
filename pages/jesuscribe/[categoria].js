@@ -58,7 +58,7 @@ export default function Preguntas({ categoria, preguntas }){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => router.push('/jesuscribe')}>Invitación</p>
-                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Banco de preguntas</p>
+                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Preguntas</p>
                     {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 <div className='principal'>
@@ -108,7 +108,9 @@ export default function Preguntas({ categoria, preguntas }){
                     padding: 10px 16px;
                     font-size: 18px;
                     font-family: 'Lato', sans-serif;
-                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     border-radius: 8px;
                     box-shadow: -2px 2px 5px 0px #888;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
