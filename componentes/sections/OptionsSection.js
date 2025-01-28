@@ -51,7 +51,7 @@ export default function OptionsSection({ options, select, onSelect, bot }){
                 @media screen and (max-width: 768px){
                     div{
                         flex-wrap: wrap;
-                        margin-bottom: 25px;
+                        margin-bottom: ${bot ? '35px' : '25px'};
                     }
 
                     p{

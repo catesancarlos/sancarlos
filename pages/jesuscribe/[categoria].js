@@ -136,7 +136,7 @@ export default function Preguntas({ categoria, preguntas }){
 
                 .download{
                     background: #EE1C21;
-                    padding: 1px 12px 3px 12px;
+                    padding: 1px 12px 2px 12px;
                     color: white;
                     font-size: 17px;
                     border-radius: 6px;
