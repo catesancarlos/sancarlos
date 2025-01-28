@@ -9,7 +9,17 @@ import TitleSection from '../../componentes/sections/TitleSection'
 import db  from '../../services/dBase'
 import { collection, getDocs } from 'firebase/firestore'
 
+import descarger from '../../utils/descarger'
+
 const categ = ['General', 'Vida de Jesús', 'Nuestra Iglesia', 'Sacramentologia', 'Liturgia', 'Multiple']
+const urls = [
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F01%20Jesuscibe%20-%20Cat%20General.pdf?alt=media&token=63c13580-f31f-41b1-a099-530d583410d7',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F02%20Jesuscibe%20-%20Cat%20Vida%20de%20Jesus.pdf?alt=media&token=c0eacabd-7de7-4cac-9d33-418c07d79dbd',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F03%20Jesuscibe%20-%20Cat%20Nuestra%20Iglesia.pdf?alt=media&token=5b997bbb-1659-480d-b785-c76323a3e3e7',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F04%20Jesuscibe%20-%20Cat%20Sacramentologia.pdf?alt=media&token=30911e8b-ef12-4e83-bf53-9a1b388eb01d',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F05%20Jesuscibe%20-%20Cat%20Liturgia.pdf?alt=media&token=d48e00bd-9221-4fc2-a2da-9276cddeee82',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F06%20Jesuscibe%20-%20Cat%20Multiple.pdf?alt=media&token=fc276489-ab57-4156-aa60-3bf1ad969283'
+]
 
 export default function Preguntas({ categoria, preguntas }){
     const router = useRouter()
@@ -35,6 +45,10 @@ export default function Preguntas({ categoria, preguntas }){
         if(e==6) router.push('/jesuscribe/js-multiple')
     }
 
+    const handleDownload = () => {
+        descarger([urls[select-1], `Preguntas_${categoria}`])
+    }
+
     return(
         <AppLayout titulo='San Carlos - Jesuscribe' name='Jesuscribe'>
             <Container
@@ -48,16 +62,18 @@ export default function Preguntas({ categoria, preguntas }){
                     {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 <div className='principal'>
+                    <p className='info'>Las preguntas para el concurso están divididas por categorías, escoge una para revisarlas:</p>
                     <OptionsSection
                         options={categ}
                         select={select}
                         onSelect={handleChangeCategory}
                     />
                     <TitleSection
-                        color='#EE1C21'
                         title={`Categoria: ${categ[select-1]}`}
                         desc={`Banco de preguntas de la categoría ${categ[select-1]}, para el concurso JESUSCRIBE de la Catequesis San Carlos de Ricaurte. Esta categoría cuenta con ${preguntas.length} preguntas.`}
-                    />
+                    >
+                        <p className='download' onClick={handleDownload}>Descargar</p>
+                    </TitleSection>
                     <div>
                         {
                             preguntas && preguntas?.sort(function(a, b){
@@ -110,6 +126,21 @@ export default function Preguntas({ categoria, preguntas }){
                     padding: 18px 0 18px 35px;
                 }
 
+                .info{
+                    margin-bottom: 25px;
+                    font-weight: bold;
+                }
+
+                .download{
+                    background: #EE1C21;
+                    padding: 3px 12px 4px 12px;
+                    color: white;
+                    font-size: 17px;
+                    font-weight: bold;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+
                 .cont-q{
                     margin-bottom: 16px;
                 }
@@ -134,7 +165,7 @@ export default function Preguntas({ categoria, preguntas }){
                 }
 
                 .correct{
-                    margin-top: 2px;
+                    margin-top: 3px;
                     margin-left: 40px;
                     color: brown;
                 }
@@ -161,6 +192,34 @@ export default function Preguntas({ categoria, preguntas }){
                     .principal{
                         width: 100%;
                         padding: 15px 0 0 0;
+                    }
+
+                    .cont-q{
+                        margin-bottom: 16px;
+                        font-size: 15px;
+                    }
+
+                    .question{
+                        display: flex;
+                        margin-bottom: 4px;
+                    }
+
+                    .question p{
+                        width: auto;
+                        text-align: left;
+                        margin-right: 4px;
+                    }
+
+                    .question strong{
+                        width: 100%;
+                    }
+
+                    .answer{
+                        margin-left: 20px;
+                    }
+
+                    .correct{
+                        margin-left: 20px;
                     }
                 }
             `}</style>

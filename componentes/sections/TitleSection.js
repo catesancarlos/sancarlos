@@ -1,12 +1,23 @@
-export default function TitleSection({ title, desc, color }){
+import { Children } from "react";
+
+export default function TitleSection({ title, desc, color, children }){
     return(
-        <div>
-            <strong>{title}</strong>
+        <div className='title-section'>
+            <div className='title'>
+                <strong>{title}</strong>
+                {children}
+            </div>
             <p>{desc}</p>    
 
             <style jsx>{`
-                div{
+                .title-section{
                     margin-bottom: 30px;
+                }
+
+                .title{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
 
                 strong{
@@ -21,7 +32,7 @@ export default function TitleSection({ title, desc, color }){
                 }
 
                 @media screen and (max-width: 768px){
-                    div{
+                    .title-section{
                         margin-bottom: 20px;
                     }
 

@@ -43,6 +43,9 @@ export default function Jesuscribe(){
                     font-size: 18px;
                     font-family: 'Lato', sans-serif;
                     text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     border-radius: 8px;
                     box-shadow: -2px 2px 5px 0px #888;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);

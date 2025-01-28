@@ -67,15 +67,26 @@ export default function OptionsSection({ options, select, onSelect }){
 
                     p:nth-child(2){
                         margin: 0 4px 5px 4px;
-                        border-radius: ${options.length ==3 ? '0' : '0 10px 10px 0'};
+                        border-radius: ${(options.length==3 || options.length==6) ? '0' : '0 10px 10px 0'};
                     }
 
                     p:nth-child(3){
-                        margin: ${options.length ==3 ? '0 4px 5px 4px' : '5px 4px 0 4px'};
-                        border-radius: ${options.length ==3 ? '0 10px 10px 0' : '10px 0 0 10px'};
+                        margin: ${options.length==3 ? '0 4px 5px 4px' : options.length==6 ? '0 0 5px 4px' : '5px 4px 0 4px'};
+                        border-radius: ${options.length==3 ? '0 10px 10px 0' : options.length==6 ? '0 10px 10px 0' : '10px 0 0 10px'};
                     }
 
                     p:nth-child(4){
+                        margin: 5px 4px 0 4px;
+                        border-radius: 0 10px 10px 0;
+                        border-radius: ${options.length==6 ? '10px 0 0 10px' : '0 10px 10px 0'};
+                    }
+
+                    p:nth-child(5){
+                        margin: 5px 4px 0 4px;
+                        border-radius: 0;
+                    }
+
+                    p:nth-child(6){
                         margin: 5px 4px 0 4px;
                         border-radius: 0 10px 10px 0;
                     }
