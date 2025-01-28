@@ -1,4 +1,4 @@
-export default function TitleSection({ title, desc }){
+export default function TitleSection({ title, desc, color }){
     return(
         <div>
             <strong>{title}</strong>
@@ -10,6 +10,7 @@ export default function TitleSection({ title, desc }){
                 }
 
                 strong{
+                    color: ${color ? color : 'black'};
                     font-size: 22px;
                 }
 

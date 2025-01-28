@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 import AppLayout from '../../componentes/layout'
 import Container from '../../componentes/sections/Container'
@@ -7,6 +8,7 @@ import EquiposKT25 from '../../componentes/campeonato25/EquiposKT25'
 import FormatoKT25 from '../../componentes/campeonato25/FormatoKT25'
 
 export default function Jesuscribe(){
+    const router = useRouter()
     const [section, setSection] = useState(1)
 
     return(
@@ -18,8 +20,8 @@ export default function Jesuscribe(){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Invitación</p>
-                    {/* <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Banco de preguntas</p>
-                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
+                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => router.push('/jesuscribe/js-general')}>Banco de preguntas</p>
+                    {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 <div className='principal'>
                     {

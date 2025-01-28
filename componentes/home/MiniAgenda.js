@@ -123,7 +123,7 @@ const MiniAgenda = () => {
                 article{
                     background: white;
                     width: calc(25% - 15px);
-                    border: 2px solid #00000088;
+                    border: 2px solid #000000AA;
                     border-radius: 15px;
                     margin-right: 20px;
                     box-shadow: 2px 2px 4px 0px #777;
@@ -143,7 +143,7 @@ const MiniAgenda = () => {
                 .clases-dr{
                     margin: 1px 0 4px 0;
                     width: 50%;
-                    padding: 0 16px;
+                    padding: 2px 16px 3px 16px;
                     font-size: 15px;
                     display: flex;
                     flex-direction: column;
@@ -167,7 +167,7 @@ const MiniAgenda = () => {
                 }
 
                 .e_header{
-                    background: #00000088;
+                    background: #000000AA;
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     padding: 8px 10px 10px 10px;
                     color: white;
@@ -235,7 +235,7 @@ const MiniAgenda = () => {
                     .clases-dr{
                         margin: 1px 0 4px 0;
                         width: 51%;
-                        padding: 3px 6px 4px 8px;
+                        padding: 2px 6px 3px 8px;
                         font-size: 13px;
                     }
 
