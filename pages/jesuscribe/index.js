@@ -20,7 +20,7 @@ export default function Jesuscribe(){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Invitación</p>
-                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => router.push('/jesuscribe/js-general')}>Banco de preguntas</p>
+                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => router.push('/jesuscribe/js-general')}>Preguntas</p>
                     {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 <div className='principal'>
