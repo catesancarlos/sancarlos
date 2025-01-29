@@ -69,12 +69,12 @@ export default function ItemTime({ title, desc, img, date }){
                     }
 
                     .content p{
-                        padding: 4px 12px 13px 12px;
-                        font-size: 14px;
+                        padding: 4px 12px 12px 12px;
+                        font-size: 13px;
                     }
 
                     .date{
-                        padding: 11px 14px 12px 14px;
+                        padding: 10px 14px 11px 14px;
                         font-size: 13px;
                     }
                 }
