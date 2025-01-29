@@ -57,6 +57,11 @@ const Header = ({ name, flecha, auth }) => {
                     >JESUSCRIBE</p>
                     <p
                         className='item-menu'
+                        onClick={() => router.push('/timeline')}
+                        style={{color: name=='Timeline' ? 'brown' : 'black', fontWeight: name=='Timeline' ? 'bold' : '200'}}
+                    >TIMELINE</p>
+                    <p
+                        className='item-menu'
                         onClick={() => router.push('/libros')}
                         style={{color: name=='Libros' ? 'brown' : 'black', fontWeight: name=='Libros' ? 'bold' : '200'}}
                     >LIBROS</p>
