@@ -7,10 +7,16 @@ export default function Timenine(){
         <AppLayout titulo='San Carlos - Timeline' name='Timeline'>
             <section>
                 <ItemTime
-                    title='Inauguración KT Campeonato 2025 [Tardes]'
-                    desc='Vuelve el campeonato de la Catequesis San Carlos, un espacio de sana competencia y trabajo en equipo.'
-                    img='/inag_kt_camp_2025_1.jpg'
-                    date='11 enero 2025'
+                    title='Catequesis Familiar Febrero'
+                    desc='Horarios por niveles para la Catequesis familiar del mes de febrero. Llegar puntuales.'
+                    img='/cat_fam_feb_25.jpg'
+                    date='27 enero 2025'
+                />
+                <ItemTime
+                    title='Misa Mensual Febrero'
+                    desc='El primer sábado de cada mes en la Catequesis tenemos eucaristia. Jesús te espera.'
+                    img='/misa_feb_25.jpg'
+                    date='27 enero 2025'
                 />
                 <ItemTime
                     title='Inauguración KT Campeonato 2025 [Tardes]'
