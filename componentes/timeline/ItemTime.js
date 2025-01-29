@@ -24,8 +24,8 @@ export default function ItemTime({ title, desc, img, date }){
                 }
 
                 .header{
-                    padding: 10px 12px 4px 12px;
-                    font-size: 16px;
+                    padding: 10px 12px 3px 12px;
+                    font-size: 17px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -36,9 +36,9 @@ export default function ItemTime({ title, desc, img, date }){
                 }
 
                 .content p{
-                    padding: 4px 12px 13px 12px;
-                    color: #777;
-                    font-size: 14px;
+                    padding: 3px 12px 13px 12px;
+                    color: #222;
+                    font-size: 16px;
                     font-weight: 200;
                 }
 
@@ -52,8 +52,8 @@ export default function ItemTime({ title, desc, img, date }){
 
                 .date{
                     padding: 11px 14px 12px 14px;
-                    color: #777;
-                    font-size: 13px;
+                    color: #678;
+                    font-size: 15px;
                     font-weight: 200;
                 }
 
@@ -64,18 +64,18 @@ export default function ItemTime({ title, desc, img, date }){
                     }
 
                     .header{
-                        padding: 10px 12px 3px 12px;
+                        padding: 8px 12px 2px 12px;
                         font-size: 15px;
                     }
 
                     .content p{
                         color: #222;
-                        padding: 3px 12px 11px 12px;
+                        padding: 2px 12px 11px 12px;
                         font-size: 14px;
                     }
 
                     .date{
-                        padding: 10px 14px 11px 14px;
+                        padding: 9px 14px 10px 14px;
                         font-size: 13px;
                     }
                 }
