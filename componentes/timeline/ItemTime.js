@@ -70,7 +70,7 @@ export default function ItemTime({ title, desc, img, date }){
 
                     .content p{
                         color: #222;
-                        padding: 3px 12px 12px 12px;
+                        padding: 3px 12px 10px 12px;
                         font-size: 13px;
                     }
 

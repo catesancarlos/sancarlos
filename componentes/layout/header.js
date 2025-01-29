@@ -48,12 +48,7 @@ const Header = ({ name, flecha, auth }) => {
                     <p
                         className='item-menu'
                         onClick={() => router.push('/jesuscribe')}
-                        style={{
-                            background: name=='Jesuscribe' ? '#EE1C21' : 'transparent',
-                            color: name=='Jesuscribe' ? 'white' : 'black',
-                            fontWeight: name=='Jesuscribe' ? 'bold' : '200',
-                            borderRadius: '10px'
-                        }}
+                        style={{color: name=='Jesuscribe' ? '#EE1C21' : 'black', fontWeight: name=='Jesuscribe' ? 'bold' : '200'}}
                     >JESUSCRIBE</p>
                     <p
                         className='item-menu'
