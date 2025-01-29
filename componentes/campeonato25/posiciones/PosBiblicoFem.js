@@ -196,7 +196,7 @@ export default function PosBiblicoFem(){
                 @media screen and (max-width: 768px){
                     .title{
                         margin-top: 24px;
-                        font-size: 17px;
+                        font-size: 16px;
                         margin-bottom: 12px;
                     }
                     

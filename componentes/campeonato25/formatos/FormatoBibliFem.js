@@ -1,4 +1,4 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 const FormatoBibliFem = ({ sin }) => {
 
@@ -84,8 +84,10 @@ const FormatoBibliFem = ({ sin }) => {
 
             <style jsx>{`
                 section{
-                    padding-top: ${sin ? '10px' : '0'};
                     font-family: 'Lato', sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 p{
@@ -122,7 +124,6 @@ const FormatoBibliFem = ({ sin }) => {
 
                 .t1{
                     margin-top: 8px;
-                    margin-left: calc(50% - 100px);
                 }
 
                 td{
@@ -135,16 +136,17 @@ const FormatoBibliFem = ({ sin }) => {
                 }
 
                 @media screen and (max-width: 768px){
+                    p{
+                        margin-top: 12px;
+                        font-size: 16px;
+                    }
+
                     .cont-logos{
                         margin-top: 10px;
                         display: flex;
                         justify-content: space-around;
                         flex-wrap: wrap;
                         margin-bottom: 20px;
-                    }
-
-                    .t1{
-                        margin-left: calc(50% - 115px);
                     }
                 }
             `}</style>

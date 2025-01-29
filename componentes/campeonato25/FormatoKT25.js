@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 import TitleSection from '../sections/TitleSection'
 import OptionsSection from '../sections/OptionsSection'
-import FormatoConfMas from './FormatoConfMas'
-import FormatoConfFem from './FormatoConfFem'
-import FormatoBibliMas from './FormatoBibliMas'
-import FormatoBibliFem from './FormatoBibliFem'
+import FormatoConfMas from './formatos/FormatoConfMas'
+import FormatoConfFem from './formatos/FormatoConfFem'
+import FormatoBibliMas from './formatos/FormatoBibliMas'
+import FormatoBibliFem from './formatos/FormatoBibliFem'
 
 export default function FormatoKT25(){
     const [select, setSelect] = useState(3)

@@ -83,7 +83,7 @@ export default function PartidosPasados({ title, fecha, home }){
                 @media screen and (max-width: 768px){
                     p{
                         margin-top: ${home ? '25px' : '0'};
-                        font-size: 18px;
+                        font-size: 16px;
                         font-size: 400;
                     }
                 }

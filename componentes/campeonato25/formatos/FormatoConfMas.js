@@ -1,4 +1,4 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 const FormatoConfMas = ({ sin }) => {
 
@@ -351,8 +351,10 @@ const FormatoConfMas = ({ sin }) => {
             
             <style jsx>{`
                 section{
-                    padding-top: 10px;
                     font-family: 'Lato', sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 p{
@@ -386,17 +388,14 @@ const FormatoConfMas = ({ sin }) => {
 
                 .t1{
                     margin-top: 8px;
-                    margin-left: calc(50% - 70px);
                 }
 
                 .t21{
                     margin-top: 8px;
-                    margin-left: calc(50% - 60px);
                 }
 
                 .t2{
                     margin-top: 8px;
-                    margin-left: calc(50% - 50px);
                 }
 
                 td{
@@ -430,12 +429,10 @@ const FormatoConfMas = ({ sin }) => {
 
                 .t10{
                     margin-top: 8px;
-                    margin-left: calc(50% - 140px);
                 }
 
                 .t11{
                     margin-top: 8px;
-                    margin-left: calc(50% - 220px);
                 }
 
                 .tlarge11{
@@ -443,6 +440,11 @@ const FormatoConfMas = ({ sin }) => {
                 }
 
                 @media screen and (max-width: 768px){
+                    p{
+                        margin-top: 12px;
+                        font-size: 16px;
+                    }
+
                     .cont-logos{
                         width: 100%;
                         margin-top: 10px;
@@ -450,22 +452,6 @@ const FormatoConfMas = ({ sin }) => {
                         justify-content: space-around;
                         flex-wrap: wrap;
                         margin-bottom: 20px;
-                    }
-
-                    .t1{
-                        margin-left: calc(50% - 72px);
-                    }
-
-                    .t21{
-                        margin-left: calc(50% - 62px);
-                    }
-
-                    .t10{
-                        margin-left: calc(50% - 145px);
-                    }
-
-                    .t11{
-                        margin-left: calc(50% - 155px);
                     }
 
                     .tlarge11{

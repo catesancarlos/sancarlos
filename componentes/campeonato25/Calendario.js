@@ -83,7 +83,7 @@ export default function Calendario({ fecha1, fecha2, children }){
 
                 @media screen and (max-width: 768px){
                     strong{
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                 }
             `}</style>

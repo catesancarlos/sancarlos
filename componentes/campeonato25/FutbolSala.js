@@ -2,8 +2,8 @@ const FutbolSala = () => {
 
     return (
         <section>
-            <p className='pf1'>Reglas Fútbol Sala</p>
-            <p className='sa'>
+            <strong className='sb1'>Reglas Fútbol Sala</strong>
+            <p>
                 Reglamento de la disciplina de fútbol sala que se empleara para el campeonato.
             </p>
             <p className='sb'>
@@ -212,27 +212,46 @@ const FutbolSala = () => {
 
             <style jsx>{`
                 section{
-                    font-family: 'Lato', sans-serif;
+                font-family: 'Lato', sans-serif;
                 }
 
-                .pf1{
-                    font-size: 20px;
-                    font-weight: bold;
+                strong{
+                    font-size: 17px;
                 }
 
                 p{
-                    margin-top: 15px;
+                    margin-top: 10px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 0;
                 }
 
-                .sa{
-                    margin-top: 6px;
+                .sb1{
+                    margin-bottom: 8px;
                 }
 
                 .sb{
-                    margin-top: 25px;
+                    margin-top: 20px;
+                    margin-bottom: 8px;
+                }
+
+                @media screen and (max-width: 768px){
+                    strong{
+                        font-size: 16px;
+                    }
+
+                    p{
+                        margin-top: 8px;
+                        font-size: 16px;
+                    }
+
+                    .sb1{
+                        margin-bottom: 8px;
+                    }
+
+                    .sb{
+                        margin-top: 20px;
+                        margin-bottom: 8px;
+                    }
                 }
             `}</style>
         </section> 

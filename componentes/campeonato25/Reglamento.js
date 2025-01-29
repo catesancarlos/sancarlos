@@ -2,8 +2,8 @@ const Reglamento = () => {
 
     return (
         <section>
-            <p className='pf1'>Reglamento Campeonato Catequesis 2025</p>
-            <p className='sa'>
+            <strong className='sb1'>Reglamento Campeonato Catequesis 2025</strong>
+            <p>
                 Con la finalidad de evitar problemas, con los equipos, participantes, grupos, 
                 catequistas, PPFF y otras personas que participen del campeonato, una vez inscrito a 
                 cada uno de los equipos se les entrega el reglamento y el formato de juego del mismo, 
@@ -11,7 +11,7 @@ const Reglamento = () => {
                 inconveniente. 
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 1: DISPOSICIONES INICIALES</strong> 
+                <strong>SECCIÓN 1: Disposiciones iniciales</strong> 
             </p>
             <p>
                 <strong>R1:</strong> El Comité de Sociales de la Catequesis San Carlos de Ricaurte, organiza 
@@ -57,7 +57,7 @@ const Reglamento = () => {
                 reglamento, los catequistas encargados tomaran las decisiones oportunas.
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 2: FORMATO DE JUEGO</strong> 
+                <strong>SECCIÓN 2: Formato de juego</strong> 
             </p>
             <p>
                 <strong>R9:</strong> El formato de juego para el Campeonato depende del nivel de cada grupo 
@@ -69,7 +69,7 @@ const Reglamento = () => {
                 enfrentamientos, puntajes y clasificatorias.
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 3: PARTICIPACIÓN</strong> 
+                <strong>SECCIÓN 3: Participación</strong> 
             </p>
             <p>
                 <strong>R11:</strong> El Campeonato está dirigido para todos los alumnos de la Catequesis San 
@@ -178,7 +178,7 @@ const Reglamento = () => {
                 dos días antes de su primer partido en la fase final
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 4: PARTIDOS</strong> 
+                <strong>SECCIÓN 4: Partidos</strong> 
             </p>
             <p>
                 <strong>R34:</strong> Los partidos tendrán una duración de 40 minutos, divididos en 2 
@@ -274,7 +274,7 @@ const Reglamento = () => {
                 fue suspendido.
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 5: PENALIZACIONES REGLAMENTO</strong> 
+                <strong>SECCIÓN 5: Penalizaciones reglamento</strong> 
             </p>
             <p>
                 <strong>R52:</strong> Si un equipo llegase a disputar partidos con un(a) jugador(a) que no 
@@ -304,7 +304,7 @@ const Reglamento = () => {
                 tabla general de la fase regular.
             </p>
             <p className='sb'>
-                <strong>SECCIÓN 6: SANCIONES, TARJETAS AMARILLAS Y ROJAS</strong> 
+                <strong>SECCIÓN 6: Sanciones, tarjetas amarilla y rojas</strong> 
             </p>
             <p>
                 <strong>R56:</strong> El árbitro es la autoridad única e inapelable en cada uno de los partidos.
@@ -373,29 +373,43 @@ const Reglamento = () => {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .pf1{
-                    font-size: 20px;
-                    font-weight: bold;
+                strong{
+                    font-size: 17px;
                 }
 
                 p{
-                    margin-top: 15px;
+                    margin-top: 10px;
                     font-size: 17px;
                     font-weight: 200;
-                    margin-bottom: 0;
                 }
 
-                .st{
-                    margin-top: 5px;
-                    margin-bottom: 0;
-                }
-
-                .sa{
-                    margin-top: 6px;
+                .sb1{
+                    margin-bottom: 8px;
                 }
 
                 .sb{
-                    margin-top: 25px;
+                    margin-top: 20px;
+                    margin-bottom: 8px;
+                }
+
+                @media screen and (max-width: 768px){
+                    strong{
+                        font-size: 16px;
+                    }
+
+                    p{
+                        margin-top: 8px;
+                        font-size: 16px;
+                    }
+
+                    .sb1{
+                        margin-bottom: 8px;
+                    }
+
+                    .sb{
+                        margin-top: 20px;
+                        margin-bottom: 8px;
+                    }
                 }
             `}</style>
         </section> 

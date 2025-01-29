@@ -1,4 +1,4 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 const FormatoConfFem = ({ sin }) => {
 
@@ -484,11 +484,14 @@ const FormatoConfFem = ({ sin }) => {
 
             <style jsx>{`
                 section{
-                    padding-top: ${sin ? '10px' : '40px'};
                     font-family: 'Lato', sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 p{
+                    width: 100%;
                     margin-top: 15px;
                     font-size: 17px;
                     font-weight: 200;
@@ -517,19 +520,20 @@ const FormatoConfFem = ({ sin }) => {
                     margin-bottom: 0;
                 }
 
-                .t1{
-                    margin-top: 8px;
-                    margin-left: calc(50% - 70px);
+                .ta-pos{
+                    display: flex;
                 }
 
-                .t21{
-                    margin-top: 8px;
-                    margin-left: calc(50% - 60px);
+                .ta-pos table, .ta-pos2 table{
+                    margin: 8px 10px 0 10px;
+                }
+
+                .ta-pos2{
+                    display: flex;
                 }
 
                 .t2{
                     margin-top: 8px;
-                    margin-left: calc(50% - 50px);
                 }
 
                 td{
@@ -545,33 +549,16 @@ const FormatoConfFem = ({ sin }) => {
                     width: 40px;
                 }
 
-                .ta-pos{
-                    display: flex;
-                    margin-left: calc(50% - 160px);
-                }
-
-                .ta-pos2{
-                    display: flex;
-                    margin-left: calc(50% - 270px);
-                }
-
-                .ta-pos table, .ta-pos2 table{
-                    margin: 8px 10px 0 10px;
-                }
-
                 .t3{
                     margin-top: 8px;
-                    margin-left: calc(50% - 130px);
                 }
 
                 .t31{
                     margin-top: 8px;
-                    margin-left: calc(50% - 110px);
                 }
 
                 .t4{
                     margin-top: 8px;
-                    margin-left: calc(50% - 180px);
                 }
 
                 .tlarge{
@@ -591,6 +578,11 @@ const FormatoConfFem = ({ sin }) => {
                 }
 
                 @media screen and (max-width: 768px){
+                    p{
+                        margin-top: 12px;
+                        font-size: 16px;
+                    }
+                    
                     .cont-logos{
                         margin-top: 10px;
                         display: flex;
@@ -601,37 +593,15 @@ const FormatoConfFem = ({ sin }) => {
 
                     .ta-pos{
                         display: flex;
-                        margin-left: calc(50% - 175px);
                     }
 
                     .ta-pos2{
                         display: flex;
                         flex-direction: column;
-                        margin-left: calc(50% - 175px);
                     }
 
                     .ta-pos2 table{
                         margin: 8px 0;
-                    }
-
-                    .t3{
-                        margin-left: calc(50% - 0px);
-                    }
-
-                    .t31{
-                        margin-left: calc(50% - 110px);
-                    }
-
-                    .t2{
-                        margin-left: calc(50% - 55px);
-                    }
-
-                    .t3{
-                        margin-left: calc(50% - 145px);
-                    }
-
-                    .t31{
-                        margin-left: calc(50% - 125px);
                     }
                 }
             `}</style>

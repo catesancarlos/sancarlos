@@ -1,4 +1,4 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 const FormatoBibliMas = ({ sin }) => {
 
@@ -279,8 +279,10 @@ const FormatoBibliMas = ({ sin }) => {
 
             <style jsx>{`
                 section{
-                    padding-top: 10px;
                     font-family: 'Lato', sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 p{
@@ -313,12 +315,10 @@ const FormatoBibliMas = ({ sin }) => {
 
                 .t1{
                     margin-top: 8px;
-                    margin-left: calc(50% - 100px);
                 }
 
                 .t2{
                     margin-top: 8px;
-                    margin-left: calc(50% - 50px);
                 }
 
                 td{
@@ -336,7 +336,6 @@ const FormatoBibliMas = ({ sin }) => {
 
                 .ta-pos{
                     display: flex;
-                    margin-left: calc(50% - 160px);
                 }
 
                 .ta-pos table{
@@ -345,12 +344,10 @@ const FormatoBibliMas = ({ sin }) => {
 
                 .t3{
                     margin-top: 8px;
-                    margin-left: calc(50% - 120px);
                 }
 
                 .t4{
                     margin-top: 8px;
-                    margin-left: calc(50% - 180px);
                 }
 
                 .tlarge{
@@ -370,28 +367,17 @@ const FormatoBibliMas = ({ sin }) => {
                 }
 
                 @media screen and (max-width: 768px){
+                    p{
+                        margin-top: 12px;
+                        font-size: 16px;
+                    }
+
                     .cont-logos{
                         margin-top: 10px;
                         display: flex;
                         justify-content: space-around;
                         flex-wrap: wrap;
                         margin-bottom: 20px;
-                    }
-
-                    .t1{
-                        margin-left: calc(50% - 115px);
-                    }
-
-                    .t2{
-                        margin-left: calc(50% - 55px);
-                    }
-
-                    .ta-pos{
-                        margin-left: calc(50% - 175px);
-                    }
-
-                    .t3{
-                        margin-left: calc(50% - 125px);
                     }
                 }
             `}</style>
