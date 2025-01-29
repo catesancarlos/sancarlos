@@ -9,8 +9,9 @@ const Goleadores = () => {
     return (
         <section>
             <TitleSection
-                title='Tabla de Goleadores'
+                title='Goleadores Campeonato 2025'
                 desc='Tablas de goleadores del Campeonato 2025.'
+                color='#245590'
             />
             <OptionsSection
                 options={['Masculino', 'Femenino']}

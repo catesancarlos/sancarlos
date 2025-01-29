@@ -7,7 +7,7 @@ export default function TitleSection({ title, desc, color, children }){
                 <strong>{title}</strong>
                 {children}
             </div>
-            <p>{desc}</p>    
+            <i>{desc}</i>    
 
             <style jsx>{`
                 .title-section{
@@ -23,10 +23,10 @@ export default function TitleSection({ title, desc, color, children }){
                 strong{
                     color: ${color ? color : 'black'};
                     font-size: 22px;
+                    margin-bottom: 6px;
                 }
 
-                p{
-                    margin-top: 6px;
+                i{
                     font-size: 17px;
                     font-weight: 200;
                 }
@@ -37,7 +37,12 @@ export default function TitleSection({ title, desc, color, children }){
                     }
 
                     strong{
-                        font-size: 20px;
+                        font-size: 18px;
+                        margin-bottom: 2px;
+                    }
+
+                    i{
+                        font-size: 16px;
                     }
                 }
             `}</style>

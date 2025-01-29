@@ -1,4 +1,4 @@
-export default function OptionsSection({ options, select, onSelect, bot }){
+export default function OptionsSection({ options, select, onSelect, bot, pos }){
 
     return(
         <div>
@@ -18,7 +18,7 @@ export default function OptionsSection({ options, select, onSelect, bot }){
                 div{
                     display: flex;
                     justify-content: center;
-                    margin-bottom: ${bot ? '40px' : '30px'};
+                    margin-bottom: ${bot ? '40px' : pos ? '0' : '28px'};
                 }
 
                 p{
@@ -51,43 +51,73 @@ export default function OptionsSection({ options, select, onSelect, bot }){
                 @media screen and (max-width: 768px){
                     div{
                         flex-wrap: wrap;
-                        margin-bottom: ${bot ? '35px' : '25px'};
+                        margin-bottom: ${bot ? '35px' : pos ? '0' : '24px'};
                     }
 
                     p{
                         margin: 0;
-                        padding: 7px 11px 8px 11px;
-                        font-size: 15px;
+                        padding: 5px 11px 5px 11px;
+                        font-size: 14px;
                     }
 
-                    p:nth-child(1){
-                        margin: 0 4px 5px 4px;
+                    /* p:nth-child(1){
+                        margin: ${options.length==4 ? '0 4px 5px 10px' : '0 4px 5px 4px'};
                         border-radius: 10px 0 0 10px;
                     }
 
                     p:nth-child(2){
-                        margin: 0 4px 5px 4px;
+                        margin: ${options.length==4 ? '0 10px 5px 4px' : '0 4px 5px 4px'};
                         border-radius: ${(options.length==3 || options.length==6) ? '0' : '0 10px 10px 0'};
                     }
 
                     p:nth-child(3){
-                        margin: ${options.length==3 ? '0 4px 5px 4px' : options.length==6 ? '0 0 5px 4px' : '5px 4px 0 4px'};
+                        margin: ${options.length==3 ? '0 4px 5px 4px' : options.length==6 ? '0 0 5px 4px' : '3px 4px 0 4px'};
                         border-radius: ${options.length==3 ? '0 10px 10px 0' : options.length==6 ? '0 10px 10px 0' : '10px 0 0 10px'};
                     }
 
                     p:nth-child(4){
-                        margin: 5px 4px 0 4px;
+                        margin: 3px 4px 0 4px;
                         border-radius: 0 10px 10px 0;
                         border-radius: ${options.length==6 ? '10px 0 0 10px' : '0 10px 10px 0'};
                     }
 
                     p:nth-child(5){
-                        margin: 5px 4px 0 4px;
+                        margin: 3px 4px 0 4px;
                         border-radius: 0;
                     }
 
                     p:nth-child(6){
-                        margin: 5px 4px 0 4px;
+                        margin: 3px 4px 0 4px;
+                        border-radius: 0 10px 10px 0;
+                    } */
+
+                    p:nth-child(1){
+                        margin-right: 7px;
+                        border-radius: 10px 0 0 10px;
+                    }
+
+                    p:nth-child(2){
+                        margin-right: 7px;
+                        border-radius: ${options.length==2 ? '0 10px 10px 0' : '0'};
+                    }
+
+                    p:nth-child(3){
+                        margin-right: 7px;
+                        border-radius: ${(options.length==3 || options.length==6) ? '0 10px 10px 0' : '0'};
+                    }
+
+                    p:nth-child(4){
+                        margin: ${options.length==6 ? '6px 7px 0 0' : '0 7px 0 0'};
+                        border-radius: ${options.length==6 ? '10px 0 0 10px' : '0 10px 10px 0'};
+                    }
+
+                    p:nth-child(5){
+                        margin: 6px 7px 0 0;
+                        border-radius: 0;
+                    }
+
+                    p:nth-child(6){
+                        margin: 6px 0 0 0;
                         border-radius: 0 10px 10px 0;
                     }
                 }

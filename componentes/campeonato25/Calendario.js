@@ -10,6 +10,7 @@ export default function Calendario({ fecha1, fecha2, children }){
             <TitleSection
                 title='Calendario Campeonato 2025'
                 desc='Fecha y hora de los partidos del campeonato.'
+                color='#245590'
             />
             <div>
                 <strong>Tercera semana</strong>
@@ -82,7 +83,7 @@ export default function Calendario({ fecha1, fecha2, children }){
 
                 @media screen and (max-width: 768px){
                     strong{
-                        font-size: 19px;
+                        font-size: 18px;
                     }
                 }
             `}</style>

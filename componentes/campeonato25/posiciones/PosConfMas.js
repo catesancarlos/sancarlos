@@ -1,8 +1,9 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 export default function PosConfMas(){
     return(
         <section>
+            <strong className='title'>Fixture Confirmación - Masculino:</strong>
             <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p>
             <div className='cont'>
                 <div className='primera'>
@@ -341,6 +342,18 @@ export default function PosConfMas(){
             </div>
             
             <style jsx>{`
+                section{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .title{
+                    margin-top: 28px;
+                    width: 100%;
+                    font-size: 20px;
+                    margin-bottom: 25px;
+                }
+
                 .info{
                     display: none;
                 }
@@ -425,15 +438,15 @@ export default function PosConfMas(){
                 }
 
                 @media screen and (max-width: 768px){
-                    section{
-                        margin: 0 -15px 0 -15px;
-                        padding-left: 15px;
-                        overflow: scroll;
+                    .title{
+                        margin-top: 24px;
+                        font-size: 17px;
+                        margin-bottom: 12px;
                     }
 
                     .info{
                         color: red;
-                        font-size: 15px;
+                        font-size: 14px;
                         display: block;
                         margin-bottom: 10px;
                         text-align: center;
@@ -441,6 +454,9 @@ export default function PosConfMas(){
 
                     .cont{
                         justify-content: flex-start;
+                        margin: 0 -15px 0 -15px;
+                        padding-left: 15px;
+                        overflow: scroll;
                     }
 
                     .segunda-cont{

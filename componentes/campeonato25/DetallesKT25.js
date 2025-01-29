@@ -12,7 +12,8 @@ const DetallesKT25 = () => {
         <section>
             <TitleSection
                 title='Bienvenidos al Campeonato 2025'
-                desc='Encuentra a continuación las reglas y directrices para el campeonato.'
+                desc='Reglas y directrices para el campeonato.'
+                color='#245590'
             />
             <OptionsSection
                 options={['Detalles', 'Reglamento', 'Reglas Futbol Sala']}

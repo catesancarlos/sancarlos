@@ -8,13 +8,13 @@ export default function Timenine(){
             <section>
                 <ItemTime
                     title='Catequesis Familiar Febrero'
-                    desc='Horarios por niveles para la Catequesis familiar del mes de febrero. Llegar puntuales.'
+                    desc='Horarios por niveles para la Catequesis familiar del mes de febrero.'
                     img='/cat_fam_feb_25.jpg'
                     date='27 enero 2025'
                 />
                 <ItemTime
                     title='Misa Mensual Febrero'
-                    desc='El primer sábado de cada mes en la Catequesis tenemos eucaristia. Jesús te espera.'
+                    desc='El primer sábado de cada mes en la Catequesis tenemos eucaristia, en este mes, estos seran los horarios.'
                     img='/misa_feb_25.jpg'
                     date='27 enero 2025'
                 />

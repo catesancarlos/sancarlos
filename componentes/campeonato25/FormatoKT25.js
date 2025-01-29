@@ -15,9 +15,10 @@ export default function FormatoKT25(){
             <TitleSection
                 title='Formato Campeonato 2025'
                 desc='Detalle de formato que se empleará para el campeonato.'
+                color='#245590'
             />
             <OptionsSection
-                options={['Año Biblico (M)', 'Año Biblico (F)', 'Confirmación (M)', 'Confirmación (F)']}
+                options={['AB (M)', 'AB (F)', 'CONF (M)', 'CONF (F)']}
                 select={select}
                 onSelect={op => setSelect(op)}
             />

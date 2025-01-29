@@ -8,6 +8,7 @@ const EquiposKT25 = () => {
             <TitleSection
                 title='Equipos participantes'
                 desc='Detalle de equipos que participan en este campeonato.'
+                color='#245590'
             />
             <strong>Año Bíblico</strong>
             <div className='cont-logos'>
