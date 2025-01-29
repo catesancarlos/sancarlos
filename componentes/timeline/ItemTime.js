@@ -60,7 +60,7 @@ export default function ItemTime({ title, desc, img, date }){
                 @media screen and (max-width: 768px){
                     article{
                         width: 100%;
-                        margin-bottom: 30px;
+                        margin-bottom: 25px;
                     }
 
                     .header{
