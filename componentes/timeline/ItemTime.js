@@ -24,7 +24,7 @@ export default function ItemTime({ title, desc, img, date }){
                 }
 
                 .header{
-                    padding: 10px 12px 3px 12px;
+                    padding: 10px 12px 4px 12px;
                     font-size: 16px;
                     display: flex;
                     justify-content: space-between;
@@ -36,8 +36,8 @@ export default function ItemTime({ title, desc, img, date }){
                 }
 
                 .content p{
-                    padding: 3px 12px 13px 12px;
-                    color: #222;
+                    padding: 4px 12px 13px 12px;
+                    color: #777;
                     font-size: 14px;
                     font-weight: 200;
                 }
@@ -64,12 +64,13 @@ export default function ItemTime({ title, desc, img, date }){
                     }
 
                     .header{
-                        padding: 10px 12px 4px 12px;
+                        padding: 10px 12px 3px 12px;
                         font-size: 15px;
                     }
 
                     .content p{
-                        padding: 4px 12px 12px 12px;
+                        color: #444;
+                        padding: 3px 12px 12px 12px;
                         font-size: 13px;
                     }
 
