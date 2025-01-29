@@ -37,7 +37,7 @@ export default function ItemTime({ title, desc, img, date }){
 
                 .content p{
                     padding: 4px 12px 13px 12px;
-                    color: #777;
+                    color: #444;
                     font-size: 14px;
                     font-weight: 200;
                 }
