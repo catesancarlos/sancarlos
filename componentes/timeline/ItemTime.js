@@ -16,7 +16,7 @@ export default function ItemTime({ title, desc, img, date }){
                 
             <style jsx>{`
                 article{
-                    width: 500px;
+                    width: 580px;
                     background: white;
                     border-radius: 12px;
                     box-shadow: 2px 2px 4px 0px #777;
