@@ -29,7 +29,7 @@ export default function Timenine(){
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 0 4% 50px 4%;
+                    margin: 0 4% 0 4%;
                     width: 92%;
                     display: flex;
                     flex-direction: column;
