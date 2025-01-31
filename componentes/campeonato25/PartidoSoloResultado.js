@@ -67,7 +67,7 @@ export default function ItemCalendario({
                     justify-content: space-between;
                     border: 1px solid black;
                     border-radius: 6px;
-                    margin-bottom: 8px;
+                    margin-bottom: 12px;
                 }
 
                 .gender{

@@ -8,12 +8,12 @@ import { doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore'
 
 export default function Paasmal(){
     const [log, setLog] = useState(false)
-    const [fecha2, setFecha2] = useState({})
+    const [fecha3, setFecha3] = useState({})
 
     useEffect(() => {
         if(log){
-            onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
-                setFecha2(doc.data())
+            onSnapshot(doc(db, 'campeonato25', 'fecha3'), (doc) => {
+                setFecha3(doc.data())
             }) 
         }
     }, [log])
@@ -24,47 +24,75 @@ export default function Paasmal(){
 
     const handleStatus = async e => {
         if(e[0]==1){
-            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { partido1: e[1] })
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { partido1: e[1] })
         }
         if(e[0]==2){
-            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { partido2: e[1] })
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { partido2: e[1] })
         }
         if(e[0]==3){
-            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { partido3: e[1] })
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { partido3: e[1] })
         }
         if(e[0]==4){
-            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { partido4: e[1] })
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { partido4: e[1] })
+        }
+        if(e[0]==5){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { partido5: e[1] })
         }
     }
     
     const handleGoles = async e => {
         if(e[0]==1){
             if(e[1]==0){  
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res1: [e[2]=='+' ? fecha2.res1[0]+1 : fecha2.res1[0]-1, +fecha2.res1[1]] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res1: [e[2]=='+' ? fecha3.res1[0]+1 : fecha3.res1[0]-1, +fecha3.res1[1]] })
             } else{
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res1: [+fecha2.res1[0], e[2]=='+' ? fecha2.res1[1]+1 : fecha2.res1[1]-1] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res1: [+fecha3.res1[0], e[2]=='+' ? fecha3.res1[1]+1 : fecha3.res1[1]-1] })
             }
         }
         if(e[0]==2){
             if(e[1]==0){  
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res2: [e[2]=='+' ? fecha2.res2[0]+1 : fecha2.res2[0]-1, +fecha2.res2[1]] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res2: [e[2]=='+' ? fecha3.res2[0]+1 : fecha3.res2[0]-1, +fecha3.res2[1]] })
             } else{
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res2: [+fecha2.res2[0], e[2]=='+' ? fecha2.res2[1]+1 : fecha2.res2[1]-1] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res2: [+fecha3.res2[0], e[2]=='+' ? fecha3.res2[1]+1 : fecha3.res2[1]-1] })
             }
         }
         if(e[0]==3){
             if(e[1]==0){  
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res3: [e[2]=='+' ? fecha2.res3[0]+1 : fecha2.res3[0]-1, +fecha2.res3[1]] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res3: [e[2]=='+' ? fecha3.res3[0]+1 : fecha3.res3[0]-1, +fecha3.res3[1]] })
             } else{
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res3: [+fecha2.res3[0], e[2]=='+' ? fecha2.res3[1]+1 : fecha2.res3[1]-1] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res3: [+fecha3.res3[0], e[2]=='+' ? fecha3.res3[1]+1 : fecha3.res3[1]-1] })
             }
         }
         if(e[0]==4){
             if(e[1]==0){  
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res4: [e[2]=='+' ? fecha2.res4[0]+1 : fecha2.res4[0]-1, +fecha2.res4[1]] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res4: [e[2]=='+' ? fecha3.res4[0]+1 : fecha3.res4[0]-1, +fecha3.res4[1]] })
             } else{
-                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha2'), { res4: [+fecha2.res4[0], e[2]=='+' ? fecha2.res4[1]+1 : fecha2.res4[1]-1] })
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res4: [+fecha3.res4[0], e[2]=='+' ? fecha3.res4[1]+1 : fecha3.res4[1]-1] })
             }
+        }
+        if(e[0]==5){
+            if(e[1]==0){  
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res5: [e[2]=='+' ? fecha3.res5[0]+1 : fecha3.res5[0]-1, +fecha3.res5[1]] })
+            } else{
+                const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { res5: [+fecha3.res5[0], e[2]=='+' ? fecha3.res5[1]+1 : fecha3.res5[1]-1] })
+            }
+        }
+    }
+
+    const handleAgregar = async e => {
+        if(e[0]==1){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { jugador1: e[1] })
+        }
+        if(e[0]==2){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { jugador2: e[1] })
+        }
+        if(e[0]==3){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { jugador3: e[1] })
+        }
+        if(e[0]==4){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { jugador4: e[1] })
+        }
+        if(e[0]==5){
+            const docRef = await updateDoc(doc(db, 'campeonato25', 'fecha3'), { jugador5: e[1] })
         }
     }
 
@@ -75,10 +103,11 @@ export default function Paasmal(){
                     log ?
                         <PartidosSemana
                             title='Partidos de la semana:'
-                            fecha={fecha2}
-                            control={[1, 2, 3, 4]}
+                            fecha={fecha3}
+                            control={[1, 2, 3, 4, 5]}
                             onStatus={handleStatus}
                             onGoles={handleGoles}
+                            onAgregar={handleAgregar}
                         />
                     :
                         <div style={{ display: 'flex'}}>

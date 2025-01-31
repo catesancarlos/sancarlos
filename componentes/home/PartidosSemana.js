@@ -1,6 +1,14 @@
 import ItemCalendario from '../campeonato25/ItemCalendario'
 
-export default function PartidosSemana({ title, fecha, home, control, onStatus, onGoles }){    
+export default function PartidosSemana({
+    title,
+    fecha,
+    home,
+    control,
+    onStatus,
+    onGoles,
+    onAgregar
+}){    
 
     return (
         <>
@@ -8,6 +16,7 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
             <ItemCalendario
                 now={fecha?.partido1}
                 res={fecha?.res1}
+                jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
                 home={home}
                 control={control && control[0]}
@@ -25,13 +34,15 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
                 mas={[1, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
+                onAgregar={onAgregar}
             />
             <ItemCalendario
                 now={fecha?.partido2}
                 res={fecha?.res2}
+                jugador={fecha?.jugador2}
                 pen={fecha?.pen2}
                 home={home}
-                control={control && control[0]}
+                control={control && control[1]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='09h00'
@@ -45,13 +56,15 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
                 }}
                 onStatus={onStatus}
                 onGoles={onGoles}
+                onAgregar={onAgregar}
             />
             <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
+                jugador={fecha?.jugador3}
                 pen={fecha?.pen3}
                 home={home}
-                control={control && control[0]}
+                control={control && control[2]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='10h00'
@@ -65,13 +78,15 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
                 }}
                 onStatus={onStatus}
                 onGoles={onGoles}
+                onAgregar={onAgregar}
             />
             <ItemCalendario
                 now={fecha?.partido4}
                 res={fecha?.res4}
+                jugador={fecha?.jugador4}
                 pen={fecha?.pen4}
                 home={home}
-                control={control && control[0]}
+                control={control && control[3]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='11h00'
@@ -86,13 +101,15 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
                 mas={[2, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
+                onAgregar={onAgregar}
             />
             <ItemCalendario
                 now={fecha?.partido5}
                 res={fecha?.res5}
+                jugador={fecha?.jugador5}
                 pen={fecha?.pen5}
                 home={home}
-                control={control && control[0]}
+                control={control && control[4]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='12h00'
@@ -107,6 +124,7 @@ export default function PartidosSemana({ title, fecha, home, control, onStatus, 
                 mas={[1, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
+                onAgregar={onAgregar}
             />
 
             <style jsx>{`

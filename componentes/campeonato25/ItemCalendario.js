@@ -1,8 +1,11 @@
+import { useState } from 'react'
+
 import Equipo from './Equipo'
 
 export default function ItemCalendario({
     now,
     res,
+    jugador,
     pen,
     home,
     control,
@@ -16,10 +19,22 @@ export default function ItemCalendario({
     colores,
     mas,
     onStatus,
-    onGoles
+    onGoles,
+    onAgregar
 }) {
+    const [name, setName] = useState('')
+
+    const handleChange = e => {
+        setName(e.target.value)
+    }
+
+    const handleAgregar = e => {
+        onAgregar([control, name])
+    }
+
     return(
         <section>
+            <div className='tp'>
             <div className='genero'>
                 <strong>{genero}</strong>
             </div>
@@ -75,6 +90,18 @@ export default function ItemCalendario({
                     mas={mas && mas[1]}
                 />
             </div>
+            </div>
+            { (jugador && !control) && <p className='jugador'>{`Jugador${genero == 'F' ? 'a' : ''} del partido:`}<span>{jugador}</span></p> }
+            { control && 
+                <div className='jugador'>
+                    <input
+                        onChange={handleChange}
+                        value={name ? name : ''}
+                        placeholder={jugador ? jugador : ''}
+                    />
+                    <p onClick={handleAgregar}>Agregar</p>
+                </div>
+            }
 
             <style jsx>{`
                 section{
@@ -82,13 +109,44 @@ export default function ItemCalendario({
                     position: relative;
                     margin-top: 4px;
                     margin-left: 4px;
-                    padding: ${!control ? '5px 5px 5px 0' : '5px'};
                     font-family: 'Lato', sans-serif;
+                    border: ${genero == 'M' ? '1px solid #245590' : '1px solid #CC397B'};
+                    border-radius: 10px;
+                    border-bottom: ${jugador ? 'none' : 'auto'};
+                    margin-bottom: 12px;
+                }
+
+                .tp{
+                    padding: ${!control ? '5px 5px 5px 0' : '5px'};
                     display: flex;
                     justify-content: space-between;
-                    border: 1px solid black;
-                    border-radius: 6px;
-                    margin-bottom: 8px;
+                }
+
+                .jugador{
+                    width: 100%;
+                    background: ${genero == 'M' ? '#245590' : '#CC397B'};
+                    padding: 4px 0;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 200;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 0 0 6px 6px;
+                }
+
+                .jugador span{
+                    margin-left: 4px;
+                    font-weight: 400;
+                }
+
+                .jugador p{
+                    margin-left: 4px;
+                    background: white;
+                    padding: 0 5px;
+                    color: black;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
 
                 .genero{
@@ -114,6 +172,7 @@ export default function ItemCalendario({
 
                 .eq1, .eq2{
                     width: 180px;
+                    cursor: ${control ? 'pointer' : 'auto'};
                 }
 
                 .marc-glo{
@@ -236,6 +295,12 @@ export default function ItemCalendario({
                 @media screen and (max-width: 768px){
                     section{
                         width: 100%;
+                        border-radius: 6px;
+                    }
+
+                    .jugador{
+                        padding: 3px 0 3px 0;
+                        font-size: 11px;
                     }
 
                     .fecha{

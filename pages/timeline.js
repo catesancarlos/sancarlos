@@ -38,7 +38,7 @@ export default function Timenine(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 10px 15px 20px 15px;
+                        margin: 10px 15px 0px 15px;
                         width: calc(100% - 30px);
                     }
                 }

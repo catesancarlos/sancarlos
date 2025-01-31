@@ -4,17 +4,37 @@ import { useRouter } from 'next/router'
 import AppLayout from '../../componentes/layout'
 import Modal from '../../componentes/generales/ModalLibros'
 
-import { Viewer, Worker } from '@react-pdf-viewer/core'
+import { Worker, Viewer, ProgressBar } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+import { toolbarPlugin } from '@react-pdf-viewer/toolbar'
 
-import '@react-pdf-viewer/core/lib/styles/index.css'
 import '@react-pdf-viewer/default-layout/lib/styles/index.css'
+import '@react-pdf-viewer/toolbar/lib/styles/index.css'
 
 export default function Libros(){
     const router = useRouter()
     const [pdfe, setPdfe] = useState(null)
 
-    const newplugin = defaultLayoutPlugin()
+    const defaultLayoutPluginInstance = defaultLayoutPlugin({ 
+        sidebarTabs : () => [ ]
+    } )
+
+    const toolbarPluginInstance = toolbarPlugin()
+    const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance
+
+    const transform = slot => ({
+        ...slot,
+        Download: () => <></>,
+        DownloadMenuItem: () => <></>,
+        Open: () => <></>,
+        OpenMenuItem: () => <></>,
+        EnterFullScreen: () => <></>,
+        EnterFullScreenMenuItem: () => <></>,
+        SwitchTheme: () => <></>,
+        SwitchThemeMenuItem: () => <></>,
+        Print: () => <></>,
+        PrintMenuItem: () => <></>
+    })
 
     useEffect(() => {
         if(pdfe){
@@ -25,38 +45,83 @@ export default function Libros(){
     return(
         <AppLayout titulo='San Carlos - Libros' name='Libros'>
             <section>
-                <div onClick={() => setPdfe('/libros/iniciacion.pdf')}>
+                <article onClick={() => setPdfe('/libros/iniciacion.pdf')}>
                     <img src='/libros/portadaIniciacion.webp' />
                     <p>INICIACIÓN</p>
-                </div>
-                <div onClick={() => setPdfe('/libros/1ro-comunion.pdf')}>
+                </article>
+                <article onClick={() => setPdfe('/libros/1ro-comunion.pdf')}>
                     <img src='/libros/portada1rocomunion.webp' />
                     <p>1RO COMUNIÓN</p>
-                </div>
-                <div onClick={() => setPdfe('/libros/2do-comunion.pdf')}>
+                </article>
+                <article onClick={() => setPdfe('/libros/2do-comunion.pdf')}>
                     <img src='/libros/portada2docomunion.jpg' />
                     <p>2DO COMUNIÓN</p>
-                </div>
-                <div onClick={() => setPdfe('/libros/biblico.pdf')}>
+                </article>
+                <article onClick={() => setPdfe('/libros/biblico.pdf')}>
                     <img src='/libros/portadaBiblico.webp' />
                     <p>AÑO BIBLICO</p>
-                </div>
-                <div onClick={() => setPdfe('/libros/1ro-confirmacion.pdf')}>
+                </article>
+                <article onClick={() => setPdfe('/libros/1ro-confirmacion.pdf')}>
                     <img src='/libros/portada1roconfirmacion.webp' />
                     <p>1RO CONFIRMACIÓN</p>
-                </div>
-                <div onClick={() => setPdfe('/libros/2do-confirmacion.pdf')}>
+                </article>
+                <article onClick={() => setPdfe('/libros/2do-confirmacion.pdf')}>
                     <img src='/libros/portada2doconfirmacion.webp' />
                     <p>2DO CONFIRMACIÓN</p>
-                </div>
+                </article>
             
             </section>
             {
                 pdfe &&
                     <Modal background='#FFFFFFCC' onClose={(e) => setPdfe(e)} >
-                        <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js'>
-                            <div className='docvi'>
-                                <Viewer fileUrl={pdfe} plugins={[newplugin]} />
+                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                            <div
+                                style={{
+                                    border: '1px solid rgba(0, 0, 0, 0.3)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    height: '100%',
+                                    position: 'relative'
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        alignItems: 'center',
+                                        backgroundColor: '#eeeeee',
+                                        borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                                        display: 'flex',
+                                        padding: '0.25rem',
+                                        position: 'absolute',
+                                        width: '100%',
+                                        zIndex: '3'
+                                    }}
+                                >
+                                    <Toolbar>{renderDefaultToolbar(transform)}</Toolbar>
+                                </div>
+                                <div
+                                    style={{
+                                        flex: 1,
+                                        overflow: 'hidden',
+                                        zIndex: '2'
+                                    }}
+                                >
+                                    <Viewer 
+                                            fileUrl={pdfe} 
+                                            renderLoader={percentages => (
+                                                <div style={{ width: '240px'}}>
+                                                    <p>Cargando...</p>
+                                                    <ProgressBar progress={Math.round(percentages)} />
+                                                </div>
+                                            )}
+                                            theme={{
+                                                theme: 'light'
+                                            }}
+                                            plugins={[
+                                                defaultLayoutPluginInstance,
+                                                toolbarPluginInstance
+                                            ]}
+                                    />
+                                </div>
                             </div>
                         </Worker>
                     </Modal>
@@ -71,7 +136,7 @@ export default function Libros(){
                     flex-wrap: wrap
                 }
 
-                div{
+                article{
                     margin: 30px 55px;
                     cursor: pointer;
                     border-radius: 15px;
@@ -93,20 +158,13 @@ export default function Libros(){
                     text-align: center;
                     border-radius: 0 0 15px 15px;
                 }
-                
-                .docvi{
-                    min-height: 500px;
-                    width: 90vw;
-                    border-radius: 16px;
-                    overflow: hidden;
-                }
 
                 @media screen and (max-width: 768px){
                     section{
                         padding: 0 15px 0 15px;
                     }
 
-                    div{
+                    article{
                         margin: 18px 16px;
                         border-radius: 15px;
                         box-shadow: 4px 4px 8px 0px #777;
@@ -126,11 +184,6 @@ export default function Libros(){
                         font-weight: bold;
                         text-align: center;
                         border-radius: 0 0 15px 15px;
-                    }
-
-                    .docvi{
-                        width: 95vw;
-                        min-height: 580px;
                     }
                 }
             `}</style>
