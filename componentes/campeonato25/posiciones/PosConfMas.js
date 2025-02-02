@@ -125,9 +125,9 @@ export default function PosConfMas(){
                             mas='1'
                         />
                         <div className='marcador'>
-                            <strong className='meq'>0</strong>
+                            <strong className='meq'>12</strong>
                             <p className='vs'>vs</p>
-                            <strong className='meq'>0</strong>
+                            <strong className='meq'>7</strong>
                         </div>
                         <Equipo
                             pos
@@ -229,12 +229,13 @@ export default function PosConfMas(){
                                 <strong className='id'>3</strong>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Ganador E'
-                                    logo=''
-                                    color='#888'
-                                    borde='#888'
-                                    letter='white'
+                                    nombre='Predicadores'
+                                    paralelo='2do Confir. 4 (M1)'
+                                    logo='24M'
+                                    color='white'
+                                    borde='black'
+                                    letter='black'
+                                    mas='1'
                                 />
                                 <div className='marcador'>
                                     <strong className='meq'>0</strong>
@@ -314,11 +315,11 @@ export default function PosConfMas(){
                                 <strong className='id'>6</strong>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Perdedor E'
-                                    logo=''
-                                    color='#888'
-                                    borde='#888'
+                                    nombre='Traicioneros de Judas'
+                                    paralelo='2do Confir. 5 (M)'
+                                    logo='25M'
+                                    color='black'
+                                    borde='black'
                                     letter='white'
                                 />
                                 <div className='marcador'>

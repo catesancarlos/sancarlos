@@ -29,7 +29,10 @@ export default function Campeonato(){
         })
         onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
             setFecha2(doc.data())
-        })    
+        })
+        onSnapshot(doc(db, 'campeonato25', 'fecha3'), (doc) => {
+            setFecha3(doc.data())
+        })  
     }, [])
 
     useEffect(() => {

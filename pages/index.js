@@ -44,20 +44,7 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                <InfoSalida misa />
-                <MiniAgenda />
-                <div className='banner'>
-                    <PartidoIda />
-                    {/* <img src='/main_banner.jpg' /> */}
-                    {/* <div className='hover_now'>
-                        <p className='now_now'>En este momento:</p>
-                        <p className='now_tittle'>
-                            {toggle ? 'Catequesis Familiar 2do Confirmación' :
-                            'Catequesis Familiar Iniciación'}
-                        </p>
-                    </div> */}
-                </div>
-                
+                {/* <InfoSalida misa /> */}
                 <CampSection>
                     <PartidosSemana
                         title='Partidos de la semana:'
@@ -80,6 +67,18 @@ const Home = () => {
                         home
                     /> */}
                 </CampSection>
+                <MiniAgenda />
+                <div className='banner'>
+                    <PartidoIda />
+                    {/* <img src='/main_banner.jpg' /> */}
+                    {/* <div className='hover_now'>
+                        <p className='now_now'>En este momento:</p>
+                        <p className='now_tittle'>
+                            {toggle ? 'Catequesis Familiar 2do Confirmación' :
+                            'Catequesis Familiar Iniciación'}
+                        </p>
+                    </div> */}
+                </div>
             </AppLayout>
 
             <style jsx>{`

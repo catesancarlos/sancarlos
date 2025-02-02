@@ -51,10 +51,10 @@ export default function ItemAgenda({
                     margin-right: 0;
                 }
 
-                article:nth-child(4){
+                article:nth-child(4), article:nth-child(5), article:nth-child(6){
                     margin-top: 20px;
                 }
-
+                
                 .left-section{
                     width: ${main ? '50%' : '100%'};
                 }
@@ -123,7 +123,7 @@ export default function ItemAgenda({
                         margin-bottom: 15px;
                     }
 
-                    article:nth-child(4){
+                    article:nth-child(4), article:nth-child(5), article:nth-child(6){
                         margin-top: 0;
                     }
 
