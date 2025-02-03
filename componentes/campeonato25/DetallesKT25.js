@@ -59,7 +59,8 @@ const DetallesKT25 = () => {
                             La duración de un partido, dependiendo del nivel de cada equipo es el siguiente:<br/>
                             • <strong>Niveles de Confirmación:</strong> Cada partido es de 40 minutos, dividido en 2 
                             tiempos de 20 minutos.<br/>
-                            • <strong>Niveles de Comunión:</strong> Por definir.
+                            • <strong>Niveles de Comunión:</strong> Cada partido es de 30 minutos, dividido en 2 
+                            tiempos de 15 minutos.
                         </p>
                         <strong>Disciplina</strong>
                         <p className='sb'>

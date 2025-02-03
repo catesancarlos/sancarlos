@@ -4,7 +4,7 @@ import TitleSection from '../sections/TitleSection'
 import OptionsSection from '../sections/OptionsSection'
 
 const Goleadores = () => {
-    const [select, setSelect] = useState(2)
+    const [select, setSelect] = useState(1)
 
     return (
         <section>

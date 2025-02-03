@@ -1,8 +1,10 @@
 import IconEscudo from './IconEscudo'
+import IconEscudoCom from './IconEscudoCom'
 
 const Equipo = ({
     ca,
     pos,
+    com,
     nombre,
     paralelo,
     logo,
@@ -13,7 +15,10 @@ const Equipo = ({
 }) => (
     <article>
         <div>
-            <IconEscudo ca={ca} pos={pos} color={color} borde={borde} />
+            {
+                !com ? <IconEscudo ca={ca} pos={pos} color={color} borde={borde} />
+                    : <IconEscudoCom ca={ca} pos={pos} color={color} borde={borde} />
+            }
             <p className='log'>{logo}</p>
             { mas && <p className='slog'>{mas}</p> }
         </div>

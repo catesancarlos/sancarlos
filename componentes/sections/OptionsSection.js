@@ -1,4 +1,4 @@
-export default function OptionsSection({ options, select, onSelect, bot, pos }){
+export default function OptionsSection({ options, select, onSelect, bot, pos, scr }){
 
     return(
         <div>
@@ -39,12 +39,12 @@ export default function OptionsSection({ options, select, onSelect, bot, pos }){
                 }
 
                 .active:nth-child(1){
-                    background:${options.length ==2 ? '#245590' : 'black'};
+                    background:${(options.length ==2 && !scr) ? '#245590' : 'black'};
                     color: white;
                 }
 
                 .active:nth-child(2){
-                    background: ${options.length ==2 ? '#CC397B' : 'black'};
+                    background: ${(options.length ==2 && !scr) ? '#CC397B' : 'black'};
                     color: white;
                 }
 
