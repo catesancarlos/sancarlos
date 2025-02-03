@@ -1,8 +1,9 @@
 import Equipo from './Equipo'
 
-export default function ItemCalendario({
+export default function PartidoSoloResultado({
     res,
     pen,
+    jugador,
     home,
     dia,
     fecha,
@@ -16,58 +17,92 @@ export default function ItemCalendario({
 }) {
     return(
         <article>
-            <strong className='gender'>{genero}</strong>
-            <div className='date'>
-                <p>{dia}</p>
-                <p>{fecha}</p>
-                <strong>{hora}</strong>
-            </div>
-            <div className='team'>
-                <Equipo
-                    ca
-                    nombre={equipos[0]}
-                    paralelo={paralelos[0]}
-                    logo={logos[0]}
-                    color={colores.eq1[0]}
-                    borde={colores.eq1[1]}
-                    letter={colores.eq1[2]}
-                    mas={mas && mas[0]}
-                />
-            </div>
-            <div className='cont-score'>
-                <div className='score'>
-                    <strong className='meq'>{res ? res?.[0] : 0}</strong>
-                    <p className='vs'>Vs</p>
-                    <strong className='meq'>{res ? res?.[1] : 0}</strong>
+            <div className='tp'>
+                <strong className='gender'>{genero}</strong>
+                <div className='date'>
+                    <p>{dia}</p>
+                    <p>{fecha}</p>
+                    <strong>{hora}</strong>
                 </div>
-                {pen && <p className='pen'>{`Pen (${pen})`}</p> }
+                <div className='team'>
+                    <Equipo
+                        ca
+                        nombre={equipos[0]}
+                        paralelo={paralelos[0]}
+                        logo={logos[0]}
+                        color={colores.eq1[0]}
+                        borde={colores.eq1[1]}
+                        letter={colores.eq1[2]}
+                        mas={mas && mas[0]}
+                    />
+                </div>
+                <div className='cont-score'>
+                    <div className='score'>
+                        <strong className='meq'>{res ? res?.[0] : 0}</strong>
+                        <p className='vs'>Vs</p>
+                        <strong className='meq'>{res ? res?.[1] : 0}</strong>
+                    </div>
+                    {pen && <p className='pen'>{`Pen (${pen})`}</p> }
+                </div>
+                <div className='team'>
+                    <Equipo
+                        ca
+                        nombre={equipos[1]}
+                        paralelo={paralelos[1]}
+                        logo={logos[1]}
+                        color={colores.eq2[0]}
+                        borde={colores.eq2[1]}
+                        letter={colores.eq2[2]}
+                        mas={mas && mas[1]}
+                    />
+                </div>
             </div>
-            <div className='team'>
-                <Equipo
-                    ca
-                    nombre={equipos[1]}
-                    paralelo={paralelos[1]}
-                    logo={logos[1]}
-                    color={colores.eq2[0]}
-                    borde={colores.eq2[1]}
-                    letter={colores.eq2[2]}
-                    mas={mas && mas[1]}
-                />
-            </div>
+            { jugador && <p className='jugador'>{`Jugador${genero == 'F' ? 'a' : ''} del partido:`}<span>{jugador}</span></p> }
 
             <style jsx>{`
                 article{
+                    width: ${home ? '100%' : 'auto'};
                     position: relative;
                     margin-top: 4px;
                     margin-left: 4px;
-                    width: ${home ? '100%' : 'auto'};
-                    padding: 5px 5px 5px 0;
                     font-family: 'Lato', sans-serif;
+                    border-radius: 10px;
+                    border: ${genero == 'M' ? '1px solid #245590' : '1px solid #CC397B'};
+                    border-bottom: ${jugador ? 'none' : 'auto'};
+                    margin-bottom: 12px;
+                }
+
+                .tp{
+                    padding: 5px;
                     display: flex;
                     justify-content: space-between;
-                    border: 1px solid black;
-                    border-radius: 6px;
-                    margin-bottom: 12px;
+                }
+
+                .jugador{
+                    width: 100%;
+                    background: ${genero == 'M' ? '#245590' : '#CC397B'};
+                    padding: 4px 0;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 200;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 0 0 10px 10px;
+                }
+
+                .jugador span{
+                    margin-left: 4px;
+                    font-weight: 400;
+                }
+
+                .jugador p{
+                    margin-left: 4px;
+                    background: white;
+                    padding: 0 5px;
+                    color: black;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
 
                 .gender{

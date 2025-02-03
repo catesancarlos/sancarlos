@@ -15,9 +15,10 @@ import { doc, onSnapshot } from 'firebase/firestore'
 
 const Home = () => {
     const [toggle, setToggle] = useState(true)
-    /* const [fecha1, setFecha1] = useState([]) */
-    const [fecha2, setFecha2] = useState([])
+    /* const [fecha1, setFecha1] = useState([])
+    const [fecha2, setFecha2] = useState([]) */
     const [fecha3, setFecha3] = useState([])
+    const [fecha4, setFecha4] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,12 +33,12 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
-            setFecha2(doc.data())
-        })
         onSnapshot(doc(db, 'campeonato25', 'fecha3'), (doc) => {
             setFecha3(doc.data())
-        }) 
+        })
+        /* onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
+            setFecha2(doc.data())
+        }) */
     }, [])
     
 
@@ -45,15 +46,27 @@ const Home = () => {
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 {/* <InfoSalida misa /> */}
+                <div className='banner'>
+                    <PartidoIda />
+                    {/* <img src='/main_banner.jpg' /> */}
+                    {/* <div className='hover_now'>
+                        <p className='now_now'>En este momento:</p>
+                        <p className='now_tittle'>
+                            {toggle ? 'Catequesis Familiar 2do Confirmación' :
+                            'Catequesis Familiar Iniciación'}
+                        </p>
+                    </div> */}
+                </div>
+                <MiniAgenda />
                 <CampSection>
                     <PartidosSemana
                         title='Partidos de la semana:'
-                        fecha={fecha3}
+                        fecha={fecha4}
                         home
                     />
                     <PartidosPasados
                         title='Resultados semana pasada:'
-                        fecha={fecha2}
+                        fecha={fecha3}
                         home
                     />
                     {/* <PartidosSemanaF2
@@ -67,18 +80,6 @@ const Home = () => {
                         home
                     /> */}
                 </CampSection>
-                <MiniAgenda />
-                <div className='banner'>
-                    <PartidoIda />
-                    {/* <img src='/main_banner.jpg' /> */}
-                    {/* <div className='hover_now'>
-                        <p className='now_now'>En este momento:</p>
-                        <p className='now_tittle'>
-                            {toggle ? 'Catequesis Familiar 2do Confirmación' :
-                            'Catequesis Familiar Iniciación'}
-                        </p>
-                    </div> */}
-                </div>
             </AppLayout>
 
             <style jsx>{`

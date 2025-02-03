@@ -68,8 +68,8 @@ const MiniAgenda = () => {
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 35px 4% 0 4%;
                     margin: 0px 4% 50px 4%;
+                    margin: 35px 4% 0 4%;
                     width: 92%;
                 }
 
@@ -111,8 +111,8 @@ const MiniAgenda = () => {
                 @media screen and (max-width: 768px){
                     section{
                         font-family: 'Lato', sans-serif;
-                        margin: 20px 15px 0 15px;
                         margin: 10px 15px 20px 15px;
+                        margin: 20px 15px 0 15px;
                         width: calc(100% - 30px);
                     }
 

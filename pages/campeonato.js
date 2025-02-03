@@ -20,6 +20,7 @@ export default function Campeonato(){
     const [fecha1, setFecha1] = useState([])
     const [fecha2, setFecha2] = useState([])
     const [fecha3, setFecha3] = useState([])
+    const [fecha4, setFecha4] = useState([])
 
     const router = useRouter()
 
@@ -63,8 +64,8 @@ export default function Campeonato(){
                 <div className='principal'>
                     {
                         section == 1 ? 
-                            <Calendario fecha1={fecha1} fecha2={fecha2}>
-                                <PartidosSemana fecha={fecha3} />
+                            <Calendario fecha1={fecha1} fecha2={fecha2} fecha3={fecha3} >
+                                <PartidosSemana fecha={fecha4} />
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :

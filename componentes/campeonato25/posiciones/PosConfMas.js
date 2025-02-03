@@ -151,9 +151,9 @@ export default function PosConfMas(){
                             letter='black'
                         />
                         <div className='marcador'>
-                            <strong className='meq'>0</strong>
+                            <strong className='meq'>5</strong>
                             <p className='vs'>vs</p>
-                            <strong className='meq'>0</strong>
+                            <strong className='meq'>3</strong>
                         </div>
                         <Equipo
                             pos
@@ -244,12 +244,12 @@ export default function PosConfMas(){
                                 </div>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Ganador F'
-                                    logo=''
-                                    color='#888'
-                                    borde='#888'
-                                    letter='white'
+                                    nombre='Los Águilas'
+                                    paralelo='1ro Confir. 1 (M)'
+                                    logo='11M'
+                                    color='white'
+                                    borde='black'
+                                    letter='black'
                                 />
                             </div>
                         </div>
@@ -329,12 +329,12 @@ export default function PosConfMas(){
                                 </div>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Perdedor F'
-                                    logo=''
-                                    color='#888'
-                                    borde='#888'
-                                    letter='white'
+                                    nombre='Juntos con Cristo FC'
+                                    paralelo='1 Confir. AB Ángeles (M)'
+                                    logo='1AM'
+                                    color='white'
+                                    borde='black'
+                                    letter='black'
                                 />
                             </div>
                         </div>

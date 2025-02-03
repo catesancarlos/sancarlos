@@ -1,16 +1,25 @@
-import PartidoSoloResultado from '../campeonato25/PartidoSoloResultado'
+import ItemCalendario from '../campeonato25/ItemCalendario'
 
-export default function PartidosPasados({ title, fecha, home }){    
+export default function PartidosSemana({
+    title,
+    fecha,
+    home,
+    control,
+    onStatus,
+    onGoles,
+    onAgregar
+}){    
 
     return (
         <>
             { title && <p>{title}</p> }
-            <PartidoSoloResultado
+            <ItemCalendario
                 now={fecha?.partido1}
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
                 home={home}
+                control={control && control[0]}
                 dia='Sábado'
                 fecha='01 Feb'
                 hora='17h00'
@@ -23,13 +32,17 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq2: ['black', 'black', 'white']
                 }}
                 mas={[1, ]}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
             />
-            <PartidoSoloResultado
+            <ItemCalendario
                 now={fecha?.partido2}
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}
                 home={home}
+                control={control && control[1]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='09h00'
@@ -41,13 +54,17 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
             />
-            <PartidoSoloResultado
+            <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
                 jugador={fecha?.jugador3}
                 pen={fecha?.pen3}
                 home={home}
+                control={control && control[2]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='10h00'
@@ -59,13 +76,17 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
                 }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
             />
-            <PartidoSoloResultado
+            <ItemCalendario
                 now={fecha?.partido4}
                 res={fecha?.res4}
                 jugador={fecha?.jugador4}
                 pen={fecha?.pen4}
                 home={home}
+                control={control && control[3]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='11h00'
@@ -78,13 +99,17 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq2: ['white', 'black', 'black']
                 }}
                 mas={[2, ]}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
             />
-            <PartidoSoloResultado
+            <ItemCalendario
                 now={fecha?.partido5}
                 res={fecha?.res5}
                 jugador={fecha?.jugador5}
                 pen={fecha?.pen5}
                 home={home}
+                control={control && control[4]}
                 dia='Domingo'
                 fecha='02 Feb'
                 hora='12h00'
@@ -97,12 +122,14 @@ export default function PartidosPasados({ title, fecha, home }){
                     eq2: ['white', 'black', 'black']
                 }}
                 mas={[1, ]}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
             />
 
             <style jsx>{`
                 p{
-                    margin-top: ${home ? '30px' : '0'};
-                    color: #000000;
+                    color: #245590;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
@@ -111,8 +138,7 @@ export default function PartidosPasados({ title, fecha, home }){
 
                 @media screen and (max-width: 768px){
                     p{
-                        margin-top: ${home ? '25px' : '0'};
-                        font-size: 16px;
+                        font-size: 18px;
                         font-size: 400;
                     }
                 }

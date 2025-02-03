@@ -35,61 +35,61 @@ export default function ItemCalendario({
     return(
         <section>
             <div className='tp'>
-            <div className='genero'>
-                <strong>{genero}</strong>
-            </div>
-            <div className='fecha'>
-                {!control &&
-                    <>
-                        <p>{dia}</p>
-                        <p>{fecha}</p>
-                    </>
-                }
-                <strong>{!control ? hora : control}</strong>
-            </div>
-            <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
-                <Equipo
-                    ca
-                    nombre={equipos[0]}
-                    paralelo={paralelos[0]}
-                    logo={logos[0]}
-                    color={colores.eq1[0]}
-                    borde={colores.eq1[1]}
-                    letter={colores.eq1[2]}
-                    mas={mas && mas[0]}
-                />
-            </div>
-            <div className='marc-glo'>
-                {
-                    control ? 
-                        <div className='op-now'>
-                            <p onClick={() => onGoles([control, 0, '-'])}>-</p>
-                            <p onClick={() => onStatus([control, 0])}>N</p>
-                            <p onClick={() => onStatus([control, 1])}>S</p>
-                            <p onClick={() => onStatus([control, 2])}>E</p>
-                            <p onClick={() => onGoles([control, 1, '-'])}>-</p>
-                        </div>
-                    : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : ''
-                }
-                <div className='marcador'>
-                    <strong className='meq'>{res ? res?.[0] : 0}</strong>
-                    <p className='vs'>Vs</p>
-                    <strong className='meq'>{res ? res?.[1] : 0}</strong>
+                <div className='genero'>
+                    <strong>{genero}</strong>
                 </div>
-                {pen && <p className='pen'>{`Pen (${pen})`}</p> }
-            </div>
-            <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
-                <Equipo
-                    ca
-                    nombre={equipos[1]}
-                    paralelo={paralelos[1]}
-                    logo={logos[1]}
-                    color={colores.eq2[0]}
-                    borde={colores.eq2[1]}
-                    letter={colores.eq2[2]}
-                    mas={mas && mas[1]}
-                />
-            </div>
+                <div className='fecha'>
+                    {!control &&
+                        <>
+                            <p>{dia}</p>
+                            <p>{fecha}</p>
+                        </>
+                    }
+                    <strong>{!control ? hora : control}</strong>
+                </div>
+                <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
+                    <Equipo
+                        ca
+                        nombre={equipos[0]}
+                        paralelo={paralelos[0]}
+                        logo={logos[0]}
+                        color={colores.eq1[0]}
+                        borde={colores.eq1[1]}
+                        letter={colores.eq1[2]}
+                        mas={mas && mas[0]}
+                    />
+                </div>
+                <div className='marc-glo'>
+                    {
+                        control ? 
+                            <div className='op-now'>
+                                <p onClick={() => onGoles([control, 0, '-'])}>-</p>
+                                <p onClick={() => onStatus([control, 0])}>N</p>
+                                <p onClick={() => onStatus([control, 1])}>S</p>
+                                <p onClick={() => onStatus([control, 2])}>E</p>
+                                <p onClick={() => onGoles([control, 1, '-'])}>-</p>
+                            </div>
+                        : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : ''
+                    }
+                    <div className='marcador'>
+                        <strong className='meq'>{res ? res?.[0] : 0}</strong>
+                        <p className='vs'>Vs</p>
+                        <strong className='meq'>{res ? res?.[1] : 0}</strong>
+                    </div>
+                    {pen && <p className='pen'>{`Pen (${pen})`}</p> }
+                </div>
+                <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
+                    <Equipo
+                        ca
+                        nombre={equipos[1]}
+                        paralelo={paralelos[1]}
+                        logo={logos[1]}
+                        color={colores.eq2[0]}
+                        borde={colores.eq2[1]}
+                        letter={colores.eq2[2]}
+                        mas={mas && mas[1]}
+                    />
+                </div>
             </div>
             { (jugador && !control) && <p className='jugador'>{`Jugador${genero == 'F' ? 'a' : ''} del partido:`}<span>{jugador}</span></p> }
             { control && 
@@ -132,7 +132,7 @@ export default function ItemCalendario({
                     text-align: center;
                     display: flex;
                     justify-content: center;
-                    border-radius: 0 0 6px 6px;
+                    border-radius: 0 0 10px 10px;
                 }
 
                 .jugador span{

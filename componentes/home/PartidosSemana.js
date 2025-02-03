@@ -21,17 +21,16 @@ export default function PartidosSemana({
                 home={home}
                 control={control && control[0]}
                 dia='Sábado'
-                fecha='01 Feb'
-                hora='17h00'
-                genero='M'
-                equipos={['Predicadores', 'Traicioneros como Judas']}
-                paralelos={['2do Confir. 4 (M1)', '2do Confir. 5 (M)']}
-                logos={['24M', '25M']}
+                fecha='08 Feb'
+                hora='16h40'
+                genero='F'
+                equipos={['Camino a la Tierra Prometída', 'Las Misioneras']}
+                paralelos={['Año Bíblico 5 (F)', 'Año Bíblico 2 (F)']}
+                logos={['A5F', 'A2F']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
-                    eq2: ['black', 'black', 'white']
+                    eq2: ['white', 'black', 'black']
                 }}
-                mas={[1, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
@@ -43,85 +42,17 @@ export default function PartidosSemana({
                 pen={fecha?.pen2}
                 home={home}
                 control={control && control[1]}
-                dia='Domingo'
-                fecha='02 Feb'
-                hora='09h00'
-                genero='M'
-                equipos={['Los Águilas', 'Juntos con Cristo FC']}
-                paralelos={['1ro Confir. 1 (M)', '1 Confir. AB Ángeles (M)']}
-                logos={['11M', '1AM']}
+                dia='Sábado'
+                fecha='08 Feb'
+                hora='17h20'
+                genero='F'
+                equipos={['Mujeres de Nazareth', 'Las Herederas de Dios']}
+                paralelos={['Año Bíblico 4 (F)', 'Año Bíblico 1 (F)']}
+                logos={['A4F', 'A1F']}
                 colores={{
-                    eq1: ['white', 'black', 'black'],
+                    eq1: ['red', 'white', 'white'],
                     eq2: ['white', 'black', 'black']
                 }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
-                home={home}
-                control={control && control[2]}
-                dia='Domingo'
-                fecha='02 Feb'
-                hora='10h00'
-                genero='M'
-                equipos={['Los Ángeles Bíblicos', 'Los Misioneros']}
-                paralelos={['Año Bíblico 3 (M)', 'Año Bíblico 2 (M)']}
-                logos={['A3M', 'A2M']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                now={fecha?.partido4}
-                res={fecha?.res4}
-                jugador={fecha?.jugador4}
-                pen={fecha?.pen4}
-                home={home}
-                control={control && control[3]}
-                dia='Domingo'
-                fecha='02 Feb'
-                hora='11h00'
-                genero='M'
-                equipos={['Equipo Glorioso', 'Los Hermanos de Jesus']}
-                paralelos={['Año Bíblico 4 (M2)', 'Año Bíblico 1 (M)']}
-                logos={['A4M', 'A1M']}
-                colores={{
-                    eq1: ['blue', 'blue', 'white'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                mas={[2, ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                now={fecha?.partido5}
-                res={fecha?.res5}
-                jugador={fecha?.jugador5}
-                pen={fecha?.pen5}
-                home={home}
-                control={control && control[4]}
-                dia='Domingo'
-                fecha='02 Feb'
-                hora='12h00'
-                genero='M'
-                equipos={['Equipo de Dios', 'Camino a la Tierra Prometída']}
-                paralelos={['Año Bíblico 4 (M1)', 'Año Bíblico 5 (M)']}
-                logos={['A4M', 'A5M']}
-                colores={{
-                    eq1: ['red', 'red', 'white'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                mas={[1, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
