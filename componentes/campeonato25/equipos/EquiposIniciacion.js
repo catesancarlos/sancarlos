@@ -22,10 +22,10 @@ export default function EquiposIniciacion(){
                 color='white'
                 borde='black'
                 letter='black'
-            />
+            /> */}
             <Equipo
                 com
-                nombre=''
+                nombre='Los elegidos de Dios'
                 paralelo='Iniciación 2 (M)'
                 logo='I2M'
                 color='white'
@@ -34,7 +34,7 @@ export default function EquiposIniciacion(){
             />
             <Equipo
                 com
-                nombre=''
+                nombre='La elegidas de Dios'
                 paralelo='Iniciación 2 (F)'
                 logo='I2F'
                 color='white'
@@ -58,7 +58,7 @@ export default function EquiposIniciacion(){
                 color='fuchsia'
                 borde='fuchsia'
                 letter='white'
-            /> */}
+            />
         </ContEquipos> 
     )
 }

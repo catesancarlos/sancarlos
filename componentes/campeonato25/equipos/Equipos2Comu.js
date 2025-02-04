@@ -22,26 +22,26 @@ export default function Equipos2Comu(){
                 color='white'
                 borde='black'
                 letter='black'
-            />
+            /> */}
             <Equipo
                 com
-                nombre=''
+                nombre='Los historicos'
                 paralelo='2do Comunión 2 (M)'
                 logo='22M'
-                color='white'
-                borde='black'
-                letter='black'
+                color='blue'
+                borde='blue'
+                letter='white'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Las historicas'
                 paralelo='2do Comunión 2 (F)'
                 logo='22F'
-                color='white'
-                borde='black'
-                letter='black'
+                color='blue'
+                borde='blue'
+                letter='white'
             />
-            <Equipo
+            {/* <Equipo
                 com
                 nombre=''
                 paralelo='2do Comunión 3 (M)'
@@ -58,28 +58,28 @@ export default function Equipos2Comu(){
                 color='white'
                 borde='black'
                 letter='black'
-            />
+            /> */}
             <Equipo
                 com
-                nombre=''
+                nombre='Gerreros contra el mal'
                 paralelo='2do Comunión 4 (M)'
                 logo='24M'
-                color='white'
-                borde='black'
-                letter='black'
+                color='black'
+                borde='red'
+                letter='white'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Hijas de Maria'
                 paralelo='2do Comunión 4 (F)'
                 logo='24F'
-                color='white'
-                borde='black'
-                letter='black'
+                color='black'
+                borde='red'
+                letter='white'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='El Maná'
                 paralelo='2do Comunión 5 (M)'
                 logo='25M'
                 color='white'
@@ -88,13 +88,13 @@ export default function Equipos2Comu(){
             />
             <Equipo
                 com
-                nombre=''
+                nombre='El Maná'
                 paralelo='2do Comunión 5 (F)'
                 logo='25F'
                 color='white'
                 borde='black'
                 letter='black'
-            /> */}
+            />
         </ContEquipos> 
     )
 }
