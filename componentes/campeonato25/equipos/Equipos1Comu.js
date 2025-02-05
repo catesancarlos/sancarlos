@@ -22,10 +22,10 @@ export default function Equipos1Comu(){
                 color='white'
                 borde='black'
                 letter='black'
-            />
+            />*/}
             <Equipo
                 com
-                nombre=''
+                nombre='Comunión 2'
                 paralelo='1ro Comunión 2 (M)'
                 logo='12M'
                 color='white'
@@ -34,14 +34,14 @@ export default function Equipos1Comu(){
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Las Campeonas del Futbol'
                 paralelo='1ro Comunión 2 (F)'
                 logo='12F'
                 color='white'
                 borde='black'
                 letter='black'
             />
-            <Equipo
+            {/* <Equipo
                 com
                 nombre=''
                 paralelo='1ro Comunión 3 (M)'
@@ -58,44 +58,66 @@ export default function Equipos1Comu(){
                 color='white'
                 borde='black'
                 letter='black'
-            />
+            /> */}
             <Equipo
                 com
-                nombre=''
-                paralelo='1ro Comunión 4 (M)'
+                nombre='Los Ángeles del Cate'
+                paralelo='1ro Comunión 4 (M1)'
                 logo='14M'
-                color='white'
+                color='black'
                 borde='black'
-                letter='black'
+                letter='white'
+                mas='1'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Los Hijos de Dios'
+                paralelo='1ro Comunión 4 (M2)'
+                logo='14M'
+                color='blue'
+                borde='blue'
+                letter='white'
+                mas='2'
+            />
+            <Equipo
+                com
+                nombre='Las Milagrosas'
                 paralelo='1ro Comunión 4 (F)'
                 logo='14F'
-                color='white'
+                color='black'
                 borde='black'
-                letter='black'
+                letter='white'
             />
             <Equipo
                 com
-                nombre=''
-                paralelo='1ro Comunión 5 (M)'
+                nombre='Guerreros de Dios 1'
+                paralelo='1ro Comunión 5 (M1)'
                 logo='15M'
                 color='white'
                 borde='black'
                 letter='black'
+                mas='1'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Guerreros de Dios 2'
+                paralelo='1ro Comunión 5 (M2)'
+                logo='15M'
+                color='white'
+                borde='black'
+                letter='black'
+                mas='2'
+            />
+            <Equipo
+                com
+                nombre='Ángeles'
                 paralelo='1ro Comunión 5 (F)'
                 logo='15F'
                 color='white'
                 borde='black'
                 letter='black'
             />
-            <Equipo
+            {/* <Equipo
                 com
                 nombre=''
                 paralelo='1ro Comunión 6 (M)'
