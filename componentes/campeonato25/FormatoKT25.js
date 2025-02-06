@@ -7,6 +7,29 @@ import FormatoConfFem from './formatos/FormatoConfFem'
 import FormatoBibliMas from './formatos/FormatoBibliMas'
 import FormatoBibliFem from './formatos/FormatoBibliFem'
 
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'AB',
+        genero: 'M'
+    },
+    {
+        no: 2,
+        name: 'AB',
+        genero: 'F'
+    },
+    {
+        no: 3,
+        name: 'CONF',
+        genero: 'M'
+    },
+    {
+        no: 4,
+        name: 'CONF',
+        genero: 'F'
+    },
+]
+
 export default function FormatoKT25(){
     const [select, setSelect] = useState(3)
 
@@ -18,7 +41,7 @@ export default function FormatoKT25(){
                 color='#245590'
             />
             <OptionsSection
-                options={['AB (M)', 'AB (F)', 'CONF (M)', 'CONF (F)']}
+                options={opcionesArray}
                 select={select}
                 onSelect={op => setSelect(op)}
             />

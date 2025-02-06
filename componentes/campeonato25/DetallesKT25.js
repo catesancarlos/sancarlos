@@ -5,6 +5,21 @@ import OptionsSection from '../sections/OptionsSection'
 import Reglamento from './Reglamento'
 import FutbolSala from './FutbolSala'
 
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'Detalles'
+    },
+    {
+        no: 2,
+        name: 'Reglamento'
+    },
+    {
+        no: 3,
+        name: 'Reglas Futbol Sala'
+    }
+]
+
 const DetallesKT25 = () => {
     const [select, setSelect] = useState(1)
 
@@ -16,7 +31,7 @@ const DetallesKT25 = () => {
                 color='#245590'
             />
             <OptionsSection
-                options={['Detalles', 'Reglamento', 'Reglas Futbol Sala']}
+                options={opcionesArray}
                 select={select}
                 onSelect={op => setSelect(op)}
             />

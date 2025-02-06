@@ -7,6 +7,29 @@ import PosBiblicoFem from './posiciones/PosBiblicoFem'
 import PosConfMas from './posiciones/PosConfMas'
 import PosConfFem from './posiciones/PosConfFem'
 
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'AB',
+        genero: 'M'
+    },
+    {
+        no: 2,
+        name: 'AB',
+        genero: 'F'
+    },
+    {
+        no: 3,
+        name: 'CONF',
+        genero: 'M'
+    },
+    {
+        no: 4,
+        name: 'CONF',
+        genero: 'F'
+    },
+]
+
 const Posiciones = () => {
     const [select, setSelect] = useState(3)
 
@@ -19,7 +42,7 @@ const Posiciones = () => {
             />
             <OptionsSection
                 /* options={['Año Biblico (M)', 'Año Biblico (F)', 'Confirmación (M)', 'Confirmación (F)']} */
-                options={['AB (M)', 'AB (F)', 'CONF (M)', 'CONF (F)']}
+                options={opcionesArray}
                 select={select}
                 onSelect={op => setSelect(op)}
                 pos

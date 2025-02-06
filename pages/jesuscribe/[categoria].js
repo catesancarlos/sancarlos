@@ -12,6 +12,34 @@ import { collection, getDocs } from 'firebase/firestore'
 import descarger from '../../utils/descarger'
 
 const categ = ['General', 'Vida de Jesús', 'Nuestra Iglesia', 'Sacramentologia', 'Liturgia', 'Multiple']
+
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'General'
+    },
+    {
+        no: 2,
+        name: 'Vida de Jesús'
+    },
+    {
+        no: 3,
+        name: 'Nuestra Iglesia'
+    },
+    {
+        no: 4,
+        name: 'Sacramentologia'
+    },
+    {
+        no: 5,
+        name: 'Liturgia'
+    },
+    {
+        no: 6,
+        name: 'Multiple'
+    }
+]
+
 const urls = [
     'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F01%20Jesuscibe%20-%20Cat%20General.pdf?alt=media&token=63c13580-f31f-41b1-a099-530d583410d7',
     'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F02%20Jesuscibe%20-%20Cat%20Vida%20de%20Jesus.pdf?alt=media&token=c0eacabd-7de7-4cac-9d33-418c07d79dbd',
@@ -64,7 +92,7 @@ export default function Preguntas({ categoria, preguntas }){
                 <div className='principal'>
                     <p className='info'>Las preguntas para el concurso están divididas por categorías, escoge una para revisarlas:</p>
                     <OptionsSection
-                        options={categ}
+                        options={opcionesArray}
                         select={select}
                         onSelect={handleChangeCategory}
                         bot

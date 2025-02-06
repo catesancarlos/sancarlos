@@ -9,8 +9,19 @@ import EquiposIniciacion from './equipos/EquiposIniciacion'
 import Equipos1Comu from './equipos/Equipos1Comu'
 import Equipos2Comu from './equipos/Equipos2Comu'
 
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'Mañana'
+    },
+    {
+        no: 2,
+        name: 'Tarde'
+    }
+]
+
 const EquiposKT25 = () => {
-    const [select, setSelect] = useState(1)
+    const [select, setSelect] = useState(2)
 
     return (
         <div>
@@ -20,13 +31,13 @@ const EquiposKT25 = () => {
                 color='#245590'
             />
             <OptionsSection
-                scr
-                options={['Tarde', 'Mañana']}
+                nogen
+                options={opcionesArray}
                 select={select}
                 onSelect={op => setSelect(op)}
             />
             {
-                select==1 ? 
+                select==2 ? 
                     <>
                         <EquiposBiblico />
                         <Equipos1Confir />

@@ -3,6 +3,17 @@ import { useState } from 'react'
 import TitleSection from '../sections/TitleSection'
 import OptionsSection from '../sections/OptionsSection'
 
+const opcionesArray = [
+    {
+        no: 1,
+        name: 'Masculino'
+    },
+    {
+        no: 2,
+        name: 'Femenino'
+    }
+]
+
 const Goleadores = () => {
     const [select, setSelect] = useState(1)
 
@@ -14,7 +25,7 @@ const Goleadores = () => {
                 color='#245590'
             />
             <OptionsSection
-                options={['Masculino', 'Femenino']}
+                options={opcionesArray}
                 select={select}
                 onSelect={op => setSelect(op)}
             />
