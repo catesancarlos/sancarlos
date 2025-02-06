@@ -6,12 +6,7 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
             onClick={() => onSelect(data.no)}
         >
             <p>{data.name}</p>
-            {
-                data.genero && 
-                    <span style={{ background: data.genero == 'M' ? '#245590' : '#CC397B'}}>
-                        {data.genero}
-                    </span>
-            }
+            { data.genero && <span>{data.genero}</span> }
     
             <style jsx>{`
                 div{
@@ -27,6 +22,7 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
                     border-radius: 10px;
                     box-shadow: -1px 2px 3px 0px #888;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    overflow: hidden;
                     cursor: pointer;
                 }
 
@@ -39,16 +35,18 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
                     position: absolute;
                     right: 0;
                     background: #245590;
+                    background: ${data.genero == 'M' ? '#245590' : '#CC397B'};
                     width: 28px;
                     line-height: 28px;
                     color: white;
                     text-align: center;
-                    border-radius: 0 6px 6px 0;
                 }
 
                 .active{
                     background: black;
                     color: white;
+                    border: ${data.genero == 'M' ? '2px solid #245590' : data.genero == 'F' ? '2px solid #CC397B' : 'none'};
+                    box-shadow: -1px 4px 3px 0px #888;
                 }
 
                 .active:nth-child(1){
@@ -62,38 +60,48 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
                 }
 
                 @media screen and (max-width: 768px){
-                    p{
+                    div{
                         margin: 0;
-                        padding: 5px 11px 5px 11px;
+                        height: 26px;
+                        padding: ${data.genero ? '0 38px 0 10px' : '0 12px'};
                         font-size: 14px;
                     }
 
-                    p:nth-child(1){
+                    p{          
+                        min-width: auto;        
+                    }
+
+                    span{
+                        width: 26px;
+                        line-height: 26px;
+                    }
+
+                    div:nth-child(1){
                         margin-right: 7px;
                         border-radius: 10px 0 0 10px;
                     }
 
-                    p:nth-child(2){
+                    div:nth-child(2){
                         margin-right: 7px;
                         border-radius: ${options==2 ? '0 10px 10px 0' : '0'};
                     }
 
-                    p:nth-child(3){
+                    div:nth-child(3){
                         margin-right: 7px;
-                        border-radius: ${(options==3 || options.length==6) ? '0 10px 10px 0' : '0'};
+                        border-radius: ${(options==3 || options==6) ? '0 10px 10px 0' : '0'};
                     }
 
-                    p:nth-child(4){
+                    div:nth-child(4){
                         margin: ${options==6 ? '6px 7px 0 0' : '0 7px 0 0'};
                         border-radius: ${options==6 ? '10px 0 0 10px' : '0 10px 10px 0'};
                     }
 
-                    p:nth-child(5){
+                    div:nth-child(5){
                         margin: 6px 7px 0 0;
                         border-radius: 0;
                     }
 
-                    p:nth-child(6){
+                    div:nth-child(6){
                         margin: 6px 0 0 0;
                         border-radius: 0 10px 10px 0;
                     }
