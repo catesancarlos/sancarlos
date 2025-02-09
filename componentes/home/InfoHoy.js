@@ -1,4 +1,4 @@
-export default function InfoHoy({ now, ev, dev, place, hour }) {
+export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
     return (
         <section>
@@ -6,14 +6,20 @@ export default function InfoHoy({ now, ev, dev, place, hour }) {
                 <div className='p2 izq'>
                     <strong>{now ? 'AHORA' : 'HOY'}</strong>
                 </div>
-                <div className='p1'>
+                <div className='p1 pizq'>
                     <p>{ev}</p>
                     <i>{dev}</i>
+                    <i>{place}</i>
+                </div>
+                <div className='p1'>
+                    <p>{ev}</p>
+                    <i>{dev2}</i>
+                    <i>{place2}</i>
                 </div>
                 <div className='p2 der'>
                     { !now &&
                         <>
-                            <p>{place}</p>
+                            {/* <p>{place}</p> */}
                             <strong>{hour}</strong>
                         </>
                     }
@@ -43,11 +49,17 @@ export default function InfoHoy({ now, ev, dev, place, hour }) {
                 }
 
                 .p1{
-                    margin: -1px 30px 0 30px;
+                    margin: -1px 0 0 0;
+                    padding: 0 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     text-align: center;
+                }
+
+                .pizq{
+                    padding-right: 20px;
+                    border-right: 4px solid #3C4142;
                 }
 
                 .p1 p{
@@ -61,7 +73,7 @@ export default function InfoHoy({ now, ev, dev, place, hour }) {
                 }
 
                 .p2{
-                    height: 54px;
+                    height: 70px;
                     width: 110px;
                     background: #3C4142;
                     padding: 5px 8px;
@@ -109,7 +121,8 @@ export default function InfoHoy({ now, ev, dev, place, hour }) {
                     }
 
                     .p1{
-                        width: ${now ? 'calc(100% - 160px)' : 'calc(100% - 170px)'};
+                        /* width: ${now ? 'calc(100% - 160px)' : 'calc(100% - 170px)'}; */
+                        width: auto;
                     }
 
                     .p1 p{

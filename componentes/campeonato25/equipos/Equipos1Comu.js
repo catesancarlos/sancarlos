@@ -117,9 +117,9 @@ export default function Equipos1Comu(){
                 borde='black'
                 letter='black'
             />
-            {/* <Equipo
+            <Equipo
                 com
-                nombre=''
+                nombre='Siervos de Dios'
                 paralelo='1ro Comunión 6 (M)'
                 logo='16M'
                 color='white'
@@ -128,13 +128,13 @@ export default function Equipos1Comu(){
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Siervas de Dios'
                 paralelo='1ro Comunión 6 (F)'
                 logo='16F'
                 color='white'
                 borde='black'
                 letter='black'
-            /> */}
+            />
         </ContEquipos> 
     )
 }

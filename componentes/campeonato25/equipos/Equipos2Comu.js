@@ -41,41 +41,41 @@ export default function Equipos2Comu(){
                 borde='blue'
                 letter='white'
             />
-            {/* <Equipo
+            <Equipo
                 com
-                nombre=''
+                nombre='Leones'
                 paralelo='2do Comunión 3 (M)'
                 logo='23M'
-                color='white'
-                borde='black'
-                letter='black'
+                color='black'
+                borde='white'
+                letter='white'
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Leonas'
                 paralelo='2do Comunión 3 (F)'
                 logo='23F'
-                color='white'
-                borde='black'
-                letter='black'
-            /> */}
+                color='black'
+                borde='white'
+                letter='white'
+            />
             <Equipo
                 com
                 nombre='Gerreros contra el mal'
                 paralelo='2do Comunión 4 (M)'
                 logo='24M'
-                color='black'
+                color='red'
                 borde='red'
-                letter='white'
+                letter='black'
             />
             <Equipo
                 com
                 nombre='Hijas de Maria'
                 paralelo='2do Comunión 4 (F)'
                 logo='24F'
-                color='black'
+                color='red'
                 borde='red'
-                letter='white'
+                letter='black'
             />
             <Equipo
                 com
@@ -91,6 +91,24 @@ export default function Equipos2Comu(){
                 nombre='El Maná'
                 paralelo='2do Comunión 5 (F)'
                 logo='25F'
+                color='white'
+                borde='black'
+                letter='black'
+            />
+            <Equipo
+                com
+                nombre='Los Instrumentos de Dios'
+                paralelo='2do Comunión 6 (M)'
+                logo='26M'
+                color='white'
+                borde='black'
+                letter='black'
+            />
+            <Equipo
+                com
+                nombre='Elegidas por Jesús'
+                paralelo='2do Comunión 6 (F)'
+                logo='26F'
                 color='white'
                 borde='black'
                 letter='black'

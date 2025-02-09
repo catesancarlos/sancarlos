@@ -79,6 +79,12 @@ const Goleadores = () => {
                                 <td>3</td>
                             </tr>
                             <tr>
+                                <td>3</td>
+                                <td>Domenica Espinoza</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
                                 <td>4</td>
                                 <td>Adela Pintado</td>
                                 <td>Estrellitas de María (2AF)</td>
@@ -100,6 +106,12 @@ const Goleadores = () => {
                                 <td>4</td>
                                 <td>Erika Malla</td>
                                 <td>Newcastells (14F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Leidy Agila</td>
+                                <td>Mujeres de Nazareth (A4F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
@@ -133,8 +145,49 @@ const Goleadores = () => {
                                 <td>1</td>
                             </tr>
                             <tr>
+                                <td>5</td>
+                                <td>Mirella Guzman</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Emily Twirma</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Danna Bravo</td>
+                                <td>Camino a la Tierra Prometida (A5F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Fernanda Romero</td>
+                                <td>Camino a la Tierra Prometida (A5F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Leidy Agila</td>
+                                <td>Suri Cruz (A1F)</td>
+                                <td>1</td>
+                            </tr><tr>
+                                <td>5</td>
+                                <td>Leidy Agila</td>
+                                <td>Mickeyla Chimbo (A1F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Autogol</td>
+                                <td></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>38</strong></td>
+                                <td className='c-t t2'><strong>50</strong></td>
                             </tr>
                         </table>
                     :

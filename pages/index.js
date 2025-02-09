@@ -41,9 +41,9 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data().now1)
         })
-        /* onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
-            setFecha2(doc.data())
-        }) */
+        onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
+            setFecha4(doc.data())
+        })
     }, [])
     
 
@@ -51,13 +51,15 @@ const Home = () => {
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 {/* <InfoSalida misa /> */}
-                <InfoHoy
+                {/* <InfoHoy
                     now={now}
-                    ev='Catequesis Familiar'
-                    dev='Primero de Comunión'
+                    ev='Cate Familiar'
+                    dev='2do Comunión'
+                    dev2='Cominidades'
                     place='Teatro'
+                    place2='Cada comunidad'
                     hour='19H00'
-                />
+                /> */}
                 <div className='banner'>
                     <PartidoIda />
                     {/* <img src='/main_banner.jpg' /> */}

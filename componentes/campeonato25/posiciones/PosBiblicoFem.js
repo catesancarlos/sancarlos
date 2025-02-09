@@ -24,51 +24,51 @@ export default function PosBiblicoFem(){
                     </tr>
                     <tr>
                         <td className='tp'>1</td>
-                        <td className='eq'>Camino a la Tierra Prometida (A5F)</td>
+                        <td className='eq'>Las Misioneras (A2F)</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>+4</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Las Misioneras (A2F)</td>
+                        <td className='eq'>Herederas de Dios (A1F)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Mujeres de Nazareth (A4F)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>4</td>
-                        <td className='eq'>Herederas de Dios (A1F)</td>
+                        <td className='eq'>Camino a la Tierra Prometida (A5F)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>-4</td>
+                        <td className='tp'><strong>0</strong></td>
                     </tr>
                 </table>
             </div>
@@ -82,16 +82,16 @@ export default function PosBiblicoFem(){
                     </tr>
                     <tr>
                         <td>Camino a la Tierra Prometida (A5F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>6</td>
                         <td>Las Misioneras (A2F)</td>
                     </tr>
                     <tr>
                         <td>Mujeres de Nazareth (A4F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Herederas de Dios (A1F)</td>
                     </tr>
                 </table>
