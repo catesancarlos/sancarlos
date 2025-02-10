@@ -4,8 +4,6 @@ import { useRouter } from 'next/router'
 import AppLayout from '../../componentes/layout'
 import Container from '../../componentes/sections/Container'
 import InvitacionJs25 from '../../componentes/jesuscribe/InvitacionJs25'
-import EquiposKT25 from '../../componentes/campeonato25/EquiposKT25'
-import FormatoKT25 from '../../componentes/campeonato25/FormatoKT25'
 
 export default function Jesuscribe(){
     const router = useRouter()
@@ -25,9 +23,7 @@ export default function Jesuscribe(){
                 </aside>
                 <div className='principal'>
                     {
-                        section == 1 ? <InvitacionJs25 /> :
-                            section == 2 ? <EquiposKT25 /> :
-                                section == 3 ? <FormatoKT25 /> : ''
+                        section == 1 ? <InvitacionJs25 /> : ''
                     }
                 </div>
             </Container>
