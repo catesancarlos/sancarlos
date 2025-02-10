@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 export default function ItemCalendario({
     now,

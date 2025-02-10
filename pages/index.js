@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react'
 
 import AppLayout from '../componentes/layout'
-/* import InfoSalida from '../componentes/home/InfoSalida' */
-import InfoHoy from '../componentes/home/InfoHoy'
+/* import InfoSalida from '../componentes/home/InfoSalida'
+import InfoHoy from '../componentes/home/InfoHoy' */
 import PartidoIda from '../componentes/banners/PartidoIda'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
-/* import PartidosSemanaF2 from '../componentes/home/PartidosSemanaF2' */
-import PartidosSemana from '../componentes/home/PartidosSemana'
-/* import PartidosPasadosF1 from '../componentes/home/PartidosPasadosF1' */
-import PartidosPasados from '../componentes/home/PartidosPasados'
+import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
+import PartidosPasados from '../componentes/campeonato25/calendario/PartidosPasados'
 
 import db  from '../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
@@ -17,10 +15,8 @@ import { doc, onSnapshot } from 'firebase/firestore'
 const Home = () => {
     const [toggle, setToggle] = useState(true)
     const [now, setNow] = useState(false)
-    /* const [fecha1, setFecha1] = useState([])
-    const [fecha2, setFecha2] = useState([]) */
-    const [fecha3, setFecha3] = useState([])
     const [fecha4, setFecha4] = useState([])
+    const [fecha5, setFecha5] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -35,14 +31,14 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        onSnapshot(doc(db, 'campeonato25', 'fecha3'), (doc) => {
-            setFecha3(doc.data())
+        onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
+            setFecha4(doc.data())
         })
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data().now1)
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
-            setFecha4(doc.data())
+        onSnapshot(doc(db, 'campeonato25', 'fecha5'), (doc) => {
+            setFecha5(doc.data())
         })
     }, [])
     
@@ -60,39 +56,29 @@ const Home = () => {
                     place2='Cada comunidad'
                     hour='19H00'
                 /> */}
-                <div className='banner'>
+                {/* <div className='banner'>
                     <PartidoIda />
-                    {/* <img src='/main_banner.jpg' /> */}
-                    {/* <div className='hover_now'>
+                    <img src='/main_banner.jpg' />
+                    <div className='hover_now'>
                         <p className='now_now'>En este momento:</p>
                         <p className='now_tittle'>
                             {toggle ? 'Catequesis Familiar 2do Confirmación' :
                             'Catequesis Familiar Iniciación'}
                         </p>
-                    </div> */}
-                </div>
+                    </div>
+                </div> */}
                 <MiniAgenda />
                 <CampSection>
                     <PartidosSemana
                         title='Partidos de la semana:'
-                        fecha={fecha4}
+                        fecha={fecha5}
                         home
                     />
                     <PartidosPasados
                         title='Resultados semana pasada:'
-                        fecha={fecha3}
+                        fecha={fecha4}
                         home
                     />
-                    {/* <PartidosSemanaF2
-                        title='Partidos de la semana:'
-                        fecha={fecha2}
-                        home
-                    />
-                    <PartidosPasadosF1
-                        title='Resultados semana pasada:'
-                        fecha={fecha1}
-                        home
-                    /> */}
                 </CampSection>
             </AppLayout>
 

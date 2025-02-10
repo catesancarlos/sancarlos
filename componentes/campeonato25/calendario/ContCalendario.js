@@ -1,10 +1,11 @@
-import TitleSection from '../sections/TitleSection'
+import TitleSection from '../../sections/TitleSection'
 import ItemCalendario from './ItemCalendario'
-import PartidosPasadosF1 from '../home/PartidosPasadosF1'
-import PartidosPasadosF2 from '../home/PartidosPasadosF2'
-import PartidosPasados from '../home/PartidosPasados'
+import PartidosPasadosF1 from './pasados/PartidosPasadosF1'
+import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
+import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
+import PartidosPasados from './PartidosPasados'
 
-export default function Calendario({ fecha1, fecha2, fecha3, children }){
+export default function Calendario({ fecha1, fecha2, fecha3, fecha4, children }){
 
     return (
         <section>
@@ -14,88 +15,76 @@ export default function Calendario({ fecha1, fecha2, fecha3, children }){
                 color='#245590'
             />
             <div>
-                <strong>Cuarta semana</strong>
+                <strong>Quinta semana</strong>
                 {children}
-                <strong className='ct'>[Fin de la Primera Ronda]</strong>
             </div>
             <div>
-                <strong>Quinta semana</strong>
+                <strong>Sexta semana</strong>
                 <ItemCalendario
                     dia='Sábado'
-                    fecha='15 Feb'
+                    fecha='22 Feb'
                     hora='16h40'
-                    genero='F'
-                    equipos={['Club GNU', 'Las Gálatas 1, 10']}
-                    paralelos={['2do Confir. 4 (F)', '2do Confir. 1 (F)']}
-                    logos={['24F', '21F']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                <ItemCalendario
-                    dia='Sábado'
-                    fecha='15 Feb'
-                    hora='17h20'
                     genero='M'
-                    equipos={['Los Angeles Negros', 'Fuerza Divina']}
-                    paralelos={['1ro Confir. 3 (M)', 'Confir. Ángeles (M)']}
-                    logos={['13M', '2AM']}
+                    equipos={['Equipo Glorioso', 'Camino a la Tierra Prometída']}
+                    paralelos={['Año Biblico 4 (M2)', 'Año Biblico 5 (M)']}
+                    logos={['A4M', 'A5M']}
                     colores={{
-                        eq1: ['black', 'black', 'white'],
+                        eq1: ['blue', 'blue', 'white'],
                         eq2: ['white', 'black', 'black']
                     }}
+                    mas={[2, ]}
                 />
                 <ItemCalendario
                     dia='Domingo'
-                    fecha='16 Feb'
+                    fecha='23 Feb'
                     hora='09h00'
-                    genero='F'
-                    equipos={['Estrellitas de María', 'Las Angeles Negros']}
-                    paralelos={['Confir. Ángeles (F)', '1ro Confir. 3 (F)']}
-                    logos={['2AF', '13F']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['black', 'black', 'white']
-                    }}
-                />
-                <ItemCalendario
-                    dia='Domingo'
-                    fecha='16 Feb'
-                    hora='10h00'
-                    genero='F'
-                    equipos={['Traicioneras como Judas', 'Génesis']}
-                    paralelos={['2do Confir. 5 (F)', '2do Confir. 3 (F)']}
-                    logos={['25F', '23F']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                <ItemCalendario
-                    dia='Domingo'
-                    fecha='16 Feb'
-                    hora='11h00'
                     genero='M'
-                    equipos={['Confirmación F.C.', 'GDL']}
-                    paralelos={['2do Confir. 2 (M)', '2do Confir. 4 (M2)']}
-                    logos={['22M', '24M']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                    mas={[, 2]}
-                />
-                <ItemCalendario
-                    dia='Domingo'
-                    fecha='16 Feb'
-                    hora='12h00'
-                    genero='F'
-                    equipos={['Newcastels', 'Las Águilas']}
-                    paralelos={['1ro Confir. 4 (F)', '1ro Confir. 1 (F)']}
-                    logos={['14F', '11F']}
+                    equipos={['Predicadores', 'Los Águilas']}
+                    paralelos={['2do Confir. 4 (M1)', '1ro Confir. 1 (M)']}
+                    logos={['24M', '11M']}
                     colores={{
                         eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                    mas={[1, ]}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='23 Feb'
+                    hora='10h00'
+                    genero='M'
+                    equipos={['Los Misioneros', 'Los Hermanos de Jesus']}
+                    paralelos={['Año Bíblico 2 (M)', 'Año Bíblico 1 (M)']}
+                    logos={['A2M', 'A1M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='23 Feb'
+                    hora='11h00'
+                    genero='M'
+                    equipos={['Los Ángeles Bíblicos', 'Equipo de Dios']}
+                    paralelos={['Año Bíblico 3 (M)', 'Año Bíblico 4 (M1)']}
+                    logos={['A3M', 'A4M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['red', 'red', 'white']
+                    }}
+                    mas={[1, ]}
+                />
+                <ItemCalendario
+                    dia='Domingo'
+                    fecha='23 Feb'
+                    hora='12h00'
+                    genero='M'
+                    equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
+                    paralelos={['2do Confir. 3 (M)', '2do Confir. 1 (M)']}
+                    logos={['23M', '21M']}
+                    colores={{
+                        eq1: ['blue', 'blue', 'white'],
                         eq2: ['white', 'black', 'black']
                     }}
                 />
@@ -116,10 +105,17 @@ export default function Calendario({ fecha1, fecha2, fecha3, children }){
                 />
             </div>
             <div>
-                <PartidosPasados
+                <PartidosPasadosF3
                     title='Resultados Semana 3:'
                     fecha={fecha3}
                 />
+            </div>
+            <div>
+                <PartidosPasados
+                    title='Resultados Semana 4:'
+                    fecha={fecha4}
+                />
+                <strong className='ct'>[Fin de la Primera Ronda]</strong>
             </div>
 
             <style jsx>{`

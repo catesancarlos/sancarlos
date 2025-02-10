@@ -1,25 +1,16 @@
-import ItemCalendario from '../campeonato25/ItemCalendario'
+import PartidoSoloResultado from './PartidoSoloResultado'
 
-export default function PartidosSemana({
-    title,
-    fecha,
-    home,
-    control,
-    onStatus,
-    onGoles,
-    onAgregar
-}){    
+export default function PartidosPasados({ title, fecha, home }){    
 
     return (
         <>
             { title && <p>{title}</p> }
-            <ItemCalendario
+            <PartidoSoloResultado
                 now={fecha?.partido1}
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
                 home={home}
-                control={control && control[0]}
                 dia='Sábado'
                 fecha='08 Feb'
                 hora='16h40'
@@ -31,17 +22,13 @@ export default function PartidosSemana({
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
                 }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
             />
-            <ItemCalendario
+            <PartidoSoloResultado
                 now={fecha?.partido2}
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}
                 home={home}
-                control={control && control[1]}
                 dia='Sábado'
                 fecha='08 Feb'
                 hora='17h20'
@@ -53,14 +40,12 @@ export default function PartidosSemana({
                     eq1: ['red', 'white', 'white'],
                     eq2: ['white', 'black', 'black']
                 }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
             />
 
             <style jsx>{`
                 p{
-                    color: #245590;
+                    margin-top: ${home ? '30px' : '0'};
+                    color: #000000;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
@@ -69,7 +54,8 @@ export default function PartidosSemana({
 
                 @media screen and (max-width: 768px){
                     p{
-                        font-size: 18px;
+                        margin-top: ${home ? '25px' : '0'};
+                        font-size: 16px;
                         font-size: 400;
                     }
                 }

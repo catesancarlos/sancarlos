@@ -1,4 +1,4 @@
-import Equipo from './Equipo'
+import Equipo from '../Equipo'
 
 export default function PartidoSoloResultado({
     res,

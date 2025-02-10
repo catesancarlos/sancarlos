@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 
 import AppLayout from '../componentes/layout'
 import Container from '../componentes/sections/Container'
-import Calendario from '../componentes/campeonato25/Calendario'
-import PartidosSemana from '../componentes/home/PartidosSemana'
+import Calendario from '../componentes/campeonato25/calendario/ContCalendario'
+import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
 import Posiciones from '../componentes/campeonato25/Posiciones'
 import Goleadores from '../componentes/campeonato25/Goleadores'
-import FormatoKT25 from '../componentes/campeonato25/FormatoKT25'
+import FormatoKT25 from '../componentes/campeonato25/formatos/FormatoKT25'
 import DetallesKT25 from '../componentes/campeonato25/DetallesKT25'
 import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
 import Catequistas from '../componentes/campeonato25/Catequistas'
@@ -21,6 +21,7 @@ export default function Campeonato(){
     const [fecha2, setFecha2] = useState([])
     const [fecha3, setFecha3] = useState([])
     const [fecha4, setFecha4] = useState([])
+    const [fecha5, setFecha5] = useState([])
 
     const router = useRouter()
 
@@ -37,6 +38,9 @@ export default function Campeonato(){
         onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
             setFecha4(doc.data())
         })  
+        onSnapshot(doc(db, 'campeonato25', 'fecha5'), (doc) => {
+            setFecha5(doc.data())
+        })
     }, [])
 
     useEffect(() => {
@@ -67,8 +71,13 @@ export default function Campeonato(){
                 <div className='principal'>
                     {
                         section == 1 ? 
-                            <Calendario fecha1={fecha1} fecha2={fecha2} fecha3={fecha3} >
-                                <PartidosSemana fecha={fecha4} />
+                            <Calendario 
+                                fecha1={fecha1}
+                                fecha2={fecha2}
+                                fecha3={fecha3}
+                                fecha4={fecha4}
+                            >
+                                <PartidosSemana fecha={fecha5} />
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :

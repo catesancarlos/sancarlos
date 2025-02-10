@@ -17,6 +17,7 @@ export default function PosConfMas(){
                             color='black'
                             borde='black'
                             letter='white'
+                            ctext='green'
                         />
                         <div className='marcador'>
                             <strong className='meq'>7</strong>
@@ -31,6 +32,7 @@ export default function PosConfMas(){
                             color='blue'
                             borde='blue'
                             letter='white'
+                            ctext='red'
                         />
                     </div>
                     <div className='partido'>
@@ -43,6 +45,7 @@ export default function PosConfMas(){
                             color='white'
                             borde='black'
                             letter='black'
+                            ctext='red'
                         />
                         <div className='marcador'>
                             <strong className='meq'>1</strong>
@@ -58,6 +61,7 @@ export default function PosConfMas(){
                             borde='black'
                             letter='black'
                             mas='2'
+                            ctext='green'
                         />
                     </div>
                     <div className='partido'>
@@ -70,6 +74,7 @@ export default function PosConfMas(){
                             color='black'
                             borde='black'
                             letter='white'
+                            ctext='red'
                         />
                         <div className='marcador'>
                             <strong className='meq'>0</strong>
@@ -84,6 +89,7 @@ export default function PosConfMas(){
                             color='black'
                             borde='black'
                             letter='white'
+                            ctext='green'
                         />
                     </div>
                     <div className='partido'>
@@ -96,6 +102,7 @@ export default function PosConfMas(){
                             color='white'
                             borde='black'
                             letter='black'
+                            ctext='green'
                         />
                         <div className='marcador'>
                             <strong className='meq'>10</strong>
@@ -110,6 +117,7 @@ export default function PosConfMas(){
                             color='white'
                             borde='black'
                             letter='black'
+                            ctext='red'
                         />
                     </div>
                     <div className='partido'>
@@ -123,6 +131,7 @@ export default function PosConfMas(){
                             borde='black'
                             letter='black'
                             mas='1'
+                            ctext='green'
                         />
                         <div className='marcador'>
                             <strong className='meq'>12</strong>
@@ -137,6 +146,7 @@ export default function PosConfMas(){
                             color='black'
                             borde='black'
                             letter='white'
+                            ctext='red'
                         />
                     </div>
                     <div className='partido'>
@@ -149,6 +159,7 @@ export default function PosConfMas(){
                             color='white'
                             borde='black'
                             letter='black'
+                            ctext='green'
                         />
                         <div className='marcador'>
                             <strong className='meq'>5</strong>
@@ -163,6 +174,7 @@ export default function PosConfMas(){
                             color='white'
                             borde='black'
                             letter='black'
+                            ctext='red'
                         />
                     </div>
                 </div>
@@ -254,7 +266,7 @@ export default function PosConfMas(){
                             </div>
                         </div>
                     </div>
-                    <div className='segunda-cont'>
+                    <div className='segunda-cont nobot'>
                         <div className='line l2'>
                             <p>[0 - <span style={{ color: 'red' }}>1</span>]</p>
                         </div>
@@ -340,6 +352,175 @@ export default function PosConfMas(){
                         </div>
                     </div>
                 </div>
+                <div className='tercera-cont'>
+                    <div className='segunda-cont'>
+                        <div className='line t31'>
+                            <p>[<span style={{ color: 'green' }}>2</span> - 0]</p>
+                        </div>
+                        <div className='segunda terc'>
+                            <Equipo
+                                ca
+                                pos
+                                nombre=''
+                                paralelo='Ganador partido 1'
+                                logo=''
+                                color='#eee'
+                                borde='black'
+                                letter='#eee"'
+                            />
+                            <Equipo
+                                ca
+                                pos
+                                nombre=''
+                                paralelo='Ganador partido 2'
+                                logo=''
+                                color='#eee'
+                                borde='black'
+                                letter='#eee"'
+                            />
+                            <Equipo
+                                ca
+                                pos
+                                nombre=''
+                                paralelo='Ganador partido 3'
+                                logo=''
+                                color='#eee'
+                                borde='black'
+                                letter='#eee'
+                            />
+                        </div>
+                    </div>
+                    <div className='segunda-cont'>
+                        <div className='empate'>
+                            <div className='line-em'>
+                                <p>[1 - 1]</p>
+                            </div>
+                            <div className='line-em'>
+                                <p>[1 - 1]</p>
+                            </div>
+                        </div>
+                        <div className='segunda slem'>
+                            <div className='partido'>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Perdedor Partido 1'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                                <div className='marcador'>
+                                    <strong className='meq'>0</strong>
+                                    <p className='vs'>vs</p>
+                                    <strong className='meq'>0</strong>
+                                </div>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Ganador Partido 4'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                            </div>
+                            <div className='partido'>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Perdedor Partido 2'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                                <div className='marcador'>
+                                    <strong className='meq'>0</strong>
+                                    <p className='vs'>vs</p>
+                                    <strong className='meq'>0</strong>
+                                </div>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Ganador Partido 5'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                            </div>
+                            <div className='partido'>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Perdedor Partido 3'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                                <div className='marcador'>
+                                    <strong className='meq'>0</strong>
+                                    <p className='vs'>vs</p>
+                                    <strong className='meq'>0</strong>
+                                </div>
+                                <Equipo
+                                    ca
+                                    pos
+                                    nombre=''
+                                    paralelo='Ganador Partido 6'
+                                    logo=''
+                                    color='#eee'
+                                    borde='black'
+                                    letter='#eee'
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='segunda-cont nobot'>
+                        <div className='line l2 t31'>
+                            <p>[0 - <span style={{ color: 'red' }}>2</span>]</p>
+                        </div>
+                        <div className='segunda terc sl2'>
+                        <Equipo
+                            ca
+                            pos
+                            nombre=''
+                            paralelo='Perdedor partido 4'
+                            logo=''
+                            color='#eee'
+                            borde='black'
+                                etter='#eee"'
+                        />
+                        <Equipo
+                            ca
+                            pos
+                            nombre=''
+                            paralelo='Perdedor partido 5'
+                            logo=''
+                            color='#eee'
+                            borde='black'
+                            letter='#eee"'
+                        />
+                        <Equipo
+                            ca
+                            pos
+                            nombre=''
+                            paralelo='Perdedor partido 6'
+                            logo=''
+                            color='#eee'
+                            borde='black'
+                            letter='#eee"'
+                        />
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <style jsx>{`
@@ -363,6 +544,7 @@ export default function PosConfMas(){
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    overflow-x: scroll;
                 }
 
                 .primera{
@@ -381,11 +563,26 @@ export default function PosConfMas(){
                     border-radius: 6px;
                 }
 
+                .tercera-cont{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .terc{
+                    padding: 8px 0;
+                    display: flex;
+                }
+
                 .sl2{
                     border: 3px solid red;
                 }
 
-                .segunda-cont:nth-child(2){
+                .slem{
+                    border: 3px solid yellow;
+                }
+
+                .nobot{
                     margin-bottom: 0;
                 }
 
@@ -396,14 +593,43 @@ export default function PosConfMas(){
                     border: 2px solid green;
                 }
 
+                .empate{
+                    position: relative;
+                    height: 190px;
+                    width: 70px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: space-between;
+                }
+
+                .line-em{
+                    width: 60px;
+                    height: 3px;
+                    border: 2px solid yellow;
+                }
+
+                .line-em:first-child{
+                    position: absolute;
+                    top: 0;
+                }
+
+                .line-em:last-child{
+                    position: absolute;
+                    bottom: 0;
+                }
+
                 .l2{
                     border: 2px solid red;
                 }
 
-                .line p{
+                .line p, .line-em p{
                     margin-top: -28px;
                     text-align: center;
                     font-weight:  bold;
+                }
+
+                .t31{
+                    width: 70px;
                 }
 
                 .partido{
@@ -457,10 +683,10 @@ export default function PosConfMas(){
                         justify-content: flex-start;
                         margin: 0 -15px 0 -15px;
                         padding-left: 15px;
-                        overflow: scroll;
+                        overflow-x: scroll;
                     }
 
-                    .segunda-cont{
+                    .tercera-cont{
                         padding-right: 15px;
                     }
                 }

@@ -1,12 +1,11 @@
-import PartidoSoloResultado from '../campeonato25/PartidoSoloResultado'
+import PartidoSoloResultado from '../PartidoSoloResultado'
 
-export default function PartidosPasados({ title, fecha, home }){    
+export default function PartidosPasadosF3({ title, fecha, home }){    
 
     return (
         <>
             { title && <p>{title}</p> }
             <PartidoSoloResultado
-                now={fecha?.partido1}
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
@@ -25,7 +24,6 @@ export default function PartidosPasados({ title, fecha, home }){
                 mas={[1, ]}
             />
             <PartidoSoloResultado
-                now={fecha?.partido2}
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}
@@ -43,7 +41,6 @@ export default function PartidosPasados({ title, fecha, home }){
                 }}
             />
             <PartidoSoloResultado
-                now={fecha?.partido3}
                 res={fecha?.res3}
                 jugador={fecha?.jugador3}
                 pen={fecha?.pen3}
@@ -61,7 +58,6 @@ export default function PartidosPasados({ title, fecha, home }){
                 }}
             />
             <PartidoSoloResultado
-                now={fecha?.partido4}
                 res={fecha?.res4}
                 jugador={fecha?.jugador4}
                 pen={fecha?.pen4}
@@ -80,7 +76,6 @@ export default function PartidosPasados({ title, fecha, home }){
                 mas={[2, ]}
             />
             <PartidoSoloResultado
-                now={fecha?.partido5}
                 res={fecha?.res5}
                 jugador={fecha?.jugador5}
                 pen={fecha?.pen5}

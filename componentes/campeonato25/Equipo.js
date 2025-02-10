@@ -11,7 +11,8 @@ const Equipo = ({
     color,
     borde,
     letter,
-    mas
+    mas,
+    ctext
 }) => (
     <article>
         <div>
@@ -63,6 +64,7 @@ const Equipo = ({
 
             .l-n{
                 margin-top: 0px;
+                color: ${ctext ? ctext : 'black'};
                 font-size: ${!pos ? '13px' : '11px'};
                 font-weight: bold;
                 text-align: center;

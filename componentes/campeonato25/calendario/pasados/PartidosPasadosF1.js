@@ -1,4 +1,4 @@
-import PartidoSoloResultado from '../campeonato25/PartidoSoloResultado'
+import PartidoSoloResultado from '../PartidoSoloResultado'
 
 export default function PartidosPasadosF1({ title, fecha, home }){    
 
