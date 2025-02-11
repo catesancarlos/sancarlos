@@ -13,22 +13,23 @@ import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
 import Catequistas from '../componentes/campeonato25/Catequistas'
 
 import db  from '../services/dBase'
-import { doc, onSnapshot } from 'firebase/firestore'
+import { doc, onSnapshot, getDocs, collection } from 'firebase/firestore'
 
 export default function Campeonato(){
     const [section, setSection] = useState(1)
-    const [fecha1, setFecha1] = useState([])
+    const [res, setRes] = useState([])
+    /* const [fecha1, setFecha1] = useState([])
     const [fecha2, setFecha2] = useState([])
     const [fecha3, setFecha3] = useState([])
     const [fecha4, setFecha4] = useState([])
-    const [fecha5, setFecha5] = useState([])
+    const [fecha5, setFecha5] = useState([]) */
 
     const router = useRouter()
 
     useEffect(() => {
-        onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
+        /*onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
             setFecha1(doc.data())
-        })
+        }) 
         onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
             setFecha2(doc.data())
         })
@@ -40,7 +41,20 @@ export default function Campeonato(){
         })  
         onSnapshot(doc(db, 'campeonato25', 'fecha5'), (doc) => {
             setFecha5(doc.data())
-        })
+        }) */
+            
+        async function fetchMyAPI() {
+            let ret = []
+            const querySnapshot = await getDocs(collection(db, 'campeonato25'))
+            querySnapshot.forEach((doc) => {
+                ret.push({
+                    id: doc.id,
+                    ...doc.data()
+                })
+            })
+            setRes(ret)
+        }
+        fetchMyAPI()
     }, [])
 
     useEffect(() => {
@@ -71,13 +85,8 @@ export default function Campeonato(){
                 <div className='principal'>
                     {
                         section == 1 ? 
-                            <Calendario 
-                                fecha1={fecha1}
-                                fecha2={fecha2}
-                                fecha3={fecha3}
-                                fecha4={fecha4}
-                            >
-                                <PartidosSemana fecha={fecha5} />
+                            <Calendario datos={res}>
+                                <PartidosSemana fecha={res[res.length-1]} />
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :

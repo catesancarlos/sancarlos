@@ -63,6 +63,10 @@ export default function Preguntas({ categoria, preguntas }){
         if(categoria=='js-multiple') setSelect(6)
     }, [])
 
+    useEffect(() => {
+        sessionStorage.setItem(`strg-${categoria}`, JSON.stringify(preguntas))
+    }, [categoria])
+
     const handleChangeCategory = e => {
         setSelect(e)
         if(e==1) router.push('/jesuscribe/js-general')
@@ -89,6 +93,7 @@ export default function Preguntas({ categoria, preguntas }){
                     <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Preguntas</p>
                     {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
+                
                 <div className='principal'>
                     <p className='info'>Las preguntas para el concurso están divididas por categorías, escoge una para revisarlas:</p>
                     <OptionsSection

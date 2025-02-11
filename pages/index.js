@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 import AppLayout from '../componentes/layout'
 /* import InfoSalida from '../componentes/home/InfoSalida'
-import InfoHoy from '../componentes/home/InfoHoy' */
-import PartidoIda from '../componentes/banners/PartidoIda'
+import InfoHoy from '../componentes/home/InfoHoy'
+import PartidoIda from '../componentes/banners/PartidoIda' */
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
@@ -11,6 +11,7 @@ import PartidosPasados from '../componentes/campeonato25/calendario/PartidosPasa
 
 import db  from '../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
+import JesuscribeNext from '../componentes/banners/JesuscribeNext'
 
 const Home = () => {
     const [toggle, setToggle] = useState(true)
@@ -46,6 +47,7 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+                <JesuscribeNext />
                 {/* <InfoSalida misa /> */}
                 {/* <InfoHoy
                     now={now}

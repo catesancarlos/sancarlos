@@ -5,7 +5,7 @@ import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
 import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
 import PartidosPasados from './PartidosPasados'
 
-export default function Calendario({ fecha1, fecha2, fecha3, fecha4, children }){
+export default function Calendario({ datos, children }){
 
     return (
         <section>
@@ -95,25 +95,25 @@ export default function Calendario({ fecha1, fecha2, fecha3, fecha4, children })
             <div>
                 <PartidosPasadosF1
                     title='Resultados Semana 1:'
-                    fecha={fecha1}
+                    fecha={datos[0]}
                 />
             </div>
             <div>
                 <PartidosPasadosF2
                     title='Resultados Semana 2:'
-                    fecha={fecha2}
+                    fecha={datos[1]}
                 />
             </div>
             <div>
                 <PartidosPasadosF3
                     title='Resultados Semana 3:'
-                    fecha={fecha3}
+                    fecha={datos[2]}
                 />
             </div>
             <div>
                 <PartidosPasados
                     title='Resultados Semana 4:'
-                    fecha={fecha4}
+                    fecha={datos[3]}
                 />
                 <strong className='ct'>[Fin de la Primera Ronda]</strong>
             </div>
