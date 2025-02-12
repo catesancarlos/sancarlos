@@ -1,38 +1,73 @@
+import { useState } from 'react'
 import Image from 'next/image'
-import bannerJesuscribe from '../../public/jesuscribe_next_banner.jpeg'
 
-export default function JesuscribeNext(){
+import bannerJesuscribe from '../../public/jesuscribe_next_banner.jpeg'
+import Dice from '../iconos/Dice'
+
+export default function JesuscribeNext({ first, section, children, onSection }){
+
     return(
         <section>
-            <div className='img'>
-                <Image
-                    src={bannerJesuscribe}
-                    alt='Banner Jesuscribe proximamente'
-                    fill
-                />
-                <div className='ftr-banner'>
-                    <div className='line'></div>
-                    <img src='/logo-jesuscribe.jpg' />
-                    <div className='line'></div>
-                </div>
-                <div className='ftr-banner2'>
-                    Próximamente
-                </div>
-            </div>
-
+            {
+                section ? children :
+                    <div className='img'>
+                        <Image
+                            src={bannerJesuscribe}
+                            alt='Banner Jesuscribe proximamente'
+                            fill
+                        />
+                        { first &&
+                            <div className='dice' onClick={onSection} >
+                                <Dice size={14} color='#000' />
+                                <p>Probar una pregunta</p>
+                            </div>
+                        }
+                        <div className='ftr-banner'>
+                            <div className='line'></div>
+                            <img src='/logo-jesuscribe.jpg' />
+                            <div className='line'></div>
+                        </div>
+                        <div className='ftr-banner2'>
+                            Próximamente
+                        </div>
+                    </div>
+            }
 
             <style jsx>{`
                 section{
+                    position: relative;
                     margin: 0 4% 20px 4%;
                     width: 92%;
+                    height: 500px;
+                    border-radius: 20px;
+                    overflow: hidden;
                 }
 
                 .img{
                     position: relative;
                     width: 100%;
                     height: 500px;
-                    border-radius: 15px;
-                    overflow: hidden;
+                }
+
+                .dice{
+                    position: absolute;
+                    top: 24px;
+                    right: 24px;
+                    background: #FFF;
+                    padding: 4px 12px 4px 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .dice p{
+                    margin-left: 8px;
+                    line-height: 20px;
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 200;
                 }
 
                 .ftr-banner{
@@ -73,14 +108,28 @@ export default function JesuscribeNext(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 0 0 10px 0;
+                        margin: 5px 0 10px 0;
                         width: 100%;
+                        height: 300px;
+                        border-radius: 0;
                     }
 
                     .img{
                         width: 100%;
                         height: 300px;
-                        border-radius: 0;
+                    }
+
+                    .dice{
+                        top: 15px;
+                        right: 15px;
+                        padding: 3px 7px;
+                        border-radius: 4px;
+                    }
+
+                    .dice p{
+                        margin-left: 5px;
+                        line-height: 14px;
+                        font-size: 13px;
                     }
 
                     .ftr-banner{

@@ -8,12 +8,16 @@ import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
 import PartidosPasados from '../componentes/campeonato25/calendario/PartidosPasados'
+import JesuscribeNext from '../componentes/banners/JesuscribeNext'
+import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 
 import db  from '../services/dBase'
-import { doc, onSnapshot } from 'firebase/firestore'
-import JesuscribeNext from '../componentes/banners/JesuscribeNext'
+import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 
 const Home = () => {
+    const [section, setSection] = useState(false)
+    const [first, setFirst] = useState(true)
+    const [datos, setDatos] = useState(null)
     const [toggle, setToggle] = useState(true)
     const [now, setNow] = useState(false)
     const [fecha4, setFecha4] = useState([])
@@ -42,12 +46,32 @@ const Home = () => {
             setFecha5(doc.data())
         })
     }, [])
+
+    const handleFetchQuestion = async e => {
+        const docRef = doc(db, 'js-vida', `js-vd-p${e}`)
+        const docSnap = await getDoc(docRef)
+        if(docSnap.exists()) setDatos(docSnap.data())
+    }
     
 
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                <JesuscribeNext />
+                <JesuscribeNext
+                    first={first}
+                    section={section}
+                    onSection={() => setSection(true)}
+                >
+                    <OneQuestionBanner
+                        onNumRandom={handleFetchQuestion}
+                        datos={datos}
+                        onCerrar={() => {
+                            setFirst(false),
+                            setSection(false),
+                            setDatos(null)}
+                        }
+                    />
+                </JesuscribeNext>
                 {/* <InfoSalida misa /> */}
                 {/* <InfoHoy
                     now={now}

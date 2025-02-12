@@ -5,7 +5,7 @@ export default function PespOpcion({ dato, index, select, onSelect, ml }){
             {
                 !ml && <span>{index == 0 ? 'A' : index == 1 ? 'B' : index == 2 ? 'C' : 'D'})</span>
             }
-            <strong>{dato}</strong>
+            <p>{dato}</p>
 
             <style jsx>{`
                 .opcion{
@@ -36,8 +36,29 @@ export default function PespOpcion({ dato, index, select, onSelect, ml }){
                     left: 20px;
                 }
 
-                strong{
+                p{
+                    font-weight: bold;
                     margin-left: ${!ml ? '30px' : '15px'};
+                }
+
+                @media screen and (max-width: 768px){
+                    .opcion{
+                        margin-top: 10px;
+                        width: 48%;
+                        min-height: 32px;
+                        padding: 6px 8px;
+                        font-size: 14px;
+                        border-radius: 20px;
+                    }
+
+                    span{
+                        left: 8px;
+                    }
+
+                    p{
+                        font-weight: 200;
+                        margin-left: ${!ml ? '15px' : '15px'};
+                    }
                 }
             `}</style>
         </div>
