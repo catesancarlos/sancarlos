@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import AppLayout from '../../componentes/layout'
 import Container from '../../componentes/sections/Container'
 import OptionsSection from '../../componentes/sections/OptionsSection'
-import TitleSection from '../../componentes/sections/TitleSection'
 
 import db  from '../../services/dBase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -49,10 +48,22 @@ const urls = [
     'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F06%20Jesuscibe%20-%20Cat%20Multiple.pdf?alt=media&token=fc276489-ab57-4156-aa60-3bf1ad969283'
 ]
 
+const urls3 = [
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F01%20Jesuscibe%20-%20Cat%20General%20Multip3.pdf?alt=media&token=299c3ea1-94ae-4f7a-9e7c-b7b8bd03b5ba',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F02%20Jesuscibe%20-%20Cat%20Vida%20de%20Jesus%20Multip3.pdf?alt=media&token=1ff5f063-e61c-4da4-9441-a706732a57e6',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F03%20Jesuscibe%20-%20Cat%20Nuestra%20Iglesia%20Multip3.pdf?alt=media&token=d380fb5f-bc47-4237-9b73-2c25ed0a0cfc',
+    '',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F05%20Jesuscibe%20-%20Cat%20Liturgia%20Multip3.pdf?alt=media&token=699a7a41-b24f-4b33-af0f-3bb30912bd7e',
+    'https://firebasestorage.googleapis.com/v0/b/datder-b85c8.appspot.com/o/archives%2F06%20Jesuscibe%20-%20Cat%20Multiple%20Multip3.pdf?alt=media&token=75e5d521-67f9-4231-b789-d3b7385db45c'
+]
+
 export default function Preguntas({ categoria, preguntas }){
     const router = useRouter()
+    const [datos, setDatos] = useState([])
     const [section, setSection] = useState(2)
     const [select, setSelect] = useState(1)
+    const [inic, setInic] = useState(false)
+    const [tarde, setTarde] = useState(true)
 
     useEffect(() => {
         if(categoria=='js-general') setSelect(1)
@@ -61,11 +72,27 @@ export default function Preguntas({ categoria, preguntas }){
         if(categoria=='js-sacramentologia') setSelect(4)
         if(categoria=='js-liturgia') setSelect(5)
         if(categoria=='js-multiple') setSelect(6)
-    }, [])
+        setInic(false)
+        setTarde(true)
+    }, [categoria])
 
     useEffect(() => {
         sessionStorage.setItem(`strg-${categoria}`, JSON.stringify(preguntas))
     }, [categoria])
+
+    useEffect(() => {
+        if(preguntas) setDatos(preguntas)
+    }, [preguntas])
+
+    useEffect(() => {
+        if(inic) setDatos(preguntas.filter(pr => pr.no%3 == 0))
+            else setDatos(preguntas)
+    }, [inic])
+
+    useEffect(() => {
+        if(!tarde && categ[select-1] == 'Sacramentologia') setDatos([])
+            else setDatos(preguntas)
+    }, [tarde])
 
     const handleChangeCategory = e => {
         setSelect(e)
@@ -78,7 +105,8 @@ export default function Preguntas({ categoria, preguntas }){
     }
 
     const handleDownload = () => {
-        descarger([urls[select-1], `Preguntas_${categoria}`])
+        if(!inic) descarger([urls[select-1], `Preguntas_${categoria}`])
+        else descarger([urls3[select-1], `Preguntas_${categoria}_multiplos3`])
     }
 
     return(
@@ -90,8 +118,9 @@ export default function Preguntas({ categoria, preguntas }){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => router.push('/jesuscribe')}>Invitación</p>
+                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 3}})}>Categorias</p>
+                    {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(4)}>Fechas</p> */}
                     <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Preguntas</p>
-                    {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 
                 <div className='principal'>
@@ -102,15 +131,38 @@ export default function Preguntas({ categoria, preguntas }){
                         onSelect={handleChangeCategory}
                         bot
                     />
-                    <TitleSection
-                        title={`Categoria: ${categ[select-1]}`}
-                        desc={`Banco de preguntas de la categoría ${categ[select-1]}, para el concurso JESUSCRIBE de la Catequesis San Carlos de Ricaurte. Esta categoría cuenta con ${preguntas.length} preguntas.`}
-                    >
-                        <p className='download' onClick={handleDownload}>Descargar</p>
-                    </TitleSection>
-                    <div>
+                    <div className='title-section'>
+                        <div className='title'>
+                            <strong className='cat-title'>{`Categoria: ${categ[select-1]}`}</strong>
+                            {datos.length > 0 &&
+                                <p className='download' onClick={handleDownload}>Descargar</p>
+                            }
+                        </div>
+                        <div className='cont-filtro'>
+                            A que nivel perteneces:
+                            <div className='filtro'>
+                            {categ[select-1] != 'Sacramentologia' ?
+                                <>
+                                    <p className={inic ? 'acto' : 'normal'} onClick={() => setInic(true)}>Iniciación y Reconciliación</p>
+                                    <p className={!inic ? 'acto' : 'normal'} onClick={() => setInic(false)}>Demas niveles</p>
+                                </>
+                            :
+                                <>
+                                    <p className={!tarde ? 'acto' : 'normal'} onClick={() => setTarde(false)}>Niveles de la mañana</p>
+                                    <p className={tarde ? 'acto' : 'normal'} onClick={() => setTarde(true)}>Niveles de la tarde</p>
+                                </>
+                            }
+                        </div>
+                        </div>
+                        <i>{
+                            datos.length == 0 ? 'Su nivel no debe estudiar esta categoria' : `Banco de preguntas de la 
+                            categoría ${categ[select-1]}, para el concurso JESUSCRIBE de la Catequesis San Carlos de 
+                            Ricaurte. Esta categoría cuenta con ${datos.length} preguntas.`
+                        }</i>
+                    </div>
+                    <div className='bucket'>
                         {
-                            preguntas && preguntas?.sort(function(a, b){
+                            datos && datos?.sort(function(a, b){
                                 return a.no - b.no
                             }).map((pregunta) =>
                                 <div key={`${categoria}-p${pregunta.no}`} className='cont-q'>
@@ -167,6 +219,27 @@ export default function Preguntas({ categoria, preguntas }){
                     font-weight: 200;
                 }
 
+                .title-section{
+                    margin-bottom: 30px;
+                }
+
+                .title{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .cat-title{
+                    color: black;
+                    font-size: 22px;
+                    margin-bottom: 6px;
+                }
+
+                i{
+                    font-size: 17px;
+                    font-weight: 200;
+                }
+
                 .download{
                     background: #EE1C21;
                     padding: 1px 12px 2px 12px;
@@ -174,6 +247,42 @@ export default function Preguntas({ categoria, preguntas }){
                     font-size: 17px;
                     border-radius: 6px;
                     cursor: pointer;
+                }
+
+                .cont-filtro{
+                    margin: 12px 0 15px 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .filtro{
+                    margin-left: 10px;
+                    display: flex;
+                }
+
+                .filtro p{
+                    margin: 0 5px;
+                    padding: 3px 8px;
+                    font-size: 15px;
+                    font-weight: 200;
+                    text-align: center;
+                    border-radius: 6px;
+                    box-shadow: -1px 4px 3px 0px #888;
+                    cursor: pointer;
+                }
+
+                .acto{
+                    background: black;
+                    color: white;
+                }
+
+                .normal{
+                    background: white;
+                    color: black;
+                }
+
+                .bucket{
+                    position: relative;
                 }
 
                 .cont-q{
@@ -227,6 +336,19 @@ export default function Preguntas({ categoria, preguntas }){
                     .principal{
                         width: 100%;
                         padding: 15px 0 0 0;
+                    }
+
+                    .title-section{
+                        margin-bottom: 20px;
+                    }
+
+                    strong{
+                        font-size: 18px;
+                        margin-bottom: 2px;
+                    }
+
+                    i{
+                        font-size: 16px;
                     }
 
                     .cont-q{

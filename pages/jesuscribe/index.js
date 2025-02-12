@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import AppLayout from '../../componentes/layout'
 import Container from '../../componentes/sections/Container'
 import InvitacionJs25 from '../../componentes/jesuscribe/InvitacionJs25'
+import CategoriasJs25 from '../../componentes/jesuscribe/CategoriasJs25'
 
 export default function Jesuscribe(){
     const router = useRouter()
     const [section, setSection] = useState(1)
+
+    useEffect(() => {
+        if(router.query.s){
+            setSection(router.query.s)
+            router.replace('/jesuscribe')
+        }   
+    }, [router.query.s])
 
     return(
         <AppLayout titulo='San Carlos - Jesuscribe' name='Jesuscribe'>
@@ -18,12 +26,14 @@ export default function Jesuscribe(){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Invitación</p>
+                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Categorias</p>
                     <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => router.push('/jesuscribe/js-general')}>Preguntas</p>
                     {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p> */}
                 </aside>
                 <div className='principal'>
                     {
-                        section == 1 ? <InvitacionJs25 /> : ''
+                        section == 1 ? <InvitacionJs25 /> : 
+                            section == 3 ? <CategoriasJs25 /> : ''
                     }
                 </div>
             </Container>
