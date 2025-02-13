@@ -88,7 +88,7 @@ export default function CategoriasJs25(){
                 }
 
                 .bank{
-                    margin-left: calc(50% - 420px);
+                    margin: 0 0 0 calc(50% - 420px);
                     font-size: 14px;
                     font-weight: 400;
                     display: grid;
@@ -146,7 +146,8 @@ export default function CategoriasJs25(){
                     }
 
                     .bank{
-                        margin-left: 0;
+                        margin: 0 -15px 0 -15px;
+                        padding: 0 12px;
                         font-size: 13px;
                         grid-template-columns: 105px 105px 105px 105px 105px 105px 105px;
                         overflow-x: scroll;
