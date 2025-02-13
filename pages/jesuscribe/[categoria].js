@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 import AppLayout from '../../componentes/layout'
 import Container from '../../componentes/sections/Container'
-import OptionsSection from '../../componentes/sections/OptionsSection'
+/* import OptionsSection from '../../componentes/sections/OptionsSection' */
 
 import db  from '../../services/dBase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -60,7 +60,7 @@ const urls3 = [
 export default function Preguntas({ categoria, preguntas }){
     const router = useRouter()
     const [datos, setDatos] = useState([])
-    const [section, setSection] = useState(2)
+    /* const [section, setSection] = useState(2) */
     const [select, setSelect] = useState(1)
     const [inic, setInic] = useState(false)
     const [tarde, setTarde] = useState(true)
@@ -117,20 +117,25 @@ export default function Preguntas({ categoria, preguntas }){
                 img='/logo-jesuscribe.jpg'
             >
                 <aside>
-                    <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => router.push('/jesuscribe')}>Invitación</p>
-                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 3}})}>Categorias</p>
-                    {/* <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(4)}>Fechas</p> */}
-                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Preguntas</p>
+                    <p className={`op-menu`} onClick={() => router.push('/jesuscribe')}>Invitación</p>
+                    <p className={`op-menu`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 2}})}>Niveles</p>
+                    <p className={`op-menu`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 3}})}>Fechas</p>
+                    <p className={`op-menu ${select == 1 && 'active'}`} onClick={() => handleChangeCategory(1)}>General</p>
+                    <p className={`op-menu ${select == 2 && 'active'}`} onClick={() => handleChangeCategory(2)}>Vida de Jesús</p>
+                    <p className={`op-menu ${select == 3 && 'active'}`} onClick={() => handleChangeCategory(3)}>Nuestra Iglesia</p>
+                    <p className={`op-menu ${select == 4 && 'active'}`} onClick={() => handleChangeCategory(4)}>Sacramentologia</p>
+                    <p className={`op-menu ${select == 5 && 'active'}`} onClick={() => handleChangeCategory(5)}>Liturgia</p>
+                    <p className={`op-menu ${select == 6 && 'active'}`} onClick={() => handleChangeCategory(6)}>Multiple</p>
                 </aside>
                 
                 <div className='principal'>
-                    <p className='info'>Las preguntas para el concurso están divididas por categorías, escoge una para revisarlas:</p>
+                    {/* <p className='info'>Las preguntas para el concurso están divididas por categorías, escoge una para revisarlas:</p>
                     <OptionsSection
                         options={opcionesArray}
                         select={select}
                         onSelect={handleChangeCategory}
                         bot
-                    />
+                    /> */}
                     <div className='title-section'>
                         <div className='title'>
                             <strong className='cat-title'>{`Categoria: ${categ[select-1]}`}</strong>
@@ -139,20 +144,20 @@ export default function Preguntas({ categoria, preguntas }){
                             }
                         </div>
                         <div className='cont-filtro'>
-                            A que nivel perteneces:
+                            <p className='perte'>A que nivel perteneces:</p>
                             <div className='filtro'>
-                            {categ[select-1] != 'Sacramentologia' ?
-                                <>
-                                    <p className={inic ? 'acto' : 'normal'} onClick={() => setInic(true)}>Iniciación y Reconciliación</p>
-                                    <p className={!inic ? 'acto' : 'normal'} onClick={() => setInic(false)}>Demas niveles</p>
-                                </>
-                            :
-                                <>
-                                    <p className={!tarde ? 'acto' : 'normal'} onClick={() => setTarde(false)}>Niveles de la mañana</p>
-                                    <p className={tarde ? 'acto' : 'normal'} onClick={() => setTarde(true)}>Niveles de la tarde</p>
-                                </>
-                            }
-                        </div>
+                                {categ[select-1] != 'Sacramentologia' ?
+                                    <>
+                                        <p className={inic ? 'acto' : 'normal'} onClick={() => setInic(true)}>Iniciación y Reconciliación</p>
+                                        <p className={!inic ? 'acto' : 'normal'} onClick={() => setInic(false)}>Demas niveles</p>
+                                    </>
+                                :
+                                    <>
+                                        <p className={!tarde ? 'acto' : 'normal'} onClick={() => setTarde(false)}>Niveles de la mañana</p>
+                                        <p className={tarde ? 'acto' : 'normal'} onClick={() => setTarde(true)}>Niveles de la tarde</p>
+                                    </>
+                                }
+                            </div>
                         </div>
                         <i>{
                             datos.length == 0 ? 'Su nivel no debe estudiar esta categoria' : `Banco de preguntas de la 
@@ -377,6 +382,26 @@ export default function Preguntas({ categoria, preguntas }){
 
                     .correct{
                         margin-left: 20px;
+                    }
+
+                    .cont-filtro{
+                        font-size: 15px;
+                        justify-content: space-between;
+                    }
+
+                    .perte{
+                        width: 100%;
+                    }
+
+                    .filtro{
+                        width: 100%;
+                    }
+
+                    .filtro p{
+                        margin: 0 4px;
+                        padding: 2px 6px;
+                        font-size: 13px;
+
                     }
                 }
             `}</style>
