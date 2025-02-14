@@ -19,9 +19,9 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='1ro de Confirmación'
-                    date='Viernes 14 febrero 2025'
-                    place='Templo Parroquial'
-                    hour='19:00'
+                    date='Postergada'
+                    place=''
+                    hour=''
                 />
                 <ItemAgenda
                     main

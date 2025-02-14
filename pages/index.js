@@ -63,7 +63,7 @@ const Home = () => {
                     dev='Año Biblico'
                     dev2='1ro Confirmación'
                     place='Teatro'
-                    place2='Suspendida'
+                    place2='Postergada 21 feb'
                     hour='19H00'
                 />
                 <JesuscribeNext
