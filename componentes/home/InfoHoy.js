@@ -6,15 +6,10 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 <div className='p2 izq'>
                     <strong>{now ? 'AHORA' : 'HOY'}</strong>
                 </div>
-                <div className='p1 pizq'>
+                <div className='p1'> {/* pizq */}
                     <p>{ev}</p>
                     <i>{dev}</i>
                     <i>{place}</i>
-                </div>
-                <div className='p1'>
-                    <p>{ev}</p>
-                    <i>{dev2}</i>
-                    <i>{place2}</i>
                 </div>
                 <div className='p2 der'>
                     { !now &&
@@ -23,6 +18,11 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                             <strong>{hour}</strong>
                         </>
                     }
+                </div>
+                <div className='p1'>
+                    <p>{ev}</p>
+                    <i>{dev2}</i>
+                    <i style={{color: 'red'}}>{place2}</i>
                 </div>
             </div>
 

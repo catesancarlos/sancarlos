@@ -543,7 +543,8 @@ export default function PosConfMas(){
                 .cont{
                     display: flex;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: flex-start;
+                    margin: 0 -5% 0 0;
                     overflow-x: scroll;
                 }
 
@@ -662,6 +663,10 @@ export default function PosConfMas(){
                     color: #00000099;
                     font-size: 18px;
                     text-align: center;
+                }
+
+                .tercera-cont{
+                    padding-right: 4%;
                 }
 
                 @media screen and (max-width: 768px){
