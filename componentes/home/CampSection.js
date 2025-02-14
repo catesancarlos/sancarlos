@@ -7,25 +7,27 @@ const CampSection = ({ children }) => {
         <section>
             <div className='divo'></div>
             <p className='title'>Campeonato 2025</p>
-            <div className='cont-partidos'>
-                {children}
-            </div>
-            <div className='camp-op'>
-                <div className='h1'>
-                    <p className='h1-t'>Campeonato</p>
-                    <p className='h2-t'>Catequesis 2025</p>
+            <div className='container'>
+                <div className='cont-partidos'>
+                    {children}
                 </div>
-                <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>Calendario</p>
-                </div>
-                <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>Posiciones</p>
-                </div>
-                <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>Goleadores</p>
-                </div>
-                <div className='hg'>
-                    <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>Reglas</p>
+                <div className='camp-op'>
+                    <div className='h1'>
+                        <p className='h1-t'>Campeonato</p>
+                        <p className='h2-t'>Catequesis 2025</p>
+                    </div>
+                    <div className='hg'>
+                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>Calendario</p>
+                    </div>
+                    <div className='hg'>
+                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>Posiciones</p>
+                    </div>
+                    <div className='hg'>
+                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>Goleadores</p>
+                    </div>
+                    <div className='hg'>
+                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>Reglas</p>
+                    </div>
                 </div>
             </div>
 
@@ -34,17 +36,29 @@ const CampSection = ({ children }) => {
                     margin: 0px 4% 40px 4%;
                     margin: 50px 4% 20px 4%;
                     width: 92%;
+                }
+
+                .container{
                     display: flex;
                     flex-direction: row-reverse;
                     justify-content: space-between;
                 }
 
                 .divo{
-                    display: none;
+                    margin-top: 18px;
+                    width: 100%;
+                    border: 2px solid brown;
                 }
 
                 .title{
-                    display: none;
+                    margin: -17px auto 0 auto;
+                    width: 220px;
+                    background: #F2F8F6;
+                    color: brown;
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 30px;
                 }
 
                 .cont-partidos{
@@ -135,6 +149,11 @@ const CampSection = ({ children }) => {
                         width: calc(100% - 30px);
                         display: flex;
                         flex-direction: column;
+                        justify-content: space-between;
+                    }
+
+                    .container{
+                        display: inline;
                     }
 
                     .divo{

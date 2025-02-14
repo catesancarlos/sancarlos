@@ -96,7 +96,8 @@ const Home = () => {
                 <MiniAgenda />
                 <CampSection>
                     <PartidosSemana
-                        title='Partidos de la semana:'
+                        title1='Partidos sábado:'
+                        title2='Partidos domingo:'
                         fecha={fecha5}
                         home
                     />

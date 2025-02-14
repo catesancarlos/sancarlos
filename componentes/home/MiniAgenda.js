@@ -76,7 +76,7 @@ const MiniAgenda = () => {
                 .divo{
                     margin-top: 18px;
                     width: 100%;
-                    border: 1px solid brown;
+                    border: 2px solid brown;
                 }
 
                 .title{
@@ -114,6 +114,10 @@ const MiniAgenda = () => {
                         margin: 10px 15px 20px 15px;
                         margin: 20px 15px 0 15px;
                         width: calc(100% - 30px);
+                    }
+
+                    .divo{
+                        border: 1px solid brown;
                     }
 
                     .title{

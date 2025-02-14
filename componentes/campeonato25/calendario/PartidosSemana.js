@@ -1,7 +1,8 @@
 import ItemCalendario from './ItemCalendario'
 
 export default function PartidosSemana({
-    title,
+    title1,
+    title2,
     fecha,
     home,
     control,
@@ -12,7 +13,7 @@ export default function PartidosSemana({
 
     return (
         <>
-            { title && <p>{title}</p> }
+            { title1 && <p>{title1}</p> }
             <ItemCalendario
                 now={fecha?.partido1}
                 res={fecha?.res1}
@@ -57,6 +58,7 @@ export default function PartidosSemana({
                 onGoles={onGoles}
                 onAgregar={onAgregar}
             />
+            { title2 && <p>{title2}</p> }
             <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
