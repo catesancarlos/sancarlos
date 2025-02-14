@@ -29,7 +29,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
             <style jsx>{`
                 section{
                     opacity: 1;
-                    margin: 0 4% 35px 4%;
+                    margin: 0 4% 30px 4%;
                     width: 92%;
                     font-family: 'Lato', sans-serif;
                     display: flex;
@@ -39,7 +39,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
                 .salida{
                     width: 100%;
-                    padding: 15px;
+                    padding: 12px;
                     color: black;
                     display: flex;
                     justify-content: center;
@@ -50,7 +50,8 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
                 .p1{
                     margin: -1px 0 0 0;
-                    padding: 0 20px;
+                    width: 180px;
+                    height: 70px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -58,23 +59,22 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 }
 
                 .pizq{
-                    padding-right: 20px;
                     border-right: 4px solid #3C4142;
                 }
 
                 .p1 p{
-                    font-size: 19px;
+                    font-size: 17px;
                     font-weight: bold;
                 }
 
                 .p1 i{
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 200;
                 }
 
                 .p2{
-                    height: 70px;
-                    width: 110px;
+                    height: 72px;
+                    width: 100px;
                     background: #3C4142;
                     padding: 5px 8px;
                     color: white;
@@ -111,31 +111,35 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
                 @media screen and (max-width: 768px){
                     section{
-                        margin: 5px 15px 15px 15px;
-                        width: calc(100% - 30px);
+                        margin: 5px 14px 14px 14px;
+                        width: calc(100% - 28px);
                     }
 
                     .salida{
-                        padding: 10px;
+                        padding: 6px;
                         border-radius: 12px;
                     }
 
                     .p1{
-                        /* width: ${now ? 'calc(100% - 160px)' : 'calc(100% - 170px)'}; */
-                        width: auto;
+                        height: 58px;
+                        width: ${now ? 'calc((100% -85px)/2)' : 'calc((100% - 120px)/2)'};
+                    }
+
+                    .pizq{
+                        border-right: 3px solid #3C4142;
                     }
 
                     .p1 p{
-                        font-size: 16px;
+                        font-size: 13px;
                     }
 
                     .p1 i{
-                        font-size: 15px;
+                        font-size: 12px;
                     }
 
                     .p2{
-                        width: 70px;
-                        margin: 0 3px;
+                        height: 60px;
+                        width: 60px;
                         padding: 5px 8px;
                         border-radius: 10px;
                     }
@@ -147,7 +151,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
                     .der{
                         border-radius: 0 10px 10px 0;
-                        width: ${now ? '30px' : '70px'};
+                        width: ${now ? '25px' : '60px'};
                     }
 
                     .p2 p{

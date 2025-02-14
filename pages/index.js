@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 import AppLayout from '../componentes/layout'
 /* import InfoSalida from '../componentes/home/InfoSalida'
-import InfoHoy from '../componentes/home/InfoHoy'
 import PartidoIda from '../componentes/banners/PartidoIda' */
+import InfoHoy from '../componentes/home/InfoHoy'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
@@ -57,6 +57,15 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+                <InfoHoy
+                    now={now}
+                    ev='Cate Familiar'
+                    dev='Año Biblico'
+                    dev2='1ro Confirmación'
+                    place='Teatro'
+                    place2='Templo'
+                    hour='19H00'
+                />
                 <JesuscribeNext
                     first={first}
                     section={section}
@@ -73,15 +82,6 @@ const Home = () => {
                     />
                 </JesuscribeNext>
                 {/* <InfoSalida misa /> */}
-                {/* <InfoHoy
-                    now={now}
-                    ev='Cate Familiar'
-                    dev='2do Comunión'
-                    dev2='Cominidades'
-                    place='Teatro'
-                    place2='Cada comunidad'
-                    hour='19H00'
-                /> */}
                 {/* <div className='banner'>
                     <PartidoIda />
                     <img src='/main_banner.jpg' />
