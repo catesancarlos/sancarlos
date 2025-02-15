@@ -69,7 +69,7 @@ export default function ItemCalendario({
                                 <p onClick={() => onStatus([control, 2])}>E</p>
                                 <p onClick={() => onGoles([control, 1, '-'])}>-</p>
                             </div>
-                        : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : ''
+                        : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : now==3 ? <p className='suspendido'>Suspendido</p> : ''
                     }
                     <div className='marcador'>
                         <strong className='meq'>{res ? res?.[0] : 0}</strong>
@@ -207,6 +207,14 @@ export default function ItemCalendario({
                     color: #555;
                     font-size: 13px;
                     font-weight: bold;
+                }
+
+                .suspendido{
+                    position: absolute;
+                    top: 8px;
+                    color: red;
+                    font-size: 13px;
+                    font-weight: 500;
                 }
 
                 .op-now{
