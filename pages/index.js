@@ -60,10 +60,10 @@ const Home = () => {
                 <InfoHoy
                     now={now}
                     ev='Cate Familiar'
-                    dev='Año Biblico'
-                    dev2='1ro Confirmación'
+                    dev='2do Confirmación'
+                    /* dev2='Año Biblico' */
                     place='Teatro'
-                    place2='Postergada 21 feb'
+                    /* place2='Postergada 21 feb' */
                     hour='19H00'
                 />
                 <JesuscribeNext

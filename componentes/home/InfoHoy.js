@@ -6,23 +6,26 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 <div className='p2 izq'>
                     <strong>{now ? 'AHORA' : 'HOY'}</strong>
                 </div>
-                <div className='p1'> {/* pizq */}
+                <div className='p1'>
                     <p>{ev}</p>
                     <i>{dev}</i>
                     <i>{place}</i>
                 </div>
+                {
+                    dev2 &&
+                    <div className='p1 pizq'>
+                        <p>{ev}</p>
+                        <i>{dev2}</i>
+                        <i style={{color: 'red'}}>{place2}</i>
+                    </div>
+                }
                 <div className='p2 der'>
                     { !now &&
                         <>
-                            {/* <p>{place}</p> */}
+                            <p>{place}</p>
                             <strong>{hour}</strong>
                         </>
                     }
-                </div>
-                <div className='p1'>
-                    <p>{ev}</p>
-                    <i>{dev2}</i>
-                    <i style={{color: 'red'}}>{place2}</i>
                 </div>
             </div>
 
@@ -59,7 +62,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 }
 
                 .pizq{
-                    border-right: 4px solid #3C4142;
+                    border-left: 4px solid #3C4142;
                 }
 
                 .p1 p{
@@ -126,7 +129,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                     }
 
                     .pizq{
-                        border-right: 3px solid #3C4142;
+                        border-left: 3px solid #3C4142;
                     }
 
                     .p1 p{
