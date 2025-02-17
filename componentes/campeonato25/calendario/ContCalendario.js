@@ -3,6 +3,7 @@ import ItemCalendario from './ItemCalendario'
 import PartidosPasadosF1 from './pasados/PartidosPasadosF1'
 import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
 import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
+import PartidosPasadosF4 from './pasados/PartidosPasadosF4'
 import PartidosPasados from './PartidosPasados'
 
 export default function Calendario({ datos, children }){
@@ -15,14 +16,14 @@ export default function Calendario({ datos, children }){
                 color='#245590'
             />
             <div>
-                <strong>Quinta semana</strong>
+                <strong>Sexta semana</strong>
                 {children}
             </div>
             <div>
-                <strong>Sexta semana</strong>
-                <ItemCalendario
+                <strong>Septima semana</strong>
+                {/* <ItemCalendario
                     dia='Sábado'
-                    fecha='22 Feb'
+                    fecha='08 Mar'
                     hora='16h40'
                     genero='M'
                     equipos={['Equipo Glorioso', 'Camino a la Tierra Prometída']}
@@ -35,8 +36,22 @@ export default function Calendario({ datos, children }){
                     mas={[2, ]}
                 />
                 <ItemCalendario
+                    dia='Sábado'
+                    fecha='08 Mar'
+                    hora='15h20'
+                    genero='M'
+                    equipos={['Equipo Glorioso', 'Camino a la Tierra Prometída']}
+                    paralelos={['Año Biblico 4 (M2)', 'Año Biblico 5 (M)']}
+                    logos={['A4M', 'A5M']}
+                    colores={{
+                        eq1: ['blue', 'blue', 'white'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                    mas={[2, ]}
+                />
+                <ItemCalendario
                     dia='Domingo'
-                    fecha='23 Feb'
+                    fecha='09 Mar'
                     hora='09h00'
                     genero='M'
                     equipos={['Predicadores', 'Los Águilas']}
@@ -50,7 +65,7 @@ export default function Calendario({ datos, children }){
                 />
                 <ItemCalendario
                     dia='Domingo'
-                    fecha='23 Feb'
+                    fecha='09 Mar'
                     hora='10h00'
                     genero='M'
                     equipos={['Los Misioneros', 'Los Hermanos de Jesus']}
@@ -63,7 +78,7 @@ export default function Calendario({ datos, children }){
                 />
                 <ItemCalendario
                     dia='Domingo'
-                    fecha='23 Feb'
+                    fecha='09 Mar'
                     hora='11h00'
                     genero='M'
                     equipos={['Los Ángeles Bíblicos', 'Equipo de Dios']}
@@ -77,7 +92,7 @@ export default function Calendario({ datos, children }){
                 />
                 <ItemCalendario
                     dia='Domingo'
-                    fecha='23 Feb'
+                    fecha='09 Mar'
                     hora='12h00'
                     genero='M'
                     equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
@@ -87,7 +102,7 @@ export default function Calendario({ datos, children }){
                         eq1: ['blue', 'blue', 'white'],
                         eq2: ['white', 'black', 'black']
                     }}
-                />
+                /> */}
             </div>
             <div>
                 <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
@@ -111,11 +126,17 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             <div>
-                <PartidosPasados
+                <PartidosPasadosF4
                     title='Resultados Semana 4:'
                     fecha={datos[3]}
                 />
                 <strong className='ct'>[Fin de la Primera Ronda]</strong>
+            </div>
+            <div>
+                <PartidosPasados
+                    title='Resultados Semana 5:'
+                    fecha={datos[4]}
+                />
             </div>
 
             <style jsx>{`

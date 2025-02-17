@@ -15,7 +15,7 @@ const opcionesArray = [
 ]
 
 const Goleadores = () => {
-    const [select, setSelect] = useState(1)
+    const [select, setSelect] = useState(2)
 
     return (
         <section>
@@ -61,16 +61,28 @@ const Goleadores = () => {
                                 <td>5</td>
                             </tr>
                             <tr>
+                                <td>1</td>
+                                <td>Andrea Tacuri</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
                                 <td>2</td>
                                 <td>Monica Taday</td>
                                 <td>Traicioneras como Judas (25F)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>3</td>
-                                <td>Andrea Tacuri</td>
+                                <td>2</td>
+                                <td>Adela Pintado</td>
                                 <td>Estrellitas de María (2AF)</td>
-                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Erika Malla</td>
+                                <td>Newcastells (14F)</td>
+                                <td>4</td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -85,10 +97,10 @@ const Goleadores = () => {
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>4</td>
-                                <td>Adela Pintado</td>
+                                <td>3</td>
+                                <td>Carolina Minchay</td>
                                 <td>Estrellitas de María (2AF)</td>
-                                <td>2</td>
+                                <td>3</td>
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -104,32 +116,32 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Erika Malla</td>
-                                <td>Newcastells (14F)</td>
+                                <td>Leidy Agila</td>
+                                <td>Mujeres de Nazareth (A4F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Leidy Agila</td>
-                                <td>Mujeres de Nazareth (A4F)</td>
+                                <td>Vanessa Dominguez</td>
+                                <td>Las Ángeles Negros (13F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Lizbeth Cueva</td>
+                                <td>Génesis (23F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Paula Bonilla</td>
+                                <td>Las Águilas (11F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td>Anahi Mendoza</td>
                                 <td>Club GNU (24F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Carolina Minchay</td>
-                                <td>Las Águilas (11F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Oula Bonilla</td>
-                                <td>Estrellitas de María (2AF)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
@@ -173,21 +185,40 @@ const Goleadores = () => {
                                 <td>Leidy Agila</td>
                                 <td>Suri Cruz (A1F)</td>
                                 <td>1</td>
-                            </tr><tr>
+                            </tr>
+                            <tr>
                                 <td>5</td>
                                 <td>Leidy Agila</td>
                                 <td>Mickeyla Chimbo (A1F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
-                                <td>Autogol</td>
-                                <td></td>
+                                <td>5</td>
+                                <td>Antonia Nieto</td>
+                                <td>Traicioneras como Judas (25F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
+                                <td>5</td>
+                                <td>Adriana Ordoñez</td>
+                                <td>Traicioneras como Judas (25F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Maite Ordoñez</td>
+                                <td>Newcastells (14F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Autogol</td>
+                                <td></td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>50</strong></td>
+                                <td className='c-t t2'><strong>68</strong></td>
                             </tr>
                         </table>
                     :
@@ -217,9 +248,8 @@ const Goleadores = () => {
                                 <td>3</td>
                                 <td>Julio Uzhca</td>
                                 <td>Confirmación FC (22M)</td>
-                                <td>5</td>
+                                <td>7</td>
                             </tr>
-
                             <tr>
                                 <td>3</td>
                                 <td>Jorge Gonzalez</td>
@@ -272,6 +302,12 @@ const Goleadores = () => {
                                 <td>5</td>
                                 <td>Dylan Campoverde</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Randy Guzman</td>
+                                <td>GDL (24M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
@@ -353,6 +389,24 @@ const Goleadores = () => {
                                 <td>2</td>
                             </tr>
                             <tr>
+                                <td>6</td>
+                                <td>Matias Cedeño</td>
+                                <td>Confirmación FC (22F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Erick Aguayza</td>
+                                <td>Confirmación FC (22F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Antony Agila</td>
+                                <td>GDL (24M)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
                                 <td>7</td>
                                 <td>Diego Barros</td>
                                 <td>Newcastells (14M)</td>
@@ -372,12 +426,6 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>Erick Aguayza</td>
-                                <td>Confirmación FC (22F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
                                 <td>Jhoao Guachichulca</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>1</td>
@@ -392,18 +440,6 @@ const Goleadores = () => {
                                 <td>7</td>
                                 <td>Justin Castillo</td>
                                 <td>Santos y Religiosos F.C. (21F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Antony Agila</td>
-                                <td>GDL (24M)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Randy Guzman</td>
-                                <td>GDL (24M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
@@ -458,6 +494,12 @@ const Goleadores = () => {
                                 <td>7</td>
                                 <td>Bruno Quizhpe</td>
                                 <td>Equipo de Dios (A4M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Jordan Peralta</td>
+                                <td>GDL (24M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
