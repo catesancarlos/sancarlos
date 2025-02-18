@@ -57,15 +57,15 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                <InfoHoy
+                {/* <InfoHoy
                     now={now}
                     ev='Cate Familiar'
                     dev='2do Confirmación'
-                    /* dev2='Año Biblico' */
+                    dev2='Año Biblico'
                     place='Teatro'
-                    /* place2='Postergada 21 feb' */
+                    place2='Postergada 21 feb'
                     hour='19H00'
-                />
+                /> */}
                 <JesuscribeNext
                     first={first}
                     section={section}

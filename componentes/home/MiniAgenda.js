@@ -9,7 +9,15 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/* <ItemAgenda
+                <ItemAgenda
+                    title='Catequesis Familiar'
+                    subtitle='1ro de Confirmación'
+                    date='Viernes 21 febrero 2025'
+                    place='Teatro Catequesis'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    tr
                     title='Catequesis Familiar'
                     subtitle='Año Biblico'
                     date='Viernes 14 febrero 2025'
@@ -17,17 +25,10 @@ const MiniAgenda = () => {
                     hour='19:00'
                 />
                 <ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='1ro de Confirmación'
-                    date='Postergada'
-                    place=''
-                    hour=''
-                /> */}
-                <ItemAgenda
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 15 febrero 2025'
+                    date='Sábado 22 febrero 2025'
                     place='Centros catequeticos'
                     hour={`Segun horario >>`}
                 >
@@ -42,23 +43,16 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    title='Quinta Semana'
+                    title='Sexta Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 15 febero 2025'
+                    date='Sábado 22 febero 2025'
                     place='Patio Catequesis'
                     hour='16:40'
                 />
                 <ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='2do Confirmación'
-                    date='Sábado 15 febrero 2025'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                />
-                <ItemAgenda
-                    title='Quinta Semana'
+                    title='Sexta Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 16 febero 2025'
+                    date='Domingo 23 febero 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

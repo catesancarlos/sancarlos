@@ -8,7 +8,8 @@ export default function ItemAgenda({
     place,
     hour,
     url,
-    children
+    children,
+    tr
 }){
     const router = useRouter()
 
@@ -39,7 +40,8 @@ export default function ItemAgenda({
                 article{
                     background: white;
                     width: ${main ? 'calc(50% - 15px)' : 'calc(25% - 15px)'};
-                    display: ${main ? 'flex' : 'block'};
+                    display: ${tr ? 'none' : main ? 'flex' : 'block'};
+                    /* display: ${main ? 'flex' : 'block'}; */
                     border: ${main ? '3px solid #245590' : '2px solid #000000AA'};
                     border-radius: 15px;
                     margin-right: 20px;
@@ -47,11 +49,11 @@ export default function ItemAgenda({
                     overflow: hidden;
                 }
 
-                article:nth-child(3){
+                article:nth-child(4){
                     margin-right: 0;
                 }
 
-                article:nth-child(4), article:nth-child(5), article:nth-child(6){
+                article:nth-child(5), article:nth-child(6), article:nth-child(7){
                     margin-top: 20px;
                 }
                 
@@ -113,6 +115,8 @@ export default function ItemAgenda({
 
                 @media screen and (max-width: 768px){
                     article{
+                        opacity: ${tr ? '0' : '1'};
+                        display: auto;
                         width: calc(50% - 8px);
                         width: ${main ? '100%' : 'calc(50% - 8px)'};
                         font-size: 13px;
