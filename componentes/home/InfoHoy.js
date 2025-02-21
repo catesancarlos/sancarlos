@@ -1,15 +1,29 @@
-export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
+import { useRouter } from 'next/router'
+
+export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, link }) {
+    const router = useRouter()
 
     return (
         <section>
             <div className='salida'>
                 <div className='p2 izq'>
-                    <strong>{now ? 'AHORA' : 'HOY'}</strong>
+                    <strong>{now ? 'AHORA' : dia ? dia : 'HOY'}</strong>
                 </div>
                 <div className='p1'>
                     <p>{ev}</p>
                     <i>{dev}</i>
-                    <i>{place}</i>
+                    {
+                        link ? 
+                            <i 
+                                onClick={() => router.push(link[1])}
+                                style={{
+                                    cursor: 'pointer',
+                                    color: '#00AEEF',
+                                    fontWeight: 'bold'
+                                }}
+                            >{link[0]}</i> 
+                                : <i>{place}</i>
+                    }
                 </div>
                 {
                     dev2 &&
@@ -22,7 +36,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 <div className='p2 der'>
                     { !now &&
                         <>
-                            <p>{place}</p>
+                            {/* <p>{place}</p> */}
                             <strong>{hour}</strong>
                         </>
                     }
@@ -54,6 +68,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
                 .p1{
                     margin: -1px 0 0 0;
                     width: 180px;
+                    width: 280px;
                     height: 70px;
                     display: flex;
                     flex-direction: column;
@@ -125,7 +140,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour }) {
 
                     .p1{
                         height: 58px;
-                        width: ${now ? 'calc((100% -85px)/2)' : 'calc((100% - 120px)/2)'};
+                        width: ${now ? 'calc((100% - 85px)/1)' : 'calc((100% - 120px)/1)'};
                     }
 
                     .pizq{

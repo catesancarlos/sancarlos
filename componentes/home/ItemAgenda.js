@@ -9,6 +9,7 @@ export default function ItemAgenda({
     hour,
     url,
     children,
+    color,
     tr
 }){
     const router = useRouter()
@@ -42,7 +43,7 @@ export default function ItemAgenda({
                     width: ${main ? 'calc(50% - 15px)' : 'calc(25% - 15px)'};
                     display: ${tr ? 'none' : main ? 'flex' : 'block'};
                     /* display: ${main ? 'flex' : 'block'}; */
-                    border: ${main ? '3px solid #245590' : '2px solid #000000AA'};
+                    border: ${color ? `3px solid ${color}` : main ? '3px solid #245590' : '2px solid #000000AA'};
                     border-radius: 15px;
                     margin-right: 20px;
                     box-shadow: 2px 2px 4px 0px #777;
@@ -62,7 +63,7 @@ export default function ItemAgenda({
                 }
 
                 .header{
-                    background: ${main ? '#245590' : '#000000AA'};
+                    background: ${color ? color : main ? '#245590' : '#000000AA'};
                     background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
                     padding: 8px 12px 11px 12px;
                     color: white;
@@ -121,7 +122,7 @@ export default function ItemAgenda({
                         width: ${main ? '100%' : 'calc(50% - 8px)'};
                         font-size: 13px;
                         margin-right: 0px;
-                        border: ${main ? '3px solid #245590' : '2px solid #000000AA'};
+                        border: ${color ? `2px solid ${color}` : main ? '3px solid #245590' : '2px solid #000000AA'};
                         border-radius: 10px;
                         box-shadow: 2px 2px 2px 0px #777;
                         margin-bottom: 15px;

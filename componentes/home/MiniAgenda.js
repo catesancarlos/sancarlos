@@ -50,6 +50,14 @@ const MiniAgenda = () => {
                     hour='16:40'
                 />
                 <ItemAgenda
+                    color='#6600A1'
+                    title='BINGO'
+                    subtitle='SOLIDARIO'
+                    date='Sábado 22 febero 2025'
+                    place='Teatro Catequesis'
+                    hour='20:00'
+                />
+                <ItemAgenda
                     title='Sexta Semana'
                     subtitle='Campeonato 2025'
                     date='Domingo 23 febero 2025'
