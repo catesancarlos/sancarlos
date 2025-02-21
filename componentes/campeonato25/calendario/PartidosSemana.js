@@ -69,16 +69,15 @@ export default function PartidosSemana({
                 control={control && control[2]}
                 dia='Domingo'
                 fecha='23 Feb'
-                hora='08h30'
+                hora='08h20'
                 genero='M'
-                equipos={['Predicadores', 'Los Águilas']}
-                paralelos={['2do Confir. 4 (M1)', '1ro Confir. 1 (M)']}
-                logos={['24M', '11M']}
+                equipos={['Los Angeles Negros', 'Fuerza Divina']}
+                paralelos={['1ro Confir. 3 (M)', 'Confir. Ángeles (M)']}
+                logos={['13M', '2AM']}
                 colores={{
-                    eq1: ['white', 'black', 'black'],
+                    eq1: ['black', 'black', 'white'],
                     eq2: ['white', 'black', 'black']
                 }}
-                mas={[1, ]}
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
@@ -92,7 +91,7 @@ export default function PartidosSemana({
                 control={control && control[3]}
                 dia='Domingo'
                 fecha='23 Feb'
-                hora='09h30'
+                hora='09h00'
                 genero='M'
                 equipos={['Los Misioneros', 'Los Hermanos de Jesus']}
                 paralelos={['Año Bíblico 2 (M)', 'Año Bíblico 1 (M)']}
@@ -114,7 +113,7 @@ export default function PartidosSemana({
                 control={control && control[4]}
                 dia='Domingo'
                 fecha='23 Feb'
-                hora='10h30'
+                hora='09h40'
                 genero='M'
                 equipos={['Los Ángeles Bíblicos', 'Equipo de Dios']}
                 paralelos={['Año Bíblico 3 (M)', 'Año Bíblico 4 (M1)']}
@@ -122,6 +121,29 @@ export default function PartidosSemana({
                 colores={{
                     eq1: ['white', 'black', 'black'],
                     eq2: ['red', 'red', 'white']
+                }}
+                mas={[, 1]}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            {/* <ItemCalendario
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                home={home}
+                control={control && control[2]}
+                dia='Domingo'
+                fecha='23 Feb'
+                hora='08h30'
+                genero='M'
+                equipos={['Predicadores', 'Los Águilas']}
+                paralelos={['2do Confir. 4 (M1)', '1ro Confir. 1 (M)']}
+                logos={['24M', '11M']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
                 }}
                 mas={[1, ]}
                 onStatus={onStatus}
@@ -149,30 +171,8 @@ export default function PartidosSemana({
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                now={fecha?.partido7}
-                res={fecha?.res7}
-                jugador={fecha?.jugador7}
-                pen={fecha?.pen7}
-                home={home}
-                control={control && control[6]}
-                dia='Domingo'
-                fecha='23 Feb'
-                hora='12h30'
-                genero='M'
-                equipos={['Los Angeles Negros', 'Fuerza Divina']}
-                paralelos={['1ro Confir. 3 (M)', 'Confir. Ángeles (M)']}
-                logos={['13M', '2AM']}
-                colores={{
-                    eq1: ['black', 'black', 'white'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-
+            /> */}
+            
             <style jsx>{`
                 p{
                     color: #245590;
