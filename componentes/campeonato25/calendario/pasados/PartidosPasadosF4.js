@@ -1,12 +1,11 @@
 import PartidoSoloResultado from '../PartidoSoloResultado'
 
-export default function PartidosPasados({ title, fecha, home }){    
+export default function PartidosPasadosF4({ title, fecha, home }){    
 
     return (
         <>
             { title && <p>{title}</p> }
             <PartidoSoloResultado
-                now={fecha?.partido1}
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
@@ -24,7 +23,6 @@ export default function PartidosPasados({ title, fecha, home }){
                 }}
             />
             <PartidoSoloResultado
-                now={fecha?.partido2}
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}

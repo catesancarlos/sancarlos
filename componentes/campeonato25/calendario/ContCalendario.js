@@ -4,6 +4,7 @@ import PartidosPasadosF1 from './pasados/PartidosPasadosF1'
 import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
 import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
 import PartidosPasadosF4 from './pasados/PartidosPasadosF4'
+import PartidosPasadosF5 from './pasados/PartidosPasadosF5'
 import PartidosPasados from './PartidosPasados'
 
 export default function Calendario({ datos, children }){
@@ -16,11 +17,11 @@ export default function Calendario({ datos, children }){
                 color='#245590'
             />
             <div>
-                <strong>Sexta semana</strong>
+                <strong>Septima semana</strong>
                 {children}
             </div>
             <div>
-                <strong>Septima semana</strong>
+                <strong>Octava semana</strong>
                 {/* <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
@@ -96,9 +97,15 @@ export default function Calendario({ datos, children }){
                 <strong className='ct'>[Fin de la Primera Ronda]</strong>
             </div>
             <div>
-                <PartidosPasados
+                <PartidosPasadosF5
                     title='Resultados Semana 5:'
                     fecha={datos[4]}
+                />
+            </div>
+            <div>
+                <PartidosPasados
+                    title='Resultados Semana 6:'
+                    fecha={datos[5]}
                 />
             </div>
 

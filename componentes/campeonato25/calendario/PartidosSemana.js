@@ -13,7 +13,7 @@ export default function PartidosSemana({
 
     return (
         <>
-            { title1 && <p>{title1}</p> }
+            {/* { title1 && <p>{title1}</p> }
             <ItemCalendario
                 now={fecha?.partido1}
                 res={fecha?.res1}
@@ -126,7 +126,7 @@ export default function PartidosSemana({
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
-            />
+            /> */}
             {/* <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}

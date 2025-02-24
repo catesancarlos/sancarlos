@@ -104,8 +104,9 @@ const Home = () => {
                         home
                     />
                     <PartidosPasados
+                        noTop
                         title='Resultados semana pasada:'
-                        fecha={fecha5}
+                        fecha={fecha6}
                         home
                     />
                 </CampSection>
