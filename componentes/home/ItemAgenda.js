@@ -31,7 +31,7 @@ export default function ItemAgenda({
                 </div>
             </div>
             {
-                children &&
+                (children &&main) &&
                 <div className='right-section'>
                     {children}
                 </div>

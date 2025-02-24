@@ -25,12 +25,12 @@ const MiniAgenda = () => {
                     hour='19:00'
                 /> */}
                 <ItemAgenda
-                    main
+                    /* main */
                     title='Catequesis'
-                    subtitle='Clases Normales'
-                    date='Sábado 22 febrero 2025'
-                    place='Centros catequeticos'
-                    hour={`Segun horario >>`}
+                    subtitle='NO hay clases'
+                    date='Sábado 01 marzo 2025'
+                    place='Vacaciones Carnaval'
+                    hour={`Regreso 08 marzo 2025`}
                 >
                     <strong>Centro</strong>
                     <p className='nt lg'>Mañana: 08:45 - 11:30</p>
@@ -42,7 +42,7 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                <ItemAgenda
+                {/* <ItemAgenda
                     title='Sexta Semana'
                     subtitle='Campeonato 2025'
                     date='Sábado 22 febero 2025'
@@ -64,7 +64,7 @@ const MiniAgenda = () => {
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
-                />
+                /> */}
             </div>
 
             <style jsx>{`

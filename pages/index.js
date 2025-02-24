@@ -58,15 +58,15 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                <InfoHoy
+                {/* <InfoHoy
                     now={now}
                     ev='Bingo Solidario'
                     dev='Teatro'
-                    /* dev2='Año Biblico' */
+                    dev2='Año Biblico'
                     link={['Información y compra de tablas', 'https://wa.me/593992648663']}
-                    /* place2='Postergada 21 feb' */
+                    place2='Postergada 21 feb'
                     hour='20H00'
-                />
+                /> */}
 
                 <JesuscribeNext
                     first={first}
