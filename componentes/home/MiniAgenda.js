@@ -9,28 +9,27 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/* <ItemAgenda
+                <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='1ro de Confirmación'
-                    date='Viernes 21 febrero 2025'
+                    subtitle='Iniciación'
+                    date='Viernes 07 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
                 <ItemAgenda
-                    tr
-                    title='Catequesis Familiar'
-                    subtitle='Año Biblico'
-                    date='Viernes 14 febrero 2025'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                /> */}
+                    title='EUCARISTIA'
+                    subtitle='Catequesis'
+                    date='Sábado 08 marzo 2025'
+                    place='Templo Parroquial'
+                    hour='09:00 / 14:00'
+                />
                 <ItemAgenda
-                    /* main */
+                    main
                     title='Catequesis'
-                    subtitle='NO hay clases'
-                    date='Sábado 01 marzo 2025'
-                    place='Vacaciones Carnaval'
-                    hour={`Regreso 08 marzo 2025`}
+                    subtitle='Clases Normales'
+                    date='Sábado 08 marzo 2025'
+                    place='Centros catequeticos'
+                    hour={`Según horario`}
                 >
                     <strong>Centro</strong>
                     <p className='nt lg'>Mañana: 08:45 - 11:30</p>
@@ -42,29 +41,28 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                {/* <ItemAgenda
-                    title='Sexta Semana'
+                <ItemAgenda
+                    title='Septima Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 22 febero 2025'
+                    date='Sábado 08 marzo 2025'
                     place='Patio Catequesis'
                     hour='16:40'
                 />
                 <ItemAgenda
-                    color='#6600A1'
-                    title='BINGO'
-                    subtitle='SOLIDARIO'
-                    date='Sábado 22 febero 2025'
+                    title='Catequesis Familiar'
+                    subtitle='1ro Comunión'
+                    date='Sábado 08 marzo 2025'
                     place='Teatro Catequesis'
-                    hour='20:00'
+                    hour='19:00'
                 />
                 <ItemAgenda
-                    title='Sexta Semana'
+                    title='Septima Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 23 febero 2025'
+                    date='Domingo 09 marzo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
-                /> */}
+                />
             </div>
 
             <style jsx>{`

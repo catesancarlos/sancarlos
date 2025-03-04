@@ -7,6 +7,18 @@ export default function Timenine(){
         <AppLayout titulo='San Carlos - Timeline' name='Timeline'>
             <section>
                 <ItemTime
+                    title='Catequesis Familiar Marzo'
+                    desc='Horarios por niveles para la Catequesis familiar del mes de marzo.'
+                    img='/cat_fam_mar_25.jpg'
+                    date='04 marzo 2025'
+                />
+                <ItemTime
+                    title='Misa Mensual Marzo'
+                    desc='El primer sábado de cada mes en la Catequesis tenemos eucaristia, en este mes, estos seran los horarios.'
+                    img='/misa_mar_25.jpg'
+                    date='04 marzo 2025'
+                />
+                <ItemTime
                     title='Catequesis Familiar Febrero'
                     desc='Horarios por niveles para la Catequesis familiar del mes de febrero.'
                     img='/cat_fam_feb_25.jpg'

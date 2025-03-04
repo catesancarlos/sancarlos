@@ -23,50 +23,31 @@ export default function Calendario({ datos, children }){
             <div>
                 <strong>Octava semana</strong>
                 {/* <ItemCalendario
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
-                home={home}
-                control={control && control[2]}
-                dia='Domingo'
-                fecha='23 Feb'
-                hora='08h30'
-                genero='M'
-                equipos={['Predicadores', 'Los Águilas']}
-                paralelos={['2do Confir. 4 (M1)', '1ro Confir. 1 (M)']}
-                logos={['24M', '11M']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                mas={[1, ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                now={fecha?.partido6}
-                res={fecha?.res6}
-                jugador={fecha?.jugador6}
-                pen={fecha?.pen6}
-                home={home}
-                control={control && control[5]}
-                dia='Domingo'
-                fecha='23 Feb'
-                hora='11h30'
-                genero='M'
-                equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
-                paralelos={['2do Confir. 3 (M)', '2do Confir. 1 (M)']}
-                logos={['23M', '21M']}
-                colores={{
-                    eq1: ['blue', 'blue', 'white'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            /> */}
+                    dia='Sábado'
+                    fecha='15 Mar'
+                    hora='16h40'
+                    genero='M'
+                    equipos={['Molinopamba', 'Los Águilas']}
+                    paralelos={['Confir. Molinopamba (M)', '1ro Confir. 1 (M)']}
+                    logos={['2MM', '11M']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+                <ItemCalendario
+                    dia='Sábado'
+                    fecha='15 Mar'
+                    hora='17h20'
+                    genero='M'
+                    equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
+                    paralelos={['2do Confir. 3 (M)', '2do Confir. 1 (M)']}
+                    logos={['25M', '21M']}
+                    colores={{
+                        eq1: ['blue', 'blue', 'white'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                /> */}
             </div>
             <div>
                 <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
