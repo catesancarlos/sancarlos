@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Equipo from '../Equipo'
 
 export default function ItemCalendario({
+    com,
     now,
     res,
     jugador,
@@ -49,6 +50,7 @@ export default function ItemCalendario({
                 </div>
                 <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
                     <Equipo
+                        com={com}
                         ca
                         nombre={equipos[0]}
                         paralelo={paralelos[0]}
@@ -80,6 +82,7 @@ export default function ItemCalendario({
                 </div>
                 <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
                     <Equipo
+                        com={com}
                         ca
                         nombre={equipos[1]}
                         paralelo={paralelos[1]}
