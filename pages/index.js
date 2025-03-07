@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
 import AppLayout from '../componentes/layout'
-/* import InfoSalida from '../componentes/home/InfoSalida'
-import PartidoIda from '../componentes/banners/PartidoIda' */
+import InfoSalida from '../componentes/home/InfoSalida'
+/* import PartidoIda from '../componentes/banners/PartidoIda' */
 import InfoHoy from '../componentes/home/InfoHoy'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
@@ -58,16 +58,16 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
-                {/* <InfoHoy
-                    now={now}
-                    ev='Bingo Solidario'
-                    dev='Teatro'
-                    dev2='Año Biblico'
-                    link={['Información y compra de tablas', 'https://wa.me/593992648663']}
-                    place2='Postergada 21 feb'
-                    hour='20H00'
-                /> */}
-
+                <InfoHoy
+                    /* now={now} */
+                    ev='Catequesis Familiar'
+                    dev='INICIACIÓN'
+                    /* dev2='Año Biblico' */
+                    /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
+                    /* place2='Postergada 21 feb' */
+                    hour='19H00'
+                />
+                <InfoSalida misa />
                 <JesuscribeNext
                     first={first}
                     section={section}
@@ -83,7 +83,6 @@ const Home = () => {
                         }
                     />
                 </JesuscribeNext>
-                {/* <InfoSalida misa /> */}
                 {/* <div className='banner'>
                     <PartidoIda />
                     <img src='/main_banner.jpg' />

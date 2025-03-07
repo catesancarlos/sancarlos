@@ -110,7 +110,7 @@ export default function InfoSalida({ misa }) {
 
                     .title{
                         padding: 8px 10px 10px 10px;
-                        font-size: 21px;
+                        font-size: 19px;
                         border-radius: 10px 10px 0 0;
                         margin-bottom: 5px;
                     }
@@ -153,7 +153,7 @@ export default function InfoSalida({ misa }) {
                     }
 
                     .p2 strong{
-                        font-size: 14px;
+                        font-size: 13px;
                     }
                 }
             `}</style>
