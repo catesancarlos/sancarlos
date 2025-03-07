@@ -46,7 +46,7 @@ const MiniAgenda = () => {
                     subtitle='Campeonato 2025'
                     date='Sábado 08 marzo 2025'
                     place='Patio Catequesis'
-                    hour='16:40'
+                    hour='17:10'
                 />
                 <ItemAgenda
                     title='Catequesis Familiar'
