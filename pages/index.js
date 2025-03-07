@@ -62,6 +62,7 @@ const Home = () => {
                     /* now={now} */
                     ev='Catequesis Familiar'
                     dev='INICIACIÓN'
+                    place='Teatro'
                     /* dev2='Año Biblico' */
                     /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                     /* place2='Postergada 21 feb' */
