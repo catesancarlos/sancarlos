@@ -3,7 +3,7 @@ export default function PosConfFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Posiciones:</strong>
+                <strong className='title'>Posiciones Confirmación (1 & 2) - Femenino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

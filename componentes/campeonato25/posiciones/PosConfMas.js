@@ -3,7 +3,7 @@ import Equipo from '../Equipo'
 export default function PosConfMas(){
     return(
         <section>
-            <strong className='title'>Fixture Confirmación - Masculino:</strong>
+            <strong className='title'>Fixture Confirmación (1 & 2) - Masculino:</strong>
             <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p>
             <div className='cont'>
                 <div className='primera'>

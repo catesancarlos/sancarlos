@@ -23,7 +23,7 @@ export default function PartidosSemana({
                 control={control && control[0]}
                 dia='Sábado'
                 fecha='08 Mar'
-                hora='16h40'
+                hora='17h10'
                 genero='F'
                 equipos={['Santa Fé', 'Las Angeles Negros']}
                 paralelos={['1ro Confir. 2 (F)', '1ro Confir. 3 (F)']}
@@ -36,6 +36,7 @@ export default function PartidosSemana({
                 onGoles={onGoles}
                 onAgregar={onAgregar}
             />
+            { title2 && <p>{title2}</p> }
             <ItemCalendario
                 now={fecha?.partido2}
                 res={fecha?.res2}
@@ -43,9 +44,9 @@ export default function PartidosSemana({
                 pen={fecha?.pen2}
                 home={home}
                 control={control && control[1]}
-                dia='Sábado'
-                fecha='08 Mar'
-                hora='17h20'
+                dia='Domingo'
+                fecha='09 Mar'
+                hora='08h30'
                 genero='M'
                 equipos={['Santa Fé', 'Newcastels']}
                 paralelos={['1ro Confir. 2 (M)', '1ro Confir. 4 (M)']}
@@ -58,7 +59,6 @@ export default function PartidosSemana({
                 onGoles={onGoles}
                 onAgregar={onAgregar}
             />
-            { title2 && <p>{title2}</p> }
             <ItemCalendario
                 now={fecha?.partido3}
                 res={fecha?.res3}
@@ -68,7 +68,7 @@ export default function PartidosSemana({
                 control={control && control[2]}
                 dia='Domingo'
                 fecha='09 Mar'
-                hora='09h00'
+                hora='09h20'
                 genero='F'
                 equipos={['Confirmación F.C.', 'Génesis']}
                 paralelos={['2do Confir. 2 (F)', '2do Confir. 3 (F)']}
@@ -90,7 +90,7 @@ export default function PartidosSemana({
                 control={control && control[3]}
                 dia='Domingo'
                 fecha='09 Mar'
-                hora='10h00'
+                hora='10h20'
                 genero='F'
                 equipos={['Camino a la Tierra Prometída', 'Mujeres de Nazareth']}
                 paralelos={['Año Bíblico 5 (F)', 'Año Bíblico 4 (F)']}
@@ -112,7 +112,7 @@ export default function PartidosSemana({
                 control={control && control[4]}
                 dia='Domingo'
                 fecha='09 Mar'
-                hora='11h00'
+                hora='11h20'
                 genero='F'
                 equipos={['Las Misioneras', 'Las Herederas de Dios']}
                 paralelos={['Año Bíblico 2 (F)', 'Año Bíblico 1 (F)']}
@@ -134,7 +134,7 @@ export default function PartidosSemana({
                 control={control && control[5]}
                 dia='Domingo'
                 fecha='09 Mar'
-                hora='12h00'
+                hora='12h20'
                 genero='M'
                 equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
                 paralelos={['2do Confir. 3 (M)', '2do Confir. 1 (M)']}

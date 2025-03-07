@@ -1,13 +1,13 @@
-export default function PosBiblicoFem(){
+export default function PosInicMas(){
 
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Posiciones Año Bíblico - Femenino:</strong>
+                <strong className='title'>Posiciones Iniciación - Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>
-                            <strong>Grupo A - Femenino</strong>
+                            <strong>Grupo A - Masculino</strong>
                         </td>
                     </tr>
                     <tr className='label'>
@@ -23,53 +23,44 @@ export default function PosBiblicoFem(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>1</td>
-                        <td className='eq'>Las Misioneras (A2F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
+                        <td className='eq'>Niños gerrero de Dios (I1M)</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>6</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>+4</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Herederas de Dios (A1F)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Los elegidos de Dios (I2M)</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Mujeres de Nazareth (A4F)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Los Reyes (I3M)</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
                     </tr>
-                    <tr>
-                        <td className='tp'>4</td>
-                        <td className='eq'>Camino a la Tierra Prometida (A5F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>6</td>
-                        <td className='tp'>-4</td>
-                        <td className='tp'><strong>0</strong></td>
-                    </tr>
+                    {/* <tr className='info-inag'>
+                        <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
+                    </tr> */}
                 </table>
             </div>
             <div className='tables partidos'>
@@ -81,18 +72,11 @@ export default function PosBiblicoFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Camino a la Tierra Prometida (A5F)</td>
-                        <td>2</td>
+                        <td>Niños gerrero de Dios (I1M)</td>
+                        <td>0</td>
                         <td>vs.</td>
-                        <td>6</td>
-                        <td>Las Misioneras (A2F)</td>
-                    </tr>
-                    <tr>
-                        <td>Mujeres de Nazareth (A4F)</td>
-                        <td>2</td>
-                        <td>vs.</td>
-                        <td>2</td>
-                        <td>Herederas de Dios (A1F)</td>
+                        <td>0</td>
+                        <td>Los elegidos de Dios (I2M)</td>
                     </tr>
                 </table>
                 <table>
@@ -102,18 +86,11 @@ export default function PosBiblicoFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Camino a la Tierra Prometida (A5F)</td>
+                        <td>Niños gerrero de Dios (I1M)</td>
                         <td>0</td>
                         <td>vs.</td>
                         <td>0</td>
-                        <td>Mujeres de Nazareth (A4F)</td>
-                    </tr>
-                    <tr>
-                        <td>Las Misioneras (A2F)</td>
-                        <td>0</td>
-                        <td>vs.</td>
-                        <td>0</td>
-                        <td>Herederas de Dios (A1F)</td>
+                        <td>Los Reyes (I3M)</td>
                     </tr>
                 </table>
                 <table>
@@ -123,18 +100,11 @@ export default function PosBiblicoFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Herederas de Dios (A1F)</td>
+                        <td>Los elegidos de Dios (I2M)</td>
                         <td>0</td>
                         <td>vs.</td>
                         <td>0</td>
-                        <td>Camino a la Tierra Prometida (A5F)</td>
-                    </tr>
-                    <tr>
-                        <td>Las Misioneras (A2F)</td>
-                        <td>0</td>
-                        <td>vs.</td>
-                        <td>0</td>
-                        <td>Mujeres de Nazareth (A4F)</td>
+                        <td>Los Reyes (I3M)</td>
                     </tr>
                 </table>
             </div>
@@ -162,7 +132,7 @@ export default function PosBiblicoFem(){
                 }
 
                 .title-table{
-                    background: #CC397B;
+                    background: #245590;
                     color: white;
                     font-size: 14px;
                 }
@@ -191,6 +161,13 @@ export default function PosBiblicoFem(){
                 .title-fecha{
                     background: #00000044;
                     color: black;
+                }
+
+                .info-inag td{
+                    padding: 0;
+                    font-size: 13px;
+                    text-align: left;
+                    border: none;
                 }
 
                 @media screen and (max-width: 768px){
@@ -224,6 +201,10 @@ export default function PosBiblicoFem(){
 
                     .eq{
                         width: 270px;
+                    }
+
+                    .info-inag td{
+                        font-size: 12px;
                     }
                 }
             `}</style>

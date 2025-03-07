@@ -1,9 +1,9 @@
-export default function PosBiblicoMas(){
+export default function PosComuMas(){
 
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Posiciones Año Bíblico - Masculino:</strong>
+                <strong className='title'>Posiciones 2do Comunión - Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>
@@ -23,7 +23,7 @@ export default function PosBiblicoMas(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
+                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
                         <td className='eq'>Los Misioneros (A2M)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>2</td>
@@ -58,9 +58,9 @@ export default function PosBiblicoMas(){
                         <td className='tp'>-10</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
-                    <tr className='info-inag'>
+                    {/* <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                    </tr>
+                    </tr> */}
                 </table>
                 <table>
                     <tr>
@@ -81,7 +81,7 @@ export default function PosBiblicoMas(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
+                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
                         <td className='eq'>Camino a la Tierra Prometida (A5M)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>2</td>
@@ -116,9 +116,9 @@ export default function PosBiblicoMas(){
                         <td className='tp'>-4</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
-                    <tr className='info-inag'>
+                    {/* <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                    </tr>
+                    </tr> */}
                 </table>
             </div>
             <div className='tables partidos'>
