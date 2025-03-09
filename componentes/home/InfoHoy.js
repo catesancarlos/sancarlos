@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router'
 
-export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, link }) {
+export default function InfoHoy({ now, link }) {
     const router = useRouter()
 
     return (
         <section>
             <div className='salida'>
                 <div className='p2 izq'>
-                    <strong>{now ? 'AHORA' : dia ? dia : 'HOY'}</strong>
+                    <strong>{(now?.now1 == 1)  ? 'HOY' :  (now?.now1 == 2) ? 'AHORA' : ''}</strong>
                 </div>
                 <div className='p1'>
-                    <p>{ev}</p>
-                    <i>{dev}</i>
+                    <p>{now?.ev1}</p>
+                    <i>{now?.des1}</i>
                     {
                         link ? 
                             <i 
@@ -22,34 +22,29 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, 
                                     fontWeight: 'bold'
                                 }}
                             >{link[0]}</i> 
-                                : <i>{place}</i>
+                                : <i>{now?.place1}</i>
                     }
                 </div>
                 {
-                    dev2 &&
+                    now?.ev2 &&
                     <div className='p1 pizq'>
-                        <p>{ev}</p>
-                        <i>{dev2}</i>
-                        <i style={{color: 'red'}}>{place2}</i>
+                        <p>{now?.ev2}</p>
+                        <i>{now?.des2}</i>
+                        <i>{now?.place2}</i>
                     </div>
                 }
                 <div className='p2 der'>
-                    { !now &&
-                        <>
-                            {/* <p>{place}</p> */}
-                            <strong>{hour}</strong>
-                        </>
-                    }
+                    { (now?.now1 == 1) && <strong>{now?.hour1}</strong> }
                 </div>
             </div>
 
             <style jsx>{`
                 section{
+                    display: ${(now?.now1 == 0 || !now?.now1) ? 'none' : 'flex'};
                     opacity: 1;
                     margin: 0 4% 30px 4%;
                     width: 92%;
                     font-family: 'Lato', sans-serif;
-                    display: flex;
                     flex-direction: column;
                     align-items: center;   
                 }
@@ -105,7 +100,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, 
 
                 .izq{
                     border-radius: 10px 0 0 10px;
-                    animation: ${now ? 'nuevo 3s infinite' : 'none'};
+                    animation: ${(now?.now1== 2) ? 'nuevo 3s infinite' : 'none'};
                 }
 
                 @keyframes nuevo{
@@ -116,7 +111,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, 
 
                 .der{
                     border-radius: 0 10px 10px 0;
-                    width: ${now ? '30px' : '110px'};
+                    width: ${now?.now1 == 2 ? '30px' : '110px'};
                 }
 
                 .p2 p{
@@ -140,7 +135,7 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, 
 
                     .p1{
                         height: 58px;
-                        width: ${now ? 'calc((100% - 85px)/1)' : 'calc((100% - 120px)/1)'};
+                        width: ${now?.now1 == 2 ? 'calc((100% - 85px)/1)' : 'calc((100% - 120px)/1)'};
                     }
 
                     .pizq{
@@ -164,12 +159,12 @@ export default function InfoHoy({ now, ev, dev, dev2, place, place2, hour, dia, 
 
                     .izq{
                         border-radius: 10px 0 0 10px;
-                        width: ${now ? '100px' : '70px'};
+                        width: ${now?.now1 == 2 ? '100px' : '70px'};
                     }
 
                     .der{
                         border-radius: 0 10px 10px 0;
-                        width: ${now ? '25px' : '60px'};
+                        width: ${now?.now1 == 2 ? '25px' : '60px'};
                     }
 
                     .p2 p{

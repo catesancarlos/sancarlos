@@ -9,7 +9,7 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                <ItemAgenda
+                {/* <ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='Iniciación'
                     date='Viernes 07 marzo 2025'
@@ -54,7 +54,7 @@ const MiniAgenda = () => {
                     date='Sábado 08 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
-                />
+                /> */}
                 <ItemAgenda
                     title='Septima Semana'
                     subtitle='Campeonato 2025'

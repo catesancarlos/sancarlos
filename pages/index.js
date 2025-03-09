@@ -4,6 +4,7 @@ import AppLayout from '../componentes/layout'
 import InfoSalida from '../componentes/home/InfoSalida'
 /* import PartidoIda from '../componentes/banners/PartidoIda' */
 import InfoHoy from '../componentes/home/InfoHoy'
+import PartidoNow from '../componentes/home/PartidoNow'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
@@ -41,7 +42,7 @@ const Home = () => {
             setFecha6(doc.data())
         })
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
-            setNow(doc.data().now1)
+            setNow(doc.data())
         })
         onSnapshot(doc(db, 'campeonato25', 'fecha7'), (doc) => {
             setFecha7(doc.data())
@@ -59,16 +60,10 @@ const Home = () => {
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 <InfoHoy
-                    /* now={now} */
-                    ev='Catequesis Familiar'
-                    dev='INICIACIÓN'
-                    place='Teatro'
-                    /* dev2='Año Biblico' */
-                    /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
-                    /* place2='Postergada 21 feb' */
-                    hour='19H00'
+                    now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
-                <InfoSalida misa />
+                <PartidoNow fecha={fecha7} />
+                {/* <InfoSalida misa /> */}
                 <JesuscribeNext
                     first={first}
                     section={section}
