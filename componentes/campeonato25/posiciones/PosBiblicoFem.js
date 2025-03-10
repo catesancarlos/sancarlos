@@ -23,52 +23,55 @@ export default function PosBiblicoFem(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>1</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}>1</td>
                         <td className='eq'>Las Misioneras (A2F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>6</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>+4</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>15</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>+12</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Herederas de Dios (A1F)</td>
+                        <td className='eq'>Mujeres de Nazareth (A4F)</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>4</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>+2</td>
+                        <td className='tp'><strong>4</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Mujeres de Nazareth (A4F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>2</td>
+                        <td className='eq'>Herederas de Dios (A1F)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>11</td>
+                        <td className='tp'>-8</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>4</td>
                         <td className='eq'>Camino a la Tierra Prometida (A5F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>6</td>
-                        <td className='tp'>-4</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>8</td>
+                        <td className='tp'>-6</td>
                         <td className='tp'><strong>0</strong></td>
+                    </tr>
+                    <tr className='info-inag'>
+                        <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Equipo clasificado a la final.</td>
                     </tr>
                 </table>
             </div>
@@ -105,14 +108,14 @@ export default function PosBiblicoFem(){
                         <td>Camino a la Tierra Prometida (A5F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Mujeres de Nazareth (A4F)</td>
                     </tr>
                     <tr>
                         <td>Las Misioneras (A2F)</td>
-                        <td>0</td>
+                        <td>9</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>1</td>
                         <td>Herederas de Dios (A1F)</td>
                     </tr>
                 </table>
@@ -191,6 +194,13 @@ export default function PosBiblicoFem(){
                 .title-fecha{
                     background: #00000044;
                     color: black;
+                }
+
+                .info-inag td{
+                    padding: 0;
+                    font-size: 13px;
+                    text-align: left;
+                    border: none;
                 }
 
                 @media screen and (max-width: 768px){

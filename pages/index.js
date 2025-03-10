@@ -21,8 +21,8 @@ const Home = () => {
     const [datos, setDatos] = useState(null)
     const [toggle, setToggle] = useState(true)
     const [now, setNow] = useState(false)
-    const [fecha6, setFecha6] = useState([])
-    const [fecha7, setFecha7] = useState([])
+    const [fechaNow, setFechaNow] = useState([])
+    const [fechaAnt, setFechaAnt] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -38,14 +38,14 @@ const Home = () => {
     
 
     useEffect(() => {
-        onSnapshot(doc(db, 'campeonato25', 'fecha6'), (doc) => {
-            setFecha6(doc.data())
-        })
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
         onSnapshot(doc(db, 'campeonato25', 'fecha7'), (doc) => {
-            setFecha7(doc.data())
+            setFechaAnt(doc.data())
+        })
+        onSnapshot(doc(db, 'campeonato25', 'fecha8'), (doc) => {
+            setFechaNow(doc.data())
         })
     }, [])
 
@@ -62,7 +62,7 @@ const Home = () => {
                 <InfoHoy
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
-                <PartidoNow fecha={fecha7} />
+                <PartidoNow fecha={fechaNow} />
                 {/* <InfoSalida misa /> */}
                 <JesuscribeNext
                     first={first}
@@ -95,13 +95,13 @@ const Home = () => {
                     <PartidosSemana
                         title1='Partidos sábado:'
                         title2='Partidos domingo:'
-                        fecha={fecha7}
+                        fecha={fechaNow}
                         home
                     />
                     <PartidosPasados
                         /* noTop */
                         title='Resultados semana pasada:'
-                        fecha={fecha6}
+                        fecha={fechaAnt}
                         home
                     />
                 </CampSection>

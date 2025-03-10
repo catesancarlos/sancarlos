@@ -23,7 +23,7 @@ export default function Campeonato(){
     const [fecha3, setFecha3] = useState([])
     const [fecha4, setFecha4] = useState([])
     const [fecha5, setFecha5] = useState([]) */
-    const [fecha7, setFecha7] = useState([])
+    const [fechaNow, setFechaNow] = useState([])
 
     const router = useRouter()
 
@@ -40,8 +40,8 @@ export default function Campeonato(){
         onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
             setFecha4(doc.data())
         })  */ 
-        onSnapshot(doc(db, 'campeonato25', 'fecha7'), (doc) => {
-            setFecha7(doc.data())
+        onSnapshot(doc(db, 'campeonato25', 'fecha8'), (doc) => {
+            setFechaNow(doc.data())
         })
             
         async function fetchMyAPI() {
@@ -87,7 +87,7 @@ export default function Campeonato(){
                     {
                         section == 1 ? 
                             <Calendario datos={res}>
-                                <PartidosSemana fecha={fecha7} /> {/* res[res.length-1] */}
+                                <PartidosSemana fecha={fechaNow} /> {/* res[res.length-1] */}
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :

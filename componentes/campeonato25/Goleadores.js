@@ -56,175 +56,199 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>2</td>
+                                <td>Domenica Espinoza</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
                                 <td>Maria Nieto</td>
                                 <td>Traicioneras como Judas (25F)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>3</td>
                                 <td>Andrea Tacuri</td>
                                 <td>Estrellitas de María (2AF)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>4</td>
                                 <td>Monica Taday</td>
                                 <td>Traicioneras como Judas (25F)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>4</td>
                                 <td>Adela Pintado</td>
                                 <td>Estrellitas de María (2AF)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>4</td>
                                 <td>Erika Malla</td>
                                 <td>Newcastells (14F)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Kelly Pindo</td>
                                 <td>Confirmación F.C. (22F)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>4</td>
-                                <td>Domenica Espinoza</td>
-                                <td>Las Misioneras (A2F)</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
+                                <td>5</td>
                                 <td>Carolina Minchay</td>
                                 <td>Estrellitas de María (2AF)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
                                 <td>5</td>
+                                <td>Vanessa Aucapiña</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
                                 <td>Emily Pindo</td>
                                 <td>Estrellitas de María (2AF)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Belen Aguilar</td>
                                 <td>Las Águilas (11F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Leidy Agila</td>
                                 <td>Mujeres de Nazareth (A4F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Vanessa Dominguez</td>
                                 <td>Las Ángeles Negros (13F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Lizbeth Cueva</td>
                                 <td>Génesis (23F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Paula Bonilla</td>
                                 <td>Las Águilas (11F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>5</td>
+                                <td>6</td>
                                 <td>Yaritza Chuisaca</td>
                                 <td>Las Galatas 1, 10 (21F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
                                 <td>6</td>
+                                <td>Samantha Narvaez</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
                                 <td>Anahi Mendoza</td>
                                 <td>Club GNU (24F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Kendra Noblecilla</td>
                                 <td>Newcastells (14F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Carla Caguana</td>
                                 <td>Santa Fe (12F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Mirella Guzman</td>
                                 <td>Las Misioneras (A2F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Emily Twirma</td>
                                 <td>Las Misioneras (A2F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Danna Bravo</td>
                                 <td>Camino a la Tierra Prometida (A5F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Fernanda Romero</td>
                                 <td>Camino a la Tierra Prometida (A5F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
-                                <td>Leidy Agila</td>
-                                <td>Suri Cruz (A1F)</td>
+                                <td>7</td>
+                                <td>Suri Cruz</td>
+                                <td>Herederas de Dios (A1F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
-                                <td>Leidy Agila</td>
-                                <td>Mickeyla Chimbo (A1F)</td>
+                                <td>7</td>
+                                <td>Mickeyla Chimbo</td>
+                                <td>Herederas de Dios (A1F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Antonia Nieto</td>
                                 <td>Traicioneras como Judas (25F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Adriana Ordoñez</td>
                                 <td>Traicioneras como Judas (25F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>7</td>
                                 <td>Maite Ordoñez</td>
                                 <td>Newcastells (14F)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
                                 <td>7</td>
+                                <td>Maite Diaz</td>
+                                <td>Herederas de Dios (A1F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Mirella Guzman</td>
+                                <td>Las Misioneras (A2F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
                                 <td>Autogol</td>
                                 <td></td>
                                 <td>3</td>
                             </tr>
                             <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>76</strong></td>
+                                <td className='c-t t2'><strong>86</strong></td>
                             </tr>
                         </table>
                     :
@@ -281,6 +305,12 @@ const Goleadores = () => {
                                 <td>5</td>
                             </tr>
                             <tr>
+                                <td>4</td>
+                                <td>Jhoao Guachichulca</td>
+                                <td>Los Pastores (23F)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
                                 <td>5</td>
                                 <td>Jose Zhinin</td>
                                 <td>Traicioneros como Judas (25M)</td>
@@ -296,6 +326,12 @@ const Goleadores = () => {
                                 <td>7</td>
                                 <td>Anderson Flores</td>
                                 <td>Los Misioneros (A2M)</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Daniel torres</td>
+                                <td>Santos y Religiosos F.C. (21F)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
@@ -341,15 +377,21 @@ const Goleadores = () => {
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>6</td>
                                 <td>Esteven Ortiz</td>
                                 <td>Los Misioneros (A2M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>6</td>
                                 <td>Alonso Pazmiño</td>
                                 <td>Los Misioneros (A2M)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Justin Castillo</td>
+                                <td>Santos y Religiosos F.C. (21F)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
@@ -431,9 +473,27 @@ const Goleadores = () => {
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>7</td>
                                 <td>Anthony Maxi</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Pedro Enriquez</td>
+                                <td>Santos y Religiosos F.C. (21F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Anthony Guachichulca</td>
+                                <td>Los Pastores (23F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Justin Siavichay</td>
+                                <td>Los Pastores (23F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
@@ -456,12 +516,6 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td>Jhoao Guachichulca</td>
-                                <td>Los Pastores (23F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
                                 <td>Erik Carchipulla</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>1</td>
@@ -470,7 +524,7 @@ const Goleadores = () => {
                                 <td>8</td>
                                 <td>Justin Castillo</td>
                                 <td>Santos y Religiosos F.C. (21F)</td>
-                                <td>1</td>
+                                <td>2</td>
                             </tr>
                             <tr>
                                 <td>8</td>
@@ -546,7 +600,7 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>131</strong></td>
+                                <td className='c-t t2'><strong>147</strong></td>
                             </tr>
                         </table>
                 }

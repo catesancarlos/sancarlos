@@ -35,16 +35,16 @@ export default function PosConfFem(){
                         <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
                         <td className='eq'>Confirmación FC (22F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>3</td>
+                        <td className='tp'>5</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>+2</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>+4</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
@@ -61,13 +61,13 @@ export default function PosConfFem(){
                     <tr>
                         <td className='tp'>4</td>
                         <td className='eq'>Génesis (23F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>2</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>4</td>
+                        <td className='tp'>-2</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
@@ -255,7 +255,7 @@ export default function PosConfFem(){
                     </tr>
                     <tr>
                         <td>Confirmación FC (22F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
                         <td>0</td>
                         <td>Génesis (23F)</td>

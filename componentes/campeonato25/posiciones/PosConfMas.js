@@ -1,6 +1,15 @@
+import { useRef } from 'react'
+import { useEffect } from 'react'
+
 import Equipo from '../Equipo'
 
 export default function PosConfMas(){
+    const board = useRef(null)
+
+    useEffect(() => {
+        board.current?.scrollIntoView()
+    })
+
     return(
         <section>
             <strong className='title'>Fixture Confirmación (1 & 2) - Masculino:</strong>
@@ -140,7 +149,7 @@ export default function PosConfMas(){
                         </div>
                         <Equipo
                             pos
-                            nombre='Traicioneros de Judas'
+                            nombre='Traicioneros como Judas'
                             paralelo='2do Confir. 5 (M)'
                             logo='25M'
                             color='black'
@@ -245,13 +254,19 @@ export default function PosConfMas(){
                                 <strong className='id'>3</strong>
                                 <Equipo
                                     pos
-                                    nombre='Predicadores'
+                                    /* nombre='Predicadores'
                                     paralelo='2do Confir. 4 (M1)'
                                     logo='24M'
                                     color='white'
                                     borde='black'
                                     letter='black'
-                                    mas='1'
+                                    mas='1' */
+                                    nombre='Peruanitos de Dios'
+                                    paralelo='Confir. Molinopamba (M)'
+                                    logo='2MM'
+                                    color='white'
+                                    borde='black'
+                                    letter='black'
                                 />
                                 <div className='marcador'>
                                     <strong className='meq'>0</strong>
@@ -285,11 +300,13 @@ export default function PosConfMas(){
                                     color='blue'
                                     borde='blue'
                                     letter='white'
+                                    ctext='green'
                                 />
                                 <div className='marcador'>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>8</strong>
                                     <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>8</strong>
+                                    <p className='pen'>Penal. (3 - 1)</p>
                                 </div>
                                 <Equipo
                                     pos
@@ -299,18 +316,25 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
+                                    ctext='red'
                                 />
                             </div>
                             <div className='partido'>
                                 <strong className='id'>5</strong>
                                 <Equipo
                                     pos
-                                    nombre='Santa Fé (M)'
+                                    /* nombre='Santa Fé (M)'
                                     paralelo='1ro Confir. 2 (M)'
                                     logo='12M'
                                     color='black'
                                     borde='black'
-                                    letter='white'
+                                    letter='white' */
+                                    nombre='Los Angelicales'
+                                    paralelo='AB Conf. Molinopamba (M)'
+                                    logo='1MM'
+                                    color='white'
+                                    borde='black'
+                                    letter='black'
                                 />
                                 <div className='marcador'>
                                     <strong className='meq'>0</strong>
@@ -331,7 +355,7 @@ export default function PosConfMas(){
                                 <strong className='id'>6</strong>
                                 <Equipo
                                     pos
-                                    nombre='Traicioneros de Judas'
+                                    nombre='Traicioneros como Judas'
                                     paralelo='2do Confir. 5 (M)'
                                     logo='25M'
                                     color='black'
@@ -356,7 +380,7 @@ export default function PosConfMas(){
                         </div>
                     </div>
                 </div>
-                <div className='tercera-cont'>
+                <div className='tercera-cont' ref={board}>
                     <div className='segunda-cont'>
                         <div className='line t31'>
                             <p>[<span style={{ color: 'green' }}>2</span> - 0]</p>
@@ -421,7 +445,7 @@ export default function PosConfMas(){
                                 <Equipo
                                     pos
                                     nombre=''
-                                    paralelo='Ganador Partido 4'
+                                    paralelo='Ganador Partido 6'
                                     logo=''
                                     color='#eee'
                                     borde='black'
@@ -470,12 +494,12 @@ export default function PosConfMas(){
                                 </div>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Ganador Partido 6'
-                                    logo=''
-                                    color='#eee'
-                                    borde='black'
-                                    letter='#eee'
+                                    nombre='Los Pastores'
+                                    paralelo='2do Confir. 3 (M)'
+                                    logo='23M'
+                                    color='blue'
+                                    borde='blue'
+                                    letter='white'
                                 />
                             </div>
                         </div>
@@ -486,24 +510,22 @@ export default function PosConfMas(){
                         </div>
                         <div className='segunda terc sl2'>
                         <Equipo
-                            ca
                             pos
-                            nombre=''
-                            paralelo='Perdedor partido 4'
-                            logo=''
-                            color='#eee'
+                            nombre='Santos y Religiosos F.C.'
+                            paralelo='2do Confir. 1 (M)'
+                            logo='21M'
+                            color='white'
                             borde='black'
-                                etter='#eee"'
+                            letter='black'
                         />
                         <Equipo
-                            ca
                             pos
-                            nombre=''
-                            paralelo='Perdedor partido 5'
-                            logo=''
-                            color='#eee'
+                            nombre='Santa Fé (M)'
+                            paralelo='1ro Confir. 2 (M)'
+                            logo='12M'
+                            color='black'
                             borde='black'
-                            letter='#eee"'
+                            letter='white'
                         />
                         <Equipo
                             ca
@@ -647,6 +669,7 @@ export default function PosConfMas(){
                 }
 
                 .marcador{
+                    position: relative;
                     width: 80px;
                     display: flex;
                     justify-content: center;
@@ -668,6 +691,14 @@ export default function PosConfMas(){
 
                 .tercera-cont{
                     padding-right: 4%;
+                }
+
+                .pen{
+                    position: absolute;
+                    bottom: -18px;
+                    color: black;
+                    font-size: 12px;
+                    font-weight: 200;
                 }
 
                 @media screen and (max-width: 768px){

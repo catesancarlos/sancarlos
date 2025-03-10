@@ -5,6 +5,7 @@ import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
 import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
 import PartidosPasadosF4 from './pasados/PartidosPasadosF4'
 import PartidosPasadosF5 from './pasados/PartidosPasadosF5'
+import PartidosPasadosF6 from './pasados/PartidosPasadosF6'
 import PartidosPasados from './PartidosPasados'
 
 export default function Calendario({ datos, children }){
@@ -22,74 +23,7 @@ export default function Calendario({ datos, children }){
             </div>
             <div>
                 <strong>Octava semana</strong>
-                <ItemCalendario
-                    com
-                    dia='Sábado'
-                    fecha='15 Mar'
-                    hora='10h50'
-                    genero='M'
-                    equipos={['Niños gerreros de Dios', 'Los elegidos de Dios']}
-                    paralelos={['Iniciación 1 (M)', 'Iniciación 2 (M)']}
-                    logos={['I1M', 'I2M']}
-                    colores={{
-                        eq1: ['white', 'black', 'black'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                <ItemCalendario
-                    com
-                    dia='Sábado'
-                    fecha='15 Mar'
-                    hora='11h40'
-                    genero='F'
-                    equipos={['Mensajeras de Dios', 'Las Campeonas del Futbol']}
-                    paralelos={['1ro Comun. 1 (F)', '1ro Comun. 2 (F)']}
-                    logos={['11F', '12F']}
-                    colores={{
-                        eq1: ['white', 'black', 'black'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                <ItemCalendario
-                    com
-                    dia='Sábado'
-                    fecha='15 Mar'
-                    hora='12h10'
-                    genero='M'
-                    equipos={['Mensajeros de Dios', 'Los Campeones del Futbol']}
-                    paralelos={['1ro Comun. 1 (M)', '1ro Comun. 2 (M)']}
-                    logos={['11M', '12M']}
-                    colores={{
-                        eq1: ['white', 'black', 'black'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                {/* <ItemCalendario
-                    dia='Sábado'
-                    fecha='15 Mar'
-                    hora='16h40'
-                    genero='M'
-                    equipos={['Molinopamba', 'Los Águilas']}
-                    paralelos={['Confir. Molinopamba (M)', '1ro Confir. 1 (M)']}
-                    logos={['2MM', '11M']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-                <ItemCalendario
-                    dia='Sábado'
-                    fecha='15 Mar'
-                    hora='17h20'
-                    genero='M'
-                    equipos={['Los Pastores', 'Santos y Religiosos F.C.']}
-                    paralelos={['2do Confir. 3 (M)', '2do Confir. 1 (M)']}
-                    logos={['25M', '21M']}
-                    colores={{
-                        eq1: ['blue', 'blue', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                /> */}
+                
             </div>
             <div>
                 <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
@@ -126,9 +60,15 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             <div>
-                <PartidosPasados
+                <PartidosPasadosF6
                     title='Resultados Semana 6:'
                     fecha={datos[5]}
+                />
+            </div>
+            <div>
+                <PartidosPasados
+                    title='Resultados Semana 7:'
+                    fecha={datos[6]}
                 />
             </div>
 

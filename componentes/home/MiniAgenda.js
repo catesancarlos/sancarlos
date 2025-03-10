@@ -9,19 +9,19 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/* <ItemAgenda
+                <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='Iniciación'
-                    date='Viernes 07 marzo 2025'
+                    subtitle='2do Comunión'
+                    date='Viernes 14 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
                 <ItemAgenda
-                    title='EUCARISTIA'
-                    subtitle='Catequesis'
-                    date='Sábado 08 marzo 2025'
+                    title='Catequesis Familiar'
+                    subtitle='Año Bíblico'
+                    date='Viernes 14 marzo 2025'
                     place='Templo Parroquial'
-                    hour='09:00 / 14:00'
+                    hour='19:00'
                 />
                 <ItemAgenda
                     main
@@ -42,23 +42,24 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    title='Septima Semana'
+                    title='Octava Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 08 marzo 2025'
+                    date='Sábado 15 marzo 2025'
                     place='Patio Catequesis'
-                    hour='17:10'
+                    hour='Ver horarios'
+                    url='/campeonato'
                 />
                 <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='1ro Comunión'
-                    date='Sábado 08 marzo 2025'
+                    subtitle='1ro Confirmación'
+                    date='Sábado 15 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
-                /> */}
+                />
                 <ItemAgenda
-                    title='Septima Semana'
+                    title='Octava Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 09 marzo 2025'
+                    date='Domingo 16 marzo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

@@ -113,7 +113,7 @@ export default function ItemCalendario({
                     margin-top: 4px;
                     margin-left: 4px;
                     font-family: 'Lato', sans-serif;
-                    border: ${genero == 'M' ? '1px solid #245590' : '1px solid #CC397B'};
+                    border: ${genero == 'M' ? `1px ${!com ? 'solid' : 'dashed'} #245590` : `1px ${!com ? 'solid' : 'dashed'} #CC397B`};
                     border-radius: 10px;
                     border-bottom: ${jugador ? 'none' : 'auto'};
                     margin-bottom: 12px;
