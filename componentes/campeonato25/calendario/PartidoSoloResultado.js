@@ -1,6 +1,7 @@
 import Equipo from '../Equipo'
 
 export default function PartidoSoloResultado({
+    com,
     res,
     pen,
     jugador,
@@ -26,6 +27,7 @@ export default function PartidoSoloResultado({
                 </div>
                 <div className='team'>
                     <Equipo
+                        com={com}
                         ca
                         nombre={equipos[0]}
                         paralelo={paralelos[0]}
@@ -46,6 +48,7 @@ export default function PartidoSoloResultado({
                 </div>
                 <div className='team'>
                     <Equipo
+                        com={com}
                         ca
                         nombre={equipos[1]}
                         paralelo={paralelos[1]}
@@ -67,7 +70,7 @@ export default function PartidoSoloResultado({
                     margin-left: 4px;
                     font-family: 'Lato', sans-serif;
                     border-radius: 10px;
-                    border: ${genero == 'M' ? '1px solid #245590' : '1px solid #CC397B'};
+                    border: ${genero == 'M' ? `1px ${!com ? 'solid' : 'dashed'} #245590` : `1px ${!com ? 'solid' : 'dashed'} #CC397B`};
                     border-bottom: ${jugador ? 'none' : 'auto'};
                     margin-bottom: 12px;
                 }

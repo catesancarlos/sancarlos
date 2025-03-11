@@ -265,31 +265,17 @@ export default function PartidosSemana({
             
             <style jsx>{`
                 p{
-                    margin-top: ${home ? '30px' : '5px'};
-                    color: #000000;
+                    color: #245590;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
-                    margin-bottom: ${fec ? '2px' : '12px'};
-                }
-
-                i{
-                    color: #000000;
-                    width: 100%;
-                    font-size: 17px;
-                    font-weight: 200;
                     margin-bottom: 12px;
                 }
 
                 @media screen and (max-width: 768px){
                     p{
-                        margin-top: ${home ? '25px' : '0'};
-                        font-size: 16px;
+                        font-size: 18px;
                         font-size: 400;
-                    }
-
-                    i{
-                        font-size: 15px;
                     }
                 }
             `}</style>

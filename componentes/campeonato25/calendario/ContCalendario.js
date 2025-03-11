@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import TitleSection from '../../sections/TitleSection'
 import OptionsSection from '../../sections/OptionsSection'
-import ItemCalendario from './ItemCalendario'
+import PartidoSoloResultado from './PartidoSoloResultado'
 import PartidosPasadosF1 from './pasados/PartidosPasadosF1'
 import PartidosPasadosF2 from './pasados/PartidosPasadosF2'
 import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
@@ -78,8 +78,147 @@ export default function Calendario({ datos, children }){
                     </div>
                 : select == 9 ?
                     <div className='fecha-label'>
-                        <strong>Novena semana</strong>
-                        <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
+                        <strong className='now-fec'>Novena semana</strong>
+                        <i>[22-23 marzo 2025]</i>
+                        <PartidoSoloResultado
+                            com
+                            dia='Sábado'
+                            fecha='22 Mar'
+                            hora='11h40'
+                            genero='F'
+                            equipos={['Las Milagrosas', 'Ángeles']}
+                            paralelos={['1ro Comun. 4 (F)', '1ro Comun. 5 (F)']}
+                            logos={['14F', '15F']}
+                            colores={{
+                                eq1: ['black', 'black', 'white'],
+                                eq2: ['white', 'black', 'black']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            com
+                            dia='Sábado'
+                            fecha='22 Mar'
+                            hora='12h10'
+                            genero='M'
+                            equipos={['Los hijos de Dios', 'Guerreros de Dios']}
+                            paralelos={['1ro Comun. 4 (M)', '1ro Comun. 5 (M)']}
+                            logos={['14M', '15M']}
+                            colores={{
+                                eq1: ['blue', 'blue', 'white'],
+                                eq2: ['white', 'black', 'black']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            dia='Sábado'
+                            fecha='22 Mar'
+                            hora='16h40'
+                            genero='M'
+                            equipos={['Los Hermanos de Jesus', 'Equipo de Dios']}
+                            paralelos={['Año Bíblico 1 (M)', 'Año Bíblico 4 (M)']}
+                            logos={['A1M', 'A4M']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['red', 'red', 'white']
+                            }}
+                            mas={[, 1]}
+                        />
+                        <PartidoSoloResultado
+                            dia='Sábado'
+                            fecha='22 Mar'
+                            hora='17h20'
+                            genero='M'
+                            equipos={['Los Misioneros', 'Equipo Glorioso']}
+                            paralelos={['Año Bíblico 2 (M)', 'Año Bíblico 4 (M)']}
+                            logos={['A2M', 'A4M']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['blue', 'blue', 'white']
+                            }}
+                            mas={[, 2]}
+                        />
+                        <PartidoSoloResultado
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='08h30'
+                            genero='F'
+                            equipos={['Las Misioneras', 'Mujeres de Nazareth']}
+                            paralelos={['Año Bíblico 2 (F)', 'Año Bíblico 4 (F)']}
+                            logos={['A2F', 'A4F']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['red', 'red', 'white']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='09h20'
+                            genero='F'
+                            equipos={['Las Herederas de Dios', 'Camino a la Tierra Prometída']}
+                            paralelos={['Año Bíblico 1 (F)', 'Año Bíblico 5 (F)']}
+                            logos={['A1F', 'A5F']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['white', 'black', 'black']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            com
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='10h10'
+                            genero='F'
+                            equipos={['Pueblo de Israel', 'Los historicos']}
+                            paralelos={['2do Comun. 1 (F)', '2do Comun. 2 (F)']}
+                            logos={['21F', '22F']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['blue', 'blue', 'white']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            com
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='11h00'
+                            genero='M'
+                            equipos={['Pueblo de Israel', 'Las historicas']}
+                            paralelos={['2do Comun. 1 (M)', '2do Comun. 2 (M)']}
+                            logos={['21M', '22M']}
+                            colores={{
+                                eq1: ['white', 'black', 'black'],
+                                eq2: ['blue', 'blue', 'white']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            com
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='11h50'
+                            genero='F'
+                            equipos={['Hijas de Maria', 'El Maná']}
+                            paralelos={['2do Comun. 4 (F)', '2do Comun. 5 (F)']}
+                            logos={['24F', '25F']}
+                            colores={{
+                                eq1: ['black', 'red', 'white'],
+                                eq2: ['white', 'black', 'black']
+                            }}
+                        />
+                        <PartidoSoloResultado
+                            com
+                            dia='Domingo'
+                            fecha='23 Mar'
+                            hora='12h30'
+                            genero='M'
+                            equipos={['Gerreros contra el mal', 'El Maná']}
+                            paralelos={['2do Comun. 4 (M)', '2do Comun. 5 (M)']}
+                            logos={['24M', '25M']}
+                            colores={{
+                                eq1: ['black', 'red', 'white'],
+                                eq2: ['white', 'black', 'black']
+                            }}
+                        />
+                        {/* <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong> */}
                     </div>
                 : select == 1 ?
                     <div className='fecha-label'>
