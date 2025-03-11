@@ -4,6 +4,7 @@ export default function PartidosSemana({
     title1,
     title2,
     fecha,
+    fec,
     home,
     control,
     onStatus,
@@ -14,6 +15,7 @@ export default function PartidosSemana({
     return (
         <>
             { title1 && <p>{title1}</p> }
+            { fec && <i>{fec}</i>}
             <ItemCalendario
                 com
                 now={fecha?.partido1}
@@ -263,17 +265,31 @@ export default function PartidosSemana({
             
             <style jsx>{`
                 p{
-                    color: #245590;
+                    margin-top: ${home ? '30px' : '5px'};
+                    color: #000000;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
+                    margin-bottom: ${fec ? '2px' : '12px'};
+                }
+
+                i{
+                    color: #000000;
+                    width: 100%;
+                    font-size: 17px;
+                    font-weight: 200;
                     margin-bottom: 12px;
                 }
 
                 @media screen and (max-width: 768px){
                     p{
-                        font-size: 18px;
+                        margin-top: ${home ? '25px' : '0'};
+                        font-size: 16px;
                         font-size: 400;
+                    }
+
+                    i{
+                        font-size: 15px;
                     }
                 }
             `}</style>

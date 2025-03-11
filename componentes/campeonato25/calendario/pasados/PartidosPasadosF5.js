@@ -1,10 +1,11 @@
 import PartidoSoloResultado from '../PartidoSoloResultado'
 
-export default function PartidosSemanaF5({ title, fecha, home }){    
+export default function PartidosSemanaF5({ title, fec, fecha, home }){    
 
     return (
         <>
             { title && <p>{title}</p> }
+            { fec && <i>{fec}</i>}
             <PartidoSoloResultado
                 res={fecha?.res3}
                 jugador={fecha?.jugador3}
@@ -77,19 +78,31 @@ export default function PartidosSemanaF5({ title, fecha, home }){
 
             <style jsx>{`
                 p{
-                    margin-top: ${home ? '30px' : '0'};
-                    color: black;
+                    margin-top: ${home ? '30px' : '5px'};
+                    color: #000000;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
+                    margin-bottom: ${fec ? '2px' : '12px'};
+                }
+
+                i{
+                    color: #000000;
+                    width: 100%;
+                    font-size: 17px;
+                    font-weight: 200;
                     margin-bottom: 12px;
                 }
 
                 @media screen and (max-width: 768px){
                     p{
                         margin-top: ${home ? '25px' : '0'};
-                        font-size: 18px;
+                        font-size: 16px;
                         font-size: 400;
+                    }
+
+                    i{
+                        font-size: 15px;
                     }
                 }
             `}</style>

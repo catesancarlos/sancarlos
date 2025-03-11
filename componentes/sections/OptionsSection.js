@@ -21,13 +21,13 @@ export default function OptionsSection({ options, select, onSelect, bot, pos, no
                 .cont{
                     display: flex;
                     justify-content: center;
-                    margin-bottom: ${bot ? '40px' : pos ? '0' : '28px'};
+                    margin-bottom: ${bot ? '40px' : pos ? '-4px' : '28px'};
                 }
 
                 @media screen and (max-width: 768px){
                     .cont{
                         flex-wrap: wrap;
-                        margin-bottom: ${bot ? '35px' : pos ? '0' : '24px'};
+                        margin-bottom: ${bot ? '35px' : pos ? '-8px' : '24px'};
                     }
                 }
             `}</style>

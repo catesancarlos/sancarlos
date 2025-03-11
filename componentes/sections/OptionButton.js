@@ -11,7 +11,7 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
             <style jsx>{`
                 div{
                     position: relative;
-                    margin: 0 12px;
+                    margin: 0 4px 8px 4px;
                     background: white;
                     height: 28px;
                     padding: ${data.genero ? '0 43px 0 15px' : '0 15px'};
@@ -61,10 +61,11 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
 
                 @media screen and (max-width: 768px){
                     div{
-                        margin: 0;
+                        margin: 0 4px 8px 4px;
                         height: 26px;
                         padding: ${data.genero ? '0 38px 0 10px' : '0 12px'};
                         font-size: 14px;
+                        border-radius: 8px;
                     }
 
                     p{          
@@ -77,33 +78,33 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
                     }
 
                     div:nth-child(1){
-                        margin-right: 7px;
-                        border-radius: 10px 0 0 10px;
+                        /* margin-right: 7px;
+                        border-radius: 10px 0 0 10px; */
                     }
 
                     div:nth-child(2){
-                        margin-right: 7px;
-                        border-radius: ${options==2 ? '0 10px 10px 0' : '0'};
+                        /* margin-right: 7px;
+                        border-radius: ${options==2 ? '0 10px 10px 0' : '0'}; */
                     }
 
                     div:nth-child(3){
-                        margin-right: 7px;
-                        border-radius: ${(options==3 || options==6) ? '0 10px 10px 0' : '0'};
+                        /* margin-right: 7px;
+                        border-radius: ${(options==3 || options==6) ? '0 10px 10px 0' : '0'}; */
                     }
 
                     div:nth-child(4){
-                        margin: ${options==6 ? '6px 7px 0 0' : '0 7px 0 0'};
-                        border-radius: ${options==6 ? '10px 0 0 10px' : '0 10px 10px 0'};
+                        /* margin: ${options==6 ? '6px 7px 0 0' : '0 7px 0 0'};
+                        border-radius: ${options==6 ? '10px 0 0 10px' : '0 10px 10px 0'}; */
                     }
 
                     div:nth-child(5){
-                        margin: 6px 7px 0 0;
-                        border-radius: 0;
+                        /* margin: 6px 7px 0 0;
+                        border-radius: 0; */
                     }
 
                     div:nth-child(6){
-                        margin: 6px 0 0 0;
-                        border-radius: 0 10px 10px 0;
+                        /* margin: 6px 0 0 0;
+                        border-radius: 0 10px 10px 0; */
                     }
                 }
             `}</style>
