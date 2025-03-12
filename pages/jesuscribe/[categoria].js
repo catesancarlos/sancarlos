@@ -118,8 +118,8 @@ export default function Preguntas({ categoria, preguntas }){
             >
                 <aside>
                     <p className={`op-menu`} onClick={() => router.push('/jesuscribe')}>Invitación</p>
-                    <p className={`op-menu`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 2}})}>Niveles</p>
                     <p className={`op-menu`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 3}})}>Fechas</p>
+                    <p className={`op-menu`} onClick={() => router.push({pathname: '/jesuscribe', query: {s: 2}})}>Niveles</p>
                     <p className={`op-menu ${select == 1 && 'active'}`} onClick={() => handleChangeCategory(1)}>General</p>
                     <p className={`op-menu ${select == 2 && 'active'}`} onClick={() => handleChangeCategory(2)}>Vida de Jesús</p>
                     <p className={`op-menu ${select == 3 && 'active'}`} onClick={() => handleChangeCategory(3)}>Nuestra Iglesia</p>

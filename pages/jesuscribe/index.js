@@ -27,8 +27,8 @@ export default function Jesuscribe(){
             >
                 <aside>
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Invitación</p>
-                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Niveles</p>
                     <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p>
+                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Niveles</p>
                     <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-general')}}>General</p>
                     <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-vida')}}>Vida de Jesús</p>
                     <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-iglesia')}}>Nuestra Iglesia</p>
