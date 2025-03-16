@@ -15,7 +15,7 @@ const opcionesArray = [
 ]
 
 const Goleadores = () => {
-    const [select, setSelect] = useState(1)
+    const [select, setSelect] = useState(2)
 
     return (
         <section>
@@ -270,54 +270,72 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>2</td>
+                                <td>Jose Zhinin</td>
+                                <td>Traicioneros como Judas (25M)</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
                                 <td>Cristian Guamán</td>
                                 <td>GDL (24M)</td>
                                 <td>8</td>
                             </tr>
                             <tr>
-                                <td>3</td>
+                                <td>4</td>
                                 <td>Julio Uzhca</td>
                                 <td>Confirmación FC (22M)</td>
                                 <td>7</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>5</td>
+                                <td>Franklin Taday</td>
+                                <td>Traicioneros como Judas (25M)</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
                                 <td>Jorge Gonzalez</td>
                                 <td>Predicadores (25M)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>6</td>
                                 <td>Matias Lalvay</td>
                                 <td>Los Misioneros (A2M)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>6</td>
                                 <td>Luis Aucapiña</td>
                                 <td>Fuerza Divina (2AM)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>6</td>
                                 <td>Dylan Campoverde</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>4</td>
+                                <td>6</td>
                                 <td>Jhoao Guachichulca</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
+                                <td>6</td>
+                                <td>Martin Dutan</td>
+                                <td>Los Águilas (11M)</td>
                                 <td>5</td>
-                                <td>Jose Zhinin</td>
-                                <td>Traicioneros como Judas (25M)</td>
-                                <td>4</td>
                             </tr>
                             <tr>
+                                <td>6</td>
+                                <td>Camilo Pineda</td>
+                                <td>Juntos con Cristo FC (1AM)</td>
                                 <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
                                 <td>Antony Agila</td>
                                 <td>GDL (24M)</td>
                                 <td>4</td>
@@ -335,163 +353,151 @@ const Goleadores = () => {
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Carlos Japa</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Steven Enriquez</td>
                                 <td>GDL (24M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Gabriel Chucutay</td>
                                 <td>Predicadores (24M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
-                                <td>Martin Dutan</td>
-                                <td>Los Águilas (11M)</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Randy Guzman</td>
                                 <td>GDL (24M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Justin Arevalo</td>
                                 <td>Camino a la tierra prometida (A5M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Anthony Gonzales</td>
                                 <td>Fuerza Divina (2AM)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Esteven Ortiz</td>
                                 <td>Los Misioneros (A2M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Alonso Pazmiño</td>
                                 <td>Los Misioneros (A2M)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>6</td>
+                                <td>8</td>
                                 <td>Justin Castillo</td>
                                 <td>Santos y Religiosos F.C. (21F)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>8</td>
+                                <td>Santiago Espinosa</td>
+                                <td>Los Águilas (11M)</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
                                 <td>Matias Orellana</td>
                                 <td>Newcastells (14M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Michael Chisaguano</td>
                                 <td>Newcastells (14M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Cristopher Gonzales</td>
                                 <td>Fuerza Divina (2AM)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Cristopher Mejia</td>
                                 <td>Traicioneros como Judas (25M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
-                                <td>Camilo Pineda</td>
-                                <td>Juntos con Cristo FC (1AM)</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Santiago Espinosa</td>
-                                <td>Los Águilas (11M)</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Julian Quito</td>
                                 <td>Equipo Glorioso (A4M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Adrian Pauta</td>
                                 <td>Equipo Glorioso (A4M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Jhandri Beltran</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Joaquin Barbecho</td>
                                 <td>Equipo de Dios (A4M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Matias Cedeño</td>
                                 <td>Confirmación FC (22F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Erick Aguayza</td>
                                 <td>Confirmación FC (22F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Joaquin Uzhca</td>
                                 <td>Fuerza Divina (2AM)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>7</td>
+                                <td>9</td>
                                 <td>Anthony Maxi</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>9</td>
                                 <td>Pedro Enriquez</td>
                                 <td>Santos y Religiosos F.C. (21F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>9</td>
                                 <td>Anthony Guachichulca</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>9</td>
                                 <td>Justin Siavichay</td>
                                 <td>Los Pastores (23F)</td>
                                 <td>2</td>
@@ -527,80 +533,104 @@ const Goleadores = () => {
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>8</td>
-                                <td>Franklin Taday</td>
-                                <td>Traicioneros como Judas (25M)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Anderson Zhizhpon</td>
                                 <td>Juntos con Cristo FC (1AM)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Justin Sarango</td>
                                 <td>Los Hermanos de Jesús (A1M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Mario Rocano</td>
                                 <td>Equipo Glorioso (A4M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Matias Mendoza</td>
                                 <td>Equipo Glorioso (A4M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Sebastian Uzhca</td>
                                 <td>Equipo de Dios (A4M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Emerzon Guahza</td>
                                 <td>Equipo de Dios (A4M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Bruno Quizhpe</td>
                                 <td>Equipo de Dios (A4M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Jordan Peralta</td>
                                 <td>GDL (24M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
                                 <td>Bryam Piña</td>
                                 <td>Los Ángeles Negros (13M)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>8</td>
+                                <td>10</td>
+                                <td>Leonardo Peralta</td>
+                                <td>Peruanitos de Dios (2MM)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Ariel Guanuquiza</td>
+                                <td>Peruanitos de Dios (2MM)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Esteban Mendez</td>
+                                <td>Peruanitos de Dios (2MM)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
                                 <td>David CArriel</td>
                                 <td>Fuerza Divina (2AM)</td>
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td>9</td>
+                                <td>10</td>
+                                <td>S. Quito</td>
+                                <td>Los Águilas (11M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Jose Zhinin</td>
+                                <td>Traicioneros como Judas (25M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
                                 <td>Autogol</td>
                                 <td></td>
                                 <td>3</td>
                             </tr>
                             <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>147</strong></td>
+                                <td className='c-t t2'><strong>170</strong></td>
                             </tr>
                         </table>
                 }
