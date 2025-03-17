@@ -25,62 +25,62 @@ export default function PosConfFem(){
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Las Gálatas 1, 10 (21F)</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>18</td>
+                        <td className='tp'>20</td>
                         <td className='tp'>9</td>
-                        <td className='tp'>+9</td>
-                        <td className='tp'><strong>6</strong></td>
+                        <td className='tp'>+11</td>
+                        <td className='tp'><strong>9</strong></td>
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
                         <td className='eq'>Confirmación FC (22F)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>5</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>+4</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>+2</td>
                         <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>3</strong></td>
+                        <td className='eq'>Génesis (23F)</td>
                         <td className='tp'>3</td>
-                        <td className='eq'>Traicioneras como Júdas (25F)</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>0</td>
                         <td className='tp'>1</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>11</td>
-                        <td className='tp'>12</td>
-                        <td className='tp'>-1</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>8</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>+3</td>
+                        <td className='tp'><strong>4</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>4</td>
-                        <td className='eq'>Génesis (23F)</td>
-                        <td className='tp'>2</td>
+                        <td className='eq'>Traicioneras como Júdas (25F)</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>4</td>
-                        <td className='tp'>-2</td>
+                        <td className='tp'>13</td>
+                        <td className='tp'>18</td>
+                        <td className='tp'>-5</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>5</td>
                         <td className='eq'>Club GNU (24F)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
                         <td className='tp'>1</td>
                         <td className='tp'>11</td>
                         <td className='tp'>-10</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
@@ -106,61 +106,61 @@ export default function PosConfFem(){
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
-                        <td className='eq'>Newcastells (14F)*</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
+                        <td className='eq'>Estrellitas de Maria (2AF)</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>24</td>
+                        <td className='tp'>7</td>
+                        <td className='tp'>+17</td>
+                        <td className='tp'><strong>9</strong></td>
+                    </tr>
+                    <tr>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
+                        <td className='eq'>Newcastells (14F)*</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>6</td>
                         <td className='tp'>2</td>
                         <td className='tp'>+4</td>
-                        <td className='tp'><strong>7</strong></td>
+                        <td className='tp'><strong>8</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
-                        <td className='eq'>Estrellitas de Maria (2AF)</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>18</td>
-                        <td className='tp'>5</td>
-                        <td className='tp'>+13</td>
-                        <td className='tp'><strong>6</strong></td>
-                    </tr>
-                    <tr>
-                        <td className='tp'>3</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>3</strong></td>
                         <td className='eq'>Las Águilas (11F)**</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>2</td>
                         <td className='tp'>3</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>5</td>
                         <td className='tp'>8</td>
-                        <td className='tp'>-5</td>
-                        <td className='tp'><strong>2</strong></td>
+                        <td className='tp'>-3</td>
+                        <td className='tp'><strong>5</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>4</td>
-                        <td className='eq'>Santa Fe (12F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Las Ángeles Negros (13F)</td>
                         <td className='tp'>3</td>
-                        <td className='tp'>-2</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>4</td>
+                        <td className='tp'>10</td>
+                        <td className='tp'>-6</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>5</td>
-                        <td className='eq'>Las Ángeles Negros (13F)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Santa Fe (12F)</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>8</td>
+                        <td className='tp'>7</td>
                         <td className='tp'>-6</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
@@ -264,7 +264,7 @@ export default function PosConfFem(){
                         <td>Santa Fe (12F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Las Ángeles Negros (13F)</td>
                     </tr>
                 </table>
@@ -278,7 +278,7 @@ export default function PosConfFem(){
                         <td>Confirmación FC (22F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Las Gálatas 1, 10 (21F)</td>{/* Santa Fe (12F) */}
                     </tr>
                     <tr>
@@ -292,21 +292,21 @@ export default function PosConfFem(){
                         <td>Santa Fe (12F)</td>{/* Las Gálatas 1, 10 (21F) */}
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Las Águilas (11F)</td>
                     </tr>
                     <tr>
                         <td>Traicioneras como Júdas (25F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>6</td>
                         <td>Estrellitas de Maria (2AF)</td>
                     </tr>
                     <tr>
                         <td>Génesis (23F)</td>
-                        <td>0</td>
+                        <td>6</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>1</td>
                         <td>Las Ángeles Negros (13F)</td>
                     </tr>
                 </table>

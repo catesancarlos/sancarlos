@@ -64,6 +64,7 @@ const Home = () => {
                 />
                 <PartidoNow fecha={fechaNow} />
                 {/* <InfoSalida misa /> */}
+                <MiniAgenda />
                 <JesuscribeNext
                     first={first}
                     section={section}
@@ -90,7 +91,6 @@ const Home = () => {
                         </p>
                     </div>
                 </div> */}
-                <MiniAgenda />
                 <CampSection>
                     <PartidosSemana
                         title1='Partidos sábado:'

@@ -337,9 +337,10 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
+                                    ctext='green'
                                 />
                                 <div className='marcador'>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>2</strong>
                                     <p className='vs'>vs</p>
                                     <strong className='meq'>0</strong>
                                 </div>
@@ -351,6 +352,7 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
+                                    ctext='red'
                                 />
                             </div>
                             <div className='partido'>
@@ -472,12 +474,12 @@ export default function PosConfMas(){
                                 </div>
                                 <Equipo
                                     pos
-                                    nombre=''
-                                    paralelo='Ganador Partido 5'
-                                    logo=''
-                                    color='#eee'
+                                    nombre='Los Angelicales'
+                                    paralelo='AB Conf. Molinopamba (M)'
+                                    logo='1MM'
+                                    color='white'
                                     borde='black'
-                                    letter='#eee'
+                                    letter='black'
                                 />
                             </div>
                             <div className='partido'>

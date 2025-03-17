@@ -9,25 +9,25 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/* <ItemAgenda
+                <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='2do Comunión'
-                    date='Viernes 14 marzo 2025'
+                    subtitle='2do Confirmación'
+                    date='Viernes 21 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
-                <ItemAgenda
+                {/*<ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='Año Bíblico'
                     date='Viernes 14 marzo 2025'
                     place='Templo Parroquial'
                     hour='19:00'
-                />
+                />*/}
                 <ItemAgenda
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 08 marzo 2025'
+                    date='Sábado 22 marzo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -44,18 +44,18 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     title='Octava Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 15 marzo 2025'
+                    date='Sábado 23 marzo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
                 />
-                <ItemAgenda
+                {/*<ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='1ro Confirmación'
                     date='Sábado 15 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
-                /> */}
+                />
                 <ItemAgenda
                     title='Octava Semana'
                     subtitle='Campeonato 2025'
@@ -63,14 +63,14 @@ const MiniAgenda = () => {
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
-                />
+                />*/}
             </div>
 
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 0px 4% 50px 4%;
                     margin: 35px 4% 0 4%;
+                    margin: 0px 4% 50px 4%;
                     width: 92%;
                 }
 
@@ -112,8 +112,8 @@ const MiniAgenda = () => {
                 @media screen and (max-width: 768px){
                     section{
                         font-family: 'Lato', sans-serif;
-                        margin: 10px 15px 20px 15px;
                         margin: 20px 15px 0 15px;
+                        margin: 10px 15px 20px 15px;
                         width: calc(100% - 30px);
                     }
 

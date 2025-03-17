@@ -9,6 +9,7 @@ import PartidosPasadosF3 from './pasados/PartidosPasadosF3'
 import PartidosPasadosF4 from './pasados/PartidosPasadosF4'
 import PartidosPasadosF5 from './pasados/PartidosPasadosF5'
 import PartidosPasadosF6 from './pasados/PartidosPasadosF6'
+import PartidosPasadosF7 from './pasados/PartidosPasadosF7'
 import PartidosPasados from './PartidosPasados'
 
 const optionsArray = [
@@ -47,11 +48,15 @@ const optionsArray = [
     {
         no: 9,
         name: 'S.9'
+    },
+    {
+        no: 10,
+        name: 'S.10'
     }
 ]
 
 export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(8)
+    const [select, setSelect] = useState(9)
 
     return (
         <section>
@@ -70,27 +75,27 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 8 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Octava semana</strong>
-                        <i>[15-16 marzo 2025] Esta semana</i>
-                        {children}
-                    </div>
-                : select == 9 ?
+                select == 9 ?
                     <div className='fecha-label'>
                         <strong className='now-fec'>Novena semana</strong>
-                        <i>[22-23 marzo 2025]</i>
-                        <PartidoSoloResultado
+                        <i>[22 marzo 2025] Esta semana</i>
+                        {children}
+                    </div>
+                : select == 10 ?
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Decima semana</strong>
+                        <i>[29-30 marzo 2025]</i>
+                        {/* <PartidoSoloResultado
                             com
                             dia='Sábado'
                             fecha='22 Mar'
                             hora='11h40'
                             genero='F'
-                            equipos={['Las Milagrosas', 'Ángeles']}
-                            paralelos={['1ro Comun. 4 (F)', '1ro Comun. 5 (F)']}
-                            logos={['14F', '15F']}
+                            equipos={['Ángeles', 'Siervas de Dios']}
+                            paralelos={['1ro Comun. 5 (F)', '1ro Comun. 6 (F)']}
+                            logos={['15F', '16F']}
                             colores={{
-                                eq1: ['black', 'black', 'white'],
+                                eq1: ['white', 'black', 'black'],
                                 eq2: ['white', 'black', 'black']
                             }}
                         />
@@ -100,11 +105,11 @@ export default function Calendario({ datos, children }){
                             fecha='22 Mar'
                             hora='12h10'
                             genero='M'
-                            equipos={['Los hijos de Dios', 'Guerreros de Dios']}
-                            paralelos={['1ro Comun. 4 (M)', '1ro Comun. 5 (M)']}
-                            logos={['14M', '15M']}
+                            equipos={['Guerreros de Dios', 'Siervos de Dios']}
+                            paralelos={['1ro Comun. 5 (M)', '1ro Comun. 6 (M)']}
+                            logos={['15M', '16M']}
                             colores={{
-                                eq1: ['blue', 'blue', 'white'],
+                                eq1: ['white', 'black', 'black'],
                                 eq2: ['white', 'black', 'black']
                             }}
                         />
@@ -135,8 +140,8 @@ export default function Calendario({ datos, children }){
                                 eq2: ['blue', 'blue', 'white']
                             }}
                             mas={[, 2]}
-                        />
-                        <PartidoSoloResultado
+                        /> */}
+                        {/* <PartidoSoloResultado
                             dia='Domingo'
                             fecha='23 Mar'
                             hora='08h30'
@@ -217,8 +222,8 @@ export default function Calendario({ datos, children }){
                                 eq1: ['black', 'red', 'white'],
                                 eq2: ['white', 'black', 'black']
                             }}
-                        />
-                        {/* <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong> */}
+                        /> */}
+                        <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
                 : select == 1 ?
                     <div className='fecha-label'>
@@ -271,10 +276,18 @@ export default function Calendario({ datos, children }){
                     </div>
                 : select == 7 ?
                     <div className='fecha-label'>
-                        <PartidosPasados
+                        <PartidosPasadosF7
                             title='Resultados Semana 7:'
                             fec='[9 marzo 2025]'
                             fecha={datos[6]}
+                        />
+                    </div>
+                : select == 8 ?
+                    <div className='fecha-label'>
+                        <PartidosPasados
+                            title='Resultados Semana 8:'
+                            fec='[15-16 marzo 2025]'
+                            fecha={datos[7]}
                         />
                     </div>
                 : ''

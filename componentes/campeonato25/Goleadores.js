@@ -55,6 +55,12 @@ const Goleadores = () => {
                                 <td>8</td>
                             </tr>
                             <tr>
+                                <td>1</td>
+                                <td>Andrea Tacuri</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
                                 <td>2</td>
                                 <td>Domenica Espinoza</td>
                                 <td>Las Misioneras (A2F)</td>
@@ -68,20 +74,26 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Andrea Tacuri</td>
+                                <td>Adela Pintado</td>
                                 <td>Estrellitas de María (2AF)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Carolina Minchay</td>
+                                <td>Estrellitas de María (2AF)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Lizbeth Cueva</td>
+                                <td>Génesis (23F)</td>
                                 <td>5</td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>Monica Taday</td>
                                 <td>Traicioneras como Judas (25F)</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Adela Pintado</td>
-                                <td>Estrellitas de María (2AF)</td>
                                 <td>4</td>
                             </tr>
                             <tr>
@@ -94,12 +106,6 @@ const Goleadores = () => {
                                 <td>5</td>
                                 <td>Kelly Pindo</td>
                                 <td>Confirmación F.C. (22F)</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Carolina Minchay</td>
-                                <td>Estrellitas de María (2AF)</td>
                                 <td>3</td>
                             </tr>
                             <tr>
@@ -134,12 +140,6 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td>Lizbeth Cueva</td>
-                                <td>Génesis (23F)</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
                                 <td>Paula Bonilla</td>
                                 <td>Las Águilas (11F)</td>
                                 <td>2</td>
@@ -154,6 +154,24 @@ const Goleadores = () => {
                                 <td>6</td>
                                 <td>Samantha Narvaez</td>
                                 <td>Las Misioneras (A2F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Antonia Nieto</td>
+                                <td>Traicioneras como Judas (25F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Adriana Ordoñez</td>
+                                <td>Traicioneras como Judas (25F)</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Mayerli Astudillo</td>
+                                <td>Génesis (23F)</td>
                                 <td>2</td>
                             </tr>
                             <tr>
@@ -212,18 +230,6 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>Antonia Nieto</td>
-                                <td>Traicioneras como Judas (25F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Adriana Ordoñez</td>
-                                <td>Traicioneras como Judas (25F)</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
                                 <td>Maite Ordoñez</td>
                                 <td>Newcastells (14F)</td>
                                 <td>1</td>
@@ -241,6 +247,18 @@ const Goleadores = () => {
                                 <td>1</td>
                             </tr>
                             <tr>
+                                <td>7</td>
+                                <td>Karen Saldaña</td>
+                                <td>Génesis (23F)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Shirley Lalvay</td>
+                                <td>Las Ángeles Negros (13M)</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
                                 <td>8</td>
                                 <td>Autogol</td>
                                 <td></td>
@@ -248,7 +266,7 @@ const Goleadores = () => {
                             </tr>
                             <tr>
                                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                                <td className='c-t t2'><strong>86</strong></td>
+                                <td className='c-t t2'><strong>101</strong></td>
                             </tr>
                         </table>
                     :
