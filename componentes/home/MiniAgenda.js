@@ -9,14 +9,14 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                <ItemAgenda
+                {/*<ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='2do Confirmación'
                     date='Viernes 21 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
-                {/*<ItemAgenda
+                <ItemAgenda
                     title='Catequesis Familiar'
                     subtitle='Año Bíblico'
                     date='Viernes 14 marzo 2025'
@@ -27,7 +27,7 @@ const MiniAgenda = () => {
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 22 marzo 2025'
+                    date='Sábado 29 marzo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -42,11 +42,11 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    title='Octava Semana'
+                    title='Novena Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 23 marzo 2025'
+                    date='Sábado 29 marzo 2025'
                     place='Patio Catequesis'
-                    hour='Ver horarios'
+                    hour='16:40'
                     url='/campeonato'
                 />
                 {/*<ItemAgenda
@@ -55,15 +55,15 @@ const MiniAgenda = () => {
                     date='Sábado 15 marzo 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
-                />
+                />*/}
                 <ItemAgenda
-                    title='Octava Semana'
+                    title='Novena Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 16 marzo 2025'
+                    date='Domingo 30 marzo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
-                />*/}
+                />
             </div>
 
             <style jsx>{`

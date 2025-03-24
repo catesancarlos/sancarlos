@@ -14,6 +14,7 @@ export default function ItemCalendario({
     fecha,
     hora,
     genero,
+    fase,
     equipos,
     paralelos,
     logos,
@@ -39,6 +40,11 @@ export default function ItemCalendario({
                 <div className='genero'>
                     <strong>{genero}</strong>
                 </div>
+                {fase &&
+                    <div className='fase'>
+                        <strong>{fase}</strong>
+                    </div>
+                }
                 <div className='fecha'>
                     {!control &&
                         <>
@@ -162,6 +168,21 @@ export default function ItemCalendario({
                     color: white;
                     text-align: center;
                     border-radius: 6px;
+                }
+
+                .fase{
+                    position: absolute;
+                    top: -9px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .fase strong{
+                    background: #F2F8F6;
+                    padding: 0 6px;
+                    font-size: 15px;
+                    color: ${genero == 'M' ? '#245590' : '#CC397B'};
                 }
 
                 .fecha{
@@ -325,6 +346,10 @@ export default function ItemCalendario({
 
                     .marcador{
                         width: auto;
+                    }
+
+                    .fase strong{
+                        font-size: 14px;
                     }
                 }
             `}</style>

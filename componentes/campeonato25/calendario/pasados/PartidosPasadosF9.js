@@ -1,6 +1,6 @@
-import PartidoSoloResultado from './PartidoSoloResultado'
+import PartidoSoloResultado from '../PartidoSoloResultado'
 
-export default function PartidosPasados({ title, fec, fecha, home, noTop }){    
+export default function PartidosPasadosF9({ title, fec, fecha, home, noTop }){    
 
     return (
         <>
@@ -79,7 +79,7 @@ export default function PartidosPasados({ title, fec, fecha, home, noTop }){
                 }}
                 mas={[, 2]}
             />
-            
+
             <style jsx>{`
                 p{
                     margin-top: ${home ? '30px' : '5px'};

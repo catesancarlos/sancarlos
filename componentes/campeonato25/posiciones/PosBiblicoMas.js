@@ -25,7 +25,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Los Misioneros (A2M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
@@ -37,7 +37,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp'>2</td>
                         <td className='eq'>Equipo de Dios (A4M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
@@ -49,7 +49,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Los Ángeles Bíblicos (A3M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
                         <td className='tp'>2</td>
@@ -83,7 +83,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Camino a la Tierra Prometida (A5M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
@@ -95,7 +95,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp'>2</td>
                         <td className='eq'>Hermanos de Jesús (A1M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
                         <td className='tp'>1</td>
@@ -107,7 +107,7 @@ export default function PosBiblicoMas(){
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Equipo Glorioso (A4M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
                         <td className='tp'>1</td>
