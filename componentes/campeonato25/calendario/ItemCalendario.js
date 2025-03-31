@@ -8,6 +8,7 @@ export default function ItemCalendario({
     res,
     jugador,
     pen,
+    extra,
     home,
     control,
     dia,
@@ -85,6 +86,7 @@ export default function ItemCalendario({
                         <strong className='meq'>{res ? res?.[1] : 0}</strong>
                     </div>
                     {pen && <p className='pen'>{`Pen (${pen})`}</p> }
+                    {extra && <p className='pen'>{`T. extra (${extra})`}</p> }
                 </div>
                 <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
                     <Equipo

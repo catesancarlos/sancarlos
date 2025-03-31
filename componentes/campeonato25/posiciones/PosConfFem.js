@@ -1,9 +1,16 @@
+import FinalConfFem from './FinalConfFem'
+
 export default function PosConfFem(){
 
     return (
         <section>
+            <strong className='title'>Fase Final Confirmación (1 & 2) - Femenino:</strong>
+            <div className='final'>
+                <FinalConfFem />
+                <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+            </div>
             <div className='tables'>
-                <strong className='title'>Posiciones Confirmación (1 & 2) - Femenino:</strong>
+                <strong className='title'>Posiciones Fase 1 Confirmación (1 & 2) - Femenino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>
@@ -320,6 +327,19 @@ export default function PosConfFem(){
                     margin-bottom: 25px;
                 }
 
+                .final{
+                    margin-top: 25px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+
+                .info{
+                    display: none;
+                }
+
                 .tables{
                     display: flex;
                     flex-direction: column;
@@ -378,6 +398,23 @@ export default function PosConfFem(){
                         margin-top: 24px;
                         font-size: 16px;
                         margin-bottom: 12px;
+                    }
+
+                    .final{
+                        margin-top: 20px;
+                        width: calc(100% + 28px);
+                        margin-left: -14px;
+                        align-items: flex-start;
+                        margin-bottom: 10px;
+                        overflow: scroll;
+                    }
+
+                    .info{
+                        margin: 10px 0 0 14px;
+                        color: red;
+                        font-size: 14px;
+                        display: block;
+                        text-align: center;
                     }
                     
                     table{

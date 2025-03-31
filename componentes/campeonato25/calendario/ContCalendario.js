@@ -84,11 +84,12 @@ export default function Calendario({ datos, children }){
                     <div className='fecha-label'>
                         <strong className='now-fec'>Decima semana</strong>
                         <i>[29-30 marzo 2025]</i>
-                        <PartidosSemana
+                        {/* <PartidosSemana
                             fecha={datos[9]}
                             title1='Partidos sábado:'
                             title2='Partidos domingo:'
-                        />
+                        /> */}
+                        {children}
                     </div>
                 : select == 11 ?
                     <div className='fecha-label'>

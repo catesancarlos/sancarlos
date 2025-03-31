@@ -108,30 +108,7 @@ export default function PartidosSemana({
                 onGoles={onGoles}
                 onAgregar={onAgregar}
             />
-            <ItemCalendario
-                fase='Repechaje'
-                now={fecha?.partido5}
-                res={fecha?.res5}
-                jugador={fecha?.jugador5}
-                pen={fecha?.pen5}
-                home={home}
-                control={control && control[4]}
-                dia='Sábado'
-                fecha='29 Mar'
-                hora='16h40'
-                genero='M'
-                equipos={['GDL', 'Traicioneros como Judas']}
-                paralelos={['2 Confir. 4 (M)', '2 Confir. 5 (M)']}
-                logos={['24M', '25M']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['black', 'black', 'white']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
+            {/* <ItemCalendario
                 fase='Repechaje'
                 now={fecha?.partido6}
                 res={fecha?.res6}
@@ -153,16 +130,16 @@ export default function PartidosSemana({
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
-            />
+            /> */}
             { title2 && <p>{title2}</p> }
             <ItemCalendario
                 fase='Repechaje'
-                now={fecha?.partido7}
-                res={fecha?.res7}
-                jugador={fecha?.jugador7}
-                pen={fecha?.pen7}
+                now={fecha?.partido5}
+                res={fecha?.res5}
+                jugador={fecha?.jugador5}
+                pen={fecha?.pen5}
                 home={home}
-                control={control && control[6]}
+                control={control && control[4]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='08h50'
@@ -180,12 +157,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido8}
-                res={fecha?.res8}
-                jugador={fecha?.jugador8}
-                pen={fecha?.pen8}
+                now={fecha?.partido6}
+                res={fecha?.res6}
+                jugador={fecha?.jugador6}
+                pen={fecha?.pen6}
                 home={home}
-                control={control && control[7]}
+                control={control && control[5]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='09h30'
@@ -203,12 +180,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido9}
-                res={fecha?.res9}
-                jugador={fecha?.jugador9}
-                pen={fecha?.pen9}
+                now={fecha?.partido7}
+                res={fecha?.res7}
+                jugador={fecha?.jugador7}
+                pen={fecha?.pen7}
                 home={home}
-                control={control && control[8]}
+                control={control && control[6]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='10h10'
@@ -226,12 +203,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido10}
-                res={fecha?.res10}
-                jugador={fecha?.jugador10}
-                pen={fecha?.pen10}
+                now={fecha?.partido8}
+                res={fecha?.res8}
+                jugador={fecha?.jugador8}
+                pen={fecha?.pen8}
                 home={home}
-                control={control && control[9]}
+                control={control && control[7]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='10h50'
@@ -249,12 +226,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido11}
-                res={fecha?.res11}
-                jugador={fecha?.jugador11}
-                pen={fecha?.pen11}
+                now={fecha?.partido9}
+                res={fecha?.res9}
+                jugador={fecha?.jugador9}
+                pen={fecha?.pen9}
                 home={home}
-                control={control && control[10]}
+                control={control && control[8]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='11h30'
@@ -272,12 +249,13 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 fase='Cuartos de final'
-                now={fecha?.partido12}
-                res={fecha?.res12}
-                jugador={fecha?.jugador12}
-                pen={fecha?.pen12}
+                now={fecha?.partido10}
+                res={fecha?.res10}
+                jugador={fecha?.jugador10}
+                pen={fecha?.pen10}
+                extra={fecha?.extra10}
                 home={home}
-                control={control && control[11]}
+                control={control && control[9]}
                 dia='Domingo'
                 fecha='30 Mar'
                 hora='12h10'
@@ -288,6 +266,29 @@ export default function PartidosSemana({
                 colores={{
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
+                }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            <ItemCalendario
+                fase='Repechaje'
+                now={fecha?.partido11}
+                res={fecha?.res11}
+                jugador={fecha?.jugador11}
+                pen={fecha?.pen11}
+                home={home}
+                control={control && control[10]}
+                dia='Sábado'
+                fecha='29 Mar'
+                hora='16h40'
+                genero='M'
+                equipos={['GDL', 'Traicioneros como Judas']}
+                paralelos={['2 Confir. 4 (M)', '2 Confir. 5 (M)']}
+                logos={['24M', '25M']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['black', 'black', 'white']
                 }}
                 onStatus={onStatus}
                 onGoles={onGoles}

@@ -440,10 +440,10 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
-                                    mas='2'
+                                    ctext='green'
                                 />
                                 <div className='marcador'>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>8</strong>
                                     <p className='vs'>vs</p>
                                     <strong className='meq'>0</strong>
                                 </div>
@@ -455,6 +455,7 @@ export default function PosConfMas(){
                                     color='black'
                                     borde='black'
                                     letter='white'
+                                    ctext='red'
                                 />
                             </div>
                             <div className='partido'>
@@ -466,9 +467,10 @@ export default function PosConfMas(){
                                     color='black'
                                     borde='black'
                                     letter='white'
+                                    ctext='green'
                                 />
                                 <div className='marcador'>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>2</strong>
                                     <p className='vs'>vs</p>
                                     <strong className='meq'>0</strong>
                                 </div>
@@ -480,6 +482,7 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
+                                    ctext='red'
                                 />
                             </div>
                             <div className='partido'>

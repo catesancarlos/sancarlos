@@ -4,6 +4,7 @@ export default function PartidoSoloResultado({
     com,
     res,
     pen,
+    extra,
     jugador,
     home,
     dia,
@@ -45,6 +46,7 @@ export default function PartidoSoloResultado({
                         <strong className='meq'>{res ? res?.[1] : 0}</strong>
                     </div>
                     {pen && <p className='pen'>{`Pen (${pen})`}</p> }
+                    {extra && <p className='pen'>{`T. extra (${extra})`}</p> }
                 </div>
                 <div className='team'>
                     <Equipo
