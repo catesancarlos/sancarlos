@@ -59,11 +59,11 @@ const Home = () => {
     return (
         <>
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+                <InfoSalida misa />
                 <InfoHoy
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                {/* <InfoSalida misa /> */}
                 <MiniAgenda />
                 <JesuscribeNext
                     first={first}

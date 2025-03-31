@@ -27,7 +27,7 @@ const MiniAgenda = () => {
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 29 marzo 2025'
+                    date='Sábado 05 abril 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -44,9 +44,9 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     title='Novena Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 29 marzo 2025'
+                    date='Sábado 05 abril 2025'
                     place='Patio Catequesis'
-                    hour='16:40'
+                    hour='12:00 / 17:00'
                     url='/campeonato'
                 />
                 {/*<ItemAgenda
@@ -59,7 +59,7 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     title='Novena Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 30 marzo 2025'
+                    date='Domingo 06 abril 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

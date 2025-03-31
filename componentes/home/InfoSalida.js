@@ -21,7 +21,7 @@ export default function InfoSalida({ misa }) {
             <style jsx>{`
                 section{
                     opacity: 1;
-                    margin: 0 4% 40px 4%;
+                    margin: 0 4% 15px 4%;
                     width: 92%;
                     font-family: 'Lato', sans-serif;
                     display: flex;
