@@ -23,7 +23,7 @@ export default function PosBiblicoFem(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}>1</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Las Misioneras (A2F)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>2</td>
@@ -35,7 +35,7 @@ export default function PosBiblicoFem(){
                         <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
                         <td className='eq'>Mujeres de Nazareth (A4F)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>1</td>

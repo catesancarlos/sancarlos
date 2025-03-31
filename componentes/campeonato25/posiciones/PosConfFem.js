@@ -4,12 +4,12 @@ export default function PosConfFem(){
 
     return (
         <section>
-            <strong className='title'>Fase Final Confirmación (1 & 2) - Femenino:</strong>
-            <div className='final'>
-                <FinalConfFem />
-                <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
-            </div>
             <div className='tables'>
+                <strong className='title'>Fase Final Confirmación (1 & 2) - Femenino:</strong>
+                <div className='final'>
+                    <FinalConfFem />
+                    <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+                </div>
                 <strong className='title'>Posiciones Fase 1 Confirmación (1 & 2) - Femenino:</strong>
                 <table>
                     <tr>
@@ -328,7 +328,6 @@ export default function PosConfFem(){
                 }
 
                 .final{
-                    margin-top: 25px;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -401,9 +400,9 @@ export default function PosConfFem(){
                     }
 
                     .final{
-                        margin-top: 20px;
+                        margin-top: 8px;
                         width: calc(100% + 28px);
-                        margin-left: -14px;
+                        margin-left: 0;
                         align-items: flex-start;
                         margin-bottom: 10px;
                         overflow: scroll;

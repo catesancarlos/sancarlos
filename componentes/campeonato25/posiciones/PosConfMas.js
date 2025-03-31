@@ -2,17 +2,23 @@ import { useRef } from 'react'
 import { useEffect } from 'react'
 
 import Equipo from '../Equipo'
+import FinalConfMas from './FinalConfMas'
 
 export default function PosConfMas(){
     const board = useRef(null)
 
-    useEffect(() => {
+    /* useEffect(() => {
         board.current?.scrollIntoView()
-    })
+    }) */
 
     return(
         <section>
-            <strong className='title'>Fixture Confirmación (1 & 2) - Masculino:</strong>
+            <strong className='title'>Fase Final Confirmación (1 & 2) - Masculino:</strong>
+            <div className='final'>
+                <FinalConfMas />
+                <p className='info2'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+            </div>
+            <strong className='title'>Fixture Fase 1 Confirmación (1 & 2) - Masculino:</strong>
             <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p>
             <div className='cont'>
                 <div className='primera'>
@@ -562,6 +568,19 @@ export default function PosConfMas(){
                     margin-bottom: 25px;
                 }
 
+                .final{
+                    margin-top: 0px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+
+                .info2{
+                    display: none;
+                }
+
                 .info{
                     color: red;
                     font-size: 16px;
@@ -713,6 +732,23 @@ export default function PosConfMas(){
                         margin-top: 24px;
                         font-size: 16px;
                         margin-bottom: 12px;
+                    }
+
+                    .final{
+                        margin-top: 8px;
+                        width: calc(100% + 28px);
+                        margin-left: -14px;
+                        align-items: flex-start;
+                        margin-bottom: 10px;
+                        overflow: scroll;
+                    }
+
+                    .info2{
+                        margin: 10px 0 0 14px;
+                        color: red;
+                        font-size: 14px;
+                        display: block;
+                        text-align: center;
                     }
 
                     .info{
