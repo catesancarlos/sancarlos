@@ -11,7 +11,7 @@ import PartidosPasadosF6 from './pasados/PartidosPasadosF6'
 import PartidosPasadosF7 from './pasados/PartidosPasadosF7'
 import PartidosPasadosF8 from './pasados/PartidosPasadosF8'
 import PartidosPasadosF9 from './pasados/PartidosPasadosF9'
-import PartidosSemana from './PartidosSemana'
+import PartidosPasadosF10 from './pasados/PartidosPasadosF10'
 
 const optionsArray = [
     {
@@ -80,20 +80,15 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 10 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decima semana</strong>
-                        <i>[29-30 marzo 2025]</i>
-                        {/* <PartidosSemana
-                            fecha={datos[9]}
-                            title1='Partidos sábado:'
-                            title2='Partidos domingo:'
-                        /> */}
-                        {children}
-                    </div>
-                : select == 11 ?
+                select == 11 ?
                     <div className='fecha-label'>
                         <strong className='now-fec'>Onceava semana</strong>
+                        <i>[5-6 abril 2025]</i>
+                        {children}
+                    </div>
+                : select == 12 ?
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Doceava semana</strong>
                         <i>[5-6 abril 2025]</i>
                         <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
@@ -168,6 +163,14 @@ export default function Calendario({ datos, children }){
                         title='Resultados Semana 9:'
                         fec='[29-30 marzo 2025]'
                         fecha={datos[8]}
+                    />
+                </div>
+                : select == 10 ?
+                <div className='fecha-label'>
+                    <PartidosPasadosF10
+                        title='Resultados Semana 10:'
+                        fec='[29-30 marzo 2025]'
+                        fecha={datos[9]}
                     />
                 </div>
                 : ''

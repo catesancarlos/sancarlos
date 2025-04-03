@@ -9,20 +9,20 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                {/*<ItemAgenda
+                <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='2do Confirmación'
-                    date='Viernes 21 marzo 2025'
+                    subtitle='Iniciación'
+                    date='Viernes 04 abril 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
                 <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='Año Bíblico'
-                    date='Viernes 14 marzo 2025'
-                    place='Templo Parroquial'
+                    subtitle='1ro comunión'
+                    date='Sábado 05 abril 2025'
+                    place='Teatro Catequesis'
                     hour='19:00'
-                />*/}
+                />
                 <ItemAgenda
                     main
                     title='Catequesis'
@@ -42,22 +42,15 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    title='Novena Semana'
+                    title='Onceava Semana'
                     subtitle='Campeonato 2025'
                     date='Sábado 05 abril 2025'
                     place='Patio Catequesis'
                     hour='12:00 / 17:00'
                     url='/campeonato'
                 />
-                {/*<ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='1ro Confirmación'
-                    date='Sábado 15 marzo 2025'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                />*/}
                 <ItemAgenda
-                    title='Novena Semana'
+                    title='Onceava Semana'
                     subtitle='Campeonato 2025'
                     date='Domingo 06 abril 2025'
                     place='Patio Catequesis'
