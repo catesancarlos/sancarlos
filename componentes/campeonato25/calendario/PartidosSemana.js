@@ -18,12 +18,12 @@ export default function PartidosSemana({
             { fec && <i>{fec}</i>}
             <ItemCalendario
                 com
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
+                now={fecha?.partido1}
+                res={fecha?.res1}
+                jugador={fecha?.jugador1}
+                pen={fecha?.pen1}
                 home={home}
-                control={control && control[2]}
+                control={control && control[0]}
                 dia='Sábado'
                 fecha='05 Abr'
                 hora='12h00'
@@ -41,12 +41,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 fase='Repechaje'
-                now={fecha?.partido6}
-                res={fecha?.res6}
-                jugador={fecha?.jugador6}
-                pen={fecha?.pen6}
+                now={fecha?.partido2}
+                res={fecha?.res2}
+                jugador={fecha?.jugador2}
+                pen={fecha?.pen2}
                 home={home}
-                control={control && control[5]}
+                control={control && control[1]}
                 dia='Sábado'
                 fecha='05 Abr'
                 hora='17h00'
@@ -65,13 +65,13 @@ export default function PartidosSemana({
             { title2 && <p>{title2}</p> }
             <ItemCalendario
                 fase='Cuartos de final'
-                now={fecha?.partido10}
-                res={fecha?.res10}
-                jugador={fecha?.jugador10}
-                pen={fecha?.pen10}
-                extra={fecha?.extra10}
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                extra={fecha?.extra3}
                 home={home}
-                control={control && control[9]}
+                control={control && control[2]}
                 dia='Domingo'
                 fecha='06 Abr'
                 hora='09h40'
@@ -89,12 +89,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido6}
-                res={fecha?.res6}
-                jugador={fecha?.jugador6}
-                pen={fecha?.pen6}
+                now={fecha?.partido4}
+                res={fecha?.res4}
+                jugador={fecha?.jugador4}
+                pen={fecha?.pen4}
                 home={home}
-                control={control && control[5]}
+                control={control && control[3]}
                 dia='Domingo'
                 fecha='06 Abr'
                 hora='10h20'
@@ -112,12 +112,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido7}
-                res={fecha?.res7}
-                jugador={fecha?.jugador7}
-                pen={fecha?.pen7}
+                now={fecha?.partido5}
+                res={fecha?.res5}
+                jugador={fecha?.jugador5}
+                pen={fecha?.pen5}
                 home={home}
-                control={control && control[6]}
+                control={control && control[4]}
                 dia='Domingo'
                 fecha='06 Abr'
                 hora='11h00'
@@ -135,12 +135,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido8}
-                res={fecha?.res8}
-                jugador={fecha?.jugador8}
-                pen={fecha?.pen8}
+                now={fecha?.partido6}
+                res={fecha?.res6}
+                jugador={fecha?.jugador6}
+                pen={fecha?.pen6}
                 home={home}
-                control={control && control[7]}
+                control={control && control[5]}
                 dia='Domingo'
                 fecha='06 Abr'
                 hora='11h40'
@@ -158,12 +158,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 com
-                now={fecha?.partido9}
-                res={fecha?.res9}
-                jugador={fecha?.jugador9}
-                pen={fecha?.pen9}
+                now={fecha?.partido7}
+                res={fecha?.res7}
+                jugador={fecha?.jugador7}
+                pen={fecha?.pen7}
                 home={home}
-                control={control && control[8]}
+                control={control && control[6]}
                 dia='Domingo'
                 fecha='06 Abr'
                 hora='12h20'
