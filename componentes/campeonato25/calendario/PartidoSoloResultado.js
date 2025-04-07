@@ -15,7 +15,8 @@ export default function PartidoSoloResultado({
     paralelos,
     logos,
     colores,
-    mas
+    mas,
+    sus
 }) {
     return(
         <article>
@@ -40,6 +41,7 @@ export default function PartidoSoloResultado({
                     />
                 </div>
                 <div className='cont-score'>
+                    {sus && <p className='suspendido'>Suspendido</p> }
                     <div className='score'>
                         <strong className='meq'>{res ? res?.[0] : 0}</strong>
                         <p className='vs'>Vs</p>
@@ -141,6 +143,14 @@ export default function PartidoSoloResultado({
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+
+                .suspendido{
+                    position: absolute;
+                    top: 8px;
+                    color: red;
+                    font-size: 13px;
+                    font-weight: 500;
                 }
 
                 .score{

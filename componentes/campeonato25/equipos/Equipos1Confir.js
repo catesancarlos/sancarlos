@@ -20,6 +20,7 @@ export default function Equipos1Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Santa Fé (M)'
@@ -28,6 +29,7 @@ export default function Equipos1Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Santa Fé (F)'
@@ -36,6 +38,7 @@ export default function Equipos1Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Los Angeles Negros'
@@ -52,6 +55,7 @@ export default function Equipos1Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Newcastels (M)'
@@ -60,11 +64,29 @@ export default function Equipos1Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Newcastels (F)'
                 paralelo='1ro Confir. 4 (F)'
                 logo='14F'
+                color='white'
+                borde='black'
+                letter='black'
+                op
+            />
+            <Equipo
+                nombre='Juntos con Cristo'
+                paralelo='1 Confir. Ángeles (M)'
+                logo='1AM'
+                color='white'
+                borde='black'
+                letter='black'
+            />
+            <Equipo
+                nombre='Los Angelicales'
+                paralelo='1 Confir. Molinopamba (M)'
+                logo='1MM'
                 color='white'
                 borde='black'
                 letter='black'

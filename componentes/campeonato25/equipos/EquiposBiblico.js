@@ -12,6 +12,7 @@ export default function EquiposBiblico(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Las Herederas de Dios'
@@ -20,6 +21,7 @@ export default function EquiposBiblico(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Los Misioneros'
@@ -44,6 +46,7 @@ export default function EquiposBiblico(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Equipo de Dios'
@@ -62,6 +65,7 @@ export default function EquiposBiblico(){
                 borde='blue'
                 letter='white'
                 mas='2'
+                op
             />
             <Equipo
                 nombre='Mujeres de Nazareth'
@@ -86,6 +90,7 @@ export default function EquiposBiblico(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
         </ContEquipos> 
     )

@@ -11,23 +11,23 @@ const MiniAgenda = () => {
             <div className='cont'>
                 <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='Iniciación'
-                    date='Viernes 04 abril 2025'
+                    subtitle='2do Confirmación'
+                    date='Viernes 11 abril 2025'
                     place='Teatro Catequesis'
                     hour='19:00'
                 />
                 <ItemAgenda
                     title='Catequesis Familiar'
-                    subtitle='1ro comunión'
-                    date='Sábado 05 abril 2025'
-                    place='Teatro Catequesis'
+                    subtitle='Año Biblico'
+                    date='Viernes 11 abril 2025'
+                    place='Templo Parroquial'
                     hour='19:00'
                 />
                 <ItemAgenda
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 05 abril 2025'
+                    date='Sábado 12 abril 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -44,15 +44,15 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     title='Onceava Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 05 abril 2025'
+                    date='Sábado 12 abril 2025'
                     place='Patio Catequesis'
-                    hour='12:00 / 17:00'
+                    hour='09:00 / 11:40'
                     url='/campeonato'
                 />
                 <ItemAgenda
                     title='Onceava Semana'
                     subtitle='Campeonato 2025'
-                    date='Domingo 06 abril 2025'
+                    date='Domingo 13 abril 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

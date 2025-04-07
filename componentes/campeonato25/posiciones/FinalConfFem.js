@@ -6,15 +6,17 @@ export default function FinalConfFem(){
                 <div className='sec-ruta'>
                     <div className='partido'>
                         <div className='cuadro'>
-                            Confirmación FC (22F)
+                            <p>Confirmación FC (22F)</p>
+                            <span className='win'>7</span>
                         </div>
                         <div className='cuadro'>
-                            Las Águilas (11F)
+                            <p>Las Águilas (11F)</p>
+                            <span className='lose'>3</span>
                         </div>
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par2'>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                        <div className='cuadro'>Confirmación FC (22F)</div>
                         <div className='cuadro'><div>l</div>2 Conf 1 / 2 Ángeles</div>
                         <div className='union'></div>
                     </div>
@@ -63,14 +65,14 @@ export default function FinalConfFem(){
 
                 .partido{
                     position: relative;
-                    width: 220px;
+                    width: 230px;
                     height: 100px;
                 }
 
                 .cuadro{
                     position: relative;
                     background: white;
-                    width: 200px;
+                    width: 210px;
                     line-height: 36px;
                     text-align: center;
                     border: 2px solid black;
@@ -146,7 +148,7 @@ export default function FinalConfFem(){
                 .par4{
                     margin-top: 60px;
                     margin-left: 20px;
-                    width: 220px;
+                    width: 230px;
                     height: 160px;
                 }
 
@@ -156,22 +158,36 @@ export default function FinalConfFem(){
                     }
 
                     .partido{
-                        width: 185px;
+                        width: 192px;
                         height: 100px;
                     }
 
                     .cuadro{
-                        width: 170px;
+                        width: 180px;
                         line-height: 36px;
                         font-size: 13px;
                     }
 
+                    .par2 .union, .par3 .union{
+                        left: -12px;
+                    }
+
+                    .par2{
+                        margin-left: 12px;
+                    }
+
+                    .par3{
+                        margin-left: 12px;
+                    }
+
                     .par4{
-                        width: 199px;
+                        width: 206px;
                         height: 160px;
+                        margin-left: 12px;
                     }
 
                     .par4 .union{
+                        left: -12px;
                         margin-right: 14px;
                     }
                 }

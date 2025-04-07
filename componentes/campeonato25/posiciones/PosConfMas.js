@@ -441,7 +441,7 @@ export default function PosConfMas(){
                                 <Equipo
                                     pos
                                     nombre='GDL'
-                                    paralelo='2do Confir. 4 (M2)'
+                                    paralelo='2do Confir. 4 (M)'
                                     logo='24M'
                                     color='white'
                                     borde='black'
@@ -500,11 +500,12 @@ export default function PosConfMas(){
                                     color='white'
                                     borde='black'
                                     letter='black'
+                                    ctext='red'
                                 />
                                 <div className='marcador'>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>4</strong>
                                     <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
+                                    <strong className='meq'>5</strong>
                                 </div>
                                 <Equipo
                                     pos
@@ -514,6 +515,7 @@ export default function PosConfMas(){
                                     color='blue'
                                     borde='blue'
                                     letter='white'
+                                    ctext='green'
                                 />
                             </div>
                         </div>

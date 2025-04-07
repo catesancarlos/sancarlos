@@ -23,44 +23,44 @@ export default function PosReconMas(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
-                        <td className='eq'>Los Misioneros (A2M)</td>
-                        <td className='tp'>2</td>
-                        <td className='tp'>2</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
+                        <td className='eq'>Soldados de Jesús (13M)</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>15</td>
-                        <td className='tp'>4</td>
-                        <td className='tp'>+11</td>
-                        <td className='tp'><strong>6</strong></td>
+                        <td className='tp'>8</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>+2</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
-                        <td className='eq'>Equipo de Dios (A4M)</td>
-                        <td className='tp'>2</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
+                        <td className='eq'>Campeones del Fútbol (12M)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>7</td>
-                        <td className='tp'>9</td>
-                        <td className='tp'>-2</td>
+                        <td className='tp'>+2</td>
                         <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Los Ángeles Bíblicos (A3M)</td>
+                        <td className='eq'>Mensajeros de Dios (11M)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>10</td>
-                        <td className='tp'>-10</td>
+                        <td className='tp'>7</td>
+                        <td className='tp'>11</td>
+                        <td className='tp'>-4</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
-                    {/* <tr className='info-inag'>
+                    <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                    </tr> */}
+                    </tr>
                 </table>
                 <table>
                     <tr>
@@ -81,44 +81,44 @@ export default function PosReconMas(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
-                        <td className='eq'>Camino a la Tierra Prometida (A5M)</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
+                        <td className='eq'>Guerreros de Dios (15M)</td>
                         <td className='tp'>2</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>15</td>
-                        <td className='tp'>7</td>
-                        <td className='tp'>+8</td>
-                        <td className='tp'><strong>6</strong></td>
+                        <td className='tp'>14</td>
+                        <td className='tp'>8</td>
+                        <td className='tp'>+6</td>
+                        <td className='tp'><strong>4</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Hermanos de Jesús (A1M)</td>
-                        <td className='tp'>2</td>
+                        <td className='eq'>Siervos de Dios (16M)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>10</td>
-                        <td className='tp'>13</td>
-                        <td className='tp'>-3</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>0</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Equipo Glorioso (A4M)</td>
-                        <td className='tp'>2</td>
+                        <td className='eq'>Ángeles del Cate (14M)</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>0</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>8</td>
-                        <td className='tp'>12</td>
-                        <td className='tp'>-4</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>9</td>
+                        <td className='tp'>-6</td>
+                        <td className='tp'><strong>0</strong></td>
                     </tr>
-                    {/* <tr className='info-inag'>
+                    <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                    </tr> */}
+                    </tr>
                 </table>
             </div>
             <div className='tables partidos'>
@@ -130,25 +130,18 @@ export default function PosReconMas(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Ángeles Bíblicos (A3M)</td>
-                        <td>0</td>
+                        <td>Mensajeros de Dios (11M)</td>
+                        <td>1</td>
                         <td>vs.</td>
-                        <td>8</td>
-                        <td>Los Misioneros (A2M)</td>
+                        <td>3</td>
+                        <td>Campeones del Fútbol (12M)</td>
                     </tr>
                     <tr>
-                        <td>Equipo Glorioso (A4M)</td>
-                        <td>6</td>
-                        <td>vs.</td>
-                        <td>6</td>
-                        <td>Hermanos de Jesús (A1M)</td>
-                    </tr>
-                    <tr>
-                        <td>Equipo de Dios (A4M)</td>
-                        <td>5</td>
+                        <td>Ángeles del Cate (14M)</td>
+                        <td>3</td>
                         <td>vs.</td>
                         <td>9</td>
-                        <td>Camino a la Tierra Prometida (A5M)</td>
+                        <td>Guerreros de Dios (15M)</td>
                     </tr>
                 </table>
                 <table>
@@ -158,25 +151,18 @@ export default function PosReconMas(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Ángeles Bíblicos (A3M)</td>
-                        <td>0</td>
-                        <td>vs.</td>
-                        <td>2</td>
-                        <td>Equipo de Dios (A4M)</td>
-                    </tr>
-                    <tr>
-                        <td>Equipo Glorioso (A4M)</td>
-                        <td>2</td>
-                        <td>vs.</td>
+                        <td>Mensajeros de Dios (11M)</td>
                         <td>6</td>
-                        <td>Camino a la Tierra Prometida (A5M)</td>
+                        <td>vs.</td>
+                        <td>8</td>
+                        <td>Soldados de Jesús (13M)</td>
                     </tr>
                     <tr>
-                        <td>Los Misioneros (A2M)</td>
-                        <td>7</td>
+                        <td>Guerreros de Dios (15M)</td>
+                        <td>5</td>
                         <td>vs.</td>
-                        <td>4</td>
-                        <td>Hermanos de Jesús (A1M)</td>
+                        <td>5</td>
+                        <td>Siervos de Dios (16M)</td>
                     </tr>
                 </table>
                 <table>
@@ -186,25 +172,18 @@ export default function PosReconMas(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Misioneros (A2M)</td>
+                        <td>Campeones del Fútbol (12M)</td>
                         <td>0</td>
                         <td>vs.</td>
                         <td>0</td>
-                        <td>Equipo de Dios (A4M)</td>
+                        <td>Soldados de Jesús (13M)</td>
                     </tr>
                     <tr>
-                        <td>Hermanos de Jesús (A1M)</td>
+                        <td>Ángeles del Cate (14M)</td>
                         <td>0</td>
                         <td>vs.</td>
                         <td>0</td>
-                        <td>Camino a la Tierra Prometida (A5M)</td>
-                    </tr>
-                    <tr>
-                        <td>Los Ángeles Bíblicos (A3M)</td>
-                        <td>0</td>
-                        <td>vs.</td>
-                        <td>0</td>
-                        <td>Equipo Glorioso (A4M)</td>
+                        <td>Siervos de Dios (16M)</td>
                     </tr>
                 </table>
             </div>

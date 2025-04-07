@@ -93,7 +93,7 @@ export default function PosBiblicoMas(){
                         <td className='tp'><strong>9</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
+                        <td className='tp'>2</td>
                         <td className='eq'>Hermanos de Jesús (A1M)</td>
                         <td className='tp'>3</td>
                         <td className='tp'>0</td>

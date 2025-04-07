@@ -12,7 +12,8 @@ const Equipo = ({
     borde,
     letter,
     mas,
-    ctext
+    ctext,
+    op
 }) => (
     <article>
         <div>
@@ -36,6 +37,7 @@ const Equipo = ({
                 align-items: center;
                 justify-content: center;
                 margin-bottom: ${ca ? '3px' : pos ? '0' : '10px'};
+                opacity: ${op ? 0.18 : 1};
             }
 
             div{

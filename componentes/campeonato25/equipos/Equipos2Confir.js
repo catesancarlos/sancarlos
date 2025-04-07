@@ -12,6 +12,7 @@ export default function Equipos2Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Las Galatas 1, 10'
@@ -61,6 +62,7 @@ export default function Equipos2Confir(){
                 borde='black'
                 letter='black'
                 mas='1'
+                op
             />
             <Equipo
                 nombre='GDL'
@@ -78,6 +80,7 @@ export default function Equipos2Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Traicioneros de Judas'
@@ -86,6 +89,7 @@ export default function Equipos2Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Traicioneras de Judas'
@@ -94,6 +98,7 @@ export default function Equipos2Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Fuerza Divina'
@@ -110,6 +115,15 @@ export default function Equipos2Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+            />
+            <Equipo
+                nombre='Peruanitos de Dios'
+                paralelo='2 Confir. Molinopamba (M)'
+                logo='2MM'
+                color='white'
+                borde='black'
+                letter='black'
+                op
             />
         </ContEquipos> 
     )

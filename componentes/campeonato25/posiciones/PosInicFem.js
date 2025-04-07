@@ -24,19 +24,19 @@ export default function PosInicFem(){
                     </tr>
                     <tr>
                         <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
-                        <td className='eq'>Niños gerrero de Dios (I1F)</td>
+                        <td className='eq'>Las elegidas de Dios (I2F)</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>3</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>+3</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Los elegidos de Dios (I2F)</td>
+                        <td className='eq'>Niñas gerreras de Dios (I1F)</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
@@ -49,14 +49,14 @@ export default function PosInicFem(){
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Las Reinas (I3F)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>-3</td>
+                        <td className='tp'><strong>0</strong></td>
                     </tr>
                     {/* <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
@@ -72,11 +72,11 @@ export default function PosInicFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Ángeles Bíblicos (A3M)</td>
-                        <td>0</td>
+                        <td>Las elegidas de Dios (I2F)</td>
+                        <td>3</td>
                         <td>vs.</td>
-                        <td>8</td>
-                        <td>Los Misioneros (A2M)</td>
+                        <td>0</td>
+                        <td>Las Reinas (I3F)</td>
                     </tr>
                 </table>
                 <table>
@@ -86,11 +86,11 @@ export default function PosInicFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Ángeles Bíblicos (A3M)</td>
+                        <td>Las Reinas (I3F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>2</td>
-                        <td>Equipo de Dios (A4M)</td>
+                        <td>0</td>
+                        <td>Niñas gerreras de Dios (I1F)</td>
                     </tr>
                 </table>
                 <table>
@@ -100,11 +100,11 @@ export default function PosInicFem(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Los Misioneros (A2M)</td>
+                        <td>Niñas gerreras de Dios (I1F)</td>
                         <td>0</td>
                         <td>vs.</td>
                         <td>0</td>
-                        <td>Equipo de Dios (A4M)</td>
+                        <td>Las elegidas de Dios (I2F)</td>
                     </tr>
                 </table>
             </div>

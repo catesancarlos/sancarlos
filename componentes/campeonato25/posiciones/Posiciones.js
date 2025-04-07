@@ -89,7 +89,7 @@ const Posiciones = () => {
                     pos
                 />
             </div>
-            {/* <div>
+            <div>
                 <p>Niveles Mañana</p>
                 <OptionsSection
                     options={opcionesArrayCom}
@@ -97,7 +97,7 @@ const Posiciones = () => {
                     onSelect={op => setSelect(op)}
                     pos
                 />
-            </div> */}
+            </div>
             {
                 select == 1 ? <PosBiblicoMas />
                     : select == 2 ? <PosBiblicoFem />

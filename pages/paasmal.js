@@ -184,7 +184,6 @@ export default function Paasmal(){
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
             <section>
-                hola
                 {
                     log ?
                         <PartidosSemana

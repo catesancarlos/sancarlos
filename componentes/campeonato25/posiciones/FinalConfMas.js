@@ -11,7 +11,7 @@ export default function FinalConfMas(){
                     </div>
                     <div className='partido par2'>
                         <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                        <div className='cuadro' style={{ color: 'transparent' }}><div>l</div>eq</div>
+                        <div className='cuadro'><div>l</div>2 Conf 2 / 2 Ángeles</div>
                         <div className='union'></div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ export default function FinalConfMas(){
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par3'>
-                        <div className='cuadro' style={{ color: 'transparent' }}><div>l</div>eq</div>
+                        <div className='cuadro'><div>l</div>2 Conf 2 / 2 Ángeles</div>
                         <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
                         <div className='union'></div>
                     </div>

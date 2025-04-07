@@ -1,6 +1,6 @@
 import PartidoSoloResultado from '../PartidoSoloResultado'
 
-export default function PartidosPasados({ title, fec, fecha, home }){      
+export default function PartidosPasadosF10({ title, fec, fecha, home }){      
 
     return (
         <>
