@@ -1,4 +1,4 @@
-export default function PespOpcion({ dato, index, select, onSelect, ml }){
+export default function PespOpcion({ dato, index, select, mitad, onSelect, ml }){
     
     return(
         <div className='opcion' onClick={() => onSelect(index)}>
@@ -24,6 +24,7 @@ export default function PespOpcion({ dato, index, select, onSelect, ml }){
                     border-radius: 30px;
                     transition: 0.5s ease;
                     cursor: pointer;
+                    opacity: ${(mitad.length == 0) ?  1 : (index == mitad[0] || index == mitad[1]) ? 1 : 0};
                 }
 
                 .opcion:hover{

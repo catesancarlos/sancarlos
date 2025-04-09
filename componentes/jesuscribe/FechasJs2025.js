@@ -9,17 +9,17 @@ export default function FechasJs25(){
             <div className='cont-crono'>
                 <div className='sec-crono'>
                     <p>12 Abril 2025</p>
-                    <p>1ro Comunión</p>
+                    <p></p>
                     <p>Año Biblico</p>
                 </div>
                 <div className='sec-crono'>
                     <p>26 Abril 2025</p>
-                    <p>Iniciación</p>
+                    <p>1ro Comunión</p>
                     <p>1ro Confirmación</p>
                 </div>
                 <div className='sec-crono'>
                     <p>03 Mayo 2025</p>
-                    <p>2do Comunión</p>
+                    <p>Iniciación</p>
                     <p>2do Confirmación</p>
                 </div>
             </div>

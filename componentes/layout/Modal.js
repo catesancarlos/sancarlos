@@ -7,7 +7,7 @@ const Modal = ({ children, background='rgba(0, 0, 0, 0.8)' }) => (
                 background: ${background};
                 position: fixed;
                 top: 0;
-                bottom: 0;
+                bottom: 100px;
                 left: 0;
                 right: 0;
                 display: flex;

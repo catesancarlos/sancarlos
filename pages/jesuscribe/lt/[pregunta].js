@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import AppLayout from '../../../componentes/layout'
+import JsLayout from '../../../componentes/layout/JsLayout'
 import RespOpcion from '../../../componentes/jesuscribe/RespOpcion'
 
 import db  from '../../../services/dBase'
@@ -29,7 +29,7 @@ export default function CatLiturgia({ datos }){
     }
 
     return(
-        <AppLayout 
+        <JsLayout 
             titulo='JESUSCRIBE - Liturgia'
             name='Jesuscribe'
             categoria='LITURGIA'
@@ -129,7 +129,7 @@ export default function CatLiturgia({ datos }){
                     cursor: pointer;
                 }
             `}</style>
-        </AppLayout>
+        </JsLayout>
     )
 }
 

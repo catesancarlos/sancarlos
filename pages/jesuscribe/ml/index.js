@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { useRouter } from 'next/router'
 
-import AppLayout from '../../../componentes/layout'
+import JsLayout from '../../../componentes/layout/JsLayout'
 import NumPregunta from '../../../componentes/jesuscribe/NumPregunta'
 import Modal from '../../../componentes/layout/Modal'
 
@@ -65,12 +65,13 @@ export default function JesuscribeMl(){
     }, [sorteo])
 
     return(
-        <AppLayout 
+        <JsLayout 
             titulo='JESUSCRIBE - Multiple'
             name='Jesuscribe'
             categoria='MULTIPLE'
             onRand={handleRand}
             back='#B0C0D9'
+            preg
         >
             <section>
                 {select &&
@@ -123,6 +124,6 @@ export default function JesuscribeMl(){
                     cursor: pointer;
                 }
             `}</style>
-        </AppLayout>
+        </JsLayout>
     )
 }

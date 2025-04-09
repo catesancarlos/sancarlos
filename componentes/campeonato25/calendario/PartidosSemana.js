@@ -193,7 +193,7 @@ export default function PartidosSemana({
                 hora='11h40'
                 genero='F'
                 equipos={['El Maná', 'Elegidas por Jesús']}
-                paralelos={['2 Comun. 4 (F)', '2 Comun. 6 (F)']}
+                paralelos={['2 Comun. 5 (F)', '2 Comun. 6 (F)']}
                 logos={['25F', '26F']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
@@ -216,7 +216,7 @@ export default function PartidosSemana({
                 hora='12h20'
                 genero='M'
                 equipos={['El Maná', 'Los Instrumentos de Dios']}
-                paralelos={['2 Comun. 4 (M)', '2 Comun. 6 (M)']}
+                paralelos={['2 Comun. 5 (M)', '2 Comun. 6 (M)']}
                 logos={['25M', '26M']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
