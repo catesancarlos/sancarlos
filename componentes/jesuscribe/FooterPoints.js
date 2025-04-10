@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import db  from '../../services/dBase'
 import { doc, collection, query, where, updateDoc, onSnapshot } from 'firebase/firestore'
 
-export default function FooterPoints({ una, onNext, onMitad }){
+export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     const [grupos, setGrupos] = useState([])
     const [now, setNow] = useState(5)
 
@@ -26,37 +26,76 @@ export default function FooterPoints({ una, onNext, onMitad }){
 
     const handleNext = (e) => {
         updateDoc(doc(db, 'controles', 'concurso'), { now: e })
-        if(una) onNext()
+        if(una || mul) onNext()
     }
 
     const handleMitad = (e) => {
-        updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c1: false })
-        onMitad()
+        if(una){
+            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c1: false })
+            onMitad()
+        }
+    }
+
+    const handleCall = (e) => {
+        if(una || mul){
+            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c2: false })
+        }
+    }
+
+    const handleKts = (e) => {
+        if(una || mul){
+            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c3: false })
+        }
+    }
+
+    const handleCorrecto = (e) => {
+        updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+    }
+
+    const handleIncorrecto = (e) => {
+        updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
     }
     
     return(
         <footer>
             {
-                (una && grupos[now-1]?.c1) &&
-                <div className='mitad' onClick={handleMitad}>
-                    50
+                mul &&
+                <div className='mitad'>
+                    <p onClick={onView}>R</p>
+                    <p onClick={handleCorrecto}>C</p>
+                    <p onClick={handleIncorrecto}>I</p>
                 </div>
             }
             {
                 grupos?.map((grupo, index) =>
                     <div className='cont-grupo' key={grupo.nombre}>
-                        <div
-                            onClick={() => handleNext(index+1)}
-                            className={`grupo ${now == index+1 ? 'active' : ''}`}
-                        >
-                            <div className='left'>
+                        <div className={`grupo ${now == index+1 ? 'active' : ''}`}>
+                            <div
+                                onClick={() => handleNext(index+1)}
+                                className='left'
+                            >
                                 <strong style={{ color: '#EE1C21' }}>{grupo.nombre}</strong>
                                 <strong className='puntaje'>{grupo.puntos}</strong>
                             </div>
                             <div className='right'>
-                                <p style={{ opacity : grupo.c1 ? '1' : '0'}}>50</p>
-                                <p style={{ opacity : grupo.c2 ? '1' : '0'}}>Call</p>
-                                <p style={{ opacity : grupo.c3 ? '1' : '0'}}>Kts</p>
+                                <p
+                                    onClick={handleMitad}
+                                    style={{ opacity : grupo.c1 ? '1' : '0'}}
+                                >
+                                    50
+                                </p>
+                                <p
+                                    onClick={handleCall}
+                                    style={{ opacity : grupo.c2 ? '1' : '0'}}
+                                >
+                                    Call
+                                </p>
+                                <p
+                                    onClick={handleKts}
+                                    style={{ opacity : grupo.c3 ? '1' : '0'}}
+                                >
+                                    Kts
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -83,13 +122,28 @@ export default function FooterPoints({ una, onNext, onMitad }){
                     position: absolute;
                     top: -50px;
                     right: 25px;
+                    display: flex;
+                }
+
+                .mitad p{
+                    margin-left: 6px;
+                    width: 38px;
                     background: #00000099;
                     color: white;
-                    font-size: 18px;
+                    font-size: 17px;
                     font-weight: bold;
-                    padding: 10px;
+                    text-align: center;
+                    padding: 9px;
                     border-radius: 10px;
                     cursor: pointer;
+                }
+
+                .mitad p:nth-child(2){
+                    background: green;
+                }
+
+                .mitad p:nth-child(3){
+                    background: red;
                 }
 
                 .grupo{
@@ -113,6 +167,7 @@ export default function FooterPoints({ una, onNext, onMitad }){
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    cursor: pointer;
                 }
 
                 .right{
@@ -137,6 +192,7 @@ export default function FooterPoints({ una, onNext, onMitad }){
                     font-weight: 500;
                     text-align: center;
                     border-radius: 4px;
+                    cursor: pointer;
                 }
 
                 @media screen and (max-width: 768px){

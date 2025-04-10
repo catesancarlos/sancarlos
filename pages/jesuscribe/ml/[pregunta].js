@@ -6,27 +6,13 @@ import RespOpcion from '../../../componentes/jesuscribe/RespOpcion'
 
 import db  from '../../../services/dBase'
 import { getDoc, doc } from 'firebase/firestore'
+import FooterPoints from '../../../componentes/jesuscribe/FooterPoints'
 
 export default function CatMultiple({ datos }){
     const router = useRouter()
-    const [select, setSelect] = useState([false, false, false, false])
-    const [revisar, setRevisar] = useState(null)
+    const [view, setView] = useState(false)
 
-    const handleSelect = (e) => {
-        if(e==0) setSelect([true, false, false, false])
-        else if(e==1) setSelect([false, true, false, false])
-        else if(e==2) setSelect([false, false, true, false])
-        else if(e==3) setSelect([false, false, false, true])
-
-        if(datos?.respuestas[e] == datos?.correcto) setRevisar('CORRECTO')
-            else setRevisar('INCORRECTO')
-    }
-
-    const handleCerrar = () => {
-        setSelect([false, false, false, false])
-        setRevisar(null)
-        router.back()
-    }
+    const handleCerrar = () => router.back()
 
     return(
         <AppLayout 
@@ -42,24 +28,22 @@ export default function CatMultiple({ datos }){
                 </div>
                 <div className='respuestas'>
                     {
-                        datos && datos?.respuestas?.map(
+                        view && datos?.respuestas?.map(
                             (opcion, index) => 
                                 <RespOpcion
                                     ml={true}
                                     key={index}
                                     dato={opcion}
+                                    mitad={[]}
                                     index={index}
-                                    select={select[index]}
-                                    onSelect={handleSelect}
+                                    select={false}
+                                    onSelect={[]}
                                 />
                         )
                     }
                 </div>
-                <div className='califica'>
-                    <p className='r'>{revisar}</p>
-                    <p className='cerrar' onClick={handleCerrar}>X</p>
-                </div>
             </section>
+            <FooterPoints mul onNext={handleCerrar} onView={() => setView(!view)} />
 
             <style jsx>{`
                 section{
@@ -73,7 +57,7 @@ export default function CatMultiple({ datos }){
                 .div0{
                     margin-top: 85px;
                     width: 100%;
-                    border: ${!revisar ?  '3px solid white' : revisar == 'CORRECTO' ? '3px solid #00BB2D' : '3px solid red'};
+                    border: 3px solid white;
                     box-shadow: 0px 3px 10px 0px #777;
                 }
 
@@ -86,7 +70,7 @@ export default function CatMultiple({ datos }){
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border: ${!revisar ?  '6px solid white' : revisar == 'CORRECTO' ? '6px solid #00BB2D' : '6px solid red'};
+                    border: 6px solid white;
                     border-radius: 30px;
                     margin-bottom: 10px;
                 }
@@ -102,12 +86,13 @@ export default function CatMultiple({ datos }){
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
+                    padding-bottom: 80px;
                 }
 
                 .califica{
-                    display: ${revisar ? 'block' : 'none'};
+                    display: none;
                     position: relative;
-                    background: ${revisar == 'CORRECTO' ? '#00BB2D' : 'red'};
+                    background: #00BB2D;
                     margin-top: 40px;
                     width: 70%;
                     line-height: 50px;

@@ -1,49 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-import AppLayout from '../../componentes/layout'
-import Container from '../../componentes/sections/Container'
-import InvitacionJs25 from '../../componentes/jesuscribe/InvitacionJs25'
-import CategoriasJs25 from '../../componentes/jesuscribe/CategoriasJs25'
-import FechasJs25 from '../../componentes/jesuscribe/FechasJs2025'
+import JsLayout from '../../componentes/layout/JsLayout'
 
 export default function Jesuscribe(){
     const router = useRouter()
     const [section, setSection] = useState(1)
 
-    useEffect(() => {
-        if(router.query.s){
-            setSection(router.query.s)
-            router.replace('/jesuscribe')
-        }   
-    }, [router.query.s])
 
     return(
-        <AppLayout titulo='San Carlos - Jesuscribe' name='Jesuscribe'>
-            <Container
-                title='CONCURSO'
-                subtitle='2025'
-                img='/logo-jesuscribe.jpg'
-            >
-                <aside>
-                    <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => setSection(1)}>Invitación</p>
-                    <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => setSection(3)}>Fechas</p>
-                    <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => setSection(2)}>Niveles</p>
-                    <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-general')}}>General</p>
-                    <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-vida')}}>Vida de Jesús</p>
-                    <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-iglesia')}}>Nuestra Iglesia</p>
-                    <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-sacramentologia')}}>Sacramentologia</p>
-                    <p className={`op-menu ${section == 8 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-liturgia')}}>Liturgia</p>
-                    <p className={`op-menu ${section == 9 && 'active'}`} onClick={() => {setSection(0), router.push('/jesuscribe/js-multiple')}}>Multiple</p>
-                </aside>
-                <div className='principal'>
-                    {
-                        section == 1 ? <InvitacionJs25 /> : 
-                            section == 2 ? <CategoriasJs25 /> :
-                                section == 3 ? <FechasJs25 /> : ''
-                    }
-                </div>
-            </Container>
+        <JsLayout 
+            titulo='JESUSCRIBE'
+            name='Jesuscribe'
+            back='#B0C0D9'
+            preg
+        >
+            js hola
 
             <style jsx>{`
                 aside{
@@ -101,6 +73,6 @@ export default function Jesuscribe(){
                     }
                 }
             `}</style>
-        </AppLayout>
+        </JsLayout>
     )
 }
