@@ -1,11 +1,14 @@
+import { useRouter } from 'next/router'
+
 import Dice from '../iconos/Dice'
 
 export default function HeaderJs({ categoria, onRand }){
+    const router = useRouter()
 
     return (
         <div className='header'>
             <div className='main'>
-                <img src='/logo-jesuscribe.jpg' />
+                <img src='/logo-jesuscribe.jpg' onClick={() => router.push('/jesuscribe')} />
                 <h2>{categoria}</h2>
             </div>
             {
@@ -33,6 +36,7 @@ export default function HeaderJs({ categoria, onRand }){
                     height: 46px;
                     border-radius: 10px;
                     box-shadow: -2px 2px 5px 0px #888;
+                    cursor: pointer;
                 }
 
                 h2{

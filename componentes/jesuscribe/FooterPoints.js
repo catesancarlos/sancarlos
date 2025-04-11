@@ -6,6 +6,7 @@ import { doc, collection, query, where, updateDoc, onSnapshot } from 'firebase/f
 export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     const [grupos, setGrupos] = useState([])
     const [now, setNow] = useState(5)
+    const [ronda, setRonda] = useState(1)
 
     useEffect(() => {
         const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab'))
@@ -24,8 +25,15 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
         }) 
     }, [])
 
+    useEffect(() => {
+        onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
+            setRonda(doc.data().ronda)
+        }) 
+    }, [])
+
     const handleNext = (e) => {
         updateDoc(doc(db, 'controles', 'concurso'), { now: e })
+        if(e == 1) updateDoc(doc(db, 'controles', 'concurso'), { ronda: ronda + 1 })
         if(una || mul) onNext()
     }
 
@@ -66,6 +74,13 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
                     <p onClick={handleIncorrecto}>I</p>
                 </div>
             }
+            <div className='cont-grupo'>
+                <div className='grupo ronda'>
+                    <strong>AÑO BIBLICO</strong>
+                    <strong className='nron'>{ronda}</strong>
+                    <p>Ronda</p>
+                </div>
+            </div>
             {
                 grupos?.map((grupo, index) =>
                     <div className='cont-grupo' key={grupo.nombre}>
@@ -114,7 +129,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
 
                 .cont-grupo{
                     position: relative;
-                    width: calc((100vw - 30px)/5);
+                    width: calc((100vw - 30px)/6);
                     padding: 10px 8px;
                 }
 
@@ -193,6 +208,25 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
                     text-align: center;
                     border-radius: 4px;
                     cursor: pointer;
+                }
+
+                .ronda{
+                    background: #000000;
+                    background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .nron{
+                    font-size: 40px;
+                    font-family: 'Lato', sans-serif;
+                }
+
+                .ronda p{
+                    margin-top: -5px;
+                    color: red;
                 }
 
                 @media screen and (max-width: 768px){

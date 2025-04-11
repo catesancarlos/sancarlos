@@ -7,7 +7,6 @@ export default function Jesuscribe(){
     const router = useRouter()
     const [section, setSection] = useState(1)
 
-
     return(
         <JsLayout 
             titulo='JESUSCRIBE'
@@ -15,62 +14,52 @@ export default function Jesuscribe(){
             back='#B0C0D9'
             preg
         >
-            js hola
+            <div className='cont'>
+                <p className='info'>Categorias:</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/gn')}>GENERAL</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/vd')}>VIDA DE JESÚS</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/ni')}>NUESTRA IGLESIA</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/lt')}>LITURGIA</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/sc')}>SACRAMENTOLOGIA</p>
+                <p className='cat' onClick={() => router.push('/jesuscribe/ml')}>MULTIPLE</p>
+            </div>
 
             <style jsx>{`
-                aside{
-                    width: 15%;
+                .cont{
+                    margin: 36px 10% 0 10%;
+                    width: 80%;
                 }
 
-                .op-menu{
+                .info{
+                    font-size: 24px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: bold;
+                }
+
+                .cat{
+                    margin-top: 25px;
                     background: white;
                     padding: 10px 16px;
-                    font-size: 18px;
+                    font-size: 20px;
                     font-family: 'Lato', sans-serif;
                     text-align: center;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    border-radius: 8px;
+                    border-radius: 15px;
                     box-shadow: -2px 2px 5px 0px #888;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    transition: 0.5s ease;
                     cursor: pointer;
-                    margin-bottom: 12px;
                 }
 
-                .active{
-                    background: #EE1C21;
+                .cat:hover{
+                    background: black;
                     color: white;
                 }
 
-                .principal{
-                    width: 85%;
-                    padding: 18px 0 18px 35px;
-                }
-
                 @media screen and (max-width: 768px){
-                    aside{
-                        width: 100%;
-                        display: flex;
-                        flex-wrap: wrap;
-                    }
-
-                    .op-menu{
-                        width: calc((100% - 12px) / 3);
-                        padding: 6px 5px;
-                        font-size: 15px;
-                        margin-right: 6px;
-                        margin-bottom: 10px;
-                    }
-
-                    .op-menu:nth-child(3), .op-menu:nth-child(6), .op-menu:nth-child(9), .op-menu:nth-child(10){
-                        margin-right: 0;
-                    }
-
-                    .principal{
-                        width: 100%;
-                        padding: 15px 0 0 0;
-                    }
+                    
                 }
             `}</style>
         </JsLayout>
