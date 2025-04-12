@@ -20,7 +20,7 @@ export default function Jesuscribe(){
                 <p className='cat' onClick={() => router.push('/jesuscribe/vd')}>VIDA DE JESÚS</p>
                 <p className='cat' onClick={() => router.push('/jesuscribe/ni')}>NUESTRA IGLESIA</p>
                 <p className='cat' onClick={() => router.push('/jesuscribe/lt')}>LITURGIA</p>
-                <p className='cat' onClick={() => router.push('/jesuscribe/sc')}>SACRAMENTOLOGIA</p>
+                {/* <p className='cat' onClick={() => router.push('/jesuscribe/sc')}>SACRAMENTOLOGIA</p> */}
                 <p className='cat' onClick={() => router.push('/jesuscribe/ml')}>MULTIPLE</p>
             </div>
 
@@ -31,7 +31,7 @@ export default function Jesuscribe(){
                 }
 
                 .info{
-                    font-size: 24px;
+                    font-size: 28px;
                     font-family: 'Lato', sans-serif;
                     font-weight: bold;
                 }
@@ -40,7 +40,7 @@ export default function Jesuscribe(){
                     margin-top: 25px;
                     background: white;
                     padding: 10px 16px;
-                    font-size: 20px;
+                    font-size: 24px;
                     font-family: 'Lato', sans-serif;
                     text-align: center;
                     display: flex;

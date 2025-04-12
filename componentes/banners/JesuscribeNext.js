@@ -28,7 +28,7 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                             <div className='line'></div>
                         </div>
                         <div className='ftr-banner2'>
-                            Próximamente
+                            AÑO BIBLICO
                         </div>
                     </div>
             }

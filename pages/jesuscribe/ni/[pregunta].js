@@ -40,10 +40,14 @@ export default function CatIglesia({ datos }){
         else if(e==3) setSelect([false, false, false, true])
 
         if(datos?.respuestas[e] == datos?.correcto){
+            var audio = document.getElementById('ac')
+            audio.play()
             updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
             setRevisar('CORRECTO')
         }
         else{
+            var audio = document.getElementById('ae')
+            audio.play()
             updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
             setRevisar('INCORRECTO')
         }
@@ -60,6 +64,8 @@ export default function CatIglesia({ datos }){
         var indice = datos.respuestas.indexOf(datos.correcto)
         arreglo.splice(indice, 1)
         var n = Math.trunc(Math.random()*(3-0)+0)
+        var audio = document.getElementById('ab')
+        audio.play()
         setMitad([indice, arreglo[n]])
     }
 
@@ -96,6 +102,9 @@ export default function CatIglesia({ datos }){
                 </div>
             </section>
             <FooterPoints una onNext={handleCerrar} onMitad={handle50} />
+            <audio id='ac' src='/correct.mp3'></audio>
+            <audio id='ae' src='/error.mp3'></audio>
+            <audio id='ab' src='/bubble.mp3'></audio>
 
             <style jsx>{`
                 section{
@@ -153,9 +162,9 @@ export default function CatIglesia({ datos }){
 
                 .r{
                     color: white;
-                    font-size: 20px;
+                    font-size: 24px;
                     font-weight: bold;
-                    letter-spacing: 1px;
+                    letter-spacing: 3px;
                 }
 
                 .cerrar{

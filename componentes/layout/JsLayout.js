@@ -24,7 +24,8 @@ export default function JsLayout ({
     flecha = true,
     back,
     onRand,
-    preg
+    preg,
+    non
 }) {
     const [grupos, setGrupos] = useState([])
     const [now, setNow] = useState(5)
@@ -56,7 +57,7 @@ export default function JsLayout ({
             </Head>
 
             <main className='page-home'>
-                <HeaderJs categoria={categoria} onRand={onRand} />
+                <HeaderJs categoria={categoria} non={non} onRand={onRand} />
                 {children}
                 { preg && <FooterPoints preg={preg} /> }
             </main>

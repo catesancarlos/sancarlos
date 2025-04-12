@@ -2,15 +2,18 @@ import { useRouter } from 'next/router'
 
 import Dice from '../iconos/Dice'
 
-export default function HeaderJs({ categoria, onRand }){
+export default function HeaderJs({ categoria, non, onRand }){
     const router = useRouter()
 
     return (
         <div className='header'>
-            <div className='main'>
-                <img src='/logo-jesuscribe.jpg' onClick={() => router.push('/jesuscribe')} />
-                <h2>{categoria}</h2>
-            </div>
+            {
+                !non &&
+                <div className='main'>
+                    <img src='/logo-jesuscribe.jpg' onClick={() => router.push('/jesuscribe')} />
+                    <h2>{categoria}</h2>
+                </div>
+            }
             {
                 onRand &&
                     <div className='sorteo' onClick={onRand}>

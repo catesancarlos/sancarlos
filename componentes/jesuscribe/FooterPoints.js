@@ -38,7 +38,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     }
 
     const handleMitad = (e) => {
-        if(una){
+        if(una && grupos[now-1].c1){
             updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c1: false })
             onMitad()
         }
@@ -57,10 +57,14 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     }
 
     const handleCorrecto = (e) => {
+        var audio = document.getElementById('ac')
+        audio.play()
         updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
     }
 
     const handleIncorrecto = (e) => {
+        var audio = document.getElementById('ae')
+        audio.play()
         updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
     }
     
@@ -74,6 +78,9 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
                     <p onClick={handleIncorrecto}>I</p>
                 </div>
             }
+            <audio id='ac' src='/correct.mp3'></audio>
+            <audio id='ae' src='/error.mp3'></audio>
+            <audio id='ab' src='/bubble.mp3'></audio>
             <div className='cont-grupo'>
                 <div className='grupo ronda'>
                     <strong>AÑO BIBLICO</strong>
@@ -89,7 +96,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
                                 onClick={() => handleNext(index+1)}
                                 className='left'
                             >
-                                <strong style={{ color: '#EE1C21' }}>{grupo.nombre}</strong>
+                                <strong className='nombre' style={{ color: '#EE1C21' }}>{grupo.nombre}</strong>
                                 <strong className='puntaje'>{grupo.puntos}</strong>
                             </div>
                             <div className='right'>
@@ -193,12 +200,16 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
                     justify-content: center;
                 }
 
+                .nombre{
+                    font-size: 20px;
+                }
+
                 .puntaje{
-                    font-size: 40px;
+                    font-size: 44px;
                 }
 
                 .right p{
-                    background: #00000099;
+                    background: #000000CC;
                     margin: 3px 0;
                     width: 28px;
                     line-height: 21px;
@@ -226,7 +237,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
 
                 .ronda p{
                     margin-top: -5px;
-                    color: red;
+                    color: white;
                 }
 
                 @media screen and (max-width: 768px){
