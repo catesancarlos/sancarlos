@@ -5,8 +5,8 @@ export default function FinalConfMas(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido'>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                        <div className='cuadro'>Ángeles Negros (13M)</div>
+                        <div className='cuadro'>Los Águilas (11M)</div>
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par2'>
@@ -17,8 +17,8 @@ export default function FinalConfMas(){
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido'>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                        <div className='cuadro'>Los Pastores (23M)</div>
+                        <div className='cuadro'>GDL (24M)</div>
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par3'>

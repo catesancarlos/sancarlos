@@ -10,26 +10,41 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='2do Confirmación'
-                    date='Viernes 11 abril 2025'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                />
-                <ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='Año Biblico'
-                    date='Viernes 11 abril 2025'
+                    title='Semana Santa'
+                    subtitle='Celebración Cena del Señor'
+                    date='Jueves 17 abril 2025'
                     place='Templo Parroquial'
                     hour='19:00'
                 />
                 <ItemAgenda
-                    main
+                    title='Semana Santa'
+                    subtitle='Adoración al Santisimo'
+                    date='Jueves 17 abril 2025'
+                    place='Templo Parroquial'
+                    hour='21:00'
+                />
+                <ItemAgenda
+                    title='Semana Santa'
+                    subtitle='Via Crucis'
+                    date='Viernes 18 abril 2025'
+                    place='La Dolorosa'
+                    hour='08:00'
+                />
+                <ItemAgenda
+                    title='2 Confirmación'
+                    subtitle='Pascua Juvenil'
+                    date='Sábado 19 abril 2025'
+                    place='Parque Cental'
+                    hour='07:00'
+                    /* url='/campeonato' */
+                />
+                <ItemAgenda
+                    /* main */
                     title='Catequesis'
-                    subtitle='Clases Normales'
-                    date='Sábado 12 abril 2025'
-                    place='Centros catequeticos'
-                    hour={`Según horario`}
+                    subtitle='No hay Clases'
+                    date='Sábado 19 abril 2025'
+                    place='Semana Santa'
+                    /* hour={`Según horario`} */
                 >
                     <strong>Centro</strong>
                     <p className='nt lg'>Mañana: 08:45 - 11:30</p>
@@ -42,17 +57,9 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    title='Onceava Semana'
+                    title='Decimo tercera Semana'
                     subtitle='Campeonato 2025'
-                    date='Sábado 12 abril 2025'
-                    place='Patio Catequesis'
-                    hour='09:00 / 11:40'
-                    url='/campeonato'
-                />
-                <ItemAgenda
-                    title='Onceava Semana'
-                    subtitle='Campeonato 2025'
-                    date='Domingo 13 abril 2025'
+                    date='Domingo 20 abril 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

@@ -13,6 +13,7 @@ import PartidosPasadosF8 from './pasados/PartidosPasadosF8'
 import PartidosPasadosF9 from './pasados/PartidosPasadosF9'
 import PartidosPasadosF10 from './pasados/PartidosPasadosF10'
 import PartidosPasadosF11 from './pasados/PartidosPasadosF11'
+import PartidosPasadosF12 from './pasados/PartidosPasadosF12'
 
 const optionsArray = [
     {
@@ -89,15 +90,15 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 12 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo segunda semana</strong>
-                        <i>[12-13 abril 2025]</i>
-                        {children}
-                    </div>
-                :  select == 13 ?
+                select == 13 ?
                     <div className='fecha-label'>
                         <strong className='now-fec'>Decimo tercera semana</strong>
+                        <i>[20 abril 2025]</i>
+                        {children}
+                    </div>
+                :  select == 14 ?
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Decimo cuarta semana</strong>
                         <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
                 : select == 1 ?
@@ -187,6 +188,14 @@ export default function Calendario({ datos, children }){
                             title='Resultados Semana 11:'
                             fec='[5-6 abril 2025]'
                             fecha={datos[10]}
+                        />
+                    </div>
+                : select == 12 ?
+                    <div className='fecha-label'>
+                        <PartidosPasadosF12
+                            title='Resultados Semana 12:'
+                            fec='[12-13 abril 2025]'
+                            fecha={datos[11]}
                         />
                     </div>
                 : ''

@@ -4,41 +4,17 @@ export default function FinalConfFem(){
         <section>
             <div>
                 <div className='sec-ruta'>
-                    <div className='partido'>
-                        <div className='cuadro'>
-                            <p>Confirmación FC (22F)</p>
-                            <span className='win'>7</span>
-                        </div>
-                        <div className='cuadro'>
-                            <p>Las Águilas (11F)</p>
-                            <span className='lose'>3</span>
-                        </div>
-                        <div className='union u1'></div>
-                    </div>
                     <div className='partido par2'>
-                        <div className='cuadro'>Confirmación FC (22F)</div>
-                        <div className='cuadro'><div>l</div>Estrellitas de María (2AF)</div>
-                        <div className='union'></div>
+                        <div className='cuadro'>1 Comu 2 / 1 Comu 3</div>
+                        <div className='cuadro'>Las Milagrosas (14F)</div>
+                        <div className='union u1'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
-                    <div className='partido'>
-                        <div className='cuadro'>
-                            <p>Newcastells (14F)</p>
-                            <span className='lose'>2</span>
-                        </div>
-                        <div className='cuadro'>
-                            <p>Génesis (23F)</p>
-                            <span className='win'>3</span>
-                        </div>
-                        <div className='union u1'></div>
-                    </div>
                     <div className='partido par3'>
-                        <div className='cuadro'><div>l</div>Las Galatas 1, 10 (21F)</div>
-                        <div className='cuadro'>
-                            Génesis (23F)
-                        </div>
-                        <div className='union'></div>
+                        <div className='cuadro'>Siervas de Dios (16F)</div>
+                        <div className='cuadro'>1 Comu 2 / 1 Comu 3</div>
+                        <div className='union u1'></div>
                     </div>
                 </div>
             </div>
@@ -55,6 +31,7 @@ export default function FinalConfFem(){
                 }
 
                 .sec-ruta{
+                    margin-top: -25px;
                     display: flex;
                 }
 
@@ -137,16 +114,16 @@ export default function FinalConfFem(){
 
                 .par2{
                     margin-top: 30px;
-                    margin-left: 20px;
+                    margin-left: 0;
                 }
 
                 .par3{
                     margin-top: -30px;
-                    margin-left: 20px;
+                    margin-left: 0;
                 }
 
                 .par4{
-                    margin-top: 60px;
+                    margin-top: 35px;
                     margin-left: 20px;
                     width: 230px;
                     height: 160px;

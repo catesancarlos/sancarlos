@@ -1,8 +1,15 @@
+import Final1ComuFem from './Final1ComuFem'
+
 export default function PosReconFem(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <div className='final'>
+                    <Final1ComuFem />
+                    <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+                </div>
                 <strong className='title'>Posiciones 1ro Comunión - Femenino:</strong>
                 <table>
                     <tr>
@@ -81,27 +88,27 @@ export default function PosReconFem(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Siervas de Dios (16F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>4</td>
+                        <td className='tp'>5</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>+4</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>+5</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
                         <td className='eq'>Las Milagrosas (14F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>2</td>
                         <td className='tp'>2</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>3</td>
+                        <td className='tp'>-1</td>
                         <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
@@ -157,6 +164,7 @@ export default function PosReconFem(){
                         <td>0</td>
                         <td>Pastoras (13F)</td>
                     </tr>
+                    
                     <tr>
                         <td>Ángeles (15F)</td>
                         <td>0</td>
@@ -182,7 +190,7 @@ export default function PosReconFem(){
                         <td>Milagrosas (14F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>1</td>
                         <td>Siervas de Dios (16F)</td>
                     </tr>
                 </table>
@@ -194,6 +202,18 @@ export default function PosReconFem(){
                     width: 100%;
                     font-size: 20px;
                     margin-bottom: 25px;
+                }
+
+                .final{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+
+                .info{
+                    display: none;
                 }
 
                 .tables{

@@ -1,8 +1,15 @@
+import Final2ComuMas from './Final2ComuMas'
+
 export default function PosComuMas(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <div className='final'>
+                    <Final2ComuMas />
+                    <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+                </div>
                 <strong className='title'>Posiciones 2do Comunión - Masculino:</strong>
                 <table>
                     <tr>
@@ -24,6 +31,18 @@ export default function PosComuMas(){
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }} ><strong>1</strong></td>
+                        <td className='eq'>Los leones de Dios (23M)</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>17</td>
+                        <td className='tp'>10</td>
+                        <td className='tp'>+7</td>
+                        <td className='tp'><strong>4</strong></td>
+                    </tr>
+                    <tr>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }} ><strong>2</strong></td>
                         <td className='eq'>Pueblo de Israel (21M)</td>
                         <td className='tp'>2</td>
                         <td className='tp'>1</td>
@@ -35,27 +54,15 @@ export default function PosComuMas(){
                         <td className='tp'><strong>4</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
-                        <td className='eq'>Los leones de Dios (23M)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>7</td>
-                        <td className='tp'>7</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'><strong>1</strong></td>
-                    </tr>
-                    <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Los Historicos (22M)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>7</td>
-                        <td className='tp'>-5</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>17</td>
+                        <td className='tp'>-12</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
                     <tr className='info-inag'>
@@ -81,7 +88,7 @@ export default function PosComuMas(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Guerreros contra el mal (24M)</td>
                         <td className='tp'>1</td>
                         <td className='tp'>1</td>
@@ -93,32 +100,32 @@ export default function PosComuMas(){
                         <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp'>2</td>
-                        <td className='eq'>El Maná (25M)</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
+                        <td className='eq'>Instrumentos de Dios (26M)</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>8</td>
-                        <td className='tp'>-8</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'>10</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>+4</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Instrumentos de Dios (26M)</td>
+                        <td className='eq'>El Maná (25M)</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>18</td>
+                        <td className='tp'>-12</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
-                    {/* <tr className='info-inag'>
+                    <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                    </tr> */}
+                    </tr>
                 </table>
             </div>
             <div className='tables partidos'>
@@ -173,16 +180,16 @@ export default function PosComuMas(){
                     </tr>
                     <tr>
                         <td>Los Historicos (22M)</td>
-                        <td>0</td>
+                        <td>3</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>10</td>
                         <td>Los leones de Dios (23M)</td>
                     </tr>
                     <tr>
                         <td>El Maná (25M)</td>
-                        <td>0</td>
+                        <td>6</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>10</td>
                         <td>Instrumentos de Dios (26M)</td>
                     </tr>
                 </table>
@@ -194,6 +201,18 @@ export default function PosComuMas(){
                     width: 100%;
                     font-size: 20px;
                     margin-bottom: 25px;
+                }
+
+                .final{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+
+                .info{
+                    display: none;
                 }
 
                 .tables{

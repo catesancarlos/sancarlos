@@ -50,11 +50,11 @@ export default function ItemAgenda({
                     overflow: hidden;
                 }
 
-                article:nth-child(3){
+                article:nth-child(4){
                     margin-right: 0;
                 }
 
-                article:nth-child(4), article:nth-child(5), article:nth-child(6){
+                article:nth-child(7), article:nth-child(5), article:nth-child(6){
                     margin-top: 20px;
                 }
                 

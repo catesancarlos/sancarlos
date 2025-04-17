@@ -37,25 +37,25 @@ export default function PosInicFem(){
                     <tr>
                         <td className='tp'>2</td>
                         <td className='eq'>Niñas gerreras de Dios (I1F)</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
+                        <td className='tp'>+2</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Las Reinas (I3F)</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>3</td>
-                        <td className='tp'>-3</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>-5</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
                     {/* <tr className='info-inag'>
@@ -89,7 +89,7 @@ export default function PosInicFem(){
                         <td>Las Reinas (I3F)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Niñas gerreras de Dios (I1F)</td>
                     </tr>
                 </table>

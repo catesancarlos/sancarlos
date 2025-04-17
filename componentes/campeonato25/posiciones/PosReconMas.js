@@ -1,8 +1,15 @@
+import Final1ComuMas from './Final1ComuMas'
+
 export default function PosReconMas(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <div className='final'>
+                    <Final1ComuMas />
+                    <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
+                </div>
                 <strong className='title'>Posiciones 1ro Comunión - Masculino:</strong>
                 <table>
                     <tr>
@@ -93,28 +100,28 @@ export default function PosReconMas(){
                         <td className='tp'><strong>4</strong></td>
                     </tr>
                     <tr>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
+                        <td className='eq'>Ángeles del Cate (14M)</td>
                         <td className='tp'>2</td>
-                        <td className='eq'>Siervos de Dios (16M)</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>5</td>
-                        <td className='tp'>5</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'><strong>1</strong></td>
+                        <td className='tp'>12</td>
+                        <td className='tp'>10</td>
+                        <td className='tp'>+2</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Ángeles del Cate (14M)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Siervos de Dios (16M)</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>3</td>
-                        <td className='tp'>9</td>
-                        <td className='tp'>-6</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>14</td>
+                        <td className='tp'>-8</td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
@@ -180,9 +187,9 @@ export default function PosReconMas(){
                     </tr>
                     <tr>
                         <td>Ángeles del Cate (14M)</td>
-                        <td>0</td>
+                        <td>9</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>1</td>
                         <td>Siervos de Dios (16M)</td>
                     </tr>
                 </table>
@@ -194,6 +201,18 @@ export default function PosReconMas(){
                     width: 100%;
                     font-size: 20px;
                     margin-bottom: 25px;
+                }
+
+                .final{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+
+                .info{
+                    display: none;
                 }
 
                 .tables{
