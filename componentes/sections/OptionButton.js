@@ -1,4 +1,4 @@
-export default function OptionButton({ data, select, options, nogen, onSelect }){
+export default function OptionButton({ data, select, options, nogen, fec, onSelect }){
 
     return(
         <div
@@ -14,7 +14,7 @@ export default function OptionButton({ data, select, options, nogen, onSelect })
                     margin: 0 4px 8px 4px;
                     background: white;
                     height: 28px;
-                    padding: ${data.genero ? '0 43px 0 15px' : '0 15px'};
+                    padding: ${fec ? 0 : data.genero ? '0 43px 0 15px' : '0 15px'};
                     color: black;
                     font-size: 16px;
                     display: flex;

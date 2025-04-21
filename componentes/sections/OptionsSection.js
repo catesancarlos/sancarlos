@@ -1,6 +1,6 @@
 import OptionButton from "./OptionButton";
 
-export default function OptionsSection({ options, select, onSelect, bot, pos, nogen }){
+export default function OptionsSection({ options, select, onSelect, bot, pos, fec, nogen }){
 
     return(
         <div className='cont'>
@@ -13,6 +13,7 @@ export default function OptionsSection({ options, select, onSelect, bot, pos, no
                         options={options.length}
                         onSelect={onSelect}
                         nogen={nogen}
+                        fec={fec}
                     />
                 )
             }

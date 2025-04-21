@@ -14,6 +14,7 @@ import PartidosPasadosF9 from './pasados/PartidosPasadosF9'
 import PartidosPasadosF10 from './pasados/PartidosPasadosF10'
 import PartidosPasadosF11 from './pasados/PartidosPasadosF11'
 import PartidosPasadosF12 from './pasados/PartidosPasadosF12'
+import PartidosPasadosF13 from './pasados/PartidosPasadosF13'
 
 const optionsArray = [
     {
@@ -67,11 +68,19 @@ const optionsArray = [
     {
         no: 13,
         name: 'S.13'
+    },
+    {
+        no: 14,
+        name: 'S.14'
+    },
+    {
+        no: 15,
+        name: 'S.15'
     }
 ]
 
 export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(12)
+    const [select, setSelect] = useState(14)
 
     return (
         <section>
@@ -87,18 +96,20 @@ export default function Calendario({ datos, children }){
                     select={select}
                     onSelect={op => setSelect(op)}
                     pos
+                    fec
                 />
             </div>
             {
-                select == 13 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo tercera semana</strong>
-                        <i>[20 abril 2025]</i>
-                        {children}
-                    </div>
-                :  select == 14 ?
+                select == 14 ?
                     <div className='fecha-label'>
                         <strong className='now-fec'>Decimo cuarta semana</strong>
+                        <i>[27 abril 2025]</i>
+                        {children}
+                    </div>
+                :  select == 15 ?
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Decimo quinta semana</strong>
+                        <i>[3-4 mayo 2025]</i>
                         <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
                 : select == 1 ?
@@ -196,6 +207,14 @@ export default function Calendario({ datos, children }){
                             title='Resultados Semana 12:'
                             fec='[12-13 abril 2025]'
                             fecha={datos[11]}
+                        />
+                    </div>
+                : select == 13 ?
+                    <div className='fecha-label'>
+                        <PartidosPasadosF13
+                            title='Resultados Semana 13:'
+                            fec='[20 abril 2025]'
+                            fecha={datos[12]}
                         />
                     </div>
                 : ''

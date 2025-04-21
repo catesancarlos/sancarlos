@@ -6,13 +6,13 @@ export default function FinalConfFem(){
                 <div className='sec-ruta'>
                     <div className='partido par2'>
                         <div className='cuadro'>Los Leones de Dios (23M)</div>
-                        <div className='cuadro'>2 Comu 4 / 2 Comu 6</div>
+                        <div className='cuadro'>Guerreros cotr el mal (24M)</div>
                         <div className='union u1'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>2 Comu 4 / 2 Comu 6</div>
+                        <div className='cuadro'>Instrumentos de Dios (26M)</div>
                         <div className='cuadro'>Pueblo de Israel (21M)</div>
                         <div className='union u1'></div>
                     </div>

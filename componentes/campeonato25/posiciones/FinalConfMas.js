@@ -5,25 +5,37 @@ export default function FinalConfMas(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido'>
-                        <div className='cuadro'>Ángeles Negros (13M)</div>
-                        <div className='cuadro'>Los Águilas (11M)</div>
+                        <div className='cuadro'>
+                            <p>Ángeles Negros (13M)</p>
+                            <span className='win'>2</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>Los Águilas (11M)</p>
+                            <span className='lose'>0</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par2'>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                        <div className='cuadro'><div>l</div>2 Conf 2 / 2 Ángeles</div>
+                        <div className='cuadro'>Ángeles Negros (13M)</div>
+                        <div className='cuadro'><div>l</div>Confirmación FC (22M)</div>
                         <div className='union'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido'>
-                        <div className='cuadro'>Los Pastores (23M)</div>
-                        <div className='cuadro'>GDL (24M)</div>
+                        <div className='cuadro'>
+                            <p>Los Pastores (23M)</p>
+                            <span className='lose'>6</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>GDL (24M)</p>
+                            <span className='win'>8</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par3'>
-                        <div className='cuadro'><div>l</div>2 Conf 2 / 2 Ángeles</div>
-                        <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                        <div className='cuadro'><div>l</div>Fuerza Divina (2AM)</div>
+                        <div className='cuadro'>GDL (24M)</div>
                         <div className='union'></div>
                     </div>
                 </div>
@@ -51,14 +63,14 @@ export default function FinalConfMas(){
 
                 .partido{
                     position: relative;
-                    width: 220px;
+                    width: 230px;
                     height: 100px;
                 }
 
                 .cuadro{
                     position: relative;
                     background: white;
-                    width: 200px;
+                    width: 210px;
                     line-height: 36px;
                     text-align: center;
                     border: 2px solid black;
@@ -77,7 +89,7 @@ export default function FinalConfMas(){
                 }
 
                 .win{
-                    background: #CC397B;
+                    background: #245590;
                 }
 
                 .lose{
@@ -134,7 +146,7 @@ export default function FinalConfMas(){
                 .par4{
                     margin-top: 60px;
                     margin-left: 20px;
-                    width: 220px;
+                    width: 230px;
                     height: 160px;
                 }
 

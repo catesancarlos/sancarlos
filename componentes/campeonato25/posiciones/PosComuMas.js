@@ -89,26 +89,26 @@ export default function PosComuMas(){
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
-                        <td className='eq'>Guerreros contra el mal (24M)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Instrumentos de Dios (26M)</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>8</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>+8</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>12</td>
+                        <td className='tp'>6</td>
+                        <td className='tp'>+6</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
-                        <td className='eq'>Instrumentos de Dios (26M)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Guerreros contra el mal (24M)</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>10</td>
-                        <td className='tp'>6</td>
-                        <td className='tp'>+4</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>8</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>+6</td>
                         <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
@@ -168,7 +168,7 @@ export default function PosComuMas(){
                         <td>Guerreros contra el mal (24M)</td>
                         <td>0</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Instrumentos de Dios (26M)</td>
                     </tr>
                 </table>
