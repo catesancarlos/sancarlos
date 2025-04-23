@@ -5,7 +5,7 @@ export default function FinalConfFem(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido par2'>
-                        <div className='cuadro'>1 Comu 2 / 1 Comu 3</div>
+                        <div className='cuadro'>Campeonas del Fútbol (12F)</div>
                         <div className='cuadro'>Las Milagrosas (14F)</div>
                         <div className='union u1'></div>
                     </div>
@@ -13,7 +13,7 @@ export default function FinalConfFem(){
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
                         <div className='cuadro'>Siervas de Dios (16F)</div>
-                        <div className='cuadro'>1 Comu 2 / 1 Comu 3</div>
+                        <div className='cuadro'>1 Comu 1 / 1 Comu 5</div>
                         <div className='union u1'></div>
                     </div>
                 </div>

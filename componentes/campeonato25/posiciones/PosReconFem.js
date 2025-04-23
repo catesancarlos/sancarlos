@@ -30,39 +30,39 @@ export default function PosReconFem(){
                         <td className='tp'><strong>PTS</strong></td>
                     </tr>
                     <tr>
-                        <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */>1</td>
+                        <td className='tp' style={{ background: '#1BB16C', color: 'white' }}>1</td>
                         <td className='eq'>Campeonas del Fútbol (12F)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>5</td>
+                        <td className='tp'>7</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>+5</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>+7</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>2</td>
-                        <td className='eq'>Pastoras (13F)</td>
+                        <td className='eq'>Mensajeras de Dios (11F)</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>-3</td>
+                        <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
-                        <td className='eq'>Mensajeras de Dios (11F)</td>
-                        <td className='tp'>1</td>
+                        <td className='eq'>Pastoras (13F)</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>5</td>
-                        <td className='tp'>-5</td>
+                        <td className='tp'>4</td>
+                        <td className='tp'>-4</td>
                         <td className='tp'><strong>0</strong></td>
                     </tr>
                     {/* <tr className='info-inag'>
@@ -159,7 +159,7 @@ export default function PosReconFem(){
                     </tr>
                     <tr>
                         <td>Mensajeras de Dios (11F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
                         <td>0</td>
                         <td>Pastoras (13F)</td>
@@ -181,7 +181,7 @@ export default function PosReconFem(){
                     </tr>
                     <tr>
                         <td>Campeonas del Fútbol (12F)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
                         <td>0</td>
                         <td>Pastoras (13F)</td>

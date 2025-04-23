@@ -27,9 +27,9 @@ export default function PartidosSemana({
                 fecha='26 Abr'
                 hora='11h40'
                 genero='F'
-                equipos={['Mensajeras de Dios', 'Pastoras']}
-                paralelos={['1 Comun. 1 (F)', '1 Comun. 3 (F)']}
-                logos={['11F', '13F']}
+                equipos={['Mensajeras de Dios', 'Ángeles']}
+                paralelos={['1 Comun. 1 (F)', '1 Comun. 5 (F)']}
+                logos={['11F', '15F']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
                     eq2: ['white', 'black', 'black']
