@@ -72,7 +72,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra3}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='09h30'
                 genero='M'
                 equipos={['Juntos con Cristo', 'Los Angelicales']}
@@ -97,7 +97,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra4}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='10h10'
                 genero='M'
                 equipos={['Leones de Dios', 'Guerreros contra el mal']}
@@ -121,7 +121,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra5}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='10h50'
                 genero='M'
                 equipos={['Los Misioneros', 'Equipo de Dios']}
@@ -145,7 +145,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra6}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='11h30'
                 genero='F'
                 equipos={['Confirmación FC', 'Estrellitas de María']}
@@ -170,7 +170,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra7}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='12h20'
                 genero='F'
                 equipos={['Pueblo de Israel', 'El Maná']}
@@ -194,7 +194,7 @@ export default function PartidosSemana({
                 extra={fecha?.extra8}
                 home={home}
                 dia='Domingo'
-                fecha='20 Abr'
+                fecha='27 Abr'
                 hora='13h00'
                 genero='M'
                 equipos={['Los Ángeles Negros', 'Confirmación FC']}
