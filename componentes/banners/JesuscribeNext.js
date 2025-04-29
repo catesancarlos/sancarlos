@@ -16,19 +16,21 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                             alt='Banner Jesuscribe proximamente'
                             fill
                         />
-                        { first &&
+                        {/* { first &&
                             <div className='dice' onClick={onSection} >
                                 <Dice size={14} color='#000' />
                                 <p>Probar una pregunta</p>
                             </div>
-                        }
+                        } */}
                         <div className='ftr-banner'>
                             <div className='line'></div>
                             <img src='/logo-jesuscribe.jpg' />
                             <div className='line'></div>
                         </div>
                         <div className='ftr-banner2'>
-                            AÑO BIBLICO
+                            <p>1RO COMUNIÓN</p>
+                            <p>03 Mayo</p>
+                            <p>1RO CONFIRMACIÓN</p>
                         </div>
                     </div>
             }
@@ -97,13 +99,20 @@ export default function JesuscribeNext({ first, section, children, onSection }){
 
                 .ftr-banner2{
                     position: absolute;
-                    width: 100%;
-                    bottom: 19px;
+                    margin: 0 20%;
+                    width: 60%;
+                    bottom: 16px;
                     color: #FFFFFF;
                     font-size: 17px;
                     font-family: 'Lato', sans-serif;
-                    font-weight: 200;
+                    font-weight: 500;
                     text-align: center;
+                    display: flex;
+                    justify-content: space-around;
+                }
+
+                .ftr-banner2 p{
+                    width: 33.333%;
                 }
 
                 @media screen and (max-width: 768px){

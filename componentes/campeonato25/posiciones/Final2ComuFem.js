@@ -5,8 +5,14 @@ export default function FinalConfFem(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido par2'>
-                        <div className='cuadro'>Pueblo de Israel (21F)</div>
-                        <div className='cuadro'>El Maná (25F)</div>
+                        <div className='cuadro'>
+                            <p>Pueblo de Israel (21F)</p>
+                            <span className='win'>9</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>El Maná (25F)</p>
+                            <span className='lose'>2</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
@@ -19,7 +25,7 @@ export default function FinalConfFem(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Pueblo de Israel (21F)</div>
                 <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
                 <div className='union'></div>
             </div>
@@ -51,6 +57,7 @@ export default function FinalConfFem(){
                     background: white;
                     width: 210px;
                     line-height: 36px;
+                    font-size: 15px;
                     text-align: center;
                     border: 2px solid black;
                     border-radius: 10px;

@@ -5,7 +5,7 @@ export default function PosComuMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <strong className='title'>Fase Final 2do Comunión - Masculino:</strong>
                 <div className='final'>
                     <Final2ComuMas />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>

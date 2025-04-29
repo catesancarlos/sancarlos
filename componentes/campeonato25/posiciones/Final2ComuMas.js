@@ -5,14 +5,14 @@ export default function FinalConfFem(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido par2'>
-                        <div className='cuadro'>Los Leones de Dios (23M)</div>
-                        <div className='cuadro'>Guerreros cotr el mal (24M)</div>
+                        <div className='cuadro'>Leones de Dios (23M)</div>
+                        <div className='cuadro'>Guerr. contra el mal (24M)</div>
                         <div className='union u1'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>Instrumentos de Dios (26M)</div>
+                        <div className='cuadro'>Instr. de Dios (26M)</div>
                         <div className='cuadro'>Pueblo de Israel (21M)</div>
                         <div className='union u1'></div>
                     </div>
@@ -51,6 +51,7 @@ export default function FinalConfFem(){
                     background: white;
                     width: 210px;
                     line-height: 36px;
+                    font-size: 15px;
                     text-align: center;
                     border: 2px solid black;
                     border-radius: 10px;

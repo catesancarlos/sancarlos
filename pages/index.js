@@ -7,7 +7,7 @@ import PartidoNow from '../componentes/home/PartidoNow'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
-import PartidosPasadosF13 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF13'
+import PartidosPasadosF14 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF14'
 import JesuscribeNext from '../componentes/banners/JesuscribeNext'
 import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 
@@ -40,10 +40,10 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha913'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha914'), (doc) => {
             setFechaAnt(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha914'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha915'), (doc) => {
             setFechaNow(doc.data())
         })
     }, [])
@@ -63,7 +63,6 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                <MiniAgenda />
                 <JesuscribeNext
                     first={first}
                     section={section}
@@ -79,6 +78,7 @@ const Home = () => {
                         }
                     />
                 </JesuscribeNext>
+                <MiniAgenda />
                 {/* <div className='banner'>
                     <PartidoIda />
                     <img src='/main_banner.jpg' />
@@ -97,7 +97,7 @@ const Home = () => {
                         fecha={fechaNow}
                         home
                     />
-                    <PartidosPasadosF13
+                    <PartidosPasadosF14
                         /* noTop */
                         title='Resultados semana pasada:'
                         fecha={fechaAnt}

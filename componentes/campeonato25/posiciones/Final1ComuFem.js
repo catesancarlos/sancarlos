@@ -13,7 +13,7 @@ export default function FinalConfFem(){
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
                         <div className='cuadro'>Siervas de Dios (16F)</div>
-                        <div className='cuadro'>1 Comu 1 / 1 Comu 5</div>
+                        <div className='cuadro'>Ángeles (15F)</div>
                         <div className='union u1'></div>
                     </div>
                 </div>

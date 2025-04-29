@@ -74,7 +74,7 @@ const Header = ({ name, flecha, auth }) => {
 
             <style jsx>{`
                 .header{
-                    padding: 15px 60px 15px 50px;
+                    padding: 14px 60px 14px 50px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;

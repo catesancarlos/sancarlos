@@ -15,6 +15,7 @@ import PartidosPasadosF10 from './pasados/PartidosPasadosF10'
 import PartidosPasadosF11 from './pasados/PartidosPasadosF11'
 import PartidosPasadosF12 from './pasados/PartidosPasadosF12'
 import PartidosPasadosF13 from './pasados/PartidosPasadosF13'
+import PartidosPasadosF14 from './pasados/PartidosPasadosF14'
 
 const optionsArray = [
     {
@@ -76,11 +77,15 @@ const optionsArray = [
     {
         no: 15,
         name: 'S.15'
+    },
+    {
+        no: 16,
+        name: 'S.16'
     }
 ]
 
 export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(14)
+    const [select, setSelect] = useState(15)
 
     return (
         <section>
@@ -100,16 +105,16 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 14 ?
+                select == 15 ?
+                <div className='fecha-label'>
+                    <strong className='now-fec'>Decimo quinta semana</strong>
+                    <i>[3-4 mayo 2025]</i>
+                    {children}
+                </div>
+                : select == 16 ?
                     <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo cuarta semana</strong>
-                        <i>[27 abril 2025]</i>
-                        {children}
-                    </div>
-                :  select == 15 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo quinta semana</strong>
-                        <i>[3-4 mayo 2025]</i>
+                        <strong className='now-fec'>Decimo sexta semana</strong>
+                        <i>[10-11 mayo 2025]</i>
                         <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
                 : select == 1 ?
@@ -217,7 +222,15 @@ export default function Calendario({ datos, children }){
                             fecha={datos[12]}
                         />
                     </div>
-                : ''
+                : select == 14 ?
+                    <div className='fecha-label'>
+                        <PartidosPasadosF14
+                            title='Resultados Semana 14:'
+                            fec='[27 abril 2025]'
+                            fecha={datos[13]}
+                        />
+                    </div>
+                :  ''
             }
 
             <style jsx>{`

@@ -16,8 +16,14 @@ export default function FinalConfFem(){
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par2'>
-                        <div className='cuadro'>Confirmación FC (22F)</div>
-                        <div className='cuadro'><div>l</div>Estrellitas de María (2AF)</div>
+                        <div className='cuadro'>
+                            <p>Confirmación FC (22F)</p>
+                            <span className='lose'>3</span>
+                        </div>
+                        <div className='cuadro'><div>l</div>
+                            <p>Estrellitas de María</p>
+                            <span className='win'>6</span>
+                        </div>
                         <div className='union'></div>
                     </div>
                 </div>
@@ -43,7 +49,7 @@ export default function FinalConfFem(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Estrellitas de María (2AF)</div>
                 <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
                 <div className='union'></div>
             </div>
@@ -74,6 +80,7 @@ export default function FinalConfFem(){
                     background: white;
                     width: 210px;
                     line-height: 36px;
+                    font-size: 15px;
                     text-align: center;
                     border: 2px solid black;
                     border-radius: 10px;

@@ -10,24 +10,26 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <ItemAgenda
-                    title='Catequesis Familiar'
-                    subtitle='2do Comunión'
-                    date='Viernes 25 abril 2025'
-                    place='Templo Parroquial'
-                    hour='19:00'
+                    color='#EE1C21'
+                    title='JESUSCRIBE'
+                    subtitle='1ro Comunión'
+                    date='Sábado 03 mayo 2025'
+                    place='Teatro Catequesis'
+                    hour='10:30'
                 />
                 <ItemAgenda
-                    title='Catequesis Familiar'
+                    color='#EE1C21'
+                    title='JESUSCRIBE'
                     subtitle='1ro Confirmación'
-                    date='Viernes 25 abril 2025'
+                    date='Sábado 03 mayo 2025'
                     place='Teatro Catequesis'
-                    hour='19:00'
+                    hour='15:30'
                 />
                 <ItemAgenda
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 26 abril 2025'
+                    date='Sábado 03 mayo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -41,17 +43,17 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                <ItemAgenda
+                {/* <ItemAgenda
                     title='2do Confirmación'
                     subtitle='Nuevo Pentecostes'
                     date='Sábado 26 abril 2025'
                     place='Parque Central'
                     hour='13:00'
-                />
+                /> */}
                 <ItemAgenda
                     title='Semifinales'
                     subtitle='Campeonato 2025'
-                    date='Domingo 27 abril 2025'
+                    date='Domingo 04 mayo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'
@@ -61,8 +63,8 @@ const MiniAgenda = () => {
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 35px 4% 0 4%;
                     margin: 0px 4% 50px 4%;
+                    margin: 35px 4% 0 4%;
                     width: 92%;
                 }
 
@@ -104,8 +106,8 @@ const MiniAgenda = () => {
                 @media screen and (max-width: 768px){
                     section{
                         font-family: 'Lato', sans-serif;
-                        margin: 20px 15px 0 15px;
                         margin: 10px 15px 20px 15px;
+                        margin: 20px 15px 0 15px;
                         width: calc(100% - 30px);
                     }
 

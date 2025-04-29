@@ -5,7 +5,7 @@ export default function PosReconMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <strong className='title'>Fase Final 1ro Comunión - Masculino:</strong>
                 <div className='final'>
                     <Final1ComuMas />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
@@ -32,25 +32,25 @@ export default function PosReconMas(){
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>1</strong></td>
                         <td className='eq'>Soldados de Jesús (13M)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
                         <td className='tp'>0</td>
+                        <td className='tp'>12</td>
                         <td className='tp'>8</td>
-                        <td className='tp'>6</td>
-                        <td className='tp'>+2</td>
-                        <td className='tp'><strong>3</strong></td>
+                        <td className='tp'>+4</td>
+                        <td className='tp'><strong>6</strong></td>
                     </tr>
                     <tr>
                         <td className='tp' style={{ background: '#1BB16C', color: 'white' }}><strong>2</strong></td>
                         <td className='eq'>Campeones del Fútbol (12M)</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>1</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>3</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>+2</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>0</td>
                         <td className='tp'><strong>3</strong></td>
                     </tr>
                     <tr>
@@ -180,9 +180,9 @@ export default function PosReconMas(){
                     </tr>
                     <tr>
                         <td>Campeones del Fútbol (12M)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>4</td>
                         <td>Soldados de Jesús (13M)</td>
                     </tr>
                     <tr>

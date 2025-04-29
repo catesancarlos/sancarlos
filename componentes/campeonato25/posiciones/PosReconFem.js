@@ -5,7 +5,7 @@ export default function PosReconFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Fase Final 2 Comunión - Femenino:</strong>
+                <strong className='title'>Fase Final 1ro Comunión - Femenino:</strong>
                 <div className='final'>
                     <Final1ComuFem />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>

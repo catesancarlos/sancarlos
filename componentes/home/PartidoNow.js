@@ -244,6 +244,7 @@ export default function PartidoNow({ fecha, home = true }) {
                     display: flex;
                     opacity: 1;
                     margin: 0 4% 20px 4%;
+                    margin: 0 4% 0 4%;
                     width: 92%;
                     font-family: 'Lato', sans-serif;
                     flex-direction: column;

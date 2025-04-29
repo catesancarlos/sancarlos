@@ -16,8 +16,14 @@ export default function FinalConfMas(){
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par2'>
-                        <div className='cuadro'>Ángeles Negros (13M)</div>
-                        <div className='cuadro'><div>l</div>Confirmación FC (22M)</div>
+                        <div className='cuadro'>
+                            <p>Ángeles Negros (13M)</p>
+                            <span className='lose'>1</span>
+                        </div>
+                        <div className='cuadro'><div>l</div>
+                            <p>Confirmación FC (22M)</p>
+                            <span className='win'>9</span>
+                        </div>
                         <div className='union'></div>
                     </div>
                 </div>
@@ -41,7 +47,7 @@ export default function FinalConfMas(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Confirmación FC (22M)</div>
                 <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
                 <div className='union'></div>
             </div>
@@ -72,6 +78,7 @@ export default function FinalConfMas(){
                     background: white;
                     width: 210px;
                     line-height: 36px;
+                    font-size: 15px;
                     text-align: center;
                     border: 2px solid black;
                     border-radius: 10px;
