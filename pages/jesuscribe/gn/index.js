@@ -1,10 +1,5 @@
-import { useState, useEffect } from 'react'
-
-import { useRouter } from 'next/router'
-
 import JsLayout from '../../../componentes/layout/JsLayout'
-import NumPregunta from '../../../componentes/jesuscribe/NumPregunta'
-import Modal from '../../../componentes/layout/Modal'
+import MainPreguntas from '../../../componentes/jesuscribe/MainPreguntas'
 
 const preguntas = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -26,118 +21,31 @@ const preguntas = [
     161, 162, 163, 164, 165
 ]
 
+const preguntasIni = [
+     3,  6,  9, 12, 15, 18, 21, 24, 27, 30,
+    33, 36, 39, 42, 45, 48, 51, 54, 57, 60,
+    63, 66, 69, 72, 75, 78, 81, 84, 87, 90,
+    93, 96, 99, 102, 105, 108, 111, 114, 117, 120,
+    123, 126, 129, 132, 135, 138, 141, 144, 147, 150,
+    153, 156, 159, 162, 165
+]
+
 export default function JesuscribeGn(){
-    const router = useRouter()
-    const [datos, setDatos] = useState([])
-    const [select, setSelect] = useState(null)
-    const [sorteo, setSorteo] = useState(false)
-    const [ran1, setRan1] = useState(0)
-    const [ran2, setRan2] = useState(0)
-    const [ran3, setRan3] = useState(0)
-    const [ran4, setRan4] = useState(0)
-    const [ran5, setRan5] = useState(0)
-
-    const handleRand = () => {
-        setSorteo(!sorteo)
-        setSelect(null)
-    }
-
-    useEffect(() => {
-        setDatos(preguntas)
-    }, [datos])
-
-    useEffect(() => {
-        let i = 0
-        if(sorteo){
-            const timer = setInterval(() => {
-                if(i<50){
-                    setRan1(Math.floor(Math.random() * 100))
-                    setRan2(Math.floor(Math.random() * 100))
-                    setRan3(Math.floor(Math.random() * 100))
-                    setRan4(Math.floor(Math.random() * 100))
-                    setRan5(Math.floor(Math.random() * datos.length))
-                    i=i+1
-                } else{
-                    setRan1(0)
-                    setRan2(0)
-                    setRan3(0)
-                    setRan4(0)
-                    setRan5(0)
-                    clearInterval(timer)
-                    setSorteo(false)
-                    const rand = Math.random() * datos.length
-                    const index = Math.floor(rand)
-                    setSelect(datos[index])
-                    var newo = datos
-                    newo.splice(index, 1)
-                    setDatos(newo)
-                }
-            }, 50)
-      
-            return () => clearInterval(timer)
-        }
-    }, [sorteo])
 
     return(
         <JsLayout 
             titulo='JESUSCRIBE - General'
             name='Jesuscribe'
             categoria='GENERAL'
-            onRand={handleRand}
+            /* onRand={handleRand} */
             back='#B0C0D9'
             preg
         >
-            <section>
-                {select &&
-                    <Modal>
-                        <div 
-                            onClick={() => router.push(`/jesuscribe/gn/p${select}`)} 
-                            className='pro'
-                        >
-                            <p>{select}</p>
-                        </div> 
-                    </Modal>
-                }
-                <div className='cont'>
-                    {
-                        preguntas && preguntas.map(pregunta => 
-                            <NumPregunta 
-                                key={pregunta}
-                                pregunta={pregunta}
-                                categoria='gn'
-                                active={ran1==pregunta || ran2==pregunta || ran3==pregunta || ran4==pregunta || ran5==pregunta}
-                            />
-                        )
-                    }
-                </div>
-            </section>
-
-            <style jsx>{`
-                section{
-                    position: relative;
-                }
-
-                .cont{
-                    width: 91%;
-                    margin: 0 5%;
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-
-                .pro{
-                    background: white;
-                    width: 448px;
-                    height: 448px;
-                    color: black;
-                    font-size: 180px;
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 20px;
-                    cursor: pointer;
-                }
-            `}</style>
+            <MainPreguntas
+                categoria='gn'
+                preguntas={preguntas}
+                preguntasIni={preguntasIni}
+            />
         </JsLayout>
     )
 }

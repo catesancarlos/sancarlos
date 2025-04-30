@@ -9,7 +9,8 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     const [ronda, setRonda] = useState(1)
 
     useEffect(() => {
-        const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab'))
+        /* const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab')) */
+        const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const grupos = []
             querySnapshot.forEach((doc) => {
@@ -39,33 +40,33 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
 
     const handleMitad = (e) => {
         if(una && grupos[now-1].c1){
-            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c1: false })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { c1: false })
             onMitad()
         }
     }
 
     const handleCall = (e) => {
         if(una || mul){
-            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c2: false })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { c2: false })
         }
     }
 
     const handleKts = (e) => {
         if(una || mul){
-            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { c3: false })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { c3: false })
         }
     }
 
     const handleCorrecto = (e) => {
         var audio = document.getElementById('ac')
         audio.play()
-        updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+        updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
     }
 
     const handleIncorrecto = (e) => {
         var audio = document.getElementById('ae')
         audio.play()
-        updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
+        updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
     }
     
     return(
@@ -83,7 +84,8 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
             <audio id='ab' src='/bubble.mp3'></audio>
             <div className='cont-grupo'>
                 <div className='grupo ronda'>
-                    <strong>AÑO BIBLICO</strong>
+                    {/* <strong>AÑO BIBLICO</strong> */}
+                    <strong>1 COMUNIÓN</strong>
                     <strong className='nron'>{ronda}</strong>
                     <p>Ronda</p>
                 </div>

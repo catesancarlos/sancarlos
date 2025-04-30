@@ -17,7 +17,7 @@ export default function CatLiturgia({ datos }){
     const [mitad, setMitad] = useState([])
 
     useEffect(() => {
-        const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab'))
+        const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const grupos = []
             querySnapshot.forEach((doc) => {
@@ -42,13 +42,13 @@ export default function CatLiturgia({ datos }){
         if(datos?.respuestas[e] == datos?.correcto){
             var audio = document.getElementById('ac')
             audio.play()
-            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
             setRevisar('CORRECTO')
         }
         else{
             var audio = document.getElementById('ae')
             audio.play()
-            updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
             setRevisar('INCORRECTO')
         }
     }

@@ -31,7 +31,8 @@ export default function JsLayout ({
     const [now, setNow] = useState(5)
 
     useEffect(() => {
-        const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab'))
+        /* const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab')) */
+        const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const grupos = []
             querySnapshot.forEach((doc) => {
