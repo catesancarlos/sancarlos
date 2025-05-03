@@ -15,7 +15,7 @@ export default function MainPreguntas({
     const router = useRouter()
 
     const [datos, setDatos] = useState([])
-    const [confirmacion, setConfirmacion] = useState(false)
+    const [confirmacion, setConfirmacion] = useState(true)
     const [select, setSelect] = useState(null)
     const [sorteo, setSorteo] = useState(false)
     const [ran1, setRan1] = useState(0)

@@ -20,7 +20,7 @@ export default function Jesuscribe(){
                 <p className='cat' onClick={() => router.push('/jesuscribe/vd')}>VIDA DE JESÚS</p>
                 <p className='cat' onClick={() => router.push('/jesuscribe/ni')}>NUESTRA IGLESIA</p>
                 <p className='cat' onClick={() => router.push('/jesuscribe/lt')}>LITURGIA</p>
-                {/* <p className='cat' onClick={() => router.push('/jesuscribe/sc')}>SACRAMENTOLOGIA</p> */}
+                <p className='cat' onClick={() => router.push('/jesuscribe/sc')}>SACRAMENTOLOGIA</p>
                 <p className='cat' onClick={() => router.push('/jesuscribe/ml')}>MULTIPLE</p>
             </div>
 

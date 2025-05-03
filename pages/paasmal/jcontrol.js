@@ -77,8 +77,6 @@ export default function JesuscribeContol(){
         updateDoc(doc(db, 'concurso1com', 'partseg2'), { puntos: +0 })
         updateDoc(doc(db, 'concurso1com', 'partseg3'), { puntos: +0 })
         updateDoc(doc(db, 'concurso1com', 'partseg4'), { puntos: +0 })
-        updateDoc(doc(db, 'concurso1com', 'partseg5'), { puntos: +0 })
-        updateDoc(doc(db, 'concurso1com', 'partseg6'), { puntos: +0 })
     }
     
     return(

@@ -85,7 +85,8 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
             <div className='cont-grupo'>
                 <div className='grupo ronda'>
                     {/* <strong>AÑO BIBLICO</strong> */}
-                    <strong>1 COMUNIÓN</strong>
+                    {/* <strong>1 COMUNIÓN</strong> */}
+                    <strong>1 CONFIRMACIÓN</strong>
                     <strong className='nron'>{ronda}</strong>
                     <p>Ronda</p>
                 </div>
@@ -138,7 +139,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
 
                 .cont-grupo{
                     position: relative;
-                    width: calc((100vw - 30px)/6);
+                    width: calc((100vw - 30px)/5);
                     padding: 10px 8px;
                 }
 
