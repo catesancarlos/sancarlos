@@ -160,8 +160,22 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                     }
 
                     .ftr-banner2{
+                        margin: 0 1%;
+                        width: 98%;
                         bottom: 9px;
                         font-size: 13px;
+                    }
+
+                    .ftr-banner2 p:nth-child(1){
+                        width: 40%;
+                    }
+
+                    .ftr-banner2 p:nth-child(2){
+                        width: 20%;
+                    }
+
+                    .ftr-banner2 p:nth-child(3){
+                        width: 40%;
                     }
                 }
             `}</style>
