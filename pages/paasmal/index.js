@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
-import AppLayout from '../../componentes/layoutout'
-import PartidosSemana from '../../../componentes/campeonato25/calendario/PartidosSemana'
+import AppLayout from '../../componentes/layout'
+import PartidosSemana from '../../componentes/campeonato25/calendario/PartidosSemana'
 
-import db  from '../../../services/dBase'
+import db  from '../../services/dBase'
 import { doc, updateDoc, onSnapshot } from 'firebase/firestore'
 
 export default function Paasmal(){
