@@ -96,18 +96,8 @@ export default function MainPreguntas({
                 </Modal>
             }
             <div className='cont'>
-                {
-                    confirmacion ? 
+                { 
                         preguntas.map(pregunta => 
-                            <NumPregunta 
-                                key={pregunta}
-                                pregunta={pregunta}
-                                categoria={categoria}
-                                active={ran1==pregunta || ran2==pregunta || ran3==pregunta || ran4==pregunta || ran5==pregunta}
-                            />
-                        )
-                    :
-                        preguntasIni.map(pregunta => 
                             <NumPregunta 
                                 key={pregunta}
                                 pregunta={pregunta}
