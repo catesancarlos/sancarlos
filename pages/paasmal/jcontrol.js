@@ -6,9 +6,16 @@ import db  from '../../services/dBase'
 import { doc, collection, query, where, updateDoc, onSnapshot } from 'firebase/firestore'
 
 export default function JesuscribeContol(){
+    const [controles, setControles] = useState(false)
     const [grupos, setGrupos] = useState([])
     const [name, setName] = useState('')
     const [openName, setOpenName] = useState(false)
+
+    useEffect(() => {
+        onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
+            setControles(doc.data().confirmacion)
+        }) 
+    }, [])
 
     useEffect(() => {
         const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
@@ -48,6 +55,10 @@ export default function JesuscribeContol(){
         updateDoc(doc(db, 'controles', 'concurso'), { now: +name })
     }
 
+    const handleConf = (e) => {
+        updateDoc(doc(db, 'controles', 'concurso'), { confirmacion: !confirmacion })
+    }
+
     const handleEncerar = (e) => {
         updateDoc(doc(db, 'concurso1com', 'partseg1'), { puntos: +0 })
         updateDoc(doc(db, 'concurso1com', 'partseg2'), { puntos: +0 })
@@ -79,7 +90,7 @@ export default function JesuscribeContol(){
                 </div>
                 <div className='inpu-gen'>
                     <p className='label2'>Botones:</p>
-                    <p className='boton' onClick={() => handleAgregar(grupo.id)}>Confirmación</p>
+                    <p className={`boton ${!controles && 'non' }`} onClick={handleConf}>Confirmación</p>
                     <p className='boton' onClick={handleEncerar}>Encerar tablero</p>
                 </div>
             </div>
@@ -175,6 +186,10 @@ export default function JesuscribeContol(){
                     font-size: 15px;
                     font-weight: 200;
                     border-radius: 4px;
+                }
+
+                .non{
+                    background: #00000066;
                 }
 
                 .clos{
