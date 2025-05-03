@@ -42,7 +42,7 @@ export default function CatVida({ datos }){
         if(datos?.respuestas[e] == datos?.correcto){
             var audio = document.getElementById('ac')
             audio.play()
-            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 15 })
             setRevisar('CORRECTO')
         }
         else{

@@ -7,6 +7,7 @@ import { doc, collection, query, where, updateDoc, onSnapshot } from 'firebase/f
 
 export default function JesuscribeContol(){
     const [controles, setControles] = useState(false)
+    const [ahora, setAhora] = useState(0)
     const [grupos, setGrupos] = useState([])
     const [name, setName] = useState('')
     const [openName, setOpenName] = useState(false)
@@ -15,6 +16,7 @@ export default function JesuscribeContol(){
     useEffect(() => {
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
             setControles(doc.data().confirmacion)
+            setAhora(doc.data().now)
         }) 
     }, [])
 
@@ -61,6 +63,11 @@ export default function JesuscribeContol(){
         updateDoc(doc(db, 'controles', 'concurso'), { now: +name })
     }
 
+    const handleMas = (e) => {
+        if(ahora < 6) updateDoc(doc(db, 'controles', 'concurso'), { now: ahora+1 })
+            else updateDoc(doc(db, 'controles', 'concurso'), { now: 1 })
+    }
+
     const handleConf = (e) => {
         updateDoc(doc(db, 'controles', 'concurso'), { confirmacion: !confirmacion })
     }
@@ -93,6 +100,7 @@ export default function JesuscribeContol(){
                     <p className='label2'>Now:</p>
                     <input onChange={handleChange} />
                     <p className='boton' onClick={handleNow}>Cambiar</p>
+                    <p className='boton mas' onClick={handleMas}>+</p>
                 </div>
                 <div className='inpu-gen'>
                     <p className='label2'>Botones:</p>
@@ -200,6 +208,10 @@ export default function JesuscribeContol(){
                     font-size: 15px;
                     font-weight: 200;
                     border-radius: 4px;
+                }
+
+                .mas{
+                    padding: 1px 20px 3px 20px;
                 }
 
                 .non{

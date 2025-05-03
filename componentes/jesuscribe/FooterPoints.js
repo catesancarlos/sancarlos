@@ -60,7 +60,7 @@ export default function FooterPoints({ una, mul, onNext, onMitad, onView }){
     const handleCorrecto = (e) => {
         var audio = document.getElementById('ac')
         audio.play()
-        updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+        updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 25 })
     }
 
     const handleIncorrecto = (e) => {
