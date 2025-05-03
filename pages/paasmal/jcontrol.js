@@ -10,6 +10,7 @@ export default function JesuscribeContol(){
     const [grupos, setGrupos] = useState([])
     const [name, setName] = useState('')
     const [openName, setOpenName] = useState(false)
+    const [openPuntos, setOpenPuntos] = useState(false)
 
     useEffect(() => {
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
@@ -44,6 +45,11 @@ export default function JesuscribeContol(){
 
     const handleAgregar = async e => {
         const docRef = await updateDoc(doc(db, 'concurso1com', e), { nombre: name })
+        setOpenName(false)
+    }
+
+    const handlePuntear = async e => {
+        const docRef = await updateDoc(doc(db, 'concurso1com', e), { puntos: +name })
         setOpenName(false)
     }
 
@@ -126,7 +132,15 @@ export default function JesuscribeContol(){
                             </div>
                             <div className='punt-cont'>
                                 Puntaje:
-                                <strong>{grupo.puntos}</strong>
+                                <strong onClick={() => setOpenPuntos(true)}>{grupo.puntos}</strong>
+                                {
+                                openPuntos &&
+                                <div className='inpu'>
+                                    <input onChange={handleChange} />
+                                    <p className='boton' onClick={() => handlePuntear(grupo.id)}>Cambiar</p>
+                                    <p className='boton clos' onClick={() => setOpenPuntos(false)}>X</p>
+                                </div>
+                            }
                             </div>
                         </div>
                     </div>
@@ -221,6 +235,8 @@ export default function JesuscribeContol(){
                 }
 
                 .punt-cont{
+                    width: 50%;
+                    position: relative;
                     display: flex;
                 }
 
