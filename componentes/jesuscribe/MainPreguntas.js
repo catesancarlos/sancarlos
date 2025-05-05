@@ -3,11 +3,13 @@ import { useState, useEffect } from 'react'
 
 import NumPregunta from './NumPregunta'
 import Modal from '../layout/Modal'
+import Dice from '../iconos/Dice'
 
 import db  from '../../services/dBase'
 import { doc, onSnapshot } from 'firebase/firestore'
 
 export default function MainPreguntas({
+    rand,
     categoria,
     preguntas,
     preguntasIni
@@ -35,7 +37,7 @@ export default function MainPreguntas({
             else setDatos(preguntasIni)
     }, [datos])
 
-    useEffect(() => {
+    /* useEffect(() => {
         document.addEventListener('keydown', detectKeyDown, true)
     }, [])
 
@@ -44,12 +46,12 @@ export default function MainPreguntas({
             setSorteo(!sorteo)
             setSelect(null)
         }
-    }
+    } */
 
-    /* const handleRand = () => {
+    const handleRand = () => {
         setSorteo(!sorteo)
         setSelect(null)
-    } */
+    }
 
     useEffect(() => {
         let i = 0
@@ -83,8 +85,30 @@ export default function MainPreguntas({
         }
     }, [sorteo])
 
+    useEffect(() => {
+        if(select){
+            const timer = setTimeout(() => {
+                router.push(`/jesuscribe/${categoria}/p${select}`)
+            }, 2000)
+      
+            return () => clearTimeout(timer)
+        }
+    }, [select])
+
     return(
         <section>
+            {
+                rand &&
+                    <div className='cont-sorteo'>
+                        <div className='sorteo' onClick={handleRand}>
+                            <Dice />
+                            <p>Sortear Pregunta</p>
+                        </div>
+                        <div className='sorteo s2' >
+                            <p>Cambiar categoría</p>
+                        </div>
+                    </div>
+            }
             {select &&
                 <Modal>
                     <div 
@@ -114,8 +138,8 @@ export default function MainPreguntas({
                 }
 
                 .cont{
-                    width: 91%;
-                    margin: 0 5%;
+                    width: 92%;
+                    margin: 0 4%;
                     display: flex;
                     flex-wrap: wrap;
                 }
@@ -132,6 +156,76 @@ export default function MainPreguntas({
                     align-items: center;
                     border-radius: 20px;
                     cursor: pointer;
+                }
+
+                .cont-sorteo{
+                    position: absolute;
+                    top: -60px;
+                    right: 5%;
+                    display: flex;
+                }
+
+                .sorteo{
+                    background: #000;
+                    padding: 10px 20px 12px 21px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 20px;
+                    cursor: pointer;
+                }
+
+                .sorteo p{
+                    margin-left: 8px;
+                    line-height: 20px;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .s2{
+                    background: gray;
+                    margin-left: 15px;
+                }
+
+                @media screen and (max-width: 480px){
+                    .cont{
+                        width: 100%;
+                        margin: 50px 0 0 0;
+                        padding: 0 14px;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    .pro{
+                        width: 350px;
+                        height: 350px;
+                        font-size: 150px;
+                        border-radius: 20px;
+                    }
+
+                    .cont-sorteo{
+                        position: absolute;
+                        top: 0px;
+                        right: 14px;
+                        left: 14px;
+                        justify-content: space-between;
+                    }
+
+                    .sorteo{
+                        padding: 9px 18px 11px 18px;
+                        border-radius: 15px;
+                        cursor: pointer;
+                    }
+
+                    .s2{
+                        margin-left: 0;
+                    }
+
+                    .sorteo p{
+                        line-height: 18px;
+                        font-size: 17px;
+                    }
                 }
             `}</style>
         </section>

@@ -44,21 +44,21 @@ export default function PespOpcion({ dato, index, select, mitad, onSelect, ml })
 
                 @media screen and (max-width: 768px){
                     .opcion{
-                        margin-top: 10px;
-                        width: 48%;
+                        margin-top: 15px;
+                        width: 100%;
                         min-height: 32px;
-                        padding: 6px 8px;
-                        font-size: 14px;
+                        padding: 8px 8px;
+                        font-size: 17px;
                         border-radius: 20px;
                     }
 
                     span{
-                        left: 8px;
+                        left: 12px;
                     }
 
                     p{
                         font-weight: 200;
-                        margin-left: ${!ml ? '15px' : '15px'};
+                        margin-left: ${!ml ? '25px' : '25px'};
                     }
                 }
             `}</style>

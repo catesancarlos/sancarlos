@@ -10,26 +10,10 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <ItemAgenda
-                    color='#EE1C21'
-                    title='JESUSCRIBE'
-                    subtitle='1ro Comunión'
-                    date='Sábado 03 mayo 2025'
-                    place='Teatro Catequesis'
-                    hour='10:30'
-                />
-                <ItemAgenda
-                    color='#EE1C21'
-                    title='JESUSCRIBE'
-                    subtitle='1ro Confirmación'
-                    date='Sábado 03 mayo 2025'
-                    place='Teatro Catequesis'
-                    hour='15:30'
-                />
-                <ItemAgenda
                     main
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 03 mayo 2025'
+                    date='Sábado 10 mayo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
@@ -43,17 +27,18 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                {/* <ItemAgenda
-                    title='2do Confirmación'
-                    subtitle='Nuevo Pentecostes'
-                    date='Sábado 26 abril 2025'
-                    place='Parque Central'
-                    hour='13:00'
-                /> */}
+                <ItemAgenda
+                    color='#EE1C21'
+                    title='JESUSCRIBE'
+                    subtitle='2do Confirmación'
+                    date='Sábado 10 mayo 2025'
+                    place='Teatro Catequesis'
+                    hour='15:30'
+                />
                 <ItemAgenda
                     title='Semifinales'
                     subtitle='Campeonato 2025'
-                    date='Domingo 04 mayo 2025'
+                    date='Domingo 11 mayo 2025'
                     place='Patio Catequesis'
                     hour='Ver horarios'
                     url='/campeonato'

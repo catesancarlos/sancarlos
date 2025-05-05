@@ -44,14 +44,14 @@ export default function CatGeneral({ datos }){
             var audio = document.getElementById('ac')
             audio.play()
            /*  updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 }) */
-            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
+            /* updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 }) */
             setRevisar('CORRECTO')
         }
         else{
             var audio = document.getElementById('ae')
             audio.play()
             /* updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 }) */
-            updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
+            /* updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 }) */
             setRevisar('INCORRECTO')
         }
     }
@@ -101,10 +101,14 @@ export default function CatGeneral({ datos }){
                 </div>
                 <div className='califica'>
                     <p className='r'>{revisar}</p>
-                    <p className='cerrar' onClick={handleCerrar}>X</p>
+                    {/* <p className='cerrar' onClick={handleCerrar}>X</p> */}
+                </div>
+                <div className='retorno'>
+                    <p onClick={handleCerrar}>Escoger otra pregunta</p>
+                    <p onClick={() => router.push('/jesuscribe')}>Cambiar de categoría</p>
                 </div>
             </section>
-            <FooterPoints una onNext={handleCerrar} onMitad={handle50} />
+            {/* <FooterPoints una onNext={handleCerrar} onMitad={handle50} /> */}
             <audio id='ac' src='/correct.mp3'></audio>
             <audio id='ae' src='/error.mp3'></audio>
             <audio id='ab' src='/bubble.mp3'></audio>
@@ -176,6 +180,38 @@ export default function CatGeneral({ datos }){
                     right: 25px;
                     color: white;
                     cursor: pointer;
+                }
+
+                .retorno{
+                    display: ${revisar ? 'flex' : 'none'};
+                    margin-top: 30px;
+                }
+
+                .retorno p{
+                    margin: 0 12px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                @media screen and (max-width: 480px){
+                    .pregunta{
+                        width: 90%;
+                        border: ${!revisar ?  '5px solid white' : revisar == 'CORRECTO' ? '5px solid #00BB2D' : '5px solid red'};
+                        border-radius: 25px;
+                        margin-bottom: 15px;
+                    }
+
+                    strong{
+                        font-size: 22px;
+                    }
+
+                    .respuestas{
+                        width: 90%;
+                    }
+
+                    .califica{
+                        width: 90%;
+                    }
                 }
             `}</style>
         </JsLayout>

@@ -75,6 +75,19 @@ export default function HeaderJs({ categoria, non, onRand }){
                         padding: 12px 12px 12px 12px;
                         flex-wrap: wrap;
                     }
+
+                    img{
+                        height: 38px;
+                        border-radius: 10px;
+                        box-shadow: -2px 2px 5px 0px #888;
+                    }
+
+                    h2{
+                        margin: 0 0 0 10px;
+                        line-height: 38px;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                    }
                 }
             `}</style>
         </div>

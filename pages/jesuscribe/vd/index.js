@@ -34,12 +34,13 @@ export default function JesuscribeVd(){
             categoria='VIDA DE JESÚS'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            preg
+            /* preg */
         >
             <MainPreguntas
                 categoria='vd'
                 preguntas={preguntas}
                 preguntasIni={preguntasIni}
+                rand
             />
         </JsLayout>
     )

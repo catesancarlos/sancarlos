@@ -26,12 +26,13 @@ export default function JesuscribeSc(){
             categoria='SACRAMENTOLOGIA'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            preg
+            /* preg */
         >
             <MainPreguntas
                 categoria='sc'
                 preguntas={preguntas}
                 preguntasIni={preguntasIni}
+                rand
             />
         </JsLayout>
     )

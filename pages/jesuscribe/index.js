@@ -12,7 +12,7 @@ export default function Jesuscribe(){
             titulo='JESUSCRIBE'
             name='Jesuscribe'
             back='#B0C0D9'
-            preg
+            /* preg */
         >
             <div className='cont'>
                 <p className='info'>Categorias:</p>
@@ -26,7 +26,7 @@ export default function Jesuscribe(){
 
             <style jsx>{`
                 .cont{
-                    margin: 36px 10% 0 10%;
+                    margin: 30px 10% 0 10%;
                     width: 80%;
                 }
 

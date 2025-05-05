@@ -4,7 +4,7 @@ export default function NumPregunta({ pregunta, categoria, active, home }){
     const router = useRouter()
     
     return(
-        <div /* onClick={() => router.push(`/jesuscribe/${categoria}/p${pregunta}`)} */>
+        <div onClick={() => router.push(`/jesuscribe/${categoria}/p${pregunta}`)} >
             <p>{pregunta}</p>
 
             <style jsx>{`
@@ -26,11 +26,11 @@ export default function NumPregunta({ pregunta, categoria, active, home }){
 
                 @media screen and (max-width: 768px){
                     div{
-                        margin: 2px;
-                        width: ${!home ? '60px' : '26px'};
-                        height: ${!home ? '60px' : '26px'};
+                        margin: 4px;
+                        width: ${!home ? '56px' : '26px'};
+                        height: ${!home ? '56px' : '26px'};
                         padding: 0;
-                        font-size: 15px;
+                        font-size: 19px;
                         border-radius: 8px;
                     }
                 }

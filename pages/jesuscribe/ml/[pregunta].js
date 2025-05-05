@@ -43,7 +43,7 @@ export default function CatMultiple({ datos }){
                     }
                 </div>
             </section>
-            <FooterPoints mul onNext={handleCerrar} onView={() => setView(!view)} />
+            {/* <FooterPoints mul onNext={handleCerrar} onView={() => setView(!view)} /> */}
 
             <style jsx>{`
                 section{

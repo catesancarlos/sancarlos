@@ -28,9 +28,9 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                             <div className='line'></div>
                         </div>
                         <div className='ftr-banner2'>
-                            <p>1RO COMUNIÓN</p>
-                            <p>03 Mayo</p>
-                            <p>1RO CONFIRMACIÓN</p>
+                            {/* <p>1RO COMUNIÓN</p>
+                            <p>03 Mayo</p> */}
+                            <p>2DO CONFIRMACIÓN</p>
                         </div>
                     </div>
             }

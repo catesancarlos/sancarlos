@@ -30,12 +30,13 @@ export default function JesuscribeNi(){
             categoria='NUESTRA IGLESIA'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            preg
+            /* preg */
         >
             <MainPreguntas
                 categoria='ni'
                 preguntas={preguntas}
                 preguntasIni={preguntasIni}
+                rand
             />
         </JsLayout>
     )
