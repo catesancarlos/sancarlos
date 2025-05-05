@@ -139,7 +139,7 @@ export default function CatMultiple({ datos }){
 
                 .retorno{
                     display: ${view ? 'flex' : 'none'};
-                    margin-top: 20px;
+                    margin-top: 30px;
                     justify-content: center;
                 }
 
