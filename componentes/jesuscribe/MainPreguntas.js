@@ -76,7 +76,7 @@ export default function MainPreguntas({
                     const index = Math.floor(rand)
                     setSelect(datos[index])
                     var newo = datos
-                    newo.splice(index, 1)
+                    /* newo.splice(index, 1) */
                     setDatos(newo)
                 }
             }, 50)
