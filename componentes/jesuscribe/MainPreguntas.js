@@ -104,7 +104,7 @@ export default function MainPreguntas({
                             <Dice />
                             <p>Sortear Pregunta</p>
                         </div>
-                        <div className='sorteo s2' >
+                        <div className='sorteo s2' onClick={() => router.push('/jesuscribe')} >
                             <p>Cambiar categoría</p>
                         </div>
                     </div>

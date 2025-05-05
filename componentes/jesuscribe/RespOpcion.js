@@ -58,7 +58,7 @@ export default function PespOpcion({ dato, index, select, mitad, onSelect, ml })
 
                     p{
                         font-weight: 200;
-                        margin-left: ${!ml ? '25px' : '25px'};
+                        margin-left: ${!ml ? '25px' : '15px'};
                     }
                 }
             `}</style>
