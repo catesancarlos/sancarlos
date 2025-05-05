@@ -191,7 +191,7 @@ export default function MainPreguntas({
                 @media screen and (max-width: 480px){
                     .cont{
                         width: 100%;
-                        margin: 50px 0 0 0;
+                        margin: 0;
                         padding: 0 14px;
                         display: flex;
                         flex-wrap: wrap;
@@ -205,26 +205,37 @@ export default function MainPreguntas({
                     }
 
                     .cont-sorteo{
-                        position: absolute;
-                        top: 0px;
-                        right: 14px;
-                        left: 14px;
+                        background: #B0C0D9;
+                        background: linear-gradient(0deg, rgba(176, 192, 217, 1) 75%, rgba(0, 0, 0, 0) 100%);
+                        position: fixed;
+                        top: auto;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;   
+                        display: flex;
                         justify-content: space-between;
+                        padding: 22px 16px 18px 16px;
                     }
 
                     .sorteo{
-                        padding: 9px 18px 11px 18px;
+                        padding: 8px 22px 10px 22px;
                         border-radius: 15px;
                         cursor: pointer;
                     }
 
                     .s2{
-                        margin-left: 0;
+                        padding: 8px 17px 10px 17px;
                     }
 
                     .sorteo p{
+                        margin-left: 8px;
                         line-height: 18px;
-                        font-size: 17px;
+                        font-size: 16px;
+                    }
+
+                    .s2 p{
+                        margin-left: 0;
+                        font-weight: 200;
                     }
                 }
             `}</style>

@@ -27,7 +27,7 @@ export default function NumPregunta({ pregunta, categoria, active, home }){
                 @media screen and (max-width: 768px){
                     div{
                         margin: 4px;
-                        width: ${!home ? '56px' : '26px'};
+                        width: ${!home ? '55px' : '26px'};
                         height: ${!home ? '56px' : '26px'};
                         padding: 0;
                         font-size: 19px;
