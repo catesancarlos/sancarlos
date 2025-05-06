@@ -185,6 +185,7 @@ export default function ItemCalendario({
 
                 .fase strong{
                     background: #F2F8F6;
+                    margin-left: 17%;
                     padding: 0 8px 2px 8px;
                     font-size: 15px;
                     color: ${genero == 'M' ? '#245590' : '#CC397B'};
