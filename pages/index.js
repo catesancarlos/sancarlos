@@ -7,7 +7,7 @@ import PartidoNow from '../componentes/home/PartidoNow'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
-import PartidosPasadosF14 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF14'
+import PartidosPasadosF15 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF15'
 import JesuscribeNext from '../componentes/banners/JesuscribeNext'
 import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 
@@ -40,10 +40,10 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha914'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha915'), (doc) => {
             setFechaAnt(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha915'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha916'), (doc) => {
             setFechaNow(doc.data())
         })
     }, [])
@@ -97,7 +97,7 @@ const Home = () => {
                         fecha={fechaNow}
                         home
                     />
-                    <PartidosPasadosF14
+                    <PartidosPasadosF15
                         /* noTop */
                         title='Resultados semana pasada:'
                         fecha={fechaAnt}

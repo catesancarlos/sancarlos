@@ -40,7 +40,7 @@ export default function Campeonato(){
         onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
             setFecha4(doc.data())
         })  */ 
-        onSnapshot(doc(db, 'campeonato25', 'fecha915'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha916'), (doc) => {
             setFechaNow(doc.data())
         })
             

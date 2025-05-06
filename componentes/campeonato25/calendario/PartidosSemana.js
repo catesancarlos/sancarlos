@@ -17,7 +17,8 @@ export default function PartidosSemana({
             { title1 && <p>{title1}</p> }
             <ItemCalendario
                 com
-                fase='Semifinal - Reconciliación'
+                final
+                fase='FINAL - Iniciación'
                 control={control && control[0]}
                 now={fecha?.partido1}
                 res={fecha?.res1}
@@ -25,12 +26,109 @@ export default function PartidosSemana({
                 pen={fecha?.pen1}
                 home={home}
                 dia='Sábado'
-                fecha='03 Mayo'
-                hora='12h00'
+                fecha='10 Mayo'
+                hora='09h00'
                 genero='F'
-                equipos={['Campeonas del Fútbol', 'Las Milagrosas']}
-                paralelos={['1 Comun. 2 (F)', '1 Comun. 4 (F)']}
-                logos={['12F', '14F']}
+                equipos={['Niñas guerreras de Dios', 'Elegidas de Dios']}
+                paralelos={['Iniciación 1 (F)', 'Iniciación 2 (F)']}
+                logos={['I1F', 'I2F']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
+                }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            <ItemCalendario
+                com
+                final
+                fase='FINAL - Iniciación'
+                control={control && control[1]}
+                now={fecha?.partido2}
+                res={fecha?.res2}
+                jugador={fecha?.jugador2}
+                pen={fecha?.pen2}
+                home={home}
+                dia='Sábado'
+                fecha='10 Mayo'
+                hora='09h30'
+                genero='M'
+                equipos={['Niños guerreros de Dios', 'Elegidos de Dios']}
+                paralelos={['Iniciación 1 (M)', 'Iniciación 2 (M)']}
+                logos={['I1M', 'I2M']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
+                }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            <ItemCalendario
+                com
+                fase='Semifinal - Reconciliación'
+                control={control && control[2]}
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                home={home}
+                dia='Sábado'
+                fecha='10 Mayo'
+                hora='10h40'
+                genero='F'
+                equipos={['Siervas de Dios', 'Ángeles']}
+                paralelos={['1 Comun. 6 (F)', '1 Comun. 5 (F)']}
+                logos={['16F', '15F']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
+                }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            <ItemCalendario
+                com
+                fase='Semifinal - Reconciliación'
+                control={control && control[2]}
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                home={home}
+                dia='Sábado'
+                fecha='10 Mayo'
+                hora='11h40'
+                genero='M'
+                equipos={['Guerreros de Dios', 'Campeones del Fútbol']}
+                paralelos={['1 Comun. 5 (M)', '1 Comun. 2 (M)']}
+                logos={['15M', '12M']}
+                colores={{
+                    eq1: ['white', 'black', 'black'],
+                    eq2: ['white', 'black', 'black']
+                }}
+                onStatus={onStatus}
+                onGoles={onGoles}
+                onAgregar={onAgregar}
+            />
+            <ItemCalendario
+                com
+                fase='Semifinal - Reconciliación'
+                control={control && control[2]}
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                home={home}
+                dia='Sábado'
+                fecha='10 Mayo'
+                hora='12h20'
+                genero='M'
+                equipos={['Soldados de Jesús', 'Ángeles del Cate']}
+                paralelos={['1 Comun. 3 (M)', '1 Comun. 4 (M)']}
+                logos={['13M', '14M']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
                     eq2: ['black', 'black', 'white']
@@ -40,20 +138,20 @@ export default function PartidosSemana({
                 onAgregar={onAgregar}
             />
             <ItemCalendario
-                com
                 fase='Semifinal - Año Bíblico'
-                control={control && control[1]}
-                now={fecha?.partido2}
-                res={fecha?.res2}
-                jugador={fecha?.jugador2}
-                pen={fecha?.pen2}
+                control={control && control[2]}
+                now={fecha?.partido3}
+                res={fecha?.res3}
+                jugador={fecha?.jugador3}
+                pen={fecha?.pen3}
+                extra={fecha?.extra3}
                 home={home}
                 dia='Sábado'
-                fecha='03 Mayo'
+                fecha='10 Mayo'
                 hora='17h00'
                 genero='M'
                 equipos={['Los Angelicales', 'Los Misioneros']}
-                paralelos={['AB 1C Molinopamba (M)', '1 Comun. 2 (M)']}
+                paralelos={['AB 1C Molinopamba (M)', 'Año Bíblico 2 (M)']}
                 logos={['AMM', 'A2M']}
                 colores={{
                     eq1: ['white', 'black', 'black'],
@@ -64,30 +162,6 @@ export default function PartidosSemana({
                 onAgregar={onAgregar}
             />
             { title2 && <p>{title2}</p> }
-           {/*  <ItemCalendario
-                fase='Para semifinal'
-                control={control && control[2]}
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
-                extra={fecha?.extra3}
-                home={home}
-                dia='Domingo'
-                fecha='04 Mayo'
-                hora='09h30'
-                genero='M'
-                equipos={['Juntos con Cristo', 'Los Angelicales']}
-                paralelos={['AB 1C Ángeles (M)', 'AB 1C Molinopamba (M)']}
-                logos={['AAM', 'AMM']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
             <ItemCalendario
                 com
                 fase='Semifinal - Comunión'
@@ -99,8 +173,8 @@ export default function PartidosSemana({
                 extra={fecha?.extra4}
                 home={home}
                 dia='Domingo'
-                fecha='04 Mayo'
-                hora='10h10'
+                fecha='11 Mayo'
+                hora='09h00'
                 genero='M'
                 equipos={['Leones de Dios', 'Guerreros contra el mal']}
                 paralelos={['2 Comun. 3 (M)', '2 Comun. 4 (M)']}
@@ -124,8 +198,8 @@ export default function PartidosSemana({
                 extra={fecha?.extra5}
                 home={home}
                 dia='Domingo'
-                fecha='04 Mayo'
-                hora='10h40'
+                fecha='11 Mayo'
+                hora='09h40'
                 genero='F'
                 equipos={['Elegidas por Jesús', 'Las Leonas de Dios']}
                 paralelos={['2 Comun. 6 (F)', '2 Comun. 3 (F)']}
@@ -149,8 +223,8 @@ export default function PartidosSemana({
                 extra={fecha?.extra7}
                 home={home}
                 dia='Domingo'
-                fecha='04 Mayo'
-                hora='11h20'
+                fecha='11 Mayo'
+                hora='10h20'
                 genero='M'
                 equipos={['Instrumentos de Dios', 'Pueblo de Israel']}
                 paralelos={['2 Comun. 6 (M)', '2 Comun. 1 (M)']}
@@ -162,7 +236,7 @@ export default function PartidosSemana({
                 onStatus={onStatus}
                 onGoles={onGoles}
                 onAgregar={onAgregar}
-            /> */}
+            />
             <ItemCalendario
                 fase='Semifinal - Confirmación'
                 control={control && control[6]}
@@ -173,8 +247,8 @@ export default function PartidosSemana({
                 extra={fecha?.extra7}
                 home={home}
                 dia='Domingo'
-                fecha='04 Mayo'
-                hora='14h00'
+                fecha='11 Mayo'
+                hora='11h00'
                 genero='F'
                 equipos={['Las Galatas 1, 10', 'Génesis']}
                 paralelos={['2 Confir. 1 (F)', '2 Confir. 3 (F)']}
@@ -197,8 +271,8 @@ export default function PartidosSemana({
                 extra={fecha?.extra8}
                 home={home}
                 dia='Domingo'
-                fecha='04 Mayo'
-                hora='15h00'
+                fecha='11 Mayo'
+                hora='12h00'
                 genero='M'
                 equipos={['Fuerza Divina', 'GDL']}
                 paralelos={['2 Confir. Ángeles (M)', '2 Confir. 4 (M)']}

@@ -4,6 +4,7 @@ import Equipo from '../Equipo'
 
 export default function ItemCalendario({
     com,
+    final,
     now,
     res,
     jugador,
@@ -116,15 +117,17 @@ export default function ItemCalendario({
 
             <style jsx>{`
                 section{
+                    background: ${final ? '#C8B273' : 'transparent'};
                     width: ${home ? '100%' : 'auto'};
                     position: relative;
                     margin-top: 4px;
                     margin-left: 4px;
                     font-family: 'Lato', sans-serif;
                     border: ${genero == 'M' ? `1px ${!com ? 'solid' : 'dashed'} #245590` : `1px ${!com ? 'solid' : 'dashed'} #CC397B`};
+                    border: ${final ? 'none' : 'auto'};
                     border-radius: 10px;
                     border-bottom: ${jugador ? 'none' : 'auto'};
-                    margin-bottom: 12px;
+                    margin-bottom: 16px;
                 }
 
                 .tp{
@@ -174,7 +177,7 @@ export default function ItemCalendario({
 
                 .fase{
                     position: absolute;
-                    top: -9px;
+                    top: -6px;
                     width: 100%;
                     display: flex;
                     justify-content: center;
@@ -182,9 +185,10 @@ export default function ItemCalendario({
 
                 .fase strong{
                     background: #F2F8F6;
-                    padding: 0 6px;
+                    padding: 0 8px 2px 8px;
                     font-size: 15px;
                     color: ${genero == 'M' ? '#245590' : '#CC397B'};
+                    border-radius: 6px;
                 }
 
                 .fecha{
