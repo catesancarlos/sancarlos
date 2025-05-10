@@ -220,7 +220,7 @@ export default function ItemCalendario({
 
                 .now{
                     position: absolute;
-                    top: 5px;
+                    top: 8px;
                     background: ${genero == 'M' ? '#245590' : '#CC397B'};
                     padding: 1px 5px 2px 5px;
                     color: white;

@@ -4,7 +4,7 @@ export default function NumPregunta({ pregunta, categoria, active, home }){
     const router = useRouter()
     
     return(
-        <div onClick={() => router.push(`/jesuscribe/${categoria}/p${pregunta}`)} >
+        <div /* onClick={() => router.push(`/jesuscribe/${categoria}/p${pregunta}`)} */ >
             <p>{pregunta}</p>
 
             <style jsx>{`
