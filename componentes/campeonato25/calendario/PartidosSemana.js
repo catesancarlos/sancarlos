@@ -92,11 +92,11 @@ export default function PartidosSemana({
             <ItemCalendario
                 com
                 fase='Semifinal - Reconciliación'
-                control={control && control[2]}
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
+                control={control && control[3]}
+                now={fecha?.partido4}
+                res={fecha?.res4}
+                jugador={fecha?.jugador4}
+                pen={fecha?.pen4}
                 home={home}
                 dia='Sábado'
                 fecha='10 Mayo'
@@ -116,11 +116,11 @@ export default function PartidosSemana({
             <ItemCalendario
                 com
                 fase='Semifinal - Reconciliación'
-                control={control && control[2]}
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
+                control={control && control[4]}
+                now={fecha?.partido5}
+                res={fecha?.res5}
+                jugador={fecha?.jugador5}
+                pen={fecha?.pen5}
                 home={home}
                 dia='Sábado'
                 fecha='10 Mayo'
@@ -139,12 +139,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 fase='Semifinal - Año Bíblico'
-                control={control && control[2]}
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
-                extra={fecha?.extra3}
+                control={control && control[5]}
+                now={fecha?.partido6}
+                res={fecha?.res6}
+                jugador={fecha?.jugador6}
+                pen={fecha?.pen6}
+                extra={fecha?.extra6}
                 home={home}
                 dia='Sábado'
                 fecha='10 Mayo'
@@ -165,12 +165,12 @@ export default function PartidosSemana({
             <ItemCalendario
                 com
                 fase='Semifinal - Comunión'
-                control={control && control[3]}
-                now={fecha?.partido4}
-                res={fecha?.res4}
-                jugador={fecha?.jugador4}
-                pen={fecha?.pen4}
-                extra={fecha?.extra4}
+                control={control && control[6]}
+                now={fecha?.partido7}
+                res={fecha?.res7}
+                jugador={fecha?.jugador7}
+                pen={fecha?.pen7}
+                extra={fecha?.extra7}
                 home={home}
                 dia='Domingo'
                 fecha='11 Mayo'
@@ -190,12 +190,12 @@ export default function PartidosSemana({
             <ItemCalendario
                 com
                 fase='Semifinal - Comunión'
-                control={control && control[4]}
-                now={fecha?.partido5}
-                res={fecha?.res5}
-                jugador={fecha?.jugador5}
-                pen={fecha?.pen5}
-                extra={fecha?.extra5}
+                control={control && control[7]}
+                now={fecha?.partido8}
+                res={fecha?.res8}
+                jugador={fecha?.jugador8}
+                pen={fecha?.pen8}
+                extra={fecha?.extra8}
                 home={home}
                 dia='Domingo'
                 fecha='11 Mayo'
@@ -215,12 +215,12 @@ export default function PartidosSemana({
             <ItemCalendario
                 com
                 fase='Semifinal - Comunión'
-                control={control && control[6]}
-                now={fecha?.partido7}
-                res={fecha?.res7}
-                jugador={fecha?.jugador7}
-                pen={fecha?.pen7}
-                extra={fecha?.extra7}
+                control={control && control[8]}
+                now={fecha?.partido9}
+                res={fecha?.res9}
+                jugador={fecha?.jugador9}
+                pen={fecha?.pen9}
+                extra={fecha?.extra9}
                 home={home}
                 dia='Domingo'
                 fecha='11 Mayo'
@@ -239,12 +239,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 fase='Semifinal - Confirmación'
-                control={control && control[6]}
-                now={fecha?.partido7}
-                res={fecha?.res7}
-                jugador={fecha?.jugador7}
-                pen={fecha?.pen7}
-                extra={fecha?.extra7}
+                control={control && control[9]}
+                now={fecha?.partido10}
+                res={fecha?.res10}
+                jugador={fecha?.jugador10}
+                pen={fecha?.pen10}
+                extra={fecha?.extra10}
                 home={home}
                 dia='Domingo'
                 fecha='11 Mayo'
@@ -263,12 +263,12 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 fase='Semifinal - Confirmación'
-                control={control && control[7]}
-                now={fecha?.partido8}
-                res={fecha?.res8}
-                jugador={fecha?.jugador8}
-                pen={fecha?.pen8}
-                extra={fecha?.extra8}
+                control={control && control[10]}
+                now={fecha?.partido11}
+                res={fecha?.res11}
+                jugador={fecha?.jugador11}
+                pen={fecha?.pen11}
+                extra={fecha?.extra11}
                 home={home}
                 dia='Domingo'
                 fecha='11 Mayo'
