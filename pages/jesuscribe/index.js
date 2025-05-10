@@ -29,7 +29,7 @@ export default function Jesuscribe(){
             titulo='JESUSCRIBE'
             name='Jesuscribe'
             back='#B0C0D9'
-            preg 
+            preg={!footer || auth == '4994'}
         >
             {
                 (!footer || auth == '4994') ?
