@@ -14,11 +14,11 @@ export default function CatGeneral({ datos }){
     const [revisar, setRevisar] = useState(null)
     const [grupos, setGrupos] = useState([])
     const [now, setNow] = useState(0)
+    const [footer, setFooter] = useState(false)
     const [mitad, setMitad] = useState([])
 
     useEffect(() => {
-        /* const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab')) */
-        const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
+        const q = query(collection(db, 'concurso2conf'), where('nivel', '==', '2conf'))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const grupos = []
             querySnapshot.forEach((doc) => {
@@ -31,6 +31,7 @@ export default function CatGeneral({ datos }){
     useEffect(() => {
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
             setNow(doc.data().now)
+            setFooter(doc.data().footer)
         }) 
     }, [])
 
@@ -43,15 +44,13 @@ export default function CatGeneral({ datos }){
         if(datos?.respuestas[e] == datos?.correcto){
             var audio = document.getElementById('ac')
             audio.play()
-           /*  updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 }) */
-            /* updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 }) */
+            if(footer) updateDoc(doc(db, 'concurso2conf', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 10 })
             setRevisar('CORRECTO')
         }
         else{
             var audio = document.getElementById('ae')
             audio.play()
-            /* updateDoc(doc(db, 'concursoab', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 }) */
-            /* updateDoc(doc(db, 'concurso1com', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 }) */
+            if(footer) updateDoc(doc(db, 'concurso2conf', grupos[now-1].id), { puntos: +grupos[now-1].puntos + 0 })
             setRevisar('INCORRECTO')
         }
     }
@@ -101,14 +100,17 @@ export default function CatGeneral({ datos }){
                 </div>
                 <div className='califica'>
                     <p className='r'>{revisar}</p>
-                    {/* <p className='cerrar' onClick={handleCerrar}>X</p> */}
+                    <p className='cerrar' onClick={handleCerrar}>X</p>
                 </div>
-                <div className='retorno'>
-                    <p onClick={handleCerrar}>Escoger otra pregunta</p>
-                    <p onClick={() => router.push('/jesuscribe')}>Cambiar de categoría</p>
-                </div>
+                {
+                    !footer &&
+                    <div className='retorno'>
+                        <p onClick={handleCerrar}>Escoger otra pregunta</p>
+                        <p onClick={() => router.push('/jesuscribe')}>Cambiar de categoría</p>
+                    </div>
+                }
             </section>
-            {/* <FooterPoints una onNext={handleCerrar} onMitad={handle50} /> */}
+            { footer && <FooterPoints una onNext={handleCerrar} onMitad={handle50} /> }
             <audio id='ac' src='/correct.mp3'></audio>
             <audio id='ae' src='/error.mp3'></audio>
             <audio id='ab' src='/bubble.mp3'></audio>

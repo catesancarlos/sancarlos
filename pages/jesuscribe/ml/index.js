@@ -20,7 +20,7 @@ export default function JesuscribeMl(){
             categoria='MULTIPLE'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            /* preg */
+            preg
         >
             <MainPreguntas
                 categoria='ml'

@@ -24,7 +24,7 @@ export default function JesuscribeLt(){
             categoria='LITURGIA'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            /* preg */
+            preg
         >
             <MainPreguntas
                 categoria='lt'

@@ -39,7 +39,7 @@ export default function JesuscribeGn(){
             categoria='GENERAL'
             /* onRand={handleRand} */
             back='#B0C0D9'
-            /* preg */
+            preg
         >
             <MainPreguntas
                 categoria='gn'

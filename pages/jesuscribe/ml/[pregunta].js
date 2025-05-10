@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import AppLayout from '../../../componentes/layout'
 import RespOpcion from '../../../componentes/jesuscribe/RespOpcion'
 
 import db  from '../../../services/dBase'
-import { getDoc, doc } from 'firebase/firestore'
+import { getDoc, doc, query, collection, where, updateDoc, onSnapshot } from 'firebase/firestore'
 import FooterPoints from '../../../componentes/jesuscribe/FooterPoints'
 
 export default function CatMultiple({ datos }){
     const router = useRouter()
     const [view, setView] = useState(false)
+    const [footer, setFooter] = useState(false)
 
     const handleCerrar = () => router.back()
+
+    useEffect(() => {
+        onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
+            setFooter(doc.data().footer)
+        }) 
+    }, [])
 
     return(
         <AppLayout 
@@ -45,11 +52,14 @@ export default function CatMultiple({ datos }){
                     }
                 </div>
             </section>
-            <div className='retorno'>
-                <p onClick={handleCerrar}>Escoger otra pregunta</p>
-                <p onClick={() => router.push('/jesuscribe')}>Cambiar de categoría</p>
-            </div>
-            {/* <FooterPoints mul onNext={handleCerrar} onView={() => setView(!view)} /> */}
+            {
+                    !footer &&
+                <div className='retorno'>
+                    <p onClick={handleCerrar}>Escoger otra pregunta</p>
+                    <p onClick={() => router.push('/jesuscribe')}>Cambiar de categoría</p>
+                </div>
+            }
+            { footer && <FooterPoints mul onNext={handleCerrar} onView={() => setView(!view)} /> }
 
             <style jsx>{`
                 section{

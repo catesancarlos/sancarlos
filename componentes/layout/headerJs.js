@@ -24,7 +24,7 @@ export default function HeaderJs({ categoria, non, onRand }){
 
             <style jsx>{`
                 .header{
-                    padding: 25px calc(5% + 5px) 18px calc(5% + 5px);
+                    padding: 25px 5% 18px calc(5% - 5px);
                     display: flex;
                     justify-content: space-between;
                     align-items: center;

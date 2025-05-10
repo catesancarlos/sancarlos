@@ -17,6 +17,7 @@ export default function MainPreguntas({
     const router = useRouter()
 
     const [datos, setDatos] = useState([])
+    const [footer, setFooter] = useState(false)
     const [confirmacion, setConfirmacion] = useState(true)
     const [select, setSelect] = useState(null)
     const [sorteo, setSorteo] = useState(false)
@@ -29,6 +30,7 @@ export default function MainPreguntas({
     useEffect(() => {
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
             setConfirmacion(doc.data().confirmacion)
+            setFooter(doc.data().footer)
         }) 
     }, [])
 
@@ -37,7 +39,7 @@ export default function MainPreguntas({
             else setDatos(preguntasIni)
     }, [datos])
 
-    /* useEffect(() => {
+    useEffect(() => {
         document.addEventListener('keydown', detectKeyDown, true)
     }, [])
 
@@ -46,7 +48,7 @@ export default function MainPreguntas({
             setSorteo(!sorteo)
             setSelect(null)
         }
-    } */
+    }
 
     const handleRand = () => {
         setSorteo(!sorteo)
@@ -76,7 +78,7 @@ export default function MainPreguntas({
                     const index = Math.floor(rand)
                     setSelect(datos[index])
                     var newo = datos
-                    /* newo.splice(index, 1) */
+                    newo.splice(index, 1)
                     setDatos(newo)
                 }
             }, 50)
@@ -98,7 +100,7 @@ export default function MainPreguntas({
     return(
         <section>
             {
-                rand &&
+                (rand && !footer) &&
                     <div className='cont-sorteo'>
                         <div className='sorteo' onClick={handleRand}>
                             <Dice />

@@ -13,6 +13,7 @@ import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 
 import db  from '../services/dBase'
 import { getDoc, doc, onSnapshot } from 'firebase/firestore'
+import Finales from '../componentes/home/Finales'
 
 const Home = () => {
     const [section, setSection] = useState(false)
@@ -63,6 +64,7 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
+                {/* <Finales /> */}
                 <JesuscribeNext
                     first={first}
                     section={section}

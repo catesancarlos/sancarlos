@@ -25,10 +25,12 @@ export default function JsLayout ({
     back,
     onRand,
     preg,
-    non
+    non,
+    none
 }) {
     const [grupos, setGrupos] = useState([])
     const [now, setNow] = useState(5)
+    const [footer, setFooter] = useState(false)
 
     useEffect(() => {
         /* const q = query(collection(db, 'concursoab'), where('nivel', '==', 'ab')) */
@@ -45,6 +47,7 @@ export default function JsLayout ({
     useEffect(() => {
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
             setNow(doc.data().now)
+            setFooter(doc.data().footer)
         }) 
     }, [])
 
@@ -58,9 +61,9 @@ export default function JsLayout ({
             </Head>
 
             <main className='page-home'>
-                <HeaderJs categoria={categoria} non={non} onRand={onRand} />
+                <HeaderJs categoria={categoria} non={non} onRand={onRand && !footer} />
                 {children}
-                { preg && <FooterPoints preg={preg} /> }
+                { preg && footer && <FooterPoints preg={preg} /> }
             </main>
 
             <style jsx>{`

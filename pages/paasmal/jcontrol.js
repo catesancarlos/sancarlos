@@ -8,6 +8,7 @@ import { doc, collection, query, where, updateDoc, onSnapshot } from 'firebase/f
 export default function JesuscribeContol(){
     const [controles, setControles] = useState(false)
     const [ahora, setAhora] = useState(0)
+    const [rondi, setRondi] = useState(0)
     const [grupos, setGrupos] = useState([])
     const [name, setName] = useState('')
     const [openName, setOpenName] = useState(false)
@@ -17,11 +18,12 @@ export default function JesuscribeContol(){
         onSnapshot(doc(db, 'controles', 'concurso'), (doc) => {
             setControles(doc.data().confirmacion)
             setAhora(doc.data().now)
+            setRondi(doc.data().ronda)
         }) 
     }, [])
 
     useEffect(() => {
-        const q = query(collection(db, 'concurso1com'), where('nivel', '==', '1com'))
+        const q = query(collection(db, 'concurso2conf'), where('nivel', '==', '2conf'))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const grupos = []
             querySnapshot.forEach((doc) => {
@@ -32,26 +34,26 @@ export default function JesuscribeContol(){
     }, [])
 
     const handleMitad = (e) => {
-        updateDoc(doc(db, 'concurso1com', e[0]), { c1: !e[1] })
+        updateDoc(doc(db, 'concurso2conf', e[0]), { c1: !e[1] })
     }
     
     const handleCall = (e) => {
-       updateDoc(doc(db, 'concurso1com', e[0]), { c2: !e[1] })
+       updateDoc(doc(db, 'concurso2conf', e[0]), { c2: !e[1] })
     }
     
     const handleKts = (e) => {
-        updateDoc(doc(db, 'concurso1com', e[0]), { c3: !e[1] })
+        updateDoc(doc(db, 'concurso2conf', e[0]), { c3: !e[1] })
     }
 
     const handleChange = e => setName(e.target.value)
 
     const handleAgregar = async e => {
-        const docRef = await updateDoc(doc(db, 'concurso1com', e), { nombre: name })
+        const docRef = await updateDoc(doc(db, 'concurso2conf', e), { nombre: name })
         setOpenName(false)
     }
 
     const handlePuntear = async e => {
-        const docRef = await updateDoc(doc(db, 'concurso1com', e), { puntos: +name })
+        const docRef = await updateDoc(doc(db, 'concurso2conf', e), { puntos: +name })
         setOpenName(false)
     }
 
@@ -64,8 +66,13 @@ export default function JesuscribeContol(){
     }
 
     const handleMas = (e) => {
-        if(ahora < 6) updateDoc(doc(db, 'controles', 'concurso'), { now: ahora+1 })
-            else updateDoc(doc(db, 'controles', 'concurso'), { now: 1 })
+        if(ahora < grupos.length) updateDoc(doc(db, 'controles', 'concurso'), { now: ahora+1 })
+            else{
+                updateDoc(doc(db, 'controles', 'concurso'), { 
+                    now: 1,
+                    ronda: rondi+1
+                })
+            }
     }
 
     const handleConf = (e) => {
@@ -73,10 +80,14 @@ export default function JesuscribeContol(){
     }
 
     const handleEncerar = (e) => {
-        updateDoc(doc(db, 'concurso1com', 'partseg1'), { puntos: +0 })
-        updateDoc(doc(db, 'concurso1com', 'partseg2'), { puntos: +0 })
-        updateDoc(doc(db, 'concurso1com', 'partseg3'), { puntos: +0 })
-        updateDoc(doc(db, 'concurso1com', 'partseg4'), { puntos: +0 })
+        if(grupos.length >= 1) updateDoc(doc(db, 'concurso2conf', 'partconf1'), { puntos: +0 })
+        if(grupos.length >= 2) updateDoc(doc(db, 'concurso2conf', 'partconf2'), { puntos: +0 })
+        if(grupos.length >= 3) updateDoc(doc(db, 'concurso2conf', 'partconf3'), { puntos: +0 })
+        if(grupos.length >= 4) updateDoc(doc(db, 'concurso2conf', 'partconf4'), { puntos: +0 })
+        if(grupos.length >= 5) updateDoc(doc(db, 'concurso2conf', 'partconf5'), { puntos: +0 })
+        if(grupos.length >= 6) updateDoc(doc(db, 'concurso2conf', 'partconf6'), { puntos: +0 })
+        if(grupos.length >= 7) updateDoc(doc(db, 'concurso2conf', 'partconf7'), { puntos: +0 })
+        if(grupos.length >= 8) updateDoc(doc(db, 'concurso2conf', 'partconf8'), { puntos: +0 })
     }
     
     return(
@@ -84,8 +95,8 @@ export default function JesuscribeContol(){
             titulo='JESUSCRIBE - Control'
             name='Jesuscribe'
             categoria='CONTROL'
-            /* onRand={handleRand} */
             back='#B0C0D9'
+            none
         >
             <div className='grupo'>
                 <p className='label1'>Generales:</p>
