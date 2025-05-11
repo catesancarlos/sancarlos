@@ -5,22 +5,34 @@ export default function FinalConfFem(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido par2'>
-                        <div className='cuadro'>Soldados de Jesús (13M)</div>
-                        <div className='cuadro'>Ángeles del Cate (14M)</div>
+                        <div className='cuadro'>
+                            <p>Soldados de Jesús (13M)</p>
+                            <span className='win'>10</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>Ángeles del Cate (14M)</p>
+                            <span className='lose'>2</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>Guerreros de Dios (15M)</div>
-                        <div className='cuadro'>Campeones del Fútbol (12M)</div>
+                        <div className='cuadro'>
+                            <p>Guerreros de Dios (15M)</p>
+                            <span className='win'>6</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>Camp. del Fútbol (12M)</p>
+                            <span className='lose'>5</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Soldados de Jesús (13M)</div>
+                <div className='cuadro'>Guerreros de Dios (15M)</div>
                 <div className='union'></div>
             </div>
 
@@ -42,15 +54,16 @@ export default function FinalConfFem(){
 
                 .partido{
                     position: relative;
-                    width: 230px;
+                    width: 240px;
                     height: 100px;
                 }
 
                 .cuadro{
                     position: relative;
                     background: white;
-                    width: 210px;
+                    width: 220px;
                     line-height: 36px;
+                    font-size: 15px;
                     text-align: center;
                     border: 2px solid black;
                     border-radius: 10px;
@@ -68,7 +81,7 @@ export default function FinalConfFem(){
                 }
 
                 .win{
-                    background: #CC397B;
+                    background: #245590;
                 }
 
                 .lose{
@@ -125,7 +138,7 @@ export default function FinalConfFem(){
                 .par4{
                     margin-top: 35px;
                     margin-left: 20px;
-                    width: 230px;
+                    width: 240px;
                     height: 160px;
                 }
 

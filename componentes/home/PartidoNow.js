@@ -149,21 +149,22 @@ export default function PartidoNow({ fecha, home = true }) {
                     extra={fecha?.extra7}
                     home={home}
                     dia='Domingo'
-                    fecha='27 Abr'
-                    hora='12h20'
-                    genero='F'
-                    equipos={['Pueblo de Israel', 'El Maná']}
-                    paralelos={['2 Comun. 1 (F)', '2 Comun. 5 (F)']}
-                    logos={['21F', '25F']}
+                    fecha='11 Mayo'
+                    hora='09h00'
+                    genero='M'
+                    equipos={['Leones de Dios', 'Guerreros contra el mal']}
+                    paralelos={['2 Comun. 3 (M)', '2 Comun. 4 (M)']}
+                    logos={['23M', '24M']}
                     colores={{
-                        eq1: ['white', 'black', 'black'],
-                        eq2: ['white', 'black', 'black']
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['black', 'red', 'white']
                     }}
                 />
             }
             { fecha?.partido8 == 1 &&
                 <ItemCalendario
-                    fase='Semifinal - Confirmación'
+                    com
+                    fase='Semifinal - Comunión'
                     now={fecha?.partido8}
                     res={fecha?.res8}
                     jugador={fecha?.jugador8}
@@ -171,72 +172,79 @@ export default function PartidoNow({ fecha, home = true }) {
                     extra={fecha?.extra8}
                     home={home}
                     dia='Domingo'
-                    fecha='27 Abr'
-                    hora='13h00'
-                    genero='M'
-                    equipos={['Los Ángeles Negros', 'Confirmación FC']}
-                    paralelos={['1 Confir. 3 (M)', '2 Confir. 2 (M)']}
-                    logos={['13M', '22M']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['black', 'black', 'white']
-                    }}
-                />
-            }
-            { fecha?.partido9 == 1 &&
-                <ItemCalendario
-                    now={fecha?.partido9}
-                    res={fecha?.res9}
-                    jugador={fecha?.jugador9}
-                    pen={fecha?.pen9}
-                    home={home}
-                    dia='Domingo'
-                    fecha='16 Mar'
-                    hora='11h00'
+                    fecha='11 Mayo'
+                    hora='09h40'
                     genero='F'
-                    equipos={['Club GNU', 'Newcastells']}
-                    paralelos={['2do Confir. 4 (F)', '1ro Confir. 4 (F)']}
-                    logos={['24F', '14F']}
-                    colores={{
-                        eq1: ['black', 'black', 'white'],
-                        eq2: ['white', 'black', 'black']
-                    }}
-                />
-            }
-            { fecha?.partido10 == 1 &&
-                <ItemCalendario
-                    now={fecha?.partido10}
-                    res={fecha?.res10}
-                    jugador={fecha?.jugador10}
-                    pen={fecha?.pen10}
-                    home={home}
-                    dia='Domingo'
-                    fecha='16 Mar'
-                    hora='11h50'
-                    genero='F'
-                    equipos={['Génesis', 'Las Ángeles Negros']}
-                    paralelos={['2do Confir. 3 (F)', '1ro Confir. 3 (F)']}
-                    logos={['23F', '13F']}
+                    equipos={['Elegidas por Jesús', 'Las Leonas de Dios']}
+                    paralelos={['2 Comun. 6 (F)', '2 Comun. 3 (F)']}
+                    logos={['22F', '23F']}
                     colores={{
                         eq1: ['white', 'black', 'black'],
                         eq2: ['black', 'black', 'white']
                     }}
                 />
             }
+            { fecha?.partido9 == 1 &&
+                <ItemCalendario
+                    com
+                    fase='Semifinal - Comunión'
+                    now={fecha?.partido9}
+                    res={fecha?.res9}
+                    jugador={fecha?.jugador9}
+                    pen={fecha?.pen9}
+                    extra={fecha?.extra9}
+                    home={home}
+                    dia='Domingo'
+                    fecha='11 Mayo'
+                    hora='10h20'
+                    genero='M'
+                    equipos={['Instrumentos de Dios', 'Pueblo de Israel']}
+                    paralelos={['2 Comun. 6 (M)', '2 Comun. 1 (M)']}
+                    logos={['26M', '21M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+            }
+            { fecha?.partido10 == 1 &&
+                <ItemCalendario
+                    fase='Semifinal - Confirmación'
+                    now={fecha?.partido10}
+                    res={fecha?.res10}
+                    jugador={fecha?.jugador10}
+                    pen={fecha?.pen10}
+                    extra={fecha?.extra10}
+                    home={home}
+                    dia='Domingo'
+                    fecha='11 Mayo'
+                    hora='11h00'
+                    genero='F'
+                    equipos={['Las Galatas 1, 10', 'Génesis']}
+                    paralelos={['2 Confir. 1 (F)', '2 Confir. 3 (F)']}
+                    logos={['21M', '23M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
+            }
             { fecha?.partido11 == 1 &&
                 <ItemCalendario
+                    fase='Semifinal - Confirmación'
                     now={fecha?.partido11}
                     res={fecha?.res11}
                     jugador={fecha?.jugador11}
                     pen={fecha?.pen11}
+                    extra={fecha?.extra11}
                     home={home}
                     dia='Domingo'
-                    fecha='16 Mar'
-                    hora='12h30'
+                    fecha='11 Mayo'
+                    hora='12h00'
                     genero='M'
-                    equipos={['Los Angelicales', 'Newcastells']}
-                    paralelos={['AB Conf. Molinopamba (M)', '1ro Confir. 4 (M)']}
-                    logos={['1MM', '14M']}
+                    equipos={['Fuerza Divina', 'GDL']}
+                    paralelos={['2 Confir. Ángeles (M)', '2 Confir. 4 (M)']}
+                    logos={['2AM', '24M']}
                     colores={{
                         eq1: ['white', 'black', 'black'],
                         eq2: ['white', 'black', 'black']

@@ -18,15 +18,21 @@ export default function FinalConfFem(){
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>Siervas de Dios (16F)</div>
-                        <div className='cuadro'>Ángeles (15F)</div>
+                        <div className='cuadro'>
+                            <p>Siervas de Dios (16F)</p>
+                            <span className='win'>2</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>Ángeles (15F)</p>
+                            <span className='lose'>0</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>Campeonas del Fútbol (12F)</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Siervas de Dios (16F)</div>
                 <div className='union'></div>
             </div>
 
