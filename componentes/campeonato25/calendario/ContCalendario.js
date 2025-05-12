@@ -17,6 +17,7 @@ import PartidosPasadosF12 from './pasados/PartidosPasadosF12'
 import PartidosPasadosF13 from './pasados/PartidosPasadosF13'
 import PartidosPasadosF14 from './pasados/PartidosPasadosF14'
 import PartidosPasadosF15 from './pasados/PartidosPasadosF15'
+import PartidosPasadosF16 from './pasados/PartidosPasadosF16'
 
 const optionsArray = [
     {
@@ -110,13 +111,7 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 16 ?
-                <div className='fecha-label'>
-                    <strong className='now-fec'>Decimo sexta semana</strong>
-                    <i>[10-11 mayo 2025]</i>
-                    {children}
-                </div>
-                : select == 17 ?
+                select == 17 ?
                     <div className='fecha-label'>
                         <strong className='now-fec'>Decimo octava semana</strong>
                         <i>[17-18 mayo 2025]</i>
@@ -235,7 +230,7 @@ export default function Calendario({ datos, children }){
                             fecha={datos[13]}
                         />
                     </div>
-                :  select == 15 ?
+                : select == 15 ?
                     <div className='fecha-label'>
                         <PartidosPasadosF15
                             title='Resultados Semana 15:'
@@ -243,7 +238,15 @@ export default function Calendario({ datos, children }){
                             fecha={datos[14]}
                         />
                     </div>
-                : ''
+                : select == 16 ?
+                <div className='fecha-label'>
+                    <PartidosPasadosF16
+                        title='Resultados Semana 16:'
+                        fec='[10-11 mayo 2025]'
+                        fecha={datos[15]}
+                    />
+                </div>
+            : ''
             }
 
             <style jsx>{`

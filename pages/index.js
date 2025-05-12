@@ -7,7 +7,7 @@ import PartidoNow from '../componentes/home/PartidoNow'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
 import PartidosSemana from '../componentes/campeonato25/calendario/PartidosSemana'
-import PartidosPasadosF15 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF15'
+import PartidosPasadosF16 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF16'
 import JesuscribeNext from '../componentes/banners/JesuscribeNext'
 import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 
@@ -41,10 +41,10 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha915'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha916'), (doc) => {
             setFechaAnt(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha916'), (doc) => {
+        onSnapshot(doc(db, 'campeonato25', 'fecha917'), (doc) => {
             setFechaNow(doc.data())
         })
     }, [])
@@ -64,23 +64,27 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                {/* <Finales /> */}
-                <JesuscribeNext
-                    first={first}
-                    section={section}
-                    onSection={() => setSection(true)}
-                >
-                    <OneQuestionBanner
-                        onNumRandom={handleFetchQuestion}
-                        datos={datos}
-                        onCerrar={() => {
-                            setFirst(false),
-                            setSection(false),
-                            setDatos(null)}
-                        }
-                    />
-                </JesuscribeNext>
                 <MiniAgenda />
+                {/* <Finales /> */}
+                <div className='cont-jes'>
+                    <div className='divo'></div>
+                    <p className='title'>¿Quiéres probar tus conocimientos?</p>
+                    <JesuscribeNext
+                        first={first}
+                        section={section}
+                        onSection={() => setSection(true)}
+                    >
+                        <OneQuestionBanner
+                            onNumRandom={handleFetchQuestion}
+                            datos={datos}
+                            onCerrar={() => {
+                                setFirst(false),
+                                setSection(false),
+                                setDatos(null)}
+                            }
+                        />
+                    </JesuscribeNext>
+                </div>
                 {/* <div className='banner'>
                     <PartidoIda />
                     <img src='/main_banner.jpg' />
@@ -99,16 +103,38 @@ const Home = () => {
                         fecha={fechaNow}
                         home
                     />
-                    <PartidosPasadosF15
-                        /* noTop */
+                    {/* <PartidosPasadosF16
+                        noTop < borrar
                         title='Resultados semana pasada:'
                         fecha={fechaAnt}
                         home
-                    />
+                    /> */}
                 </CampSection>
             </AppLayout>
 
             <style jsx>{`
+                .cont-jes{
+                    margin: 0px 4% 60px 4%;
+                    width: 92%;
+                }
+
+                .divo{
+                    margin-top: 18px;
+                    width: 100%;
+                    border: 2px solid brown;
+                }
+
+                .title{
+                    margin: -17px auto 0 auto;
+                    width: 380px;
+                    background: #F2F8F6;
+                    color: brown;
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+
                 .banner{
                     position: relative;
                 } 
@@ -145,6 +171,24 @@ const Home = () => {
                 }
 
                 @media screen and (max-width: 768px){
+                    .cont-jes{
+                        margin: 10px 0 30px 0;
+                        width: 100%;
+                    }
+
+                    .divo{
+                        margin: 0 15px 0 15px;
+                        width: calc(100% - 30px);
+                        border: 1px solid brown;
+                    }
+
+                    .title{
+                        width: 315px;
+                        margin: -13px auto 0 auto;
+                        font-size: 19px;
+                        margin-bottom: 20px;
+                    }
+
                     img{
                         margin: 0;
                         width: 100%;

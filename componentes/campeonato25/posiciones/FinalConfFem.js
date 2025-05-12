@@ -40,9 +40,13 @@ export default function FinalConfFem(){
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par3'>
-                        <div className='cuadro'><div>l</div>Las Galatas 1, 10 (21F)</div>
+                        <div className='cuadro'><div>l</div>
+                            <p>Las Galatas 1, 10 (21F)</p>
+                            <span className='win'>7</span>
+                        </div>
                         <div className='cuadro'>
-                            Génesis (23F)
+                            <p>Génesis (23F)</p>
+                            <span className='lose'>1</span>
                         </div>
                         <div className='union'></div>
                     </div>
@@ -50,7 +54,7 @@ export default function FinalConfFem(){
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>Estrellitas de María (2AF)</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Las Galatas 1, 10 (21F)</div>
                 <div className='union'></div>
             </div>
 
@@ -91,10 +95,15 @@ export default function FinalConfFem(){
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 36px;
+                    width: 32px;
                     color: white;
                     font-weight: bold;
                     border-radius: 0 8px 8px 0;
+                }
+
+                .cuadro p{
+                    text-align: left;
+                    padding-left: 10px;
                 }
 
                 .win{
@@ -103,10 +112,6 @@ export default function FinalConfFem(){
 
                 .lose{
                     background: black;
-                }
-
-                .cuadro p{
-                    margin-right: 26px;
                 }
 
                 .partido .cuadro:first-child{
@@ -173,6 +178,10 @@ export default function FinalConfFem(){
                         width: 180px;
                         line-height: 36px;
                         font-size: 13px;
+                    }
+
+                    .cuadro p{
+                        padding-left: 6px;
                     }
 
                     .par2 .union, .par3 .union{

@@ -56,6 +56,7 @@ export default function EquiposBiblico(){
                 borde='red'
                 letter='white'
                 mas='1'
+                op
             />
             <Equipo
                 nombre='Equipo Glorioso'

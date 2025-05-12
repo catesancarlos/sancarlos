@@ -12,6 +12,7 @@ export default function Equipos1Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Las Águilas'
@@ -47,6 +48,7 @@ export default function Equipos1Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Las Angeles Negros'
@@ -82,6 +84,7 @@ export default function Equipos1Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Los Angelicales'
@@ -90,6 +93,7 @@ export default function Equipos1Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
         </ContEquipos> 
     )

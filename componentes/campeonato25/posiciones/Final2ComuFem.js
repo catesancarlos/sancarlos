@@ -18,15 +18,22 @@ export default function FinalConfFem(){
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>Elegidas por Jesús (26F)</div>
-                        <div className='cuadro'>Las Leonas de Dios (23F)</div>
+                        <div className='cuadro'>
+                            <p>Elegidas por Jesús (26F)</p>
+                            <span className='win'>3</span>
+                            
+                        </div>
+                        <div className='cuadro'>
+                            <p>Leonas de Dios (23F)</p>
+                            <span className='lose'>2</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>Pueblo de Israel (21F)</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Elegidas por Jesús (26F)</div>
                 <div className='union'></div>
             </div>
 
@@ -68,10 +75,15 @@ export default function FinalConfFem(){
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 36px;
+                    width: 32px;
                     color: white;
                     font-weight: bold;
                     border-radius: 0 8px 8px 0;
+                }
+
+                .cuadro p{
+                    text-align: left;
+                    padding-left: 10px;
                 }
 
                 .win{
@@ -80,10 +92,6 @@ export default function FinalConfFem(){
 
                 .lose{
                     background: black;
-                }
-
-                .cuadro p{
-                    margin-right: 26px;
                 }
 
                 .partido .cuadro:first-child{
@@ -138,7 +146,8 @@ export default function FinalConfFem(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        padding-left: 14px;
+                        width: 100%;
+                        padding-left: 0px;
                     }
 
                     .partido{
@@ -152,27 +161,35 @@ export default function FinalConfFem(){
                         font-size: 13px;
                     }
 
+                    .cuadro p{
+                        padding-left: 6px;
+                    }
+
                     .par2 .union, .par3 .union{
-                        left: -12px;
+                        left: 0px;
                     }
 
                     .par2{
-                        margin-left: 12px;
+                        margin-left: 0px;
                     }
 
                     .par3{
-                        margin-left: 12px;
+                        margin-left: 0px;
                     }
 
                     .par4{
-                        width: 206px;
+                        width: 178px;
                         height: 160px;
                         margin-left: 12px;
                     }
 
                     .par4 .union{
                         left: -12px;
-                        margin-right: 14px;
+                        margin-right: 0;
+                    }
+
+                    .par4 .cuadro{
+                        width: 166px;
                     }
                 }
             `}</style>

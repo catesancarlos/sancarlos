@@ -40,15 +40,21 @@ export default function FinalConfMas(){
                         <div className='union u1'></div>
                     </div>
                     <div className='partido par3'>
-                        <div className='cuadro'><div>l</div>Fuerza Divina (2AM)</div>
-                        <div className='cuadro'>GDL (24M)</div>
+                        <div className='cuadro'><div>l</div>
+                            <p>Fuerza Divina (2AM)</p>
+                            <span className='lose'>4</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>GDL (24M)</p>
+                            <span className='win'>10</span>
+                        </div>
                         <div className='union'></div>
                     </div>
                 </div>
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>Confirmación FC (22M)</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>GDL (24M)</div>
                 <div className='union'></div>
             </div>
 
@@ -89,10 +95,15 @@ export default function FinalConfMas(){
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 36px;
+                    width: 32px;
                     color: white;
                     font-weight: bold;
                     border-radius: 0 8px 8px 0;
+                }
+
+                .cuadro p{
+                    text-align: left;
+                    padding-left: 10px;
                 }
 
                 .win{
@@ -101,10 +112,6 @@ export default function FinalConfMas(){
 
                 .lose{
                     background: black;
-                }
-
-                .cuadro p{
-                    margin-right: 26px;
                 }
 
                 .partido .cuadro:first-child{
@@ -163,22 +170,40 @@ export default function FinalConfMas(){
                     }
 
                     .partido{
-                        width: 185px;
+                        width: 192px;
                         height: 100px;
                     }
 
                     .cuadro{
-                        width: 170px;
+                        width: 180px;
                         line-height: 36px;
                         font-size: 13px;
                     }
 
+                    .cuadro p{
+                        padding-left: 6px;
+                    }
+
+                    .par2 .union, .par3 .union{
+                        left: -12px;
+                    }
+
+                    .par2{
+                        margin-left: 12px;
+                    }
+
+                    .par3{
+                        margin-left: 12px;
+                    }
+
                     .par4{
-                        width: 199px;
+                        width: 206px;
                         height: 160px;
+                        margin-left: 12px;
                     }
 
                     .par4 .union{
+                        left: -12px;
                         margin-right: 14px;
                     }
                 }

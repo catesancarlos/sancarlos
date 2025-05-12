@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import bannerJesuscribe from '../../public/jesuscribe_next_banner.jpeg'
 import Dice from '../iconos/Dice'
 
 export default function JesuscribeNext({ first, section, children, onSection }){
+    const router = useRouter()
 
     return(
-        <section>
+        <section onClick={() => router.push('/jesuscribe')}>
             {
                 section ? children :
                     <div className='img'>
@@ -22,15 +24,18 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                                 <p>Probar una pregunta</p>
                             </div>
                         } */}
+                        <div className='dice'
+                            /* onClick={onSection} */
+                        >
+                            <p>PULSA AQUÍ</p>
+                        </div>
                         <div className='ftr-banner'>
                             <div className='line'></div>
                             <img src='/logo-jesuscribe.jpg' />
                             <div className='line'></div>
                         </div>
                         <div className='ftr-banner2'>
-                            {/* <p>1RO COMUNIÓN</p>
-                            <p>03 Mayo</p> */}
-                            <p>2DO CONFIRMACIÓN</p>
+                            {/* <p>2DO CONFIRMACIÓN</p> */}
                         </div>
                     </div>
             }
@@ -38,11 +43,13 @@ export default function JesuscribeNext({ first, section, children, onSection }){
             <style jsx>{`
                 section{
                     position: relative;
-                    margin: 0 4% 20px 4%;
-                    width: 92%;
+                    /* margin: 0 4% 20px 4%;
+                    width: 92%; */
+                    width: 100%;
                     height: 500px;
                     border-radius: 20px;
                     overflow: hidden;
+                    cursor: pointer;
                 }
 
                 .img{
@@ -53,10 +60,14 @@ export default function JesuscribeNext({ first, section, children, onSection }){
 
                 .dice{
                     position: absolute;
-                    top: 24px;
+                    /* top: 24px;
                     right: 24px;
-                    background: #FFF;
                     padding: 4px 12px 4px 12px;
+                    */
+                    top: 30px;
+                    right: 34px;
+                    background: #FFF;
+                    padding: 5px 20px 5px 20px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -65,11 +76,16 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                 }
 
                 .dice p{
-                    margin-left: 8px;
-                    line-height: 20px;
+                    /* margin-left: 8px;
                     color: black;
                     font-size: 16px;
-                    font-weight: 200;
+                    line-height: 20px;
+                    font-weight: 200; */
+                    margin-left: 0;
+                    line-height: 24px;
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
                 }
 
                 .ftr-banner{
@@ -129,16 +145,22 @@ export default function JesuscribeNext({ first, section, children, onSection }){
                     }
 
                     .dice{
-                        top: 15px;
+                        /* top: 15px;
                         right: 15px;
-                        padding: 3px 7px;
+                        padding: 3px 7px; */
+                        top: 18px;
+                        right: 20px;
+                        padding: 4px 10px 3px 10px;
                         border-radius: 4px;
                     }
 
                     .dice p{
-                        margin-left: 5px;
+                        /* margin-left: 5px;
                         line-height: 14px;
-                        font-size: 13px;
+                        font-size: 13px; */
+                        margin-left: 0;
+                        line-height: 18px;
+                        font-size: 14px
                     }
 
                     .ftr-banner{

@@ -12,35 +12,78 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     main
                     title='Catequesis'
-                    subtitle='Clases Normales'
-                    date='Sábado 10 mayo 2025'
+                    subtitle='Clausura 2024 - 2025'
+                    date='Sábado 17 mayo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
                     <strong>Centro</strong>
-                    <p className='nt lg'>Mañana: 08:45 - 11:30</p>
-                    <p className='nt lg'>Tarde: 13:45 - 16:30</p>
+                    <p className='nt lg'>Mañana: 08:45 / Tarde: 13:45{/*  - 11:30 */}</p>
+                    <p className='nt lg'>{/*Tarde: 13:45  - 16:30 */}</p>
                     <strong>Los Ángeles</strong>
-                    <p className='nt lg'>Mañana: 09:00 - 11:30</p>
-                    <p className='nt lg'>Tarde: 14:00 - 16:30</p>
-                    <p className='lg'><strong>Molinopamba:</strong> 08:00 - 11:00</p>
-                    <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
-                    <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
+                    <p className='nt lg'>Mañana: 09:00 / Tarde: 14:00{/*  - 11:30 */}</p>
+                    <p className='nt lg'>{/*  Tarde: 14:00 - 16:30 */}</p>
+                    <p className='lg'><strong>Molinopamba:</strong> 08:00{/*  - 11:00 */}</p>
+                    <p className='lg'><strong>Auxiliadora:</strong> 14:00{/*  - 17:00 */}</p>
+                    <p className='lg'><strong>Dolorosa:</strong> 14:00{/*  - 17:00 */}</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    color='#EE1C21'
-                    title='JESUSCRIBE'
-                    subtitle='2do Confirmación'
-                    date='Sábado 10 mayo 2025'
-                    place='Teatro Catequesis'
-                    hour='15:30'
+                    color='#21ACE8'
+                    title='CONSAGRACIÓN NIÑOS'
+                    subtitle='Iniciación'
+                    date='Sábado 17 mayo 2025'
+                    place='Templo Parroquial'
+                    hour='09:00'
                 />
                 <ItemAgenda
-                    title='Semifinales'
-                    subtitle='Campeonato 2025'
-                    date='Domingo 11 mayo 2025'
+                    color='#EE1C21'
+                    title='FIESTA DEL PERDÓN'
+                    subtitle='1ro de Comunión'
+                    date='Sábado 17 mayo 2025'
+                    place='Templo Parroquial'
+                    hour='09:00'
+                />
+                <ItemAgenda
+                    color='#000000AA'
+                    title='CAMPEONATO'
+                    subtitle='Finales 1ro Comunión'
+                    date='Sábado 17 mayo 2025'
                     place='Patio Catequesis'
-                    hour='Ver horarios'
+                    hour='11h30'
+                    url='/campeonato'
+                />
+                <ItemAgenda
+                    color='#6C4923'
+                    title='BENDICIÓN DE BIBLIAS'
+                    subtitle='Año Bíblico'
+                    date='Sábado 17 mayo 2025'
+                    place='Templo Parroquial'
+                    hour='14:00'
+                />
+                <ItemAgenda
+                    color='#000000AA'
+                    title='CAMPEONATO'
+                    subtitle='Finales Año Bíblico'
+                    date='Sábado 17 mayo 2025'
+                    place='Patio Catequesis'
+                    hour='16h30'
+                    url='/campeonato'
+                />
+                <ItemAgenda
+                    color='#245590'
+                    title='CONVIVENCIA'
+                    subtitle='2do de Comunión'
+                    date='Domingo 18 mayo 2025'
+                    place='Catequesis'
+                    hour='09:00'
+                />
+                <ItemAgenda
+                    color='#000000AA'
+                    title='CAMPEONATO'
+                    subtitle='Finales 2do Comunión'
+                    date='Domingo 18 mayo 2025'
+                    place='Patio Catequesis'
+                    hour='14:00'
                     url='/campeonato'
                 />
             </div>
@@ -48,8 +91,8 @@ const MiniAgenda = () => {
             <style jsx>{`
                 section{
                     font-family: 'Lato', sans-serif;
-                    margin: 0px 4% 50px 4%;
                     margin: 35px 4% 0 4%;
+                    margin: 0px 4% 60px 4%;
                     width: 92%;
                 }
 
@@ -80,19 +123,21 @@ const MiniAgenda = () => {
                 }
 
                 .lg{
+                    font-size: 16px;
                     font-weight: 200
                 }
 
                 .nt{
-                    margin-top: -3px;
+                    /* margin-top: -3px; */
+                    margin-top: 0;
                     margin-left: 8px;
                 }
 
                 @media screen and (max-width: 768px){
                     section{
                         font-family: 'Lato', sans-serif;
-                        margin: 10px 15px 20px 15px;
                         margin: 20px 15px 0 15px;
+                        margin: 0px 15px 30px 15px;
                         width: calc(100% - 30px);
                     }
 
@@ -101,12 +146,24 @@ const MiniAgenda = () => {
                     }
 
                     .title{
+                        width: 200px;
+                        margin: -13px auto 0 auto;
+                        font-size: 19px;
                         margin-bottom: 20px;
                     }
 
                     .cont{
                         justify-content: space-between;
                         flex-wrap: wrap;
+                    }
+
+                    /* Normal: Borrado de aqui hacia abajo */
+                    .lg{
+                        font-size: 13px;
+                    }
+
+                    .nt{
+                        margin-left: 6px;
                     }
                 }
             `}</style>

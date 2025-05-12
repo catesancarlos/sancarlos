@@ -1,8 +1,29 @@
+import ItemCalendario from '../calendario/ItemCalendario'
+
 export default function PosInicFem(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final Iniciación - Femenino:</strong>
+                <ItemCalendario
+                    com
+                    final
+                    now={0}
+                    res={[4, 0]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='10 Mayo'
+                    hora='09h00'
+                    genero='F'
+                    equipos={['Niñas guerreras de Dios', 'Elegidas de Dios']}
+                    paralelos={['Iniciación 1 (F)', 'Iniciación 2 (F)']}
+                    logos={['I1F', 'I2F']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Posiciones Iniciación - Femenino:</strong>
                 <table>
                     <tr>

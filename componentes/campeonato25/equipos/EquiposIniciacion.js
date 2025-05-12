@@ -5,9 +5,9 @@ export default function EquiposIniciacion(){
 
     return (
         <ContEquipos nivel='Iniciación' >
-            {/* <Equipo
+            <Equipo
                 com
-                nombre=''
+                nombre='Niños Guerreros de Dios'
                 paralelo='Iniciación 1 (M)'
                 logo='I1M'
                 color='white'
@@ -16,13 +16,13 @@ export default function EquiposIniciacion(){
             />
             <Equipo
                 com
-                nombre=''
+                nombre='Niñas Guerreras de Dios'
                 paralelo='Iniciación 1 (F)'
                 logo='I1F'
                 color='white'
                 borde='black'
                 letter='black'
-            /> */}
+            />
             <Equipo
                 com
                 nombre='Los elegidos de Dios'
@@ -31,6 +31,7 @@ export default function EquiposIniciacion(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 com
@@ -40,6 +41,7 @@ export default function EquiposIniciacion(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 com
@@ -49,6 +51,7 @@ export default function EquiposIniciacion(){
                 color='blue'
                 borde='blue'
                 letter='white'
+                op
             />
             <Equipo
                 com
@@ -58,6 +61,7 @@ export default function EquiposIniciacion(){
                 color='fuchsia'
                 borde='fuchsia'
                 letter='white'
+                op
             />
         </ContEquipos> 
     )

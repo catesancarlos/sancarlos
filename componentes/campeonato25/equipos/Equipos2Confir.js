@@ -37,6 +37,7 @@ export default function Equipos2Confir(){
                 color='black'
                 borde='black'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Los Pastores'
@@ -45,6 +46,7 @@ export default function Equipos2Confir(){
                 color='blue'
                 borde='blue'
                 letter='white'
+                op
             />
             <Equipo
                 nombre='Génesis'
@@ -53,6 +55,7 @@ export default function Equipos2Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Predicadores'
@@ -107,6 +110,7 @@ export default function Equipos2Confir(){
                 color='white'
                 borde='black'
                 letter='black'
+                op
             />
             <Equipo
                 nombre='Estrellitas de María'

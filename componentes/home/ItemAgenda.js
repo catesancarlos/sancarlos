@@ -54,7 +54,12 @@ export default function ItemAgenda({
                     margin-right: 0;
                 }
 
-                article:nth-child(4), article:nth-child(5), article:nth-child(6){
+                article:nth-child(4), article:nth-child(5), article:nth-child(6), article:nth-child(8){
+                    margin-top: 20px;
+                }
+
+                article:nth-child(7){
+                    margin-right: 0;
                     margin-top: 20px;
                 }
                 
@@ -128,7 +133,7 @@ export default function ItemAgenda({
                         margin-bottom: 15px;
                     }
 
-                    article:nth-child(4), article:nth-child(5), article:nth-child(6){
+                    article:nth-child(4), article:nth-child(5), article:nth-child(6), article:nth-child(7), article:nth-child(8){
                         margin-top: 0;
                     }
 

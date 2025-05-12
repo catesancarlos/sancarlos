@@ -1,8 +1,29 @@
+import ItemCalendario from '../calendario/ItemCalendario'
+
 export default function PosInicMas(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final Iniciación - Masculino:</strong>
+                <ItemCalendario
+                    com
+                    final
+                    now={0}
+                    res={[3, 1]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='10 Mayo'
+                    hora='09h30'
+                    genero='M'
+                    equipos={['Niños guerreros de Dios', 'Elegidos de Dios']}
+                    paralelos={['Iniciación 1 (M)', 'Iniciación 2 (M)']}
+                    logos={['I1M', 'I2M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Posiciones Iniciación - Masculino:</strong>
                 <table>
                     <tr>
@@ -37,26 +58,26 @@ export default function PosInicMas(){
                     <tr>
                         <td className='tp'>2</td>
                         <td className='eq'>Los elegidos de Dios (I2M)</td>
-                        <td className='tp'>1</td>
+                        <td className='tp'>2</td>
                         <td className='tp'>0</td>
-                        <td className='tp'>0</td>
                         <td className='tp'>1</td>
-                        <td className='tp'>3</td>
-                        <td className='tp'>4</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>5</td>
+                        <td className='tp'>6</td>
                         <td className='tp'>-1</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     <tr>
                         <td className='tp'>3</td>
                         <td className='eq'>Los Reyes (I3M)</td>
-                        <td className='tp'>1</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>0</td>
-                        <td className='tp'>1</td>
                         <td className='tp'>2</td>
-                        <td className='tp'>3</td>
+                        <td className='tp'>0</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>1</td>
+                        <td className='tp'>4</td>
+                        <td className='tp'>5</td>
                         <td className='tp'>-1</td>
-                        <td className='tp'><strong>0</strong></td>
+                        <td className='tp'><strong>1</strong></td>
                     </tr>
                     {/* <tr className='info-inag'>
                         <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
@@ -101,9 +122,9 @@ export default function PosInicMas(){
                     </tr>
                     <tr>
                         <td>Los elegidos de Dios (I2M)</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>vs.</td>
-                        <td>0</td>
+                        <td>2</td>
                         <td>Los Reyes (I3M)</td>
                     </tr>
                 </table>

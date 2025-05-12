@@ -5,22 +5,34 @@ export default function FinalConfFem(){
             <div>
                 <div className='sec-ruta'>
                     <div className='partido par2'>
-                        <div className='cuadro'>Leones de Dios (23M)</div>
-                        <div className='cuadro'>Guerr. contra el mal (24M)</div>
+                        <div className='cuadro'>
+                            <p>Leones de Dios (23M)</p>
+                            <span className='win'>2</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>G. contra el mal (24M)</p>
+                            <span className='lose'>0</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
                 <div className='sec-ruta-2'>
                     <div className='partido par3'>
-                        <div className='cuadro'>Instr. de Dios (26M)</div>
-                        <div className='cuadro'>Pueblo de Israel (21M)</div>
+                        <div className='cuadro'>
+                            <p>Instrum. de Dios (26M)</p>
+                            <span className='lose'>5</span>
+                        </div>
+                        <div className='cuadro'>
+                            <p>Pueblo de Israel (21M)</p>
+                            <span className='win'>7</span>
+                        </div>
                         <div className='union u1'></div>
                     </div>
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
-                <div className='cuadro' style={{ color: 'transparent' }}>eq</div>
+                <div className='cuadro'>Leones de Dios (23M)</div>
+                <div className='cuadro'>Pueblo de Israel (21M)</div>
                 <div className='union'></div>
             </div>
 
@@ -62,22 +74,23 @@ export default function FinalConfFem(){
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 36px;
+                    width: 32px;
                     color: white;
                     font-weight: bold;
                     border-radius: 0 8px 8px 0;
                 }
 
+                .cuadro p{
+                    text-align: left;
+                    padding-left: 10px;
+                }
+
                 .win{
-                    background: #CC397B;
+                    background: #245590;
                 }
 
                 .lose{
                     background: black;
-                }
-
-                .cuadro p{
-                    margin-right: 26px;
                 }
 
                 .partido .cuadro:first-child{
@@ -132,7 +145,8 @@ export default function FinalConfFem(){
 
                 @media screen and (max-width: 768px){
                     section{
-                        padding-left: 14px;
+                        width: 100%;
+                        padding-left: 0px;
                     }
 
                     .partido{
@@ -146,27 +160,35 @@ export default function FinalConfFem(){
                         font-size: 13px;
                     }
 
+                    .cuadro p{
+                        padding-left: 6px;
+                    }
+
                     .par2 .union, .par3 .union{
-                        left: -12px;
+                        left: 0px;
                     }
 
                     .par2{
-                        margin-left: 12px;
+                        margin-left: 0px;
                     }
 
                     .par3{
-                        margin-left: 12px;
+                        margin-left: 0px;
                     }
 
                     .par4{
-                        width: 206px;
+                        width: 178px;
                         height: 160px;
                         margin-left: 12px;
                     }
 
                     .par4 .union{
                         left: -12px;
-                        margin-right: 14px;
+                        margin-right: 0;
+                    }
+
+                    .par4 .cuadro{
+                        width: 166px;
                     }
                 }
             `}</style>
