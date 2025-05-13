@@ -1,8 +1,28 @@
+import ItemCalendario from '../calendario/ItemCalendario'
+
 export default function PosBiblicoMas(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final Año Bíblico - Masculino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='17 Mayo'
+                    hora='17h20'
+                    genero='M'
+                    equipos={['Camino a la Tierra Prometida', 'Los Misioneros']}
+                    paralelos={['Año Bíblico 5 (M)', 'Año Bíblico 2 (M)']}
+                    logos={['A5M', 'A2M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Posiciones Año Bíblico - Masculino:</strong>
                 <table>
                     <tr>

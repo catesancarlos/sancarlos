@@ -1,3 +1,4 @@
+import ItemCalendario from '../calendario/ItemCalendario'
 import Final2ComuFem from './Final2ComuFem'
 
 export default function PosComuFem(){
@@ -5,6 +6,24 @@ export default function PosComuFem(){
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final 2do Comunión - Femenino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Domingo'
+                    fecha='18 Mayo'
+                    hora='14h00'
+                    genero='F'
+                    equipos={['Pueblo de Israel', 'Elegidas por Jesús']}
+                    paralelos={['2 Comun. 1 (F)', '2 Comun. 6 (F)']}
+                    logos={['21F', '26F']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Fase Final 2do Comunión - Femenino:</strong>
                 <div className='final'>
                     <Final2ComuFem />

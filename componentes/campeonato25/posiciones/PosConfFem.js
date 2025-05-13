@@ -1,10 +1,31 @@
+import ItemCalendario from '../calendario/ItemCalendario'
 import FinalConfFem from './FinalConfFem'
+
+import equipos from '../../../datos/campeonato25/equiposConfirmacion'
 
 export default function PosConfFem(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final Confirmación (1 & 2) - Femenino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Por'
+                    fecha='definir'
+                    hora=''
+                    genero='F'
+                    equipos={[equipos[0].fem, equipos[1].fem]}
+                    paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
+                    logos={[`${equipos[0].id}F`, `${equipos[1].id}F`]}
+                    colores={{
+                        eq1: equipos[0].cf,
+                        eq2: equipos[1].cf
+                    }}
+                />
                 <strong className='title'>Fase Final Confirmación (1 & 2) - Femenino:</strong>
                 <div className='final'>
                     <FinalConfFem />

@@ -1,8 +1,28 @@
+import ItemCalendario from '../calendario/ItemCalendario'
+
 export default function PosBiblicoFem(){
 
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final Año Bíblico - Femenino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='17 Mayo'
+                    hora='16h30'
+                    genero='F'
+                    equipos={['Los Misioneras', 'Mujeres de Nazareth']}
+                    paralelos={['Año Bíblico 2 (F)', 'Año Bíblico 4 (F)']}
+                    logos={['A2F', 'A4F']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['red', 'red', 'white']
+                    }}
+                />
                 <strong className='title'>Posiciones Año Bíblico - Femenino:</strong>
                 <table>
                     <tr>

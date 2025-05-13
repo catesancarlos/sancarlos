@@ -1,3 +1,4 @@
+import ItemCalendario from '../calendario/ItemCalendario'
 import Final2ComuMas from './Final2ComuMas'
 
 export default function PosComuMas(){
@@ -5,6 +6,24 @@ export default function PosComuMas(){
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final 2do Comunión - Masculino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Domingo'
+                    fecha='18 Mayo'
+                    hora='14h50'
+                    genero='M'
+                    equipos={['Leones de Dios', 'Pueblo de Israel']}
+                    paralelos={['2 Comun. 3 (M)', '2 Comun. 1 (M)']}
+                    logos={['23M', '21M']}
+                    colores={{
+                        eq1: ['black', 'black', 'white'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Fase Final 2do Comunión - Masculino:</strong>
                 <div className='final'>
                     <Final2ComuMas />

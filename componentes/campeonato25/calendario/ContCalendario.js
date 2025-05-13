@@ -86,12 +86,12 @@ const optionsArray = [
     },
     {
         no: 17,
-        name: 'S.17'
+        name: 'FINAL'
     }
 ]
 
 export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(16)
+    const [select, setSelect] = useState(17)
 
     return (
         <section>
@@ -113,8 +113,14 @@ export default function Calendario({ datos, children }){
             {
                 select == 17 ?
                     <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo octava semana</strong>
+                        <strong className='now-fec'>Decimo septima semana</strong>
                         <i>[17-18 mayo 2025]</i>
+                        {children}
+                    </div>
+                : select == 18 ?
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Decimo octava semana</strong>
+                        <i>[24-25 mayo 2025]</i>
                         <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
                     </div>
                 : select == 1 ?

@@ -1,8 +1,11 @@
 import { useRef } from 'react'
 import { useEffect } from 'react'
 
+import ItemCalendario from '../calendario/ItemCalendario'
 import Equipo from '../Equipo'
 import FinalConfMas from './FinalConfMas'
+
+import equipos from '../../../datos/campeonato25/equiposConfirmacion'
 
 export default function PosConfMas(){
     const board = useRef(null)
@@ -13,6 +16,24 @@ export default function PosConfMas(){
 
     return(
         <section>
+            <strong className='title'>Final Confirmación (1 & 2) - Masculino:</strong>
+            <ItemCalendario
+                final
+                now={0}
+                res={[0, 0]}
+                home={false}
+                dia='Por'
+                fecha='definir'
+                hora=''
+                genero='M'
+                equipos={[equipos[2].mas, equipos[4].mas]}
+                paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
+                logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
+                colores={{
+                    eq1: equipos[2].cm,
+                    eq2: equipos[4].cm
+                }}
+            />
             <strong className='title'>Fase Final Confirmación (1 & 2) - Masculino:</strong>
             <div className='final'>
                 <FinalConfMas />

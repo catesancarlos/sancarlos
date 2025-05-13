@@ -1,3 +1,4 @@
+import ItemCalendario from '../calendario/ItemCalendario'
 import Final1ComuMas from './Final1ComuMas'
 
 export default function PosReconMas(){
@@ -5,6 +6,24 @@ export default function PosReconMas(){
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final 1ro Comunión - Masculino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='17 Mayo'
+                    hora='11h20'
+                    genero='M'
+                    equipos={['Soldados de Jesús', 'Guerreros de Dios']}
+                    paralelos={['1 Comun. 3 (M)', '1 Comun. 5 (M)']}
+                    logos={['13M', '15M']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Fase Final 1ro Comunión - Masculino:</strong>
                 <div className='final'>
                     <Final1ComuMas />

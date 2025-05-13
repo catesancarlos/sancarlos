@@ -1,3 +1,4 @@
+import ItemCalendario from '../calendario/ItemCalendario'
 import Final1ComuFem from './Final1ComuFem'
 
 export default function PosReconFem(){
@@ -5,6 +6,24 @@ export default function PosReconFem(){
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Final 1ro Comunión - Femenino:</strong>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[0, 0]}
+                    home={false}
+                    dia='Sábado'
+                    fecha='17 Mayo'
+                    hora='10h40'
+                    genero='F'
+                    equipos={['Campeonas del Fútbol', 'Siervas de Dios']}
+                    paralelos={['1 Comun. 2 (F)', '1 Comun. 6 (F)']}
+                    logos={['12F', '16F']}
+                    colores={{
+                        eq1: ['white', 'black', 'black'],
+                        eq2: ['white', 'black', 'black']
+                    }}
+                />
                 <strong className='title'>Fase Final 1ro Comunión - Femenino:</strong>
                 <div className='final'>
                     <Final1ComuFem />
