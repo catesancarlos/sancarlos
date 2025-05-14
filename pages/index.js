@@ -14,6 +14,7 @@ import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
 import db  from '../services/dBase'
 import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 import Finales from '../componentes/home/Finales'
+import BannerCampeon from '../componentes/campeonato25/BannerCampeon'
 
 const Home = () => {
     const [section, setSection] = useState(false)
@@ -64,6 +65,13 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
+                <BannerCampeon
+                    img='/campeonato/campeonIniciacionM.jpg'
+                    name='Niños Guerreros de Dios'
+                    group='Iniciación 1'
+                    genre='M'
+                    home
+                />
                 <MiniAgenda />
                 {/* <Finales /> */}
                 <div className='cont-jes'>
