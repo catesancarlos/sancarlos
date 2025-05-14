@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 
 export default function PosInicFem(){
@@ -5,7 +6,14 @@ export default function PosInicFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final Iniciación - Femenino:</strong>
+                <strong className='title'>Iniciación - Campeón Femenino:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeonIniciacionM.jpg'
+                    name='Niñas Guerreras de Dios'
+                    group='Iniciación 1'
+                    genre='F'
+                />
+                <strong className='title'>Iniciación - Final Femenina:</strong>
                 <ItemCalendario
                     com
                     final
@@ -24,7 +32,7 @@ export default function PosInicFem(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Posiciones Iniciación - Femenino:</strong>
+                <strong className='title'>Iniciación - Posiciones Femenino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

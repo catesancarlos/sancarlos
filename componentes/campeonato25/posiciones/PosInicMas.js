@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 
 export default function PosInicMas(){
@@ -5,7 +6,14 @@ export default function PosInicMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final Iniciación - Masculino:</strong>
+                <strong className='title'>Iniciación - Campeón Masculino:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeonIniciacionM.jpg'
+                    name='Niños Guerreros de Dios'
+                    group='Iniciación 1'
+                    genre='M'
+                />
+                <strong className='title'>Iniciación - Final Masculino:</strong>
                 <ItemCalendario
                     com
                     final
@@ -24,7 +32,7 @@ export default function PosInicMas(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Posiciones Iniciación - Masculino:</strong>
+                <strong className='title'>Iniciación - Posiciones Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

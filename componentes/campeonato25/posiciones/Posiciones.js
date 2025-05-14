@@ -70,7 +70,7 @@ const opcionesArrayCom = [
 ]
 
 const Posiciones = () => {
-    const [select, setSelect] = useState(4)
+    const [select, setSelect] = useState(5)
 
     return (
         <section>
