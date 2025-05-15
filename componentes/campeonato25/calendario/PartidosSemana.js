@@ -79,7 +79,7 @@ export default function PartidosSemana({
                 fecha='17 Mayo'
                 hora='16h30'
                 genero='F'
-                equipos={['Los Misioneras', 'Mujeres de Nazareth']}
+                equipos={['Las Misioneras', 'Mujeres de Nazareth']}
                 paralelos={['Año Bíblico 2 (F)', 'Año Bíblico 4 (F)']}
                 logos={['A2F', 'A4F']}
                 colores={{
