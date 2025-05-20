@@ -18,6 +18,7 @@ import PartidosPasadosF13 from './pasados/PartidosPasadosF13'
 import PartidosPasadosF14 from './pasados/PartidosPasadosF14'
 import PartidosPasadosF15 from './pasados/PartidosPasadosF15'
 import PartidosPasadosF16 from './pasados/PartidosPasadosF16'
+import PartidosPasadosF17 from './pasados/PartidosPasadosF17'
 
 const optionsArray = [
     {
@@ -86,12 +87,16 @@ const optionsArray = [
     },
     {
         no: 17,
+        name: 'S.17'
+    },
+    {
+        no: 18,
         name: 'FINAL'
     }
 ]
 
 export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(17)
+    const [select, setSelect] = useState(18)
 
     return (
         <section>
@@ -111,19 +116,7 @@ export default function Calendario({ datos, children }){
                 />
             </div>
             {
-                select == 17 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo septima semana</strong>
-                        <i>[17-18 mayo 2025]</i>
-                        {children}
-                    </div>
-                : select == 18 ?
-                    <div className='fecha-label'>
-                        <strong className='now-fec'>Decimo octava semana</strong>
-                        <i>[24-25 mayo 2025]</i>
-                        <strong className='ct'>Los demas partidos, se iran publicando paulatinamente...</strong>
-                    </div>
-                : select == 1 ?
+                select == 1 ?
                     <div className='fecha-label'>
                         <PartidosPasadosF1
                             title='Resultados Semana 1:'
@@ -245,14 +238,27 @@ export default function Calendario({ datos, children }){
                         />
                     </div>
                 : select == 16 ?
-                <div className='fecha-label'>
-                    <PartidosPasadosF16
-                        title='Resultados Semana 16:'
-                        fec='[10-11 mayo 2025]'
-                        fecha={datos[15]}
-                    />
-                </div>
-            : ''
+                    <div className='fecha-label'>
+                        <PartidosPasadosF16
+                            title='Resultados Semana 16:'
+                            fec='[10-11 mayo 2025]'
+                            fecha={datos[15]}
+                        />
+                    </div>
+                :  select == 17 ?
+                    <div className='fecha-label'>
+                        <PartidosPasadosF17
+                            title='Resultados Semana 17:'
+                            fec='[17-18 mayo 2025]'
+                            fecha={datos[16]}
+                        />
+                    </div>
+                :
+                    <div className='fecha-label'>
+                        <strong className='now-fec'>Última semana</strong>
+                        <i>[24-25 mayo 2025]</i>
+                        { children }
+                    </div>
             }
 
             <style jsx>{`

@@ -1,5 +1,7 @@
 import ItemCalendario from './ItemCalendario'
 
+import equipos from '../../../datos/campeonato25/equiposConfirmacion'
+
 export default function PartidosSemana({
     title1,
     title2,
@@ -16,50 +18,25 @@ export default function PartidosSemana({
         <>
             { title1 && <p>{title1}</p> }
             <ItemCalendario
-                com
                 final
-                fase='FINAL - Reconciliación'
-                control={control && control[2]}
-                now={fecha?.partido3}
-                res={fecha?.res3}
-                jugador={fecha?.jugador3}
-                pen={fecha?.pen3}
+                fase='FINAL - Confirmación'
+                control={control && control[0]}
+                now={fecha?.partido1}
+                res={fecha?.res1}
+                jugador={fecha?.jugador1}
+                pen={fecha?.pen1}
+                extra={fecha?.extra1}
                 home={home}
                 dia='Sábado'
-                fecha='17 Mayo'
-                hora='10h40'
+                fecha='24 Mayo'
+                hora='15h40'
                 genero='F'
-                equipos={['Campeonas del Fútbol', 'Siervas de Dios']}
-                paralelos={['1 Comun. 2 (F)', '1 Comun. 6 (F)']}
-                logos={['12F', '16F']}
+                equipos={[equipos[0].fem, equipos[1].fem]}
+                paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
+                logos={[`${equipos[0].id}F`, `${equipos[1].id}F`]}
                 colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                com
-                final
-                fase='FINAL - Reconciliación'
-                control={control && control[4]}
-                now={fecha?.partido5}
-                res={fecha?.res5}
-                jugador={fecha?.jugador5}
-                pen={fecha?.pen5}
-                home={home}
-                dia='Sábado'
-                fecha='17 Mayo'
-                hora='11h20'
-                genero='M'
-                equipos={['Soldados de Jesús', 'Guerreros de Dios']}
-                paralelos={['1 Comun. 3 (M)', '1 Comun. 5 (M)']}
-                logos={['13M', '15M']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
+                    eq1: equipos[0].cf,
+                    eq2: equipos[1].cf
                 }}
                 onStatus={onStatus}
                 onGoles={onGoles}
@@ -67,102 +44,24 @@ export default function PartidosSemana({
             />
             <ItemCalendario
                 final
-                fase='FINAL - Año Bíblico'
-                control={control && control[5]}
-                now={fecha?.partido6}
-                res={fecha?.res6}
-                jugador={fecha?.jugador6}
-                pen={fecha?.pen6}
-                extra={fecha?.extra6}
+                fase='FINAL - Confirmación'
+                control={control && control[1]}
+                now={fecha?.partido2}
+                res={fecha?.res2}
+                jugador={fecha?.jugador2}
+                pen={fecha?.pen2}
+                extra={fecha?.extra2}
                 home={home}
                 dia='Sábado'
-                fecha='17 Mayo'
+                fecha='24 Mayo'
                 hora='16h30'
-                genero='F'
-                equipos={['Las Misioneras', 'Mujeres de Nazareth']}
-                paralelos={['Año Bíblico 2 (F)', 'Año Bíblico 4 (F)']}
-                logos={['A2F', 'A4F']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['red', 'red', 'white']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                final
-                fase='FINAL - Año Bíblico'
-                control={control && control[5]}
-                now={fecha?.partido6}
-                res={fecha?.res6}
-                jugador={fecha?.jugador6}
-                pen={fecha?.pen6}
-                extra={fecha?.extra6}
-                home={home}
-                dia='Sábado'
-                fecha='17 Mayo'
-                hora='17h20'
                 genero='M'
-                equipos={['Camino a la Tierra Prometida', 'Los Misioneros']}
-                paralelos={['Año Bíblico 5 (M)', 'Año Bíblico 2 (M)']}
-                logos={['A5M', 'A2M']}
+                equipos={[equipos[2].mas, equipos[4].mas]}
+                paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
+                logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
                 colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            { title2 && <p>{title2}</p> }
-            <ItemCalendario
-                com
-                final
-                fase='FINAL - Comunión'
-                control={control && control[7]}
-                now={fecha?.partido8}
-                res={fecha?.res8}
-                jugador={fecha?.jugador8}
-                pen={fecha?.pen8}
-                extra={fecha?.extra8}
-                home={home}
-                dia='Domingo'
-                fecha='18 Mayo'
-                hora='14h00'
-                genero='F'
-                equipos={['Pueblo de Israel', 'Elegidas por Jesús']}
-                paralelos={['2 Comun. 1 (F)', '2 Comun. 6 (F)']}
-                logos={['21F', '26F']}
-                colores={{
-                    eq1: ['white', 'black', 'black'],
-                    eq2: ['white', 'black', 'black']
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                com
-                final
-                fase='FINAL - Comunión'
-                control={control && control[8]}
-                now={fecha?.partido9}
-                res={fecha?.res9}
-                jugador={fecha?.jugador9}
-                pen={fecha?.pen9}
-                extra={fecha?.extra9}
-                home={home}
-                dia='Domingo'
-                fecha='18 Mayo'
-                hora='14h50'
-                genero='M'
-                equipos={['Leones de Dios', 'Pueblo de Israel']}
-                paralelos={['2 Comun. 3 (M)', '2 Comun. 1 (M)']}
-                logos={['23M', '21M']}
-                colores={{
-                    eq1: ['black', 'black', 'white'],
-                    eq2: ['white', 'black', 'black']
+                    eq1: equipos[2].cm,
+                    eq2: equipos[4].cm
                 }}
                 onStatus={onStatus}
                 onGoles={onGoles}
