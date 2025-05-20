@@ -10,80 +10,48 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <ItemAgenda
+                    color='#cd8202'
+                    title='PRIMERA COMUNIÓN'
+                    subtitle='Paralelos 1, 2, 3, Dolorosa y Molinopamba.'
+                    date='Sábado 24 mayo 2025'
+                    place='Templo Parroquial'
+                    hour='13:00'
+                />
+                <ItemAgenda
+                    color='#cd8202'
+                    title='PRIMERA COMUNIÓN'
+                    subtitle='Paralelos 4, 5, 6, Los Ángeles, Ma Auxiliadora y Adultos.'
+                    date='Sábado 24 mayo 2025'
+                    place='Templo Parroquial'
+                    hour='15:00'
+                />
+                <ItemAgenda
                     main
                     title='Catequesis'
-                    subtitle='Clausura 2024 - 2025'
-                    date='Sábado 17 mayo 2025'
+                    subtitle='Segundos de Confirmación'
+                    date='Sábado 24 mayo 2025'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                 >
-                    <strong>Centro</strong>
-                    <p className='nt lg'>Mañana: 08:45 / Tarde: 13:45{/*  - 11:30 */}</p>
-                    <p className='nt lg'>{/*Tarde: 13:45  - 16:30 */}</p>
+                    {/* <strong>Centro</strong>
+                    <p className='nt lg'>Mañana: 08:45 / Tarde: 13:45 - 11:30</p>
+                    <p className='nt lg'>Tarde: 13:45  - 16:30</p>
                     <strong>Los Ángeles</strong>
-                    <p className='nt lg'>Mañana: 09:00 / Tarde: 14:00{/*  - 11:30 */}</p>
-                    <p className='nt lg'>{/*  Tarde: 14:00 - 16:30 */}</p>
-                    <p className='lg'><strong>Molinopamba:</strong> 08:00{/*  - 11:00 */}</p>
-                    <p className='lg'><strong>Auxiliadora:</strong> 14:00{/*  - 17:00 */}</p>
-                    <p className='lg'><strong>Dolorosa:</strong> 14:00{/*  - 17:00 */}</p>
+                    <p className='nt lg'>Mañana: 09:00 / Tarde: 14:00 - 11:30</p>
+                    <p className='nt lg'>Tarde: 14:00 - 16:30</p> */}
+                    <p className='lg'><strong>Centro:</strong> 13:45 - 16:30</p>
+                    <p className='lg'><strong>Los Ángeles:</strong> 14:00 - 16:30</p>
+                    <p className='lg'><strong>Molinopamba:</strong> 08:00 - 11:00</p>
+                    <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
+                    <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
                 <ItemAgenda
-                    color='#21ACE8'
-                    title='CONSAGRACIÓN NIÑOS'
-                    subtitle='Iniciación'
-                    date='Sábado 17 mayo 2025'
-                    place='Templo Parroquial'
-                    hour='09:00'
-                />
-                <ItemAgenda
-                    color='#EE1C21'
-                    title='FIESTA DEL PERDÓN'
-                    subtitle='1ro de Comunión'
-                    date='Sábado 17 mayo 2025'
-                    place='Templo Parroquial'
-                    hour='09:00'
-                />
-                <ItemAgenda
                     color='#000000AA'
                     title='CAMPEONATO'
-                    subtitle='Finales 1ro Comunión'
-                    date='Sábado 17 mayo 2025'
+                    subtitle='Finales Confirmación'
+                    date='Sábado 24 mayo 2025'
                     place='Patio Catequesis'
-                    hour='11h30'
-                    url='/campeonato'
-                />
-                <ItemAgenda
-                    color='#6C4923'
-                    title='BENDICIÓN DE BIBLIAS'
-                    subtitle='Año Bíblico'
-                    date='Sábado 17 mayo 2025'
-                    place='Templo Parroquial'
-                    hour='14:00'
-                />
-                <ItemAgenda
-                    color='#000000AA'
-                    title='CAMPEONATO'
-                    subtitle='Finales Año Bíblico'
-                    date='Sábado 17 mayo 2025'
-                    place='Patio Catequesis'
-                    hour='16h30'
-                    url='/campeonato'
-                />
-                <ItemAgenda
-                    color='#245590'
-                    title='CONVIVENCIA'
-                    subtitle='2do de Comunión'
-                    date='Domingo 18 mayo 2025'
-                    place='Catequesis'
-                    hour='09:00'
-                />
-                <ItemAgenda
-                    color='#000000AA'
-                    title='CAMPEONATO'
-                    subtitle='Finales 2do Comunión'
-                    date='Domingo 18 mayo 2025'
-                    place='Patio Catequesis'
-                    hour='14:00'
+                    hour='15:30'
                     url='/campeonato'
                 />
             </div>
@@ -124,7 +92,8 @@ const MiniAgenda = () => {
 
                 .lg{
                     font-size: 16px;
-                    font-weight: 200
+                    font-weight: 200;
+                    margin-bottom: 4px;
                 }
 
                 .nt{

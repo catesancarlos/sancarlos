@@ -65,13 +65,13 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                <BannerCampeon
+                {/* <BannerCampeon
                     img='/campeonato/campeonIniciacionM.jpg'
                     name='Niños Guerreros de Dios'
                     group='Iniciación 1'
                     genre='M'
                     home
-                />
+                /> */}
                 <MiniAgenda />
                 {/* <Finales /> */}
                 <div className='cont-jes'>
