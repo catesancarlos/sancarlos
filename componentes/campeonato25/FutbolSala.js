@@ -133,7 +133,8 @@ const FutbolSala = () => {
             </p>
             <p>
                 <strong>R28:</strong> El guardameta podrá cambiar su puesto con cualquier otro jugador, en 
-                este caso si se deberá advertir al árbitro. 
+                este caso si se deberá advertir al árbitro. Este cambio de posición se podra realizar con el  
+                juego detenido (saque de banda, saque de meta, saque de centro, tiro de esquina o falta).
             </p>
             <p className='sb'>
                 <strong>Tiros libres indirectos:</strong> 
