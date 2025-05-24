@@ -16,7 +16,7 @@ export default function PartidosSemana({
 
     return (
         <>
-            { title1 && <p>{title1}</p> }
+            { title2 && <p>{title2}</p> }
             <ItemCalendario
                 final
                 fase='FINAL - Confirmación'
@@ -27,9 +27,9 @@ export default function PartidosSemana({
                 pen={fecha?.pen1}
                 extra={fecha?.extra1}
                 home={home}
-                dia='Sábado'
-                fecha='24 Mayo'
-                hora='15h40'
+                dia='Domingo'
+                fecha='25 Mayo'
+                hora='11h00'
                 genero='F'
                 equipos={[equipos[0].fem, equipos[1].fem]}
                 paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
@@ -52,9 +52,9 @@ export default function PartidosSemana({
                 pen={fecha?.pen2}
                 extra={fecha?.extra2}
                 home={home}
-                dia='Sábado'
-                fecha='24 Mayo'
-                hora='16h30'
+                dia='Domingo'
+                fecha='25 Mayo'
+                hora='12h00'
                 genero='M'
                 equipos={[equipos[2].mas, equipos[4].mas]}
                 paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
