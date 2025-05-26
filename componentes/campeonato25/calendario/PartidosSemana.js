@@ -16,7 +16,7 @@ export default function PartidosSemana({
 
     return (
         <>
-            { title1 && <p>{title1}</p> }
+            { title2 && <p>{title2}</p> }
             <ItemCalendario
                 final
                 fase='FINAL - Confirmación'
