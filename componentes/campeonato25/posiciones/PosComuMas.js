@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 import Final2ComuMas from './Final2ComuMas'
 
@@ -6,11 +7,18 @@ export default function PosComuMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final 2do Comunión - Masculino:</strong>
+                <strong className='title'>2do Comunión - Campeones:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeones2doCom.png'
+                    name='Leones de Dios'
+                    group='2do de Comunión 3'
+                    genre='M'
+                />
+                <strong className='title'>2do Comunión - Final Masculina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[9, 7]}
                     home={false}
                     dia='Domingo'
                     fecha='18 Mayo'
@@ -24,12 +32,12 @@ export default function PosComuMas(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Fase Final 2do Comunión - Masculino:</strong>
+                <strong className='title'>2do Comunión - Fase Final Masculina:</strong>
                 <div className='final'>
                     <Final2ComuMas />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
                 </div>
-                <strong className='title'>Posiciones 2do Comunión - Masculino:</strong>
+                <strong className='title'>2do Comunión - Posiciones Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

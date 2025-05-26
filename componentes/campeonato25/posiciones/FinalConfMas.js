@@ -53,8 +53,14 @@ export default function FinalConfMas(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro'>Confirmación FC (22M)</div>
-                <div className='cuadro'>GDL (24M)</div>
+                <div className='cuadro'>
+                    <p>Confirmación FC (22M)</p>
+                    <span className='win'>11</span>
+                </div>
+                <div className='cuadro'>
+                    <p>GDL (24M)</p>
+                    <span className='lose'>8</span>
+                </div>
                 <div className='union'></div>
             </div>
 

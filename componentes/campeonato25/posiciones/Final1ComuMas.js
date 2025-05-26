@@ -31,8 +31,14 @@ export default function FinalConfFem(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro'>Soldados de Jesús (13M)</div>
-                <div className='cuadro'>Guerreros de Dios (15M)</div>
+                <div className='cuadro'>
+                    <p>Soldados de Jesús (13M)</p>
+                    <span className='win'>10</span>
+                </div>
+                <div className='cuadro'>
+                    <p>Guerreros de Dios (15M)</p>
+                    <span className='lose'>6</span>
+                </div>
                 <div className='union'></div>
             </div>
 

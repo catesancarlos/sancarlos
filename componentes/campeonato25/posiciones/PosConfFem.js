@@ -1,22 +1,31 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 import FinalConfFem from './FinalConfFem'
 
 import equipos from '../../../datos/campeonato25/equiposConfirmacion'
+import FotosConfFem from './FotosConfFem'
 
 export default function PosConfFem(){
 
     return (
         <section>
+            <strong className='title'>2do Confirmación - Campeonas:</strong>
+            <BannerCampeon
+                img='/campeonato/campeonas2doConf.jpg'
+                name='Gálatas 1, 10'
+                group='2do de Confirmación 1'
+                genre='F'
+            />
             <div className='tables'>
-                <strong className='title'>Final Confirmación (1 & 2) - Femenino:</strong>
+                <strong className='title'>Confirmación (1 & 2) - Final Femenina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[6, 7]}
                     home={false}
-                    dia='Por'
-                    fecha='definir'
-                    hora=''
+                    dia='Domingo'
+                    fecha='25 mayo'
+                    hora='11h00'
                     genero='F'
                     equipos={[equipos[0].fem, equipos[1].fem]}
                     paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
@@ -26,12 +35,13 @@ export default function PosConfFem(){
                         eq2: equipos[1].cf
                     }}
                 />
-                <strong className='title'>Fase Final Confirmación (1 & 2) - Femenino:</strong>
+                <FotosConfFem />
+                <strong className='title'>Confirmación (1 & 2) - Fase Final Femenina:</strong>
                 <div className='final'>
                     <FinalConfFem />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
                 </div>
-                <strong className='title'>Posiciones Fase 1 Confirmación (1 & 2) - Femenino:</strong>
+                <strong className='title'>Confirmación (1 & 2) - Posiciones Fase 1 Femenina:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>
@@ -341,6 +351,11 @@ export default function PosConfFem(){
             </div>
 
             <style jsx>{`
+                section{
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 .title{
                     margin-top: 28px;
                     width: 100%;

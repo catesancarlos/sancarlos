@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 
 export default function PosBiblicoMas(){
@@ -5,11 +6,18 @@ export default function PosBiblicoMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final Año Bíblico - Masculino:</strong>
+                <strong className='title'>Año Bíblico - Campeones:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeonesBiblico.jpg'
+                    name='Los Misioneros'
+                    group='Año Bíblico 2'
+                    genre='M'
+                />
+                <strong className='title'>Año Bíblico - Final Masculina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[4, 7]}
                     home={false}
                     dia='Sábado'
                     fecha='17 Mayo'
@@ -23,7 +31,7 @@ export default function PosBiblicoMas(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Posiciones Año Bíblico - Masculino:</strong>
+                <strong className='title'>Año Bíblico - Posiciones Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

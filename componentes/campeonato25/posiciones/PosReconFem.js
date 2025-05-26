@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 import Final1ComuFem from './Final1ComuFem'
 
@@ -6,11 +7,18 @@ export default function PosReconFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final 1ro Comunión - Femenino:</strong>
+                <strong className='title'>1ro Comunión - Campeonas:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeonas1roCom.jpg'
+                    name='Campeonas del Fútbol'
+                    group='1ro de Comunión 2'
+                    genre='F'
+                />
+                <strong className='title'>1ro Comunión - Final Femenina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[2, 0]}
                     home={false}
                     dia='Sábado'
                     fecha='17 Mayo'
@@ -24,12 +32,12 @@ export default function PosReconFem(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Fase Final 1ro Comunión - Femenino:</strong>
+                <strong className='title'>1ro Comunión - Fase Final Femenina:</strong>
                 <div className='final'>
                     <Final1ComuFem />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
                 </div>
-                <strong className='title'>Posiciones 1ro Comunión - Femenino:</strong>
+                <strong className='title'>1ro Comunión - Posiciones Femenino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

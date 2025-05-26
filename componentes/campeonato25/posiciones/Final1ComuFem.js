@@ -31,8 +31,14 @@ export default function FinalConfFem(){
                 </div>
             </div>
             <div className='partido par4'>
-                <div className='cuadro'>Campeonas del Fútbol (12F)</div>
-                <div className='cuadro'>Siervas de Dios (16F)</div>
+                <div className='cuadro'>
+                    <p>Camp. del Fútbol (12F)</p>
+                    <span className='win'>2</span>
+                </div>
+                <div className='cuadro'>
+                    <p>Siervas de Dios (16F)</p>
+                    <span className='lose'>0</span>
+                </div>
                 <div className='union'></div>
             </div>
 

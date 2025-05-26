@@ -1,11 +1,13 @@
 import { useRef } from 'react'
 import { useEffect } from 'react'
 
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 import Equipo from '../Equipo'
 import FinalConfMas from './FinalConfMas'
 
 import equipos from '../../../datos/campeonato25/equiposConfirmacion'
+import FotosConfFem from './FotosConfFem'
 
 export default function PosConfMas(){
     const board = useRef(null)
@@ -16,30 +18,40 @@ export default function PosConfMas(){
 
     return(
         <section>
-            <strong className='title'>Final Confirmación (1 & 2) - Masculino:</strong>
-            <ItemCalendario
-                final
-                now={0}
-                res={[0, 0]}
-                home={false}
-                dia='Por'
-                fecha='definir'
-                hora=''
-                genero='M'
-                equipos={[equipos[2].mas, equipos[4].mas]}
-                paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
-                logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
-                colores={{
-                    eq1: equipos[2].cm,
-                    eq2: equipos[4].cm
-                }}
+            <strong className='title'>2do Confirmación - Campeones:</strong>
+            <BannerCampeon
+                img='/campeonato/campeones2doConf.jpg'
+                name='Confirmación F.C.'
+                group='2do de Confirmación 2'
+                genre='M'
             />
-            <strong className='title'>Fase Final Confirmación (1 & 2) - Masculino:</strong>
+            <strong className='title'>Confirmación (1 & 2) - Final Masculina:</strong>
+            <div className='tables'>
+                <ItemCalendario
+                    final
+                    now={0}
+                    res={[11, 8]}
+                    home={false}
+                    dia='Domingo'
+                    fecha='25 mayo'
+                    hora='12h00'
+                    genero='M'
+                    equipos={[equipos[2].mas, equipos[4].mas]}
+                    paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
+                    logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
+                    colores={{
+                        eq1: equipos[2].cm,
+                        eq2: equipos[4].cm
+                    }}
+                />
+                <FotosConfFem mas />
+            </div>
+            <strong className='title'>Confirmación (1 & 2) - Fase Final Masculina:</strong>
             <div className='final'>
                 <FinalConfMas />
                 <p className='info2'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
             </div>
-            <strong className='title'>Fixture Fase 1 Confirmación (1 & 2) - Masculino:</strong>
+            <strong className='title'>Confirmación (1 & 2) - Fixture Fase 1 Masculino:</strong>
             <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p>
             <div className='cont'>
                 <div className='primera'>
@@ -610,6 +622,12 @@ export default function PosConfMas(){
                     display: block;
                     margin-bottom: 15px;
                     text-align: center;
+                }
+
+                .tables{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 .cont{

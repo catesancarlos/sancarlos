@@ -10,7 +10,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
                 com
                 final
                 fase='FINAL - Reconciliación'
-                now={fecha?.partido1}
+                /* now={fecha?.partido1} */
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
@@ -31,7 +31,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
                 com
                 final
                 fase='FINAL - Reconciliación'
-                now={fecha?.partido2}
+                /* now={fecha?.partido2} */
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}
@@ -51,7 +51,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
             <ItemCalendario
                 final
                 fase='FINAL - Año Bíblico'
-                now={fecha?.partido3}
+                /* now={fecha?.partido3} */
                 res={fecha?.res3}
                 jugador={fecha?.jugador3}
                 pen={fecha?.pen3}
@@ -72,7 +72,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
             <ItemCalendario
                 final
                 fase='FINAL - Año Bíblico'
-                now={fecha?.partido4}
+                /* now={fecha?.partido4} */
                 res={fecha?.res4}
                 jugador={fecha?.jugador4}
                 pen={fecha?.pen4}
@@ -94,7 +94,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
                 com
                 final
                 fase='FINAL - Comunión'
-                now={fecha?.partido5}
+                /* now={fecha?.partido5} */
                 res={fecha?.res5}
                 jugador={fecha?.jugador5}
                 pen={fecha?.pen5}
@@ -116,7 +116,7 @@ export default function PartidosPasadosF16({ title, fec, fecha, home }){
                 com
                 final
                 fase='FINAL - Comunión'
-                now={fecha?.partido6}
+                /* now={fecha?.partido6} */
                 res={fecha?.res6}
                 jugador={fecha?.jugador6}
                 pen={fecha?.pen6}

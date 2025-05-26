@@ -20,7 +20,11 @@ export default function Modal({ children, background, share, onClose }){
     return(
         <div className='total'>
             <div className='contenido' ref={refCont}>
-                { (onClose && !share) && <div className='close' onClick={() => onClose(false)}>X</div> }
+                { (onClose && !share) && 
+                    <div className='close'>
+                        <p onClick={() => onClose(false)}>X</p>
+                    </div>
+                }
                 {children}
             </div>
 
@@ -47,11 +51,11 @@ export default function Modal({ children, background, share, onClose }){
                     background: ${share ? 'transparent' : 'white'};
                 }
 
-                .close{
+                /* .close{
                     background: black;
                     position: absolute;
-                    /* top: -30px;
-                    right: -30px; */
+                    top: -30px;
+                    right: -30px;
                     top: -15px;
                     right: calc(50% - 15px);
                     padding: 2px 8px 3px 8px;
@@ -61,6 +65,36 @@ export default function Modal({ children, background, share, onClose }){
                     border-radius: 15px;
                     cursor: pointer;
                     z-index: 11;
+                } */
+
+                .close{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 11;
+                }
+
+                .close p{
+                    position: absolute;
+                    right: 0;
+                    background: black;
+                    width: 41px;
+                    line-height: 41px;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                @media screen and (max-width: 768px){
+                    .close p{
+                        width: 25px;
+                        line-height: 25px;
+                        color: white;
+                        font-size: 16px;
+                    }
                 }
             `}</style>
         </div>

@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 import Final1ComuMas from './Final1ComuMas'
 
@@ -6,11 +7,18 @@ export default function PosReconMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final 1ro Comunión - Masculino:</strong>
+                <strong className='title'>1ro Comunión - Campeones:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeones1roCom.jpg'
+                    name='Soldados de Jesús'
+                    group='1ro de Comunión 3'
+                    genre='M'
+                />
+                <strong className='title'>1ro Comunión - Final Masculina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[10, 6]}
                     home={false}
                     dia='Sábado'
                     fecha='17 Mayo'
@@ -24,12 +32,12 @@ export default function PosReconMas(){
                         eq2: ['white', 'black', 'black']
                     }}
                 />
-                <strong className='title'>Fase Final 1ro Comunión - Masculino:</strong>
+                <strong className='title'>1ro Comunión - Fase Final Masculina:</strong>
                 <div className='final'>
                     <Final1ComuMas />
                     <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
                 </div>
-                <strong className='title'>Posiciones 1ro Comunión - Masculino:</strong>
+                <strong className='title'>1ro Comunión - Posiciones Masculino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

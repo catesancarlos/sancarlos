@@ -21,7 +21,7 @@ export default function PartidosSemana({
                 final
                 fase='FINAL - Confirmación'
                 control={control && control[0]}
-                now={fecha?.partido1}
+                /* now={fecha?.partido1} */
                 res={fecha?.res1}
                 jugador={fecha?.jugador1}
                 pen={fecha?.pen1}
@@ -46,7 +46,7 @@ export default function PartidosSemana({
                 final
                 fase='FINAL - Confirmación'
                 control={control && control[1]}
-                now={fecha?.partido2}
+                /* now={fecha?.partido2} */
                 res={fecha?.res2}
                 jugador={fecha?.jugador2}
                 pen={fecha?.pen2}

@@ -1,3 +1,4 @@
+import BannerCampeon from '../BannerCampeon'
 import ItemCalendario from '../calendario/ItemCalendario'
 
 export default function PosBiblicoFem(){
@@ -5,11 +6,18 @@ export default function PosBiblicoFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Final Año Bíblico - Femenino:</strong>
+                <strong className='title'>Año Bíblico - Campeonas:</strong>
+                <BannerCampeon
+                    img='/campeonato/campeonasBiblico.jpg'
+                    name='Las Misioneras'
+                    group='Año Bíblico 2'
+                    genre='F'
+                />
+                <strong className='title'>Año Bíblico - Final Femenina:</strong>
                 <ItemCalendario
                     final
                     now={0}
-                    res={[0, 0]}
+                    res={[9, 1]}
                     home={false}
                     dia='Sábado'
                     fecha='17 Mayo'
@@ -23,7 +31,7 @@ export default function PosBiblicoFem(){
                         eq2: ['red', 'red', 'white']
                     }}
                 />
-                <strong className='title'>Posiciones Año Bíblico - Femenino:</strong>
+                <strong className='title'>Año Bíblico - Posiciones Femenino:</strong>
                 <table>
                     <tr>
                         <td colSpan={10} className='title-table'>

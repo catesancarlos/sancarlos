@@ -6,7 +6,7 @@ export default function PosInicFem(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Iniciación - Campeón Femenino:</strong>
+                <strong className='title'>Iniciación - Campeonas:</strong>
                 <BannerCampeon
                     img='/campeonato/campeonIniciacionM.jpg'
                     name='Niñas Guerreras de Dios'
