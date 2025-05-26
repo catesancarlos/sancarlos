@@ -10,20 +10,20 @@ const MiniAgenda = () => {
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
                 <ItemAgenda
-                    color='#cd8202'
-                    title='PRIMERA COMUNIÓN'
-                    subtitle='Paralelos 1, 2, 3, Dolorosa y Molinopamba.'
-                    date='Sábado 24 mayo 2025'
-                    place='Templo Parroquial'
-                    hour='13:00'
+                    color='#245590'
+                    title='CONVIVENCIA'
+                    subtitle='2dos de Confirmación'
+                    date='Sábado 31 mayo 2025'
+                    place='09:00 / Catequesis (Alumnos)'
+                    hour='10:30 / Templo (PPFF)'
                 />
                 <ItemAgenda
                     color='#cd8202'
-                    title='PRIMERA COMUNIÓN'
-                    subtitle='Paralelos 4, 5, 6, Los Ángeles, Ma Auxiliadora y Adultos.'
-                    date='Sábado 24 mayo 2025'
+                    title='PRESACREMANTAL'
+                    subtitle='Padrinos de confirmación'
+                    date='Domingo 01 junio 2025'
                     place='Templo Parroquial'
-                    hour='15:00'
+                    hour='13:00'
                 />
                 {/* <ItemAgenda
                     main
@@ -45,15 +45,7 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                <ItemAgenda
-                    color='#000000AA'
-                    title='CAMPEONATO'
-                    subtitle='Finales Confirmación'
-                    date='Sábado 24 mayo 2025'
-                    place='Patio Catequesis'
-                    hour='15:30'
-                    url='/campeonato'
-                /> */}
+                */}
             </div>
 
             <style jsx>{`
