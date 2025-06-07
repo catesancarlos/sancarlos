@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import { useRouter } from 'next/router'
+
 import AppLayout from '../componentes/layout'
 import InfoSalida from '../componentes/home/InfoSalida'
 import InfoHoy from '../componentes/home/InfoHoy'
@@ -17,6 +19,7 @@ import Finales from '../componentes/home/Finales'
 import BannerCampeones from '../componentes/campeonato25/BannerCampeones'
 
 const Home = () => {
+    const router = useRouter()
     const [section, setSection] = useState(false)
     const [first, setFirst] = useState(true)
     const [datos, setDatos] = useState(null)
@@ -65,9 +68,10 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                <BannerCampeones
-                    
-                />
+                <p>Fotos CONFIRMACIÓN</p>
+                <p onClick={() => router.push('https://www.dropbox.com/scl/fo/pzyhirhoq6t993da28x87/AGdhmttKxufRc4FqqkQlU_I?rlkey=3iyivhppqw0m666i33f9av0cc&st=qz4fw17o&dl=0')}>Eucaristia 8am</p>
+                <p onClick={() => router.push('https://www.dropbox.com/scl/fo/18rcp8dqouh2yz5d3ndve/ADGIyLet2DrrtK-Ds4Mvyr4?rlkey=xkpwykgwf9k026799qee4lb48&st=ijtlszdp&dl=0')}>Eucaristia 10am</p>
+                <BannerCampeones/>
                 <MiniAgenda />
                 {/* <Finales /> */}
                 <div className='cont-jes'>
