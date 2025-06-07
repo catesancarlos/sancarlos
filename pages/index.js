@@ -105,7 +105,7 @@ const Home = () => {
                 </div> */}
                 <CampSection>
                     <PartidosSemana
-                        title2='Partidos sábado:'
+                        title2='Partidos pasados:'
                         title1='Partidos domingo:'
                         fecha={fechaNow}
                         home

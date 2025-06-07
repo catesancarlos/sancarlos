@@ -11,19 +11,19 @@ const MiniAgenda = () => {
             <div className='cont'>
                 <ItemAgenda
                     color='#245590'
-                    title='CONVIVENCIA'
-                    subtitle='2dos de Confirmación'
-                    date='Sábado 31 mayo 2025'
-                    place='09:00 / Catequesis (Alumnos)'
-                    hour='10:30 / Templo (PPFF)'
+                    title='CONFIRMACIÓN'
+                    subtitle='Paralelos 1, 2, 3 y Adultos'
+                    date='Sábado 07 junio 2025'
+                    place='Templo Parroquial'
+                    hour='08:00 (07:30)'
                 />
                 <ItemAgenda
                     color='#cd8202'
-                    title='PRESACREMANTAL'
-                    subtitle='Padrinos de confirmación'
-                    date='Domingo 01 junio 2025'
+                    title='CONFIRMACIÓN'
+                    subtitle='Paralelos 4, 5 y Comunidades'
+                    date='Sábado 07 junio 2025'
                     place='Templo Parroquial'
-                    hour='13:00'
+                    hour='10:00 (09:30)'
                 />
                 {/* <ItemAgenda
                     main
