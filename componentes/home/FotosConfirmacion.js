@@ -21,17 +21,18 @@ const FotosConfirmacion = () => {
                     <strong>Eucaristia 8am</strong>
                     <p>Unción Crisma</p>
                 </div>
-                <div
+                {/* <div
                     className='opcion'
                     onClick={() => router.push('https://www.dropbox.com/scl/fo/cxrcd7wfk2w8cea1m0qap/AIrz2VeiXKLYuiyBwxF4poI?rlkey=axgj4qiejholwbw9wt36xxn15&st=slepulk9&dl=0')}>
                     <strong>Eucaristia 8am</strong>
                     <p>Varias</p>
-                </div>
+                </div> */}
             </div>
             <div className='cont c2'>
                 <div
                     className='opcion'
-                    onClick={() => router.push('https://www.dropbox.com/scl/fo/besb4xnobva1e7nsg102e/AKv2PNIOTGR7rVPuStpcobA?rlkey=1k1u1gd5v9xvddvy7dch36pug&st=tz6is6ku&dl=0')}>
+                    /* onClick={() => router.push('https://www.dropbox.com/scl/fo/besb4xnobva1e7nsg102e/AKv2PNIOTGR7rVPuStpcobA?rlkey=1k1u1gd5v9xvddvy7dch36pug&st=tz6is6ku&dl=0')}> */
+                    onClick={() => router.push('https://dapder.com/0vflmp')}>
                     <strong>Eucaristia 10am</strong>
                     <p>Ingreso</p>
                 </div> 
@@ -41,12 +42,12 @@ const FotosConfirmacion = () => {
                     <strong>Eucaristia 10am</strong>
                     <p>Unción Crisma</p>
                 </div>
-                <div
+                {/* <div
                     className='opcion'
                     onClick={() => router.push('https://www.dropbox.com/scl/fo/uhfg1ogymnvctyrtxf57l/ADdPhdw_VlJ4Z8lJe75LNIw?rlkey=mbmqauhdsiuyqcv93wong1po6&st=t692nn20&dl=0')}>
                     <strong>Eucaristia 10am</strong>
                     <p>Varias</p>
-                </div>       
+                </div> */}       
             </div>
             </div>
 
