@@ -31,8 +31,9 @@ const FotosConfirmacion = () => {
             <div className='cont c2'>
                 <div
                     className='opcion'
-                    /* onClick={() => router.push('https://www.dropbox.com/scl/fo/besb4xnobva1e7nsg102e/AKv2PNIOTGR7rVPuStpcobA?rlkey=1k1u1gd5v9xvddvy7dch36pug&st=tz6is6ku&dl=0')}> */
-                    onClick={() => router.push('https://dapder.com/0vflmp')}>
+                    onClick={() => router.push('https://www.dropbox.com/scl/fo/besb4xnobva1e7nsg102e/AKv2PNIOTGR7rVPuStpcobA?rlkey=1k1u1gd5v9xvddvy7dch36pug&st=tz6is6ku&dl=0')}
+                    /* onClick={() => router.push('https://dapder.com/0vflmp')} */
+                >
                     <strong>Eucaristia 10am</strong>
                     <p>Ingreso</p>
                 </div> 
