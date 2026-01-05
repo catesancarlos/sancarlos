@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router'
 import ItemAgenda from './ItemAgenda'
+import ItemAgendaWimg from './ItemAgendaWimg'
+
+const ITEMS_GROUP = 5
 
 const MiniAgenda = () => {
     const router = useRouter()
@@ -9,21 +12,38 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                <ItemAgenda
+                <ItemAgendaWimg
+                    itemsgroup={ITEMS_GROUP}
                     color='#245590'
-                    title='CONFIRMACIÓN'
-                    subtitle='Paralelos 1, 2, 3 y Adultos'
-                    date='Sábado 07 junio 2025'
-                    place='Templo Parroquial'
-                    hour='08:00 (07:30)'
+                    title='INAUGURACIÓN 2026'
+                    subtitle='Sábado 10 enero - 14h00'
                 />
                 <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
                     color='#cd8202'
-                    title='CONFIRMACIÓN'
-                    subtitle='Paralelos 4, 5 y Comunidades'
-                    date='Sábado 07 junio 2025'
+                    title='Catequesis Familiar'
+                    subtitle='SEGUIMIENTO'
+                    date='Viernes 09 enero 2026'
+                    place='Teatro Catequesis'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='CONFIRMACIÓN'
+                    date='Viernes 09 enero 2026'
                     place='Templo Parroquial'
-                    hour='10:00 (09:30)'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='AÑO BÍBLICO'
+                    date='Sábado 10 enero 2026'
+                    place='Teatro Catequesis'
+                    hour='18:00'
                 />
                 {/* <ItemAgenda
                     main
@@ -76,6 +96,7 @@ const MiniAgenda = () => {
                 .cont{
                     display: flex;
                     flex-wrap: wrap;
+                    justify-content: flex-start;
                 }
 
                 strong{

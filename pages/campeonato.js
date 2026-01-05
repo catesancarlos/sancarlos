@@ -71,7 +71,7 @@ export default function Campeonato(){
         <AppLayout titulo='San Carlos - Campeonato' name='Campeonato'>
             <Container
                 title='CAMPEONATO'
-                subtitle='2025'
+                subtitle='2026'
                 img='/campeonato-logo.jpg'
             >
                 <aside>
@@ -84,10 +84,10 @@ export default function Campeonato(){
                     {/* <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => setSection(7)}>Catequistas</p> */}
                 </aside>
                 <div className='principal'>
-                    {
+                    {/* {
                         section == 1 ? 
                             <Calendario datos={res}>
-                                <PartidosSemana fecha={fechaNow} /> {/* res[res.length-1] */}
+                                <PartidosSemana fecha={fechaNow} /> 
                             </Calendario> :
                                 section == 2 ? <Posiciones /> :
                                     section == 3 ? <Goleadores /> :
@@ -95,7 +95,7 @@ export default function Campeonato(){
                                             section == 5 ? <DetallesKT25 /> :
                                                 section == 6 ? <EquiposKT25 /> :
                                                     section == 7 ? <Catequistas /> : ''
-                    }
+                    } */}
                 </div>
             </Container>
 

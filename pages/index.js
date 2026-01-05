@@ -18,6 +18,7 @@ import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 import Finales from '../componentes/home/Finales'
 import BannerCampeones from '../componentes/campeonato25/BannerCampeones'
 import FotosConfirmacion from '../componentes/home/FotosConfirmacion'
+import Feliz2026 from '../componentes/banners/Feliz2026'
 
 const Home = () => {
     const router = useRouter()
@@ -46,10 +47,10 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha916'), (doc) => {
+        onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
             setFechaAnt(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato25', 'fecha917'), (doc) => {
+        onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
             setFechaNow(doc.data())
         })
     }, [])
@@ -69,9 +70,24 @@ const Home = () => {
                     now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
-                <FotosConfirmacion />
-                <BannerCampeones/>
+                <Feliz2026 />
                 <MiniAgenda />
+                <CampSection>
+                    <PartidosSemana
+                        title1='Partidos de la semana:'
+                        title2='Partidos pasados:'
+                        fecha={fechaNow}
+                        home
+                    />
+                    {/* <PartidosPasadosF16
+                        noTop < borrar
+                        title='Resultados semana pasada:'
+                        fecha={fechaAnt}
+                        home
+                    /> */}
+                </CampSection>
+                {/* <FotosConfirmacion /> */}
+                <BannerCampeones/>
                 {/* <Finales /> */}
                 <div className='cont-jes'>
                     <div className='divo'></div>
@@ -103,23 +119,16 @@ const Home = () => {
                         </p>
                     </div>
                 </div> */}
-                <CampSection>
-                    <PartidosSemana
-                        title2='Partidos pasados:'
-                        title1='Partidos domingo:'
-                        fecha={fechaNow}
-                        home
-                    />
-                    {/* <PartidosPasadosF16
-                        noTop < borrar
-                        title='Resultados semana pasada:'
-                        fecha={fechaAnt}
-                        home
-                    /> */}
-                </CampSection>
             </AppLayout>
 
             <style jsx>{`
+                img{
+                    margin: 0px 4% 60px 4%;
+                    width: 92%;
+                    height: 360px;
+                    border-radius: 20px;
+                }
+
                 .cont-jes{
                     margin: 0px 4% 60px 4%;
                     width: 92%;

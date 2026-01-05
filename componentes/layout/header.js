@@ -45,12 +45,12 @@ const Header = ({ name, flecha, auth }) => {
                         onClick={() => router.push('/campeonato')}
                         style={{color: name=='Campeonato' ? '#245590' : 'black', fontWeight: name=='Campeonato' ? 'bold' : '200'}}
                     >CAMPEONATO</p>
-                    <p
+                    {/* <p
                         className='item-menu'
                         onClick={() => router.push('/jesuscribe/info')}
                         style={{color: name=='Jesuscribe' ? '#EE1C21' : 'black', fontWeight: name=='Jesuscribe' ? 'bold' : '200'}}
                     >JESUSCRIBE</p>
-                    {/* <p
+                    <p
                         className='item-menu'
                         onClick={() => router.push('/timeline')}
                         style={{color: name=='Timeline' ? 'brown' : 'black', fontWeight: name=='Timeline' ? 'bold' : '200'}}

@@ -6,7 +6,7 @@ const CampSection = ({ children }) => {
     return (
         <section>
             <div className='divo'></div>
-            <p className='title'>Campeonato 2025</p>
+            <p className='title'>Campeonato 2026</p>
             <div className='container'>
                 <div className='cont-partidos'>
                     {children}
@@ -14,7 +14,7 @@ const CampSection = ({ children }) => {
                 <div className='camp-op'>
                     <div className='h1'>
                         <p className='h1-t'>Campeonato</p>
-                        <p className='h2-t'>Catequesis 2025</p>
+                        <p className='h2-t'>Catequesis 2026</p>
                     </div>
                     <div className='hg'>
                         <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>Calendario</p>
