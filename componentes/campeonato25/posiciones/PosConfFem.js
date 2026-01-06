@@ -1,5 +1,5 @@
 import BannerCampeon from '../BannerCampeon'
-import ItemCalendario from '../calendario/ItemCalendario'
+import ItemCalendario from '../calendario/ItemCalendario2025'
 import FinalConfFem from './FinalConfFem'
 
 import equipos from '../../../datos/campeonato25/equiposConfirmacion'

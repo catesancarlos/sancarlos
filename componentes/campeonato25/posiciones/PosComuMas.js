@@ -1,5 +1,5 @@
 import BannerCampeon from '../BannerCampeon'
-import ItemCalendario from '../calendario/ItemCalendario'
+import ItemCalendario from '../calendario/ItemCalendario2025'
 import Final2ComuMas from './Final2ComuMas'
 
 export default function PosComuMas(){

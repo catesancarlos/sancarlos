@@ -1,4 +1,4 @@
-import ItemCalendario from '../campeonato25/calendario/ItemCalendario'
+import ItemCalendario from '../campeonato25/calendario/ItemCalendario2025'
 
 export default function PartidoNow({ fecha, home = true }) {
 

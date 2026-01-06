@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useEffect } from 'react'
 
 import BannerCampeon from '../BannerCampeon'
-import ItemCalendario from '../calendario/ItemCalendario'
+import ItemCalendario from '../calendario/ItemCalendario2025'
 import Equipo from '../Equipo'
 import FinalConfMas from './FinalConfMas'
 

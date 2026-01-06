@@ -12,10 +12,16 @@ export default function ItemCalendario({
     extra,
     home,
     control,
+    dia,
     fecha,
+    hora,
     genero,
     fase,
     equipos,
+    paralelos,
+    logos,
+    colores,
+    mas,
     onStatus,
     onGoles,
     onAgregar
@@ -44,22 +50,23 @@ export default function ItemCalendario({
                 <div className='fecha'>
                     {!control &&
                         <>
-                            <p>{fecha[0]}</p>
-                            <p>{fecha[1]}</p>
+                            <p>{dia}</p>
+                            <p>{fecha}</p>
                         </>
                     }
-                    <strong>{!control ? fecha[2] : control}</strong>
+                    <strong>{!control ? hora : control}</strong>
                 </div>
                 <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
                     <Equipo
-                        ca
                         com={com}
-                        nombre={genero == 'M' ? equipos[0].mas : equipos[0].fem}
-                        paralelo={`${equipos[0].par} ${genero == 'M' ? '(M)' : '(F)'}`}
-                        logo={`${equipos[0].id}${genero == 'M' ? 'M' : 'F'}`}
-                        color={genero == 'M' ? equipos[0].cm[0] : equipos[0].cf[0]}
-                        borde={genero == 'M' ? equipos[0].cm[1] : equipos[0].cf[1]}
-                        letter={genero == 'M' ? equipos[0].cm[2] : equipos[0].cf[2]}
+                        ca
+                        nombre={equipos[0]}
+                        paralelo={paralelos[0]}
+                        logo={logos[0]}
+                        color={colores.eq1[0]}
+                        borde={colores.eq1[1]}
+                        letter={colores.eq1[2]}
+                        mas={mas && mas[0]}
                     />
                 </div>
                 <div className='marc-glo'>
@@ -84,14 +91,15 @@ export default function ItemCalendario({
                 </div>
                 <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
                     <Equipo
-                        ca
                         com={com}
-                        nombre={genero == 'M' ? equipos[1].mas : equipos[1].fem}
-                        paralelo={`${equipos[1].par} ${genero == 'M' ? '(M)' : '(F)'}`}
-                        logo={`${equipos[1].id}${genero == 'M' ? 'M' : 'F'}`}
-                        color={genero == 'M' ? equipos[1].cm[0] : equipos[1].cf[0]}
-                        borde={genero == 'M' ? equipos[1].cm[1] : equipos[1].cf[1]}
-                        letter={genero == 'M' ? equipos[1].cm[2] : equipos[1].cf[2]}
+                        ca
+                        nombre={equipos[1]}
+                        paralelo={paralelos[1]}
+                        logo={logos[1]}
+                        color={colores.eq2[0]}
+                        borde={colores.eq2[1]}
+                        letter={colores.eq2[2]}
+                        mas={mas && mas[1]}
                     />
                 </div>
             </div>

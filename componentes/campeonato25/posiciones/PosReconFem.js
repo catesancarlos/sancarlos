@@ -1,5 +1,5 @@
 import BannerCampeon from '../BannerCampeon'
-import ItemCalendario from '../calendario/ItemCalendario'
+import ItemCalendario from '../calendario/ItemCalendario2025'
 import Final1ComuFem from './Final1ComuFem'
 
 export default function PosReconFem(){

@@ -1,4 +1,4 @@
-import ItemCalendario from '../ItemCalendario'
+import ItemCalendario from '../ItemCalendario2025'
 import PartidoSoloResultado from '../PartidoSoloResultado'
 
 export default function PartidosPasadosF16({ title, fec, fecha, home }){ 
