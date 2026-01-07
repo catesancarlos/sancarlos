@@ -47,9 +47,9 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-        onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
+       /*  onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
             setFechaAnt(doc.data())
-        })
+        }) */
         onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
             setFechaNow(doc.data())
         })

@@ -21,7 +21,7 @@ export default function OptionsSection({ options, select, onSelect, bot, pos, fe
             <style jsx>{`
                 .cont{
                     display: flex;
-                    justify-content: center;
+                    justify-content: flex-start;
                     margin-bottom: ${bot ? '40px' : pos ? '-4px' : '28px'};
                 }
 
