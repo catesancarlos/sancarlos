@@ -8,7 +8,7 @@ import PartidosSemana from '../componentes/campeonato26/calendario/PartidosSeman
 import Posiciones from '../componentes/campeonato26/posiciones/Posiciones'
 import Goleadores from '../componentes/campeonato26/goleadores/ContGoleadores'
 import FormatoKT25 from '../componentes/campeonato25/formatos/FormatoKT25'
-import DetallesKT25 from '../componentes/campeonato25/DetallesKT25'
+import DetallesKT25 from '../componentes/campeonato26/Detalles'
 import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
 import Catequistas from '../componentes/campeonato25/Catequistas'
 
@@ -78,9 +78,9 @@ export default function Campeonato(){
                     <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => handleChangeSection(1)}>Calendario</p>
                     <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => handleChangeSection(2)}>Posiciones</p>
                     <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => handleChangeSection(3)}>Goleadores</p>
-                    <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => handleChangeSection(4)}>Formato</p>
+                    {/* <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => handleChangeSection(4)}>Formato</p> */}
                     <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => handleChangeSection(5)}>Reglas</p>
-                    <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => handleChangeSection(6)}>Equipos</p>
+                    {/* <p className={`op-menu ${section == 6 && 'active'}`} onClick={() => handleChangeSection(6)}>Equipos</p> */}
                     {/* <p className={`op-menu ${section == 7 && 'active'}`} onClick={() => setSection(7)}>Catequistas</p> */}
                 </aside>
                 <div className='principal'>

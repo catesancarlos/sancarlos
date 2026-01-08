@@ -69,11 +69,11 @@ const listaConf = [
         no: 22,
         id: '22',
         par: '2 Confir. 2',
-        mas: 'Confirmación 2',
-        fem: 'Confirmación 2',
+        mas: 'Santa fe FC',
+        fem: 'Fiat FC',
         cm: ['white', 'black', 'black'],
         cf: ['white', 'black', 'black'],
-        mad: ['', ''],
+        mad: ['Marjorie Chuisaca', 'Jamileth Bastidas'],
         pat: ''
     },
     {
