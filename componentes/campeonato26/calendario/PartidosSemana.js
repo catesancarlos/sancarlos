@@ -12,168 +12,42 @@ export default function PartidosSemana({
     onStatus,
     onGoles,
     onAgregar
-}){    
+}){
+
+    const listaPartidos = [
+        { id: 1, dia: 'Sábado', fecha: '10 Enero', hora: '16h20', genero: 'F', eq: [22, 24] },
+        { id: 2, dia: 'Domingo', fecha: '11 Enero', hora: '10h00', genero: 'M', eq: [23, 25] },
+        { id: 3, dia: 'Domingo', fecha: '11 Enero', hora: '10h40', genero: 'M', eq: [12, 13] },
+        { id: 4, dia: 'Domingo', fecha: '11 Enero', hora: '11h20', genero: 'F', eq: [14, 15] },
+        { id: 5, dia: 'Domingo', fecha: '11 Enero', hora: '12h00', genero: 'M', eq: [22, 24] },
+    ];
 
     return (
         <>
             { title1 && <p>{title1}</p> }
-            <ItemCalendario
-                control={control && control[0]}
-                now={fecha?.partido1}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                fecha={['Sábado', '10 Enero', '16h20']}
-                genero='F'
-                equipos={[
-                    equipos.find(e => e.no === 22), 
-                    equipos.find(e => e.no === 24)
-                ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[0]}
-                now={fecha?.partido1}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                fecha={['Domingo', '11 Enero', '10h00']}
-                genero='M'
-                equipos={[
-                    equipos.find(e => e.no === 23), 
-                    equipos.find(e => e.no === 25)
-                ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[0]}
-                now={fecha?.partido1}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                fecha={['Domingo', '11 Enero', '10h40']}
-                genero='M'
-                equipos={[
-                    equipos.find(e => e.no === 12), 
-                    equipos.find(e => e.no === 13)
-                ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[0]}
-                now={fecha?.partido1}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                fecha={['Domingo', '11 Enero', '11h20']}
-                genero='F'
-                equipos={[
-                    equipos.find(e => e.no === 14), 
-                    equipos.find(e => e.no === 15)
-                ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[0]}
-                now={fecha?.partido1}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                fecha={['Domingo', '11 Enero', '12h00']}
-                genero='M'
-                equipos={[
-                    equipos.find(e => e.no === 22), 
-                    equipos.find(e => e.no === 24)
-                ]}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            {/* 
-            <ItemCalendario
-                control={control && control[1]}
-                res={fecha?.res2}
-                jugador={fecha?.jugador2}
-                pen={fecha?.pen2}
-                extra={fecha?.extra2}
-                home={home}
-                dia='Domingo'
-                fecha='11 Enero'
-                hora='10h40'
-                genero='M'
-                equipos={[equipos[2].mas, equipos[4].mas]}
-                paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
-                logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
-                colores={{
-                    eq1: equipos[2].cm,
-                    eq2: equipos[4].cm
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[0]}
-                res={fecha?.res1}
-                jugador={fecha?.jugador1}
-                pen={fecha?.pen1}
-                extra={fecha?.extra1}
-                home={home}
-                dia='Domingo'
-                fecha='11 Enero'
-                hora='11h20'
-                genero='F'
-                equipos={[equipos[0].fem, equipos[1].fem]}
-                paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
-                logos={[`${equipos[0].id}F`, `${equipos[1].id}F`]}
-                colores={{
-                    eq1: equipos[0].cf,
-                    eq2: equipos[1].cf
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            />
-            <ItemCalendario
-                control={control && control[1]}
-                res={fecha?.res2}
-                jugador={fecha?.jugador2}
-                pen={fecha?.pen2}
-                extra={fecha?.extra2}
-                home={home}
-                dia='Domingo'
-                fecha='11 Enero'
-                hora='12h00'
-                genero='M'
-                equipos={[equipos[2].mas, equipos[4].mas]}
-                paralelos={[`${equipos[2].par} (M)`, `${equipos[4].par} (M)`]}
-                logos={[`${equipos[2].id}M`, `${equipos[4].id}M`]}
-                colores={{
-                    eq1: equipos[2].cm,
-                    eq2: equipos[4].cm
-                }}
-                onStatus={onStatus}
-                onGoles={onGoles}
-                onAgregar={onAgregar}
-            /> */}
+            {listaPartidos.map((p, index) => (
+                <ItemCalendario
+                    key={p.id}
+                    // Usamos el ID para traer los datos correctos de la "fecha" de Firebase
+                    control={control && control[index]}
+                    now={fecha?.[`partido${p.id}`]}
+                    res={fecha?.[`res${p.id}`]}
+                    jugador={fecha?.[`jugador${p.id}`]}
+                    pen={fecha?.[`pen${p.id}`]}
+                    extra={fecha?.[`extra${p.id}`]}
+                    // Props comunes o de la configuración
+                    home={home}
+                    fecha={[p.dia, p.fecha, p.hora]}
+                    genero={p.genero}
+                    equipos={[
+                        equipos.find(e => e.no === p.eq[0]), 
+                        equipos.find(e => e.no === p.eq[1])
+                    ]}
+                    onStatus={onStatus}
+                    onGoles={onGoles}
+                    onAgregar={onAgregar}
+                />
+            ))}
             
             <style jsx>{`
                 p{

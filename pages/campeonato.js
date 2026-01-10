@@ -18,11 +18,6 @@ import { doc, onSnapshot, getDocs, collection } from 'firebase/firestore'
 export default function Campeonato(){
     const [section, setSection] = useState(1)
     const [res, setRes] = useState([])
-    /* const [fecha1, setFecha1] = useState([])
-    const [fecha2, setFecha2] = useState([])
-    const [fecha3, setFecha3] = useState([])
-    const [fecha4, setFecha4] = useState([])
-    const [fecha5, setFecha5] = useState([]) */
     const [fechaNow, setFechaNow] = useState([])
 
     const router = useRouter()
