@@ -6,19 +6,18 @@ import AppLayout from '../componentes/layout'
 import InfoSalida from '../componentes/home/InfoSalida'
 import InfoHoy from '../componentes/home/InfoHoy'
 import PartidoNow from '../componentes/home/PartidoNow'
+import Feliz2026 from '../componentes/banners/Feliz2026'
 import MiniAgenda from '../componentes/home/MiniAgenda'
 import CampSection from '../componentes/home/CampSection'
-import PartidosSemana from '../componentes/campeonato26/calendario/PartidosSemana'
-import PartidosPasadosF16 from '../componentes/campeonato25/calendario/pasados/PartidosPasadosF16'
+import CalendarioSemanal from '../componentes/campeonato26/calendario/CalendarioSemanal'
+import BannerCampeones from '../componentes/campeonato25/BannerCampeones'
 import JesuscribeNext from '../componentes/banners/JesuscribeNext'
 import OneQuestionBanner from '../componentes/banners/OneQuestionBanner'
+import Finales from '../componentes/home/Finales'
+import FotosConfirmacion from '../componentes/home/FotosConfirmacion'
 
 import db  from '../services/dBase'
 import { getDoc, doc, onSnapshot } from 'firebase/firestore'
-import Finales from '../componentes/home/Finales'
-import BannerCampeones from '../componentes/campeonato25/BannerCampeones'
-import FotosConfirmacion from '../componentes/home/FotosConfirmacion'
-import Feliz2026 from '../componentes/banners/Feliz2026'
 
 const Home = () => {
     const router = useRouter()
@@ -28,7 +27,6 @@ const Home = () => {
     const [toggle, setToggle] = useState(true)
     const [now, setNow] = useState(false)
     const [fechaNow, setFechaNow] = useState([])
-    const [fechaAnt, setFechaAnt] = useState([])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -47,9 +45,6 @@ const Home = () => {
         onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
             setNow(doc.data())
         })
-       /*  onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
-            setFechaAnt(doc.data())
-        }) */
         onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
             setFechaNow(doc.data())
         })
@@ -67,28 +62,20 @@ const Home = () => {
             <AppLayout name='Inicio'  titulo='Cate San Carlos'>
                 {/* <InfoSalida misa /> */}
                 <InfoHoy
-                    now={now} /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
+                    now={now} 
+                    /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow fecha={fechaNow} />
                 <Feliz2026 />
                 <MiniAgenda />
-                <CampSection>
-                    <PartidosSemana
-                        title1='Partidos de la semana:'
-                        title2='Partidos pasados:'
-                        fecha={fechaNow}
+                <CampSection title='Partidos de la semana:' >
+                    <CalendarioSemanal
+                        select={now?.fecha ?? 1}
                         home
                     />
-                    {/* <PartidosPasadosF16
-                        noTop < borrar
-                        title='Resultados semana pasada:'
-                        fecha={fechaAnt}
-                        home
-                    /> */}
                 </CampSection>
-                {/* <FotosConfirmacion /> */}
                 <BannerCampeones/>
-                {/* <Finales /> */}
+                
                 <div className='cont-jes'>
                     <div className='divo'></div>
                     <p className='title'>¿Quiéres probar tus conocimientos?</p>
@@ -108,7 +95,9 @@ const Home = () => {
                         />
                     </JesuscribeNext>
                 </div>
-                {/* <div className='banner'>
+                {/* <FotosConfirmacion />
+                <Finales /> 
+                <div className='banner'>
                     <PartidoIda />
                     <img src='/main_banner.jpg' />
                     <div className='hover_now'>

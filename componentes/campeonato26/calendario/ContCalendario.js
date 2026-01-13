@@ -1,17 +1,42 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+import db  from '../../../services/dBase'
+import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
 import TitleSection from '../../sections/TitleSection'
 import OptionsSection from '../../sections/OptionsSection'
+import CalendarioSemanal from './CalendarioSemanal'
 
 const optionsArray = [
     {
         no: 1,
-        name: 'S.1'
+        name: 'S1'
+    },
+    {
+        no: 2,
+        name: 'S2'
+    },
+    {
+        no: 3,
+        name: 'S3'
     },
 ]
 
-export default function Calendario({ datos, children }){
-    const [select, setSelect] = useState(18)
+export default function Calendario(){
+    const [select, setSelect] = useState(1)
+    const [datosSemana, setDatosSemana] = useState(null)
+
+    useEffect(() => {
+        const qSemana = query(collection(db, 'semanas2026'), where('no', '==', select))
+
+        const unsubSemana = onSnapshot(qSemana, (snapshot) => {
+            if (!snapshot.empty) {
+                setDatosSemana(snapshot.docs[0].data())
+            }
+        })
+
+        return () => unsubSemana()
+    }, [select])
 
     return (
         <section>
@@ -32,9 +57,9 @@ export default function Calendario({ datos, children }){
             </div>
             {
                 <div className='fecha-label'>
-                    <strong className='now-fec'>Semana 1</strong>
-                    <i>[10-11 enero 2026]</i>
-                        { children }
+                    <strong className='now-fec'>Semana {select}</strong>
+                    <i>[{datosSemana ? datosSemana.rango : 'Cargando...'}]</i>
+                        <CalendarioSemanal select={select} />
                 </div>
             }
 

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import AppLayout from '../componentes/layout'
 import Container from '../componentes/sections/Container'
 import Calendario from '../componentes/campeonato26/calendario/ContCalendario'
-import PartidosSemana from '../componentes/campeonato26/calendario/PartidosSemana'
 import Posiciones from '../componentes/campeonato26/posiciones/Posiciones'
 import Goleadores from '../componentes/campeonato26/goleadores/ContGoleadores'
 import FormatoKT25 from '../componentes/campeonato25/formatos/FormatoKT25'
@@ -12,46 +11,10 @@ import DetallesKT25 from '../componentes/campeonato26/Detalles'
 import EquiposKT25 from '../componentes/campeonato25/EquiposKT25'
 import Catequistas from '../componentes/campeonato25/Catequistas'
 
-import db  from '../services/dBase'
-import { doc, onSnapshot, getDocs, collection } from 'firebase/firestore'
-
 export default function Campeonato(){
     const [section, setSection] = useState(1)
-    const [res, setRes] = useState([])
-    const [fechaNow, setFechaNow] = useState([])
 
     const router = useRouter()
-
-    useEffect(() => {
-        /*onSnapshot(doc(db, 'campeonato25', 'fecha1'), (doc) => {
-            setFecha1(doc.data())
-        }) 
-        onSnapshot(doc(db, 'campeonato25', 'fecha2'), (doc) => {
-            setFecha2(doc.data())
-        })
-        onSnapshot(doc(db, 'campeonato25', 'fecha3'), (doc) => {
-            setFecha3(doc.data())
-        })
-        onSnapshot(doc(db, 'campeonato25', 'fecha4'), (doc) => {
-            setFecha4(doc.data())
-        })  */ 
-        onSnapshot(doc(db, 'campeonato26', 'fecha1'), (doc) => {
-            setFechaNow(doc.data())
-        })
-            
-        async function fetchMyAPI() {
-            let ret = []
-            const querySnapshot = await getDocs(collection(db, 'campeonato25'))
-            querySnapshot.forEach((doc) => {
-                ret.push({
-                    id: doc.id,
-                    ...doc.data()
-                })
-            })
-            setRes(ret)
-        }
-        fetchMyAPI()
-    }, [])
 
     useEffect(() => {
         if(router.query.s){
@@ -80,16 +43,13 @@ export default function Campeonato(){
                 </aside>
                 <div className='principal'>
                     {
-                        section == 1 ? 
-                            <Calendario datos={res}>
-                                <PartidosSemana fecha={fechaNow} /> {/* res[res.length-1] */}
-                            </Calendario> :
-                                section == 2 ? <Posiciones /> :
-                                    section == 3 ? <Goleadores /> : 
-                                        section == 4 ? <FormatoKT25 /> :
-                                            section == 5 ? <DetallesKT25 /> :
-                                                section == 6 ? <EquiposKT25 /> :
-                                                    section == 7 ? <Catequistas /> : ''
+                        section == 1 ? <Calendario /> :
+                            section == 2 ? <Posiciones /> :
+                                section == 3 ? <Goleadores /> : 
+                                    section == 4 ? <FormatoKT25 /> :
+                                        section == 5 ? <DetallesKT25 /> :
+                                            section == 6 ? <EquiposKT25 /> :
+                                                section == 7 ? <Catequistas /> : ''
                     }
                 </div>
             </Container>

@@ -6,16 +6,17 @@ export default function ItemCalendario({
     com,
     final,
     now,
-    res,
-    jugador,
-    pen,
-    extra,
-    home,
     control,
+    idJuego,
     fecha,
     genero,
-    fase,
     equipos,
+    fase,
+    res,
+    jugador,
+    extra,
+    pen,
+    home,
     onStatus,
     onGoles,
     onAgregar
@@ -27,7 +28,7 @@ export default function ItemCalendario({
     }
 
     const handleAgregar = e => {
-        onAgregar([control, name])
+        onAgregar([idJuego, name])
     }
 
     return(
@@ -50,27 +51,27 @@ export default function ItemCalendario({
                     }
                     <strong>{!control ? fecha[2] : control}</strong>
                 </div>
-                <div className='eq1' onClick={() => {if(control)onGoles([control, 0, '+'])}}>
+                <div className='eq1' onClick={() => {if(control)onGoles([idJuego, 'golesLocal', res?.[0] + 1])}}>
                     <Equipo
                         ca
                         com={com}
-                        nombre={genero == 'M' ? equipos[0].mas : equipos[0].fem}
-                        paralelo={`${equipos[0].par} ${genero == 'M' ? '(M)' : '(F)'}`}
-                        logo={`${equipos[0].id}${genero == 'M' ? 'M' : 'F'}`}
-                        color={genero == 'M' ? equipos[0].cm[0] : equipos[0].cf[0]}
-                        borde={genero == 'M' ? equipos[0].cm[1] : equipos[0].cf[1]}
-                        letter={genero == 'M' ? equipos[0].cm[2] : equipos[0].cf[2]}
+                        nombre={equipos[0].name}
+                        paralelo={equipos[0].paralelo}
+                        logo={equipos[0].id}
+                        color={equipos[0].colors[0]}
+                        borde={equipos[0].colors[1]}
+                        letter={equipos[0].colors[2]}
                     />
                 </div>
                 <div className='marc-glo'>
                     {
                         control ? 
                             <div className='op-now'>
-                                <p onClick={() => onGoles([control, 0, '-'])}>-</p>
-                                <p onClick={() => onStatus([control, 0])}>N</p>
-                                <p onClick={() => onStatus([control, 1])}>S</p>
-                                <p onClick={() => onStatus([control, 2])}>E</p>
-                                <p onClick={() => onGoles([control, 1, '-'])}>-</p>
+                                <p onClick={() => onGoles([idJuego, 'golesLocal', res?.[0] - 1])}>-</p>
+                                <p onClick={() => onStatus([idJuego, 0])}>N</p>
+                                <p onClick={() => onStatus([idJuego, 1])}>S</p>
+                                <p onClick={() => onStatus([idJuego, 2])}>E</p>
+                                <p onClick={() => onGoles([idJuego, 'golesVisitante', res?.[1] - 1])}>-</p>
                             </div>
                         : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : now==3 ? <p className='suspendido'>Suspendido</p> : ''
                     }
@@ -82,16 +83,16 @@ export default function ItemCalendario({
                     {pen && <p className='pen'>{`Pen (${pen})`}</p> }
                     {extra && <p className='pen'>{`T. extra (${extra})`}</p> }
                 </div>
-                <div className='eq2' onClick={() => {if(control)onGoles([control, 1, '+'])}}>
+                <div className='eq2' onClick={() => {if(control)onGoles([idJuego, 'golesVisitante', res?.[1] + 1])}}>
                     <Equipo
                         ca
                         com={com}
-                        nombre={genero == 'M' ? equipos[1].mas : equipos[1].fem}
-                        paralelo={`${equipos[1].par} ${genero == 'M' ? '(M)' : '(F)'}`}
-                        logo={`${equipos[1].id}${genero == 'M' ? 'M' : 'F'}`}
-                        color={genero == 'M' ? equipos[1].cm[0] : equipos[1].cf[0]}
-                        borde={genero == 'M' ? equipos[1].cm[1] : equipos[1].cf[1]}
-                        letter={genero == 'M' ? equipos[1].cm[2] : equipos[1].cf[2]}
+                        nombre={equipos[1].name}
+                        paralelo={equipos[1].paralelo}
+                        logo={equipos[1].id}
+                        color={equipos[1].colors[0]}
+                        borde={equipos[1].colors[1]}
+                        letter={equipos[1].colors[2]}
                     />
                 </div>
             </div>

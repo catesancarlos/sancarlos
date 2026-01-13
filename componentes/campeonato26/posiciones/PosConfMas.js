@@ -1,67 +1,86 @@
-/* import BannerCampeon from '../BannerCampeon'
-import ItemCalendario from '../calendario/ItemCalendario2025'
-import FinalConfFem from './FinalConfFem'
+import { useState, useEffect } from 'react'
 
-import equipos from '../../../datos/campeonato25/equiposConfirmacion'
-import FotosConfFem from './FotosConfFem' */
+import db  from '../../../services/dBase'
+import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
-import equipos from '../../../datos/campeonato26/equiposConfirmacion'
+export default function PosConfMas(){
+    const [grupoSegui, setGrupoSegui] = useState([]) // Ordenado (Posiciones)
+    const [grupoSeguiLista, setGrupoSeguiLista] = useState([]) // Lista (ID/Original)
 
-let GRUPO_SEGUI = [
-    '',
-    `${equipos.find(e => e.no === 11).mas} (${equipos.find(e => e.no === 11).id}F)`,
-    `${equipos.find(e => e.no === 12).mas} (${equipos.find(e => e.no === 12).id}F)`,
-    `${equipos.find(e => e.no === 13).mas} (${equipos.find(e => e.no === 13).id}F)`,
-    `${equipos.find(e => e.no === 14).mas} (${equipos.find(e => e.no === 14).id}F)`,
-    `${equipos.find(e => e.no === 15).mas} (${equipos.find(e => e.no === 15).id}F)`,
-]
+    const [grupoConfir, setGrupoConfir] = useState([]) // Ordenado (Posiciones)
+    const [grupoConfirLista, setGrupoConfirLista] = useState([]) // Lista (ID/Original)
 
-let GRUPO_CONFIR = [
-    '',
-    `${equipos.find(e => e.no === 21).mas} (${equipos.find(e => e.no === 21).id}F)`,
-    `${equipos.find(e => e.no === 22).mas} (${equipos.find(e => e.no === 22).id}F)`,
-    `${equipos.find(e => e.no === 23).mas} (${equipos.find(e => e.no === 23).id}F)`,
-    `${equipos.find(e => e.no === 24).mas} (${equipos.find(e => e.no === 24).id}F)`,
-    `${equipos.find(e => e.no === 25).mas} (${equipos.find(e => e.no === 25).id}F)`,
-]
+    const [partidos, setPartidos] = useState([]);
 
-export default function PosConfFem(){
+    useEffect(() => {
+        const q = query(
+            collection(db, 'equipos2026'),
+            where('genero', '==', 'M')
+        )
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const datosCargados = snapshot.docs.map(doc => doc.data());
+
+            // Función de ordenamiento que no afecta al array original
+            const obtenerOrdenados = (lista) => {
+                return [...lista].sort((a, b) => {
+                    if ((b.pts || 0) !== (a.pts || 0)) {
+                        return (b.pts || 0) - (a.pts || 0);
+                    }
+                    return (b.dg || 0) - (a.dg || 0);
+                });
+            };
+
+            // --- PROCESAR SEGUIMIENTO ---
+            const listaSegui = datosCargados.filter(eq => eq.id < '20');
+            setGrupoSeguiLista(listaSegui); // Orden original de Firestore
+            setGrupoSegui(obtenerOrdenados(listaSegui)); // Orden de posiciones
+
+            // --- PROCESAR CONFIRMACIÓN ---
+            const listaConfir = datosCargados.filter(eq => eq.id >= '20');
+            setGrupoConfirLista(listaConfir); // Orden original de Firestore
+            setGrupoConfir(obtenerOrdenados(listaConfir)); // Orden de posiciones
+        });
+
+        return () => { unsubscribe() };
+    }, [])
+
+    useEffect(() => {
+        // Traemos todos los partidos 'M'
+        const qPartidos = query(
+            collection(db, 'partidos2026'), 
+            where('genero', '==', 'M')
+        );
+
+        const unsubPartidos = onSnapshot(qPartidos, (snapshot) => {
+            const partidosData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+
+            // Ordenamiento global: Primero por número de fecha, luego día y hora
+            const partidosOrdenados = partidosData.sort((a, b) => {
+                if (a.fecha !== b.fecha) return a.fecha - b.fecha
+                const diaA = parseInt(a.date) || 0
+                const diaB = parseInt(b.date) || 0
+                if (diaA !== diaB) return diaA - diaB
+                return a.hora.localeCompare(b.hora)
+            })
+
+            setPartidos(partidosOrdenados)
+        });
+
+        return () => unsubPartidos()
+    }, [])
+
+    // Función para obtener datos de un equipo por su ID desde tus estados actuales
+    const getEquipoInfo = (id, lista) => {
+        const equipo = lista.find(e => e.id === id)
+        return equipo ? `${equipo.name} (${equipo.id})` : 'Cargando...'
+    }
 
     return (
         <section>
-            {/* <strong className='title'>2do Confirmación - Campeonas:</strong>
-            <BannerCampeon
-                img='/campeonato/campeonas2doConf.jpg'
-                name='Gálatas 1, 10'
-                group='2do de Confirmación 1'
-                genre='F'
-            /> */}
             <div className='tables'>
-                {/* <strong className='title'>Confirmación (1 & 2) - Final Femenina:</strong>
-                <ItemCalendario
-                    final
-                    now={0}
-                    res={[6, 7]}
-                    home={false}
-                    dia='Domingo'
-                    fecha='25 mayo'
-                    hora='11h00'
-                    genero='F'
-                    equipos={[equipos[0].fem, equipos[1].fem]}
-                    paralelos={[`${equipos[0].par} (F)`, `${equipos[1].par} (F)`]}
-                    logos={[`${equipos[0].id}F`, `${equipos[1].id}F`]}
-                    colores={{
-                        eq1: equipos[0].cf,
-                        eq2: equipos[1].cf
-                    }}
-                />
-                <FotosConfFem />
-                <strong className='title'>Confirmación (1 & 2) - Fase Final Femenina:</strong>
-                <div className='final'>
-                    <FinalConfFem />
-                    <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más`}</p>
-                </div> */}
                 <strong className='title'>Confirmación (1 & 2) - Posiciones:</strong>
+                {console.log(partidos)}
                 <table>
                     <thead>
                         <tr>
@@ -83,66 +102,20 @@ export default function PosConfFem(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>1</strong></td>
-                            <td className='eq'>{GRUPO_SEGUI[1]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>2</strong></td>
-                            <td className='eq'>{GRUPO_SEGUI[2]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>3</strong></td>
-                            <td className='eq'>{GRUPO_SEGUI[3]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp'>4</td>
-                            <td className='eq'>{GRUPO_SEGUI[4]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp'>5</td>
-                            <td className='eq'>{GRUPO_SEGUI[5]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
+                        {grupoSegui?.map((eq, index) => (
+                            <tr key={eq.id}>
+                                <td className='tp'>{index + 1}</td>
+                                <td className='eq'>{eq.name} ({eq.id})</td>
+                                <td className='tp'>{eq.pj || 0}</td>
+                                <td className='tp'>{eq.pg || 0}</td>
+                                <td className='tp'>{eq.pe || 0}</td>
+                                <td className='tp'>{eq.pp || 0}</td>
+                                <td className='tp'>{eq.gf || 0}</td>
+                                <td className='tp'>{eq.gc || 0}</td>
+                                <td className='tp'>{(eq.dg > 0 ? `+${eq.dg}` : eq.dg) || 0}</td>
+                                <td className='tp'><strong>{eq.pts || 0}</strong></td>
+                            </tr>
+                        ))}
                         {/* <tr className='info-inag'>
                             <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
                         </tr> */}
@@ -169,66 +142,20 @@ export default function PosConfFem(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>1</strong></td>
-                            <td className='eq'>{GRUPO_CONFIR[1]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>2</strong></td>
-                            <td className='eq'>{GRUPO_CONFIR[2]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp' /* style={{ background: '#1BB16C', color: 'white' }} */><strong>3</strong></td>
-                            <td className='eq'>{GRUPO_CONFIR[3]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp'>4</td>
-                            <td className='eq'>{GRUPO_CONFIR[4]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td className='tp'>5</td>
-                            <td className='eq'>{GRUPO_CONFIR[5]}</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'>0</td>
-                            <td className='tp'><strong>0</strong></td>
-                        </tr>
+                        {grupoConfir?.map((eq, index) => (
+                            <tr key={eq.id}>
+                                <td className='tp'>{index + 1}</td>
+                                <td className='eq'>{eq.name} ({eq.id})</td>
+                                <td className='tp'>{eq.pj || 0}</td>
+                                <td className='tp'>{eq.pg || 0}</td>
+                                <td className='tp'>{eq.pe || 0}</td>
+                                <td className='tp'>{eq.pp || 0}</td>
+                                <td className='tp'>{eq.gf || 0}</td>
+                                <td className='tp'>{eq.gc || 0}</td>
+                                <td className='tp'>{(eq.dg > 0 ? `+${eq.dg}` : eq.dg) || 0}</td>
+                                <td className='tp'><strong>{eq.pts || 0}</strong></td>
+                            </tr>
+                        ))}
                         {/* <tr className='info-inag'>
                             <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
                         </tr>
@@ -243,45 +170,30 @@ export default function PosConfFem(){
             </div>
             <div className='tables partidos'>
                 <strong className='title'>Resultados:</strong>
-                <table>
-                    <thead>
-                        <tr>
-                            <td colSpan={5} className='title-fecha'>
-                                <strong>Fecha 1</strong>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{GRUPO_CONFIR[2]}</td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td>{GRUPO_CONFIR[4]}</td>
-                        </tr>
-                        <tr>
-                            <td>{GRUPO_CONFIR[3]}</td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td>{GRUPO_CONFIR[5]}</td>
-                        </tr>
-                        <tr>
-                            <td>{GRUPO_SEGUI[4]}</td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td>{GRUPO_SEGUI[5]}</td>
-                        </tr>
-                        <tr>
-                            <td>{GRUPO_SEGUI[2]}</td>
-                            <td>0</td>
-                            <td>vs.</td>
-                            <td>0</td>
-                            <td>{GRUPO_SEGUI[3]}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                {[...new Set(partidos.map(p => p.fecha))].map(numeroFecha => (
+                    <table key={numeroFecha} style={{ marginBottom: '20px' }}>
+                        <thead>
+                            <tr>
+                                <td colSpan={5} className='title-fecha'>
+                                    <strong>Fecha {numeroFecha}</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {partidos
+                                .filter(p => p.fecha === numeroFecha) // Solo partidos de esta fecha
+                                .map((partido) => (
+                                    <tr key={partido.id}>
+                                        <td>{getEquipoInfo(partido.idLocal, [...grupoSeguiLista, ...grupoConfirLista])}</td>
+                                        <td>{partido.golesLocal}</td>
+                                        <td>vs.</td>
+                                        <td>{partido.golesVisitante}</td>
+                                        <td>{getEquipoInfo(partido.idVisitante, [...grupoSeguiLista, ...grupoConfirLista])}</td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+                ))}
             </div>
 
             <style jsx>{`

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-const CampSection = ({ children }) => {
+const CampSection = ({ title, children }) => {
     const router = useRouter()
 
     return (
@@ -9,6 +9,7 @@ const CampSection = ({ children }) => {
             <p className='title'>Campeonato 2026</p>
             <div className='container'>
                 <div className='cont-partidos'>
+                    { title && <p className='pf1'>{title}</p> }
                     {children}
                 </div>
                 <div className='camp-op'>
@@ -70,10 +71,11 @@ const CampSection = ({ children }) => {
                 }
 
                 .pf1{
-                    color: #000000CC;
+                    color: #245590;
                     width: 100%;
                     font-size: 20px;
                     font-weight: bold;
+                    margin-bottom: 12px;
                 }
 
                 .st{
@@ -179,7 +181,7 @@ const CampSection = ({ children }) => {
                         width: 100%;
                     }
 
-                    .cont-partidos .pf1{
+                    .pf1{
                         font-size: 18px;
                         font-size: 400;
                     }
