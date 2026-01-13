@@ -110,7 +110,6 @@ export default function Paasmal(){
     }
 
     const handleSetear = async () => {
-        
         try {
             await setDoc(doc(db, 'partidos2026', 'F2_11F_14F'), { 
                 fecha: 2,
@@ -133,7 +132,6 @@ export default function Paasmal(){
     }
 
     const handleEquipo = async () => {
-        
         try {
             await setDoc(doc(db, 'equipos2026', '25F'), { 
                 id: '25F',
@@ -149,6 +147,24 @@ export default function Paasmal(){
                 gc: 0,
                 dg: 0,
                 pts: 0
+            }, { merge: true })
+            
+        } catch (error) {
+            console.error('Error al guardar el jugador:', error)
+        }
+    }
+
+    const handleGoleador = async () => {
+        let na = 'Carlos Marquez'
+        let eq = '25M'
+
+        try {
+            await setDoc(doc(db, 'goleadores2026',`${eq}_${na.replace(" ", "_")}`), { 
+                id: `${eq}_${na.replace(" ", "_")}`,
+                name: na,
+                genero: 'M',
+                equipo: eq,
+                goles: 1
             }, { merge: true })
             
         } catch (error) {
@@ -172,6 +188,7 @@ export default function Paasmal(){
                             />
                             <p onClick={handleSetear}>Partido</p>
                             <p onClick={handleEquipo}>Equipo</p>
+                            <p onClick={handleGoleador}>Goleador</p>
                         </>
                     :
                         <div style={{ display: 'flex'}}>

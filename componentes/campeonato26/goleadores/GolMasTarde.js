@@ -1,4 +1,54 @@
+import { useState, useEffect } from 'react'
+
+import db  from '../../../services/dBase'
+import { collection, query, where, onSnapshot } from 'firebase/firestore'
+
 export default function GolMasTarde(){
+    const [jugadores, setJugadores] = useState([])
+    const [equipos, setEquipos] = useState([])
+
+    useEffect(() => {
+        const q = query(collection(db, 'goleadores2026'), where('genero', '==', 'M'))
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const todosLosJugadores = snapshot.docs.map(doc => doc.data())
+
+            // Ordenar de mayor a menor cantidad de goles
+            const jugadoresOrdenados = [...todosLosJugadores].sort((a, b) => {
+                const golesA = Number(a.goles) || 0
+                const golesB = Number(b.goles) || 0
+                return golesB - golesA // B - A para orden descendente
+            });
+
+            setJugadores(jugadoresOrdenados);
+        })
+
+        return () => unsubscribe();
+    }, [])
+
+    useEffect(() => {
+        const q = query(collection(db, 'equipos2026'))
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const todosLosEquipos = snapshot.docs.map(doc => doc.data())
+            setEquipos(todosLosEquipos)
+        })
+
+        return () => unsubscribe()
+    }, [])
+
+    // Función para obtener datos de un equipo por su ID desde tus estados actuales
+    const getEquipoInfo = (id, lista) => {
+        const equipo = lista.find(e => e.id === id)
+        return equipo ? `${equipo.name} (${equipo.id})` : ''
+    }
+
+    const totalGoles = jugadores.reduce((acumulador, jugador) => {
+        // Aseguramos que el valor sea numérico
+        const golesJugador = Number(jugador.goles) || 0;
+        return acumulador + golesJugador;
+    }, 0);
+
     return(
         <table>
             <tr>
@@ -10,15 +60,17 @@ export default function GolMasTarde(){
                 <td><strong>Equipo</strong></td>
                 <td><strong>Goles</strong></td>
             </tr>
-            {/* <tr>
-                <td>1</td>
-                <td>Cristian Guamán</td>
-                <td>GDL (24M)</td>
-                <td style={{ background: '#C8B273' }}>20</td>
-            </tr> */}
+            {jugadores?.map((j, index) => (
+                <tr>
+                    <td>{index + 1}</td>
+                    <td>{j.name}</td>
+                    <td>{getEquipoInfo(j.equipo, equipos)}</td>
+                    <td /* style={{ background: '#C8B273' }} */>{j.goles}</td>
+                </tr>
+            ))}
             <tr>
                 <td colSpan={3} className='c-t t1'><strong>Total:</strong></td>
-                <td className='c-t t2'><strong>0</strong></td>
+                <td className='c-t t2'><strong>{totalGoles}</strong></td>
             </tr>
            {/*  <tr className='info-inag'>
                 <td colSpan={10}><i>En Cursiva, jugadores de equipos ya eliminados.</i></td>
