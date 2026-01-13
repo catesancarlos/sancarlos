@@ -11,7 +11,8 @@ export default function CalendarioSemanal({
     control,
     onStatus,
     onGoles,
-    onAgregar
+    onAgregar,
+    onFinalizar
 }){
 
     const [equipos, setEquipos] = useState([])
@@ -88,6 +89,7 @@ export default function CalendarioSemanal({
             onStatus={onStatus}
             onGoles={onGoles}
             onAgregar={onAgregar}
+            onFinalizar={onFinalizar}
         />
     ))
 }

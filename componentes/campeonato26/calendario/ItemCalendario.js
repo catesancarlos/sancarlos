@@ -19,7 +19,8 @@ export default function ItemCalendario({
     home,
     onStatus,
     onGoles,
-    onAgregar
+    onAgregar,
+    onFinalizar
 }) {
     const [name, setName] = useState('')
 
@@ -51,7 +52,7 @@ export default function ItemCalendario({
                     }
                     <strong>{!control ? fecha[2] : control}</strong>
                 </div>
-                <div className='eq1' onClick={() => {if(control)onGoles([idJuego, 'golesLocal', res?.[0] + 1])}}>
+                <div className='eq1' onClick={() => {if(control)onGoles([idJuego, 'golesLocal', 1])}}>
                     <Equipo
                         ca
                         com={com}
@@ -67,11 +68,11 @@ export default function ItemCalendario({
                     {
                         control ? 
                             <div className='op-now'>
-                                <p onClick={() => onGoles([idJuego, 'golesLocal', res?.[0] - 1])}>-</p>
+                                <p onClick={() => {if(res?.[0] > 0) {onGoles([idJuego, 'golesLocal', -1])}}}>-</p>
                                 <p onClick={() => onStatus([idJuego, 0])}>N</p>
                                 <p onClick={() => onStatus([idJuego, 1])}>S</p>
                                 <p onClick={() => onStatus([idJuego, 2])}>E</p>
-                                <p onClick={() => onGoles([idJuego, 'golesVisitante', res?.[1] - 1])}>-</p>
+                                <p onClick={() => {if(res?.[1] > 0) {onGoles([idJuego, 'golesVisitante', -1])}}}>-</p>
                             </div>
                         : now==1 ? <p className='now'>Ahora</p> : now==2 ? <p className='fin'>Finalizado</p> : now==3 ? <p className='suspendido'>Suspendido</p> : ''
                     }
@@ -83,7 +84,7 @@ export default function ItemCalendario({
                     {pen && <p className='pen'>{`Pen (${pen})`}</p> }
                     {extra && <p className='pen'>{`T. extra (${extra})`}</p> }
                 </div>
-                <div className='eq2' onClick={() => {if(control)onGoles([idJuego, 'golesVisitante', res?.[1] + 1])}}>
+                <div className='eq2' onClick={() => {if(control)onGoles([idJuego, 'golesVisitante', 1])}}>
                     <Equipo
                         ca
                         com={com}
@@ -105,6 +106,7 @@ export default function ItemCalendario({
                         placeholder={jugador ? jugador : ''}
                     />
                     <p onClick={handleAgregar}>Agregar</p>
+                    <p onClick={() => onFinalizar([idJuego, equipos[0].id, equipos[1].id, res[0], res[1]])}>Finalizar</p>
                 </div>
             }
 
