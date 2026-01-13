@@ -17,17 +17,17 @@ const CampSection = ({ title, children }) => {
                         <p className='h1-t'>Campeonato</p>
                         <p className='h2-t'>Catequesis 2026</p>
                     </div>
-                    <div className='hg'>
-                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>Calendario</p>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>
+                        <p className='hg-t'>Calendario</p>
                     </div>
-                    <div className='hg'>
-                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>Posiciones</p>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>
+                        <p className='hg-t'>Posiciones</p>
                     </div>
-                    <div className='hg'>
-                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>Goleadores</p>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>
+                        <p className='hg-t'>Goleadores</p>
                     </div>
-                    <div className='hg'>
-                        <p className='hg-t' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>Reglas</p>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>
+                        <p className='hg-t'>Reglas</p>
                     </div>
                 </div>
             </div>
