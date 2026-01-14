@@ -4,17 +4,21 @@ import AppLayout from '../../componentes/layout'
 import CalendarioSemanal from '../../componentes/campeonato26/calendario/CalendarioSemanal'
 
 import db  from '../../services/dBase'
-import { setDoc, doc, collection, query, where, onSnapshot, runTransaction, increment } from 'firebase/firestore'
-
-
-let CAMPEONATO = 'campeonato26'
-let FECHA = 'fecha1'
+import { setDoc, doc, runTransaction, increment } from 'firebase/firestore'
 
 export default function Paasmal(){
     const [log, setLog] = useState(false)
+    
+    useEffect(() => {
+        const isLogged = sessionStorage.getItem('isLogged') === 'true'
+        if(isLogged) setLog(true)
+    }, [])
 
     const handleChange = e => {
-        if(e.target.value == 'moshu3682') setLog(true)
+        if (e.target.value === 'moshu3682') {
+            setLog(true)
+            sessionStorage.setItem('isLogged', 'true')
+        }
     }
 
     const handleFinalizar = async ([idJuego, idLocal, idVisitante, golesLocal, golesVisitante]) => {
@@ -176,7 +180,7 @@ export default function Paasmal(){
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
             <section>
                 {
-                    true ? 
+                    log ? 
                         <>
                             <CalendarioSemanal
                                 select={2}
@@ -189,6 +193,10 @@ export default function Paasmal(){
                             <p onClick={handleSetear}>Partido</p>
                             <p onClick={handleEquipo}>Equipo</p>
                             <p onClick={handleGoleador}>Goleador</p>
+                            <p onClick={() => {
+                                sessionStorage.removeItem('isLogged')
+                                setLog(false)
+                            }}>Cerrar Sesión</p>
                         </>
                     :
                         <div style={{ display: 'flex'}}>
