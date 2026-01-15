@@ -42,6 +42,28 @@ export default function Libros(){
         }
     }, [pdfe])
 
+    const handleDescargar = async (url) => {
+        try {
+            const respuesta = await fetch(url)
+            const blob = await respuesta.blob()
+            
+            const enlace = window.URL.createObjectURL(blob)
+            const a = document.createElement('a')
+            
+            a.href = enlace
+            a.download = url.split('/').pop() || 'archivo.pdf' // Nombre del archivo
+            document.body.appendChild(a)
+            
+            a.click()
+            
+            // Limpieza
+            document.body.removeChild(a)
+            window.URL.revokeObjectURL(enlace)
+        } catch (error) {
+            console.error('Error al descargar el PDF:', error)
+        }
+    }
+
     return(
         <AppLayout titulo='San Carlos - Libros' name='Libros'>
             <section>
@@ -73,7 +95,11 @@ export default function Libros(){
             </section>
             {
                 pdfe &&
-                    <Modal background='#FFFFFFCC' onClose={(e) => setPdfe(e)} >
+                    <Modal
+                        background='#FFFFFFCC'
+                        onDescargar={() => handleDescargar(pdfe)}
+                        onClose={(e) => setPdfe(e)}
+                    >
                         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
                             <div
                                 style={{

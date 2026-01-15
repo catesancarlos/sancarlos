@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
+import Download from '../iconos/Download'
 
-export default function Modal({ children, background, onClose }){
+export default function Modal({ children, background, onDescargar, onClose }){
     const refCont = useRef(null)
 
     useEffect(() => {
@@ -20,11 +21,14 @@ export default function Modal({ children, background, onClose }){
     return(
         <div className='total'>
             <div className='contenido' ref={refCont}>
-                {onClose && 
-                    <div className='close'>
+                <div className='botones'>
+                    <div className='button dw' onClick={onDescargar}>
+                        <Download />
+                    </div>
+                    <div className='button cl'>
                         <p onClick={() => onClose(false)}>X</p>
                     </div>
-                }
+                </div>    
                 {children}
             </div>
 
@@ -51,24 +55,37 @@ export default function Modal({ children, background, onClose }){
                     border-radius: 5px;
                 }
 
-                .close{
+                .botones{
                     position: sticky;
                     top: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
                     z-index: 11;
+                    pointer-events: none; /* Permite hacer clic a través del contenedor si es muy grande */
+                    margin-bottom: -41px;
                 }
 
-                .close p{
-                    position: absolute;
-                    right: 0;
-                    background: black;
+                .button{
+                    pointer-events: auto;
                     width: 41px;
-                    line-height: 41px;
+                    height: 41px;
                     color: white;
-                    font-size: 20px;
                     font-weight: bold;
-                    text-align: center;
-                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
                     cursor: pointer;
+                }
+
+                .dw{
+                    background: #02A95C;
+                }
+
+                .cl{
+                    background: black;
+                    margin-left: 8px;
                 }
 
                 @media screen and (max-width: 768px){
