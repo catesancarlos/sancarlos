@@ -1,38 +1,74 @@
-import equipos from '../../datos/campeonato26/equiposConfirmacion'
+import { useState, useEffect } from 'react'
+
+import db  from '../../services/dBase'
+import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
 import ItemCalendario from '../campeonato26/calendario/ItemCalendario'
 
-export default function PartidoNow({ fecha, home = true }) {
+export default function PartidoNow({ fecha, home = true, select }) {
+    const [equipos, setEquipos] = useState([])
+    const [partidos, setPartidos] = useState([])
 
-    const configuracionPartidos = [
-        { id: 1, dia: 'Sábado', fecha: '10 Enero', hora: '16h20', genero: 'F', eq: [22, 24] },
-        { id: 2, dia: 'Domingo', fecha: '11 Enero', hora: '10h00', genero: 'M', eq: [23, 25] },
-        { id: 3, dia: 'Domingo', fecha: '11 Enero', hora: '10h40', genero: 'M', eq: [12, 13] },
-        { id: 4, dia: 'Domingo', fecha: '11 Enero', hora: '11h20', genero: 'F', eq: [14, 15] },
-        { id: 5, dia: 'Domingo', fecha: '11 Enero', hora: '12h00', genero: 'M', eq: [22, 24] },
-    ];
+    useEffect(() => {
+        const q = query(collection(db, 'equipos2026'))
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const todosLosEquipos = snapshot.docs.map(doc => doc.data())
+            setEquipos(todosLosEquipos)
+        })
+
+        return () => unsubscribe()
+    }, [])
+
+    useEffect(() => {
+        const qPartidos = query(collection(db, 'partidos2026'), where('semana', '==', select))
+
+        const unsubPartidos = onSnapshot(qPartidos, (snapshot) => {
+            const partidosData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+
+            const partidosOrdenados = partidosData.sort((a, b) => {
+                // 1. Ordenar por Día
+                if (a.date !== b.date) {
+                    return a.date > b.date ? 1 : -1;
+                }
+
+                // 2. Si es el mismo día, ordenar por Hora
+                return a.hora.localeCompare(b.hora)
+            })
+
+            setPartidos(partidosOrdenados)
+        })
+
+        return () => unsubPartidos()
+    }, [select])
+
+    // Función para obtener datos de un equipo por su ID desde tus estados actuales
+    const getEquipoInfo = (id, lista) => {
+        return lista.find(e => e.id === id)
+    }
 
     return (
         <section>
-            {configuracionPartidos.map((p) => {
+            {partidos.map((p) => {
                 // Verificamos si el partido está activo (status == 1)
-                if (fecha?.[`partido${p.id}`] !== 1) return null
+                if (p.status !== 1) return null
 
                 return (
                     <ItemCalendario
                         key={p.id}
-                        now={fecha?.[`partido${p.id}`]}
-                        res={fecha?.[`res${p.id}`]}
-                        jugador={fecha?.[`jugador${p.id}`]}
-                        pen={fecha?.[`pen${p.id}`]}
-                        extra={fecha?.[`extra${p.id}`]}
-                        home={home}
-                        fecha={[p.dia, p.fecha, p.hora]}
+                        idJuego={p.id}
+                        now={p.status}
+                        fecha={[p.dia, p.date, p.hora]}
                         genero={p.genero}
                         equipos={[
-                            equipos.find(e => e.no === p.eq[0]), 
-                            equipos.find(e => e.no === p.eq[1])
+                            getEquipoInfo(p.idLocal, equipos), 
+                            getEquipoInfo(p.idVisitante, equipos)
                         ]}
+                        res={[p.golesLocal, p.golesVisitante]}
+                        jugador={p.jugador}
+                        extra={p.extra}
+                        pen={p.penales}
+                        home={home}
                     />
                 )
             })}

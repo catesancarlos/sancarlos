@@ -12,46 +12,21 @@ const MiniAgenda = () => {
             <div className='divo'></div>
             <p className='title'>Próximas actividades</p>
             <div className='cont'>
-                <ItemAgendaWimg
+                {/* <ItemAgendaWimg
                     itemsgroup={ITEMS_GROUP}
                     color='#245590'
                     title='INAUGURACIÓN 2026'
                     subtitle='Sábado 10 enero - 14h00'
-                />
+                /> */}
                 <ItemAgenda
-                    itemsgroup={ITEMS_GROUP}
-                    color='#cd8202'
-                    title='Catequesis Familiar'
-                    subtitle='SEGUIMIENTO'
-                    date='Viernes 09 enero 2026'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                />
-                <ItemAgenda
-                    itemsgroup={ITEMS_GROUP}
-                    color='#cd8202'
-                    title='Catequesis Familiar'
-                    subtitle='CONFIRMACIÓN'
-                    date='Viernes 09 enero 2026'
-                    place='Templo Parroquial'
-                    hour='19:00'
-                />
-                <ItemAgenda
-                    itemsgroup={ITEMS_GROUP}
-                    color='#cd8202'
-                    title='Catequesis Familiar'
-                    subtitle='AÑO BÍBLICO'
-                    date='Sábado 10 enero 2026'
-                    place='Teatro Catequesis'
-                    hour='18:00'
-                />
-                {/* <ItemAgenda
-                    main
+                    /* main */
+                    color='#245590'
                     title='Catequesis'
-                    subtitle='Segundos de Confirmación'
-                    date='Sábado 24 mayo 2025'
+                    subtitle='Clases Normales'
+                    date='Sábado 17 enero 2026'
                     place='Centros catequeticos'
                     hour={`Según horario`}
+                    itemsgroup={ITEMS_GROUP}
                 >
                     <strong>Centro</strong>
                     <p className='nt lg'>Mañana: 08:45 / Tarde: 13:45 - 11:30</p>
@@ -65,7 +40,33 @@ const MiniAgenda = () => {
                     <p className='lg'><strong>Auxiliadora:</strong> 14:00 - 17:00</p>
                     <p className='lg'><strong>Dolorosa:</strong> 14:00 - 17:00</p>
                 </ItemAgenda>
-                */}
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='RECONCILIACIÓN'
+                    date='Viernes 16 enero 2026'
+                    place='Templo Parroquial'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='EUCARISTIA G 1 - 4'
+                    date='Viernes 16 enero 2026'
+                    place='Teatro Catequesis'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='INICIACIÓN'
+                    date='Sábado 17 enero 2026'
+                    place='Teatro Catequesis'
+                    hour='18:00'
+                />
             </div>
 
             <style jsx>{`

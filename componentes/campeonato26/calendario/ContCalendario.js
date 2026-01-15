@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import db  from '../../../services/dBase'
-import { collection, query, where, onSnapshot } from 'firebase/firestore'
+import { collection, doc, query, where, onSnapshot } from 'firebase/firestore'
 
 import TitleSection from '../../sections/TitleSection'
 import OptionsSection from '../../sections/OptionsSection'
@@ -25,6 +25,13 @@ const optionsArray = [
 export default function Calendario(){
     const [select, setSelect] = useState(1)
     const [datosSemana, setDatosSemana] = useState(null)
+
+    useEffect(() => {
+        onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
+            setSelect(doc.data().fecha)
+        })
+    }, [])
+
 
     useEffect(() => {
         const qSemana = query(collection(db, 'semanas2026'), where('no', '==', select))

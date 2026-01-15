@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react'
 
 import AppLayout from '../../componentes/layout'
+import Container from '../../componentes/sections/Container'
 import CalendarioSemanal from '../../componentes/campeonato26/calendario/CalendarioSemanal'
 
 import db  from '../../services/dBase'
-import { setDoc, doc, runTransaction, increment } from 'firebase/firestore'
+import { setDoc, doc, onSnapshot, runTransaction, increment } from 'firebase/firestore'
+import AddGoleador from '../../componentes/control/AddGoleador'
+import AddPartido from '../../componentes/control/AddPartido'
 
 export default function Paasmal(){
     const [log, setLog] = useState(false)
+    const [section, setSection] = useState(1)
+    const [select, setSelect] = useState(1)
+
+    const handleChangeSection = e => setSection(e)
     
     useEffect(() => {
         const isLogged = sessionStorage.getItem('isLogged') === 'true'
@@ -20,6 +27,12 @@ export default function Paasmal(){
             sessionStorage.setItem('isLogged', 'true')
         }
     }
+
+    useEffect(() => {
+        onSnapshot(doc(db, 'controles', 'pagina'), (doc) => {
+            setSelect(doc.data().fecha)
+        })
+    }, [])
 
     const handleFinalizar = async ([idJuego, idLocal, idVisitante, golesLocal, golesVisitante]) => {
         // Referencias de los documentos
@@ -158,58 +171,96 @@ export default function Paasmal(){
         }
     }
 
-    const handleGoleador = async () => {
-        let na = 'Carlos Marquez'
-        let eq = '25M'
-
-        try {
-            await setDoc(doc(db, 'goleadores2026',`${eq}_${na.replace(" ", "_")}`), { 
-                id: `${eq}_${na.replace(" ", "_")}`,
-                name: na,
-                genero: 'M',
-                equipo: eq,
-                goles: 1
-            }, { merge: true })
-            
-        } catch (error) {
-            console.error('Error al guardar el jugador:', error)
-        }
-    }
-
     return(
         <AppLayout name='Segundos de Confirmación' titulo='2 Confirmación - Cate San Carlos'>
-            <section>
-                {
-                    log ? 
-                        <>
-                            <CalendarioSemanal
-                                select={2}
+            {
+                !log ? <div style={{ display: 'flex'}}><input onChange={handleChange} /></div> :
+                <Container
+                    title='CAMPEONATO'
+                    subtitle='Control'
+                >
+                    <aside>
+                        <p className={`op-menu ${section == 1 && 'active'}`} onClick={() => handleChangeSection(1)}>Calendario</p>
+                        <p className={`op-menu ${section == 2 && 'active'}`} onClick={() => handleChangeSection(2)}>Ag Partido</p>
+                        <p className={`op-menu ${section == 3 && 'active'}`} onClick={() => handleChangeSection(3)}>Ag Equipo</p>
+                        <p className={`op-menu ${section == 4 && 'active'}`} onClick={() => handleChangeSection(4)}>Ag Goleador</p>
+                        <p className={`op-menu ${section == 5 && 'active'}`} onClick={() => {
+                            sessionStorage.removeItem('isLogged')
+                            setLog(false)
+                        }}>Cerrar Sesión</p>
+                    </aside>
+                    <div className='principal'>
+                        {section == 1 
+                            ? <CalendarioSemanal
+                                select={select}
                                 control={true}
                                 onStatus={handleStatus}
                                 onGoles={handleGoles}
                                 onAgregar={handleAgregar}
                                 onFinalizar={handleFinalizar}
                             />
-                            <p onClick={handleSetear}>Partido</p>
-                            <p onClick={handleEquipo}>Equipo</p>
-                            <p onClick={handleGoleador}>Goleador</p>
-                            <p onClick={() => {
-                                sessionStorage.removeItem('isLogged')
-                                setLog(false)
-                            }}>Cerrar Sesión</p>
-                        </>
-                    :
-                        <div style={{ display: 'flex'}}>
-                            <input onChange={handleChange} />
-                        </div>
-                }
-            </section>
+                            : section == 2
+                                ? <AddPartido />
+                                : section == 3
+                                    ? <p onClick={handleEquipo}>Equipo</p>
+                                    : <AddGoleador />
+                        }
+                    </div>
+                </Container>
+            }
 
             <style jsx>{`
-                section{
+                aside{
+                    width: 15%;
+                }
+
+                .op-menu{
+                    background: white;
+                    padding: 10px 16px;
+                    font-size: 18px;
                     font-family: 'Lato', sans-serif;
-                    margin: 0 4% 0 4%;
-                    width: 92%;
+                    text-align: center;
+                    border-radius: 8px;
+                    box-shadow: -2px 2px 5px 0px #888;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    cursor: pointer;
+                    margin-bottom: 12px;
+                    
+                }
+
+                .active{
+                    background: #245590;
+                    color: white;
+                }
+
+                .principal{
+                    width: 85%;
+                    padding: 18px 0 18px 35px;
+                }
+
+                @media screen and (max-width: 768px){
+                    aside{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    .op-menu{
+                        width: calc((100% - 12px) / 3);
+                        padding: 6px 5px;
+                        font-size: 15px;
+                        margin-right: 6px;
+                        margin-bottom: 10px;
+                    }
+
+                    .op-menu:nth-child(3), .op-menu:nth-child(6), .op-menu:nth-child(9), .op-menu:nth-child(10){
+                        margin-right: 0;
+                    }
+
+                    .principal{
+                        width: 100%;
+                        padding: 15px 0 0 0;
+                    }
                 }
             `}</style>
         </AppLayout>

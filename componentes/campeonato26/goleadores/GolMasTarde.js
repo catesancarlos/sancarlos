@@ -13,11 +13,17 @@ export default function GolMasTarde(){
         const unsubscribe = onSnapshot(q, (snapshot) => {
             const todosLosJugadores = snapshot.docs.map(doc => doc.data())
 
-            // Ordenar de mayor a menor cantidad de goles
             const jugadoresOrdenados = [...todosLosJugadores].sort((a, b) => {
+                // 1. Regla de excepción para "Autogol"
+                // Si 'a' es Autogol, lo mandamos al final (retornamos 1)
+                if (a.name === 'Autogol') return 1;
+                // Si 'b' es Autogol, mantenemos a 'a' arriba (retornamos -1)
+                if (b.name === 'Autogol') return -1;
+
+                // 2. Si ninguno es Autogol, ordenamos por goles normalmente
                 const golesA = Number(a.goles) || 0
                 const golesB = Number(b.goles) || 0
-                return golesB - golesA // B - A para orden descendente
+                return golesB - golesA 
             });
 
             setJugadores(jugadoresOrdenados);

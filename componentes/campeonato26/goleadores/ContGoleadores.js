@@ -22,8 +22,8 @@ const Goleadores = () => {
     return (
         <section>
             <TitleSection
-                title='Goleadores Campeonato 2025'
-                desc='Tablas de goleadores del Campeonato 2025.'
+                title='Goleadores Campeonato 2026'
+                desc='Tablas de goleadores del Campeonato 2026.'
                 color='#245590'
             />
             <div className='cont-cont'>

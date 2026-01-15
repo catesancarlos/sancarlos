@@ -91,7 +91,7 @@ export default function ItemAgenda({
                 .info{
                     min-height: 100px;
                     color: black;
-                    padding: 10px 12px 12px 12px;
+                    padding: 10px 12px 15px 12px;
                     font-size: 17px;
                     font-weight: 200;
                 }
