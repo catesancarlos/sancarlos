@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import ItemAgenda from './ItemAgenda'
 import ItemAgendaWimg from './ItemAgendaWimg'
 
-const ITEMS_GROUP = 5
+const ITEMS_GROUP = 4
 
 const MiniAgenda = () => {
     const router = useRouter()
@@ -23,7 +23,7 @@ const MiniAgenda = () => {
                     color='#245590'
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 17 enero 2026'
+                    date='Sábado 24 enero 2026'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                     itemsgroup={ITEMS_GROUP}
@@ -43,13 +43,13 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     itemsgroup={ITEMS_GROUP}
                     color='#cd8202'
-                    title='Catequesis Familiar'
-                    subtitle='RECONCILIACIÓN'
-                    date='Viernes 16 enero 2026'
-                    place='Templo Parroquial'
-                    hour='19:00'
+                    title='BINGO SOLIDARIO'
+                    subtitle='En beneficio de Jaime Patiño'
+                    date='Sábado 24 enero 2026'
+                    place='Teatro Catequesis'
+                    hour='20:00'
                 />
-                <ItemAgenda
+                {/* <ItemAgenda
                     itemsgroup={ITEMS_GROUP}
                     color='#cd8202'
                     title='Catequesis Familiar'
@@ -66,7 +66,7 @@ const MiniAgenda = () => {
                     date='Sábado 17 enero 2026'
                     place='Teatro Catequesis'
                     hour='18:00'
-                />
+                /> */}
             </div>
 
             <style jsx>{`

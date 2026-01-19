@@ -106,7 +106,7 @@ export default function PosConfFem(){
                         {grupoSegui?.map((eq, index) => (
                             <tr key={eq.id}>
                                 <td className='tp'>{index + 1}</td>
-                                <td className='eq'>{eq.name} ({eq.id})</td>
+                                <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
                                 <td className='tp'>{eq.pj || 0}</td>
                                 <td className='tp'>{eq.pg || 0}</td>
                                 <td className='tp'>{eq.pe || 0}</td>
@@ -117,6 +117,12 @@ export default function PosConfFem(){
                                 <td className='tp'><strong>{eq.pts || 0}</strong></td>
                             </tr>
                         ))}
+                        <tr className='info-inag'>
+                            <td colSpan={10}>** 2 puntos extras, madrina elegida como Señorita Deportes .</td>
+                        </tr>
+                        <tr className='info-inag'>
+                            <td colSpan={10}>* Punto extra por organización (los 2 puntos se dividen, 1 para el equipo femenino y otro al masculino).</td>
+                        </tr>
                         {/* <tr className='info-inag'>
                             <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
                         </tr> */}
@@ -146,7 +152,7 @@ export default function PosConfFem(){
                         {grupoConfir?.map((eq, index) => (
                             <tr key={eq.id}>
                                 <td className='tp'>{index + 1}</td>
-                                <td className='eq'>{eq.name} ({eq.id})</td>
+                                <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
                                 <td className='tp'>{eq.pj || 0}</td>
                                 <td className='tp'>{eq.pg || 0}</td>
                                 <td className='tp'>{eq.pe || 0}</td>

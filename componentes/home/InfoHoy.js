@@ -62,8 +62,8 @@ export default function InfoHoy({ now, link }) {
 
                 .p1{
                     margin: -1px 0 0 0;
-                    width: 180px;
-                    width: 280px;
+                    /* width: 180px;
+                    width: 280px; */
                     height: 70px;
                     display: flex;
                     flex-direction: column;
@@ -135,7 +135,7 @@ export default function InfoHoy({ now, link }) {
 
                     .p1{
                         height: 58px;
-                        width: ${now?.now1 == 2 ? 'calc((100% - 85px)/1)' : 'calc((100% - 120px)/1)'};
+                        /* width: ${now?.now1 == 2 ? 'calc((100% - 85px)/1)' : 'calc((100% - 120px)/1)'}; */
                     }
 
                     .pizq{

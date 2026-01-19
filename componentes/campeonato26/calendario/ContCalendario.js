@@ -34,15 +34,20 @@ export default function Calendario(){
 
 
     useEffect(() => {
-        const qSemana = query(collection(db, 'semanas2026'), where('no', '==', select))
+        const qSemana = query(collection(db, 'semanas2026'))
 
         const unsubSemana = onSnapshot(qSemana, (snapshot) => {
             if (!snapshot.empty) {
-                setDatosSemana(snapshot.docs[0].data())
+                const detalleSemanas = snapshot.docs.map(doc => doc.data())
+                setDatosSemana(detalleSemanas)
             }
         })
 
         return () => unsubSemana()
+    }, [])
+
+    useEffect(() => {
+        
     }, [select])
 
     return (
@@ -55,17 +60,18 @@ export default function Calendario(){
             <div className='op-label' >
                 <p>Semana:</p>
                 <OptionsSection
-                    options={optionsArray}
+                    options={datosSemana}
                     select={select}
                     onSelect={op => setSelect(op)}
                     pos
                     fec
                 />
+                {console.log(select)}
             </div>
             {
                 <div className='fecha-label'>
                     <strong className='now-fec'>Semana {select}</strong>
-                    <i>[{datosSemana ? datosSemana.rango : 'Cargando...'}]</i>
+                    <i>[{datosSemana?.[select-1].rango}]</i>
                         <CalendarioSemanal select={select} />
                 </div>
             }
