@@ -19,11 +19,29 @@ const MiniAgenda = () => {
                     subtitle='Sábado 10 enero - 14h00'
                 /> */}
                 <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='AÑO BIBLICO'
+                    date='Viernes 20 febrero 2026'
+                    place='Teatro Catequesis'
+                    hour='19:00'
+                />
+                <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='RECONCILIACIÓN'
+                    date='Viernes 20 febrero 2026'
+                    place='Templo Parroquial'
+                    hour='19:00'
+                />
+                <ItemAgenda
                     /* main */
                     color='#245590'
                     title='Catequesis'
                     subtitle='Clases Normales'
-                    date='Sábado 24 enero 2026'
+                    date='Sábado 21 febrero 2026'
                     place='Centros catequeticos'
                     hour={`Según horario`}
                     itemsgroup={ITEMS_GROUP}
@@ -43,22 +61,22 @@ const MiniAgenda = () => {
                 <ItemAgenda
                     itemsgroup={ITEMS_GROUP}
                     color='#cd8202'
+                    title='Catequesis Familiar'
+                    subtitle='SEGUIMIENTO'
+                    date='Sábado 21 febrero 2026'
+                    place='Teatro Catequesis'
+                    hour='18:00'
+                />
+                {/* <ItemAgenda
+                    itemsgroup={ITEMS_GROUP}
+                    color='#cd8202'
                     title='BINGO SOLIDARIO'
                     subtitle='En beneficio de Jaime Patiño'
                     date='Sábado 24 enero 2026'
                     place='Teatro Catequesis'
                     hour='20:00'
-                />
+                /> */}
                 {/* <ItemAgenda
-                    itemsgroup={ITEMS_GROUP}
-                    color='#cd8202'
-                    title='Catequesis Familiar'
-                    subtitle='EUCARISTIA G 1 - 4'
-                    date='Viernes 16 enero 2026'
-                    place='Teatro Catequesis'
-                    hour='19:00'
-                />
-                <ItemAgenda
                     itemsgroup={ITEMS_GROUP}
                     color='#cd8202'
                     title='Catequesis Familiar'

@@ -175,6 +175,7 @@ export default function AddPartido(){
                     <option value="">Selecciona el grupo...</option>
                     <option value='Seg'>Seguimiento</option>
                     <option value='Con'>Confirmación</option>
+                    <option value='Int'>Inter</option>
                 </select>
             </div>
             <p onClick={handleAddGoleador}>Agregar Partido</p>
