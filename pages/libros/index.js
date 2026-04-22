@@ -93,7 +93,7 @@ export default function Libros(){
                 </article>
             
             </section>
-            {/* {
+            {
                 pdfe &&
                     <Modal
                         background='#FFFFFFCC'
@@ -151,9 +151,9 @@ export default function Libros(){
                             </div>
                         </Worker>
                     </Modal>
-            } */}
+            }
 
-            {
+            {/* {
                 pdfe &&
                     <Modal
                         background='#FFFFFF'
@@ -170,7 +170,7 @@ export default function Libros(){
     }}
 />
                     </Modal>
-            }
+            } */}
 
             <style jsx>{`
                 section{

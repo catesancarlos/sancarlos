@@ -4,7 +4,7 @@ import Download from '../iconos/Download'
 export default function Modal({ children, background, onDescargar, onClose }){
     const refCont = useRef(null)
 
-    useEffect(() => {
+    /* useEffect(() => {
         if(onClose){
             function handleClickOutside (e) {
                 if(!refCont.current.contains(e.target)) onClose(false)
@@ -16,7 +16,7 @@ export default function Modal({ children, background, onDescargar, onClose }){
                 document.removeEventListener('mousedown', handleClickOutside)
             }
         }
-    }, [])
+    }, []) */
 
     useEffect(() => {
         // Bloquear scroll del body
