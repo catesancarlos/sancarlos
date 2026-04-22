@@ -7,6 +7,7 @@ const Equipo = ({
     com,
     nombre,
     paralelo,
+    genero,
     logo,
     color,
     borde,
@@ -21,10 +22,10 @@ const Equipo = ({
                 !com ? <IconEscudo ca={ca} pos={pos} color={color} borde={borde} />
                     : <IconEscudoCom ca={ca} pos={pos} color={color} borde={borde} />
             }
-            <p className='log'>{logo}</p>
+            <p className='log'>{logo.startsWith('c') ? logo.slice(1) : logo}</p>
             { mas && <p className='slog'>{mas}</p> }
         </div>
-        <p className='l-p'>{paralelo}</p>
+        <p className='l-p'>{paralelo} ({genero})</p>
         <p className='l-n'>{nombre}</p>
 
         <style jsx>{`

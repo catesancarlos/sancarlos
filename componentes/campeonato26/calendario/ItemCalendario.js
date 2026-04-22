@@ -58,6 +58,7 @@ export default function ItemCalendario({
                         com={com}
                         nombre={equipos[0].name}
                         paralelo={equipos[0].paralelo}
+                        genero={equipos[0].genero}
                         logo={equipos[0].id}
                         color={equipos[0].colors[0]}
                         borde={equipos[0].colors[1]}
@@ -90,6 +91,7 @@ export default function ItemCalendario({
                         com={com}
                         nombre={equipos[1].name}
                         paralelo={equipos[1].paralelo}
+                        genero={equipos[1].genero}
                         logo={equipos[1].id}
                         color={equipos[1].colors[0]}
                         borde={equipos[1].colors[1]}

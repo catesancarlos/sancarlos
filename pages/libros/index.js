@@ -93,7 +93,7 @@ export default function Libros(){
                 </article>
             
             </section>
-            {
+            {/* {
                 pdfe &&
                     <Modal
                         background='#FFFFFFCC'
@@ -150,6 +150,25 @@ export default function Libros(){
                                 </div>
                             </div>
                         </Worker>
+                    </Modal>
+            } */}
+
+            {
+                pdfe &&
+                    <Modal
+                        background='#FFFFFF'
+                        onDescargar={() => handleDescargar(pdfe)}
+                        onClose={(e) => setPdfe(e)}
+                    >
+                        <iframe
+    src="https://dapder.com/embed/bvos8k"
+    style={{
+        width: '100%',
+        height: 'calc(100vh - 40px)',
+        border: 'none',
+        display: 'block'
+    }}
+/>
                     </Modal>
             }
 

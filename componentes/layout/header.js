@@ -64,12 +64,12 @@ const Header = ({ name, flecha, auth }) => {
                         className='item-menu'
                         onClick={() => router.push('/agenda')}
                         style={{color: name=='Agenda' ? 'brown' : 'black', fontWeight: name=='Agenda' ? 'bold' : '200'}}
-                    >AGENDA</p> */}
+                    >AGENDA</p>
                     <p 
                         className='item-menu'
                         onClick={() => router.push('/blog')}
                         style={{color: name=='Blog' ? 'brown' : 'black', fontWeight: name=='Blog' ? 'bold' : '200'}}
-                    >BLOG</p>
+                    >BLOG</p> */}
             </div>
 
             <style jsx>{`

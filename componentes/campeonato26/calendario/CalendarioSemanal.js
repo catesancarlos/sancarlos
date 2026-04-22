@@ -72,6 +72,7 @@ export default function CalendarioSemanal({
     return partidos?.map((p, index) => (
         <ItemCalendario
             key={p.id}
+            com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
             control={control}
             idJuego={p.id}
             now={p.status}

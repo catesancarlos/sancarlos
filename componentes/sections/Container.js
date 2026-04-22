@@ -24,10 +24,10 @@ export default function Container({ title, subtitle, img, children }){
                 }
 
                 section{
-                    margin-top: 12px;
+                    margin-top: 35px;
                     width: 100%;
                     display: flex;
-                    justify-content: space-between;
+                    gap: 60px;
                 }
 
                 @media screen and (max-width: 768px){
@@ -37,10 +37,12 @@ export default function Container({ title, subtitle, img, children }){
                     }
 
                     section{
+                        margin-top: 25px;
                         width: 100%;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        gap: 25px;
                     }
                 }
             `}</style>

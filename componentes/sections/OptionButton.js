@@ -6,19 +6,20 @@ export default function OptionButton({ data, select, options, nogen, fec, onSele
             onClick={() => onSelect(data.no)}
         >
             <p>{data.name}</p>
-            { data.genero && <span>{data.genero}</span> }
+            {/* { data.genero && <span>{data.genero}</span> } */}
     
             <style jsx>{`
                 div{
                     position: relative;
-                    margin: 0 4px 8px 4px;
+                    margin: 0 6px 8px 6px;
                     background: white;
-                    height: 28px;
+                    height: 32px;
                     padding: ${fec ? '0 10px' : data.genero ? '0 43px 0 15px' : '0 15px'};
                     color: black;
-                    font-size: 16px;
+                    font-size: 17px;
                     display: flex;
                     align-items: center;
+                    justify-content: center;
                     border-radius: 10px;
                     box-shadow: -1px 2px 3px 0px #888;
                     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -61,12 +62,19 @@ export default function OptionButton({ data, select, options, nogen, fec, onSele
 
                 @media screen and (max-width: 768px){
                     div{
-                        margin: 0 4px 8px 4px;
+                        width: ${!fec ? 'auto' : 'calc((100% - 25px)/ 6)'};
+                        margin: ${!fec ? '0 4px 8px 4px' : '0 5px 5px 0'};
                         height: 26px;
                         padding: ${data.genero ? '0 38px 0 10px' : '0 12px'};
                         font-size: 14px;
                         border-radius: 8px;
                     }
+
+                    ${fec ? `
+                        div:nth-child(6n) {
+                            margin: 0 0 5px 0;
+                        }
+                        ` : ''}
 
                     p{          
                         min-width: auto;        

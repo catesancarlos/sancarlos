@@ -173,9 +173,13 @@ export default function AddPartido(){
                     className="custom-select" 
                 >
                     <option value="">Selecciona el grupo...</option>
-                    <option value='Seg'>Seguimiento</option>
                     <option value='Con'>Confirmación</option>
+                    <option value='Seg'>Seguimiento</option>
                     <option value='Int'>Inter</option>
+                    <option value='Bib'>Año Bíblico</option>
+                    <option value='Com'>Comunión</option>
+                    <option value='Rec'>Reconciliación</option>
+                    <option value='Ini'>Iniciación</option>
                 </select>
             </div>
             <p onClick={handleAddGoleador}>Agregar Partido</p>

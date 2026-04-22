@@ -3,20 +3,16 @@ import { useState, useEffect } from 'react'
 import db  from '../../../services/dBase'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
-export default function PosConfFem(){
-    const [grupoSegui, setGrupoSegui] = useState([]); // Ordenado (Posiciones)
-    const [grupoSeguiLista, setGrupoSeguiLista] = useState([]); // Lista (ID/Original)
-
-    const [grupoConfir, setGrupoConfir] = useState([]); // Ordenado (Posiciones)
-    const [grupoConfirLista, setGrupoConfirLista] = useState([]); // Lista (ID/Original)
+export default function PosBiblicoMas(){
+    const [grupoBiblico, setGrupoBiblico] = useState([]) // Ordenado (Posiciones)
+    const [grupoBiblicoLista, setGrupoBiblicoLista] = useState([]) // Lista (ID/Original)
 
     const [partidos, setPartidos] = useState([]);
 
     useEffect(() => {
-        // 1. Query para Grupo SEGUIMIENTO
         const q = query(
             collection(db, 'equipos2026'),
-            where('genero', '==', 'F')
+            where('genero', '==', 'M')
         )
 
         const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -33,14 +29,9 @@ export default function PosConfFem(){
             };
 
             // --- PROCESAR SEGUIMIENTO ---
-            const listaSegui = datosCargados.filter(eq => eq.id < '20');
-            setGrupoSeguiLista(listaSegui); // Orden original de Firestore
-            setGrupoSegui(obtenerOrdenados(listaSegui)); // Orden de posiciones
-
-            // --- PROCESAR CONFIRMACIÓN ---
-            const listaConfir = datosCargados.filter(eq => parseInt(eq.id) >= 20);
-            setGrupoConfirLista(listaConfir); // Orden original de Firestore
-            setGrupoConfir(obtenerOrdenados(listaConfir)); // Orden de posiciones
+            const listaBiblico = datosCargados.filter(eq => eq.id.startsWith('A'))
+            setGrupoBiblicoLista(listaBiblico) // Orden original de Firestore
+            setGrupoBiblico(obtenerOrdenados(listaBiblico)) // Orden de posiciones
         });
 
         return () => { unsubscribe() };
@@ -50,8 +41,8 @@ export default function PosConfFem(){
         // Traemos todos los partidos 'M'
         const qPartidos = query(
             collection(db, 'partidos2026'), 
-            where('genero', '==', 'F'),
-            where('grupo', 'in', ['Con', 'Seg', 'Int'])
+            where('genero', '==', 'M'),
+            where('grupo', '==', 'Bib')
         );
 
         const unsubPartidos = onSnapshot(qPartidos, (snapshot) => {
@@ -86,7 +77,7 @@ export default function PosConfFem(){
                     <thead>
                         <tr>
                             <td colSpan={10} className='title-table'>
-                                <strong>Grupo CONFIRMACIÓN</strong>
+                                <strong>Grupo AÑO BÍBLICO</strong>
                             </td>
                         </tr>
                         <tr className='label'>
@@ -103,53 +94,7 @@ export default function PosConfFem(){
                         </tr>
                     </thead>
                     <tbody>
-                        {grupoConfir?.map((eq, index) => (
-                            <tr key={eq.id}>
-                                <td className='tp'>{index + 1}</td>
-                                <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
-                                <td className='tp'>{eq.pj || 0}</td>
-                                <td className='tp'>{eq.pg || 0}</td>
-                                <td className='tp'>{eq.pe || 0}</td>
-                                <td className='tp'>{eq.pp || 0}</td>
-                                <td className='tp'>{eq.gf || 0}</td>
-                                <td className='tp'>{eq.gc || 0}</td>
-                                <td className='tp'>{(eq.dg > 0 ? `+${eq.dg}` : eq.dg) || 0}</td>
-                                <td className='tp'><strong>{eq.pts || 0}</strong></td>
-                            </tr>
-                        ))}
-                        {/* <tr className='info-inag'>
-                            <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                        </tr>
-                        <tr className='info-inag'>
-                            <td colSpan={10}>* Punto extra madrina (Se divide entre los 2 equipos del paralelo).</td>
-                        </tr>
-                        <tr className='info-inag'>
-                            <td colSpan={10}>** 2 puntos extra por organización.</td>
-                        </tr> */}
-                    </tbody>
-                </table>
-                <table>
-                    <thead>
-                        <tr>
-                            <td colSpan={10} className='title-table'>
-                                <strong>Grupo SEGUIMIENTO</strong>
-                            </td>
-                        </tr>
-                        <tr className='label'>
-                            <td className='tp'><strong>#</strong></td>
-                            <td className='eq'><strong>Equipo</strong></td>
-                            <td className='tp'><strong>PJ</strong></td>
-                            <td className='tp'><strong>G</strong></td>
-                            <td className='tp'><strong>E</strong></td>
-                            <td className='tp'><strong>P</strong></td>
-                            <td className='tp'><strong>GF</strong></td>
-                            <td className='tp'><strong>GC</strong></td>
-                            <td className='tp'><strong>GD</strong></td>
-                            <td className='tp'><strong>PTS</strong></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {grupoSegui?.map((eq, index) => (
+                        {grupoBiblico?.map((eq, index) => (
                             <tr key={eq.id}>
                                 <td className='tp'>{index + 1}</td>
                                 <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
@@ -164,10 +109,7 @@ export default function PosConfFem(){
                             </tr>
                         ))}
                         <tr className='info-inag'>
-                            <td colSpan={10}>** 2 puntos extras, madrina elegida como Señorita Deportes .</td>
-                        </tr>
-                        <tr className='info-inag'>
-                            <td colSpan={10}>* Punto extra por organización (los 2 puntos se dividen, 1 para el equipo femenino y otro al masculino).</td>
+                            <td colSpan={10}>* Punto extra por organización (los 2 puntos se dividen, 1 para el equipo masculino y otro al femenino).</td>
                         </tr>
                         {/* <tr className='info-inag'>
                             <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
@@ -191,11 +133,11 @@ export default function PosConfFem(){
                                 .filter(p => p.fecha === numeroFecha) // Solo partidos de esta fecha
                                 .map((partido) => (
                                     <tr key={partido.id}>
-                                        <td>{getEquipoInfo(partido.idLocal, [...grupoSeguiLista, ...grupoConfirLista])}</td>
+                                        <td>{getEquipoInfo(partido.idLocal, [...grupoBiblicoLista])}</td>
                                         <td>{partido.golesLocal}</td>
                                         <td>vs.</td>
                                         <td>{partido.golesVisitante}</td>
-                                        <td>{getEquipoInfo(partido.idVisitante, [...grupoSeguiLista, ...grupoConfirLista])}</td>
+                                        <td>{getEquipoInfo(partido.idVisitante, [...grupoBiblicoLista])}</td>
                                     </tr>
                                 ))}
                         </tbody>
@@ -243,7 +185,7 @@ export default function PosConfFem(){
                 }
 
                 .title-table{
-                    background: #CC397B;
+                    background: #245590;
                     color: white;
                     font-size: 14px;
                 }

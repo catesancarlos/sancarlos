@@ -66,8 +66,8 @@ const Home = () => {
                     /* link={['Información y compra de tablas', 'https://wa.me/593992648663']} */
                 />
                 <PartidoNow select={now?.fecha ?? 1} home />
-                <Feliz2026 />
-                <MiniAgenda />
+                {/* <Feliz2026 />
+                <MiniAgenda /> */}
                 <CampSection title='Partidos de la semana:' >
                     <CalendarioSemanal
                         select={now?.fecha ?? 1}

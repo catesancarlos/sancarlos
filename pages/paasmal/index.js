@@ -150,12 +150,12 @@ export default function Paasmal(){
 
     const handleEquipo = async () => {
         try {
-            await setDoc(doc(db, 'equipos2026', '25F'), { 
-                id: '25F',
+            await setDoc(doc(db, 'equipos2026', 'I1M'), { 
+                id: 'I1M',
                 colors: ['white', 'black', 'black'],
-                genero: 'F',
-                name: 'Confirmación 5',
-                paralelo: '2 Confir. 5',
+                genero: 'M',
+                name: 'Iniciación 1',
+                paralelo: 'Iniciación 1',
                 pj: 0,
                 pg: 0,
                 pe: 0,

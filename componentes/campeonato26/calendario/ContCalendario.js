@@ -7,21 +7,6 @@ import TitleSection from '../../sections/TitleSection'
 import OptionsSection from '../../sections/OptionsSection'
 import CalendarioSemanal from './CalendarioSemanal'
 
-const optionsArray = [
-    {
-        no: 1,
-        name: 'S1'
-    },
-    {
-        no: 2,
-        name: 'S2'
-    },
-    {
-        no: 3,
-        name: 'S3'
-    },
-]
-
 export default function Calendario(){
     const [select, setSelect] = useState(1)
     const [datosSemana, setDatosSemana] = useState(null)
@@ -53,12 +38,11 @@ export default function Calendario(){
     return (
         <section>
             <TitleSection
-                title='Calendario Campeonato 2026'
-                desc='Fecha y hora de los partidos del campeonato.'
+                title='CALENDARIO'
                 color='#245590'
             />
             <div className='op-label' >
-                <p>Semana:</p>
+                <p className='sobre'>Semana:</p>
                 <OptionsSection
                     options={datosSemana}
                     select={select}
@@ -66,26 +50,32 @@ export default function Calendario(){
                     pos
                     fec
                 />
-                {console.log(select)}
             </div>
-            {
-                <div className='fecha-label'>
-                    <strong className='now-fec'>Semana {select}</strong>
-                    <i>[{datosSemana?.[select-1].rango}]</i>
-                        <CalendarioSemanal select={select} />
-                </div>
-            }
+            <div className='fecha-label'>
+                <p className='semana'><strong className='now-fec'>Semana {select}:</strong> [{datosSemana?.[select-1].rango}]</p>
+                <CalendarioSemanal select={select} />
+            </div>
 
             <style jsx>{`
+                section{
+                    flex: 1;
+                }
+
+                .semana{
+                    margin-top: 5px;
+                    color: #000000;
+                    width: 100%;
+                    font-size: 18px;
+                    font-weight: 200;
+                    margin-bottom: 18px;
+                }
+
                 strong{
                     width: 100%;
                     font-size: 20px;
-                    margin-bottom: 12px;
+                    font-weight: bold;
                 }
 
-                .ct{
-                    text-align: center;
-                }
 
                 .fecha-label{
                     margin-top: 20px;
@@ -102,7 +92,7 @@ export default function Calendario(){
                     border-radius: 10px;
                 }
 
-                p{
+                .sobre{
                     position: absolute;
                     top: -12px;
                     background: #F2F8F6;
@@ -110,30 +100,13 @@ export default function Calendario(){
                     font-weight: 500;
                 }
 
-                .now-fec{
-                    margin-top: 5px;
-                    margin-bottom: 2px;
-                }
-
-                i{
-                    color: #000000;
-                    width: 100%;
-                    font-size: 17px;
-                    font-weight: 200;
-                    margin-bottom: 12px;
-                }
-
                 @media screen and (max-width: 768px){
+                    .semana{
+                        font-size: 15px;
+                    }
+                    
                     strong{
                         font-size: 16px;
-                    }
-
-                    .now-fec{
-                        margin-top: 0;
-                    }
-
-                    i{
-                        font-size: 15px;
                     }
                 }
             `}</style>

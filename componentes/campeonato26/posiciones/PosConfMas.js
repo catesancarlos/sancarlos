@@ -37,7 +37,7 @@ export default function PosConfMas(){
             setGrupoSegui(obtenerOrdenados(listaSegui)); // Orden de posiciones
 
             // --- PROCESAR CONFIRMACIÓN ---
-            const listaConfir = datosCargados.filter(eq => eq.id >= '20');
+            const listaConfir = datosCargados.filter(eq => parseInt(eq.id) >= 20)
             setGrupoConfirLista(listaConfir); // Orden original de Firestore
             setGrupoConfir(obtenerOrdenados(listaConfir)); // Orden de posiciones
         });
@@ -49,7 +49,8 @@ export default function PosConfMas(){
         // Traemos todos los partidos 'M'
         const qPartidos = query(
             collection(db, 'partidos2026'), 
-            where('genero', '==', 'M')
+            where('genero', '==', 'M'),
+            where('grupo', 'in', ['Con', 'Seg', 'Int'])
         );
 
         const unsubPartidos = onSnapshot(qPartidos, (snapshot) => {
@@ -79,8 +80,47 @@ export default function PosConfMas(){
     return (
         <section>
             <div className='tables'>
-                <strong className='title'>Confirmación (1 & 2) - Posiciones:</strong>
-                {console.log(partidos)}
+                <strong className='title'>Posiciones:</strong>
+                <table>
+                    <thead>
+                        <tr>
+                            <td colSpan={10} className='title-table'>
+                                <strong>Grupo CONFIRMACIÓN</strong>
+                            </td>
+                        </tr>
+                        <tr className='label'>
+                            <td className='tp'><strong>#</strong></td>
+                            <td className='eq'><strong>Equipo</strong></td>
+                            <td className='tp'><strong>PJ</strong></td>
+                            <td className='tp'><strong>G</strong></td>
+                            <td className='tp'><strong>E</strong></td>
+                            <td className='tp'><strong>P</strong></td>
+                            <td className='tp'><strong>GF</strong></td>
+                            <td className='tp'><strong>GC</strong></td>
+                            <td className='tp'><strong>GD</strong></td>
+                            <td className='tp'><strong>PTS</strong></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {grupoConfir?.map((eq, index) => (
+                            <tr key={eq.id}>
+                                <td className='tp'>{index + 1}</td>
+                                <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
+                                <td className='tp'>{eq.pj || 0}</td>
+                                <td className='tp'>{eq.pg || 0}</td>
+                                <td className='tp'>{eq.pe || 0}</td>
+                                <td className='tp'>{eq.pp || 0}</td>
+                                <td className='tp'>{eq.gf || 0}</td>
+                                <td className='tp'>{eq.gc || 0}</td>
+                                <td className='tp'>{(eq.dg > 0 ? `+${eq.dg}` : eq.dg) || 0}</td>
+                                <td className='tp'><strong>{eq.pts || 0}</strong></td>
+                            </tr>
+                        ))}
+                        {/* <tr className='info-inag'>
+                            <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
+                        </tr> */}
+                    </tbody>
+                </table>
                 <table>
                     <thead>
                         <tr>
@@ -119,46 +159,6 @@ export default function PosConfMas(){
                         <tr className='info-inag'>
                             <td colSpan={10}>* Punto extra por organización (los 2 puntos se dividen, 1 para el equipo masculino y otro al femenino).</td>
                         </tr>
-                        {/* <tr className='info-inag'>
-                            <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
-                        </tr> */}
-                    </tbody>
-                </table>
-                <table>
-                    <thead>
-                        <tr>
-                            <td colSpan={10} className='title-table'>
-                                <strong>Grupo CONFIRMACIÓN</strong>
-                            </td>
-                        </tr>
-                        <tr className='label'>
-                            <td className='tp'><strong>#</strong></td>
-                            <td className='eq'><strong>Equipo</strong></td>
-                            <td className='tp'><strong>PJ</strong></td>
-                            <td className='tp'><strong>G</strong></td>
-                            <td className='tp'><strong>E</strong></td>
-                            <td className='tp'><strong>P</strong></td>
-                            <td className='tp'><strong>GF</strong></td>
-                            <td className='tp'><strong>GC</strong></td>
-                            <td className='tp'><strong>GD</strong></td>
-                            <td className='tp'><strong>PTS</strong></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {grupoConfir?.map((eq, index) => (
-                            <tr key={eq.id}>
-                                <td className='tp'>{index + 1}</td>
-                                <td className='eq'>{eq.name} ({eq.id}) {eq.bonificacion == 'madrina' ? '**' : eq.bonificacion == 'org' ? '*' : ''}</td>
-                                <td className='tp'>{eq.pj || 0}</td>
-                                <td className='tp'>{eq.pg || 0}</td>
-                                <td className='tp'>{eq.pe || 0}</td>
-                                <td className='tp'>{eq.pp || 0}</td>
-                                <td className='tp'>{eq.gf || 0}</td>
-                                <td className='tp'>{eq.gc || 0}</td>
-                                <td className='tp'>{(eq.dg > 0 ? `+${eq.dg}` : eq.dg) || 0}</td>
-                                <td className='tp'><strong>{eq.pts || 0}</strong></td>
-                            </tr>
-                        ))}
                         {/* <tr className='info-inag'>
                             <td colSpan={10}><strong style={{color: '#1BB16C', marginLeft: '-1px'}}>•</strong> Clasificado, siguiente ronda.</td>
                         </tr> */}

@@ -11,6 +11,7 @@ export default function TitleSection({ title, desc, color, children }){
 
             <style jsx>{`
                 .title-section{
+                    width: 100%;
                     margin-bottom: 30px;
                 }
 
@@ -23,11 +24,11 @@ export default function TitleSection({ title, desc, color, children }){
                 strong{
                     color: ${color ? color : 'black'};
                     font-size: 22px;
-                    margin-bottom: 6px;
+                    margin-bottom: ${desc ? '6px' : '0'};
                 }
 
                 i{
-                    font-size: 17px;
+                    font-size: 18px;
                     font-weight: 200;
                 }
 
