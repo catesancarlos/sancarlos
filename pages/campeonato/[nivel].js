@@ -16,7 +16,7 @@ const menuOptions = [
     { id: 1, label: 'Posiciones' },
    /*  { id: 2, label: 'Calendario' }, */
     { id: 3, label: 'Equipos' },
-    /* { id: 4, label: 'Goleadores' }, */
+    { id: 4, label: 'Goleadores' },
     { id: 5, label: 'Reglas' }
 ]
 
@@ -46,7 +46,7 @@ export default function CampeonatoConfirmacion(){
                     {
                         section == 2 ? <Calendario /> :
                             section == 3 ? <EquiposKT26 nivel={nivel} /> :
-                                section == 4 ? <Goleadores /> : 
+                                section == 4 ? <Goleadores nivel={nivel} /> : 
                                     section == 5 ? <DetallesKT25 /> : 
                                         <Posiciones nivel={nivel} />
                     }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import TitleSection from '../../sections/TitleSection'
 import OptionsSection from '../../sections/OptionsSection'
+import TablaGoleadores from './TablaGoleadores'
 import GolMasTarde from './GolMasTarde'
 import GolFemTarde from './GolFemTarde'
 
@@ -16,13 +17,30 @@ const opcionesArray = [
     }
 ]
 
-const Goleadores = () => {
-    const [select, setSelect] = useState(2)
+const niveles = [
+    { id: 'confirmacion', label: 'Confirmación', com: false },
+    { id: 'seguimiento', label: 'Seguimiento', com: false },
+    { id: 'biblico', label: 'Año Bíblico', com: false },
+    { id: 'comunion', label: 'Comunión', com: true },
+    { id: 'reconciliacion', label: 'Reconciliación', com: true  },
+    { id: 'iniciacion', label: 'Iniciación', com: true  },
+]
+
+const Goleadores = ({ nivel }) => {
+    const [select, setSelect] = useState(1)
+
+    const nivelEncontrado = niveles.find(item => item.id === nivel)
+
+    // Definimos el título
+    const titulo = (nivelEncontrado 
+        ? `Goleadores ${nivelEncontrado.label} 2026` 
+        : 'Goleadores Campeonato 2026'
+    ).toUpperCase()
 
     return (
         <section>
             <TitleSection
-                title='Goleadores Campeonato 2026'
+                title={titulo}
                 desc='Tablas de goleadores del Campeonato 2026.'
                 color='#245590'
             />
@@ -35,9 +53,11 @@ const Goleadores = () => {
                 />
             </div>
             <div className='tablas'>
-                {
-                    select == 1 ? <GolMasTarde /> : <GolFemTarde />
-                }
+                <TablaGoleadores 
+                    nivel={nivel}
+                    genero={select === 1 ? 'M' : 'F'} 
+                    titulo={select === 1 ? 'Masculino' : 'Femenino'} 
+                />
             </div>
 
             <style jsx>{`

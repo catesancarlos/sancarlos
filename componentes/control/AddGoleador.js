@@ -8,6 +8,7 @@ export default function AddGoleador(){
 
     const [formData, setFormData] = useState({
         name: '',
+        nivel: '',
         genero: '',
         equipo: '',
         goles: 0
@@ -63,13 +64,30 @@ export default function AddGoleador(){
         }
     }
 
-    const { name, genero, equipo, goles } = formData
+    const { name, nivel, genero, equipo, goles } = formData
 
     return (
         <section>
             <div>
                 <label>Nombre:</label>
                 <input name='name' value={name} onChange={handleFormChange} />
+            </div>
+            <div>
+                <label>nivel:</label>
+                <select
+                    name='nivel' 
+                    value={nivel} 
+                    onChange={handleFormChange}
+                    className="custom-select" 
+                >
+                    <option value="">Selecciona el nivel...</option>
+                    <option value='confirmacion'>Confirmación</option>
+                    <option value='seguimiento'>Seguimiento</option>
+                    <option value='biblico'>Año Bíblico</option>
+                    <option value='comunion'>Comunión</option>
+                    <option value='reconciliacion'>Reconciliación</option>
+                    <option value='iniciacion'>Iniciación</option>
+                </select>
             </div>
             <div>
                 <label>Genero:</label>
