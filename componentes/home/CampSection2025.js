@@ -1,14 +1,5 @@
 import { useRouter } from 'next/router'
 
-const niveles = [
-    { id: '/campeonato/confirmacion', label: 'Confirmación' },
-    { id: '/campeonato/seguimiento', label: 'Seguimiento' },
-    { id: '/campeonato/biblico', label: 'Año Bíblico' },
-    { id: '/campeonato/comunion', label: 'Comunión' },
-    { id: '/campeonato/reconciliacion', label: 'Reconciliación' },
-    { id: '/campeonato/iniciacion', label: 'Iniciación'  },
-]
-
 const CampSection = ({ title, children }) => {
     const router = useRouter()
 
@@ -21,19 +12,22 @@ const CampSection = ({ title, children }) => {
                     { title && <p className='pf1'>{title}</p> }
                     {children}
                 </div>
-                <div className='camp-menu'>
-                    <div className='h1' onClick={() => router.push('/campeonato')}>
-                        <p>Campeonato</p>
-                        <p className='h1-t'>Catequesis 2026</p>
+                <div className='camp-op'>
+                    <div className='h1'>
+                        <p className='h1-t'>Campeonato</p>
+                        <p className='h2-t'>Catequesis 2026</p>
                     </div>
-                    <div className='camp-op'>
-                        {
-                            niveles.map(op => 
-                                <div key={op.id} className='hg' onClick={() => router.push(op.id)}>
-                                    <p>{op.label}</p>
-                                </div>
-                            )
-                        }
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 1}})}>
+                        <p className='hg-t'>Calendario</p>
+                    </div>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 2}})}>
+                        <p className='hg-t'>Posiciones</p>
+                    </div>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 3}})}>
+                        <p className='hg-t'>Goleadores</p>
+                    </div>
+                    <div className='hg' onClick={() => router.push({pathname: '/campeonato', query: {s: 5}})}>
+                        <p className='hg-t'>Reglas</p>
                     </div>
                 </div>
             </div>
@@ -43,6 +37,12 @@ const CampSection = ({ title, children }) => {
                     margin: 50px 4% 20px 4%;
                     margin: 0px 4% 40px 4%;
                     width: 92%;
+                }
+
+                .container{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
                 }
 
                 .divo{
@@ -62,16 +62,10 @@ const CampSection = ({ title, children }) => {
                     margin-bottom: 30px;
                 }
 
-                .container{
-                    display: flex;
-                    flex-direction: row-reverse;
-                    gap: 60px;
-                }
-
                 .cont-partidos{
                     margin-top: 0px;
+                    width: calc(50% - 10px);
                     display: flex;
-                    flex: 1;
                     flex-direction: column;
                     align-items: center;
                 }
@@ -84,9 +78,18 @@ const CampSection = ({ title, children }) => {
                     margin-bottom: 12px;
                 }
 
-                .camp-menu{
+                .st{
+                    margin-bottom: 12px;
+                }
+
+                .camp-op{
                     margin-top: 6px;
-                    flex: 1;
+                    height: 146px;
+                    width: calc(50% - 20px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: flex-start;
                 }
 
                 .h1{
@@ -96,34 +99,31 @@ const CampSection = ({ title, children }) => {
                     width: 100%;
                     padding: 10px 20px;
                     color: white;
-                    letter-spacing: 1px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     border-radius: 20px 3px 3px 3px;
                     margin-bottom: 12px;
-                    cursor: pointer;
                 }
 
                 .h1-t{
+                    letter-spacing: 1px;
+                }
+
+                .h2-t{
                     font-size: 20px;
                     font-weight: bold;
                     letter-spacing: 2px;
                 }
 
-                .camp-op{
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr); 
-                    gap: 15px; 
-                }
-
                 .hg{
+                    margin-right: 12px;
                     background: #00000077;
-                    height: 60px;
+                    background-image: repeating-linear-gradient(-45deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 20px);
+                    height: 74px;
+                    width: calc(25% - 9px);
                     padding: 10px 20px;
-                    color: white;
-                    font-size: 18px;
-                    font-weight: 400;
+                    color: black;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -133,7 +133,15 @@ const CampSection = ({ title, children }) => {
                 }
 
                 .hg:last-child{
-                    border-radius: 3px 3px 15px 3px;
+                    margin-right: 0;
+                    border-radius: 3px 3px 10px 3px;
+                }
+
+                .hg-t{
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
                 }
 
                 @media screen and (max-width: 768px){
@@ -141,6 +149,13 @@ const CampSection = ({ title, children }) => {
                         margin: 20px 15px 0px 15px;
                         margin: 10px 15px 30px 15px;
                         width: calc(100% - 30px);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+
+                    .container{
+                        display: inline;
                     }
 
                     .divo{
@@ -162,10 +177,6 @@ const CampSection = ({ title, children }) => {
                         margin-bottom: 18px;
                     }
 
-                    .container{
-                        display: inline;
-                    }
-
                     .cont-partidos{
                         width: 100%;
                     }
@@ -175,39 +186,50 @@ const CampSection = ({ title, children }) => {
                         font-size: 400;
                     }
 
-                    .camp-menu{
+                    .camp-op{
                         margin-top: 0;
                         width: 100%;
                         height: auto;
                     }
 
                     .h1{
-                        /* display: none; */
-                        margin-top: 15px;
-                        height: auto;
-                        padding: 8px 12px;
-                        letter-spacing: 1px;
-                        border-radius: 10px;
-                    }
-
-                    .camp-op{
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr); 
-                        gap: 12px; 
+                        display: none;
                     }
 
                     .hg{
                         background: #000000;
+                        margin-left: 0px;
+                        margin-top: 14px;
                         height: 45px;
+                        width: calc(50% - 7px);
                         padding: 10px 20px;
                         color: white;
-                        font-size: 16px;
-                        font-weight: 400;
                         border-radius: 10px;
                     }
 
+                    .hg:nth-child(2){
+                        margin-top: 10px;
+                        margin-right: 14px;
+                    }
+
+                    .hg:nth-child(3){
+                        margin-top: 10px;
+                        margin-right: 0;
+                    }
+
+                    .hg:nth-child(4){
+                        margin-right: 14px;
+                    }
+
                     .hg:last-child{
+                        margin-right: 0;
                         border-radius: 10px;
+                    }
+
+                    .hg-t{
+                        font-size: 16px;
+                        font-weight: 400;
+                        letter-spacing: 1px;
                     }
                 }
             `}</style>

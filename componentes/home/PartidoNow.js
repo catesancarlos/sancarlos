@@ -50,12 +50,13 @@ export default function PartidoNow({ fecha, home = true, select }) {
     return (
         <section>
             {partidos.map((p) => {
-                // Verificamos si el partido está activo (status == 1)
+                // Verificamos si el partido está activo (status == 1
                 if (p.status !== 1) return null
 
                 return (
                     <ItemCalendario
                         key={p.id}
+                        com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
                         idJuego={p.id}
                         now={p.status}
                         fecha={[p.dia, p.date, p.hora]}

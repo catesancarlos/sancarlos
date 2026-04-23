@@ -69,10 +69,7 @@ const Home = () => {
                 {/* <Feliz2026 />
                 <MiniAgenda /> */}
                 <CampSection title='Partidos de la semana:' >
-                    <CalendarioSemanal
-                        select={now?.fecha ?? 1}
-                        home
-                    />
+                    <CalendarioSemanal select={now?.fecha ?? 1} home />
                 </CampSection>
                 <BannerCampeones/>
                 
