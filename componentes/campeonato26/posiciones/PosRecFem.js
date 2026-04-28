@@ -39,20 +39,24 @@ export default function PosRecFem() {
         return () => unsubPartidos()
     }, [])
 
-    const RenderEquipo = ({ id, goles, golesRival }) => {
+    const RenderEquipo = ({ id, goles, golesRival, penales }) => {
         const eq = equipos.find(e => e.id === id)
         if (!eq) return null
 
-        // Lógica para el color: 
-        // Si goles > golesRival es Verde, si es menor es Rojo, si es empate o 0-0 no pintamos nada (o negro)
-        let colorTexto = undefined; // O 'black' si prefieres
+        let colorTexto = undefined; 
 
-        // Solo aplicamos color si hubo un resultado real (ej. al menos un gol en total)
-        // o si prefieres aplicar color siempre que haya un ganador:
+        // 1. Victoria en tiempo reglamentario
         if (goles > golesRival) {
             colorTexto = 'green';
-        } else if (goles < golesRival) {
+        } 
+        // 2. Derrota en tiempo reglamentario
+        else if (goles < golesRival) {
             colorTexto = 'red';
+        } 
+        // 3. Caso de empate: miramos si hubo penales
+        else if (penales !== undefined && penales !== null) {
+            // Si penales es true -> Verde, si es false -> Rojo
+            colorTexto = penales ? 'green' : 'red';
         }
 
         return (
@@ -66,7 +70,7 @@ export default function PosRecFem() {
                 color={eq.colors[0]}
                 borde={eq.colors[1]}
                 letter={eq.colors[2]}
-                ctext={colorTexto} // Aquí pasamos la nueva prop
+                ctext={colorTexto}
             />
         )
     }
@@ -86,18 +90,21 @@ export default function PosRecFem() {
                                 id={p.idLocal}
                                 goles={p.golesLocal || 0}
                                 golesRival={p.golesVisitante || 0}
+                                penales={p.penales && (Number(p.penales.split(' - ')[0]) - Number(p.penales.split(' - ')[1]) > 0)}
                             />
 
                             <div className='marcador'>
                                 <strong className='meq'>{p.golesLocal || 0}</strong>
                                 <p className='vs'>vs</p>
                                 <strong className='meq'>{p.golesVisitante || 0}</strong>
+                                {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
                             </div>
 
                             <RenderEquipo
                                 id={p.idVisitante}
                                 goles={p.golesVisitante || 0}
                                 golesRival={p.golesLocal || 0}
+                                penales={p.penales && (Number(p.penales.split(' - ')[1]) - Number(p.penales.split(' - ')[0]) > 0)}
                             />
                         </div>
                     ))}

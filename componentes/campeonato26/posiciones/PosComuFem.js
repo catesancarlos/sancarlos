@@ -77,7 +77,7 @@ export default function PosComuFem() {
             {/* <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p> */}
             <div className='cont'>
                 <div className='primera'>
-                    {partidos.map(p => (
+                    {partidos.filter(p => p.fecha === 1).map(p => (
                         <div key={p.id} className='partido'>
                             <strong className='id'>{p.letra}</strong>
 
@@ -108,34 +108,33 @@ export default function PosComuFem() {
                             <p>[<span style={{ color: 'green' }}>1</span> - 0]</p>
                         </div>
                         <div className='segunda'>
-                            <div className='partido'>
-                                <strong className='id'>1</strong>
-                                <Equipo
-                                    pos
-                                    nombre=''
-                                    paralelo='Ganador A'
-                                    genero='F'
-                                    logo=''
-                                    color='gray'
-                                    borde='gray'
-                                    letter='white'
-                                />
-                                <div className='marcador'>
-                                    <strong className='meq'>0</strong>
-                                    <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
+                            {partidos.filter(p => p.fecha === 2 && ["1"].includes(p.letra)).map(p => (
+                                <div key={p.id} className='partido'>
+                                    <strong className='id'>{p.letra}</strong>
+
+                                    {/* Renderizamos los equipos usando el helper que moviste adentro */}
+                                    <RenderEquipo
+                                        id={p.idLocal}
+                                        goles={p.golesLocal || 0}
+                                        golesRival={p.golesVisitante || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[0]) - Number(p.penales.split(' - ')[1]) > 0)}
+                                    />
+
+                                    <div className='marcador'>
+                                        <strong className='meq'>{p.golesLocal || 0}</strong>
+                                        <p className='vs'>vs</p>
+                                        <strong className='meq'>{p.golesVisitante || 0}</strong>
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                    </div>
+
+                                    <RenderEquipo
+                                        id={p.idVisitante}
+                                        goles={p.golesVisitante || 0}
+                                        golesRival={p.golesLocal || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[1]) - Number(p.penales.split(' - ')[0]) > 0)}
+                                    />
                                 </div>
-                                <Equipo
-                                    pos
-                                    nombre=''
-                                    paralelo='Ganador B'
-                                    genero='F'
-                                    logo=''
-                                    color='gray'
-                                    borde='gray'
-                                    letter='white'
-                                />
-                            </div>
+                            ))}
                         </div>
                     </div>
                     <div className='segunda-cont nobot'>
@@ -143,34 +142,33 @@ export default function PosComuFem() {
                             <p>[0 - <span style={{ color: 'red' }}>1</span>]</p>
                         </div>
                         <div className='segunda sl2'>
-                            <div className='partido'>
-                                <strong className='id'>2</strong>
-                                <Equipo
-                                    pos
-                                    nombre=''
-                                    paralelo='Perdedor A'
-                                    genero='F'
-                                    logo=''
-                                    color='gray'
-                                    borde='gray'
-                                    letter='white'
-                                />
-                                <div className='marcador'>
-                                    <strong className='meq'>0</strong>
-                                    <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
+                            {partidos.filter(p => p.fecha === 2 && ["2"].includes(p.letra)).map(p => (
+                                <div key={p.id} className='partido'>
+                                    <strong className='id'>{p.letra}</strong>
+
+                                    {/* Renderizamos los equipos usando el helper que moviste adentro */}
+                                    <RenderEquipo
+                                        id={p.idLocal}
+                                        goles={p.golesLocal || 0}
+                                        golesRival={p.golesVisitante || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[0]) - Number(p.penales.split(' - ')[1]) > 0)}
+                                    />
+
+                                    <div className='marcador'>
+                                        <strong className='meq'>{p.golesLocal || 0}</strong>
+                                        <p className='vs'>vs</p>
+                                        <strong className='meq'>{p.golesVisitante || 0}</strong>
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                    </div>
+
+                                    <RenderEquipo
+                                        id={p.idVisitante}
+                                        goles={p.golesVisitante || 0}
+                                        golesRival={p.golesLocal || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[1]) - Number(p.penales.split(' - ')[0]) > 0)}
+                                    />
                                 </div>
-                                <Equipo
-                                    pos
-                                    nombre=''
-                                    paralelo='Perdedor B'
-                                    genero='F'
-                                    logo=''
-                                    color='gray'
-                                    borde='gray'
-                                    letter='white'
-                                />
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>

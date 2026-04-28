@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import Equipo from '../Equipo'
-import EscogerGoleador from './EscogerGoleador'
 
-import { writeBatch, doc, increment } from 'firebase/firestore'
-import db from '../../../services/dBase'
-
-export default function ItemCalendario({
+export default function ItemCalendarioWithoutGoal({
     com,
     final,
     now,
     control,
     idJuego,
     fecha,
-    nivel,
     genero,
     equipos,
     fase,
@@ -28,17 +23,6 @@ export default function ItemCalendario({
     onFinalizar
 }) {
     const [name, setName] = useState('')
-    const [isModalOpen, setIsModalOpen] = useState(false)
-    const [equipoSeleccionado, setEquipoSeleccionado] = useState(null)
-    const [isResumenModalOpen, setIsResumenModalOpen] = useState(false)
-    const [golesPendientes, setGolesPendientes] = useState(() => {
-        const saved = localStorage.getItem(`goles_${idJuego}`)
-        return saved ? JSON.parse(saved) : []
-    })
-
-    useEffect(() => {
-        localStorage.setItem(`goles_${idJuego}`, JSON.stringify(golesPendientes))
-    }, [golesPendientes, idJuego])
 
     const handleChange = e => {
         setName(e.target.value)
@@ -47,75 +31,6 @@ export default function ItemCalendario({
     const handleAgregar = e => {
         onAgregar([idJuego, name])
     }
-
-    const abrirModal = (tipo) => {
-        setIsModalOpen(true)
-        setEquipoSeleccionado(tipo)
-    }
-
-    const agregarAlPozo = (jugador, equipo, idJuego) => {
-        setGolesPendientes(prev => [...prev, { jugador, equipo, idJuego, timestamp: Date.now() }])
-    }
-
-    const resumenGoles = golesPendientes.reduce((acc, item) => {
-        const id = item.jugador.id;
-        if (!acc[id]) {
-            acc[id] = {
-                nombre: item.jugador.name, // Asegúrate de usar el campo correcto
-                equipo: item.equipo,
-                cantidad: 0,
-                jugador: item.jugador // Guardamos el objeto completo por si lo necesitas
-            };
-        }
-        acc[id].cantidad += 1;
-        return acc;
-    }, {});
-
-    const confirmarGoleadores = async () => {
-        try {
-            const batch = writeBatch(db);
-            
-            Object.values(resumenGoles).forEach(g => {
-                const jugadorRef = doc(db, 'goleadores2026', g.jugador.id);
-                
-                // Verificamos si es nuevo basándonos en tu flag 'isNew'
-                if (g.jugador.isNew === true) {
-                    // CASO 1: Jugador NUEVO -> Usamos SET (Crea el documento)
-                    batch.set(jugadorRef, {
-                        id: g.jugador.id,
-                        name: g.jugador.name,
-                        equipo: g.jugador.equipo,
-                        genero: g.jugador.genero,
-                        nivel: g.jugador.nivel, // Asegúrate de que este campo exista en g.jugador
-                        goles: g.cantidad // Inicia con los goles de este partido
-                    });
-                } else {
-                    // CASO 2: Jugador EXISTENTE -> Usamos UPDATE (Suma al existente)
-                    batch.update(jugadorRef, { 
-                        goles: increment(g.cantidad) 
-                    });
-                }
-            });
-
-            await batch.commit();
-            
-            setGolesPendientes([]); 
-            localStorage.removeItem(`goles_${idJuego}`); 
-            setIsResumenModalOpen(false);
-            alert("Goles registrados correctamente");
-        } catch (error) {
-            console.error("Error al guardar:", error);
-            alert("Hubo un error al guardar: " + error.message);
-        }
-    };
-
-    const limpiarTodo = () => {
-        if (window.confirm("¿Estás seguro de que quieres borrar todos los goles de este partido?")) {
-            setGolesPendientes([]);
-            localStorage.removeItem(`goles_${idJuego}`)
-            setIsResumenModalOpen(false)
-        }
-    };
 
     return(
         <section>
@@ -137,7 +52,7 @@ export default function ItemCalendario({
                     }
                     <strong>{!control ? fecha[2] : control}</strong>
                 </div>
-                <div className='eq1' onClick={() => { if(control) abrirModal('local') }}>
+                <div className='eq1' onClick={() => {if(control)onGoles([idJuego, 'golesLocal', 1])}}>
                     <Equipo
                         ca
                         com={com}
@@ -170,7 +85,7 @@ export default function ItemCalendario({
                     {pen && <p className='pen'>{`Pen (${pen})`}</p> }
                     {extra && <p className='pen'>{`T. extra (${extra})`}</p> }
                 </div>
-                <div className='eq2' onClick={() => { if(control) abrirModal('visitante') }}>
+                <div className='eq2' onClick={() => {if(control)onGoles([idJuego, 'golesVisitante', 1])}}>
                     <Equipo
                         ca
                         com={com}
@@ -194,89 +109,10 @@ export default function ItemCalendario({
                     />
                     <p onClick={handleAgregar}>Agregar</p>
                     <p onClick={() => onFinalizar([idJuego, equipos[0].id, equipos[1].id, res[0], res[1]])}>Finalizar</p>
-                    <p onClick={() => golesPendientes.length > 0 && setIsResumenModalOpen(true)}>
-                        Grabar goles ({golesPendientes.length})
-                    </p>
                 </div>
             }
-
-            {isModalOpen && 
-                <EscogerGoleador
-                    idJuego={idJuego}
-                    equipo={ equipoSeleccionado == 'local' ? equipos[0].id : equipos[1].id}
-                    deQuien={equipoSeleccionado == 'local' ? 'golesLocal' : 'golesVisitante'}
-                    nivel={nivel}
-                    genero={genero}
-                    onGoles={onGoles}
-                    onAddToQueue={agregarAlPozo}
-                    onClose={() => setIsModalOpen(false)}
-                />
-            }
-
-            {isResumenModalOpen && (
-                <div className='modal-overlay' onClick={() => setIsResumenModalOpen(false)}>
-                    <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-                        <h3>Resumen de Goles</h3>
-                        <div className='lista-jugadores'>
-                            {Object.values(resumenGoles).map((g) => (
-                                <div key={g.jugador.id} style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
-                                    {g.nombre} {g.jugador.nivel} ({g.equipo}): <strong>{g.cantidad} {g.cantidad === 1 ? 'gol' : 'goles'}</strong>
-                                </div>
-                            ))}
-                        </div>
-                        <button 
-                            style={{ marginTop: '15px', background: '#245590', color: 'white', padding: '10px', border: 'none', borderRadius: '5px' }}
-                            onClick={confirmarGoleadores}
-                        >
-                            Confirmar y Guardar
-                        </button>
-                        <button 
-                            style={{ marginTop: '5px', background: '#ccc', padding: '10px', border: 'none', borderRadius: '5px' }}
-                            onClick={() => setIsResumenModalOpen(false)}
-                        >
-                            Cancelar
-                        </button>
-                        {/* Botón Limpiar Todo (Solo si hay elementos) */}
-                        {Object.values(resumenGoles).length > 0 && (
-                            <button 
-                                onClick={limpiarTodo}
-                                style={{ marginTop: '10px', background: '#f8d7da', color: '#721c24', border: '1px solid #f5c6cb', padding: '8px', borderRadius: '5px', width: '100%' }}
-                            >
-                                Limpiar toda la lista
-                            </button>
-                        )}
-                    </div>
-                </div>
-            )}
 
             <style jsx>{`
-                .modal-overlay {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.7);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 1000; /* Asegura que esté encima de todo */
-                }
-
-                /* Caja del modal */
-                .modal-content {
-                    background: white;
-                    width: 90%;
-                    max-width: 400px;
-                    max-height: 80vh; /* Para que no se salga de la pantalla */
-                    padding: 20px;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-                    display: flex;
-                    flex-direction: column;
-                    overflow: hidden; /* Necesario para que el scroll funcione bien */
-                }
-
                 section{
                     background: ${final ? '#C8B273' : 'transparent'};
                     width: ${home ? '100%' : 'auto'};

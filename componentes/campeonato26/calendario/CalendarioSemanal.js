@@ -73,6 +73,7 @@ export default function CalendarioSemanal({
         <ItemCalendario
             key={p.id}
             com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
+            nivel={p.grupo}
             control={control}
             idJuego={p.id}
             now={p.status}
