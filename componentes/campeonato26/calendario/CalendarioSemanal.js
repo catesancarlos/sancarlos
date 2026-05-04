@@ -5,6 +5,15 @@ import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
 import ItemCalendario from './ItemCalendario'
 
+const equipoDefault = (genero, nivel) => ({
+    id: "",
+    name: "",
+    paralelo: "Por confirmar",
+    genero: genero,
+    nivel: nivel,
+    colors: ['gray', 'gray', 'white']
+})
+
 export default function CalendarioSemanal({
     home,
     select,
@@ -56,6 +65,7 @@ export default function CalendarioSemanal({
 
     // Función para obtener datos de un equipo por su ID desde tus estados actuales
     const getEquipoInfo = (id, lista) => {
+        console.log(lista.find(e => e.id === id))
         return lista.find(e => e.id === id)
     }
 
@@ -82,7 +92,7 @@ export default function CalendarioSemanal({
             genero={p.genero}
             equipos={[
                 getEquipoInfo(p.idLocal, equipos), 
-                getEquipoInfo(p.idVisitante, equipos)
+                getEquipoInfo(p.idVisitante, equipos) || equipoDefault(p.genero, p.grupo)
             ]}
             res={[p.golesLocal, p.golesVisitante]}
             jugador={p.jugador}
