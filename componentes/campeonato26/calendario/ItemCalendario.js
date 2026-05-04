@@ -338,7 +338,7 @@ export default function ItemCalendario({
 
                 .fase{
                     position: absolute;
-                    top: -6px;
+                    top: -8px;
                     width: 100%;
                     display: flex;
                     justify-content: center;

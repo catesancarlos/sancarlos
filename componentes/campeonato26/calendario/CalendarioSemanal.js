@@ -76,6 +76,7 @@ export default function CalendarioSemanal({
             nivel={p.grupo}
             control={control}
             idJuego={p.id}
+            fase={p.fase}
             now={p.status}
             fecha={[p.dia, p.date, p.hora]}
             genero={p.genero}
