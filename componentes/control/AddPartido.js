@@ -141,6 +141,9 @@ export default function AddPartido(){
                     className="custom-select"
                 >
                     <option value="">Selecciona un equipo...</option>
+                    <option value="undef" style={{ fontWeight: 'bold', color: '#666' }}>
+                        Por confirmar
+                    </option>
                     {equipos.map((eq) => (
                         <option key={eq.id} value={eq.id}>
                             {eq.id}
@@ -157,6 +160,10 @@ export default function AddPartido(){
                     className="custom-select"
                 >
                     <option value="">Selecciona un equipo...</option>
+                    {/* OPCIÓN MANUAL PARA EQUIPOS NO DEFINIDOS */}
+                    <option value="undef" style={{ fontWeight: 'bold', color: '#666' }}>
+                        Por confirmar
+                    </option>
                     {equipos.map((eq) => (
                         <option key={eq.id} value={eq.id}>
                             {eq.id}

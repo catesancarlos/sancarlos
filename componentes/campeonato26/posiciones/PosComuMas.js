@@ -179,30 +179,15 @@ export default function PosComuMas() {
                         </div>
                     </div>
                 </div>
-                {/* <div className='tercera-cont' ref={board}>
+                <div className='tercera-cont'>
                     <div className='segunda-cont'>
                         <div className='line t31'>
                             <p>[<span style={{ color: 'green' }}>2</span> - 0]</p>
                         </div>
                         <div className='segunda terc'>
-                            <Equipo
-                                pos
-                                nombre='Confirmación F.C.'
-                                paralelo='2do Confir. 2 (M)'
-                                logo='22M'
-                                color='black'
-                                borde='black'
-                                letter='white'
-                            />
-                            <Equipo
-                                pos
-                                nombre='Fuerza Divina'
-                                paralelo='2 Confir. Ángeles (M)'
-                                logo='2AM'
-                                color='white'
-                                borde='black'
-                                letter='black'
-                            />
+                            <p className='hov'>Clasificados</p>
+                            <RenderEquipo id='c22M' />
+                            <RenderEquipo id='c26M' />
                         </div>
                     </div>
                     <div className='segunda-cont'>
@@ -215,60 +200,32 @@ export default function PosComuMas() {
                             </div>
                         </div>
                         <div className='segunda slem'>
-                            <div className='partido'>
-                                <Equipo
-                                    pos
-                                    nombre='GDL'
-                                    paralelo='2do Confir. 4 (M)'
-                                    logo='24M'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                    ctext='green'
-                                />
-                                <div className='marcador'>
-                                    <strong className='meq'>8</strong>
-                                    <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
+                            <p className='hov'>Repechaje</p>
+                            {partidos.filter(p => p.fecha === 3).map(p => (
+                                <div key={p.id} className='partido'>
+                                    {/* Renderizamos los equipos usando el helper que moviste adentro */}
+                                    <RenderEquipo
+                                        id={p.idLocal}
+                                        goles={p.golesLocal || 0}
+                                        golesRival={p.golesVisitante || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[0]) - Number(p.penales.split(' - ')[1]) > 0)}
+                                    />
+
+                                    <div className='marcador'>
+                                        <strong className='meq'>{p.golesLocal || 0}</strong>
+                                        <p className='vs'>vs</p>
+                                        <strong className='meq'>{p.golesVisitante || 0}</strong>
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                    </div>
+
+                                    <RenderEquipo
+                                        id={p.idVisitante}
+                                        goles={p.golesVisitante || 0}
+                                        golesRival={p.golesLocal || 0}
+                                        penales={p.penales && (Number(p.penales.split(' - ')[1]) - Number(p.penales.split(' - ')[0]) > 0)}
+                                    />
                                 </div>
-                                <Equipo
-                                    pos
-                                    nombre='Traicioneros como Judas'
-                                    paralelo='2do Confir. 5 (M)'
-                                    logo='25M'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                    ctext='red'
-                                />
-                            </div>
-                            <div className='partido'>
-                                <Equipo
-                                    pos
-                                    nombre='Los Angeles Negros'
-                                    paralelo='1ro Confir. 3 (M)'
-                                    logo='13M'
-                                    color='black'
-                                    borde='black'
-                                    letter='white'
-                                    ctext='green'
-                                />
-                                <div className='marcador'>
-                                    <strong className='meq'>2</strong>
-                                    <p className='vs'>vs</p>
-                                    <strong className='meq'>0</strong>
-                                </div>
-                                <Equipo
-                                    pos
-                                    nombre='Los Angelicales'
-                                    paralelo='AB Conf. Molinopamba (M)'
-                                    logo='1MM'
-                                    color='white'
-                                    borde='black'
-                                    letter='black'
-                                    ctext='red'
-                                />
-                            </div>
+                            ))}
                         </div>
                     </div>
                     <div className='segunda-cont nobot'>
@@ -276,27 +233,12 @@ export default function PosComuMas() {
                             <p>[0 - <span style={{ color: 'red' }}>2</span>]</p>
                         </div>
                         <div className='segunda terc sl2'>
-                        <Equipo
-                            pos
-                            nombre='Santos y Religiosos F.C.'
-                            paralelo='2do Confir. 1 (M)'
-                            logo='21M'
-                            color='white'
-                            borde='black'
-                            letter='black'
-                        />
-                        <Equipo
-                            pos
-                            nombre='Santa Fé (M)'
-                            paralelo='1ro Confir. 2 (M)'
-                            logo='12M'
-                            color='black'
-                            borde='black'
-                            letter='white'
-                        />
+                            <p className='hov'>Eliminados</p>
+                            <RenderEquipo id='c21M' />
+                            <RenderEquipo id='c25M' />
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
 
             <style jsx>{`
@@ -368,6 +310,7 @@ export default function PosComuMas() {
                 .segunda{
                     border: 3px solid green;
                     border-radius: 6px;
+                    position: relative;
                 }
 
                 .tercera-cont{
@@ -383,6 +326,17 @@ export default function PosComuMas() {
 
                 .sl2{
                     border: 3px solid red;
+                    position: relative;
+                }
+
+                .hov{
+                    position: absolute;
+                    top: -10px;
+                    left: 6px;
+                    background: #F2F8F6;
+                    padding: 0 6px;
+                    font-size: 13px;
+                    font-weight: bold;
                 }
 
                 .slem{
@@ -444,6 +398,10 @@ export default function PosComuMas() {
                     display: flex;
                     align-items: center;
                     border-bottom: 1px solid #CCC;
+                }
+
+                .partido:last-child{
+                    border-bottom: none;
                 }
 
                 .id{

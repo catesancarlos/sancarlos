@@ -91,7 +91,7 @@ export default function CalendarioSemanal({
             fecha={[p.dia, p.date, p.hora]}
             genero={p.genero}
             equipos={[
-                getEquipoInfo(p.idLocal, equipos), 
+                getEquipoInfo(p.idLocal, equipos) || equipoDefault(p.genero, p.grupo), 
                 getEquipoInfo(p.idVisitante, equipos) || equipoDefault(p.genero, p.grupo)
             ]}
             res={[p.golesLocal, p.golesVisitante]}
