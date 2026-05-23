@@ -8,7 +8,6 @@ import db from '../../../services/dBase'
 
 export default function ItemCalendario({
     com,
-    final,
     now,
     control,
     idJuego,
@@ -35,6 +34,8 @@ export default function ItemCalendario({
         const saved = localStorage.getItem(`goles_${idJuego}`)
         return saved ? JSON.parse(saved) : []
     })
+
+    const final = fase == 'FINAL'
 
     useEffect(() => {
         localStorage.setItem(`goles_${idJuego}`, JSON.stringify(golesPendientes))

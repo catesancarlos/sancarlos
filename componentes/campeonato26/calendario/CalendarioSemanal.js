@@ -79,7 +79,7 @@ export default function CalendarioSemanal({
         return <div>No hay partidos programados todavia para esta semana.</div>
     }
 
-    return partidos?.map((p, index) => (
+    return partidos?.map((p) => (
         <ItemCalendario
             key={p.id}
             com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
