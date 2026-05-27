@@ -21,12 +21,12 @@ export default function FinalSegFem(){
                         <div className='cuadro'>
                             <span className='burbuja'>3</span>
                             <p>Enviadas de Jesús (11F)</p>
-                            {/* <span className='goles lose'>1</span> */}
+                            <span className='goles win'>8</span>
                         </div>
                         <div className='cuadro'><div>l</div>
                             <span className='burbuja'>2</span>
-                            <p>Leones de Daniel (12M)</p>
-                            {/* <span className='goles win'>9</span> */}
+                            <p>Leonas de Daniel (12M)</p>
+                            <span className='goles lose'>4</span>
                         </div>
                         <div className='union'></div>
                     </div>
@@ -34,8 +34,8 @@ export default function FinalSegFem(){
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>
-                    <span className='burbuja'></span>
-                    <p>{`>`}</p>
+                    <span className='burbuja'>3</span>
+                    <p>Enviadas de Jesús (11F)</p>
                     {/* <span className='goles win'>11</span> */}
                 </div>
                 <div className='cuadro'><div>l</div>

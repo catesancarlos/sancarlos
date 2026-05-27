@@ -110,7 +110,7 @@ export default function PosConfFem(
             <div className='tables'>
                 <strong className='title'>FINAL:</strong>
                 <div style={{ width: '100%' }}>
-                    {partidos?.filter(f => f.fase === 'FINAL').map(p => (
+                    {partidos?.filter(f => f.fase === 'FINAL' && f.grupo === 'Con').map(p => (
                         <ItemCalendario
                             key={p.id}
                             com={['Ini', 'Rec', 'Com'].includes(p.grupo)}

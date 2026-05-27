@@ -105,9 +105,9 @@ export default function PosSegMas({
     return (
         <section>
             <div className='tables'>
-                {/* <strong className='title'>FINAL:</strong>
+                <strong className='title'>FINAL:</strong>
                 <div style={{ width: '100%' }}>
-                    {partidos?.filter(f => f.fase === 'FINAL').map(p => (
+                    {partidos?.filter(f => f.fase === 'FINAL' && f.grupo === 'Seg').map(p => (
                         <ItemCalendario
                             key={p.id}
                             com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
@@ -133,7 +133,7 @@ export default function PosSegMas({
                             onFinalizar={onFinalizar}
                         />
                     ))}
-                </div> */}
+                </div>
                 <strong className='title'>Fase Final:</strong>
                 <div className='final'>
                     <FinalSegMas />

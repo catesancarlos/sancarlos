@@ -11,8 +11,8 @@ const menuOptions = [
     { id: 'seguimiento', label: 'Seguimiento' },
     { id: 'biblico', label: 'Año Bíblico' },
     { id: 'comunion', label: 'Comunión' },
-    { id: 'reconciliacion', label: 'Reconciliación' },
-    { id: 'iniciacion', label: 'Iniciación' },
+   /*  { id: 'reconciliacion', label: 'Reconciliación' },
+    { id: 'iniciacion', label: 'Iniciación' }, */
 ]
 
 export default function Campeonato(){

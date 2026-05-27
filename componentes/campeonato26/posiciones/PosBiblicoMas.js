@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 
-import db  from '../../../services/dBase'
+import ItemCalendario from '../calendario/ItemCalendario'
+import FinalBibMas from './FinalBibMas'
+
+import db from '../../../services/dBase'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
-export default function PosBiblicoMas(){
+export default function PosBiblicoMas() {
     const [grupoBiblico, setGrupoBiblico] = useState([]) // Ordenado (Posiciones)
     const [grupoBiblicoLista, setGrupoBiblicoLista] = useState([]) // Lista (ID/Original)
 
@@ -40,7 +43,7 @@ export default function PosBiblicoMas(){
     useEffect(() => {
         // Traemos todos los partidos 'M'
         const qPartidos = query(
-            collection(db, 'partidos2026'), 
+            collection(db, 'partidos2026'),
             where('genero', '==', 'M'),
             where('grupo', '==', 'Bib')
         );
@@ -72,6 +75,10 @@ export default function PosBiblicoMas(){
     return (
         <section>
             <div className='tables'>
+                <strong className='title'>Fase Final:</strong>
+                <div className='final'>
+                    <FinalBibMas />
+                </div>
                 <strong className='title'>Posiciones:</strong>
                 <table>
                     <thead>
@@ -278,6 +285,6 @@ export default function PosBiblicoMas(){
                     }
                 }
             `}</style>
-        </section> 
+        </section>
     )
 }

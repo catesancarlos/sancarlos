@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import ItemCalendario from '../calendario/ItemCalendario'
+import FinalComuMas from './FinalComuMas'
 import Equipo from '../Equipo'
 
 import db from '../../../services/dBase'
@@ -43,16 +45,16 @@ export default function PosComuMas() {
         const eq = equipos.find(e => e.id === id)
         if (!eq) return null
 
-        let colorTexto = undefined; 
+        let colorTexto = undefined;
 
         // 1. Victoria en tiempo reglamentario
         if (goles > golesRival) {
             colorTexto = 'green';
-        } 
+        }
         // 2. Derrota en tiempo reglamentario
         else if (goles < golesRival) {
             colorTexto = 'red';
-        } 
+        }
         // 3. Caso de empate: miramos si hubo penales
         else if (penales !== undefined && penales !== null) {
             // Si penales es true -> Verde, si es false -> Rojo
@@ -77,6 +79,41 @@ export default function PosComuMas() {
 
     return (
         <section>
+            <div className='tables'>
+                {/* <strong className='title'>FINAL:</strong>
+                <div style={{ width: '100%' }}>
+                    {partidos?.filter(f => f.fase === 'FINAL' && f.grupo === 'Con').map(p => (
+                        <ItemCalendario
+                            key={p.id}
+                            com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
+                            nivel={p.grupo}
+                            control={control}
+                            idJuego={p.id}
+                            fase={p.fase}
+                            now={p.status}
+                            fecha={[p.dia, p.date, p.hora]}
+                            genero={p.genero}
+                            equipos={[
+                                getEquipoArray(p.idLocal, grupoConfirLista) || equipoDefault(p.genero, p.grupo),
+                                getEquipoArray(p.idVisitante, grupoConfirLista) || equipoDefault(p.genero, p.grupo)
+                            ]}
+                            res={[p.golesLocal, p.golesVisitante]}
+                            jugador={p.jugador}
+                            extra={p.extra}
+                            pen={p.penales}
+                            home={home}
+                            onStatus={onStatus}
+                            onGoles={onGoles}
+                            onAgregar={onAgregar}
+                            onFinalizar={onFinalizar}
+                        />
+                    ))}
+                </div> */}
+                <strong className='title'>Fase Final:</strong>
+                <div className='final'>
+                    <FinalComuMas />
+                </div>
+            </div>
             <strong className='title'>Fixture Masculino:</strong>
             {/* <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p> */}
             <div className='cont'>
@@ -97,7 +134,7 @@ export default function PosComuMas() {
                                 <strong className='meq'>{p.golesLocal || 0}</strong>
                                 <p className='vs'>vs</p>
                                 <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                             </div>
 
                             <RenderEquipo
@@ -131,7 +168,7 @@ export default function PosComuMas() {
                                         <strong className='meq'>{p.golesLocal || 0}</strong>
                                         <p className='vs'>vs</p>
                                         <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                                     </div>
 
                                     <RenderEquipo
@@ -165,7 +202,7 @@ export default function PosComuMas() {
                                         <strong className='meq'>{p.golesLocal || 0}</strong>
                                         <p className='vs'>vs</p>
                                         <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                                     </div>
 
                                     <RenderEquipo
@@ -215,7 +252,7 @@ export default function PosComuMas() {
                                         <strong className='meq'>{p.golesLocal || 0}</strong>
                                         <p className='vs'>vs</p>
                                         <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                                     </div>
 
                                     <RenderEquipo

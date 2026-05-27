@@ -1,11 +1,29 @@
 import { useState, useEffect } from 'react'
 
+import ItemCalendario from '../calendario/ItemCalendario'
 import Equipo from '../Equipo'
 
 import db from '../../../services/dBase'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
-export default function PosComuFem() {
+const equipoDefault = (genero, nivel) => ({
+    id: "",
+    name: "",
+    paralelo: "Por confirmar",
+    genero: genero,
+    nivel: nivel,
+    colors: ['gray', 'gray', 'white']
+})
+
+export default function PosComuFem({
+    home,
+    select,
+    control,
+    onStatus,
+    onGoles,
+    onAgregar,
+    onFinalizar
+}) {
     const [equipos, setEquipos] = useState([])
     const [partidos, setPartidos] = useState([])
     const [loading, setLoading] = useState(true)
@@ -71,8 +89,44 @@ export default function PosComuFem() {
         )
     }
 
+    const getEquipoArray = (id, lista) => {
+        const equipo = lista.find(e => e.id === id)
+        return equipo
+    }
+
     return (
         <section>
+            <div className='tables'>
+                <strong className='title'>FINAL:</strong>
+                <div style={{ width: '100%' }}>
+                    {partidos?.filter(f => f.fase === 'FINAL' && f.grupo === 'Com').map(p => (
+                        <ItemCalendario
+                            key={p.id}
+                            com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
+                            nivel={p.grupo}
+                            control={control}
+                            idJuego={p.id}
+                            fase={p.fase}
+                            now={p.status}
+                            fecha={[p.dia, p.date, p.hora]}
+                            genero={p.genero}
+                            equipos={[
+                                getEquipoArray(p.idLocal, equipos) || equipoDefault(p.genero, p.grupo),
+                                getEquipoArray(p.idVisitante, equipos) || equipoDefault(p.genero, p.grupo)
+                            ]}
+                            res={[p.golesLocal, p.golesVisitante]}
+                            jugador={p.jugador}
+                            extra={p.extra}
+                            pen={p.penales}
+                            home={home}
+                            onStatus={onStatus}
+                            onGoles={onGoles}
+                            onAgregar={onAgregar}
+                            onFinalizar={onFinalizar}
+                        />
+                    ))}
+                </div>
+            </div>
             <strong className='title'>Fixture Femenino:</strong>
             {/* <p className='info'>{`<< Mueve el cuadro a la izquierda para ver más <<`}</p> */}
             <div className='cont'>
@@ -124,7 +178,7 @@ export default function PosComuFem() {
                                         <strong className='meq'>{p.golesLocal || 0}</strong>
                                         <p className='vs'>vs</p>
                                         <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                                     </div>
 
                                     <RenderEquipo
@@ -158,7 +212,7 @@ export default function PosComuFem() {
                                         <strong className='meq'>{p.golesLocal || 0}</strong>
                                         <p className='vs'>vs</p>
                                         <strong className='meq'>{p.golesVisitante || 0}</strong>
-                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p> }
+                                        {p.penales && <p className='pen'>{`Pen (${p.penales})`}</p>}
                                     </div>
 
                                     <RenderEquipo

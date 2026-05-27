@@ -1,32 +1,34 @@
-export default function FinalSegMas(){
+export default function FinalComuMas(){
 
     return(
         <section>
             <div>
                 <div className='sec-ruta'>
-                    <div className='partido'>
-                        <div className='cuadro'>
-                            <span className='burbuja'>3</span>
-                            <p>Belén City (13M)</p>
-                            <span className='goles lose'>0</span>
-                        </div>
-                        <div className='cuadro'>
-                            <span className='burbuja'>4</span>
-                            <p>Dis. de Jesús (11M)</p>
-                            <span className='goles win'>8</span>
-                        </div>
-                        <div className='union u1'></div>
-                    </div>
                     <div className='partido par2'>
-                        <div className='cuadro'>
-                            <span className='burbuja'>4</span>
-                            <p>Dis. de Jesús (11M)</p>
-                            <span className='goles lose'>3</span>
+                        <div className='cuadro'><div>l</div>
+                            <span className='burbuja'>[2-0]</span>
+                            <p>Comunión 2 (22M)</p>
+                            {/* <span className='lose'>1</span> */}
                         </div>
                         <div className='cuadro'><div>l</div>
-                            <span className='burbuja'>2</span>
-                            <p>Leones de Daniel (12M)</p>
-                            <span className='goles win'>5</span>
+                            <span className='burbuja'>[2-1]</span>
+                            <p>Comunión 8 (28M)</p>
+                            {/* <span className='win'>9</span> */}
+                        </div>
+                        <div className='union'></div>
+                    </div>
+                </div>
+                <div className='sec-ruta-2'>
+                    <div className='partido par3'>
+                        <div className='cuadro'><div>l</div>
+                            <span className='burbuja'>[2-0]</span>
+                            <p>Comunión 6 (26M)</p>
+                            {/* <span className='lose'>4</span> */}
+                        </div>
+                        <div className='cuadro'><div>l</div>
+                            <span className='burbuja'>[2-1]</span>
+                            <p>Comunión 3 (23M)</p>
+                            {/* <span className='win'>10</span> */}
                         </div>
                         <div className='union'></div>
                     </div>
@@ -34,14 +36,12 @@ export default function FinalSegMas(){
             </div>
             <div className='partido par4'>
                 <div className='cuadro'>
-                    <span className='burbuja'>2</span>
-                    <p>Leones de Daniel (12M)</p>
-                    {/* <span className='goles win'>11</span> */}
+                    <p>{`>`}</p>
+                    {/* <span className='win'>11</span> */}
                 </div>
-                <div className='cuadro'><div>l</div>
-                    <span className='burbuja'>1</span>
-                    <p>Peces del Agua Sagr. (15M)</p>
-                    {/* <span className='goles lose'>8</span> */}
+                <div className='cuadro'>
+                    <p>{`>`}</p>
+                    {/* <span className='lose'>8</span> */}
                 </div>
                 <div className='union'></div>
             </div>
@@ -53,6 +53,11 @@ export default function FinalSegMas(){
                 }
 
                 .sec-ruta{
+                    display: flex;
+                }
+
+                .sec-ruta-2{
+                    margin-top: 50px;
                     display: flex;
                 }
 
@@ -74,7 +79,7 @@ export default function FinalSegMas(){
                     z-index: 2;
                 }
 
-                .cuadro .goles{
+                .cuadro span{
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -104,7 +109,7 @@ export default function FinalSegMas(){
                     left: -6px; 
                     
                     /* Tamaño fijo igual para que sea un círculo perfecto */
-                    width: 18px;
+                    width: 32px;
                     height: 18px;
                     
                     /* Centrado del número por dentro */
@@ -114,7 +119,7 @@ export default function FinalSegMas(){
                     
                     background: red; /* Cambia al color que prefieras */
                     color: white;
-                    font-size: 12px;
+                    font-size: 11px;
                     font-weight: bold;
                     border-radius: 5px; /* Esto la hace redonda */
                     z-index: 3; /* Un nivel por encima del cuadro */
@@ -158,26 +163,30 @@ export default function FinalSegMas(){
                     margin-left: 20px;
                 }
 
+                .par3{
+                    margin-top: -30px;
+                    margin-left: 20px;
+                }
+
                 .par4{
                     margin-top: 60px;
                     margin-left: 20px;
                     width: 230px;
-                    height: 100px;
+                    height: 160px;
                 }
 
                 @media screen and (max-width: 768px){
                     section{
-                        padding-top: 10px;
                         padding-left: 14px;
                     }
 
                     .partido{
-                        width: 184px;
+                        width: 192px;
                         height: 100px;
                     }
 
                     .cuadro{
-                        width: 172px;
+                        width: 180px;
                         line-height: 36px;
                         font-size: 13px;
                     }
@@ -194,9 +203,13 @@ export default function FinalSegMas(){
                         margin-left: 12px;
                     }
 
+                    .par3{
+                        margin-left: 12px;
+                    }
+
                     .par4{
-                        width: 198px;
-                        height: 100px;
+                        width: 206px;
+                        height: 160px;
                         margin-left: 12px;
                     }
 

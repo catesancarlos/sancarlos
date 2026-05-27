@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import ItemCalendario from '../calendario/ItemCalendario'
 import FinalSegFem from './FinalSegFem'
 
-import db  from '../../../services/dBase'
+import db from '../../../services/dBase'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
 
 const equipoDefault = (genero, nivel) => ({
@@ -15,7 +15,15 @@ const equipoDefault = (genero, nivel) => ({
     colors: ['gray', 'gray', 'white']
 })
 
-export default function PosSegFem(){
+export default function PosSegFem({
+    home,
+    select,
+    control,
+    onStatus,
+    onGoles,
+    onAgregar,
+    onFinalizar
+}) {
     const [grupoSegui, setGrupoSegui] = useState([]); // Ordenado (Posiciones)
     const [grupoSeguiLista, setGrupoSeguiLista] = useState([]); // Lista (ID/Original)
 
@@ -61,7 +69,7 @@ export default function PosSegFem(){
     useEffect(() => {
         // Traemos todos los partidos 'M'
         const qPartidos = query(
-            collection(db, 'partidos2026'), 
+            collection(db, 'partidos2026'),
             where('genero', '==', 'F'),
             where('grupo', 'in', ['Con', 'Seg', 'Int'])
         );
@@ -98,39 +106,39 @@ export default function PosSegFem(){
     return (
         <section>
             <div className='tables'>
-                {/* <strong className='title'>FINAL:</strong>
-                                <div style={{ width: '100%' }}>
-                                    {partidos?.filter(f => f.fase === 'FINAL').map(p => (
-                                        <ItemCalendario
-                                            key={p.id}
-                                            com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
-                                            nivel={p.grupo}
-                                            control={control}
-                                            idJuego={p.id}
-                                            fase={p.fase}
-                                            now={p.status}
-                                            fecha={[p.dia, p.date, p.hora]}
-                                            genero={p.genero}
-                                            equipos={[
-                                                getEquipoArray(p.idLocal, grupoSeguiLista) || equipoDefault(p.genero, p.grupo),
-                                                getEquipoArray(p.idVisitante, grupoSeguiLista) || equipoDefault(p.genero, p.grupo)
-                                            ]}
-                                            res={[p.golesLocal, p.golesVisitante]}
-                                            jugador={p.jugador}
-                                            extra={p.extra}
-                                            pen={p.penales}
-                                            home={home}
-                                            onStatus={onStatus}
-                                            onGoles={onGoles}
-                                            onAgregar={onAgregar}
-                                            onFinalizar={onFinalizar}
-                                        />
-                                    ))}
-                                </div> */}
-                                <strong className='title'>Fase Final:</strong>
-                                <div className='final'>
-                                    <FinalSegFem />
-                                </div>
+                <strong className='title'>FINAL:</strong>
+                <div style={{ width: '100%' }}>
+                    {partidos?.filter(f => f.fase === 'FINAL' && f.grupo === 'Seg').map(p => (
+                        <ItemCalendario
+                            key={p.id}
+                            com={['Ini', 'Rec', 'Com'].includes(p.grupo)}
+                            nivel={p.grupo}
+                            control={control}
+                            idJuego={p.id}
+                            fase={p.fase}
+                            now={p.status}
+                            fecha={[p.dia, p.date, p.hora]}
+                            genero={p.genero}
+                            equipos={[
+                                getEquipoArray(p.idLocal, grupoSeguiLista) || equipoDefault(p.genero, p.grupo),
+                                getEquipoArray(p.idVisitante, grupoSeguiLista) || equipoDefault(p.genero, p.grupo)
+                            ]}
+                            res={[p.golesLocal, p.golesVisitante]}
+                            jugador={p.jugador}
+                            extra={p.extra}
+                            pen={p.penales}
+                            home={home}
+                            onStatus={onStatus}
+                            onGoles={onGoles}
+                            onAgregar={onAgregar}
+                            onFinalizar={onFinalizar}
+                        />
+                    ))}
+                </div>
+                <strong className='title'>Fase Final:</strong>
+                <div className='final'>
+                    <FinalSegFem />
+                </div>
                 <strong className='title'>Posiciones:</strong>
                 <table>
                     <thead>
@@ -386,6 +394,6 @@ export default function PosSegFem(){
                     }
                 }
             `}</style>
-        </section> 
+        </section>
     )
 }
