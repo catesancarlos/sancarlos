@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import { useRouter } from 'next/router'
 
@@ -30,12 +30,37 @@ const Home = () => {
     const [open11, setOpen11] = useState(false)
     const [fechaNow, setFechaNow] = useState([])
 
+    const videoRef = useRef(null);
+
     const videoList = ['/video1.mp4', '/video2.mp4', '/video3.mp4'];
     const [current, setCurrent] = useState(0);
 
     const nextVideo = () => {
         setCurrent((prev) => (prev + 1) % videoList.length);
     };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                videoRef.current?.play();
+                } else {
+                videoRef.current?.pause();
+                }
+            },
+            { threshold: 0.5 } // Se dispara cuando al menos el 50% del video es visible
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => {
+            if (videoRef.current) {
+                observer.unobserve(videoRef.current);
+            }
+        };
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -113,7 +138,8 @@ const Home = () => {
                     
                         <div className="video-container">
                             <video
-                                src='https://nuer9rqxiw6fvakw.public.blob.vercel-storage.com/videores.mp4'
+                                ref={videoRef}
+                                src='/videores1.mp4'
                                 autoPlay
                                 muted
                                 playsInline
@@ -280,7 +306,7 @@ const Home = () => {
                     overflow: hidden;
                     margin-bottom: 80px;
                     /* ESTO SOLUCIONA EL PARPADEO */
-                    aspect-ratio: 9 / 15; 
+                    aspect-ratio: 9 / 14; 
                     
                     background-color: #ccc; /* Fondo negro mientras carga el siguiente */
                     overflow: hidden;
