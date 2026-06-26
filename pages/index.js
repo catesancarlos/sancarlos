@@ -92,8 +92,8 @@ const Home = () => {
     
 
     return (
-        <>
-            <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+        <AppLayout name='Inicio'  titulo='Cate San Carlos'>
+            <div className='aux'>
                 <div className='portada'>
                     <img className='imgp' src='/portada-conf.jpg' />
                 </div>
@@ -197,9 +197,13 @@ const Home = () => {
                         </p>
                     </div>
                 </div> */}
-            </AppLayout>
+            </div>
 
             <style jsx>{`
+                .aux{
+            
+                }
+
                 .portada{
                     position: absolute;
                     width: 100%;
@@ -221,6 +225,25 @@ const Home = () => {
                     flex-direction: column;
                     align-items: center;
                     z-index: 1;
+                }
+
+                @media (min-width: 768px) {
+                    .portada{
+                        top: 40px;
+                        width: 30%;
+                        margin: 0 35%;
+                        border-radius: 20px 20px 0 0;
+                    }
+
+                    .main-cont{
+                        top: 280px;
+                        width: 30%;
+                        margin: 0 35%;
+                    }
+
+                    .fototipo div{
+                        flex: 1;
+                    }
                 }
 
                 .pagename{
@@ -360,7 +383,24 @@ const Home = () => {
                     transform: scale(0.98); /* Un pequeño efecto de profundidad */
                 }
 
+                @media (min-width: 768px) {
+                    .portada{
+                        top: 40px;
+                        width: 30%;
+                        margin: 0 35%;
+                        border-radius: 20px 20px 0 0;
+                    }
 
+                    .main-cont{
+                        top: 280px;
+                        width: 30%;
+                        margin: 0 35%;
+                    }
+
+                    .fototipo div{
+                        flex: 1;
+                    }
+                }
 
 
 
@@ -369,6 +409,7 @@ const Home = () => {
                     margin-bottom: 10px;
                     color: #999;
                     font-style: italic;
+                    font-weight: 200;
                 }
 
 
@@ -496,7 +537,7 @@ const Home = () => {
                     }
                 }
             `}</style>
-        </> 
+        </AppLayout>
     )
 }
 

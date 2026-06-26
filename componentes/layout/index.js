@@ -30,20 +30,20 @@ export default function AppLayout ({
             </Head>
 
             <main className='page-home'>
-                {
+                {/* {
                     !(categoria) ? 
                         <Header name={name} auth={auth} flecha={flecha} />
                     :
                         <HeaderJs categoria={categoria} onRand={onRand} />
-                }
+                } */}
                 {children}
             </main>
 
             <style jsx>{`
                 .page-home{
                     background-color: ${!back ? '#F2F8F6' : back};
-                    display: flex;
-                    flex-direction: column;
+                    /* display: flex;
+                    flex-direction: column; */
                     min-height: 100vh;
                     padding-bottom: 60px;
                 }
