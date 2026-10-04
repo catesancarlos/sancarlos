@@ -32,9 +32,9 @@ export default function Modal({ children, background, onDescargar, onClose }){
         <div className='total'>
             <div className='contenido' ref={refCont}>
                 <div className='botones'>
-                    {/* <div className='button dw' onClick={onDescargar}>
+                    <div className='button dw' onClick={onDescargar}>
                         <Download />
-                    </div> */}
+                    </div>
                     <div className='button cl'>
                         <p onClick={() => onClose(false)}>X</p>
                     </div>
@@ -82,12 +82,16 @@ export default function Modal({ children, background, onDescargar, onClose }){
                     justify-content: center;
                     align-items: center;
                     border-radius: 8px;
-                    
                     cursor: pointer;
                 }
 
                 .cl{
+                    margin-left: 10px;
                     background: black;
+                }
+
+                .dw{
+                    background: #01a761;
                 }
 
                 @media screen and (max-width: 768px){
